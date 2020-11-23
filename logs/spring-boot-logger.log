@@ -1,0 +1,27 @@
+2020-11-23 01:45:47,299 INFO org.springframework.boot.StartupInfoLogger [main] Starting EhealthApplication on DESKTOP-GS3JOVE with PID 18612 (C:\Data\workspace\heroku-demo\target\classes started by HP in C:\Data\workspace\heroku-demo)
+2020-11-23 01:45:47,301 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-11-23 01:45:47,301 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 01:45:48,057 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-23 01:45:48,126 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 52ms. Found 3 JPA repository interfaces.
+2020-11-23 01:45:49,592 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-11-23 01:45:49,600 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-23 01:45:49,601 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-23 01:45:49,601 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-11-23 01:45:49,719 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-23 01:45:49,719 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2380 ms
+2020-11-23 01:45:50,088 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 01:45:50,127 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-11-23 01:45:50,225 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-23 01:45:50,740 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-11-23 01:45:51,066 INFO org.hibernate.tuple.PojoInstantiator [main] HHH000182: No default (no-argument) constructor for class: com.itradix.ehealth.model.NcziResponse (class must be instantiated by Interceptor)
+2020-11-23 01:45:51,204 INFO org.hibernate.tuple.PojoInstantiator [main] HHH000182: No default (no-argument) constructor for class: com.itradix.ehealth.model.Patient (class must be instantiated by Interceptor)
+2020-11-23 01:45:51,496 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 01:45:51,502 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 01:45:52,918 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-23 01:45:53,029 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 01:45:53,507 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 13 endpoint(s) beneath base path '/actuator'
+2020-11-23 01:45:53,541 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-23 01:45:53,561 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path '/ehealth'
+2020-11-23 01:45:53,572 INFO org.springframework.boot.StartupInfoLogger [main] Started EhealthApplication in 6.644 seconds (JVM running for 7.107)
+2020-11-23 01:48:41,441 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-23 01:48:41,443 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
