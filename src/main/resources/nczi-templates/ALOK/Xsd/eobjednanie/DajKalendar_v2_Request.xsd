@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+  
+  <xs:element name="DajKalendarRequest" type="tns:DajKalendarRequest" />
+  
+  <xs:complexType name="DajKalendarRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="IdKalendara" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>ID konkrétneho kalendára</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="DatumPlatnosti" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Dátum, kedy má byť kalendár platný.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q12="CEN/13606/RM" type="q12:II">
+        <xs:annotation>
+          <xs:documentation>ID OU poskytovateľa zdravotnej starostlivosti (ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q13="CEN/13606/RM" type="q13:II">
+        <xs:annotation>
+          <xs:documentation>ID zdravotníckeho pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

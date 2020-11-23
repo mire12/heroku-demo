@@ -1,0 +1,1540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Profesijný titul zdravotníckeho pracovníka</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-04-21</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.230</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-01</DatumOd>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000774372</codeValue>
+      <displayName>internista</displayName>
+      <Skratka>001</Skratka>
+      <Popis>internista</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774380</codeValue>
+      <displayName>infektológ</displayName>
+      <Skratka>002</Skratka>
+      <Popis>infektológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774398</codeValue>
+      <displayName>pneumoftizeológ</displayName>
+      <Skratka>003</Skratka>
+      <Popis>pneumoftizeológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774406</codeValue>
+      <displayName>neurológ</displayName>
+      <Skratka>004</Skratka>
+      <Popis>neurológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774414</codeValue>
+      <displayName>psychiater</displayName>
+      <Skratka>005</Skratka>
+      <Popis>psychiater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774422</codeValue>
+      <displayName>lekár pracovného lekárstva</displayName>
+      <Skratka>006</Skratka>
+      <Popis>lekár pracovného lekárstva</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774430</codeValue>
+      <displayName>pediater</displayName>
+      <Skratka>007</Skratka>
+      <Popis>pediater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774448</codeValue>
+      <displayName>všeobecný lekár pre deti a dorast</displayName>
+      <Skratka>008</Skratka>
+      <Popis>všeobecný lekár pre deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774455</codeValue>
+      <displayName>gynekológ a pôrodník</displayName>
+      <Skratka>009</Skratka>
+      <Popis>gynekológ a pôrodník</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611004</codeValue>
+      <displayName>chirurg</displayName>
+      <Skratka>010</Skratka>
+      <Popis>chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611012</codeValue>
+      <displayName>ortopéd</displayName>
+      <Skratka>011</Skratka>
+      <Popis>ortopéd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611020</codeValue>
+      <displayName>urológ</displayName>
+      <Skratka>012</Skratka>
+      <Popis>urológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611038</codeValue>
+      <displayName>traumatológ</displayName>
+      <Skratka>013</Skratka>
+      <Popis>traumatológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611046</codeValue>
+      <displayName>otorinolaryngológ</displayName>
+      <Skratka>014</Skratka>
+      <Popis>otorinolaryngológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611053</codeValue>
+      <displayName>oftalmológ</displayName>
+      <Skratka>015</Skratka>
+      <Popis>oftalmológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611079</codeValue>
+      <displayName>pediatrický gynekológ</displayName>
+      <Skratka>017</Skratka>
+      <Popis>pediatrický gynekológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611087</codeValue>
+      <displayName>dermatovenerológ</displayName>
+      <Skratka>018</Skratka>
+      <Popis>dermatovenerológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611095</codeValue>
+      <displayName>klinický onkológ</displayName>
+      <Skratka>019</Skratka>
+      <Popis>klinický onkológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611103</codeValue>
+      <displayName>všeobecný lekár</displayName>
+      <Skratka>020</Skratka>
+      <Popis>všeobecný lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611129</codeValue>
+      <displayName>dorastový lekár</displayName>
+      <Skratka>022</Skratka>
+      <Popis>dorastový lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611137</codeValue>
+      <displayName>rádiológ</displayName>
+      <Skratka>023</Skratka>
+      <Popis>rádiológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611145</codeValue>
+      <displayName>lekár klinickej biochémie</displayName>
+      <Skratka>024</Skratka>
+      <Popis>lekár klinickej biochémie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611152</codeValue>
+      <displayName>anestéziológ</displayName>
+      <Skratka>025</Skratka>
+      <Popis>anestéziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611160</codeValue>
+      <displayName>telovýchovný lekár</displayName>
+      <Skratka>026</Skratka>
+      <Popis>telovýchovný lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611178</codeValue>
+      <displayName>fyziater a balneológ</displayName>
+      <Skratka>027</Skratka>
+      <Popis>fyziater a balneológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611186</codeValue>
+      <displayName>súdny lekár</displayName>
+      <Skratka>028</Skratka>
+      <Popis>súdny lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611194</codeValue>
+      <displayName>patológ</displayName>
+      <Skratka>029</Skratka>
+      <Popis>patológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611210</codeValue>
+      <displayName>hematológ a transfuziológ</displayName>
+      <Skratka>031</Skratka>
+      <Popis>hematológ a transfuziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611228</codeValue>
+      <displayName>lekár urgentnej medicíny</displayName>
+      <Skratka>032</Skratka>
+      <Popis>lekár urgentnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611244</codeValue>
+      <displayName>lekár klinickej mikrobiológie</displayName>
+      <Skratka>034</Skratka>
+      <Popis>lekár klinickej mikrobiológie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611277</codeValue>
+      <displayName>neurochirurg</displayName>
+      <Skratka>037</Skratka>
+      <Popis>neurochirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611285</codeValue>
+      <displayName>plastický chirurg</displayName>
+      <Skratka>038</Skratka>
+      <Popis>plastický chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611293</codeValue>
+      <displayName>ortoprotetik</displayName>
+      <Skratka>039</Skratka>
+      <Popis>ortoprotetik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611301</codeValue>
+      <displayName>alergológ</displayName>
+      <Skratka>040</Skratka>
+      <Popis>alergológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611335</codeValue>
+      <displayName>radiačný onkológ</displayName>
+      <Skratka>043</Skratka>
+      <Popis>radiačný onkológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611343</codeValue>
+      <displayName>foniater</displayName>
+      <Skratka>044</Skratka>
+      <Popis>foniater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611350</codeValue>
+      <displayName>reumatológ</displayName>
+      <Skratka>045</Skratka>
+      <Popis>reumatológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611368</codeValue>
+      <displayName>algeziológ</displayName>
+      <Skratka>046</Skratka>
+      <Popis>algeziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611376</codeValue>
+      <displayName>lekár nukleárnej medicíny</displayName>
+      <Skratka>047</Skratka>
+      <Popis>lekár nukleárnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611384</codeValue>
+      <displayName>gastroenterológ</displayName>
+      <Skratka>048</Skratka>
+      <Popis>gastroenterológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611392</codeValue>
+      <displayName>kardiológ</displayName>
+      <Skratka>049</Skratka>
+      <Popis>kardiológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611400</codeValue>
+      <displayName>diabetológ</displayName>
+      <Skratka>050</Skratka>
+      <Popis>diabetológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611418</codeValue>
+      <displayName>neonatológ</displayName>
+      <Skratka>051</Skratka>
+      <Popis>neonatológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611426</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena detí a mládeže"</displayName>
+      <Skratka>052</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena detí a mládeže"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611434</codeValue>
+      <displayName>čeľustný ortopéd</displayName>
+      <Skratka>053</Skratka>
+      <Popis>čeľustný ortopéd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611467</codeValue>
+      <displayName>angiológ</displayName>
+      <Skratka>056</Skratka>
+      <Popis>angiológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611475</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena životného prostredia"</displayName>
+      <Skratka>057</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena životného prostredia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611483</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena výživy"</displayName>
+      <Skratka>058</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena výživy"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611491</codeValue>
+      <displayName>epidemiológ</displayName>
+      <Skratka>059</Skratka>
+      <Popis>epidemiológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611509</codeValue>
+      <displayName>geriater</displayName>
+      <Skratka>060</Skratka>
+      <Popis>geriater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611517</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "medicínska informatika a bioštatistika"</displayName>
+      <Skratka>061</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "medicínska informatika a bioštatistika"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611525</codeValue>
+      <displayName>genetik</displayName>
+      <Skratka>062</Skratka>
+      <Popis>genetik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611533</codeValue>
+      <displayName>nefrológ</displayName>
+      <Skratka>063</Skratka>
+      <Popis>nefrológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611541</codeValue>
+      <displayName>endokrinológ</displayName>
+      <Skratka>064</Skratka>
+      <Popis>endokrinológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611558</codeValue>
+      <displayName>lekár klinickej farmakológie</displayName>
+      <Skratka>065</Skratka>
+      <Popis>lekár klinickej farmakológie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611566</codeValue>
+      <displayName>špecialistka/špecialista v zdravotníckej informatike</displayName>
+      <Skratka>066</Skratka>
+      <Popis>špecialistka/špecialista v zdravotníckej informatike</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611582</codeValue>
+      <displayName>cievny chirurg</displayName>
+      <Skratka>068</Skratka>
+      <Popis>cievny chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611590</codeValue>
+      <displayName>kardiochirurg</displayName>
+      <Skratka>069</Skratka>
+      <Popis>kardiochirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611608</codeValue>
+      <displayName>maxilofaciálny chirurg</displayName>
+      <Skratka>070</Skratka>
+      <Popis>maxilofaciálny chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611624</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "korektívna dermatológia"</displayName>
+      <Skratka>072</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "korektívna dermatológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611632</codeValue>
+      <displayName>adiktológ</displayName>
+      <Skratka>073</Skratka>
+      <Popis>adiktológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611640</codeValue>
+      <displayName>gerontopsychiater</displayName>
+      <Skratka>074</Skratka>
+      <Popis>gerontopsychiater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611657</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "audiológia"</displayName>
+      <Skratka>075</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "audiológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611665</codeValue>
+      <displayName>letecký lekár</displayName>
+      <Skratka>076</Skratka>
+      <Popis>letecký lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611889</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "gastroenterológia"</displayName>
+      <Skratka>098</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "gastroenterológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611905</codeValue>
+      <displayName>posudkový lekár</displayName>
+      <Skratka>100</Skratka>
+      <Popis>posudkový lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611913</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "medicínska informatika"</displayName>
+      <Skratka>101</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "medicínska informatika"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611921</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "ochrana zdravia pred ionizujúcim žiarením"</displayName>
+      <Skratka>102</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "ochrana zdravia pred ionizujúcim žiarením"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611947</codeValue>
+      <displayName>pediatrický neurológ</displayName>
+      <Skratka>104</Skratka>
+      <Popis>pediatrický neurológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611954</codeValue>
+      <displayName>detský psychiater</displayName>
+      <Skratka>105</Skratka>
+      <Popis>detský psychiater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611962</codeValue>
+      <displayName>hrudníkový chirurg</displayName>
+      <Skratka>106</Skratka>
+      <Popis>hrudníkový chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611970</codeValue>
+      <displayName>detský chirurg</displayName>
+      <Skratka>107</Skratka>
+      <Popis>detský chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611988</codeValue>
+      <displayName>pediatrický ortopéd</displayName>
+      <Skratka>108</Skratka>
+      <Popis>pediatrický ortopéd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000611996</codeValue>
+      <displayName>pediatrický urológ</displayName>
+      <Skratka>109</Skratka>
+      <Popis>pediatrický urológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612002</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická bakteriologia"</displayName>
+      <Skratka>110</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická bakteriologia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612010</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická parazitológia"</displayName>
+      <Skratka>111</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická parazitológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612028</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická virológia"</displayName>
+      <Skratka>112</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická virológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612036</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mikrobiológia životného prostredia"</displayName>
+      <Skratka>113</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mikrobiológia životného prostredia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612044</codeValue>
+      <displayName>pediatrický otorinolaryngológ</displayName>
+      <Skratka>114</Skratka>
+      <Popis>pediatrický otorinolaryngológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612051</codeValue>
+      <displayName>detský zubný lekár</displayName>
+      <Skratka>115</Skratka>
+      <Popis>detský zubný lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612069</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "detská dermatovenerológia"</displayName>
+      <Skratka>116</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "detská dermatovenerológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774463</codeValue>
+      <displayName>špecialista v technologii rádiofarmák</displayName>
+      <Skratka>122</Skratka>
+      <Popis>špecialista v technologii rádiofarmák</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612176</codeValue>
+      <displayName>špecialistka/špecialista v inštrumentovaní v operačnej sále</displayName>
+      <Skratka>129</Skratka>
+      <Popis>špecialistka/špecialista v inštrumentovaní v operačnej sále</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612184</codeValue>
+      <displayName>lekár materno-fetálnej medicíny</displayName>
+      <Skratka>130</Skratka>
+      <Popis>lekár materno-fetálnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612192</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "výchova k zdraviu"</displayName>
+      <Skratka>131</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "výchova k zdraviu"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612218</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v patológii a súdnom lekárstve"</displayName>
+      <Skratka>133</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v patológii a súdnom lekárstve"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612283</codeValue>
+      <displayName>pediatrický imunológ a alergológ</displayName>
+      <Skratka>140</Skratka>
+      <Popis>pediatrický imunológ a alergológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612291</codeValue>
+      <displayName>klinický logopéd</displayName>
+      <Skratka>141</Skratka>
+      <Popis>klinický logopéd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774471</codeValue>
+      <displayName>klinický psychológ</displayName>
+      <Skratka>144</Skratka>
+      <Popis>klinický psychológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612325</codeValue>
+      <displayName>pediatrický reumatológ</displayName>
+      <Skratka>145</Skratka>
+      <Popis>pediatrický reumatológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612333</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická fyzika"</displayName>
+      <Skratka>146</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická fyzika"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612408</codeValue>
+      <displayName>pediatrický endokrinológ</displayName>
+      <Skratka>153</Skratka>
+      <Popis>pediatrický endokrinológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612416</codeValue>
+      <displayName>pediatrický gastroenterológ</displayName>
+      <Skratka>154</Skratka>
+      <Popis>pediatrický gastroenterológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612424</codeValue>
+      <displayName>pediatrický kardiológ</displayName>
+      <Skratka>155</Skratka>
+      <Popis>pediatrický kardiológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612432</codeValue>
+      <displayName>pediatrický pneumológ a ftizeológ</displayName>
+      <Skratka>156</Skratka>
+      <Popis>pediatrický pneumológ a ftizeológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612440</codeValue>
+      <displayName>špecialista vo farmaceutickej kontrole</displayName>
+      <Skratka>157</Skratka>
+      <Popis>špecialista vo farmaceutickej kontrole</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612457</codeValue>
+      <displayName>špecialista vo farmaceutickej technológii</displayName>
+      <Skratka>158</Skratka>
+      <Popis>špecialista vo farmaceutickej technológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612465</codeValue>
+      <displayName>špecialista v klinickej farmácii</displayName>
+      <Skratka>159</Skratka>
+      <Popis>špecialista v klinickej farmácii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612473</codeValue>
+      <displayName>špecialista v lekárenstve</displayName>
+      <Skratka>160</Skratka>
+      <Popis>špecialista v lekárenstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612507</codeValue>
+      <displayName>pediatrický nefrológ</displayName>
+      <Skratka>163</Skratka>
+      <Popis>pediatrický nefrológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612531</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "fyziológia a psychológia práce"</displayName>
+      <Skratka>166</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "fyziológia a psychológia práce"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774489</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická a populačná pediatria"</displayName>
+      <Skratka>167</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická a populačná pediatria"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774497</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická genetika"</displayName>
+      <Skratka>168</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická genetika"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774505</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena práce a pracovné lekárstvo"</displayName>
+      <Skratka>176</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena práce a pracovné lekárstvo"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774513</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "funkčná diagnostika"</displayName>
+      <Skratka>187</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "funkčná diagnostika"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774521</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "všeobecná starostlivosť o deti a dorast"</displayName>
+      <Skratka>208</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "všeobecná starostlivosť o deti a dorast"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774539</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mikrochirurgia oka"</displayName>
+      <Skratka>215</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mikrochirurgia oka"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774547</codeValue>
+      <displayName>hepatológ</displayName>
+      <Skratka>216</Skratka>
+      <Popis>hepatológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774554</codeValue>
+      <displayName>detský onkológ</displayName>
+      <Skratka>219</Skratka>
+      <Popis>detský onkológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774562</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "poruchy metabolizmu"</displayName>
+      <Skratka>220</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "poruchy metabolizmu"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774570</codeValue>
+      <displayName>gastroenterologický chirurg</displayName>
+      <Skratka>222</Skratka>
+      <Popis>gastroenterologický chirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774588</codeValue>
+      <displayName>neuropsychiater</displayName>
+      <Skratka>223</Skratka>
+      <Popis>neuropsychiater</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774596</codeValue>
+      <displayName>špecialistka v inštrumentovaní v operačnej sále v gynekológii a pôrodníctve</displayName>
+      <Skratka>224</Skratka>
+      <Popis>špecialistka v inštrumentovaní v operačnej sále v gynekológii a pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774604</codeValue>
+      <displayName>lekár laboratórnej medicíny</displayName>
+      <Skratka>225</Skratka>
+      <Popis>lekár laboratórnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774612</codeValue>
+      <displayName>lekár tropickej medicíny</displayName>
+      <Skratka>226</Skratka>
+      <Popis>lekár tropickej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774620</codeValue>
+      <displayName>hygienik</displayName>
+      <Skratka>227</Skratka>
+      <Popis>hygienik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774638</codeValue>
+      <displayName>onkogynekológ</displayName>
+      <Skratka>229</Skratka>
+      <Popis>onkogynekológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774646</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mykológia"</displayName>
+      <Skratka>230</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mykológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774653</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "psychosomatická a behaviorálna medicína"</displayName>
+      <Skratka>231</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "psychosomatická a behaviorálna medicína"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774661</codeValue>
+      <displayName>špecialistka/špecialista v ošetrovateľstve v zdraví pri práci</displayName>
+      <Skratka>240</Skratka>
+      <Popis>špecialistka/špecialista v ošetrovateľstve v zdraví pri práci</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774679</codeValue>
+      <displayName>psychoterapeut</displayName>
+      <Skratka>241</Skratka>
+      <Popis>psychoterapeut</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774687</codeValue>
+      <displayName>špecialistka/špecialista v revíznom ošetrovateľstve</displayName>
+      <Skratka>242</Skratka>
+      <Popis>špecialistka/špecialista v revíznom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774695</codeValue>
+      <displayName>špecialistka/špecialista v operačnom stredisku záchrannej zdravotnej služby</displayName>
+      <Skratka>243</Skratka>
+      <Popis>špecialistka/špecialista v operačnom stredisku záchrannej zdravotnej služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774703</codeValue>
+      <displayName>špecialistka/špecialista v intenzívnej ošetrovateľskej starostlivosti o dospelých</displayName>
+      <Skratka>244</Skratka>
+      <Popis>špecialistka/špecialista v intenzívnej ošetrovateľskej starostlivosti o dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774711</codeValue>
+      <displayName>špecialistka/špecialista v intenzívnej ošetrovateľskej starostlivosti v pediatrii</displayName>
+      <Skratka>245</Skratka>
+      <Popis>špecialistka/špecialista v intenzívnej ošetrovateľskej starostlivosti v pediatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774729</codeValue>
+      <displayName>špecialistka/špecialista v intenzívnom neonatologickom ošetrovateľstve</displayName>
+      <Skratka>246</Skratka>
+      <Popis>špecialistka/špecialista v intenzívnom neonatologickom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774737</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "ultrazvuk v gynekológii a pôrodníctve"</displayName>
+      <Skratka>247</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "ultrazvuk v gynekológii a pôrodníctve"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774745</codeValue>
+      <displayName>špecialistka/špecialista v ošetrovateľskej starostlivosti o dialyzovaných pacientov</displayName>
+      <Skratka>248</Skratka>
+      <Popis>špecialistka/špecialista v ošetrovateľskej starostlivosti o dialyzovaných pacientov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774752</codeValue>
+      <displayName>špecialistka/špecialista v ošetrovateľstve vo vnútornom lekárstve</displayName>
+      <Skratka>249</Skratka>
+      <Popis>špecialistka/špecialista v ošetrovateľstve vo vnútornom lekárstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774760</codeValue>
+      <displayName>špecialistka/špecialista v chirurgickom ošetrovateľstve</displayName>
+      <Skratka>250</Skratka>
+      <Popis>špecialistka/špecialista v chirurgickom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774778</codeValue>
+      <displayName>špecialistka/špecialista v pediatrickom ošetrovateľstve</displayName>
+      <Skratka>251</Skratka>
+      <Popis>špecialistka/špecialista v pediatrickom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774786</codeValue>
+      <displayName>špecialistka/špecialista v ošetrovateľskej starostlivosti v psychiatrii</displayName>
+      <Skratka>252</Skratka>
+      <Popis>špecialistka/špecialista v ošetrovateľskej starostlivosti v psychiatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774794</codeValue>
+      <displayName>špecialistka/špecialista v komunitnom ošetrovateľstve</displayName>
+      <Skratka>253</Skratka>
+      <Popis>špecialistka/špecialista v komunitnom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774802</codeValue>
+      <displayName>špecialistka/špecialista v onkologickom ošetrovateľstve</displayName>
+      <Skratka>254</Skratka>
+      <Popis>špecialistka/špecialista v onkologickom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774810</codeValue>
+      <displayName>špecialistka/špecialista v špecializovanej urgentnej starostlivosti</displayName>
+      <Skratka>255</Skratka>
+      <Popis>špecialistka/špecialista v špecializovanej urgentnej starostlivosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774828</codeValue>
+      <displayName>špecialistka v intenzívnej starostlivosti v gynekológii a pôrodníctve</displayName>
+      <Skratka>256</Skratka>
+      <Popis>špecialistka v intenzívnej starostlivosti v gynekológii a pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774836</codeValue>
+      <displayName>špecialistka v pôrodnej asistencii a starostlivosti o ženu v rodine a komunite</displayName>
+      <Skratka>257</Skratka>
+      <Popis>špecialistka v pôrodnej asistencii a starostlivosti o ženu v rodine a komunite</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774844</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "špeciálne laboratórne a diagnostické metódy v hematológii a transfuziológii"</displayName>
+      <Skratka>258</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "špeciálne laboratórne a diagnostické metódy v hematológii a transfuziológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774851</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v hematológii a transfúziológii"</displayName>
+      <Skratka>259</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v hematológii a transfúziológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774869</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v mikrobiológii a biológii životného prostredia"</displayName>
+      <Skratka>260</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v mikrobiológii a biológii životného prostredia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774877</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej mikrobiológii"</displayName>
+      <Skratka>262</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej mikrobiológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774885</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v ochrane zdravia pred ionizujúcim žiarením"</displayName>
+      <Skratka>265</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v ochrane zdravia pred ionizujúcim žiarením"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774893</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mamológia"</displayName>
+      <Skratka>271</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mamológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774901</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena zdravých pracovných podmienok"</displayName>
+      <Skratka>280</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena zdravých pracovných podmienok"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774919</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hygiena zdravých životných podmienok detí a mládeže"</displayName>
+      <Skratka>281</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hygiena zdravých životných podmienok detí a mládeže"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774927</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v lekárskej genetike"</displayName>
+      <Skratka>285</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v lekárskej genetike"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774935</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v preventívnom pracovnom lekárstve a toxikológii"</displayName>
+      <Skratka>286</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v preventívnom pracovnom lekárstve a toxikológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774943</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metody v hygiene životného prostredia"</displayName>
+      <Skratka>287</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metody v hygiene životného prostredia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774950</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "reprodukčná medicína"</displayName>
+      <Skratka>289</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "reprodukčná medicína"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774968</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mikrochirurgia v otorinolaryngológii"</displayName>
+      <Skratka>290</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mikrochirurgia v otorinolaryngológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774976</codeValue>
+      <displayName>poradenský psychológ</displayName>
+      <Skratka>295</Skratka>
+      <Popis>poradenský psychológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774984</codeValue>
+      <displayName>pracovný psychológ</displayName>
+      <Skratka>296</Skratka>
+      <Popis>pracovný psychológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774992</codeValue>
+      <displayName>akupunkturista</displayName>
+      <Skratka>299</Skratka>
+      <Popis>akupunkturista</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775007</codeValue>
+      <displayName>andrológ</displayName>
+      <Skratka>302</Skratka>
+      <Popis>andrológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775015</codeValue>
+      <displayName>klinický pracovný lekár a toxikológ</displayName>
+      <Skratka>306</Skratka>
+      <Popis>klinický pracovný lekár a toxikológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775023</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "gynekologická urológia"</displayName>
+      <Skratka>312</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "gynekologická urológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775031</codeValue>
+      <displayName>onkochirurg</displayName>
+      <Skratka>319</Skratka>
+      <Popis>onkochirurg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775049</codeValue>
+      <displayName>onkourológ</displayName>
+      <Skratka>322</Skratka>
+      <Popis>onkourológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775056</codeValue>
+      <displayName>pediatrický anestéziológ</displayName>
+      <Skratka>323</Skratka>
+      <Popis>pediatrický anestéziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775064</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej biochémii"</displayName>
+      <Skratka>324</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej biochémii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775072</codeValue>
+      <displayName>špecialistka/špecialista v anestéziológii a intenzívnej starostlivosti</displayName>
+      <Skratka>325</Skratka>
+      <Popis>špecialistka/špecialista v anestéziológii a intenzívnej starostlivosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775080</codeValue>
+      <displayName>pediatrický hematológ a onkológ</displayName>
+      <Skratka>329</Skratka>
+      <Popis>pediatrický hematológ a onkológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775098</codeValue>
+      <displayName>pediatrický infektológ</displayName>
+      <Skratka>331</Skratka>
+      <Popis>pediatrický infektológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775106</codeValue>
+      <displayName>pediater intenzívnej medicíny</displayName>
+      <Skratka>332</Skratka>
+      <Popis>pediater intenzívnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775114</codeValue>
+      <displayName>lekár paliatívnej medicíny</displayName>
+      <Skratka>334</Skratka>
+      <Popis>lekár paliatívnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775122</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "rehabilitácia detského veku"</displayName>
+      <Skratka>335</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "rehabilitácia detského veku"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775130</codeValue>
+      <displayName>pediatrický oftalmológ</displayName>
+      <Skratka>336</Skratka>
+      <Popis>pediatrický oftalmológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775148</codeValue>
+      <displayName>sexuológ</displayName>
+      <Skratka>340</Skratka>
+      <Popis>sexuológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775155</codeValue>
+      <displayName>pediater urgentnej medicíny</displayName>
+      <Skratka>341</Skratka>
+      <Popis>pediater urgentnej medicíny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775163</codeValue>
+      <displayName>detský hematológ a transfuziológ</displayName>
+      <Skratka>342</Skratka>
+      <Popis>detský hematológ a transfuziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775171</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "mikrobiológia a biológia životného prostredia"</displayName>
+      <Skratka>344</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "mikrobiológia a biológia životného prostredia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775189</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej imunológii a alergiológii"</displayName>
+      <Skratka>346</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "vyšetrovacie metódy v klinickej imunológii a alergiológii"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775197</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "onkológia vo vnútornom lekárstve"</displayName>
+      <Skratka>350</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "onkológia vo vnútornom lekárstve"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775205</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "psychiatria pre dospelých"</displayName>
+      <Skratka>352</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "psychiatria pre dospelých"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775213</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "zdravotnícka ekológia"</displayName>
+      <Skratka>353</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "zdravotnícka ekológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775221</codeValue>
+      <displayName>revízny lekár</displayName>
+      <Skratka>356</Skratka>
+      <Popis>revízny lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775239</codeValue>
+      <displayName>revízny zubný lekár</displayName>
+      <Skratka>361</Skratka>
+      <Popis>revízny zubný lekár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775247</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "preventívne pracovné lekárstvo a toxikológia"</displayName>
+      <Skratka>366</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "preventívne pracovné lekárstvo a toxikológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775254</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "psychiatrická sexuológia"</displayName>
+      <Skratka>367</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "psychiatrická sexuológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775262</codeValue>
+      <displayName>špecialistka v sociálnej starostlivosti</displayName>
+      <Skratka>370</Skratka>
+      <Popis>špecialistka v sociálnej starostlivosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775270</codeValue>
+      <displayName>špecialista v revíznom lekárenstve</displayName>
+      <Skratka>371</Skratka>
+      <Popis>špecialista v revíznom lekárenstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775288</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "služby zdravia pri práci"</displayName>
+      <Skratka>377</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "služby zdravia pri práci"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775296</codeValue>
+      <displayName>MPH</displayName>
+      <Skratka>411</Skratka>
+      <Popis>MPH</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775304</codeValue>
+      <displayName>zdravotnícky manažér</displayName>
+      <Skratka>489</Skratka>
+      <Popis>zdravotnícky manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775312</codeValue>
+      <displayName>lekár manažér</displayName>
+      <Skratka>491</Skratka>
+      <Popis>lekár manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775320</codeValue>
+      <displayName>sestra manažér</displayName>
+      <Skratka>492</Skratka>
+      <Popis>sestra manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775338</codeValue>
+      <displayName>technik laboratórnej medicíny manažér</displayName>
+      <Skratka>493</Skratka>
+      <Popis>technik laboratórnej medicíny manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775346</codeValue>
+      <displayName>fyzioterapeut manažér</displayName>
+      <Skratka>494</Skratka>
+      <Popis>fyzioterapeut manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775353</codeValue>
+      <displayName>zubný technik manažér</displayName>
+      <Skratka>495</Skratka>
+      <Popis>zubný technik manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775361</codeValue>
+      <displayName>pôrodná asistentka manažér</displayName>
+      <Skratka>496</Skratka>
+      <Popis>pôrodná asistentka manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775379</codeValue>
+      <displayName>farmaceut manažér</displayName>
+      <Skratka>497</Skratka>
+      <Popis>farmaceut manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775387</codeValue>
+      <displayName>zubný lekár manažér</displayName>
+      <Skratka>498</Skratka>
+      <Popis>zubný lekár manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775395</codeValue>
+      <displayName>psychológ manažér</displayName>
+      <Skratka>499</Skratka>
+      <Popis>psychológ manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775403</codeValue>
+      <displayName>asistent hygieny a epidemiológie manažér</displayName>
+      <Skratka>501</Skratka>
+      <Popis>asistent hygieny a epidemiológie manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775411</codeValue>
+      <displayName>dentálna hygienička manažér</displayName>
+      <Skratka>502</Skratka>
+      <Popis>dentálna hygienička manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775429</codeValue>
+      <displayName>liečebný pedagóg manažér</displayName>
+      <Skratka>503</Skratka>
+      <Popis>liečebný pedagóg manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775437</codeValue>
+      <displayName>logopéd manažér</displayName>
+      <Skratka>504</Skratka>
+      <Popis>logopéd manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775445</codeValue>
+      <displayName>medicínsko-technický laborant manažér</displayName>
+      <Skratka>505</Skratka>
+      <Popis>medicínsko-technický laborant manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775452</codeValue>
+      <displayName>optometrista manažér</displayName>
+      <Skratka>506</Skratka>
+      <Popis>optometrista manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775460</codeValue>
+      <displayName>rádiologický asistent manažér</displayName>
+      <Skratka>507</Skratka>
+      <Popis>rádiologický asistent manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775478</codeValue>
+      <displayName>verejný zdravotník manažér</displayName>
+      <Skratka>508</Skratka>
+      <Popis>verejný zdravotník manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775486</codeValue>
+      <displayName>zdravotnícky laborant manažér</displayName>
+      <Skratka>509</Skratka>
+      <Popis>zdravotnícky laborant manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775494</codeValue>
+      <displayName>zdravotnícky záchranár manažér</displayName>
+      <Skratka>510</Skratka>
+      <Popis>zdravotnícky záchranár manažér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775502</codeValue>
+      <displayName>klinický psychofyziológ</displayName>
+      <Skratka>525</Skratka>
+      <Popis>klinický psychofyziológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775510</codeValue>
+      <displayName>dopravný psychológ</displayName>
+      <Skratka>580</Skratka>
+      <Popis>dopravný psychológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089551622</codeValue>
+      <displayName>farmaceut</displayName>
+      <Skratka>803</Skratka>
+      <Popis>farmaceut</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775528</codeValue>
+      <displayName>dipl. s.</displayName>
+      <Skratka>805</Skratka>
+      <Popis>dipl. s.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775536</codeValue>
+      <displayName>dipl. p. a.</displayName>
+      <Skratka>807</Skratka>
+      <Popis>dipl. p. a.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775544</codeValue>
+      <displayName>laborant pre laboratórne vyšetrovacie metódy</displayName>
+      <Skratka>808</Skratka>
+      <Popis>laborant pre laboratórne vyšetrovacie metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775551</codeValue>
+      <displayName>diplomovaný medicínsko-technický laborant</displayName>
+      <Skratka>809</Skratka>
+      <Popis>diplomovaný medicínsko-technický laborant</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775569</codeValue>
+      <displayName>zdravotnícky laborant</displayName>
+      <Skratka>810</Skratka>
+      <Popis>zdravotnícky laborant</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775577</codeValue>
+      <displayName>farmaceutický laborant</displayName>
+      <Skratka>811</Skratka>
+      <Popis>farmaceutický laborant</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775585</codeValue>
+      <displayName>verejný zdravotník</displayName>
+      <Skratka>812</Skratka>
+      <Popis>verejný zdravotník</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775593</codeValue>
+      <displayName>diplomovaný asistent hygieny a epidemiológie</displayName>
+      <Skratka>813</Skratka>
+      <Popis>diplomovaný asistent hygieny a epidemiológie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775601</codeValue>
+      <displayName>diplomovaný rádiologický asistent</displayName>
+      <Skratka>814</Skratka>
+      <Popis>diplomovaný rádiologický asistent</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775619</codeValue>
+      <displayName>zdravotnícky záchranár</displayName>
+      <Skratka>815</Skratka>
+      <Popis>zdravotnícky záchranár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775627</codeValue>
+      <displayName>diplomovaná dentálna hygienička</displayName>
+      <Skratka>816</Skratka>
+      <Popis>diplomovaná dentálna hygienička</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775635</codeValue>
+      <displayName>asistent výživy</displayName>
+      <Skratka>817</Skratka>
+      <Popis>asistent výživy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775643</codeValue>
+      <displayName>masér</displayName>
+      <Skratka>818</Skratka>
+      <Popis>masér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775650</codeValue>
+      <displayName>zdravotnícky asistent</displayName>
+      <Skratka>819</Skratka>
+      <Popis>zdravotnícky asistent</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775668</codeValue>
+      <displayName>sanitár</displayName>
+      <Skratka>821</Skratka>
+      <Popis>sanitár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775676</codeValue>
+      <displayName>diplomovaný optometrista</displayName>
+      <Skratka>822</Skratka>
+      <Popis>diplomovaný optometrista</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775684</codeValue>
+      <displayName>dipl. z. t.</displayName>
+      <Skratka>823</Skratka>
+      <Popis>dipl. z. t.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775692</codeValue>
+      <displayName>očný optik</displayName>
+      <Skratka>824</Skratka>
+      <Popis>očný optik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775700</codeValue>
+      <displayName>zubný technik</displayName>
+      <Skratka>825</Skratka>
+      <Popis>zubný technik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775718</codeValue>
+      <displayName>ortopedický technik</displayName>
+      <Skratka>826</Skratka>
+      <Popis>ortopedický technik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775726</codeValue>
+      <displayName>logopéd</displayName>
+      <Skratka>828</Skratka>
+      <Popis>logopéd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775734</codeValue>
+      <displayName>psychológ</displayName>
+      <Skratka>829</Skratka>
+      <Popis>psychológ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775742</codeValue>
+      <displayName>liečebný pedagóg</displayName>
+      <Skratka>830</Skratka>
+      <Popis>liečebný pedagóg</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775759</codeValue>
+      <displayName>fyzioterapeut</displayName>
+      <Skratka>844</Skratka>
+      <Popis>fyzioterapeut</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775767</codeValue>
+      <displayName>dipl. f.</displayName>
+      <Skratka>846</Skratka>
+      <Popis>dipl. f.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775775</codeValue>
+      <displayName>dipl. mt. l.</displayName>
+      <Skratka>901</Skratka>
+      <Popis>dipl. mt. l.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775783</codeValue>
+      <displayName>dipl. a. h. e.</displayName>
+      <Skratka>902</Skratka>
+      <Popis>dipl. a. h. e.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775791</codeValue>
+      <displayName>dipl. r. a.</displayName>
+      <Skratka>903</Skratka>
+      <Popis>dipl. r. a.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775809</codeValue>
+      <displayName>dipl. z. z.</displayName>
+      <Skratka>904</Skratka>
+      <Popis>dipl. z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775817</codeValue>
+      <displayName>dipl. d. h.</displayName>
+      <Skratka>905</Skratka>
+      <Popis>dipl. d. h.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775825</codeValue>
+      <displayName>dipl. o.</displayName>
+      <Skratka>906</Skratka>
+      <Popis>dipl. o.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775833</codeValue>
+      <displayName>špecialista</displayName>
+      <Skratka>910</Skratka>
+      <Popis>špecialista</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775841</codeValue>
+      <displayName>špecialistka</displayName>
+      <Skratka>911</Skratka>
+      <Popis>špecialistka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775858</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "klinická imunológia a alergiológia"</displayName>
+      <Skratka>912</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "klinická imunológia a alergiológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775866</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "algeziológia"</displayName>
+      <Skratka>913</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "algeziológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775874</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "angiológia"</displayName>
+      <Skratka>914</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "angiológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775882</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "letecké lekárstvo"</displayName>
+      <Skratka>915</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "letecké lekárstvo"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775890</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "hepatológia"</displayName>
+      <Skratka>916</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "hepatológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775908</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "verejné zdravotníctvo"</displayName>
+      <Skratka>917</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "verejné zdravotníctvo"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775916</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "andrológia"</displayName>
+      <Skratka>918</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "andrológia"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775924</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "revízne lekárstvo"</displayName>
+      <Skratka>919</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "revízne lekárstvo"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775932</codeValue>
+      <displayName>všeobecný lekár pre dospelých</displayName>
+      <Skratka>920</Skratka>
+      <Popis>všeobecný lekár pre dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775940</codeValue>
+      <displayName>špecialistka/špecialista vo výchove k zdraviu</displayName>
+      <Skratka>921</Skratka>
+      <Popis>špecialistka/špecialista vo výchove k zdraviu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775957</codeValue>
+      <displayName>špecialistka vo výchove k zdraviu</displayName>
+      <Skratka>922</Skratka>
+      <Popis>špecialistka vo výchove k zdraviu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775965</codeValue>
+      <displayName>špecialistka v zdravotníckej informatike</displayName>
+      <Skratka>923</Skratka>
+      <Popis>špecialistka v zdravotníckej informatike</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775973</codeValue>
+      <displayName>operátor operačného strediska záchrannej zdravotnej služby</displayName>
+      <Skratka>924</Skratka>
+      <Popis>operátor operačného strediska záchrannej zdravotnej služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000775981</codeValue>
+      <displayName>lekár so špecializáciou v špecializačnom odbore "detská tuberkulóza a respiračné choroby"</displayName>
+      <Skratka>925</Skratka>
+      <Popis>lekár so špecializáciou v špecializačnom odbore "detská tuberkulóza a respiračné choroby"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208873158</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>444</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

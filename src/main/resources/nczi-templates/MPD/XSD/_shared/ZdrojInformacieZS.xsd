@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Mnozstvo.xsd" />
+  <xs:include schemaLocation="VstupyPreZnalostnySystem.xsd" />
+  <xs:include schemaLocation="MPD_IdCiselniky.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="ZdrojInformacieZS" type="ZdrojInformacieZS" />
+  <xs:complexType name="ZdrojInformacieZS" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Zdroj informácie znalostného systému. 
+
+Každé varovanie má aspoň jeden zdroj z ktorého vychádza. Napríklad varovanie o kontraindikácii má zdroje v liekoch a diagnózach - vzniká medzi liekom a diagnózou. 
+
+Tu sú obsiahnuté údaje jednotlivých zdrojov daného varovania. Každý zdroj má určený typ a ďalšie údaje, na základe ktorých ho je možné identifikovať.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Zdroj_LatkaZS" type="Zdroj_LatkaZS" />
+  <xs:complexType name="Zdroj_LatkaZS">
+    <xs:annotation>
+      <xs:documentation>Identifikácia lieku / liečiva, ktoré je príčinou (jednou z príčin) na varovanie. Okrem látky uvedieme aj v ktorých z kontrolovaných liekov sa nachádza.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ZdrojInformacieZS">
+        <xs:sequence>
+          <xs:element name="ATC" type="IdPolozkaCiselnikaATC" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor ATC liečiv z číselníka ATC klasifikácie, ktoré vstúpia do kontroly.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CestaPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Hodnota z číselníka liekových foriem.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="INN" type="IdPolozkaCiselnikaINN" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor ATC liečiv z číselníka ATC klasifikácie, ktoré vstúpia do kontroly.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LiekovaFormaLieciva" type="IdPolozkaCiselnikaLiekovaForma" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Hodnota z číselníka liekových foriem.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NachadzaSaV" type="NachadzaSaV" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NachadzaSaV" type="NachadzaSaV" />
+  <xs:complexType name="NachadzaSaV">
+    <xs:annotation>
+      <xs:documentation>V ktorých liekoch a liečivách sa látka nachádza.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdMedikacnehoZaznamu" type="rm:II" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je medzi užívanými liekmi, tak ponúkneme id Medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReceptu" type="rm:II" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je liek na nevyzdvihnutom recepte, tak ponúkneme údaje pre zobrazenie tohto receptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Liek" type="LiekPreZnalostnySystem" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje lieku zo vstupu služby, ktorý je zdrojom znalostnej informácie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Liecivo" type="LiecivoPreZnalostnySystem" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje liečiva zo vstupu služby, ktorý je zdrojom znalostnej informácie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FarmSurovina" type="FarmaceutickaSurovinaPreZnalostnySystem" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje farmaceutickej suroviny zo vstupu služby, ktorý je zdrojom znalostnej informácie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MagistraLiter" type="MagistraLiterPreZnalostnySystem" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje magistraliter prípravku zo vstupu služby, ktorý je zdrojom znalostnej informácie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypZdroja" type="TypZdroja" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Zdroj_Alergen" type="Zdroj_Alergen" />
+  <xs:complexType name="Zdroj_Alergen">
+    <xs:complexContent>
+      <xs:extension base="ZdrojInformacieZS">
+        <xs:sequence>
+          <xs:element name="ATC" type="IdPolozkaCiselnikaATC" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor ATC liečiv z číselníka ATC klasifikácie, ktoré vstúpia do kontroly.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NachadzaSaV" type="NachadzaSaV" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Zdroj_StavPacienta" type="Zdroj_StavPacienta" />
+  <xs:complexType name="Zdroj_StavPacienta">
+    <xs:complexContent>
+      <xs:extension base="ZdrojInformacieZS">
+        <xs:sequence>
+          <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Diagnóza zo vstupu, pre ktorú je daná kontraindikácia platná.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Dojcenie" type="xs:boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Informácia, či je daná kontraindikácia pre dojčiace matky.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Tehotenstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Časový údaj o gravidite pacienta. Je vyplnené ak je tento stav platný pre kontraindikáciu.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Hmotnost" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Pohlavie" type="IdPolozkaCiselnikaSex" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Pohlavie, pre ktoré je daná kontraindikácia alebo upozorenenie platné.
+
+Príklad:
+Nepodávať mužom.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Vek" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TypZdroja">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Vstup">
+        <xs:annotation>
+          <xs:documentation>Nachádza sa medzi vstupmi služby</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Predpisany">
+        <xs:annotation>
+          <xs:documentation>Nachádza sa medzi predpísanými zatiaľ nevybranými liekmi (Preskripčný záznam).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Uzivany">
+        <xs:annotation>
+          <xs:documentation>Nachádza sa medzi užívanými liekmi (Medikačný záznam).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

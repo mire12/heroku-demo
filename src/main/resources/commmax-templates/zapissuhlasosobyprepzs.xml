@@ -1,0 +1,49 @@
+<eHtalkMessage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header xmlns="http://eHealth.gov.sk/eHtalkMessage">
+    <MessageInfo>
+      <Class>ZapisSuhlasOsobyPrePZS</Class>
+      <MessageID>00d89471-b0cb-4800-bb68-bb96039844a4</MessageID>
+      <CorrelationID>00d89471-b0cb-4800-bb68-bb96039844a4</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>1</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <ZapisSuhlasu xmlns="http://eHealth.gov.sk/SpravaSuhlasov/v1">
+        <Citlivost>1</Citlivost>
+        <PlatnyDo>2019-01-28T16:00:00+02:00</PlatnyDo>
+        <PlatnyOd>2019-01-28T15:00:00+02:00</PlatnyOd>
+        <Poznamka>Test - ZapisSuhlasOsobyPrePZS</Poznamka>
+        <PodpisanaDohoda>true</PodpisanaDohoda>
+        <TypSuhlasu>O</TypSuhlasu>
+        <PovolenyPristup>
+          <TypStrankyEZK>PSU</TypStrankyEZK>
+        </PovolenyPristup>
+        <SeidPacienta>%PACIENT%</SeidPacienta>
+        <Subjekt>
+          <SeidSubjektu>%IDZP%</SeidSubjektu>
+          <TypOidSubjektu>1.3.158.00165387.100.40.90</TypOidSubjektu>
+        </Subjekt>
+      </ZapisSuhlasu>
+    </Data>
+    <Result>
+      <Code>0</Code>
+    </Result>
+  </Body>
+</eHtalkMessage>

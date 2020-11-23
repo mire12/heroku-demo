@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Mnozstvo.xsd" />
+  <xs:include schemaLocation="Davkovanie.xsd" />
+  <xs:include schemaLocation="MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="MPD_Identifikatory.xsd" />
+  <xs:element name="LiekPreZnalostnySystem" type="LiekPreZnalostnySystem" />
+  <xs:element name="LiecivoPreZnalostnySystem" type="LiecivoPreZnalostnySystem" />
+  <xs:element name="FarmaceutickaSurovinaPreZnalostnySystem" type="FarmaceutickaSurovinaPreZnalostnySystem" />
+  <xs:element name="MagistraLiterPreZnalostnySystem" type="MagistraLiterPreZnalostnySystem" />
+  <xs:element name="StavPacienta" type="StavPacienta" />
+  <xs:complexType name="LiekPreZnalostnySystem">
+    <xs:annotation>
+      <xs:documentation>
+        Identifikuje liek ktorý sa má kontrolovať znalostným systémom.
+        Pri lieku je daná lieková forma aj cesta podania.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikatorLieku" type="IdLiek" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Identifikátor liekov, ktoré vstúpia do kontroly.
+            Liekov môže byť viac, napr.
+
+            - lekár chce predpísať viacero liekov a skontroluje ich naraz,
+            - lekár pridá aj liek z už neaktívneho medikačného záznamu
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZaciatokMedikacie" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum od ktorého sa má liek užívať. Ak nie je zadaný, tak v oboch prípadoch predpokladáme, že je zhodný s dátumom dispenzácie. Pri kontrole znalostným systémom použijeme dnešný dátum (dátum v ktorý je kontrola volaná).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DavkovanieLieku" type="DavkovaciaSchema" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Dávkovanie doplňujúceho lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LiecivoPreZnalostnySystem">
+    <xs:annotation>
+      <xs:documentation>
+        Identifikuje liečivo ktoré sa má kontrolovať znalostným systémom.
+        Môžeme ale nemusíme zadať cestu podania, liekovú formu.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CestaPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Hodnota z číselníka spôsobov podania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikatorLieciva" type="IdPolozkaCiselnikaATC" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor ATC liečiv z číselníka ATC klasifikácie, ktoré vstúpia do kontroly.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LiekovaFormaLieciva" type="IdPolozkaCiselnikaLiekovaForma" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Hodnota z číselníka liekových foriem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZaciatokMedikacie" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum od ktorého sa má liek užívať. Ak nie je zadaný, tak v oboch prípadoch predpokladáme, že je zhodný s dátumom dispenzácie. Pri kontrole znalostným systémom použijeme dnešný dátum (dátum v ktorý je kontrola volaná).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DavkovanieLieciva" type="DavkovaciaSchema" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Dávkovanie doplňujúceho liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SilaLieku" type="SilaLieku" minOccurs="0" maxOccurs="unbounded">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SilaLieku">
+    <xs:sequence>
+      <xs:element name="SilaLieciva" type="Mnozstvo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Sila liečiva (vzhľadom na JednotkovuDavku). Relevantné len pre overenie bezpečnostných limitov dávkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JednotkovaDavka" type="Mnozstvo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Jednotková dávka vzhľadom na ktorú sa uvádza množstvo liečiva (napríklad 500mg / 1 tbl alebo 5mg / 100 ml). Relevantné len pre overenie bezpečnostných limitov dávkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FarmaceutickaSurovinaPreZnalostnySystem">
+    <xs:annotation>
+      <xs:documentation>Identifikuje farmaceutickú surovinu ktorá sa má kontrolovať znalostným systémom.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CelkoveMnozstvoIPL" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Celkové množstvo IPL v ktorom sa farmaceutická surovina nachádza (napríklad 40 tabliek, 50ml, ...). Potrebné pre vyhodnotenie bezpečnostných limitov dávkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FarmaceutickaSurovina" type="IdPolozkaCiselnikaFarmaceutickaSurovina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor farmaceutickej suroviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MnozstvoSurovinyVIPL" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Množstvo farmaceutickej suroviny v celkovom množstve IPL (napríklad 5mg, ...). Potrebné pre vyhodnotenie bezpečnostných limitov dávkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZaciatokMedikacie" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum od ktorého sa má liek užívať. Ak nie je zadaný, tak v oboch prípadoch predpokladáme, že je zhodný s dátumom dispenzácie. Pri kontrole znalostným systémom použijeme dnešný dátum (dátum v ktorý je kontrola volaná).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DavkovanieFarmSurovina" type="DavkovaciaSchema" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MagistraLiterPreZnalostnySystem">
+    <xs:annotation>
+      <xs:documentation>Identifikuje magistra liter prípravok ktorý sa má kontrolovať znalostným systémom.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MagistraLiter" type="IdMagistraliter" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor MagistraLiter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZaciatokMedikacie" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum od ktorého sa má liek užívať. Ak nie je zadaný, tak v oboch prípadoch predpokladáme, že je zhodný s dátumom dispenzácie. Pri kontrole znalostným systémom použijeme dnešný dátum (dátum v ktorý je kontrola volaná).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DavkovanieMagistraliter" type="DavkovaciaSchema" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StavPacienta">
+    <xs:sequence>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            Množina diagnóz, ktoré budú vstupovať do kontroly znalostným systémom.
+            Ak je zadaný aj PrZS, tak sa k diagnózam zaznamenaným v pacientskom sumáre pridajú diagnózy zadané na vstupe.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Dojcenie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Príznak, či PrZS dojčí. Ak bol identifikovaný PrZS, tak dojčenie z jeho údajov sa ignoruje a použije sa tu zadaná hodnota.
+            true - dojči
+            false - nedojči alebo nevieme
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Hmotnost" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Hmotnosť v kg. Ak bol identifikovaný PrZS, tak hmotnosť z jeho údajov sa ignoruje a použije sa tu zadaná hodnota.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pohlavie" type="IdPolozkaCiselnikaSex" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Pohlavie, ktoré bude použité na kontrolu znalostným systémom. Ak bol identifikovaný PrZS, tak pohlavie z jeho údajov sa ignoruje a použije sa tu zadaná hodnota. Udáva sa položka z číselníka pohlaví.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Tehotenstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Ak nie je vyplnené, tak PrZS nie je tehotná.
+            Ak je vyplnené, tak hovorí o mesiaci/dni v ktorom tehotná je. Využije sa napr. ak je liek kontraindikovaný v prvých 3 mesiacoch tehotenstva.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vek" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vek PrZS. Ak bol identifikovaný PrZS, tak vek z jeho údajov sa ignoruje a použije sa tu zadaná hodnota.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

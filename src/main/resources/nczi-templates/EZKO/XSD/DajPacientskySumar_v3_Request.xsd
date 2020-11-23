@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd"/>
+  <xs:element name="IdentifikatorPacienta_v3" type="tns:IdentifikatorPacienta_v3" />
+  <xs:complexType name="IdentifikatorPacienta_v3">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" xmlns:q58="http://eHealth.gov.sk/EzkCommon/v1" type="q58:IdPrjZS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastPorodnickaAnamneza" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastZdravotneProblemyZavazneDiagnozy" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastZdravProblemZdravotnePomocky" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastLiekovaAnamneza" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastVarovaniaAlergie" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastVarovaniaNeziaduceUcinkyOckovani" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastVysledkyVysetreniKrvnaSkupina" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastVysledkyVysetreniKrvnyTlak" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastVysledkyVysetreniVitalneHodnoty" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastSocialnaAnamnezaAbuzus" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastOsobnaAnamnezaOckovaciZaznam" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastOsobnaAnamnezaZdravotneObmedzenia" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastOsobnaAnamnezaChirurgickeVykony" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastOsobnaAnamnezaTerapeutickeOdporucanie" type="tns:PatientSummaryRegionData" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OblastZdravProblemRestrikcia" type="tns:PatientSummaryRegionData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientSummaryRegionData" type="tns:PatientSummaryRegionData" />
+  <xs:complexType name="PatientSummaryRegionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Strankovanie" xmlns:q55="http://eHealth.gov.sk/EzkCommon/v1" type="q55:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AjZruseneZaznamy" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Radenie" xmlns:q56="http://eHealth.gov.sk/EzkCommon/v1" type="q56:Radenie" />
+    </xs:sequence>
+  </xs:complexType>   
+</xs:schema>

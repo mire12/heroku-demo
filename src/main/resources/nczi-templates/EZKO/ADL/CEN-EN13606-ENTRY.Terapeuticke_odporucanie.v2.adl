@@ -1,0 +1,109 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Terapeuticke_odporucanie.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Terapeutické odporúčanie pre pacienta.">
+            keywords = <"Terapeutické odporúčanie">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Terapeutické odporúčanie
+        items existence matches {0..1} cardinality matches {1..2; ordered} matches {
+            ELEMENT[at0241] occurrences matches {1..1} matches {  -- Popis
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0118] occurrences matches {1..1} matches {  -- 
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0012] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0015] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0063] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {1..1} matches {"STRC01"}
+                codingSchemeName existence matches {1..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0001] occurrences matches {1..1} matches {  -- II
+                root existence matches {1..1} matches {
+                    OID[at0002] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.70"}
+                    }
+                }
+                extension existence matches {1..1} matches {*}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Terapeutické odporúčanie">
+                    description = <"Terapeutické odporúčanie obsahuje odporúčanie, týkajúce sa nefarmakologickej liečby.">
+                >
+                ["at0012"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka lekára k terapeutickému odporúčaniu. Poznámka je popísaná voľným textom.">
+                >
+                ["at0015"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0118"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0241"] = <
+                    text = <"Popis">
+                    description = <"Popis terapeutického odporúčania. Terapeutické odporúčanie je popísané voľným textom.">
+                >
+                ["at0063"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0002"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+            >
+        >
+    >

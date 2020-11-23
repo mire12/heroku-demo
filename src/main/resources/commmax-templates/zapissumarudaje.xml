@@ -1,0 +1,174 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>ZapisPacientskehoSumaruKontaktneUdaje_v3</Class>
+      <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</MessageID>
+      <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>4</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <KontaktneUdajePacientskehoSumaraVstup_v3 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Data>
+<SDSEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/SDS/v2">
+  <RandomData>uGRcqA==</RandomData>
+  <IdPrzs>%IDZP%</IdPrzs>
+  <Data>
+    <PacientskySumarKontaktneUdajeZapisPlain xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1">
+      <InformacieOPacientovi_v3>
+        <AdresaPacienta>
+          <Ulica>Mladeznicka</Ulica>
+          <CisloPopisne>91</CisloPopisne>
+          <UzemnospravnaJednotka>
+            <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+              <codingScheme xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.10.43</oid>
+              </codingScheme>
+              <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+              <codeValue xmlns="CEN/13606/RM">00000116053</codeValue>
+              <displayName xmlns="CEN/13606/RM">Bratislavský kraj</displayName>
+            </IdPolozkaCiselnika>
+          </UzemnospravnaJednotka>
+          <PSC>
+            <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+              <codingScheme xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.10.150</oid>
+              </codingScheme>
+              <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+              <codeValue xmlns="CEN/13606/RM">00000116954</codeValue>
+              <displayName xmlns="CEN/13606/RM">841 01</displayName>
+            </IdPolozkaCiselnika>
+          </PSC>
+          <Mesto>
+            <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+              <codingScheme xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.10.45</oid>
+              </codingScheme>
+              <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+              <codeValue xmlns="CEN/13606/RM">00020000212</codeValue>
+              <displayName xmlns="CEN/13606/RM">Bratislava-Staré Mesto</displayName>
+            </IdPolozkaCiselnika>
+          </Mesto>
+          <Krajina>
+            <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+              <codingScheme xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.10.51</oid>
+              </codingScheme>
+              <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+              <codeValue xmlns="CEN/13606/RM">00000115659</codeValue>
+              <displayName xmlns="CEN/13606/RM">Slovensko</displayName>
+            </IdPolozkaCiselnika>
+          </Krajina>
+        </AdresaPacienta>
+
+        <Poznamka>Poznámka</Poznamka>
+
+        <TelefonPacienta>0908 155 531</TelefonPacienta>
+        <EmailPacienta>pacient@slovensko.sk</EmailPacienta>
+      </InformacieOPacientovi_v3>
+
+      <KontaktneOsoby_v3>
+        <KontaktnaOsoba_v3 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <Poznamka>poznamka</Poznamka>
+
+          <TypKontaktu>
+            <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+              <codingScheme xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.10.54</oid>
+              </codingScheme>
+              <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+              <codeValue xmlns="CEN/13606/RM">00000116137</codeValue>
+              <displayName xmlns="CEN/13606/RM">manžel, manželka</displayName>
+            </IdPolozkaCiselnika>
+          </TypKontaktu>
+
+          <Meno>
+            <KrstneMeno>Pavol</KrstneMeno>
+            <Priezvisko>Horný</Priezvisko>
+          </Meno>
+
+          <Telefon>00 421 48 8945 148</Telefon>
+          <Email>test@test.sk</Email>
+        </KontaktnaOsoba_v3>
+    
+      </KontaktneOsoby_v3>
+    </PacientskySumarKontaktneUdajeZapisPlain>
+  </Data>
+</SDSEnvelope>
+          </Data>
+        <IdPacienta>
+          <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
+          <root xmlns="CEN/13606/RM">
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </IdPacienta>
+        <PreferovaniPracovniciZdravotnejStarostlivosti>
+          <PreferovanyPracovnikZdravotnejStarostlivosti>
+            <MenoAPriezvisko>
+              <KrstneMeno>Pavol</KrstneMeno>
+              <Priezvisko>Mihalov</Priezvisko>
+            </MenoAPriezvisko>
+            <Adresa>
+              <Ulica>Stupavská</Ulica>
+              <CisloPopisne>22</CisloPopisne>
+              <PSC>
+                <codingScheme xmlns="CEN/13606/RM">
+                  <oid>1.3.158.00165387.100.10.150</oid>
+                </codingScheme>
+                <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+                <codeValue xmlns="CEN/13606/RM">00000116954</codeValue>
+                <displayName xmlns="CEN/13606/RM">841 01</displayName>
+              </PSC>
+              <Mesto>
+                <codingScheme xmlns="CEN/13606/RM">
+                  <oid>1.3.158.00165387.100.10.45</oid>
+                </codingScheme>
+                <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+                <codeValue xmlns="CEN/13606/RM">00020000212</codeValue>
+                <displayName xmlns="CEN/13606/RM">Bratislava-Staré Mesto</displayName>
+              </Mesto>
+              <Krajina>
+                <codingScheme xmlns="CEN/13606/RM">
+                  <oid>1.3.158.00165387.100.10.51</oid>
+                </codingScheme>
+                <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+                <codeValue xmlns="CEN/13606/RM">00000115659</codeValue>
+                <displayName xmlns="CEN/13606/RM">Slovensko</displayName>
+              </Krajina>
+            </Adresa>
+            <Telefon>0915667211</Telefon>
+            <Poznamka>MUDr. Pavol Mihalov, Všeobecný lekár pre dospelých</Poznamka>
+            <Email>pavol.mihalov@yahoo.com</Email>
+            <IdPracovnika>
+              <extension xmlns="CEN/13606/RM">%IDZP%</extension>
+              <root xmlns="CEN/13606/RM">
+                <oid>1.3.158.00165387.100.40.90</oid>
+              </root>
+            </IdPracovnika>
+          </PreferovanyPracovnikZdravotnejStarostlivosti>
+        </PreferovaniPracovniciZdravotnejStarostlivosti>
+      </KontaktneUdajePacientskehoSumaraVstup_v3>
+    </Data>
+    <Result>
+      <Code>0</Code>
+	  <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

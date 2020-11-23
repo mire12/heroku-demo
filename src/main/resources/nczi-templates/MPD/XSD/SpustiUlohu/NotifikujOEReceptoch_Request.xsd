@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:element name="NotifikujOEReceptochVstup" type="NotifikujOEReceptochVstup" />
+  <xs:complexType name="NotifikujOEReceptochVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné parametre pre službu 'NotifikujOEReceptoch'.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Notifikácia o elektronických receptoch, ktoré skončia v tomto dátume.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

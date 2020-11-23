@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd" />
+  <xs:element name="ZoznamIdentifikatorZaznamu" type="tns:ZoznamIdentifikatorZaznamu" />
+  <xs:complexType name="ZoznamIdentifikatorZaznamu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ZoznamIdentifikatorovZaznamu" type="tns:ArrayOfIdentifikatorZaznamu" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfIdentifikatorZaznamu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentifikatorZaznamu" nillable="true" type="tns:IdentifikatorZaznamu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentifikatorZaznamu" type="tns:IdentifikatorZaznamu" />
+  <xs:complexType name="IdentifikatorZaznamu">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="InternalRecordId" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Rc_Id" xmlns:q22="CEN/13606/RM" type="q22:II" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

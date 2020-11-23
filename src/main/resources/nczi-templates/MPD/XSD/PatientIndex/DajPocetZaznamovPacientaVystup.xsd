@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DajPocetZaznamovPacientaVystup" targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:element name="DajPocetZaznamovPacientaVystup" nillable="true" type="DajPocetZaznamovPacientaVystup" />
+
+  <xs:complexType name="DajPocetZaznamovPacientaVystup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="10" name="PocetZaznamovPacienta" type="PocetZaznamovPacienta" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="PocetZaznamovPacienta">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CelkovyPocetZaznamov" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumZapisaniaPoslednehoZaznamu" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumZapisaniaPrvehoZaznamu" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TypZaznamu" type="TypZaznamu" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="TypZaznamu" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DispenzacnyZaznam" />
+      <xs:enumeration value="LaboratornaZiadanka" />
+      <xs:enumeration value="LaboratornyVysledok" />
+      <xs:enumeration value="LekarskaPrepustaciaSprava" />
+      <xs:enumeration value="MedikacnyZaznam" />
+      <xs:enumeration value="AmbulantnaLekarskaSprava" />
+      <xs:enumeration value="OdporucanieAmbulantnaZS" />
+      <xs:enumeration value="OdporucanieZS" />
+      <xs:enumeration value="PreskripcnyZaznam" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

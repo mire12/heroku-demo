@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:element name="StornujEReceptVystup" type="StornujEReceptVystup" />
+  <xs:complexType name="StornujEReceptVystup">
+    <xs:annotation>
+      <xs:documentation>NZIS overí či môže byť recept stornovaný. Ak áno, tak recept stornuje a túto informáciu vráti. Ak nie tak tak vráti dôvod prečo nemohol byť recept stornovaný.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StornovanieUspesne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o úspechu alebo neúspechu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

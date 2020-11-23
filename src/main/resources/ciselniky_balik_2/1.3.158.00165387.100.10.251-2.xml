@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Spôsob platby</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.251</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020806006</codeValue>
+      <displayName>Hotovosť</displayName>
+      <Skratka>Hotovosť</Skratka>
+      <Popis>Je možné zaplatiť v hotovosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020806022</codeValue>
+      <displayName>Platba kartou</displayName>
+      <Skratka>Karta</Skratka>
+      <Popis>Je možné zaplatiť platobnou kartou</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020806048</codeValue>
+      <displayName>Dobierka pri dodaní</displayName>
+      <Skratka>Dobierka</Skratka>
+      <Popis>Je možné zaplatiť pri dodaní tovaru formou dobierky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020806055</codeValue>
+      <displayName>Bankový prevod</displayName>
+      <Skratka>Prevod</Skratka>
+      <Popis>Je možná platba bankovým prevodom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020806063</codeValue>
+      <displayName>Mobilná platba</displayName>
+      <Skratka>Mobil</Skratka>
+      <Popis>Je možná platba mobilným prevodom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208873257</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

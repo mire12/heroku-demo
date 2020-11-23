@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+  <xs:element name="VyhladajZaznamyEzkTlacResponse" type="tns:VyhladajZaznamyEzkTlacResponse" />
+  <xs:complexType name="VyhladajZaznamyEzkTlacResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DataPreTlac" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="XmlTransformacia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MapaPreDesifrovanie" type="tns:ArrayOfMapaPreDesifrovanie" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfMapaPreDesifrovanie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MapaPreDesifrovanie" nillable="true" type="tns:MapaPreDesifrovanie" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="MapaPreDesifrovanie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="XPathZasifrovaneData" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="XPathPreDesifrovaneData" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

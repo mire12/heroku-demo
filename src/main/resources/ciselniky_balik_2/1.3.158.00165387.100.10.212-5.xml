@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Trieda zdravotníckej pomôcky</codingSchemeName>
+    <codingSchemeVersion>5</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-09-23</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.212</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-09-12</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020107546</codeValue>
+      <displayName>Neurčené</displayName>
+      <Skratka>?</Skratka>
+      <Popis>Neurčené</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107553</codeValue>
+      <displayName>ZP trieda I</displayName>
+      <Skratka>I</Skratka>
+      <Popis>ZP trieda I</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107561</codeValue>
+      <displayName>ZP trieda IIa</displayName>
+      <Skratka>IIa</Skratka>
+      <Popis>ZP trieda IIa</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107579</codeValue>
+      <displayName>ZP trieda IIb</displayName>
+      <Skratka>IIb</Skratka>
+      <Popis>ZP trieda IIb</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107587</codeValue>
+      <displayName>ZP trieda III</displayName>
+      <Skratka>III</Skratka>
+      <Popis>ZP trieda III</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673764</codeValue>
+      <displayName>AIZP</displayName>
+      <Skratka>AIZP</Skratka>
+      <Popis>AIZP</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107603</codeValue>
+      <displayName>IVD ostatné</displayName>
+      <Skratka>IVD</Skratka>
+      <Popis>IVD ostatné</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107611</codeValue>
+      <displayName>IVD na samotestovanie</displayName>
+      <Skratka>IVDs</Skratka>
+      <Popis>IVD na samotestovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673772</codeValue>
+      <displayName>IVD na hodnotenie výkonu</displayName>
+      <Skratka>IVDv</Skratka>
+      <Popis>IVD na hodnotenie výkonu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107637</codeValue>
+      <displayName>IVD príloha 2 zoznam A</displayName>
+      <Skratka>IVD2A</Skratka>
+      <Popis>IVD príloha 2 zoznam A</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107645</codeValue>
+      <displayName>IVD príloha 2 zoznam B</displayName>
+      <Skratka>IVD2B</Skratka>
+      <Popis>IVD príloha 2 zoznam B</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859405</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>---</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

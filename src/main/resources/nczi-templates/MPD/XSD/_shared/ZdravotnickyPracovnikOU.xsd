@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="MPD_Identifikatory.xsd" />
+  <xs:element name="ZdravotnickyPracovnikOU" type="ZdravotnickyPracovnikOU" />
+  <xs:complexType name="ZdravotnickyPracovnikOU">
+    <xs:annotation>
+      <xs:documentation>Archetyp slúži na prenášanie nevyhnutných identifikačných údajov o zdravotníckom pracovníkovi. Hlavné použitie je identifikácia lekára, ktorý spravil určitý úkon (predpísanie lieku, vytvorenie žiadanky o laboratórne vyšetrenie a podobne).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikácia odborného útvaru poskytovateľa zdravotnej starostlivosti z JRÚZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZPrac" type="IdZPr" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikácia zdravotníckeho pracovníka v JRÚZ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NezmluvnyLekar" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplňujúci atribút, ktorý sa použije na prenos informácie, že daný zdravotnícky pracovník - lekár, nemal pri svojom úkone zmluvný vzťah k poisťovni pacienta a teda, že tento úkon si bude hradiť pacient. Použije sa napríklad pri predpisovaní liekov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecializaciaLekara" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šprecializácia tohto lekára, pod ktoru prebehla operácia, ktorú daný lekár vykonával.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

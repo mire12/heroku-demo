@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Modalita zobrazovacieho vyšetrenia</codingSchemeName>
+    <codingSchemeVersion>1</codingSchemeVersion>
+    <DatumPoslednejZmeny>2020-01-21</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.256</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2020-02-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>02089890293</codeValue>
+      <displayName>Počítačová tomografia</displayName>
+      <Skratka>CT</Skratka>
+      <Popis>Počítačová tomografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890319</codeValue>
+      <displayName>Ultrasonografia</displayName>
+      <Skratka>USG</Skratka>
+      <Popis>Ultrasonografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890335</codeValue>
+      <displayName>Röntgenové vyšetrenie</displayName>
+      <Skratka>RTG</Skratka>
+      <Popis>Röntgenové vyšetrenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890350</codeValue>
+      <displayName>Pozitrónová emisná tomografia</displayName>
+      <Skratka>PET</Skratka>
+      <Popis>Pozitrónová emisná tomografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890376</codeValue>
+      <displayName>Nukleárna magnetická rezonancia</displayName>
+      <Skratka>NMR</Skratka>
+      <Popis>Nukleárna magnetická rezonancia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890392</codeValue>
+      <displayName>Magnetická rezonancia</displayName>
+      <Skratka>MRI</Skratka>
+      <Popis>Magnetická rezonancia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089890400</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>NEZ</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="ZapisKalendarRequest" type="tns:ZapisKalendarRequest" />
+
+  <xs:complexType name="ZapisKalendarRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="PlatnostKalendaraOd" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Začiatok platnosti kalendára, teda dátum od kedy je vyhľadateľný pre pacienta prostredníctvom NPZ.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="PlatnostKalendaraDo" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Koniec platnosti kalendára. Toto je posledný deň, kedy si pacient môže objednať objednávku pomocou tohto kalendára prostredníctvom služby NPZ.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="1" maxOccurs="1" name="PotvrditObjednavkuAutomaticky" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Príznak, či systém automaticky potvrdí objednávky na presný dátum a čas automaticky. Neovplyvňuje objednávky do fronty, tieto musia byť manuálne spracované ZPr.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="Poplatok" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Poplatok účtovaný jednotkou zdravotnej starostlivosti za objednávku, ak sa pacient objedná prostredníctvom tohto kalendára. Tieto informácie sa zobrazia pacientovi vo výsledku vyhľadávania predtým, ako urobí rezerváciu.)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="1" maxOccurs="1" name="JePotrebnyVymennyListok" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Príznak, či objednanie podľa tohoto kalendára vyžaduje výmenný lístok.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="1" maxOccurs="1" name="ZoznamVytvaranychIntervalov" nillable="true" type="tns:ArrayOfCasovyIntervalPreVytvorenie">
+            <xs:annotation>
+              <xs:documentation>Zoznam intervalov na vytvorenie.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="Nazov" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Názov kalendára.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Poznámka</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Externé ID kalendára pridelené v systéme IS PZS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="1" maxOccurs="1" name="ehr_system" xmlns:q16="CEN/13606/RM" type="q16:IIEhrSystem">
+            <xs:annotation>
+              <xs:documentation>Identifikácia systému PZS, v ktorom bol záznam vytvorený. Max 50 znakov. Kód tvorcovi IS PZS vydáva prevádzkovateľ riešenia po prijatí žiadosti tvorcu IS PZS na overenie zhody.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q12="CEN/13606/RM" type="q12:II">
+        <xs:annotation>
+          <xs:documentation>ID OU poskytovateľa zdravotnej starostlivosti (ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q13="CEN/13606/RM" type="q13:II">
+        <xs:annotation>
+          <xs:documentation>ID zdravotníckeho pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfCasovyIntervalPreVytvorenie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CasovyIntervalPreVytvorenie" nillable="true" type="tns:CasovyIntervalPreVytvorenie" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CasovyIntervalPreVytvorenie">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CasovyInterval" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CasovyInterval">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdKalendara" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Id kalendára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="IdIntervalu" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Interné ID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="DenVTyzdni" type="tns:DenVTyzdni">
+        <xs:annotation>
+          <xs:documentation>Deň v týždni. Položka z vymenovaného typu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="TypIntervalu" type="tns:TypCasovehoIntervalu">
+        <xs:annotation>
+            <xs:documentation>Typ intervalu v kalendári. Rozlišuje medzi ordinačnými a doplnkovými ordinačnými hodinami kalendára. Položka z vymenovaného typu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="DlzkaCasovehoSlotu" >
+        <xs:annotation>
+            <xs:documentation>Dĺžka časového slotu (v minútach)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="5"/>
+            <xs:maxInclusive value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="MaxObjednavokNaCasovySlot" >
+        <xs:annotation>
+          <xs:documentation>Maximálny počet objednávok za časový úsek.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Poznámka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DruhVysetrenia" type="tns:ArrayOfCV">
+        <xs:annotation>
+            <xs:documentation>Zoznam druh vyšetrení, ktoré v tomto slote poskytuje OÚ PZS. Odkaz do JRUZ číselníka 1.3.158.00165387.100.10.324.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="CasOd">
+        <xs:annotation>
+            <xs:documentation>Začiatok intervalu (čas).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="CasDo">
+        <xs:annotation>
+            <xs:documentation>Koniec intervalu (čas).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="DenVTyzdni">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pondelok" />
+      <xs:enumeration value="Utorok" />
+      <xs:enumeration value="Streda" />
+      <xs:enumeration value="Stvrtok" />
+      <xs:enumeration value="Piatok" />
+      <xs:enumeration value="Sobota" />
+      <xs:enumeration value="Nedela" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypCasovehoIntervalu">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtvaracieHodiny" />
+      <xs:enumeration value="OrdinacneHodiny" />
+      <xs:enumeration value="DoplnkoveOrdinacneHodiny" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ArrayOfCV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CV" nillable="true" xmlns:q11="CEN/13606/RM" type="q11:CV" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

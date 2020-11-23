@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ZrusNedostupnostResponse" type="tns:ZrusNedostupnostResponse" />
+  
+  <xs:complexType name="ZrusNedostupnostResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Nedostupnosti" type="tns:ArrayOfSpracovanaNedostupnost">
+        <xs:annotation>
+          <xs:documentation>Pole Nedostupností</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfSpracovanaNedostupnost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpracovanaNedostupnost" nillable="true" type="tns:SpracovanaNedostupnost" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpracovanaNedostupnost">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNedostupnosti" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Identifikátor nedostupnosti v ISOO.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externé ID pridelené IS PZS. Musí byť konzistentné s IdNedostupnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodChyby" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Návratový kód z volania webových služieb. Dostupný len pri chybe.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="PopisChyby" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Textový popis návratového kódu. Dostupný len pri chybe.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="DajNedostupnostRequest" type="tns:DajNedostupnostRequest" />
+
+  <xs:complexType name="DajNedostupnostRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestUna">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="DatumOd" nillable="true" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Začiatok intervalu, v ktorom sa hľadá nedostupnosť.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="DatumDo" nillable="true" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>Koniec intervalu, v ktorom sa hľadá nedostupnosť.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="IdNedostupnosti" nillable="true" type="xs:int">
+            <xs:annotation>
+              <xs:documentation>Interný identifikátor v ISOO.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequestUna">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q18="CEN/13606/RM" type="q18:II">
+        <xs:annotation>
+          <xs:documentation>ID Odborného Útvaru Poskytovateľa Zdravotnej Starostlivosti (OÚ PZS - ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q19="CEN/13606/RM" type="q19:II">
+        <xs:annotation>
+          <xs:documentation>ID Zdravotníckeho Pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,1345 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" targetNamespace="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:documentation>Číselníky vo formáte eHealth</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="MPD_OIDCiselniky.xsd" />
+  <xs:element name="IdPolozkaCiselnikaTypZainteresovanejOsoby" type="IdPolozkaCiselnikaTypZainteresovanejOsoby" />
+  <xs:complexType name="IdPolozkaCiselnikaTypZainteresovanejOsoby">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.63</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypZainteresovanejOsoby">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZdravotnyVykon" type="IdPolozkaCiselnikaZdravotnyVykon" />
+  <xs:complexType name="IdPolozkaCiselnikaZdravotnyVykon">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.149</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZdravotnyVykon">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDiagnoza" type="IdPolozkaCiselnikaDiagnoza" />
+  <xs:complexType name="IdPolozkaCiselnikaDiagnoza">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.25</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDiagnoza">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaAplikacnaFormaDP" type="IdPolozkaCiselnikaAplikacnaFormaDP" />
+  <xs:complexType name="IdPolozkaCiselnikaAplikacnaFormaDP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.145</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaAplikacnaFormaDP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaCountry" type="IdPolozkaCiselnikaCountry" />
+  <xs:complexType name="IdPolozkaCiselnikaCountry">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.51</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaCountry">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaIdentifierType" type="IdPolozkaCiselnikaIdentifierType" />
+  <xs:complexType name="IdPolozkaCiselnikaIdentifierType">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.53</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaIdentifierType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaLaboratornePolozky" type="IdPolozkaCiselnikaLaboratornePolozky" />
+  <xs:complexType name="IdPolozkaCiselnikaLaboratornePolozky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.52</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaLaboratornePolozky">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTelephoneType" type="IdPolozkaCiselnikaTelephoneType" />
+  <xs:complexType name="IdPolozkaCiselnikaTelephoneType">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.76</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTelephoneType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaRegion" type="IdPolozkaCiselnikaRegion" />
+  <xs:complexType name="IdPolozkaCiselnikaRegion">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.43</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaRegion">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaCounty" type="IdPolozkaCiselnikaCounty" />
+  <xs:complexType name="IdPolozkaCiselnikaCounty">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.44</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaCounty">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMunicipality" type="IdPolozkaCiselnikaMunicipality" />
+  <xs:complexType name="IdPolozkaCiselnikaMunicipality">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.45</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMunicipality">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPSC" type="IdPolozkaCiselnikaPSC" />
+  <xs:complexType name="IdPolozkaCiselnikaPSC">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.150</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPSC">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaLegalForm" type="IdPolozkaCiselnikaLegalForm" />
+  <xs:complexType name="IdPolozkaCiselnikaLegalForm">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.42</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaLegalForm">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMaritalStatus" type="IdPolozkaCiselnikaMaritalStatus" />
+  <xs:complexType name="IdPolozkaCiselnikaMaritalStatus">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.56</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMaritalStatus">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSex" type="IdPolozkaCiselnikaSex" />
+  <xs:complexType name="IdPolozkaCiselnikaSex">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.55</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSex">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypeOfRelation" type="IdPolozkaCiselnikaTypeOfRelation" />
+  <xs:complexType name="IdPolozkaCiselnikaTypeOfRelation">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.54</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypeOfRelation">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaExistencnyStav" type="IdPolozkaCiselnikaExistencnyStav" />
+  <xs:complexType name="IdPolozkaCiselnikaExistencnyStav">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.57</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaExistencnyStav">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" />
+  <xs:complexType name="IdPolozkaCiselnikaZdravotnickaOdbornost">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.34</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZdravotnickaOdbornost">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhZariadenia" type="IdPolozkaCiselnikaDruhZariadenia" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhZariadenia">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.38 </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhZariadenia">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZasahoveUzemie" type="IdPolozkaCiselnikaZasahoveUzemie" />
+  <xs:complexType name="IdPolozkaCiselnikaZasahoveUzemie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.95</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZasahoveUzemie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOdborneZameranieOU" type="IdPolozkaCiselnikaOdborneZameranieOU" />
+  <xs:complexType name="IdPolozkaCiselnikaOdborneZameranieOU">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.39</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOdborneZameranieOU">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhUtvaru" type="IdPolozkaCiselnikaDruhUtvaru" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhUtvaru">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.37</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhUtvaru">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZriadovatel" type="IdPolozkaCiselnikaZriadovatel" />
+  <xs:complexType name="IdPolozkaCiselnikaZriadovatel">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.26</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZriadovatel">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOblastIndikatoraKvality" type="IdPolozkaCiselnikaOblastIndikatoraKvality" />
+  <xs:complexType name="IdPolozkaCiselnikaOblastIndikatoraKvality">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.156</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOblastIndikatoraKvality">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypIndikatoraKvality" type="IdPolozkaCiselnikaTypIndikatoraKvality" />
+  <xs:complexType name="IdPolozkaCiselnikaTypIndikatoraKvality">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.155</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypIndikatoraKvality">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPovolaniaZPr" type="IdPolozkaCiselnikaPovolaniaZPr" />
+  <xs:complexType name="IdPolozkaCiselnikaPovolaniaZPr">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.40</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPovolaniaZPr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypPravnehoVztahuZPr" type="IdPolozkaCiselnikaTypPravnehoVztahuZPr" />
+  <xs:complexType name="IdPolozkaCiselnikaTypPravnehoVztahuZPr">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.151</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaKomora" type="IdPolozkaCiselnikaKomora" />
+  <xs:complexType name="IdPolozkaCiselnikaKomora">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.41</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaKomora">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypZdrPoistenia" type="IdPolozkaCiselnikaTypZdrPoistenia" />
+  <xs:complexType name="IdPolozkaCiselnikaTypZdrPoistenia">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.77</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypZdrPoistenia">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypPlatitelaZP" type="IdPolozkaCiselnikaTypPlatitelaZP" />
+  <xs:complexType name="IdPolozkaCiselnikaTypPlatitelaZP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.67</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypPlatitelaZP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDovodUkonceniaZdrPoistenia" type="IdPolozkaCiselnikaDovodUkonceniaZdrPoistenia" />
+  <xs:complexType name="IdPolozkaCiselnikaDovodUkonceniaZdrPoistenia">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.68</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSposobUhradyLieku" type="IdPolozkaCiselnikaSposobUhradyLieku" />
+  <xs:complexType name="IdPolozkaCiselnikaSposobUhradyLieku">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.104</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSposobUhradyLieku">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhOckovania" type="IdPolozkaCiselnikaDruhOckovania" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhOckovania">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.35</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhOckovania">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMerneJednotky" type="IdPolozkaCiselnikaMerneJednotky" />
+  <xs:complexType name="IdPolozkaCiselnikaMerneJednotky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.87</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMerneJednotky">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaVyrobcaDP" type="IdPolozkaCiselnikaVyrobcaDP" />
+  <xs:complexType name="IdPolozkaCiselnikaVyrobcaDP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.112</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaVyrobcaDP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSposobUhradyDP" type="IdPolozkaCiselnikaSposobUhradyDP" />
+  <xs:complexType name="IdPolozkaCiselnikaSposobUhradyDP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.91</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSposobUhradyDP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTitulZaMenomZPr" type="IdPolozkaCiselnikaTitulZaMenomZPr" />
+  <xs:complexType name="IdPolozkaCiselnikaTitulZaMenomZPr">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.229</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTitulZaMenomZPr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaProfTitulZPrPodlaOS" type="IdPolozkaCiselnikaProfTitulZPrPodlaOS" />
+  <xs:complexType name="IdPolozkaCiselnikaProfTitulZPrPodlaOS">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.230</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaProfTitulZPrPodlaOS">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSkupinyLimitovDP" type="IdPolozkaCiselnikaSkupinyLimitovDP" />
+  <xs:complexType name="IdPolozkaCiselnikaSkupinyLimitovDP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.96</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSkupinyLimitovDP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypLiekovehoUpozornenia" type="IdPolozkaCiselnikaTypLiekovehoUpozornenia" />
+  <xs:complexType name="IdPolozkaCiselnikaTypLiekovehoUpozornenia">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.22</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypLiekovehoUpozornenia">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaIndikacnaSkupina" type="IdPolozkaCiselnikaIndikacnaSkupina" />
+  <xs:complexType name="IdPolozkaCiselnikaIndikacnaSkupina">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.105</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaIndikacnaSkupina">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTitulPredMenomZPr" type="IdPolozkaCiselnikaTitulPredMenomZPr" />
+  <xs:complexType name="IdPolozkaCiselnikaTitulPredMenomZPr">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.228</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTitulPredMenomZPr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaCestaPodania" type="IdPolozkaCiselnikaCestaPodania" />
+  <xs:complexType name="IdPolozkaCiselnikaCestaPodania">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.90</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaCestaPodania">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOmamnePsychotropneLatky" type="IdPolozkaCiselnikaOmamnePsychotropneLatky" />
+  <xs:complexType name="IdPolozkaCiselnikaOmamnePsychotropneLatky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.10</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOmamnePsychotropneLatky">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaViazanostNaLP" type="IdPolozkaCiselnikaViazanostNaLP" />
+  <xs:complexType name="IdPolozkaCiselnikaViazanostNaLP">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.94</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaViazanostNaLP">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaLiekovaForma" type="IdPolozkaCiselnikaLiekovaForma" />
+  <xs:complexType name="IdPolozkaCiselnikaLiekovaForma">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.13</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaLiekovaForma">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhLicencieZPr" type="IdPolozkaCiselnikaDruhLicencieZPr" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhLicencieZPr">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.223</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhLicencieZPr">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSkupinyLiekovejFormy" type="IdPolozkaCiselnikaSkupinyLiekovejFormy" />
+  <xs:complexType name="IdPolozkaCiselnikaSkupinyLiekovejFormy">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.197</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSkupinyLiekovejFormy">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDovodUkonPozastLicencie" type="IdPolozkaCiselnikaDovodUkonPozastLicencie" />
+  <xs:complexType name="IdPolozkaCiselnikaDovodUkonPozastLicencie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.232</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDovodUkonPozastLicencie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaATC" type="IdPolozkaCiselnikaATC" />
+  <xs:complexType name="IdPolozkaCiselnikaATC">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.83</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaATC">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaINN" type="IdPolozkaCiselnikaINN" />
+  <xs:complexType name="IdPolozkaCiselnikaINN">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.161</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaINN">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSposobUhradyZdrPom" type="IdPolozkaCiselnikaSposobUhradyZdrPom" />
+  <xs:complexType name="IdPolozkaCiselnikaSposobUhradyZdrPom">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.92</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSposobUhradyZdrPom">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaVyrobcaZdrPom" type="IdPolozkaCiselnikaVyrobcaZdrPom" />
+  <xs:complexType name="IdPolozkaCiselnikaVyrobcaZdrPom">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.125</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaVyrobcaZdrPom">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaAlergeny" type="IdPolozkaCiselnikaAlergeny" />
+  <xs:complexType name="IdPolozkaCiselnikaAlergeny">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.158</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaAlergeny">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" />
+  <xs:complexType name="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.213</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" type="IdPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" />
+  <xs:complexType name="IdPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.207</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypKontaktnejOsoby" type="IdPolozkaCiselnikaTypKontaktnejOsoby" />
+  <xs:complexType name="IdPolozkaCiselnikaTypKontaktnejOsoby">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.29</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypKontaktnejOsoby">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMernaJednotkaZdravPom" type="IdPolozkaCiselnikaMernaJednotkaZdravPom" />
+  <xs:complexType name="IdPolozkaCiselnikaMernaJednotkaZdravPom">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.211</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMernaJednotkaZdravPom">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTriedaZdravotnickejPomocky" type="IdPolozkaCiselnikaTriedaZdravotnickejPomocky" />
+  <xs:complexType name="IdPolozkaCiselnikaTriedaZdravotnickejPomocky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.212</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTriedaZdravotnickejPomocky">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" type="IdPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" />
+  <xs:complexType name="IdPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.210</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" type="IdPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" />
+  <xs:complexType name="IdPolozkaCiselnikaZavaznostVarovaniaKontraindikacie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.233</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMena" type="IdPolozkaCiselnikaMena" />
+  <xs:complexType name="IdPolozkaCiselnikaMena">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.205</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMena">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypDavkovania" type="IdPolozkaCiselnikaTypDavkovania" />
+  <xs:complexType name="IdPolozkaCiselnikaTypDavkovania">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.206</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypDavkovania">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaKvalitaZdroja" type="IdPolozkaCiselnikaKvalitaZdroja" />
+  <xs:complexType name="IdPolozkaCiselnikaKvalitaZdroja">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.204</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaKvalitaZdroja">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaHodnotenieInterakcie" type="IdPolozkaCiselnikaHodnotenieInterakcie" />
+  <xs:complexType name="IdPolozkaCiselnikaHodnotenieInterakcie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.202</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaHodnotenieInterakcie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaHodnotenieKontraindikacie" type="IdPolozkaCiselnikaHodnotenieKontraindikacie" />
+  <xs:complexType name="IdPolozkaCiselnikaHodnotenieKontraindikacie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.203</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaHodnotenieKontraindikacie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypLiekovejAlergie" type="IdPolozkaCiselnikaTypLiekovejAlergie" />
+  <xs:complexType name="IdPolozkaCiselnikaTypLiekovejAlergie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.208</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypLiekovejAlergie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" type="IdPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" />
+  <xs:complexType name="IdPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.201</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZavaznostVarovaniaInterakcie" type="IdPolozkaCiselnikaZavaznostVarovaniaInterakcie" />
+  <xs:complexType name="IdPolozkaCiselnikaZavaznostVarovaniaInterakcie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.209</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPredpona" type="IdPolozkaCiselnikaPredpona" />
+  <xs:complexType name="IdPolozkaCiselnikaPredpona">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.190</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPredpona">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZakladnaJednotka" type="IdPolozkaCiselnikaZakladnaJednotka" />
+  <xs:complexType name="IdPolozkaCiselnikaZakladnaJednotka">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.188</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZakladnaJednotka">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaKonverziaJednotiek" type="IdPolozkaCiselnikaKonverziaJednotiek" />
+  <xs:complexType name="IdPolozkaCiselnikaKonverziaJednotiek">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.191</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaKonverziaJednotiek">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypJednotky" type="IdPolozkaCiselnikaTypJednotky" />
+  <xs:complexType name="IdPolozkaCiselnikaTypJednotky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.189</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypJednotky">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" type="IdPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" />
+  <xs:complexType name="IdPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.234</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypAdresy" type="IdPolozkaCiselnikaTypAdresy" />
+  <xs:complexType name="IdPolozkaCiselnikaTypAdresy">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.75</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypAdresy">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaStavKategorizacie" type="IdPolozkaCiselnikaStavKategorizacie" />
+  <xs:complexType name="IdPolozkaCiselnikaStavKategorizacie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.3</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaStavKategorizacie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaStavRegistracie" type="IdPolozkaCiselnikaStavRegistracie" />
+  <xs:complexType name="IdPolozkaCiselnikaStavRegistracie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.4</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaStavRegistracie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" type="IdPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" />
+  <xs:complexType name="IdPolozkaCiselnikaPovolenieViacnasobnejPreskripcie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.9</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypKontaktu" type="IdPolozkaCiselnikaTypKontaktu" />
+  <xs:complexType name="IdPolozkaCiselnikaTypKontaktu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.15</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypKontaktu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" type="IdPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" />
+  <xs:complexType name="IdPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.30</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaStrankyEZKO" type="IdPolozkaCiselnikaStrankyEZKO" />
+  <xs:complexType name="IdPolozkaCiselnikaStrankyEZKO">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.33</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaStrankyEZKO">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypOckovania" type="IdPolozkaCiselnikaTypOckovania" />
+  <xs:complexType name="IdPolozkaCiselnikaTypOckovania">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.36</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypOckovania">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhyNeziaducichReakcii" type="IdPolozkaCiselnikaDruhyNeziaducichReakcii" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhyNeziaducichReakcii">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.58</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhyNeziaducichReakcii">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTitulZaMenom" type="IdPolozkaCiselnikaTitulZaMenom" />
+  <xs:complexType name="IdPolozkaCiselnikaTitulZaMenom">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.59</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTitulZaMenom">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypKrvnychSkupin" type="IdPolozkaCiselnikaTypKrvnychSkupin" />
+  <xs:complexType name="IdPolozkaCiselnikaTypKrvnychSkupin">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.66</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypKrvnychSkupin">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTitulPredMenom" type="IdPolozkaCiselnikaTitulPredMenom" />
+  <xs:complexType name="IdPolozkaCiselnikaTitulPredMenom">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.86</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTitulPredMenom">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypVzorkyLab" type="IdPolozkaCiselnikaTypVzorkyLab" />
+  <xs:complexType name="IdPolozkaCiselnikaTypVzorkyLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.93</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypVzorkyLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypyDoplnInformacii" type="IdPolozkaCiselnikaTypyDoplnInformacii" />
+  <xs:complexType name="IdPolozkaCiselnikaTypyDoplnInformacii">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.114</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypyDoplnInformacii">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaAnatomickeMiestaLAb" type="IdPolozkaCiselnikaAnatomickeMiestaLAb" />
+  <xs:complexType name="IdPolozkaCiselnikaAnatomickeMiestaLAb">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.115</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaAnatomickeMiestaLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDovodZruseniaOckovania" type="IdPolozkaCiselnikaDovodZruseniaOckovania" />
+  <xs:complexType name="IdPolozkaCiselnikaDovodZruseniaOckovania">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.116</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDovodZruseniaOckovania">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaFazyMenstruacnehoCykluLab" type="IdPolozkaCiselnikaFazyMenstruacnehoCykluLab" />
+  <xs:complexType name="IdPolozkaCiselnikaFazyMenstruacnehoCykluLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.117</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaKategoriaVysledkuTestuLab" type="IdPolozkaCiselnikaKategoriaVysledkuTestuLab" />
+  <xs:complexType name="IdPolozkaCiselnikaKategoriaVysledkuTestuLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.118</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaKategoriaVysledkuTestuLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypPlatitelaLab" type="IdPolozkaCiselnikaTypPlatitelaLab" />
+  <xs:complexType name="IdPolozkaCiselnikaTypPlatitelaLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.119</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypPlatitelaLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaReakciaNaOckovanie" type="IdPolozkaCiselnikaReakciaNaOckovanie" />
+  <xs:complexType name="IdPolozkaCiselnikaReakciaNaOckovanie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.120</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaReakciaNaOckovanie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSposobyOdberuLab" type="IdPolozkaCiselnikaSposobyOdberuLab" />
+  <xs:complexType name="IdPolozkaCiselnikaSposobyOdberuLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.121</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSposobyOdberuLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaUrgentnostVysetrenia" type="IdPolozkaCiselnikaUrgentnostVysetrenia" />
+  <xs:complexType name="IdPolozkaCiselnikaUrgentnostVysetrenia">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.123</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaUrgentnostVysetrenia">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaObalyLab" type="IdPolozkaCiselnikaObalyLab" />
+  <xs:complexType name="IdPolozkaCiselnikaObalyLab">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.122</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaObalyLab">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaVyrobcaLieku" type="IdPolozkaCiselnikaVyrobcaLieku" />
+  <xs:complexType name="IdPolozkaCiselnikaVyrobcaLieku">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.124</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaVyrobcaLieku">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhZdrPomAImplantatov" type="IdPolozkaCiselnikaDruhZdrPomAImplantatov" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhZdrPomAImplantatov">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.126</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhZdrPomAImplantatov">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" type="IdPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" />
+  <xs:complexType name="IdPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.132</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaAbuzyZivotosprava" type="IdPolozkaCiselnikaAbuzyZivotosprava" />
+  <xs:complexType name="IdPolozkaCiselnikaAbuzyZivotosprava">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.157</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaAbuzyZivotosprava">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPrejavyNeziaducichReakcii" type="IdPolozkaCiselnikaPrejavyNeziaducichReakcii" />
+  <xs:complexType name="IdPolozkaCiselnikaPrejavyNeziaducichReakcii">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.159</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPrejavyNeziaducichReakcii">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOriginalita" type="IdPolozkaCiselnikaOriginalita" />
+  <xs:complexType name="IdPolozkaCiselnikaOriginalita">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.164</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOriginalita">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSposobUrceniaDatumuPorodu" type="IdPolozkaCiselnikaSposobUrceniaDatumuPorodu" />
+  <xs:complexType name="IdPolozkaCiselnikaSposobUrceniaDatumuPorodu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.171</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaFarmaceutickaSurovina" type="IdPolozkaCiselnikaFarmaceutickaSurovina" />
+  <xs:complexType name="IdPolozkaCiselnikaFarmaceutickaSurovina">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.198</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaFarmaceutickaSurovina">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaLegislativnyPredpis" type="IdPolozkaCiselnikaLegislativnyPredpis" />
+  <xs:complexType name="IdPolozkaCiselnikaLegislativnyPredpis">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.222</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaLegislativnyPredpis">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSpecifikaciaOdboru" type="IdPolozkaCiselnikaSpecifikaciaOdboru" />
+  <xs:complexType name="IdPolozkaCiselnikaSpecifikaciaOdboru">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.223</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSpecifikaciaOdboru">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaPoskytovanieZSvOdbore" type="IdPolozkaCiselnikaPoskytovanieZSvOdbore" />
+  <xs:complexType name="IdPolozkaCiselnikaPoskytovanieZSvOdbore">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.225</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaPoskytovanieZSvOdbore">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZaradenieDoEvidPoctu" type="IdPolozkaCiselnikaZaradenieDoEvidPoctu" />
+  <xs:complexType name="IdPolozkaCiselnikaZaradenieDoEvidPoctu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.226</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaZaradenieDoEvidPoctu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaSpecifikaciaZastupcu" type="IdPolozkaCiselnikaSpecifikaciaZastupcu" />
+  <xs:complexType name="IdPolozkaCiselnikaSpecifikaciaZastupcu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.235</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaSpecifikaciaZastupcu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaTypZakonnehoZastupcu" type="IdPolozkaCiselnikaTypZakonnehoZastupcu" />
+  <xs:complexType name="IdPolozkaCiselnikaTypZakonnehoZastupcu">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.236</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaTypZakonnehoZastupcu">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaIndikacie" type="IdPolozkaCiselnikaIndikacie" />
+  <xs:complexType name="IdPolozkaCiselnikaIndikacie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.237</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaIndikacie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaZasahoveUzemieAmbulancie" type="IdPolozkaCiselnikaZasahoveUzemieAmbulancie" />
+  <xs:complexType name="IdPolozkaCiselnikaZasahoveUzemieAmbulancie">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.239</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDruhVlastnictva" type="IdPolozkaCiselnikaDruhVlastnictva" />
+  <xs:complexType name="IdPolozkaCiselnikaDruhVlastnictva">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.241</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDruhVlastnictva">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaNaceKody" type="IdPolozkaCiselnikaNaceKody" />
+  <xs:complexType name="IdPolozkaCiselnikaNaceKody">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.239</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaNaceKody">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaInstitucionalneSubsektory" type="IdPolozkaCiselnikaInstitucionalneSubsektory" />
+  <xs:complexType name="IdPolozkaCiselnikaInstitucionalneSubsektory">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.240</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaInstitucionalneSubsektory">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaUstredneOrganyStatnejSpravy" type="IdPolozkaCiselnikaUstredneOrganyStatnejSpravy" />
+  <xs:complexType name="IdPolozkaCiselnikaUstredneOrganyStatnejSpravy">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.242</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+    <xs:element name="IdPolozkaCiselnikaDostupnostLiekuVLekarni" type="IdPolozkaCiselnikaDostupnostLiekuVLekarni" />
+  <xs:complexType name="IdPolozkaCiselnikaDostupnostLiekuVLekarni">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=xxxxx</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDostupnostLiekuVLekarni">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaOkres" type="IdPolozkaCiselnikaOkres" />
+  <xs:complexType name="IdPolozkaCiselnikaOkres">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=xxxxx</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaOkres">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaObec" type="IdPolozkaCiselnikaObec" />
+  <xs:complexType name="IdPolozkaCiselnikaObec">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=xxxxx</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaObec">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaLiekoveUpozornenieTyp" type="IdPolozkaCiselnikaLiekoveUpozornenieTyp" />
+  <xs:complexType name="IdPolozkaCiselnikaLiekoveUpozornenieTyp">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.22</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaLiekoveUpozornenieTyp">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPolozkaCiselnikaDostupnostLiekuVSR" type="IdPolozkaCiselnikaDostupnostLiekuVSR" />
+  <xs:complexType name="IdPolozkaCiselnikaDostupnostLiekuVSR">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.249</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVPolozkaCiselnikaDostupnostLiekuVSR">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

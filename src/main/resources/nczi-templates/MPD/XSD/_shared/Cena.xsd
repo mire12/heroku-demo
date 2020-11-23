@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="MPD_IdCiselniky.xsd" />
+  <xs:element name="Cena" type="Cena" />
+  <xs:complexType name="Cena">
+    <xs:annotation>
+      <xs:documentation>Cena je modelovaná ako množstvo aby bolo možné zadať rôzne meny a konverzie medzi nimi použitím modelu pre jednotky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Mnozstvo" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Mena" type="IdPolozkaCiselnikaMena" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

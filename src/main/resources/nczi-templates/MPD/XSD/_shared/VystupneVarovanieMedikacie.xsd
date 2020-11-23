@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="ZdrojInformacieZS.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="VystupneVarovanie" type="VystupneVarovanie" />
+  <xs:complexType name="VystupneVarovanie" abstract="true">
+    <xs:annotation>
+      <xs:documentation>NZIS môže v procese predpisovania a vydávania liečebných prostriedkov vrátiť na výstupe aj tzv. varovania. Sú to doplňujúce informácie určené pre zdravotníckeho pracovníka, ktorými systém upozorňuje na dôležité skutočnosti. Výstupné varovania sú dvoch typov buď  varovania znalostného systému alebo medikačné verovania.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Popis" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis varovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VarovanieZnalostnehoSystemu" type="VarovanieZnalostnehoSystemu" />
+  <xs:complexType name="VarovanieZnalostnehoSystemu">
+    <xs:annotation>
+      <xs:documentation>Znalostný systém NZIS poskytuje viacero kontrol (preskripčné údaje, preskripčné obmedzenia, medikačné údaje, kontroly znalostným systémom) a výstupy tychto kontrol sú zachytené v tejto jednotnej &amp;scaron;truktúre. Závažnosť medikačného varovania môže ovplyvniť proces interkacie IS PZS s NZIS. Pri blokujúcej závažnost napríklad NZIS nedovolí niektoré operácie uskutočniť (predpísanie eReceptu lekárom, ktorý nemá potrebnú odbornosť na liek ktorý predpisuje). Niž&amp;scaron;ie úrovne závažnost môžu niektoré procesy zastaviť (napríklad identifikácia liekovej inetrakcie), ale lekár má možnosť prelomiť tieto varovania v odôvodnených prípadoch (nebezpečnosť danej interakcie je niž&amp;scaron;ia ako terapeutický účinok daného lieku).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="VystupneVarovanie">
+        <xs:sequence>
+          <xs:element name="IdZnalostnejInformacie" type="rm:II" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikácia interakcie, kontraindikácie, bezpečnostného limitu v jrúz. Umožní získať ďalšie údaje. Je prázdne v prípade priamej liekovej alergie.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TypVarovania" type="TypInformacieZS" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Zdroje" type="ZdrojInformacieZS" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Zdroje daného varovania.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MedikacneVarovanie" type="MedikacneVarovanie" />
+  <xs:complexType name="MedikacneVarovanie">
+    <xs:annotation>
+      <xs:documentation>Varovanie, upozornenie alebo informácia, ktorú systém vráti na výstupe medikačných procesov a negeneruje ju znalostný systém.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="VystupneVarovanie">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TypInformacieZS">
+    <xs:annotation>
+      <xs:documentation>Typ varovania, ktoré poskytuje medikácia. Spadajú sem typy varovaní zo znalostného systému a tiež varovania, ktorými bude NZIS upozorňovať na ďalšie obmedzenia, napríklad preskripčné obmedzenia, obmedzenia práce s receptom, ak jeho stav neumožňuje určité úkony a podobne.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Interakcia">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o liekových intarakciách.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Kontraindikacia">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o kontraindikáciách.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Upozornenie">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o upozorneniach.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Alergia">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o liekových alergiách.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Davkovanie">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o rizikovom dávkovaní.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Preskripcne obmedzenie">
+        <xs:annotation>
+          <xs:documentation>Varovanie znalostného systému o preskripčnom obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

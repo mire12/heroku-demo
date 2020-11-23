@@ -1,0 +1,115 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>DajPacientskySumar_v2</Class>
+      <MessageID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</MessageID>
+      <CorrelationID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>2</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <IdentifikatorPacienta_v2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1">
+	<IdPacienta>
+          <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
+          <root xmlns="CEN/13606/RM">
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </IdPacienta>
+        <OblastZdravotneProblemyZavazneDiagnozy>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastZdravotneProblemyZavazneDiagnozy>
+        <OblastZdravProblemZdravotnePomocky>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastZdravProblemZdravotnePomocky>
+        <OblastLiekovaAnamneza>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastLiekovaAnamneza>
+        <OblastVarovaniaAlergie>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastVarovaniaAlergie>
+        <OblastVarovaniaNeziaduceUcinkyOckovani>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastVarovaniaNeziaduceUcinkyOckovani>
+        <OblastVysledkyVysetreniKrvnaSkupina>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastVysledkyVysetreniKrvnaSkupina>
+        <OblastVysledkyVysetreniKrvnyTlak />
+        <OblastVysledkyVysetreniVitalneHodnoty>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastVysledkyVysetreniVitalneHodnoty>
+        <OblastSocialnaAnamnezaAbuzus>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastSocialnaAnamnezaAbuzus>
+        <OblastOsobnaAnamnezaOckovaciZaznam>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastOsobnaAnamnezaOckovaciZaznam>
+        <OblastOsobnaAnamnezaZdravotneObmedzenia>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastOsobnaAnamnezaZdravotneObmedzenia>
+        <OblastOsobnaAnamnezaChirurgickeVykony>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastOsobnaAnamnezaChirurgickeVykony>
+        <OblastOsobnaAnamnezaTerapeutickeOdporucanie>
+          <Strankovanie>
+            <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+            <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+          </Strankovanie>
+        </OblastOsobnaAnamnezaTerapeutickeOdporucanie>
+      </IdentifikatorPacienta_v2>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

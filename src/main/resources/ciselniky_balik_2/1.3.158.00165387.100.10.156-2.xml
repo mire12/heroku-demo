@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Oblasti indikátora kvality</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.156</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000117010</codeValue>
+      <displayName>ŠAZS - účinnosť a primeranosť zdravotnej starostlivosti</displayName>
+      <Skratka>A1</Skratka>
+      <Popis>Účinnosť a primeranosť zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje špecializovanú ambulantnú zdravotnú starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000117028</codeValue>
+      <displayName>ŠAZS - výsledky zdravotnej starotlivosti</displayName>
+      <Skratka>A2</Skratka>
+      <Popis>Výsledky zdravotnej starotlivosti - poskytovateľ, ktorý poskytuje špecializovanú ambulantnú zdravotnú starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753129</codeValue>
+      <displayName>ÚZS - výsledky zdravotnej starostlivosti</displayName>
+      <Skratka>B1</Skratka>
+      <Popis>Výsledky zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje ústavnú zdravotnú starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753137</codeValue>
+      <displayName>ÚZS - účinnosť a primeranosť zdravotnej starostlivosti</displayName>
+      <Skratka>B2</Skratka>
+      <Popis>Účinnosť a primeranosť zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje ústavnú zdravotnú starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753145</codeValue>
+      <displayName>ÚZS - vnímanie starostllivosti pacientom</displayName>
+      <Skratka>B3</Skratka>
+      <Popis>Vnímanie starostllivosti pacientom - poskytovateľ, ktorý poskytuje ústavnú zdravotnú starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753152</codeValue>
+      <displayName>VAZS - VLD - výsledky zdravotnej starostlivosti</displayName>
+      <Skratka>C1</Skratka>
+      <Popis>Výsledky zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje všeobecnú ambulantnú zdravotnú starostlivosť pre dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753160</codeValue>
+      <displayName>VAZS - VLD - účinnosť a primeranosť zdravotnej starostlivosti</displayName>
+      <Skratka>C2</Skratka>
+      <Popis>Účinnosť a primeranosť zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje všeobecnú ambulantnú zdravotnú starostlivosť pre dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753178</codeValue>
+      <displayName>VAZS - VLDD - výsledky zdravotnej starostlivosti</displayName>
+      <Skratka>D1</Skratka>
+      <Popis>Výsledky zdravotnej starostlivosti - poskytovateľ, ktorý poskytuje všeobecnú ambulantnú zdravotnú starostlivosť pre deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753186</codeValue>
+      <displayName>VAZS - VLDD - účinnosť a primeranosť zdravotnej strostlivosti</displayName>
+      <Skratka>D2</Skratka>
+      <Popis>Účinnosť a primeranosť zdravotnej strostlivosti - poskytovateľ, ktorý poskytuje všeobecnú ambulantnú zdravotnú starostlivosť pre deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753194</codeValue>
+      <displayName>Efektívnosť využitia zdrojov</displayName>
+      <Skratka>E1</Skratka>
+      <Popis>Efektívnosť využitia zdrojov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871095</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd"/>
+  <xs:element name="IdentifikatorPacientaEDS_v2" type="tns:IdentifikatorPacientaEDS_v2" />
+
+  <xs:complexType name="IdentifikatorPacientaEDS_v2">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdentifikatorPacientaEDS" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IdentifikatorPacientaEDS">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" xmlns:q57="http://eHealth.gov.sk/EzkCommon/v1" type="q57:IdPrjZS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AjZruseneZaznamy" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

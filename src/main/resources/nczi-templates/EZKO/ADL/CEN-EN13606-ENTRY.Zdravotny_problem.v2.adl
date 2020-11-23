@@ -1,0 +1,128 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Zdravotny_problem.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o zdravotných problémoch. Poskytované sú život ovplyvňujúce diagnózy definované vyhláškou.">
+            keywords = <"Aktuálny zdravotný problém">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Zdravotný problém
+        items existence matches {0..1} cardinality matches {1..5; unordered} matches {
+            ELEMENT[at0170] occurrences matches {0..1} matches {  -- Dátum a čas vzniku
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0001] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- Biohazard
+                value existence matches {0..1} matches {
+                    BL[at0006] occurrences matches {1..1} matches {  -- BL
+                        value existence matches {1..1} matches {true, false}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0009] occurrences matches {1..1} matches {  -- Život ovplývňujúca diagnóza
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+            }
+            ELEMENT[at0021] occurrences matches {0..1} matches {  -- Počet záznamov k diagnóze
+                value existence matches {0..1} matches {
+                    INT[at0022] occurrences matches {1..1} matches {  -- INT
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {1..1} matches {"STRC01"}
+                codingSchemeName existence matches {1..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0010] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {*}
+                root existence matches {1..1} matches {
+                    OID[at0011] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.120"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Zdravotný problém">
+                    description = <"Prekonaná alebo aktuálna životovplyvňujúca diagnóza pacienta, ktorá bola stanovená v rámci diagnostického záveru a je uvedená vo vyhláške MZ ako život ovplyvňujúca diagnóza.">
+                >
+                ["at0170"] = <
+                    text = <"Dátum a čas vzniku">
+                    description = <"Dátum a čas vzniku zdravotného problému. Dátum nemôže byť zaznamenaný neskôr ako je dátum zaznamenania diagnózy. ">
+                >
+                ["at0005"] = <
+                    text = <"Biohazard">
+                    description = <"Príznak, že diagnóza môže byť nebezpečná pre ošetrujúceho zdravotníckeho pracovníka.">
+                >
+                ["at0006"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0010"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0011"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0021"] = <
+                    text = <"Počet záznamov k diagnóze">
+                    description = <"Atribút je automaticky poskytovaný pri čítaní záznamov a má informatívnu hodnotu o počte záznamov evidovaných ku konkrétnej diagnóze.">
+                >
+                ["at0022"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+                ["at0001"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0009"] = <
+                    text = <"Život ovplývňujúca diagnóza">
+                    description = <"">
+                >
+            >
+        >
+    >

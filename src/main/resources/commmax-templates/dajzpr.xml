@@ -1,0 +1,45 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>DajZPr_v1</Class>
+      <MessageID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</MessageID>
+      <CorrelationID>4dbf2abc-35f5-4f6f-9b8a-495b38981ede</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>4</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <DajZPr_Request xmlns="http://eHealth.gov.sk/JRUZ/v1">
+        <IdZPr>
+          <extension>%IDZP%</extension>
+          <root>
+            <oid>1.3.158.00165387.100.40.90</oid>
+          </root>
+        </IdZPr>
+        <Aktualnost_Metadata>
+          <Datum>2020-07-30T7:36:17.9095075+02:00</Datum>
+        </Aktualnost_Metadata>
+      </DajZPr_Request>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

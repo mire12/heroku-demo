@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajReceptyVstup" type="VyhladajReceptyVstup" />
+  <xs:complexType name="VyhladajReceptyVstup">
+    <xs:annotation>
+      <xs:documentation>Množina vyhľadávacích kritérií, na základe ktorých NZIS vráti zoznam elektronických receptov. Pri vyhľadávaní receptov sa použijú všetky zadané kritériá a pri nevhodnej kombinácii vstupov sa môže vrátiť prázdna množina.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AjStornovane" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je TRUE tak do vyhľadávania budú vstupovať aj stornované eRecepty (elektronický recept bol stornovaný).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AjZneplatnene" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je TRUE tak do vyhľadávania budú vstupovať aj zneplatnené eRecepty (elektronický recept bol zneplatnený).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Atc" type="IdPolozkaCiselnikaATC" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Na výstupe vráti tie recepty, ktoré obsahujú liek alebo liečivo z tejto vstupnej množiny kódov ATC klasifikácie (vyhľadávanie je v tomto prípade kaskádové). Ak na vstupe nebude takto identifikovaný žiaden ATC kód (prázdna množina na vstupe) tak sa podľa lieku a liečiva hľadanie obmedzovať nebude. Jej použitím sa ale automaticky do výsledkov nedostanú iné recepty ako tie, ktoré obsahujú lieky a liečivá.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Ak je tento zoznam prázdny, tak neovplyvňuje výber. Ak nie je prázdny, tak sa vyhľadajú iba recepty, na ktorých je niektorá z diagnóz v zozname.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DietPotId" type="IdDietetickaPotravina" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Na výstupe vráti tie recepty, ktoré obsahujú predpísané dietetické potraviny z tejto vstupnej množiny. Ak na vstupe nebude takto identifikovaná žiadna potravina (prázdna množina na vstupe) tak sa podľa dietetík hľadanie obmedzovať nebude. Jej použitím sa ale automaticky do výsledkov nedostanú iné recepty ako tie, ktoré obsahujú predpísané dietetické potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FarmaSurovinaId" type="IdPolozkaCiselnikaFarmaceutickaSurovina" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="GenerickyPredpisovane" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Systém vráti tie recepty, na ktorých bolo predpisované liečivo (lekár pacientovi predpísal liečivo uvedené v prílohe č. 1 zákona 362/2011 Z.z. o liekoch a zdravotníckych pomôckach a o zmene a doplnení niektorých zákonov).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IbaDispenzovatelny" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je false, hľadá všetky recepty (neovplyvňuje výber). Ak je true, tak hľadá iba recepty ktoré je možné dispenzovať. Pri jednorazových receptoch sa táto podmienka dá jednoducho implementovať podľa dátumu platnosti do. Ale pre dlhodobé recepty to tak nie je, takže NZIS takéto recepty poskytne na základe tohto kritéria.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdMedikacnyZaznam" type="rm:II" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Identifikátor medikačného záznamu. Bude vrátený ten eRecept, na základe ktorého medikačný záznam vznikol.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrijimatelZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor prijímateľa zdravotnej starostlivosti.
+Vyhľadá elektronické recepty tohto konkrétneho prijímateľa.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReceptu" type="rm:II" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IgnorujDietPotr" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výber, či NZIS vráti recepty na ktorých sú predpísané dietetické potraviny. True -  recepty na ktorých sú predpísané diet. potr. ignoruje, nevráti ich. False - neignoruje, hľadá aj recepty na ktorých sú predpísané diet. potr. Neovplyňuje vyhľadávanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IgnorujIPL" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výber, či NZIS vráti recepty na ktorých sú predpísané IPL. True -  recepty na ktorých sú predpísanéIPL ignoruje, nevráti ich. False - neignoruje, hľadá aj recepty na ktorých sú predpísané IPL. Neovplyňuje vyhľadávanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IgnorujLieky" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výber, či NZIS vráti recepty na ktorých sú predpísané lieky a liečivá. True -  recepty na ktorých sú predpísané lieky alebo liečivá ignoruje, nevráti ich. False - neignoruje, hľadá aj recepty na ktorých sú predpísané lieky alebo liečivá. Neovplyňuje vyhľadávanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IgnorujZdravPom" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výber, či NZIS vráti recepty na ktorých sú predpísané zdravotnícke pomôcky. True -  recepty na ktorých sú predpísané zdrav. pom. ignoruje, nevráti ich. False - neignoruje, hľadá aj recepty na ktorých sú predpísané zdrav. pom. Neovplyňuje vyhľadávanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LiekId" type="IdLiek" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Na výstupe vráti tie recepty, ktoré obsahujú predpísaný liek z tejto vstupnej množiny. Ak na vstupe nebude takto identifikovaný žiaden liek (prázdna množina na vstupe) tak sa podľa lieku hľadanie obmedzovať nebude. Jej použitím sa automaticky do výsledkov nedostanú iné recepty ako tie, ktoré obsahujú lieky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdporucajuciOdb" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktoré vznikli na základe receptu odporúčaného lekárom konkrétnej odbornosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdporucajuciPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty ktoré boli predpísané na základe odporúčania lekárov PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdporucajuciZPrac" type="IdZPr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty ktoré boli predpísané na základe odporúčania konkrétneho lekára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PredpisujuciOdb" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktoré vznikli na základe predpísania lekárom konkrétnej odbornosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PredpisujuciPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktoré predpísal lekár konkrétneho PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PredpisujuciZPrac" type="IdZPr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktoré predpísal konkrétny lekár.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReviznyLekar" type="IdZPr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty ktoré boli predpísané na základe súhlasu konkrétneho revízneho lekára.Vyhľadá preskripčné záznamy, ktorých predpísanie schválil revízny lekár konkrétnej odbornosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReviznyLekarOdb" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktorých predpísanie schválil revízny lekár konkrétnej odbornosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReviznyLekarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="SchvaleneZdrPoistovnou" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="StornovanyPresZ" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je TRUE, tak systém vyhľadá tie recepty, ktoré majú vystornovaný preskripčný záznam ale samotný elektronický recept stornovaný nie je. Ak je FALSE, tak systém vyhľadá tie recepty, ktoré nemajú stornovaný preskripčný záznam.
+Pri nevyplnení tohto kritéria systém vyhľadá recepty bez ohľadu na stav stornovania preskripčného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VystavenyPo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Hľadá iba recepty ktorých dátum vystavenia je po zadanom dátume (vrátane).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VystavenyPred" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Hľadá iba recepty ktorých dátum vystavenia je pred zadaným dátumom (vrátane).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZastupovanyOdb" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty, ktoré vznikli na základe receptu predpísaného pri zastupovaní lekára konkrétnej odbornosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZastupovanyPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty ktoré boli predpísané pri zastupovaní lekára tohto PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZastupovanyZPrac" type="IdZPr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Vyhľadá recepty ktoré boli predpísané pri zastupovaní konkrétneho lekára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZdravPomId" type="IdZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Na výstupe vráti tie recepty, ktoré obsahujú predpísané zdravotnícke pomôcky z tejto vstupnej množiny. Ak na vstupe nebude takto identifikovaná žiadna pomôcka (prázdna množina na vstupe) tak sa podľa pomôcok hľadanie obmedzovať nebude. Jej použitím sa ale automaticky do výsledkov nedostanú iné recepty ako tie, ktoré obsahujú zdravotnícke pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PeriodicitaReceptu" type="PeriodicitaReceptu" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávacie kritérium podľa toho či je recept jednorazový alebo dlhodobý, príapdne sa vyhľadáva vo všetkých.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PeriodicitaReceptu">
+    <xs:annotation>
+      <xs:documentation>Enumerácia určuje či sa poskytujú v&amp;scaron;etky, iba dlhodobé alebo iba jednorazové recepty.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VsetkyRecepty" />
+      <xs:enumeration value="JednorazoveRecepty" />
+      <xs:enumeration value="DlhodobeRecepty" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,2858 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:element name="CVPolozkaCiselnikaTelephoneType" type="CVPolozkaCiselnikaTelephoneType" />
+  <xs:complexType name="CVPolozkaCiselnikaTelephoneType">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTelephoneType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIdentifierType" type="OIDIdentifierType" />
+  <xs:complexType name="OIDIdentifierType">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.53" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIdentifierType" type="CVPolozkaCiselnikaIdentifierType" />
+  <xs:complexType name="CVPolozkaCiselnikaIdentifierType">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDIdentifierType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTelephoneType" type="OIDTelephoneType" />
+  <xs:complexType name="OIDTelephoneType">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.76" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZainteresovanejOsoby" type="CVPolozkaCiselnikaTypZainteresovanejOsoby" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZainteresovanejOsoby">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypZainteresovanejOsoby" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZainteresovanejOsoby" type="OIDTypZainteresovanejOsoby" />
+  <xs:complexType name="OIDTypZainteresovanejOsoby">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.63" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaFarmaceutickaSurovina" type="CVPolozkaCiselnikaFarmaceutickaSurovina" />
+  <xs:complexType name="CVPolozkaCiselnikaFarmaceutickaSurovina">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDFarmaceutickaSurovina" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypAdresy" type="OIDTypAdresy" />
+  <xs:complexType name="OIDTypAdresy">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.75" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhLicencieZPr" type="CVPolozkaCiselnikaDruhLicencieZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhLicencieZPr">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhLicencieZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaProfTitulZPrPodlaOS" type="CVPolozkaCiselnikaProfTitulZPrPodlaOS" />
+  <xs:complexType name="CVPolozkaCiselnikaProfTitulZPrPodlaOS">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDProfTitulZPrPodlaOS" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStavKategorizacie" type="OIDStavKategorizacie" />
+  <xs:complexType name="OIDStavKategorizacie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.3" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStavRegistracie" type="OIDStavRegistracie" />
+  <xs:complexType name="OIDStavRegistracie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.4" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulZaMenomZPr" type="OIDTitulZaMenomZPr" />
+  <xs:complexType name="OIDTitulZaMenomZPr">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.229" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" type="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" />
+  <xs:complexType name="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMetodyMeraniaKrvnehoTlaku" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDProfTitulZPrPodlaOS" type="OIDProfTitulZPrPodlaOS" />
+  <xs:complexType name="OIDProfTitulZPrPodlaOS">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.230" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulPredMenomZPr" type="OIDTitulPredMenomZPr" />
+  <xs:complexType name="OIDTitulPredMenomZPr">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.228" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulZaMenomZPr" type="CVPolozkaCiselnikaTitulZaMenomZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulZaMenomZPr">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTitulZaMenomZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaInterakcie" type="OIDZavaznostVarovaniaInterakcie" />
+  <xs:complexType name="OIDZavaznostVarovaniaInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.209" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDoplnujucehoUdajaInterakcie" type="OIDTypDoplnujucehoUdajaInterakcie" />
+  <xs:complexType name="OIDTypDoplnujucehoUdajaInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.207" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie" type="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZavaznostVarovaniaInterakcie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" type="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypDoplnujucehoUdajaInterakcie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypLiekovejAlergie" type="CVPolozkaCiselnikaTypLiekovejAlergie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypLiekovejAlergie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypLiekovejAlergie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulPredMenomZPr" type="CVPolozkaCiselnikaTitulPredMenomZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulPredMenomZPr">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTitulPredMenomZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu" type="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypElIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypElIdentifikacnehoPredmetu" type="OIDTypElIdentifikacnehoPredmetu" />
+  <xs:complexType name="OIDTypElIdentifikacnehoPredmetu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.213" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaKontraindikacie" type="OIDZavaznostVarovaniaKontraindikacie" />
+  <xs:complexType name="OIDZavaznostVarovaniaKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.233" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMernaJednotkaZdravPom" type="OIDMernaJednotkaZdravPom" />
+  <xs:complexType name="OIDMernaJednotkaZdravPom">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.211" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTriedaZdravotnickejPomocky" type="CVPolozkaCiselnikaTriedaZdravotnickejPomocky" />
+  <xs:complexType name="CVPolozkaCiselnikaTriedaZdravotnickejPomocky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTriedaZdravotnickejPomocky" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMernaJednotkaZdravPom" type="CVPolozkaCiselnikaMernaJednotkaZdravPom" />
+  <xs:complexType name="CVPolozkaCiselnikaMernaJednotkaZdravPom">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMernaJednotkaZdravPom" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTriedaZdravotnickejPomocky" type="OIDTriedaZdravotnickejPomocky" />
+  <xs:complexType name="OIDTriedaZdravotnickejPomocky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.212" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" type="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypDoplnujucehoUdajaKontraindikacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDrzitelRozhodnutiaORegistraciiLieku" type="OIDDrzitelRozhodnutiaORegistraciiLieku" />
+  <xs:complexType name="OIDDrzitelRozhodnutiaORegistraciiLieku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.210" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodUkonPozastLicencie" type="OIDDovodUkonPozastLicencie" />
+  <xs:complexType name="OIDDovodUkonPozastLicencie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.232" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhLicencieZPr" type="OIDDruhLicencieZPr" />
+  <xs:complexType name="OIDDruhLicencieZPr">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.231" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" type="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZavaznostVarovaniaKontraindikacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMena" type="CVPolozkaCiselnikaMena" />
+  <xs:complexType name="CVPolozkaCiselnikaMena">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMena" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMena" type="OIDMena" />
+  <xs:complexType name="OIDMena">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.205" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaHodnotenieInterakcie" type="CVPolozkaCiselnikaHodnotenieInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaHodnotenieInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDHodnotenieInterakcie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaHodnotenieKontraindikacie" type="CVPolozkaCiselnikaHodnotenieKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaHodnotenieKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDHodnotenieKontraindikacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDHodnotenieKontraindikacie" type="OIDHodnotenieKontraindikacie" />
+  <xs:complexType name="OIDHodnotenieKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.203" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDavkovania" type="CVPolozkaCiselnikaTypDavkovania" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDavkovania">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypDavkovania" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKvalitaZdroja" type="CVPolozkaCiselnikaKvalitaZdroja" />
+  <xs:complexType name="CVPolozkaCiselnikaKvalitaZdroja">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDKvalitaZdroja" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKvalitaZdroja" type="OIDKvalitaZdroja" />
+  <xs:complexType name="OIDKvalitaZdroja">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.204" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDHodnotenieInterakcie" type="OIDHodnotenieInterakcie" />
+  <xs:complexType name="OIDHodnotenieInterakcie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.202" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDavkovania" type="OIDTypDavkovania" />
+  <xs:complexType name="OIDTypDavkovania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.206" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPravnaSposobilost" type="CVPolozkaCiselnikaPravnaSposobilost" />
+  <xs:complexType name="CVPolozkaCiselnikaPravnaSposobilost">
+    <xs:sequence>
+      <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+      <xs:element name="codingScheme" type="OIDPravnaSposobilost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+      <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OIDTypLiekovejAlergie" type="OIDTypLiekovejAlergie" />
+  <xs:complexType name="OIDTypLiekovejAlergie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.208" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" type="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypDoplnujucehoUdajaKontraindikacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDoplnujucehoUdajaKontraindikacie" type="OIDTypDoplnujucehoUdajaKontraindikacie" />
+  <xs:complexType name="OIDTypDoplnujucehoUdajaKontraindikacie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.201" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDCountry" type="OIDCountry" />
+  <xs:complexType name="OIDCountry">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.51" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMunicipality" type="OIDMunicipality" />
+  <xs:complexType name="OIDMunicipality">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.45" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCountry" type="CVPolozkaCiselnikaCountry" />
+  <xs:complexType name="CVPolozkaCiselnikaCountry">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDCountry" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDRegion" type="OIDRegion" />
+  <xs:complexType name="OIDRegion">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.43" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaRegion" type="CVPolozkaCiselnikaRegion" />
+  <xs:complexType name="CVPolozkaCiselnikaRegion">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDRegion" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDCounty" type="OIDCounty" />
+  <xs:complexType name="OIDCounty">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.44" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMunicipality" type="CVPolozkaCiselnikaMunicipality" />
+  <xs:complexType name="CVPolozkaCiselnikaMunicipality">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMunicipality" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCounty" type="CVPolozkaCiselnikaCounty" />
+  <xs:complexType name="CVPolozkaCiselnikaCounty">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDCounty" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPSC" type="OIDPSC" />
+  <xs:complexType name="OIDPSC">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.150" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPSC" type="CVPolozkaCiselnikaPSC" />
+  <xs:complexType name="CVPolozkaCiselnikaPSC">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPSC" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLegalForm" type="OIDLegalForm" />
+  <xs:complexType name="OIDLegalForm">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.42" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLegalForm" type="CVPolozkaCiselnikaLegalForm" />
+  <xs:complexType name="CVPolozkaCiselnikaLegalForm">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDLegalForm" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMaritalStatus" type="OIDMaritalStatus" />
+  <xs:complexType name="OIDMaritalStatus">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.56" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMaritalStatus" type="CVPolozkaCiselnikaMaritalStatus" />
+  <xs:complexType name="CVPolozkaCiselnikaMaritalStatus">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMaritalStatus" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSex" type="OIDSex" />
+  <xs:complexType name="OIDSex">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.55" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSex" type="CVPolozkaCiselnikaSex" />
+  <xs:complexType name="CVPolozkaCiselnikaSex">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSex" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypeOfRelation" type="OIDTypeOfRelation" />
+  <xs:complexType name="OIDTypeOfRelation">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.54" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypeOfRelation" type="CVPolozkaCiselnikaTypeOfRelation" />
+  <xs:complexType name="CVPolozkaCiselnikaTypeOfRelation">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypeOfRelation" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDExistencnyStav" type="OIDExistencnyStav" />
+  <xs:complexType name="OIDExistencnyStav">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.57" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaExistencnyStav" type="CVPolozkaCiselnikaExistencnyStav" />
+  <xs:complexType name="CVPolozkaCiselnikaExistencnyStav">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDExistencnyStav" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZdravotnyVykon" type="OIDZdravotnyVykon" />
+  <xs:complexType name="OIDZdravotnyVykon">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.26" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZdravotnyVykon" type="CVPolozkaCiselnikaZdravotnyVykon" />
+  <xs:complexType name="CVPolozkaCiselnikaZdravotnyVykon">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZdravotnyVykon" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDiagnoza" type="OIDDiagnoza" />
+  <xs:complexType name="OIDDiagnoza">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.25" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDiagnoza" type="CVPolozkaCiselnikaDiagnoza" />
+  <xs:complexType name="CVPolozkaCiselnikaDiagnoza">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDiagnoza" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDFarmaceutickaSurovina" type="OIDFarmaceutickaSurovina" />
+  <xs:complexType name="OIDFarmaceutickaSurovina">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.198" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaLiekovejAlergie" type="OIDZavaznostVarovaniaLiekovejAlergie" />
+  <xs:complexType name="OIDZavaznostVarovaniaLiekovejAlergie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.234" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" type="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZavaznostVarovaniaLiekovejAlergie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDostupnostLiekuVSR" type="OIDDostupnostLiekuVSR" />
+  <xs:complexType name="OIDDostupnostLiekuVSR">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.249" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypOckovania" type="OIDTypOckovania" />
+  <xs:complexType name="OIDTypOckovania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.36" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhZariadenia" type="CVPolozkaCiselnikaDruhZariadenia" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhZariadenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhZariadenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZdravotnickaOdbornost" type="CVPolozkaCiselnikaZdravotnickaOdbornost" />
+  <xs:complexType name="CVPolozkaCiselnikaZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypJednotky" type="CVPolozkaCiselnikaTypJednotky" />
+  <xs:complexType name="CVPolozkaCiselnikaTypJednotky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypJednotky" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZakladnaJednotka" type="CVPolozkaCiselnikaZakladnaJednotka" />
+  <xs:complexType name="CVPolozkaCiselnikaZakladnaJednotka">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZakladnaJednotka" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPredpona" type="CVPolozkaCiselnikaPredpona" />
+  <xs:complexType name="CVPolozkaCiselnikaPredpona">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPredpona" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKonverziaJednotiek" type="CVPolozkaCiselnikaKonverziaJednotiek" />
+  <xs:complexType name="CVPolozkaCiselnikaKonverziaJednotiek">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDKonverziaJednotiek" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZasahoveUzemie" type="CVPolozkaCiselnikaZasahoveUzemie" />
+  <xs:complexType name="CVPolozkaCiselnikaZasahoveUzemie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZasahoveUzemie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOdborneZameranieOU" type="CVPolozkaCiselnikaOdborneZameranieOU" />
+  <xs:complexType name="CVPolozkaCiselnikaOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDOdborneZameranieOU" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhUtvaru" type="CVPolozkaCiselnikaDruhUtvaru" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhUtvaru">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhUtvaru" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZriadovatel" type="CVPolozkaCiselnikaZriadovatel" />
+  <xs:complexType name="CVPolozkaCiselnikaZriadovatel">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZriadovatel" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOblastIndikatoraKvality" type="CVPolozkaCiselnikaOblastIndikatoraKvality" />
+  <xs:complexType name="CVPolozkaCiselnikaOblastIndikatoraKvality">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDOblastIndikatoraKvality" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypIndikatoraKvality" type="CVPolozkaCiselnikaTypIndikatoraKvality" />
+  <xs:complexType name="CVPolozkaCiselnikaTypIndikatoraKvality">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypIndikatoraKvality" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPovolaniaZPr" type="CVPolozkaCiselnikaPovolaniaZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaPovolaniaZPr">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPovolaniaZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika" type="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypPravnehoVztahuZdrPracovnika" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKomora" type="CVPolozkaCiselnikaKomora" />
+  <xs:complexType name="CVPolozkaCiselnikaKomora">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDKomora" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZdrPoistenia" type="CVPolozkaCiselnikaTypZdrPoistenia" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZdrPoistenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypZdrPoistenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPlatitelaZP" type="CVPolozkaCiselnikaTypPlatitelaZP" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPlatitelaZP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypPlatitelaZP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia" type="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDovodUkonceniaZdrPoistenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhOckovania" type="CVPolozkaCiselnikaDruhOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhOckovania">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhOckovania" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLaboratornePolozky" type="CVPolozkaCiselnikaLaboratornePolozky" />
+  <xs:complexType name="CVPolozkaCiselnikaLaboratornePolozky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDLaboratornePolozky" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKontaktnejOsoby" type="CVPolozkaCiselnikaTypKontaktnejOsoby" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKontaktnejOsoby">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypKontaktnejOsoby" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMerneJednotky" type="CVPolozkaCiselnikaMerneJednotky" />
+  <xs:complexType name="CVPolozkaCiselnikaMerneJednotky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMerneJednotky" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyDP" type="CVPolozkaCiselnikaSposobUhradyDP" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyDP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobUhradyDP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSkupinyLimitovDP" type="CVPolozkaCiselnikaSkupinyLimitovDP" />
+  <xs:complexType name="CVPolozkaCiselnikaSkupinyLimitovDP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSkupinyLimitovDP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaDP" type="CVPolozkaCiselnikaVyrobcaDP" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaDP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDVyrobcaDP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAplikacnaFormaDP" type="CVPolozkaCiselnikaAplikacnaFormaDP" />
+  <xs:complexType name="CVPolozkaCiselnikaAplikacnaFormaDP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDAplikacnaFormaDP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyLieku" type="CVPolozkaCiselnikaSposobUhradyLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyLieku">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobUhradyLieku" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypLiekovehoUpozornenia" type="CVPolozkaCiselnikaTypLiekovehoUpozornenia" />
+  <xs:complexType name="CVPolozkaCiselnikaTypLiekovehoUpozornenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypLiekovehoUpozornenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIndikacnaSkupina" type="CVPolozkaCiselnikaIndikacnaSkupina" />
+  <xs:complexType name="CVPolozkaCiselnikaIndikacnaSkupina">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDIndikacnaSkupina" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCestaPodania" type="CVPolozkaCiselnikaCestaPodania" />
+  <xs:complexType name="CVPolozkaCiselnikaCestaPodania">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobPodania" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOmamnePsychotropneLatky" type="CVPolozkaCiselnikaOmamnePsychotropneLatky" />
+  <xs:complexType name="CVPolozkaCiselnikaOmamnePsychotropneLatky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDOmamnePsychotropneLatky" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaViazanostNaLP" type="CVPolozkaCiselnikaViazanostNaLP" />
+  <xs:complexType name="CVPolozkaCiselnikaViazanostNaLP">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDViazanostNaLP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLiekovaForma" type="CVPolozkaCiselnikaLiekovaForma" />
+  <xs:complexType name="CVPolozkaCiselnikaLiekovaForma">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDLiekovaForma" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSkupinyLiekovejFormy" type="CVPolozkaCiselnikaSkupinyLiekovejFormy" />
+  <xs:complexType name="CVPolozkaCiselnikaSkupinyLiekovejFormy">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSkupinyLiekovejFormy" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaATC" type="CVPolozkaCiselnikaATC" />
+  <xs:complexType name="CVPolozkaCiselnikaATC">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDATC" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaINN" type="CVPolozkaCiselnikaINN" />
+  <xs:complexType name="CVPolozkaCiselnikaINN">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDINN" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyZdrPom" type="CVPolozkaCiselnikaSposobUhradyZdrPom" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyZdrPom">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobUhradyZdrPom" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaZdrPom" type="CVPolozkaCiselnikaVyrobcaZdrPom" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaZdrPom">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDVyrobcaZdrPom" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypLiekovehoUpozornenia" type="OIDTypLiekovehoUpozornenia" />
+  <xs:complexType name="OIDTypLiekovehoUpozornenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.22" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKontaktnejOsoby" type="OIDTypKontaktnejOsoby" />
+  <xs:complexType name="OIDTypKontaktnejOsoby">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.29" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStavKategorizacie" type="CVPolozkaCiselnikaStavKategorizacie" />
+  <xs:complexType name="CVPolozkaCiselnikaStavKategorizacie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDStavKategorizacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLiekovaForma" type="OIDLiekovaForma" />
+  <xs:complexType name="OIDLiekovaForma">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.13" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKontaktu" type="OIDTypKontaktu" />
+  <xs:complexType name="OIDTypKontaktu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.15" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStavRegistracie" type="CVPolozkaCiselnikaStavRegistracie" />
+  <xs:complexType name="CVPolozkaCiselnikaStavRegistracie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDStavRegistracie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPovolenieViacnasobnejPreskripcie" type="OIDPovolenieViacnasobnejPreskripcie" />
+  <xs:complexType name="OIDPovolenieViacnasobnejPreskripcie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.9" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOmamnePsychotropneLatky" type="OIDOmamnePsychotropneLatky" />
+  <xs:complexType name="OIDOmamnePsychotropneLatky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.10" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVydajNahradnehoHumannehoLieku" type="OIDVydajNahradnehoHumannehoLieku" />
+  <xs:complexType name="OIDVydajNahradnehoHumannehoLieku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.7" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" type="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" />
+  <xs:complexType name="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPovolenieViacnasobnejPreskripcie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKontaktu" type="CVPolozkaCiselnikaTypKontaktu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKontaktu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypKontaktu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" type="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" />
+  <xs:complexType name="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDOkolnostiMeraniaKrvnehoTlaku" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStrankyEZKO" type="CVPolozkaCiselnikaStrankyEZKO" />
+  <xs:complexType name="CVPolozkaCiselnikaStrankyEZKO">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDStrankyEZKO" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypOckovania" type="CVPolozkaCiselnikaTypOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaTypOckovania">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypOckovania" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhyNeziaducichReakcii" type="CVPolozkaCiselnikaDruhyNeziaducichReakcii" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhyNeziaducichReakcii" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulZaMenom" type="CVPolozkaCiselnikaTitulZaMenom" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulZaMenom">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTitulZaMenom" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKrvnychSkupin" type="CVPolozkaCiselnikaTypKrvnychSkupin" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKrvnychSkupin">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypKrvnychSkupin" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulPredMenom" type="CVPolozkaCiselnikaTitulPredMenom" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulPredMenom">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTitulPredMenom" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypVzorkyLab" type="CVPolozkaCiselnikaTypVzorkyLab" />
+  <xs:complexType name="CVPolozkaCiselnikaTypVzorkyLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypVzorkyLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypyDoplnInformacii" type="CVPolozkaCiselnikaTypyDoplnInformacii" />
+  <xs:complexType name="CVPolozkaCiselnikaTypyDoplnInformacii">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypyDoplnInformacii" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAnatomickeMiestaLab" type="CVPolozkaCiselnikaAnatomickeMiestaLab" />
+  <xs:complexType name="CVPolozkaCiselnikaAnatomickeMiestaLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDAnatomickeMiestaLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodZruseniaOckovania" type="CVPolozkaCiselnikaDovodZruseniaOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodZruseniaOckovania">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDovodZruseniaOckovania" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab" type="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab" />
+  <xs:complexType name="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDFazyMenstruacnehoCykluLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKategoriaVysledkuTestuLab" type="CVPolozkaCiselnikaKategoriaVysledkuTestuLab" />
+  <xs:complexType name="CVPolozkaCiselnikaKategoriaVysledkuTestuLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDKategoriaVysledkuTestuLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPlatitelaLab" type="CVPolozkaCiselnikaTypPlatitelaLab" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPlatitelaLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypPlatitelaLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaReakciaNaOckovanie" type="CVPolozkaCiselnikaReakciaNaOckovanie" />
+  <xs:complexType name="CVPolozkaCiselnikaReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDReakciaNaOckovanie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobyOdberuLab" type="CVPolozkaCiselnikaSposobyOdberuLab" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobyOdberuLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobyOdberuLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaUrgentnostVysetrenia" type="CVPolozkaCiselnikaUrgentnostVysetrenia" />
+  <xs:complexType name="CVPolozkaCiselnikaUrgentnostVysetrenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDUrgentnostVysetrenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaObalyLab" type="CVPolozkaCiselnikaObalyLab" />
+  <xs:complexType name="CVPolozkaCiselnikaObalyLab">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDObalyLab" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhZdrPomAImplantatov" type="CVPolozkaCiselnikaDruhZdrPomAImplantatov" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhZdrPomAImplantatov">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhZdrPomAImplantatov" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaLieku" type="CVPolozkaCiselnikaVyrobcaLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaLieku">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDVyrobcaLieku" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAlergeny" type="CVPolozkaCiselnikaAlergeny" />
+  <xs:complexType name="CVPolozkaCiselnikaAlergeny">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDAlergeny" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAbuzyZivotosprava" type="CVPolozkaCiselnikaAbuzyZivotosprava" />
+  <xs:complexType name="CVPolozkaCiselnikaAbuzyZivotosprava">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDAbuzyZivotosprava" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPrejavyNeziaducichReakcii" type="CVPolozkaCiselnikaPrejavyNeziaducichReakcii" />
+  <xs:complexType name="CVPolozkaCiselnikaPrejavyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPrejavyNeziaducichReakcii" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypJednotky" type="OIDTypJednotky" />
+  <xs:complexType name="OIDTypJednotky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.189" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOriginalita" type="CVPolozkaCiselnikaOriginalita" />
+  <xs:complexType name="CVPolozkaCiselnikaOriginalita">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDOriginalita" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu" type="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobUrceniaDatumuPorodu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSkupinyLiekovejFormy" type="OIDSkupinyLiekovejFormy" />
+  <xs:complexType name="OIDSkupinyLiekovejFormy">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.197" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOkolnostiMeraniaKrvnehoTlaku" type="OIDOkolnostiMeraniaKrvnehoTlaku" />
+  <xs:complexType name="OIDOkolnostiMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.30" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStrankyEZKO" type="OIDStrankyEZKO" />
+  <xs:complexType name="OIDStrankyEZKO">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.33" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhOckovania" type="OIDDruhOckovania" />
+  <xs:complexType name="OIDDruhOckovania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.35" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZdravotnickaOdbornost" type="OIDZdravotnickaOdbornost" />
+  <xs:complexType name="OIDZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.34" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhUtvaru" type="OIDDruhUtvaru" />
+  <xs:complexType name="OIDDruhUtvaru">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.37" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhZariadenia" type="OIDDruhZariadenia" />
+  <xs:complexType name="OIDDruhZariadenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.38" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOdborneZameranieOU" type="OIDOdborneZameranieOU" />
+  <xs:complexType name="OIDOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.39" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPovolaniaZPr" type="OIDPovolaniaZPr" />
+  <xs:complexType name="OIDPovolaniaZPr">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.40" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKomora" type="OIDKomora" />
+  <xs:complexType name="OIDKomora">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.41" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhyNeziaducichReakcii" type="OIDDruhyNeziaducichReakcii" />
+  <xs:complexType name="OIDDruhyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.58" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulZaMenom" type="OIDTitulZaMenom" />
+  <xs:complexType name="OIDTitulZaMenom">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.59" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKrvnychSkupin" type="OIDTypKrvnychSkupin" />
+  <xs:complexType name="OIDTypKrvnychSkupin">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.66" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPlatitelaZP" type="OIDTypPlatitelaZP" />
+  <xs:complexType name="OIDTypPlatitelaZP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.67" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodUkonceniaZdrPoistenia" type="OIDDovodUkonceniaZdrPoistenia" />
+  <xs:complexType name="OIDDovodUkonceniaZdrPoistenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.68" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZdrPoistenia" type="OIDTypZdrPoistenia" />
+  <xs:complexType name="OIDTypZdrPoistenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.77" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulPredMenom" type="OIDTitulPredMenom" />
+  <xs:complexType name="OIDTitulPredMenom">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.86" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMerneJednotky" type="OIDMerneJednotky" />
+  <xs:complexType name="OIDMerneJednotky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.87" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobPodania" type="OIDSposobPodania" />
+  <xs:complexType name="OIDSposobPodania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.90" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyDP" type="OIDSposobUhradyDP" />
+  <xs:complexType name="OIDSposobUhradyDP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.91" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyZdrPom" type="OIDSposobUhradyZdrPom" />
+  <xs:complexType name="OIDSposobUhradyZdrPom">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.92" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypVzorkyLab" type="OIDTypVzorkyLab" />
+  <xs:complexType name="OIDTypVzorkyLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.93" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDViazanostNaLP" type="OIDViazanostNaLP" />
+  <xs:complexType name="OIDViazanostNaLP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.94" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZasahoveUzemie" type="OIDZasahoveUzemie" />
+  <xs:complexType name="OIDZasahoveUzemie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.95" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSkupinyLimitovDP" type="OIDSkupinyLimitovDP" />
+  <xs:complexType name="OIDSkupinyLimitovDP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.96" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyLieku" type="OIDSposobUhradyLieku" />
+  <xs:complexType name="OIDSposobUhradyLieku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.104" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIndikacnaSkupina" type="OIDIndikacnaSkupina" />
+  <xs:complexType name="OIDIndikacnaSkupina">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.105" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaDP" type="OIDVyrobcaDP" />
+  <xs:complexType name="OIDVyrobcaDP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.112" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypyDoplnInformacii" type="OIDTypyDoplnInformacii" />
+  <xs:complexType name="OIDTypyDoplnInformacii">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.114" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAnatomickeMiestaLab" type="OIDAnatomickeMiestaLab" />
+  <xs:complexType name="OIDAnatomickeMiestaLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.115" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodZruseniaOckovania" type="OIDDovodZruseniaOckovania" />
+  <xs:complexType name="OIDDovodZruseniaOckovania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.116" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDFazyMenstruacnehoCykluLab" type="OIDFazyMenstruacnehoCykluLab" />
+  <xs:complexType name="OIDFazyMenstruacnehoCykluLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.117" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKategoriaVysledkuTestuLab" type="OIDKategoriaVysledkuTestuLab" />
+  <xs:complexType name="OIDKategoriaVysledkuTestuLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.118" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPlatitelaLab" type="OIDTypPlatitelaLab" />
+  <xs:complexType name="OIDTypPlatitelaLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.119" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDReakciaNaOckovanie" type="OIDReakciaNaOckovanie" />
+  <xs:complexType name="OIDReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.120" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobyOdberuLab" type="OIDSposobyOdberuLab" />
+  <xs:complexType name="OIDSposobyOdberuLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.121" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDObalyLab" type="OIDObalyLab" />
+  <xs:complexType name="OIDObalyLab">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.122" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDUrgentnostVysetrenia" type="OIDUrgentnostVysetrenia" />
+  <xs:complexType name="OIDUrgentnostVysetrenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.123" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaLieku" type="OIDVyrobcaLieku" />
+  <xs:complexType name="OIDVyrobcaLieku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.124" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaZdrPom" type="OIDVyrobcaZdrPom" />
+  <xs:complexType name="OIDVyrobcaZdrPom">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.125" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhZdrPomAImplantatov" type="OIDDruhZdrPomAImplantatov" />
+  <xs:complexType name="OIDDruhZdrPomAImplantatov">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.126" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMetodyMeraniaKrvnehoTlaku" type="OIDMetodyMeraniaKrvnehoTlaku" />
+  <xs:complexType name="OIDMetodyMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.132" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAplikacnaFormaDP" type="OIDAplikacnaFormaDP" />
+  <xs:complexType name="OIDAplikacnaFormaDP">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.145" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZriadovatel" type="OIDZriadovatel" />
+  <xs:complexType name="OIDZriadovatel">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.149" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPravnehoVztahuZdrPracovnika" type="OIDTypPravnehoVztahuZdrPracovnika" />
+  <xs:complexType name="OIDTypPravnehoVztahuZdrPracovnika">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.151" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypIndikatoraKvality" type="OIDTypIndikatoraKvality" />
+  <xs:complexType name="OIDTypIndikatoraKvality">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.155" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOblastIndikatoraKvality" type="OIDOblastIndikatoraKvality" />
+  <xs:complexType name="OIDOblastIndikatoraKvality">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.156" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAbuzyZivotosprava" type="OIDAbuzyZivotosprava" />
+  <xs:complexType name="OIDAbuzyZivotosprava">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.157" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAlergeny" type="OIDAlergeny" />
+  <xs:complexType name="OIDAlergeny">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.158" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPrejavyNeziaducichReakcii" type="OIDPrejavyNeziaducichReakcii" />
+  <xs:complexType name="OIDPrejavyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.159" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDINN" type="OIDINN" />
+  <xs:complexType name="OIDINN">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.161" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPredpona" type="OIDPredpona" />
+  <xs:complexType name="OIDPredpona">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.190" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOriginalita" type="OIDOriginalita" />
+  <xs:complexType name="OIDOriginalita">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.164" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUrceniaDatumuPorodu" type="OIDSposobUrceniaDatumuPorodu" />
+  <xs:complexType name="OIDSposobUrceniaDatumuPorodu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.171" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDATC" type="OIDATC" />
+  <xs:complexType name="OIDATC">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.83" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZakladnaJednotka" type="OIDZakladnaJednotka" />
+  <xs:complexType name="OIDZakladnaJednotka">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.188" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKonverziaJednotiek" type="OIDKonverziaJednotiek" />
+  <xs:complexType name="OIDKonverziaJednotiek">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.191" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLaboratornePolozky" type="OIDLaboratornePolozky" />
+  <xs:complexType name="OIDLaboratornePolozky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.52" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhVlastnictva" type="OIDDruhVlastnictva" />
+  <xs:complexType name="OIDDruhVlastnictva">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.241" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaInstitucionalneSubsektory" type="CVPolozkaCiselnikaInstitucionalneSubsektory" />
+  <xs:complexType name="CVPolozkaCiselnikaInstitucionalneSubsektory">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDInstitucionalneSubsektory" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaNaceKody" type="CVPolozkaCiselnikaNaceKody" />
+  <xs:complexType name="CVPolozkaCiselnikaNaceKody">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDNaceKody" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLegislativnyPredpis" type="OIDLegislativnyPredpis" />
+  <xs:complexType name="OIDLegislativnyPredpis">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.222" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSpecifikaciaOdboru" type="OIDSpecifikaciaOdboru" />
+  <xs:complexType name="OIDSpecifikaciaOdboru">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.223" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLegislativnyPredpis" type="CVPolozkaCiselnikaLegislativnyPredpis" />
+  <xs:complexType name="CVPolozkaCiselnikaLegislativnyPredpis">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDLegislativnyPredpis" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSpecifikaciaOdboru" type="CVPolozkaCiselnikaSpecifikaciaOdboru" />
+  <xs:complexType name="CVPolozkaCiselnikaSpecifikaciaOdboru">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSpecifikaciaOdboru" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPoskytovanieZSvOdbore" type="CVPolozkaCiselnikaPoskytovanieZSvOdbore" />
+  <xs:complexType name="CVPolozkaCiselnikaPoskytovanieZSvOdbore">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDPoskytovanieZSvOdbore" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPoskytovanieZSvOdbore" type="OIDPoskytovanieZSvOdbore" />
+  <xs:complexType name="OIDPoskytovanieZSvOdbore">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.225" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZaradenieDoEvidPoctu" type="CVPolozkaCiselnikaZaradenieDoEvidPoctu" />
+  <xs:complexType name="CVPolozkaCiselnikaZaradenieDoEvidPoctu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDZaradenieDoEvidPoctu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZaradenieDoEvidPoctu" type="OIDZaradenieDoEvidPoctu" />
+  <xs:complexType name="OIDZaradenieDoEvidPoctu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.226" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypAdresy" type="CVPolozkaCiselnikaTypAdresy" />
+  <xs:complexType name="CVPolozkaCiselnikaTypAdresy">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypAdresy" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodUkonPozastLicencie" type="CVPolozkaCiselnikaDovodUkonPozastLicencie" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodUkonPozastLicencie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDovodUkonPozastLicencie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSpecifikaciaZastupcu" type="CVPolozkaCiselnikaSpecifikaciaZastupcu" />
+  <xs:complexType name="CVPolozkaCiselnikaSpecifikaciaZastupcu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSpecifikaciaZastupcu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSpecifikaciaZastupcu" type="OIDSpecifikaciaZastupcu" />
+  <xs:complexType name="OIDSpecifikaciaZastupcu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.235" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZakonnehoZastupcu" type="CVPolozkaCiselnikaTypZakonnehoZastupcu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZakonnehoZastupcu">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDTypZakonnehoZastupcu" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZakonnehoZastupcu" type="OIDTypZakonnehoZastupcu" />
+  <xs:complexType name="OIDTypZakonnehoZastupcu">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.236" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIndikacie" type="CVPolozkaCiselnikaIndikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaIndikacie">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDIndikacie" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIndikacie" type="OIDIndikacie" />
+  <xs:complexType name="OIDIndikacie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.237" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhVlastnictva" type="CVPolozkaCiselnikaDruhVlastnictva" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhVlastnictva">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDruhVlastnictva" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy" type="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy" />
+  <xs:complexType name="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDUstredneOrganyStatnejSpravy" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDInstitucionalneSubsektory" type="OIDInstitucionalneSubsektory" />
+  <xs:complexType name="OIDInstitucionalneSubsektory">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.240" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDNaceKody" type="OIDNaceKody" />
+  <xs:complexType name="OIDNaceKody">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.239" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDUstredneOrganyStatnejSpravy" type="OIDUstredneOrganyStatnejSpravy" />
+  <xs:complexType name="OIDUstredneOrganyStatnejSpravy">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.242" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPravnaSposobilost" type="OIDPravnaSposobilost" />
+  <xs:complexType name="OIDPravnaSposobilost">
+    <xs:sequence>
+      <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.157" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMikroorganizmus" type="CVPolozkaCiselnikaMikroorganizmus" />
+  <xs:complexType name="CVPolozkaCiselnikaMikroorganizmus">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDMikroorganizmus" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMikroorganizmus" type="OIDMikroorganizmus" />
+  <xs:complexType name="OIDMikroorganizmus">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.248" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodUkonceniaAPozastavenia" type="OIDDovodUkonceniaAPozastavenia" />
+  <xs:complexType name="OIDDovodUkonceniaAPozastavenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.31" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDostupnostLiekuVLekarni" type="OIDDostupnostLiekuVLekarni" />
+  <xs:complexType name="OIDDostupnostLiekuVLekarni">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.250" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobPlatby" type="OIDSposobPlatby" />
+  <xs:complexType name="OIDSposobPlatby">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.251" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobDorucenia" type="OIDSposobDorucenia" />
+  <xs:complexType name="OIDSposobDorucenia">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.252" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDostupnostLiekuVSR" type="CVPolozkaCiselnikaDostupnostLiekuVSR" />
+  <xs:complexType name="CVPolozkaCiselnikaDostupnostLiekuVSR">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDostupnostLiekuVSR" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDostupnostLiekuVLekarni" type="CVPolozkaCiselnikaDostupnostLiekuVLekarni" />
+  <xs:complexType name="CVPolozkaCiselnikaDostupnostLiekuVLekarni">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDostupnostLiekuVLekarni" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobPlatby" type="CVPolozkaCiselnikaSposobPlatby" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobPlatby">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobPlatby" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobDorucenia" type="CVPolozkaCiselnikaSposobDorucenia" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobDorucenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDSposobDorucenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodUkonceniaAPozastavenia" type="CVPolozkaCiselnikaDovodUkonceniaAPozastavenia" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodUkonceniaAPozastavenia">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDDovodUkonceniaAPozastavenia" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDFunkciaZPr" type="OIDFunkciaZPr" />
+  <xs:complexType name="OIDFunkciaZPr">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="string50" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.27" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaFunkciaZPr" type="CVPolozkaCiselnikaFunkciaZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaFunkciaZPr">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" type="string11" form="qualified" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingScheme" type="OIDFunkciaZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="string50" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="string200" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

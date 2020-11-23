@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/Registracia/v1" targetNamespace="http://eHealth.gov.sk/Registracia/v1" elementFormDefault="qualified">
+	<xs:include schemaLocation="../../../COMMON/Xsd/Kontakt.xsd"/>
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd"/>
+	<xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/EN13606-RM.xsd"/>
+	<xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/EN13606-restrictions.xsd"/>
+	<xs:element name="ZapisRegistraciuOUPZSVstup" type="ZapisRegistraciuOUPZSVstup"/>
+	<xs:complexType name="ZapisRegistraciuOUPZSVstup">
+		<xs:annotation>
+			<xs:documentation>Vstupné parametre pre službu 'ZapisRegistraciuOUPZS'.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IdOUPZS" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifikator odborneho utvaru poskytovatela zdravotnej starostlivosti.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ObjednanieNaOHCezNPZ" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Povolenie objednania na ordinacne hodiny cez NPZ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ObjednanieNaDOHCezNPZ" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Povolenie objednania na doplnkove ordinacne hodiny cez NPZ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EhrSystem" type="rm:IIEhrSystem" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifikácia systému PZS, v ktorom bol záznam vytvorený. Max 50 znakov. Kód tvorcovi IS PZS vydáva prevádzkovateľ riešenia po prijatí žiadosti tvorcu IS PZS na overenie zhody.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegistrovaneKontaktyOUPZS" type="Kontakt" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

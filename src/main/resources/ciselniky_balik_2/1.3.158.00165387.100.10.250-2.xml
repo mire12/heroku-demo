@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Dostupnosť lieku v lekárni</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.250</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020806014</codeValue>
+      <displayName>Dostupný v lekárni</displayName>
+      <Skratka>Dostupný</Skratka>
+      <Popis>Liečebný prostriedok je dostupný na sklade alebo na objednanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020806030</codeValue>
+      <displayName>Nedostupný v lekárni</displayName>
+      <Skratka>Nedostupný</Skratka>
+      <Popis>Liečebný prostriedok nie je dostupný na sklade ani na objednanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869248</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

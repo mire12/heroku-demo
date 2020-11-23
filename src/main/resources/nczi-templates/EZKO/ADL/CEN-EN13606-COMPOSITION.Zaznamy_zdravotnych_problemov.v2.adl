@@ -1,0 +1,60 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Zaznamy_zdravotnych_problemov.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Informácie o zdravotných problémoch v rosahu: život ovplyvňujúce diagnózy a implantované zdravotné pomôcky.">
+            keywords = <"Implantát","Používaná zdravotnícka pomôcka","Život ovplyvňujúca diagnóza">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Zoznam zdravotných problémov
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0001] occurrences matches {0..*} matches {  -- Život ovplyvňujúce diagnózy
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Zdravotny_problem.v2/}
+            }
+            allow_archetype ENTRY[at0006] occurrences matches {0..*} matches {  -- Používané zdravotnícke pomôcky
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Pouzivana_zdravotnicka_pomocka.v2/}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Zoznam zdravotných problémov">
+                    description = <"Zoznam zdravotných problémov - informácie o implantovaných zdravotných pomôckach a život ovplyvňujúcich diagnózach.
+">
+                >
+                ["at0001"] = <
+                    text = <"Život ovplyvňujúce diagnózy">
+                    description = <"Zoznam aktívnych život ovplyvňujúcich diagnóz, ktoré sú definované vyhláškou.">
+                >
+                ["at0006"] = <
+                    text = <"Používané zdravotnícke pomôcky">
+                    description = <"Zdravotnícke  pomôcky a implantáty zavedené pacientovi.">
+                >
+            >
+        >
+    >

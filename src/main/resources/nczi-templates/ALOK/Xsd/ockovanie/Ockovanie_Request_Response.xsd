@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="http://eHealth.gov.sk/Allocation/v1"
+		   elementFormDefault="qualified"
+>
+  <xs:include schemaLocation="../_shared/Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/AlokacieIdentifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/Obecne.xsd" />
+  <xs:include schemaLocation="../_shared/ObecneAnon.xsd" />
+  <xs:include schemaLocation="../_shared/Anonymizacia_Request_Response.xsd" />
+  <xs:include schemaLocation="../_shared/EhrFields.xsd" />
+	
+
+  <!-- Request -->
+  <xs:element name="IdentifikaciaPacienta" type="IdentifikaciaPacienta" />
+  <xs:element name="ParametrePripominania" type="ParametrePripominania"/>
+  <xs:element name="ZoznamOckovacieZaznamy" type="ZoznamOckovacieZaznamy" />
+  <xs:element name="ZoznamReakcieNaOckovanie" type="ZoznamReakcieNaOckovanie" />
+  <xs:element name="PlanovaneOckovanieZoznam" type="PlanovaneOckovanieZoznam" />
+  <xs:element name="IdentifikatorPripomienokZoznam" type="IdentifikatorPripomienokZoznam"/>
+  <xs:element name="OckovanieID" type="OckovanieID"/>
+  <xs:element name="ZapisReakcieNaOckovanie_Response" type="ZapisReakcieNaOckovanie_Response"/>
+  <xs:element name="VyhladajOckovaniaCriteria" type="VyhladajOckovaniaCriteria" />
+  <!-- Request END -->
+
+  <xs:complexType name="IdentifikaciaPacienta">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajOckovaniaCriteria">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumVykonaniaOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVykonaniaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu ockovania v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Triedenie_Metadata" type="Triedenie_OckovaniaPacienta" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParametrePripominania">
+    <xs:sequence>
+      <xs:element name="OckovanieSUrcenymVekom" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Priznak či sa jedná o pripomínanie očkovania s určeným vekom očkovania alebo pripominanie očkovania každých x rokov závislého na predchadzajúcom očkovaní. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PripominanieVMesiaci" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentifikatorPripomienokZoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam identifikátorov vygenerovaných pripomienok na plánované očkovania pacienta.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPripomienky" type="IdentifikatorPripomienky" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentifikatorPripomienky" type="IdentifikatorPripomienky"/>
+  <xs:complexType name="IdentifikatorPripomienky">
+    <xs:sequence>
+      <xs:element name="IdentifikatorPripomienky" type="IdPripomenutieOckovania" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OckovanieID">
+    <xs:annotation>
+      <xs:documentation>identifikátor zapísaného očkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOckovania" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>identifikátor zapísaného očkovania</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ZapisReakcieNaOckovanie_Response">
+    <xs:annotation>
+      <xs:documentation>identifikátor zapísaného očkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZaznamu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>identifikátor zapísanéj reakcie na očkovanie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlanovaneOckovanieZoznam">
+    <xs:annotation>
+      <xs:documentation>
+        Zoznam záznamov o plánovanom očkovaní obsahujúci:
+        - identifikátor kalendára
+        - platnosť kalendára
+        - druh očkovania (s informáciami - ročník narodenia, opakovateľnosť, typ očkovania a ďalšie atribúty z definície ročného očkovacieho kalendára - termín pripomínania , termín upomínania nevykonaného plánovaného povinného očkovania)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Ockovania" type="PlanovaneOckovania" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PlanovaneOckovania">
+    <xs:sequence>
+      <xs:element name="PlanovaneOckovanie" type="PlanovaneOckovanie" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="PlanovaneOckovanie" type="PlanovaneOckovanie"/>
+  <xs:complexType name="PlanovaneOckovanie">
+    <xs:sequence>
+      <xs:element name="Termin" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum ,kedy má byť očovanie vykonané. Nie je vyplnený pre cyklické očkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DruhOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník DruhOckovania</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník TypOckovania</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIIdentifikaciaOckovania">
+    <xs:sequence>
+      <xs:element name="IdentifikaciaOckovania_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikaciaOckovania_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoznamReakcieNaOckovanie">            
+    <xs:annotation>
+      <xs:documentation>Zoznam reakcií na očkovanie jedného pacienta</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReakciaNaOckovanie" type="ReakciaNaOckovanie" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />    
+  </xs:complexType>  
+
+  <xs:complexType name="ReakciaNaOckovanie">
+    <xs:sequence>
+      <xs:element name="Alergen" minOccurs="0" maxOccurs="1" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Latka" type="ACV" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Liecivo" type="ACV" minOccurs="0" maxOccurs="1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DatumSpozorovania" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumUkoncenia"     type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikaciaOckovania" type="AIIIdentifikaciaOckovania" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TypReakcie" type="ACV" minOccurs="0" maxOccurs="1" />
+            <xs:element name="TypAlergie" type="ACV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrID" type="AIIEhrID" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrTimeCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EhrRmID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComCommitter" type="AIIComCommitter" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComTimeCommitted" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RecRcID" type="AIIRecRcID" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RecSynthesised" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RecArchetype_ID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RecName_OT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EntUncertainlyExpressed" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComHealthcareFacility" type="AIIComHealthcareFacility" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>OUPZS Osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComPerformer" type="AIIComPerformer" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID Osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComFunction" type="AIIComFunction" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specializacia Osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu reakcie v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  
+  <xs:complexType name="ZoznamOckovacieZaznamy">
+    <xs:sequence>
+      <xs:element name="OckovaciZaznam" minOccurs="0" maxOccurs="unbounded" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ZaznamOOckovani" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DruhyOckovania" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DruhOckovania" type="ACV" minOccurs="1" maxOccurs="unbounded" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="TypOckovania" type="ACV" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="OckovaciaDavka">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PocetDavok" type="xs:int" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="PoradieDavky" type="xs:int" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="PoslednaDavka" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="VykonaneOckovanie" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="DatumVykonaniaOckovania" type="xs:dateTime" />
+                        <xs:element name="Vakcina">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Mnozstvo" minOccurs="0" maxOccurs="1" type="Mnozstvo" />
+                              <xs:element name="OckovaciaLatka" type="IdOckovaciaLatka" minOccurs="0" maxOccurs="1" />
+                              <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1" />
+                              <xs:element name="Sarza" type="xs:string" minOccurs="0" maxOccurs="1" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ZruseneOckovanie" minOccurs="0" maxOccurs="1" >
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="PlanovanyDatumOckovania" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="DovodZruseniaOckovania" type="ACV" minOccurs="0" maxOccurs="1" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="EhrID" type="AIIEhrID" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="EhrTimeCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="EhrRmID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="ComCommitter" type="AIIComCommitter" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="ComTimeCommitted" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="RecRcID" type="AIIRecRcID" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="RecSynthesised" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="RecArchetype_ID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="RecName_OT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="EntUncertainlyExpressed" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="ComHealthcareFacility" type="AIIComHealthcareFacility" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="ComPerformer" type="AIIComPerformer" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="ComFunction" type="AIIComFunction" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="Sensitivity" type="xs:int" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ID zaznamu ockovania v databazi</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Storno" type="StornoZaznamu" minOccurs="0" maxOccurs="1" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ReakcieNaOckovanie" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ReakciaNaOckovanie" type="ReakciaNaOckovanie" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />
+  </xs:complexType>
+
+  <xs:element name="PlanovaneOckovanieZoznamEZK" type="PlanovaneOckovanieZoznamEZK"/>
+  <xs:complexType name="PlanovaneOckovanieZoznamEZK">
+    <xs:annotation>
+      <xs:documentation>Zoznam záznamov o plánovanom očkovaní obsahujúci: identifikátor kalendára, platnosť kalendára, druh očkovania (s informáciami - ročník narodenia, opakovateľnosť, typ očkovania a ďalšie atribúty z definície ročného očkovacieho kalendára - termín pripomínania , termín upomínania nevykonaného plánovaného povinného očkovania)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PlanovaneOckovanie" type="PlanovaneOckovanieEZK" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="PlanovaneOckovanieEZK" type="PlanovaneOckovanieEZK"/>
+  <xs:complexType name="PlanovaneOckovanieEZK">
+    <xs:sequence>
+      <xs:element name="Termin" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum ,kedy má byť očovanie vykonané. Nie je vyplnený pre cyklické očkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVykonania-ZruseniaOckovania" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>V prípade, že bolo očkovanie vykonané alebo zrušené tento atribút musí byť vyplnený. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SkutocnePlanovaneOckovanie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>V prípade, že bolo očkovanie skutočné plánované bude príznak nastavený na TRUE. Ak sa ale jednalo o predpoklad bude príznak nastavený na FALSE. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOckovaniaOd" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOckovaniaDo" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Vek" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdOckovaciehoZaznamu" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StavVykonaniaOckovania" type="StavPlanovanehoOckovania" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DruhOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="TypOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StavPlanovanehoOckovania">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PLANOVANE">
+        <xs:annotation>
+          <xs:documentation>Plánované ale zatiaľ nevykonané očkovanie</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VYKONANE">
+        <xs:annotation>
+          <xs:documentation>Plánované a vykonané očkovanie</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZRUSENE">
+        <xs:annotation>
+          <xs:documentation>Planované a zrušené očkovanie</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

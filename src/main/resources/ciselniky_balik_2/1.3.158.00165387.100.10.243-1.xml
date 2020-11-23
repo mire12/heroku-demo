@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Obmedzenie spôsobilosti na právne úkony</codingSchemeName>
+    <codingSchemeVersion>1</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.243</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2014-01-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020313292</codeValue>
+      <displayName>Plná spôsobilosť na právne úkony</displayName>
+      <Skratka>0</Skratka>
+      <Popis>Plná spôsobilosť na právne úkony</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612630</codeValue>
+      <displayName>Obmedzená spôsobilosť na právne úkony</displayName>
+      <Skratka>1</Skratka>
+      <Popis>Obmedzená spôsobilosť na právne úkony</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000612648</codeValue>
+      <displayName>Pozbavenie spôsobilosti na právne úkony</displayName>
+      <Skratka>2</Skratka>
+      <Popis>Pozbavenie spôsobilosti na právne úkony</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020804829</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>NEZ</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

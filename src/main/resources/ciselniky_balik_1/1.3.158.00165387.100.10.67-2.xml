@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ platiteľa zdravotného poistenia</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.67</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116285</codeValue>
+      <displayName>Zamestnanec</displayName>
+      <Skratka>ZAM</Skratka>
+      <Popis>Zamestnanec</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000619536</codeValue>
+      <displayName>Zamestnávateľ</displayName>
+      <Skratka>Z</Skratka>
+      <Popis>Zamestnávateľ</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031746</codeValue>
+      <displayName>Štát</displayName>
+      <Skratka>C</Skratka>
+      <Popis>Štát</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031753</codeValue>
+      <displayName>Samostatne zárobkovo činná osoba</displayName>
+      <Skratka>SZČO</Skratka>
+      <Popis>Samostatne zárobkovo činná osoba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031761</codeValue>
+      <displayName>Dobrovoľne nezamestnaná osoba</displayName>
+      <Skratka>Q</Skratka>
+      <Popis>Dobrovoľne nezamestnaná osoba (platiteľ podľa § 11 ods. 2 zákona č. 580/2004 Z. z.)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208875567</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

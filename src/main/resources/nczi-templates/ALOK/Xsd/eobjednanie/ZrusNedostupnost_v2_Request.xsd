@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+  
+  <xs:element name="ZrusNedostupnostRequest" type="tns:ZrusNedostupnostRequest" />
+  
+  <xs:complexType name="ZrusNedostupnostRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequestUna">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Nedostupnosti" type="tns:ArrayOfNedostupnostNaZmazanie">
+            <xs:annotation>
+              <xs:documentation>Pole Nedostupností</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequestUna">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q18="CEN/13606/RM" type="q18:II">
+        <xs:annotation>
+          <xs:documentation>ID Odborného Útvaru Poskytovateľa Zdravotnej Starostlivosti (OÚ PZS - ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q19="CEN/13606/RM" type="q19:II">
+        <xs:annotation>
+          <xs:documentation>ID Zdravotníckeho Pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfNedostupnostNaZmazanie">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NedostupnostNaZmazanie" nillable="true" type="tns:NedostupnostNaZmazanie" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NedostupnostNaZmazanie">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdNedostupnosti" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Identifikátor nedostupnosti v ISOO.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externé ID pridelené IS PZS. Musí byť konzistentné s IdNedostupnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Druhy nežiadúcich reakcií</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>displayNameEng</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>PopisEng</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.58</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116210</codeValue>
+      <displayName>Intolerancia lieku</displayName>
+      <Skratka>INTL</Skratka>
+      <Popis>Intolerancia lieku</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Drug intolerance</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Drug intolerance</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000116228</codeValue>
+      <displayName>Alergia na lieky</displayName>
+      <Skratka>ALGL</Skratka>
+      <Popis>Alergia na lieky</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Drug allergy</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Drug allergy</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496893</codeValue>
+      <displayName>Intolerancia potraviny</displayName>
+      <Skratka>INTP</Skratka>
+      <Popis>Intolerancia potraviny</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Food intolerance</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Food intolerance</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496901</codeValue>
+      <displayName>Alergia na potraviny</displayName>
+      <Skratka>ALGP</Skratka>
+      <Popis>Alergia na potraviny</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Food allergy</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Food allergy</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496919</codeValue>
+      <displayName>Sklon k nežiaducim reakciám</displayName>
+      <Skratka>SNU</Skratka>
+      <Popis>Sklon k nežiaducim reakciám</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496927</codeValue>
+      <displayName>Sklon k nežiaducim reakciám na potraviny</displayName>
+      <Skratka>SNUP</Skratka>
+      <Popis>Sklon k nežiaducim reakciám na potraviny</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to food</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to food</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496935</codeValue>
+      <displayName>Alergia na látku</displayName>
+      <Skratka>ALGS</Skratka>
+      <Popis>Alergia na látku, surovinu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Allergy to substance</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Allergy to substance</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496943</codeValue>
+      <displayName>Sklon k nežiaducim reakciám na lieky</displayName>
+      <Skratka>SNUL</Skratka>
+      <Popis>Sklon k nežiaducim reakciám na lieky</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to drug</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to drug</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000496950</codeValue>
+      <displayName>Sklon k nežiaducim reakciám na látky</displayName>
+      <Skratka>SNUS</Skratka>
+      <Popis>Sklon k nežiaducim reakciám na látky, suroviny</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to substance</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Propensity to adverse reactions to substance</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885075</codeValue>
+      <displayName>Pacient alergiu neudáva</displayName>
+      <Skratka>PAN</Skratka>
+      <Popis>Pacient alergiu neudáva</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Patient doesn´t report allergy</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Patient doesn´t report allergy</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869792</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

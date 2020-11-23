@@ -1,0 +1,184 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Abuzy_zivotospravy.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o sociálnej anamnéze pacienta, ktorá je súčasťou pacientskeho sumára. Obsahuje informácie o abúzoch a životospráve pacienta.">
+            keywords = <"Životospráva","Abuzus">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Abúzus
+        items existence matches {0..1} cardinality matches {1..*; ordered} matches {
+            ELEMENT[at0004] occurrences matches {1..1} matches {  -- Typ abúz
+                value existence matches {0..1} matches {
+                    CV[at0008] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0002] occurrences matches {0..1} matches {  -- OID
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.10.157"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0006] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/; ""}
+                    }
+                }
+            }
+            ELEMENT[at0001] occurrences matches {0..1} matches {  -- Počet
+                value existence matches {0..1} matches {
+                    PQ[at0014] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {*}
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            CLUSTER[at0023] occurrences matches {0..1} matches {  -- Obdobie
+                parts existence matches {0..1} cardinality matches {1..2; ordered} matches {
+                    ELEMENT[at0010] occurrences matches {1..1} matches {  -- Dátum od
+                        value existence matches {0..1} matches {
+                            DATE[at0015] occurrences matches {1..1} matches {  -- DATE
+                                date existence matches {1..1} matches {yyyy-mm-dd}
+                            }
+                        }
+                    }
+                    ELEMENT[at0017] occurrences matches {0..1} matches {  -- Dátum do
+                        value existence matches {0..1} matches {
+                            DATE[at0018] occurrences matches {1..1} matches {  -- DATE
+                                date existence matches {1..1} matches {yyyy-mm-dd}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0012] occurrences matches {0..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0007] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {*}
+                root existence matches {1..1} matches {
+                    OID[at0009] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.10"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CISELNIK_JEDNOTIEK", ...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Abúzus">
+                    description = <"Údaje o životospráve pacienta, ktorá má vplyv na jeho zdravotný stav.">
+                >
+                ["at0001"] = <
+                    text = <"Počet">
+                    description = <"Počet užívaných jednotiek za jednotku času. Obsahuje dve polia. Hodnotu a Mernú jednotku za čas - odkaz na Číselník jednotiek">
+                >
+                ["at0003"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka lekára k zlozvykom  a životospráve pacienta. Použiva sa pre doplnenie voľným textom k hodnote vybranej prostredníctvom číselníkovej hodnoty">
+                >
+                ["at0004"] = <
+                    text = <"Typ abúz">
+                    description = <"Typ zlozvyku/životosprávy pacienta. Výber povolených hodnôt je z číselníka typov abuzus a životosprávy 1.3.158.00165387.100.10.157">
+                >
+                ["at0006"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0008"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0010"] = <
+                    text = <"Dátum od">
+                    description = <"Začiatok obdobia príslušného zlozvyku resp. životosprávy.">
+                >
+                ["at0014"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0015"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0017"] = <
+                    text = <"Dátum do">
+                    description = <"Koniec obdobia príslušného zlozvyku resp. životosprávy.">
+                >
+                ["at0018"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0023"] = <
+                    text = <"Obdobie">
+                    description = <"Obdobie trvania príslušného zlozvyku resp. životosprávy.">
+                >
+                ["at0002"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0007"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0009"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["sk"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+        ["CISELNIK_JEDNOTIEK"] = <
+            items = <
+                ["at0001"] = <[CISELNIK_JEDNOTIEK::dlZaCas],[CISELNIK_JEDNOTIEK::ksZaCas]>
+            >
+        >
+    >

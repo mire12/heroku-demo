@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://eHealth.gov.sk/Allocation/v1"
+    elementFormDefault="qualified"
+    >
+
+  <xs:complexType name="AIIEhrSystem">
+    <xs:sequence>
+      <xs:element name="EhrSystem_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EhrSystem_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIEhrID">
+    <xs:sequence>
+      <xs:element name="EhrID_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EhrID_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIComCommitter">
+    <xs:sequence>
+      <xs:element name="ComCommitter_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComCommitter_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIRecRcID">
+    <xs:sequence>
+      <xs:element name="RecRcID_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RecRcID_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIComHealthcareFacility">
+    <xs:sequence>
+      <xs:element name="ComHealthcareFacility_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComHealthcareFacility_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIComPerformer">
+    <xs:sequence>
+      <xs:element name="ComPerformer_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComPerformer_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIIdentifikaciaOUPZS">
+    <xs:sequence>
+      <xs:element name="IdentifikaciaOUPZS_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IdentifikaciaOUPZS_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIIdentifikaciaZPrac">
+    <xs:sequence>
+      <xs:element name="IdentifikaciaZPrac_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IdentifikaciaZPrac_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIComFunction">
+    <xs:sequence>
+      <xs:element name="ComFunction_RT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ComFunction_EX" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

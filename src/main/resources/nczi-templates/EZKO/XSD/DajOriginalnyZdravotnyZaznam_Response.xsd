@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/eHealthArchivation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/eHealthArchivation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="..\COMMON\Xsd\EN13606-extract.xsd"/>
+
+  <xs:element name="DajOriginalnyZdravotnyZaznam_Response" type="tns:DajOriginalnyZdravotnyZaznam_Response" />
+  <xs:complexType name="DajOriginalnyZdravotnyZaznam_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Records" type="tns:ArrayOfEHR_EXTRACT" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfEHR_EXTRACT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EHR_EXTRACT" nillable="true" xmlns:q3="CEN/13606/RM" type="q3:EHR_EXTRACT" />
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

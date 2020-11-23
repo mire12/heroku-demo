@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalAccountInsuranceManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalAccountInsuranceManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd"/>
+  <xs:element name="VyhladajOsobnyUcetPoistencaVstup" nillable="true" type="tns:VyhladajOsobnyUcetPoistencaVstup" />
+  <xs:complexType name="VyhladajOsobnyUcetPoistencaVstup">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumOd" nillable="true" >
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime">
+            <xs:minInclusive value="1900-01-01T00:00:00"/>
+            <xs:maxInclusive value="7999-12-31T23:59:59"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumDo" nillable="true" >
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime">
+            <xs:minInclusive value="1900-01-01T00:00:00"/>
+            <xs:maxInclusive value="7999-12-31T23:59:59"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Typ" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="000"/>
+            <xs:enumeration value="003"/>
+            <xs:enumeration value="002"/>
+            <xs:enumeration value="001"/>
+            <xs:enumeration value="004"/>
+            <xs:enumeration value="519"/>
+            <xs:enumeration value="321"/>
+            <xs:enumeration value="518"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodVykonavajucehoLekara" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodPZSVykonavajucehoLekara" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodOdporucajucehoLekara" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdporucajucehoLekara" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodLiekuSUKL" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ATCSkupinaLieku" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozy" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozyPriPrijati" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozyPriPrepusteni" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="TypHospitalizacie" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Strankovanie" type="tns:StrankovanieOUP" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Triedenie" type="tns:RadenieOUP" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TypTransportu" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="KodFNS" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="StrankovanieOUP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieUstavnaZS" xmlns:q1="http://eHealth.gov.sk/EzkCommon/v1" type="q1:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieAmbulantnaZS" xmlns:q2="http://eHealth.gov.sk/EzkCommon/v1" type="q2:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieLiekyAZdravotnickePomocky" xmlns:q3="http://eHealth.gov.sk/EzkCommon/v1" type="q3:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieDopravnaStarostlivost" xmlns:q4="http://eHealth.gov.sk/EzkCommon/v1" type="q4:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieDispenzarizacia" xmlns:q5="http://eHealth.gov.sk/EzkCommon/v1" type="q5:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieFNS" xmlns:q6="http://eHealth.gov.sk/EzkCommon/v1" type="q6:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrankovanieCakacieListiny" xmlns:q7="http://eHealth.gov.sk/EzkCommon/v1" type="q7:Strankovanie" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="RadenieOUP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieUstavnaZS" xmlns:q8="http://eHealth.gov.sk/EzkCommon/v1" type="q8:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieAmbulantnaZS" xmlns:q9="http://eHealth.gov.sk/EzkCommon/v1" type="q9:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieLiekyAZdravotnickePomocky" xmlns:q10="http://eHealth.gov.sk/EzkCommon/v1" type="q10:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieDopravnaStarostlivost" xmlns:q11="http://eHealth.gov.sk/EzkCommon/v1" type="q11:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieDispenzarizacia" xmlns:q12="http://eHealth.gov.sk/EzkCommon/v1" type="q12:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieFNS" xmlns:q13="http://eHealth.gov.sk/EzkCommon/v1" type="q13:Radenie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RadenieCakacieListiny" xmlns:q14="http://eHealth.gov.sk/EzkCommon/v1" type="q14:Radenie" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

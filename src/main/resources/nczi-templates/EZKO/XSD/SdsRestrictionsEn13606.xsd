@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="CEN/13606/RM" elementFormDefault="qualified" targetNamespace="CEN/13606/RM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="..\..\COMMON\Xsd\TS14796-dataTypes.xsd"/>
+    
+    <xs:complexType name="CVPolozkaCiselnikaTypKontaktu">
+        <xs:complexContent>
+            <xs:restriction base="tns:CV">
+                <xs:sequence>
+                    <xs:element name="codingScheme" type="tns:OIDTypKontaktu" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="codingSchemeName" type="xs:string" minOccurs="0" maxOccurs="0" />
+                    <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    <xs:element name="codeValue" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    <xs:element name="displayName" type="xs:string" minOccurs="1" maxOccurs="1" />
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="OIDTypKontaktu">
+        <xs:complexContent>
+            <xs:restriction base="tns:OID">
+                <xs:sequence>
+                    <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.54" />
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>    
+    
+</xs:schema>

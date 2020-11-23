@@ -1,0 +1,32 @@
+archetype
+    CEN-EN13606-FOLDER.Pacientsky_sumar.v2
+
+description
+    original_author = <
+        ["date"] = <"20111222">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Pacientsky sumár poskytuje základné informácie o zdravotnom stave pacienta. Informuje o jeho alergiách, prekonaných závažných ochoreniach a chirurgických výkonoch, o aktuálnom zdravotnom stave, výsledkoch vyšetrení tlaku krvi a krvnej skupiny, sociálnej, liekovej a pôrodníckej anamnéze.">
+            keywords = <"Varovanie","Osobná","anamnéza","Zdravotný","problém","Sociálna","anamnéza","Lieková","anamnéza","Pôrodnícka","anamnéza","Výsledky","vyšetrení">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+            use = <"Lieková anamnéza
+Osobná anamnéza
+Výsledky vyšetrení
+Varovania
+Zdravotné problémy
+Sociálna anamnéza
+Pôrodnícka anamnéza
+">
+        >
+    >
+
+objectBuilder
+    object_builder_definition = <"<?xml version='1.0' encoding='UTF-8'?><objectBuilder hasBagSemantics='false'><sourcePaths><sourcePath>/source[anySource]/type[XML]/document[anyDocument]/element[linkEHRvirtualIDPatient]</sourcePath></sourcePaths></objectBuilder>">
+mapping
+    map_definitions = <
+    >
+
+

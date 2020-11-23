@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Spôsob úhrady za zdravotnícke pomôcky</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-11-03</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.92</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-10-24</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020098703</codeValue>
+      <displayName>I</displayName>
+      <Skratka>I</Skratka>
+      <Popis>zdravotnícka pomôcka, ktorej nie je určený osobitný spôsob úhrady zdravotníckej pomôcky; plne uhrádzaná na základe verejného zdravotného poistenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882478</codeValue>
+      <displayName>N</displayName>
+      <Skratka>N</Skratka>
+      <Popis>N</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020098687</codeValue>
+      <displayName>A</displayName>
+      <Skratka>A</Skratka>
+      <Popis>zdravotnícka pomôcka, ktorej je určený osobitný spôsob úhrady zdravotníckej pomôcky; plne uhrádzaná na základe verejného zdravotného poistenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089675181</codeValue>
+      <displayName>I/S</displayName>
+      <Skratka>I/S</Skratka>
+      <Popis>Ciastocne hradené</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020098711</codeValue>
+      <displayName>S</displayName>
+      <Skratka>S</Skratka>
+      <Popis>zdravotnícka pomôcka, ktorej nie je určený osobitný spôsob úhrady zdravotníckej pomôcky; čiastočne uhrádzaná na základe verejného zdravotného poistenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208868315</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>X</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

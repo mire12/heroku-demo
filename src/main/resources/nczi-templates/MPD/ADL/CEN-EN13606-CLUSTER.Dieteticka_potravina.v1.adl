@@ -1,0 +1,124 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Dieteticka_potravina.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Dieteticka potravina
+        parts existence matches {0..1} cardinality matches {1..4; unordered; unique} matches {
+            ELEMENT[at0007] occurrences matches {1..1} matches {  -- Kód dietetickej potraviny
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0008] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0009] occurrences matches {1..1} matches {  -- Názov dietetickej potraviny
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0010] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0001] occurrences matches {1..1} matches {  -- ID dietetickej potraviny
+                value existence matches {0..1} matches {
+                    II[at0014] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0015] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {""}
+                            }
+                        }
+                        extension existence matches {0..1} matches {""}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {1..1} matches {  -- Doplnok názvu
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0012] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0019] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Dieteticka potravina">
+                    description = <"Údaje dietetickej potraviny, ktorá bola predpísaná alebo vydaná v lekárni pacientovi, prípadne ju pacient užíva.
+Údaje, na základe ktorých je možné identifikovať dietetickú potravinu.">
+                >
+                ["at0001"] = <
+                    text = <"ID dietetickej potraviny">
+                    description = <"Identifikátor dietetickej potraviny z registrov.">
+                >
+                ["at0007"] = <
+                    text = <"Kód dietetickej potraviny">
+                    description = <"Kód pridelený dietetickej potravine MZ.">
+                >
+                ["at0008"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0009"] = <
+                    text = <"Názov dietetickej potraviny">
+                    description = <"Oficiálny názov dietetickej potraviny.">
+                >
+                ["at0010"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0011"] = <
+                    text = <"Doplnok názvu">
+                    description = <"Doplnok názvu dietetickej potraviny.">
+                >
+                ["at0012"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0037"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0047"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0014"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Vztah.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="KodPZSaZPr.xsd" />
+  <xs:include schemaLocation="Address.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:element name="PoskytovatelZS" type="PoskytovatelZS" />
+  <xs:complexType name="PoskytovatelZS">
+    <xs:annotation>
+      <xs:documentation>Poskytovateľ zdravotníckej starostlivosti</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPZS" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód poskytovateľa zdravotnej starostlivosti. 
+Znaky 2-6 z kódu PZS prideleného ÚDZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Zariadenie" type="ZariadeniePZS" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Zriadovatel" type="IdPolozkaCiselnikaZriadovatel" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PersonData" type="PersonData" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZariadeniePZS" type="ZariadeniePZS" />
+  <xs:complexType name="ZariadeniePZS">
+    <xs:annotation>
+      <xs:documentation>Zariadenie PZS. -  CIS_KlasDruhZar použiť pre entity: Zariadenie PZS, Doklad PZS, OrgIne... (vrátane subsets). Číselník  sa skladá z 3 úrovní,  3 úroveň predstavuje 4 zn. kód druhu zariadenia pre atribút entity Zariadenie PZS, Doklad PZS, OrgIne... V rámci CIS_KlasDruhZar  sa doplní (rozšíri) aj názov pre úroveň 1 a úroveň 2.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor zariadenia</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodZariadenia" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zariadenia PZS.
+Znaky 1-6 z kódu PZS prideleného ÚDZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovZariadenia" type="string500" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zariadenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdbornyUtvarPZS" type="OdbornyUtvarPZS" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="SidloZariadeniaPZS" type="PhysicalAddress" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranieZariadenia" type="IdPolozkaCiselnikaOdborneZameranieOU" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZasahoveUzemie" type="IdPolozkaCiselnikaZasahoveUzemie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="KlasDruhZar" type="IdPolozkaCiselnikaDruhZariadenia" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PozastavenieCinnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdDokladPZS" type="IdDokladPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZastupcaPZS" type="IdZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OdbornyUtvarPZS" type="OdbornyUtvarPZS" />
+  <xs:complexType name="OdbornyUtvarPZS">
+    <xs:annotation>
+      <xs:documentation>Odborný útvar PZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovUtvaru" type="string500" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov odborného útvaru.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikatorKvality" type="IndikatorKvality" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="KodPZS" type="KodPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="SidloOUPZS" type="PhysicalAddress" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranieOU" type="IdPolozkaCiselnikaOdborneZameranieOU" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DruhUtvaru" type="IdPolozkaCiselnikaDruhUtvaru" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PravnyVztahOUPZS_ZPr" type="PravnyVztahOUPZS_ZPr" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ZmluvnyVztahOUPZS_ZP_ZPr" type="ZmluvnyVztahOUPZS_ZP_ZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndikatorKvality" type="IndikatorKvality" />
+  <xs:complexType name="IndikatorKvality">
+    <xs:annotation>
+      <xs:documentation>Indikátor kvality na základe Nariadenia vlády SR z 18.februára 2009 č. 51/2009</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Uroven" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úroveň</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypIndikatoraKvality" type="IdPolozkaCiselnikaTypIndikatoraKvality" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OblastIndikatoraKvality" type="IdPolozkaCiselnikaOblastIndikatoraKvality" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Obdobie" type="IVLDATE" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdOUPZS_Zoznam" type="IdOUPZS_Zoznam" />
+  <xs:complexType name="IdOUPZS_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam JRUZ identifikátorov odborných útvarov PZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZmluvnyVztahOUPZS_ZP_ZPr" type="ZmluvnyVztahOUPZS_ZP_ZPr" />
+  <xs:complexType name="ZmluvnyVztahOUPZS_ZP_ZPr">
+    <xs:annotation>
+      <xs:documentation>Zmluvný vzťah pre poskytovateľa zdravotnej starostlivosti so:
+- zdravotnou poisťovňou a zdravotníckym pracovníkom</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="LekarskeMiesto" type="d14.14" minOccurs="0" maxOccurs="1" />
+          <xs:element name="IdZPr" type="IdZPr" minOccurs="0" maxOccurs="1" />
+          <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="KodZPr" type="KodZPr" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PozastaveniePlatnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdPZS_Zoznam" type="IdPZS_Zoznam" />
+  <xs:complexType name="IdPZS_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam JRUZ identifikátorov odborných útvarov PZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PravnyVztahOUPZS_ZPr" type="PravnyVztahOUPZS_ZPr" />
+  <xs:complexType name="PravnyVztahOUPZS_ZPr">
+    <xs:annotation>
+      <xs:documentation>Právny vzťah medzi právnym subjektom (odborným útvarom PZS) a Zdravotníckym pracovníkom s uvedením platnosti vzťahu.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="PravnyVztah">
+        <xs:sequence>
+          <xs:element name="IdZdrPrac" type="IdZPr" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DokladPZS" type="DokladPZS" />
+  <xs:complexType name="DokladPZS">
+    <xs:annotation>
+      <xs:documentation>CIS_KlasDruhZar použiť pre entity: Zariadenie PZS, Doklad PZS, OrgIne... (vrátane subsets). Číselník  sa skladá z 3 úrovní,  3 úroveň predstavuje 4 zn. kód druhu zariadenia pre atribút entity Zariadenie PZS, Doklad PZS, OrgIne... V rámci CIS_KlasDruhZar  sa doplní (rozšíri) aj názov pre úroveň 1 a úroveň 2. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdDokladPZS" type="IdDokladPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CisloDokladu" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo dokladu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVydaniaDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPravoplatnostiDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum právoplatnosti dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PozastavenieDokladuVCelomRozsahu" type="PozastavenieDokladuVCelomRozsahu" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DrzitelDokladu" type="IdPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZrusenieDokladuPZS" type="ZrusenieDokladuPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZanikDokladuPZS" type="ZanikDokladuPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PozastavenieCinnosti" type="PozastavenieCinnosti" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="OznamenieOZmenach" type="OznamenieOZmenach" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ZastupcaPZS" type="ZastupcaPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZrusenieDokladuPZS" type="ZrusenieDokladuPZS" />
+  <xs:complexType name="ZrusenieDokladuPZS">
+    <xs:sequence>
+      <xs:element name="CisloDokladuOZruseni" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo dokladu o zrušení dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVydaniaDokladuOZruseni" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania dokladu o zrušení dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPravoplatnostiDokladuOZruseni" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum právoplatnosti  dokladu o zrušení dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumZruseniaPlatnostiDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum zru&amp;scaron;enia platnosti dokladu PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZanikDokladuPZS" type="ZanikDokladuPZS" />
+  <xs:complexType name="ZanikDokladuPZS">
+    <xs:sequence>
+      <xs:element name="CisloOznameniaOZaniku" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo oznámenia o zániku dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOznameniaOZaniku" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania oznámenia o zániku dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumZanikuPlatnostiDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum zániku platnosti dokladu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PozastavenieDokladuVCelomRozsahu" type="PozastavenieDokladuVCelomRozsahu" />
+  <xs:complexType name="PozastavenieDokladuVCelomRozsahu">
+    <xs:sequence>
+      <xs:element name="CisloDokladuOPozastaveniDokladu" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo dokladu o pozastavení dokladu v celom rozsahu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVydaniaDokladuOPozastaveniDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania dokladu o pozastavení dokladu v celom rozsahu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPravoplatnostiDokladuOPozastaveniDokladu" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum právoplatnosti dokladu o pozastavení dokladu v celom rozsahu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPozastaveniaDokladuOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum pozastavenia dokladu v celom rozsahu od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPozastaveniaDokladuDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum pozastavenia dokladu v celom rozsahu do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PozastavenieCinnosti" type="PozastavenieCinnosti" />
+  <xs:complexType name="PozastavenieCinnosti">
+    <xs:sequence>
+      <xs:element name="CisloDokladuOPozastaveniCinnosti" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo dokladu o pozastavení činnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVydaniaDokladuOPozastaveniCinnosti" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania dokladu o pozastavení činnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPravoplatnostiDokladuOPozastaveniCinnosti" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum právoplatnosti dokladu o pozastavení činnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPozastaveniaCinnostiOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum pozastavenia činnosti od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPozastaveniaCinnostiDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum pozastavenia činnosti do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PoznamkaKPozastavenejCinnosti" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Poznámka o pozastavenej činnosti od orgánu, ktorý vydal doklad.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OznamenieOZmenach" type="OznamenieOZmenach" />
+  <xs:complexType name="OznamenieOZmenach">
+    <xs:sequence>
+      <xs:element name="CisloOznameniaOZmenach" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo oznámenia o zmenách vdoklade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVydaniaOznameniaOZmenach" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vydania oznámenia o zmenách v doklade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PoznamkaKZmeneDokladu" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Poznámka o zmene údajov v doklade od orgánu, ktorý vydal doklad.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SidloVydavatelaDokladu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZastupcaPZS" type="ZastupcaPZS" />
+  <xs:complexType name="ZastupcaPZS">
+    <xs:sequence>
+      <xs:element name="IdZastupcaPZS" type="IdZPr" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Meno" type="string1_100" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Priezvisko" type="string1_100" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DatumNarodenia" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Adresa" type="string200" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RegistracneCisloVKomore" type="string50" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="KodKomory" type="string50" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Povolanie" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="0" maxOccurs="1" />
+      <xs:element name="StudijnyOdbor" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Specializacia_CertPracCinnost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PozastavenieCinnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SpecifikaciaZastupcu" type="IdPolozkaCiselnikaSpecifikaciaZastupcu" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

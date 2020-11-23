@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Cena.xsd" />
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:element name="DajDetailDietetickejPotravinyVystup" type="DajDetailDietetickejPotravinyVystup" />
+  <xs:complexType name="DajDetailDietetickejPotravinyVystup">
+    <xs:sequence>
+      <xs:element name="dp" type="DajDetailDietetickejPotravinyInfo" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DajDetailDietetickejPotravinyInfo">
+    <xs:annotation>
+      <xs:documentation>Údaje vybranej dietetickej potraviny.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AplikacnaForma" type="IdPolozkaCiselnikaAplikacnaFormaDP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Aplikačná forma dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálny doplatok poistenca za dietetikum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvuPodskupiny" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="GlutenFree" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, že daná potravina neobsahuje glutén.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdDietetika" type="IdDietetickaPotravina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor dietetickej potraviny v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPoskupiny" type="IdPodskupinaDietetickejPotraviny" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Id podskupiny diet. potr. (iba pre kategorizované). Rozlíšiť podskupiny niekedy nie je možné ani na základe názvu+doplnok, preto je dobré ponúknuť ID ako rozlišovač.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikacneObmedzenia" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Indikačné obmedzenie dietetika.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JednotkaReferencnejDavky" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Jednotka referenčnej dávky diet.potr.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPodskupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaLekaren" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálnu cenu dietetickej potraviny vo verejnej
+lekárni</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovPodskupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetRefDavok" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet referenčných dávok obsiahnutých v balení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PodielCien" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>podiel maximálnej výšky doplatku poistenca za
+dietetickú potravinu a maximálnej ceny dietetickej potraviny vo verejnej lekárni vyjadrený v percentách,</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lekárske odbornosti, ktoré môžu predpisovať dané dietetiká. Ak nie sú žiadne uvedené, tak môžu predpisovať všetci.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SposobUhrady" type="IdPolozkaCiselnikaSposobUhradyDP" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Spôsob úhrady za dietetickú potravinu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasReviznehoLekara" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UhradaZaJednotkuReferencnejDavky" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>§57 (4)Pre každú podskupinu dietetických potravín sa určujú tieto charakteristiky:
+
+	1. jednotka referenčnej dávky dietetickej potraviny,
+	2. maximálna výška úhrady zdravotnej poisťovne za jednotku referenčnej dávky dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZP" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximalna úhrada ZP.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UradneUrcenaCena" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna predajná cena potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vyrobca" type="IdPolozkaCiselnikaVyrobcaDP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výrobca danej dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LimitDietetika" type="DietetickaPotravinaMnozstvoveLimity" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Finančné a množstevne limity daného dietetika.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DietetickaPotravinaMnozstvoveLimity">
+    <xs:annotation>
+      <xs:documentation>Limit vzťahujúci sa na dietetickú potravinu.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LimitHodnotaDo" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Definuje množstvo a jednotku limitu (8kg, 5ks, ...).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetJednotiekObdobia" type="Mnozstvo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obdobie, na ktoré sa stanovuje množstvový limit dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SkupinaLimitov" type="IdPolozkaCiselnikaSkupinyLimitovDP" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Skupina daného limitu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VekDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vek do ktorého je limit uplatnený v rokoch.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VekOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vek od ktorého je limit uplatnený v rokoch.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

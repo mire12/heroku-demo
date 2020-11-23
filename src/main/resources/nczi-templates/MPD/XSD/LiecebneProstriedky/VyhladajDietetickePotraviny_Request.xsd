@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajDietetickePotravinyVstup" type="VyhladajDietetickePotravinyVstup" />
+  <xs:complexType name="VyhladajDietetickePotravinyVstup">
+    <xs:annotation>
+      <xs:documentation>Vyhľadávacie kritériá dietetických potravín.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CenaDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Horná hranica konečnej ceny dietetika vo verejnej lekárni.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CenaOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dolná hranica konečnej ceny dietetika vo verejnej lekárni.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Datum" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>dátum ku ktorému sa vyhľadáva</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Horná hranica doplatku pacienta za dietetikum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dolná hranica doplatku pacienta za dietetikum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Forma" type="IdPolozkaCiselnikaAplikacnaFormaDP" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Aplikačná forma dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IbaGlutenFree" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Iba potraviny bez obsahu gluténu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód dietetika.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPodskupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód skupiny dietetík.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovPodskupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu skupiny dietetík.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odbornosti, ktoré môžu dietetikum predpisovať. Ak nie sú uvedené žiadne, tak sa vyhľadáva vo všetkých dietetikách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vyrobca" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu výrobcu dietetika.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

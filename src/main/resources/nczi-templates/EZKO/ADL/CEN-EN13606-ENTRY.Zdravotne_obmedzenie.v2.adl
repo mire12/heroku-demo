@@ -1,0 +1,124 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Zdravotne_obmedzenie.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o aktuálnych zdravotných obmedzeniach pacienta.">
+            keywords = <"Zdravotné","obmedzenie">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Zdravotné obmedzenie
+        items existence matches {0..1} cardinality matches {2..*; ordered} matches {
+            ELEMENT[at0061] occurrences matches {1..1} matches {  -- Popis obmedzenia
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0112] occurrences matches {1..1} matches {  -- 
+                        originalText existence matches {0..1} matches {/.*/; ""}
+                    }
+                }
+            }
+            ELEMENT[at0030] occurrences matches {1..1} matches {  -- Stupeň invalidity
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0033] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/; ""}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- Dátum vzniku
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0005] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0063] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {1..1} matches {"STRC01"}
+                codingSchemeName existence matches {1..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0007] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {*}
+                root existence matches {1..1} matches {
+                    OID[at0008] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.90"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Zdravotné obmedzenie">
+                    description = <"Informácie o zdravotnom obmedzení pacienta a stupňa invalidity pacienta. ">
+                >
+                ["at0061"] = <
+                    text = <"Popis obmedzenia">
+                    description = <"Popis stupňa zdravotného obmedzenia pacienta. Popis je popísaný voľným textom.">
+                >
+                ["at0112"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0063"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0030"] = <
+                    text = <"Stupeň invalidity">
+                    description = <"Rozsah invalidity v % vyplývajúci z posudku lekára. ">
+                >
+                ["at0033"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0003"] = <
+                    text = <"Dátum vzniku">
+                    description = <"Dátum vzniku invalidity. Dátum nesmie byť neskôr ako je dátum zaznamenania záznamu do doplnkových zdravotných záznamov. ">
+                >
+                ["at0007"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0008"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+                ["at0005"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >

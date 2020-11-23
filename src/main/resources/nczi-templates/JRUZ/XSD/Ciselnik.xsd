@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:element name="Ciselnik_DoplnujuciAtribut" type="Ciselnik_DoplnujuciAtribut" />
+  <xs:complexType name="Ciselnik_DoplnujuciAtribut">
+    <xs:annotation>
+      <xs:documentation>Doplňujúce atribúty číselníkových položiek.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdAtributu" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>identifikátor atribútu v rámci číselníka.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string100" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MinPocetnost" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MaxPocetnost" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Typ" type="EnumTypDoplAtributu" minOccurs="1" maxOccurs="1" />
+      <xs:element name="codingScheme" type="OID" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ciselnik_Zoznam" type="Ciselnik_Zoznam" />
+  <xs:complexType name="Ciselnik_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam ciselnikov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Ciselnik" type="Ciselnik" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolozkaCiselnika_Odpis" type="PolozkaCiselnika_Odpis" />
+  <xs:complexType name="PolozkaCiselnika_Odpis">
+    <xs:annotation>
+      <xs:documentation>Odpis položky číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+      <xs:element name="displayName" type="string1_200" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Skratka" type="string1_100" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Popis" type="string1_2000" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DoplnujuciAtribut" type="PolozkaCiselnika_DoplnujuciAtribut" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZahlavieCiselnika" type="ZahlavieCiselnika" />
+  <xs:complexType name="ZahlavieCiselnika">
+    <xs:annotation>
+      <xs:documentation>Zahlavie číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codingSchemeName" type="string200" minOccurs="1" maxOccurs="1" />
+      <xs:element name="codingSchemeVersion" type="string50" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumPoslednejZmeny" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Ciselnik_DoplnujuciAtribut" type="Ciselnik_DoplnujuciAtribut" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="codingScheme" type="OID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ciselnik" type="Ciselnik" />
+  <xs:complexType name="Ciselnik">
+    <xs:annotation>
+      <xs:documentation>Číselník</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZahlavieCiselnika" type="ZahlavieCiselnika" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PolozkaCiselnika_Zoznam" type="PolozkaCiselnika_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolozkaCiselnika_Zoznam" type="PolozkaCiselnika_Zoznam" />
+  <xs:complexType name="PolozkaCiselnika_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam položiek číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PolozkaCiselnika" type="PolozkaCiselnika_Odpis" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolozkaCiselnika_DoplnujuciAtribut" type="PolozkaCiselnika_DoplnujuciAtribut" />
+  <xs:complexType name="PolozkaCiselnika_DoplnujuciAtribut">
+    <xs:annotation>
+      <xs:documentation>Doplňujúci atribút pre položku číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdAtributu" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="HodnotaS" type="stringMAX" minOccurs="0" maxOccurs="1" />
+      <xs:element name="HodnotaI" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <xs:element name="HodnotaD" type="d14.14" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Referencia" type="CV" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EnumTypDoplAtributu">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HodnotaS">
+        <xs:annotation>
+          <xs:documentation>Atribut je string.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HodnotaI">
+        <xs:annotation>
+          <xs:documentation>Atribut je int.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HodnotaD">
+        <xs:annotation>
+          <xs:documentation>Atribut je decimal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Referencia">
+        <xs:annotation>
+          <xs:documentation>Atribút je referencia CV na iný číselník.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ZahlavieCiselnika_Zoznam" type="ZahlavieCiselnika_Zoznam" />
+  <xs:complexType name="ZahlavieCiselnika_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam ciselnikov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZahlavieCiselnika" type="ZahlavieCiselnika" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolozkaCiselnika_Kriteria" type="PolozkaCiselnika_Kriteria" />
+  <xs:complexType name="PolozkaCiselnika_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Odpis položky číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codeValue" type="string11" minOccurs="0" maxOccurs="1" />
+      <xs:element name="displayName" type="string1_200" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Skratka" type="string1_100" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Popis" type="string1_2000" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Address.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:element name="RelatedPerson" type="RelatedPerson" />
+  <xs:complexType name="RelatedPerson">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok obsahujúci údaje o príbuzných, dátový prvok pre popis stupňa príbuznosti a osoby.
+[Poznámky: Môže byť použitý viackrát.]
+
+V tomto prípade je vhodné obmedziť vnorenie ďalších podprvkov Príbuzná osoba vzhľadom na prvok Fyzická osoba na vhodnú úroveň, prípadne úplne eliminovať.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ID" type="ID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypeOfRelation" type="IdPolozkaCiselnikaTypeOfRelation" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Death" type="Death" />
+  <xs:complexType name="Death">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok obsahujúci údaje o úmrtí FO.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DateOfDeath" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak nastala smrť fyzickej osoby, uvádza sa dátum jej úmrtia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlaceOfDeath" type="Miesto" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="status" use="optional" type="string11">
+      <xs:annotation>
+        <xs:documentation>Existenčný stav, vypĺňa sa v súlade codeValue položkami číselníka s OID=1.3.158.00165387.100.10.57</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="Affix" type="Affix" />
+  <xs:complexType name="Affix">
+    <xs:annotation>
+      <xs:documentation>Obsahuje ostatné časti mena osoby (predponu alebo príponu, titul), tak ako ju definujú jednotlivé typy atribútov.
+Formát reprezentácie: Textový reťazec uvádzaný v tvare, ako ho predpisuje atribút type.
+Hodnoty: Nemá predpísaný obsah.
+Poznámky: Je možné použiť viackrát (ani použitie rovnakého typu nie je obmedzené), v takom prípade je poradie použitia určujúce.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="string50">
+        <xs:attribute name="type" use="optional" type="EnumAffixType">
+          <xs:annotation>
+            <xs:documentation>Definuje kontext predpony alebo prípony.
+[Hodnoty: 
+type=aristocraticTitle
+Uvádza sa, ak hodnota Affix obsahuje šľachtický titul. 
+Príklady použitia: Barón, Graf, Earl, Vojvoda a podobne.
+type=formOfAddress
+Uvádza sa, ak hodnota Affix obsahuje oslovenie.
+Príklady použitia: Pán, Pani, Hon., Dr., Major a podobne.
+type=generation
+Uvádza sa, ak hodnota Affix obsahuje generačný titul.
+Príklady použitia: Sr., Jr., III (tretí) a podobne.
+type=qualification
+Uvádza sa, ak hodnota Affix obsahuje písmená, ktoré sa používajú na popis akademického titulu alebo iného typu kvalifikácie, ktoré osobe prináležia.
+Príklady použitia: PhD, MD, CPA, MCSD, Ing., Mgr. a podobne.
+[Hodnoty: V prípade uvádzania slovenských akademických titulov sa používa atribút NAZPLS číselníka Štatistického úradu Slovenskej republiky č. 0062 Titul pred menom a číselníka Štatistického úradu Slovenskej republiky č. 0063 Titul za menom.]</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="position" use="optional" type="EnumPosition">
+          <xs:annotation>
+            <xs:documentation>Určuje pozíciu ostatnej časti mena.
+[Hodnoty:
+position=prefix
+Predpona – titul alebo oslovenie sa uvádza pred menom osoby.
+position=postfix
+Prípona – titul alebo oslovenie sa uvádza za menom osoby.]</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="PersonName" type="PersonName" />
+  <xs:complexType name="PersonName">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre rôzne súčasti mena.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FormattedName" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Formátované meno vrátane predpony a prípony.
+[Formát reprezentácie: Obsahuje celé meno v jednom reťazci so všetkými časťami v správnom poradí, čo znamená na správnom mieste. Oddelenie častí sa uvádza pomocou prázdneho znaku.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Poznámky: Vhodné predovšetkým pre mená z iných jazykových oblastí. Taká forma mena nedokáže byť jednoducho parsovaná.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LegalName" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Používa sa na právne účely v niektorých štátoch.
+[Formát reprezentácie: Obsah je rovnaký ako pri FormattedName.]
+[Poznámky: V podmienkach Slovenskej republiky nepoužívať.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GivenName" type="string200" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Obsahuje rodné meno.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreferredGivenName" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Meno, ktoré osoba uprednostňuje pri svojom oslovení v prípade viacerých rodných mien.
+[Formát reprezentácie: Textový reťazec.]
+[Pravidlo použitia: Nemá predpísaný obsah.]
+[Hodnoty: Toto meno môže byť obľúbené meno z rodných mien. Ak by to mala byť prezývka, používa sa prvok Alternatívne meno (D.1.1.2).]
+[Poznámky: V Slovenskej republike nie je zvykom mať
+viac rodných mien, ale v zahraničí, najmä v španielsky hovoriacich krajinách, je to úplne bežné.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OtherName" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje stredné meno osoby alebo iniciály.
+[Formát reprezentácie: Textový reťazec.]
+[Pravidlo použitia: Nemá predpísaný obsah.]
+[Založené na: Zákon č. 300/1993 Z. z. o mene a priezvisku v znení neskorších predpisov.]
+[Poznámky: V podmienkach Slovenskej republiky nepoužívať. Originálne použitie najmä v Spojených štátoch amerických.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Affix" type="Affix" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="FamilyName" type="FamilyName" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="GivenFamilyName" type="GivenFamilyName" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhysicalPerson" type="PhysicalPerson" />
+  <xs:complexType name="PhysicalPerson">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre rôzne informácie o fyzickej osobe / na popis fyzickej osoby.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AlternativeName" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popisuje meno, ktoré osoba používa, a zároveň to nie je ani jedno zo súčasných oficiálnych mien alebo priezvísk.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Confession" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o náboženskom vyznaní.
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Prázdna množina.]
+[Poznámky: V podmienkach Slovenskej republiky nepoužívať alebo používať iba s prázdnym obsahom. Zavádza sa iba kvôli kompatibilite so zahraničím.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RelatedPerson" type="RelatedPerson" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Death" type="Death" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PersonName" type="PersonName" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Birth" type="Birth" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MaritalStatus" type="IdPolozkaCiselnikaMaritalStatus" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maritalStatus</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nationality" type="IdPolozkaCiselnikaCountry" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>nationality</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Sex" type="IdPolozkaCiselnikaSex" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Ethnicity" type="IdPolozkaCiselnikaCountry" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ZakonnyZastupca" type="ZakonnyZastupca" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PravnaSposobilost" type="PravnaSposobilostOsoby" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Birth" type="Birth" />
+  <xs:complexType name="Birth">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok obsahujúci údaje o narodení FO.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DateOfBirth" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje dátum narodenia fyzickej osoby.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlaceOfBirth" type="Miesto" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GivenFamilyName" type="GivenFamilyName" />
+  <xs:complexType name="GivenFamilyName">
+    <xs:annotation>
+      <xs:documentation>Obsahuje rodné priezvisko.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="string100">
+        <xs:attribute name="primary" use="optional" type="EnumPrimary">
+          <xs:annotation>
+            <xs:documentation>[Hodnoty:
+primary=”true” Znamená, že tento výskyt rodného priezviska je primárny. Odporúča sa uvádzať ako prvé v poradí použitých rodných priezvisk.
+primary=”false” Znamená, že tento výskyt sa nepovažuje za primárny. Odporúča sa uvádzať až po primárnom výskyte rodného priezviska. Poradie rodných priezvisk s atribútom „false“ je určujúce.
+primary=”undefined” Znamená, že sa nepoužívajú viaceré rodné priezviská, prípadne v ich viacnásobnom použití s týmto atribútom je určujúce iba ich poradie použitia.]
+[Poznámky: Používa sa iba v prípade viacerých rodných priezvisk. Pri použití viacerých rodných priezvisk je poradie určujúce.]</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="prefix" use="optional" type="string50">
+          <xs:annotation>
+            <xs:documentation>Môže obsahovať šľachtický alebo ekvivalentný titul.
+Ak existuje v rodnom priezvisku, vždy sa uvádza.
+[Hodnoty: Príklady použitia: de (ako v „de Witt“), la
+(ako v „la Salle“); van (ako v „van der Voss“).]</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="FamilyName" type="FamilyName" />
+  <xs:complexType name="FamilyName">
+    <xs:annotation>
+      <xs:documentation>Obsahuje priezvisko.
+Hodnoty: Nemá predpísaný obsah.
+Založené na: Zákon č. 300/1993 Z. z. o mene a priezvisku v znení neskorších predpisov.
+Poznámky: Možno použiť viackrát, v takom prípade je poradie použitia určujúce.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="string100">
+        <xs:attribute name="primary" use="optional" type="EnumPrimary">
+          <xs:annotation>
+            <xs:documentation>Hodnoty:
+primary=”true” Znamená, že tento výskyt priezviska je primárny. Odporúča sa uvádzať ako prvé v poradí použitých priezvisk.
+primary=”false” Znamená, že tento výskyt sa nepovažuje za primárny. Odporúča sa uvádzať až po primárnom výskyte priezviska. Poradie priezvisk s atribútom „false“ je určujúce.
+primary=”undefined” Znamená, že sa nepoužívajú viaceré priezviská; prípadne pri ich viacnásobnom použití s týmto atribútom je určujúce iba ich poradie použitia.
+Poznámky: Používa sa iba v prípade viacerých priezvisk. Pri použití viacerých priezvisk je poradie určujúce.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="prefix" use="optional" type="string50">
+          <xs:annotation>
+            <xs:documentation>Môže obsahovať šľachtický alebo ekvivalentný titul. Ak existuje v priezvisku, vždy sa uvádza.
+Hodnoty: Príklady použitia: de (ako v „de Witt“), la (ako v „la Salle“); van (ako v „van der Voss“).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EnumPrimary">
+    <xs:annotation>
+      <xs:documentation>[Hodnoty:
+primary=”true” Znamená, že tento výskyt rodného priezviska je primárny. Odporúča sa uvádzať ako prvé v poradí použitých rodných priezvisk.
+primary=”false” Znamená, že tento výskyt sa nepovažuje za primárny. Odporúča sa uvádzať až po primárnom výskyte rodného priezviska. Poradie rodných priezvisk s atribútom „false“ je určujúce.
+primary=”undefined” Znamená, že sa nepoužívajú viaceré rodné priezviská, prípadne v ich viacnásobnom použití s týmto atribútom je určujúce iba ich poradie použitia.]
+[Poznámky: Používa sa iba v prípade viacerých rodných priezvisk. Pri použití viacerých rodných priezvisk je poradie určujúce.]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true">
+        <xs:annotation>
+          <xs:documentation>true</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="false">
+        <xs:annotation>
+          <xs:documentation>false</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="undefined">
+        <xs:annotation>
+          <xs:documentation>undefined</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EnumPosition">
+    <xs:annotation>
+      <xs:documentation>Určuje pozíciu ostatnej časti mena.
+[Hodnoty:
+position=prefix
+Predpona – titul alebo oslovenie sa uvádza pred menom osoby.
+position=postfix
+Prípona – titul alebo oslovenie sa uvádza za menom osoby.]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="prefix" />
+      <xs:enumeration value="postfix" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EnumAffixType">
+    <xs:annotation>
+      <xs:documentation>Definuje kontext predpony alebo prípony.
+[Hodnoty: 
+type=aristocraticTitle
+Uvádza sa, ak hodnota Affix obsahuje šľachtický titul. 
+Príklady použitia: Barón, Graf, Earl, Vojvoda a podobne.
+type=formOfAddress
+Uvádza sa, ak hodnota Affix obsahuje oslovenie.
+Príklady použitia: Pán, Pani, Hon., Dr., Major a podobne.
+type=generation
+Uvádza sa, ak hodnota Affix obsahuje generačný titul.
+Príklady použitia: Sr., Jr., III (tretí) a podobne.
+type=qualification
+Uvádza sa, ak hodnota Affix obsahuje písmená, ktoré sa používajú na popis akademického titulu alebo iného typu kvalifikácie, ktoré osobe prináležia.
+Príklady použitia: PhD, MD, CPA, MCSD, Ing., Mgr. a podobne.
+[Hodnoty: V prípade uvádzania slovenských akademických titulov sa používa atribút NAZPLS číselníka Štatistického úradu Slovenskej republiky č. 0062 Titul pred menom a číselníka Štatistického úradu Slovenskej republiky č. 0063 Titul za menom.]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="aristocraticTitle" />
+      <xs:enumeration value="formOfAddress" />
+      <xs:enumeration value="generation" />
+      <xs:enumeration value="qualification" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ZakonnyZastupca" type="ZakonnyZastupca" />
+  <xs:complexType name="ZakonnyZastupca">
+    <xs:sequence>
+      <xs:element name="TypZakonnehoZastupcu" type="IdPolozkaCiselnikaTypZakonnehoZastupcu" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ID" type="ID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PravnaSposobilostOsoby" type="PravnaSposobilostOsoby" />
+  <xs:complexType name="PravnaSposobilostOsoby">
+    <xs:sequence>
+      <xs:element name="RozsahObmedzenia" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>1. Pozbavenie
+2. Obmedzenie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypPravnejSposobilosti" type="IdPolozkaCiselnikaPravnaSposobilost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

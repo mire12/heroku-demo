@@ -1,0 +1,81 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Sposob_uhrady.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Sposob_uhrady
+        parts existence matches {0..1} cardinality matches {0..*; ordered} matches {
+            ELEMENT[at0002] occurrences matches {1..1} matches {  -- Úhrada z VZP
+                value existence matches {0..1} matches {
+                    CV[at0003] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0008] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.119"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            ELEMENT[at0004] occurrences matches {0..1} matches {  -- Doplňujúce informácie k úhrade
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0005] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Sposob_uhrady">
+                    description = <"Sposob_uhrady">
+                >
+                ["at0002"] = <
+                    text = <"Úhrada z VZP">
+                    description = <"Uvádza spôsob, ako bude laboratórne vyšetrenia hradené">
+                >
+                ["at0003"] = <
+                    text = <"CV">
+                    description = <"ciselnik, napriklad s hodnotami: poistovna, pacient, ziadatel, zdravotna pracovna sluzba, migracny urad, INE">
+                >
+                ["at0004"] = <
+                    text = <"Doplňujúce informácie k úhrade">
+                    description = <"Slúži ako zúčtovací údaj pre finančné vysporiadanie (napríklad variabilný symbol alebo identifikátor platby, zúčtovací symbol...) v rámci dohody medzi žiadateľom a laboratóriom.">
+                >
+                ["at0005"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >

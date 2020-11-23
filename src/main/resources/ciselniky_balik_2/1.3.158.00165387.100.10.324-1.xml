@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Objednanie - vyšetrenie</codingSchemeName>
+    <codingSchemeVersion>1</codingSchemeVersion>
+    <DatumPoslednejZmeny>2018-11-09</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Typ</Nazov>
+      <MinPocetnost>1</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.324</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2019-01-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>02089744086</codeValue>
+      <displayName>Vyšetrenie</displayName>
+      <Skratka>VY</Skratka>
+      <Popis>Uviesť v prípade objednania vyšetrenia.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744102</codeValue>
+      <displayName>Vstupné vyšetrenie</displayName>
+      <Skratka>VV</Skratka>
+      <Popis>Uviesť v prípade objednania prvého vyšetrenia na ambulancií.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744136</codeValue>
+      <displayName>Preventívna prehliadka</displayName>
+      <Skratka>PV</Skratka>
+      <Popis>Uviesť v prípade objednania pravidelnej preventívnej prehliadky.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744151</codeValue>
+      <displayName>Kontrolné vyšetrenie</displayName>
+      <Skratka>KV</Skratka>
+      <Popis>Uviesť v prípade objednania kontrolného vyšetrenia.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744177</codeValue>
+      <displayName>Predoperačné vyšetrenie</displayName>
+      <Skratka>OV</Skratka>
+      <Popis>Uviesť v prípade objednania na predoperačné vyšetrenie.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744193</codeValue>
+      <displayName>Iné vyšetrenie</displayName>
+      <Skratka>IV</Skratka>
+      <Popis>Uviesť v prípade objednania na vstupnú prehliadku pre zamestnávateľa, prehliadku potrebnú na vydanie vodičského alebo zbrojného preukazu.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Lekárske vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744219</codeValue>
+      <displayName>Odbery</displayName>
+      <Skratka>OD</Skratka>
+      <Popis>Uviesť v prípade objednania na odbery, stery.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Laboratórne vyšetrenie</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744235</codeValue>
+      <displayName>Liečba</displayName>
+      <Skratka>TR</Skratka>
+      <Popis>Uviesť v prípade objednania na očkovanie, injekčnú, infúznu alebo inú ambulantnú liečbu.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Ambulantná terapia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744250</codeValue>
+      <displayName>Konzultácie</displayName>
+      <Skratka>KO</Skratka>
+      <Popis>Uviesť v prípade objednania na konzultácie.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>Konzultácia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:element name="IdentifikacnyPredmet" type="IdentifikacnyPredmet" />
+  <xs:complexType name="IdentifikacnyPredmet">
+    <xs:annotation>
+      <xs:documentation>Identifikačný predmet</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdIDPredmet" type="IdIDPredmet" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor identifikačného predmetu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Elektronicky" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, že sa jedná o elektronický identifikačný predmet.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cislo" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo preukazu/predmetu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypIdentifikacnehoPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="KrajinaVydania" type="IdPolozkaCiselnikaCountry" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExistenciaTypuEIDPredmetuPrePrZS_v2" type="ExistenciaTypuEIDPredmetuPrePrZS_v2" />
+  <xs:complexType name="ExistenciaTypuEIDPredmetuPrePrZS_v2">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na požadované typy el. identifikačných predmetov PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypEIDPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VlastniEIPredmet" type="Overenie" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,75 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Osobna_anamneza.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o osobnej anamnéze pacienta, ktorá je súčasťou doplnkových zdravotných údajov. Informácie sú poskytované o vykonaných očkovaniach, zdravotných obmedzeniach, chirurgických výkonoch a terapeutických odporúčaniach.">
+            keywords = <"Osobná anamnéza","Očkovanie","Terapeutické odporúčanie","Zdravotné obmedzenie","Chirurgický výkon">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Osobná anamnéza
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0003] occurrences matches {0..*} matches {  -- Chirurgické výkony
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Chirurgicky_vykon.v2/}
+            }
+            allow_archetype SECTION[at0004] occurrences matches {0..*} matches {  -- Očkovania
+                include
+                    archetype_id/value matches {/CEN-EN13606-SECTION\.Ockovaci_zaznam\.v1/}
+            }
+            allow_archetype ENTRY[at0005] occurrences matches {0..*} matches {  -- Terapeutické odporúčania
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Terapeuticke_odporucanie.v2/}
+            }
+            allow_archetype ENTRY[at0001] occurrences matches {0..*} matches {  -- Zdravotné obmedzenie
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Zdravotne_obmedzenie.v2/}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Osobná anamnéza">
+                    description = <"Paciensky sumár osobná anamnéza">
+                >
+                ["at0003"] = <
+                    text = <"Chirurgické výkony">
+                    description = <"Vykonané závažné chirurgické výkony.">
+                >
+                ["at0004"] = <
+                    text = <"Očkovania">
+                    description = <"Záznamy o vykonaných a zrušených očkovaniach. Slot slúži na čítanie očkovacích záznamov. ">
+                >
+                ["at0001"] = <
+                    text = <"Zdravotné obmedzenie">
+                    description = <"This is a ENTRY slot">
+                >
+                ["at0005"] = <
+                    text = <"Terapeutické odporúčania">
+                    description = <"">
+                >
+            >
+        >
+    >

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/ZnalostnaInformacia.xsd" />
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/Cena.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:element name="DajDetailLiecivaVystup" type="DajDetailLiecivaVystup" />
+  <xs:complexType name="DajDetailLiecivaVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupom sluŽby sú detailné údaje referenčnej skupiny, a ak boli vyžiadané tak aj znalostné informácie a lieky patriace do danej referenčnej skupiny. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LiekyReferencnejSkupiny" type="LiekySLiecivom" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Lieky ktoré patira do tejto referenčnej skupiny. Ak má referenčná skupina príznak, že je predpisovaná genericky, tak tieto lieky sú predpisované genericky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReferencnaSkupina" type="ReferencnaSkupinaDetail" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Znalosti" type="ZnalostnaInformacia" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Znalostné informácie evidované k danej referenčnej skupine.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LiekySLiecivom">
+    <xs:annotation>
+      <xs:documentation>Základné informácie o lieku patriacom do referenčnej skupiny.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplňujúci názov lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdLieku" type="IdLiek" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor lieku v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuklKod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ŠÚKL kód lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferencnaSkupinaDetail">
+    <xs:sequence>
+      <xs:element name="AtcKod" type="IdPolozkaCiselnikaATC" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód liečiva referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CestaPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Cesta podania danej referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplňujúci názov referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GenerickaPreskripcia" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa lieky danej referenčnej skupiny predpisujú liečivom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReferencnejSkupiny" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor referenčnej skupiny v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikacneObmedzenia" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Indikačné obmedzenia viažúce sa na danú referenčnú skupinu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LiekovaForma" type="IdPolozkaCiselnikaLiekovaForma" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Lieková forma liekov danej referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MernaJednotkaSDL" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Merná jednotka, voči ktorej sa vykazuje ŠDL. Pri zápise 400mg/1tbl je mernou jednotkou 1tbl.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObmedzenieUhradyZP" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či úhrada ZP za lieky z tejto referenčnej skupiny podlieha predošlému schváleniu revíznym lekárom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Koniec platnosti danej referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Začiatok platnosti danej referenčnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Identifikácia zdravotníckej odbornosti, ktorá môže dané lieky predpisovať.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SDL" type="Mnozstvo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Štandardná dávka liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZaStandardnuDavku" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úhrada ZP za jednu štandardnú dávku liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZaStandardnuDavkuPercenta" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úhrada ZP za jednu štandardnú dávku liečiva v percentách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

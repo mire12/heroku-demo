@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Anatomické miesta</codingSchemeName>
+    <codingSchemeVersion>5</codingSchemeVersion>
+    <DatumPoslednejZmeny>2017-04-21</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.115</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2017-08-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116665</codeValue>
+      <displayName>Koleno pravé</displayName>
+      <Skratka>KN</Skratka>
+      <Popis>Koleno pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346569</codeValue>
+      <displayName>Rameno pravé</displayName>
+      <Skratka>RN</Skratka>
+      <Popis>Rameno pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000357533</codeValue>
+      <displayName>Dlaň pravá </displayName>
+      <Skratka>DN</Skratka>
+      <Popis>Dlaň pravá </Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000357541</codeValue>
+      <displayName>Predlaktie pravé</displayName>
+      <Skratka>PD</Skratka>
+      <Popis>Predlaktie pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000357640</codeValue>
+      <displayName>Konček prsta</displayName>
+      <Skratka>KP</Skratka>
+      <Popis>Konček prsta</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706838</codeValue>
+      <displayName>Hlava</displayName>
+      <Skratka>01</Skratka>
+      <Popis>Hlava</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706846</codeValue>
+      <displayName>Tvár</displayName>
+      <Skratka>02</Skratka>
+      <Popis>Tvár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706853</codeValue>
+      <displayName>Krk</displayName>
+      <Skratka>03</Skratka>
+      <Popis>Krk</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706861</codeValue>
+      <displayName>Šija</displayName>
+      <Skratka>04</Skratka>
+      <Popis>Šija</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706879</codeValue>
+      <displayName>Trup</displayName>
+      <Skratka>05</Skratka>
+      <Popis>Trup</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706887</codeValue>
+      <displayName>Hrudník</displayName>
+      <Skratka>06</Skratka>
+      <Popis>Hrudník</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706895</codeValue>
+      <displayName>Chrbát</displayName>
+      <Skratka>07</Skratka>
+      <Popis>Chrbát</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706903</codeValue>
+      <displayName>Brucho</displayName>
+      <Skratka>08</Skratka>
+      <Popis>Brucho</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706911</codeValue>
+      <displayName>Zadok</displayName>
+      <Skratka>09</Skratka>
+      <Popis>Zadok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706929</codeValue>
+      <displayName>Bedrá</displayName>
+      <Skratka>10</Skratka>
+      <Popis>Bedrá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706937</codeValue>
+      <displayName>Horná končatina</displayName>
+      <Skratka>11</Skratka>
+      <Popis>Horná končatina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706952</codeValue>
+      <displayName>Lakeť pravá</displayName>
+      <Skratka>13</Skratka>
+      <Popis>Lakeť pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706960</codeValue>
+      <displayName>Ruka pravá</displayName>
+      <Skratka>14</Skratka>
+      <Popis>Ruka pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706978</codeValue>
+      <displayName>Palec pravý</displayName>
+      <Skratka>15</Skratka>
+      <Popis>Palec pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706986</codeValue>
+      <displayName>Prst</displayName>
+      <Skratka>16</Skratka>
+      <Popis>Prst</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000706994</codeValue>
+      <displayName>Dolná končatina</displayName>
+      <Skratka>17</Skratka>
+      <Popis>Dolná končatina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707000</codeValue>
+      <displayName>Stehno pravé</displayName>
+      <Skratka>18</Skratka>
+      <Popis>Stehno pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707018</codeValue>
+      <displayName>Lýtko pravé</displayName>
+      <Skratka>19</Skratka>
+      <Popis>Lýtko pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707026</codeValue>
+      <displayName>Noha pravá</displayName>
+      <Skratka>20</Skratka>
+      <Popis>Noha pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707034</codeValue>
+      <displayName>Chodidlo pravé</displayName>
+      <Skratka>21</Skratka>
+      <Popis>Chodidlo pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707042</codeValue>
+      <displayName>Palec pravej nohy </displayName>
+      <Skratka>22</Skratka>
+      <Popis>Palec pravej nohy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000840</codeValue>
+      <displayName>Členok pravý</displayName>
+      <Skratka>23</Skratka>
+      <Popis>Členok pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000857</codeValue>
+      <displayName>Zápästie pravé</displayName>
+      <Skratka>24</Skratka>
+      <Popis>Zápästie pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869156</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020804647</codeValue>
+      <displayName>Lebka</displayName>
+      <Skratka>25</Skratka>
+      <Popis>Lebka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671149</codeValue>
+      <displayName>Sánka</displayName>
+      <Skratka>26</Skratka>
+      <Popis>Sánka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671172</codeValue>
+      <displayName>Čeľusť</displayName>
+      <Skratka>27</Skratka>
+      <Popis>Čeľusť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671206</codeValue>
+      <displayName>Pery</displayName>
+      <Skratka>28</Skratka>
+      <Popis>Pery</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671222</codeValue>
+      <displayName>Dutina ústna</displayName>
+      <Skratka>29</Skratka>
+      <Popis>Dutina ústna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671255</codeValue>
+      <displayName>Jazyk</displayName>
+      <Skratka>30</Skratka>
+      <Popis>Jazyk</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671271</codeValue>
+      <displayName>Mandľa (tonzila) pravá</displayName>
+      <Skratka>31</Skratka>
+      <Popis>Mandľa (tonzila) pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671297</codeValue>
+      <displayName>Nosohltan</displayName>
+      <Skratka>32</Skratka>
+      <Popis>Nosohltan</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671321</codeValue>
+      <displayName>Hltan</displayName>
+      <Skratka>33</Skratka>
+      <Popis>Hltan</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671354</codeValue>
+      <displayName>Hrtan</displayName>
+      <Skratka>34</Skratka>
+      <Popis>Hrtan</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671388</codeValue>
+      <displayName>Oko pravé</displayName>
+      <Skratka>35</Skratka>
+      <Popis>Oko pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671404</codeValue>
+      <displayName>Nos</displayName>
+      <Skratka>36</Skratka>
+      <Popis>Nos</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671438</codeValue>
+      <displayName>Prínosné dutiny</displayName>
+      <Skratka>37</Skratka>
+      <Popis>Prínosné dutiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671461</codeValue>
+      <displayName>Ucho pravé</displayName>
+      <Skratka>38</Skratka>
+      <Popis>Ucho pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671495</codeValue>
+      <displayName>Vonkajší zvukovod pravého ucha</displayName>
+      <Skratka>39</Skratka>
+      <Popis>Vonkajší zvukovod pravého ucha</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671529</codeValue>
+      <displayName>Hrudná kosť</displayName>
+      <Skratka>40</Skratka>
+      <Popis>Hrudná kosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671552</codeValue>
+      <displayName>Prsník pravý</displayName>
+      <Skratka>41</Skratka>
+      <Popis>Prsník pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671586</codeValue>
+      <displayName>Rebrá</displayName>
+      <Skratka>42</Skratka>
+      <Popis>Rebrá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671610</codeValue>
+      <displayName>Stavec</displayName>
+      <Skratka>43</Skratka>
+      <Popis>Stavec</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671644</codeValue>
+      <displayName>Chrbticový kanál</displayName>
+      <Skratka>44</Skratka>
+      <Popis>Chrbticový kanál</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671677</codeValue>
+      <displayName>Panva</displayName>
+      <Skratka>45</Skratka>
+      <Popis>Panva</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671693</codeValue>
+      <displayName>Lopatka pravá</displayName>
+      <Skratka>46</Skratka>
+      <Popis>Lopatka pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671719</codeValue>
+      <displayName>Kľúčna kosť pravá</displayName>
+      <Skratka>47</Skratka>
+      <Popis>Kľúčna kosť pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671735</codeValue>
+      <displayName>Lakťová kosť pravá</displayName>
+      <Skratka>48</Skratka>
+      <Popis>Lakťová kosť pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671750</codeValue>
+      <displayName>Vretenná kosť pravá</displayName>
+      <Skratka>49</Skratka>
+      <Popis>Vretenná kosť pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671776</codeValue>
+      <displayName>Záprstie</displayName>
+      <Skratka>50</Skratka>
+      <Popis>Záprstie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671792</codeValue>
+      <displayName>Článok prsta</displayName>
+      <Skratka>51</Skratka>
+      <Popis>Článok prsta</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671818</codeValue>
+      <displayName>Predkolenie pravé</displayName>
+      <Skratka>52</Skratka>
+      <Popis>Predkolenie pravé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671834</codeValue>
+      <displayName>Píšťala pravá</displayName>
+      <Skratka>53</Skratka>
+      <Popis>Píšťala pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671859</codeValue>
+      <displayName>Ihlica pravá</displayName>
+      <Skratka>54</Skratka>
+      <Popis>Ihlica pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671875</codeValue>
+      <displayName>Slabina</displayName>
+      <Skratka>55</Skratka>
+      <Popis>Slabina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671883</codeValue>
+      <displayName>Päta pravá</displayName>
+      <Skratka>56</Skratka>
+      <Popis>Päta pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671891</codeValue>
+      <displayName>Priehlavok</displayName>
+      <Skratka>57</Skratka>
+      <Popis>Priehlavok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671909</codeValue>
+      <displayName>Pažerák</displayName>
+      <Skratka>58</Skratka>
+      <Popis>Pažerák</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671917</codeValue>
+      <displayName>Žalúdok</displayName>
+      <Skratka>59</Skratka>
+      <Popis>Žalúdok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671925</codeValue>
+      <displayName>Slezina</displayName>
+      <Skratka>60</Skratka>
+      <Popis>Slezina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671933</codeValue>
+      <displayName>Dvanástnik</displayName>
+      <Skratka>61</Skratka>
+      <Popis>Dvanástnik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671941</codeValue>
+      <displayName>Hrubé črevo</displayName>
+      <Skratka>62</Skratka>
+      <Popis>Hrubé črevo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671958</codeValue>
+      <displayName>Tenké črevo</displayName>
+      <Skratka>63</Skratka>
+      <Popis>Tenké črevo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671966</codeValue>
+      <displayName>Konečník</displayName>
+      <Skratka>64</Skratka>
+      <Popis>Konečník</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671974</codeValue>
+      <displayName>Análny otvor</displayName>
+      <Skratka>65</Skratka>
+      <Popis>Análny otvor</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671982</codeValue>
+      <displayName>Pľúca pravá strana</displayName>
+      <Skratka>66</Skratka>
+      <Popis>Pľúca pravá strana</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671990</codeValue>
+      <displayName>Priedušnica</displayName>
+      <Skratka>67</Skratka>
+      <Popis>Priedušnica</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672006</codeValue>
+      <displayName>Priedušky</displayName>
+      <Skratka>68</Skratka>
+      <Popis>Priedušky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672014</codeValue>
+      <displayName>Srdce</displayName>
+      <Skratka>69</Skratka>
+      <Popis>Srdce</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672022</codeValue>
+      <displayName>Žlčník</displayName>
+      <Skratka>70</Skratka>
+      <Popis>Žlčník</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672030</codeValue>
+      <displayName>Žlčovod</displayName>
+      <Skratka>71</Skratka>
+      <Popis>Žlčovod</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672048</codeValue>
+      <displayName>Pečeň</displayName>
+      <Skratka>72</Skratka>
+      <Popis>Pečeň</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672055</codeValue>
+      <displayName>Oblička pravá</displayName>
+      <Skratka>73</Skratka>
+      <Popis>Oblička pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672063</codeValue>
+      <displayName>Močovod</displayName>
+      <Skratka>74</Skratka>
+      <Popis>Močovod</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672071</codeValue>
+      <displayName>Močový mechúr</displayName>
+      <Skratka>75</Skratka>
+      <Popis>Močový mechúr</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672089</codeValue>
+      <displayName>Močová rúra</displayName>
+      <Skratka>76</Skratka>
+      <Popis>Močová rúra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672097</codeValue>
+      <displayName>Pošva </displayName>
+      <Skratka>77</Skratka>
+      <Popis>Pošva </Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672105</codeValue>
+      <displayName>Krčok maternice (exocervix, endocervix)</displayName>
+      <Skratka>78</Skratka>
+      <Popis>Krčok maternice (exocervix, endocervix)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672113</codeValue>
+      <displayName>Maternica</displayName>
+      <Skratka>79</Skratka>
+      <Popis>Maternica</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672121</codeValue>
+      <displayName>Vajíčkovod pravý</displayName>
+      <Skratka>80</Skratka>
+      <Popis>Vajíčkovod pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672139</codeValue>
+      <displayName>Pohlavný úd</displayName>
+      <Skratka>81</Skratka>
+      <Popis>Pohlavný úd</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672147</codeValue>
+      <displayName>Slinné žľazy</displayName>
+      <Skratka>82</Skratka>
+      <Popis>Slinné žľazy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672154</codeValue>
+      <displayName>Detská žľaza </displayName>
+      <Skratka>83</Skratka>
+      <Popis>Detská žľaza </Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672162</codeValue>
+      <displayName>Štítna žľaza</displayName>
+      <Skratka>84</Skratka>
+      <Popis>Štítna žľaza</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672170</codeValue>
+      <displayName>Prsná žľaza pravá</displayName>
+      <Skratka>85</Skratka>
+      <Popis>Prsná žľaza pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672188</codeValue>
+      <displayName>Podžalúdková žľaza</displayName>
+      <Skratka>86</Skratka>
+      <Popis>Podžalúdková žľaza</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672196</codeValue>
+      <displayName>Nadoblička pravá</displayName>
+      <Skratka>87</Skratka>
+      <Popis>Nadoblička pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672204</codeValue>
+      <displayName>Semenník pravý</displayName>
+      <Skratka>88</Skratka>
+      <Popis>Semenník pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672212</codeValue>
+      <displayName>Predstojnica</displayName>
+      <Skratka>89</Skratka>
+      <Popis>Predstojnica</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672220</codeValue>
+      <displayName>Vaječník pravý</displayName>
+      <Skratka>90</Skratka>
+      <Popis>Vaječník pravý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672238</codeValue>
+      <displayName>Koža</displayName>
+      <Skratka>91</Skratka>
+      <Popis>Koža</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672246</codeValue>
+      <displayName>Vlasy</displayName>
+      <Skratka>92</Skratka>
+      <Popis>Vlasy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672253</codeValue>
+      <displayName>Chlpy</displayName>
+      <Skratka>93</Skratka>
+      <Popis>Chlpy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089672261</codeValue>
+      <displayName>Nechty</displayName>
+      <Skratka>94</Skratka>
+      <Popis>Nechty</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683201</codeValue>
+      <displayName>Tepna</displayName>
+      <Skratka>95</Skratka>
+      <Popis>Tepna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683219</codeValue>
+      <displayName>Žila</displayName>
+      <Skratka>96</Skratka>
+      <Popis>Žila</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683227</codeValue>
+      <displayName>Kapilára</displayName>
+      <Skratka>97</Skratka>
+      <Popis>Kapilára</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683235</codeValue>
+      <displayName>Lymfatická cieva</displayName>
+      <Skratka>98</Skratka>
+      <Popis>Lymfatická cieva</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683243</codeValue>
+      <displayName>Lymfatická uzlina</displayName>
+      <Skratka>99</Skratka>
+      <Popis>Lymfatická uzlina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683250</codeValue>
+      <displayName>Brachiálna artéria</displayName>
+      <Skratka>100</Skratka>
+      <Popis>Brachiálna artéria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683268</codeValue>
+      <displayName>Radiálna artéria</displayName>
+      <Skratka>101</Skratka>
+      <Popis>Radiálna artéria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683276</codeValue>
+      <displayName>Femorálna artéria</displayName>
+      <Skratka>102</Skratka>
+      <Popis>Femorálna artéria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683284</codeValue>
+      <displayName>Ruka ľavá</displayName>
+      <Skratka>103</Skratka>
+      <Popis>Ruka ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683292</codeValue>
+      <displayName>Mandľa (tonzila) ľavá</displayName>
+      <Skratka>104</Skratka>
+      <Popis>Mandľa (tonzila) ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683300</codeValue>
+      <displayName>Oko ľavé</displayName>
+      <Skratka>105</Skratka>
+      <Popis>Oko ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683318</codeValue>
+      <displayName>Prsník ľavý</displayName>
+      <Skratka>106</Skratka>
+      <Popis>Prsník ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683326</codeValue>
+      <displayName>Pľúca ľavá strana</displayName>
+      <Skratka>107</Skratka>
+      <Popis>Pľúca ľavá strana</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683334</codeValue>
+      <displayName>Oblička ľavá</displayName>
+      <Skratka>108</Skratka>
+      <Popis>Oblička ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683342</codeValue>
+      <displayName>Vajíčkovod ľavý</displayName>
+      <Skratka>109</Skratka>
+      <Popis>Vajíčkovod ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683359</codeValue>
+      <displayName>Prsná žľaza ľavá</displayName>
+      <Skratka>110</Skratka>
+      <Popis>Prsná žľaza ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683367</codeValue>
+      <displayName>Nadoblička ľavá</displayName>
+      <Skratka>111</Skratka>
+      <Popis>Nadoblička ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683375</codeValue>
+      <displayName>Semenník ľavý</displayName>
+      <Skratka>112</Skratka>
+      <Popis>Semenník ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683383</codeValue>
+      <displayName>Vaječník ľavý</displayName>
+      <Skratka>113</Skratka>
+      <Popis>Vaječník ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683391</codeValue>
+      <displayName>Koleno ľavé</displayName>
+      <Skratka>114</Skratka>
+      <Popis>Koleno ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683409</codeValue>
+      <displayName>Rameno ľavé</displayName>
+      <Skratka>115</Skratka>
+      <Popis>Rameno ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683417</codeValue>
+      <displayName>Dlaň ľavá</displayName>
+      <Skratka>116</Skratka>
+      <Popis>Dlaň ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683425</codeValue>
+      <displayName>Predlaktie ľavé</displayName>
+      <Skratka>117</Skratka>
+      <Popis>Predlaktie ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683433</codeValue>
+      <displayName>Lakeť ľavá</displayName>
+      <Skratka>118</Skratka>
+      <Popis>Lakeť ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683441</codeValue>
+      <displayName>Palec ľavý</displayName>
+      <Skratka>119</Skratka>
+      <Popis>Palec ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683458</codeValue>
+      <displayName>Stehno ľavé</displayName>
+      <Skratka>120</Skratka>
+      <Popis>Stehno ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683466</codeValue>
+      <displayName>Lýtko ľavé</displayName>
+      <Skratka>121</Skratka>
+      <Popis>Lýtko ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683474</codeValue>
+      <displayName>Noha ľavá</displayName>
+      <Skratka>122</Skratka>
+      <Popis>Noha ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683482</codeValue>
+      <displayName>Chodidlo ľavé</displayName>
+      <Skratka>123</Skratka>
+      <Popis>Chodidlo ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683490</codeValue>
+      <displayName>Členok ľavý</displayName>
+      <Skratka>124</Skratka>
+      <Popis>Členok ľavý</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683508</codeValue>
+      <displayName>Zápästie ľavé</displayName>
+      <Skratka>125</Skratka>
+      <Popis>Zápästie ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683516</codeValue>
+      <displayName>Ucho ľavé</displayName>
+      <Skratka>126</Skratka>
+      <Popis>Ucho ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683524</codeValue>
+      <displayName>Vonkajší zvukovod ľavého ucha</displayName>
+      <Skratka>127</Skratka>
+      <Popis>Vonkajší zvukovod ľavého ucha</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683532</codeValue>
+      <displayName>Lopatka ľavá</displayName>
+      <Skratka>128</Skratka>
+      <Popis>Lopatka ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683540</codeValue>
+      <displayName>Kľúčna kosť ľavá</displayName>
+      <Skratka>129</Skratka>
+      <Popis>Kľúčna kosť ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683557</codeValue>
+      <displayName>Lakťová kosť ľavá</displayName>
+      <Skratka>130</Skratka>
+      <Popis>Lakťová kosť ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683565</codeValue>
+      <displayName>Vretenná kosť ľavá</displayName>
+      <Skratka>131</Skratka>
+      <Popis>Vretenná kosť ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683573</codeValue>
+      <displayName>Predkolenie ľavé</displayName>
+      <Skratka>132</Skratka>
+      <Popis>Predkolenie ľavé</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683581</codeValue>
+      <displayName>Píšťala ľavá</displayName>
+      <Skratka>133</Skratka>
+      <Popis>Píšťala ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683599</codeValue>
+      <displayName>Ihlica ľavá</displayName>
+      <Skratka>134</Skratka>
+      <Popis>Ihlica ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089683607</codeValue>
+      <displayName>Päta ľavá</displayName>
+      <Skratka>135</Skratka>
+      <Popis>Päta ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089684233</codeValue>
+      <displayName>Horná končatina pravá</displayName>
+      <Skratka>136</Skratka>
+      <Popis>Horná končatina pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089684258</codeValue>
+      <displayName>Horná končatina ľavá</displayName>
+      <Skratka>137</Skratka>
+      <Popis>Horná končatina ľavá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089684274</codeValue>
+      <displayName>Dolná končatina pravá</displayName>
+      <Skratka>138</Skratka>
+      <Popis>Dolná končatina pravá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089684282</codeValue>
+      <displayName>Dolná končatina ľavá</displayName>
+      <Skratka>139</Skratka>
+      <Popis>Dolná končatina ľavá</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

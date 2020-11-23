@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Originalita lieku</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Aktívny</Nazov>
+      <MinPocetnost>1</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaI</Typ>
+      <codingScheme>
+        <oid />
+      </codingScheme>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.164</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-04</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020097291</codeValue>
+      <displayName>?</displayName>
+      <Skratka>?</Skratka>
+      <Popis>?</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097309</codeValue>
+      <displayName>G</displayName>
+      <Skratka>G</Skratka>
+      <Popis>Odkazovaná žiadost - liek rovnocenný s referencným liekom (generická)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097317</codeValue>
+      <displayName>O</displayName>
+      <Skratka>O</Skratka>
+      <Popis>Originálny prípravok</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097325</codeValue>
+      <displayName>P</displayName>
+      <Skratka>P</Skratka>
+      <Popis>Rozšírenie radu N, Z, D, B</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097333</codeValue>
+      <displayName>Z</displayName>
+      <Skratka>Z</Skratka>
+      <Popis>Samostatná úplná – známe liečivo</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097341</codeValue>
+      <displayName>R</displayName>
+      <Skratka>R</Skratka>
+      <Popis>Odkazovaná ž. s rozdielmi v porovaní s liekom registrovaným v SR - rovnaký</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097358</codeValue>
+      <displayName>K</displayName>
+      <Skratka>K</Skratka>
+      <Popis>Nová kombinácia známych liečiv (fixná kombinácia)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097366</codeValue>
+      <displayName>N</displayName>
+      <Skratka>N</Skratka>
+      <Popis>Samostatná úplná – nové liečivo</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097374</codeValue>
+      <displayName>H</displayName>
+      <Skratka>H</Skratka>
+      <Popis>Odkazovaná žiadost s rozdielmi v porovnaní s referencným liekom (hybridná)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097382</codeValue>
+      <displayName>D</displayName>
+      <Skratka>D</Skratka>
+      <Popis>Samostatná úplná na experimentálnych údajoch do 2003</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097390</codeValue>
+      <displayName>B</displayName>
+      <Skratka>B</Skratka>
+      <Popis>Odkazovaná žiadost - odkaz do vedeckých prác (bibliografia)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097408</codeValue>
+      <displayName>S</displayName>
+      <Skratka>S</Skratka>
+      <Popis>Žiadost so súhlasom držitela registrácie lieku (informovaný súhlas)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097416</codeValue>
+      <displayName>E</displayName>
+      <Skratka>E</Skratka>
+      <Popis>Odkazovaná žiadosť (liek rovnocenný s liekom registrovaným v EÚ)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097424</codeValue>
+      <displayName>BX</displayName>
+      <Skratka>BX</Skratka>
+      <Popis>Samostatná úplna s odkazom na vedeckú literatúru (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097432</codeValue>
+      <displayName>DX</displayName>
+      <Skratka>DX</Skratka>
+      <Popis>Samostatná úplná na experimentálnych údajoch do 2003 (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097440</codeValue>
+      <displayName>EX</displayName>
+      <Skratka>EX</Skratka>
+      <Popis>Odkazovaná žiadosť (liek rovnocenný s liekom registrovaným v EÚ) (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097457</codeValue>
+      <displayName>GX</displayName>
+      <Skratka>GX</Skratka>
+      <Popis>Odkazovaná žiadosť (liek rovnocenný s liekom registrovaným v SR) (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097465</codeValue>
+      <displayName>HX</displayName>
+      <Skratka>HX</Skratka>
+      <Popis>Odkazovaná ž. s rozdielmi v porovaní s liekom registrovaným v SR - iný (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097473</codeValue>
+      <displayName>KX</displayName>
+      <Skratka>KX</Skratka>
+      <Popis>Nová kombinácia známych liečiv (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097481</codeValue>
+      <displayName>NX</displayName>
+      <Skratka>NX</Skratka>
+      <Popis>Samostatná úplna - Nové liečivo (po r. 2003) (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097499</codeValue>
+      <displayName>OX</displayName>
+      <Skratka>OX</Skratka>
+      <Popis>Originálny prípravok (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097507</codeValue>
+      <displayName>PX</displayName>
+      <Skratka>PX</Skratka>
+      <Popis>Rozšírenie radu N, Z, D, B (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097515</codeValue>
+      <displayName>RX</displayName>
+      <Skratka>RX</Skratka>
+      <Popis>Odkazovaná ž. s rozdielmi v porovaní s liekom registrovaným v SR - rovnaký (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097523</codeValue>
+      <displayName>SX</displayName>
+      <Skratka>SX</Skratka>
+      <Popis>Odkazovaná žiadosť so suhlasom držiteľa registrácie registr. lieku (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097531</codeValue>
+      <displayName>ZX</displayName>
+      <Skratka>ZX</Skratka>
+      <Popis>Samostatná úplna - Známe liečivo (po r. 2003) (FIRMY)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097549</codeValue>
+      <displayName>T</displayName>
+      <Skratka>T</Skratka>
+      <Popis>Tradičný rastlinný liek</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097556</codeValue>
+      <displayName>L</displayName>
+      <Skratka>L</Skratka>
+      <Popis>Odkazovaná žiadost - liek podobný s biologickým referencným liekom (biosimilar)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097564</codeValue>
+      <displayName>Ms</displayName>
+      <Skratka>Ms</Skratka>
+      <Popis>Homeopatikum - samostatná úplná</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020097572</codeValue>
+      <displayName>Mz</displayName>
+      <Skratka>Mz</Skratka>
+      <Popis>Homeopatikum - zjednodušený postup</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>1</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859397</codeValue>
+      <displayName>---</displayName>
+      <Skratka>---</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaI>0</HodnotaI>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

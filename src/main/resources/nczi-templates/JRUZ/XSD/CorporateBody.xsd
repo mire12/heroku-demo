@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="PhysicalPerson.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:element name="CorporateBodyFullName" type="CorporateBodyFullName" />
+  <xs:complexType name="CorporateBodyFullName">
+    <xs:simpleContent>
+      <xs:extension base="string500" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="CorporateBody" type="CorporateBody" />
+  <xs:complexType name="CorporateBody">
+    <xs:annotation>
+      <xs:documentation>Popis je uvedený v KRU - PO.ID</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Activities" type="string200" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa predmet činnosti právnickej osoby.
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Poznámky: Je možné použiť viackrát.
+Odporúča sa vhodne rozdeliť podľa rozdielnych činností, takisto aj v prípade príli&amp;scaron; dlhého reťazca pre jednu činnosť.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorporateBodyAlternativeName" type="string200" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Môže obsahovať alternatívy k plným názvom, ako sú zaužívané synonymá, skratky a podobne.
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Poznámky: Môže byť použité viacnásobne.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OtherLegalFacts" type="string11" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa doplňujúca informácia v súvislosti s právnymi činnosťami týkajúcimi sa danej právnickej osoby.]
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Poznámky: Je možné použiť viackrát.
+Obsahuje informáciu týkajúcu sa konkurzu, vyrovnania, likvidácie, nútenej správy, právneho dôvodu výmazu a podobne.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Establishment" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa dátum zriadenia právnickej osoby.
+Formát reprezentácie: Deň a/alebo mesiac možno vynechať, najmä ak nie je známy.
+Dátum nie je väčší, ako je aktuálny, a zároveň nie je väčší ako dátum zániku, ak sú známe obidva dátumy.]
+Hodnoty: Podľa formátu Date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Termination" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa dátum zániku alebo ukončenia činnosti právnickej osoby.
+Formát reprezentácie: Dátum nie je väčší, ako je aktuálny, a zároveň nie je väčší ako dátum zániku, ak sú známe obidva dátumy.
+Hodnoty: Podľa formátu Date.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorporateBodyFullName" type="CorporateBodyFullName" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Stakeholder" type="Stakeholder" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="LegalForm" type="IdPolozkaCiselnikaLegalForm" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>údaj o type právnickej osoby, ako je akciová spoločnosť a podobne.
+Poznámky: Používa sa na spresnenie typu alebo triedy právnickej osoby.
+Pre rôzne typy právnických osôb existujú rôzni gestori.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NaceKody" type="IdPolozkaCiselnikaNaceKody" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="DruhVlastnictva" type="IdPolozkaCiselnikaDruhVlastnictva" minOccurs="1" maxOccurs="1" />
+      <xs:element name="UstredneOrganyStatnejSpravy" type="IdPolozkaCiselnikaUstredneOrganyStatnejSpravy" minOccurs="1" maxOccurs="1" />
+      <xs:element name="InstitucionalneSubsektory" type="IdPolozkaCiselnikaInstitucionalneSubsektory" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Stakeholder" type="Stakeholder" />
+  <xs:complexType name="Stakeholder">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok obsahujúci údaje o zainteresovanej osobe vo vzťahu k právnickej osobe.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CorporateBody" type="CorporateBody" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PhysicalPerson" type="PhysicalPerson" minOccurs="0" maxOccurs="1" />
+      <xs:element name="StakeholderType" type="IdPolozkaCiselnikaTypZainteresovanejOsoby" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

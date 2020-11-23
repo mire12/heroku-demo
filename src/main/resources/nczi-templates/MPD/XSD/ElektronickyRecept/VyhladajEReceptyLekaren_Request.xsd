@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajEReceptyLekarenVstup" type="VyhladajEReceptyLekarenVstup" />
+  <xs:complexType name="VyhladajEReceptyLekarenVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupom do služby je buď identifikácia prijímateľa, pre ktorého je potrebné vyhľadať dispenzovateľné eRecepty, alebo identifikácia konkrétnych eReceptov jedného prijímateľa.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPredkladatelReceptu" type="IdPrZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor predkladateľa receptu, ktorý je splnomocnený na výber liečebného prostriedku.
+Vyhľadá elektronické recepty PrjZS, ktorý predkladateľa splnomocnil.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrijimatelZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor prijímateľa zdravotnej starostlivosti.
+Vyhľadá elektronické recepty tohto konkrétneho prijímateľa.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReceptu" type="rm:II" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Id receptu v NZIS, podľa ktorého sa recept vyhľadá. V tomto prípade sa vráti 0 alebo 1 recept.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

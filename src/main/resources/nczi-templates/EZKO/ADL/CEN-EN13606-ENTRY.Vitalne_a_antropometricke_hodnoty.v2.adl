@@ -1,0 +1,140 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Vitalne_a_antropometricke_hodnoty.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Pavol Švento">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"pavol.svento@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o fyziologických výsledkoch pacienta">
+            keywords = <"Výsledky vyšetrení","Vitálne a antropometrické hodnoty">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Vitálne a antropometrické hodnoty
+        items existence matches {0..1} cardinality matches {1..5; unordered} matches {
+            ELEMENT[at0215] occurrences matches {1..1} matches {  -- Dátum merania
+                value existence matches {0..1} matches {
+                    DATE[at0217] occurrences matches {1..1} matches {  -- 
+                        date existence matches {1..1} matches {yyyy-mm-dd}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0011] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0001] occurrences matches {0..1} matches {  -- Hmotnosť
+                value existence matches {0..1} matches {
+                    PQ[at0002] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {*}
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- Výška
+                value existence matches {0..1} matches {
+                    PQ[at0012] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {*}
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0004] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {*}
+                root existence matches {1..1} matches {
+                    OID[at0005] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.90"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CISELNIK_JEDNOTIEK", ...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Vitálne a antropometrické hodnoty">
+                    description = <"Hodnoty fyziologického merania.">
+                >
+                ["at0008"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka lekára k fyziologickému meraniu.">
+                >
+                ["at0011"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0215"] = <
+                    text = <"Dátum merania">
+                    description = <"Dátum fyziologického merania.">
+                >
+                ["at0217"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"Hmotnosť">
+                    description = <"Zistená hmotnosť pacienta. Obsahuje dve polia - hodnotu a mernú jednotku- odkaz na Číselník jednotiek">
+                >
+                ["at0003"] = <
+                    text = <"Výška">
+                    description = <"Zistená výška pacienta. Obsahuje dve polia - hodnotu a mernú jednotku- odkaz na Číselník jednotiek">
+                >
+                ["at0002"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0012"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0004"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0005"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (vykonal storno záznamu) ">
+                >
+            >
+        >
+    >
+    term_binding = <
+        ["CISELNIK_JEDNOTIEK"] = <
+            items = <
+                ["at0001"] = <[CISELNIK_JEDNOTIEK::g],[CISELNIK_JEDNOTIEK::kg]>
+                ["at0003"] = <[CISELNIK_JEDNOTIEK::cm]>
+            >
+        >
+    >

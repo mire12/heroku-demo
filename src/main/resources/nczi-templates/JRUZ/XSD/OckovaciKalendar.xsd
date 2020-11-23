@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:element name="OckovaciKalendar" type="OckovaciKalendar" />
+  <xs:complexType name="OckovaciKalendar">
+    <xs:annotation>
+      <xs:documentation>
+	- </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOckovaciKalendar" type="IdOckovaciKalendar" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRÚZ identifikátor očkovacieho kalendára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Rok" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Rok, pre ktorý platí daný očkovací kalendár.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov daného kalendára.
+Textová položka Char(255)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis daného kalendára.
+Textová položka Char(500)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Poznamka" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Poznámka k danému kalendára.
+Textová položka Char(1000)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OckovanieVKalendari" type="OckovanieVKalendari" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OckovanieVKalendari" type="OckovanieVKalendari" />
+  <xs:complexType name="OckovanieVKalendari">
+    <xs:annotation>
+      <xs:documentation>Na kalendárny rok definuje plánované očkovanie.
+
+Príklad takto definovaných povinných očkovaní :
+
+4. deň života: tuberkulóza
+3.-4. mesiac: záškrt, tetanus, čierny kašeľ, detská obrna, žltačka typu B, hemofilová infekcia, pneumokok
+5.-6. mesiac: opakuje sa znova
+11.-12. mesiac: opakuje sa znova
+15. mesiac: osýpky, mums, rubeola
+6. rok života: záškrt, tetanus, čierny kašeľ, detská obrna
+11. rok života: osýpky, mums, rubeola, tuberkulóza
+13. rok života: záškrt, tetanus, detská obrna
+
+Po konzultácii s lekárom je možné očkovanie proti rotavírusom, kliešťovej encefalitíde, žltačke typu A, meningitíde, chrípke, ovčím kiahňam, rakovine krčka maternice, pneumokokom, prípadne kombinovanou vakcínou proti žltačke typu A a B.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RokNarodenia" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Rok narodenia pacientov pre dané očkovanie na danom očkovacom kalendári.
+Číselná položka Number(4)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DruhOckovania" type="IdPolozkaCiselnikaDruhOckovania" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pohlavie" type="IdPolozkaCiselnikaSex" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TypOckovania" type="IdPolozkaCiselnikaTypOckovania" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PravidloOpakovania" type="CasovaZlozka" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VekDo" type="CasovaZlozka" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VekOd" type="CasovaZlozka" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OckovaciKalendar_Zoznam" type="OckovaciKalendar_Zoznam" />
+  <xs:complexType name="OckovaciKalendar_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam očkovacích kalendárov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OckovaciKalendar" type="OckovaciKalendar" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CasovaZlozka" type="CasovaZlozka" />
+  <xs:complexType name="CasovaZlozka">
+    <xs:annotation>
+      <xs:documentation>Štrukturovaná forma (rok, mesiac, tyzden) </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Rok" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Mesiac" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Tyzden" type="xs:int" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Merná jednotka zdravotníckej pomôcky</codingSchemeName>
+    <codingSchemeVersion>4</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-07-14</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.211</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-14</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020107520</codeValue>
+      <displayName>pár</displayName>
+      <Skratka>pár</Skratka>
+      <Popis>pár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107496</codeValue>
+      <displayName>bal</displayName>
+      <Skratka>bal</Skratka>
+      <Popis>bal</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107504</codeValue>
+      <displayName>ks</displayName>
+      <Skratka>ks</Skratka>
+      <Popis>ks</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020107512</codeValue>
+      <displayName>set</displayName>
+      <Skratka>set</Skratka>
+      <Popis>set</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208868307</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

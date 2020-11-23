@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="PacientDataPlain.xsd.xsd" />
+
+  <xs:element name="AnonymPersonalDataListPlain" nillable="true" type="tns:AnonymPersonalDataListPlain" />
+  
+  <xs:complexType name="AnonymPersonalDataListPlain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnonymPersonalDataPlain" type="tns:AnonymPersonalDataPlain" />
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

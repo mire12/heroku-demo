@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="VyhladajMagistraliterPripravkyVystup" type="VyhladajMagistraliterPripravkyVystup" />
+  <xs:complexType name="VyhladajMagistraliterPripravkyVystup">
+    <xs:annotation>
+      <xs:documentation>Výsledný zoznam magistraliter prípravkov.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MagistraliterPripravok" type="MagistraliterPripravokInfo" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MagistraliterPripravokInfo">
+    <xs:annotation>
+      <xs:documentation>Údaje magistraliter prípravku, ktorý je zahrnutý vo výsledkoch vyhľadávania.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikatorPripravku" type="IdMagistraliter" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor magistraliter prípravku v JRÚZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovMedzinarodny" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Medzinárodný názov magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovSk" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Slovensý názov magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Krátky popis prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

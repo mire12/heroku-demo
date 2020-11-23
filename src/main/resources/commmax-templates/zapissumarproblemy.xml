@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>ZapisPacientskehoSumaruZdravotneProblemy_v2</Class>
+      <MessageID>2cea9e98-1070-4372-889d-2f45a76313c2</MessageID>
+      <CorrelationID>45ba888f-5df3-404f-a436-0d6409c714d2</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>8</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <EHR_EXTRACT xmlns="CEN/13606/RM">
+    <ehr_system>
+        <extension></extension>
+        <root>
+            <oid>1.3.158.00165387.100.30.20</oid>
+        </root>
+    </ehr_system>
+    <subject_of_care>
+        <extension>%PACIENT%</extension>
+        <root>
+            <oid>1.3.158.00165387.100.40.110</oid>
+        </root>
+    </subject_of_care>
+    <time_created>
+        <time>2020-08-17T21:11:54</time>
+    </time_created>
+    <rm_id>EN13606</rm_id>
+    <all_compositions>
+        <name xsi:type="SIMPLE_TEXT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <originalText>Zoznam zdravotných problémov</originalText>
+        </name>
+        <archetype_id>CEN-EN13606-COMPOSITION.Zaznamy_zdravotnych_problemov.v2/at0000</archetype_id>
+        <rc_id>
+            <extension>007229134800722913480</extension>
+            <root>
+                <oid>1.3.158.00165387.100.50.40.120</oid>
+            </root>
+        </rc_id>
+        <synthesised>false</synthesised>
+        <sensitivity>3</sensitivity>
+        <committal>
+            <ehr_system>
+                <extension></extension>
+                <root>
+                    <oid>1.3.158.00165387.100.30.20</oid>
+                </root>
+            </ehr_system>
+            <time_committed>
+                <time>2020-08-16T21:11:54</time>
+            </time_committed>
+            <committer>
+                <extension>00020003901</extension>
+                <root>
+                    <oid>1.3.158.00165387.100.40.90</oid>
+                </root>
+            </committer>
+            <version_status>
+                <codeValue>VER01</codeValue>
+            </version_status>
+        </committal>
+        <composer>
+            <function>
+                <codingScheme>
+                    <oid>1.3.158.00165387.100.10.34</oid>
+                </codingScheme>
+                <codingSchemeVersion>1</codingSchemeVersion>
+                <codeValue>00000461517</codeValue>
+                <displayName>všeobecné lekárstvo</displayName>
+            </function>
+            <performer>
+                <extension>00020003901</extension>
+                <root>
+                    <oid>1.3.158.00165387.100.40.90</oid>
+                </root>
+            </performer>
+            <healthcare_facillity>
+                <extension>00020008694</extension>
+                <root>
+                    <oid>1.3.158.00165387.100.40.70</oid>
+                </root>
+            </healthcare_facillity>
+        </composer>
+        <content xsi:type="ENTRY" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <name xsi:type="SIMPLE_TEXT">
+                <originalText>Zdravotný problém</originalText>
+            </name>
+            <archetype_id>CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0000</archetype_id>
+            <rc_id>
+                <extension>007229134800722913480</extension>
+                <root>
+                    <oid>1.3.158.00165387.100.50.40.120</oid>
+                </root>
+            </rc_id>
+            <synthesised>false</synthesised>
+            <uncertainty_expressed>false</uncertainty_expressed>
+            <items xsi:type="ELEMENT">
+                <name xsi:type="SIMPLE_TEXT">
+                    <originalText>Dátum a čas vzniku</originalText>
+                </name>
+                <archetype_id>CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0170</archetype_id>
+                <rc_id>
+                    <extension></extension>
+                    <root>
+                        <oid>1.3.158.00165387.100.50.40.120</oid>
+                    </root>
+                </rc_id>
+                <synthesised>false</synthesised>
+                <value xsi:type="SIMPLE_TEXT">
+                  <originalText>2020-08-16T21:11:54</originalText>
+                </value>
+            </items>
+           
+            <items xsi:type="ELEMENT">
+                <name xsi:type="SIMPLE_TEXT">
+                    <originalText>Biohazard</originalText>
+                </name>
+                <archetype_id>CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0005</archetype_id>
+                <rc_id>
+                    <extension></extension>
+                    <root>
+                        <oid>1.3.158.00165387.100.50.40.120</oid>
+                    </root>
+                </rc_id>
+                <synthesised>false</synthesised>
+                <value xsi:type="BL">
+                    <value>true</value>
+                </value>
+            </items>
+            <items xsi:type="CLUSTER">
+                <name xsi:type="SIMPLE_TEXT">
+                    <originalText>Diagnóza</originalText>
+                </name>
+                <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0009</archetype_id>
+                <rc_id>
+                    <extension>007229134800722913480</extension>
+                    <root>
+                        <oid>1.3.158.00165387.100.50.40.120</oid>
+                    </root>
+                </rc_id>
+                <synthesised>false</synthesised>
+                <structure_type>
+                    <codeValue>STRC01</codeValue>
+                </structure_type>
+                <parts xsi:type="ELEMENT">
+                    <name xsi:type="SIMPLE_TEXT">
+                        <originalText>Kód diagnózy</originalText>
+                    </name>
+                    <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0112</archetype_id>
+                    <rc_id>
+                        <extension></extension>
+                        <root>
+                            <oid>1.3.158.00165387.100.50.40.120</oid>
+                        </root>
+                    </rc_id>
+                    <synthesised>false</synthesised>
+                    <value xsi:type="CV">
+                        <codingScheme>
+                            <oid>1.3.158.00165387.100.10.25</oid>
+                        </codingScheme>
+                        <codingSchemeVersion>1</codingSchemeVersion>
+                        <codeValue>00020768784</codeValue>
+                        <displayName>Zlomenina horného konca lakťovej kosti (ulny): časť bližšie neurčená</displayName>
+                    </value>
+                </parts>
+                <parts xsi:type="ELEMENT">
+                    <name xsi:type="SIMPLE_TEXT">
+                        <originalText>Upresnenie</originalText>
+                    </name>
+                    <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0114</archetype_id>
+                    <rc_id>
+                        <extension></extension>
+                        <root>
+                            <oid>1.3.158.00165387.100.50.40.120</oid>
+                        </root>
+                    </rc_id>
+                    <synthesised>false</synthesised>
+                    <value xsi:type="SIMPLE_TEXT">
+                        <originalText>Puknutá kosť</originalText>
+                    </value>
+                </parts>
+            </items>
+            <items xsi:type="ELEMENT">
+                <name xsi:type="SIMPLE_TEXT">
+                    <originalText>Počet záznamov k diagnóze</originalText>
+                </name>
+                <archetype_id>CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0021</archetype_id>
+                <rc_id>
+                    <extension></extension>
+                    <root>
+                        <oid>1.3.158.00165387.100.50.40.120</oid>
+                    </root>
+                </rc_id>
+                <synthesised>false</synthesised>
+                <value xsi:type="INT">
+                    <value>1</value>
+                </value>
+            </items>
+        </content>
+    </all_compositions>
+</EHR_EXTRACT>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  
+  <xs:complexType name="DietetickaPotravinaDetail">
+    <xs:annotation>
+      <xs:documentation>Detailné informácie o dietetickej potravine platné v momente volania služby.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AplikacnaForma" type="IdPolozkaCiselnikaAplikacnaFormaDP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor (vrátane displayName) - Aplikačná forma dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálny doplatok poistenca za dietetikum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GlutenFree" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, že daná potravina neobsahuje glutén.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdDietetika" type="IdDietetickaPotravina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor dietetickej potraviny v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikacneObmedzenia" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Indikačné obmedzenie dietetika.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaLekaren" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna cenu dietetickej potraviny vo verejnej lekárni.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PodielCien" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Podiel maximálnej výšky doplatku poistenca za dietetickú potravinu a maximálnej ceny dietetickej potraviny vo verejnej lekárni vyjadrený v percentách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor (vrátane displayName) - Lekárske odbornosti, ktoré môžu predpisovať dané dietetiká. Ak nie sú žiadne uvedené, tak môžu predpisovať všetci.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZP" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximalna úhrada ZP.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vyrobca" type="IdPolozkaCiselnikaVyrobcaDP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor (vrátane displayName) - Výrobca danej dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

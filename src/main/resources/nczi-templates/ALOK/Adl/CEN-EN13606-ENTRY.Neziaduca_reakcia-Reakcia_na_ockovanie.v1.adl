@@ -1,0 +1,257 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Neziaduca_reakcia-Reakcia_na_ockovanie.v1
+specialize
+    CEN-EN13606-ENTRY.Neziaduca_reakcia.v3
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20110913">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Informácie o reakcii na očkovanie pacienta.">
+            keywords = <"Alergia","Alergén","Varovanie","Nežiadúce reakcie","Očkovanie">
+        >
+    >
+
+definition
+    ENTRY[at0000.1] occurrences matches {1..1} matches {  -- Reakcia na očkovanie
+        items existence matches {0..1} cardinality matches {4..6; unordered; unique} matches {
+            ELEMENT[at0051] occurrences matches {1..1} matches {  -- Dátum spozorovania
+                value existence matches {1..1} matches {
+                    DATE[at0056] occurrences matches {1..1} matches {  -- 
+                        date existence matches {1..1} matches {yyyy-MM-dd}
+                    }
+                }
+            }
+            ELEMENT[at0100] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0004] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- Typ reakcie
+                value existence matches {1..1} matches {
+                    CV[at0007.13] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {" "}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0.14] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.58"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            CLUSTER[at0001.18] occurrences matches {1..1} matches {  -- Alergén
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0016.20] occurrences matches {0..1} matches {  -- Liečivo
+                        value existence matches {1..1} matches {
+                            CV[at0018.9] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {1..1} matches {/.*/}
+                                displayName existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0.10] occurrences matches {1..1} matches {  -- OID
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.83"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0021.19] occurrences matches {0..1} matches {  -- Látka
+                        value existence matches {1..1} matches {
+                            CV[at0027.5] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {1..1} matches {/.*/}
+                                displayName existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0.8] occurrences matches {1..1} matches {  -- OID
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.158"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0.7] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                    }
+                }
+            }
+            CLUSTER[at0029.6] occurrences matches {1..1} matches {  -- Prejav
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0041] occurrences matches {0..1} matches {  -- Typ alergie
+                        value existence matches {1..1} matches {
+                            CV[at0045.11] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {1..1} matches {/.*/}
+                                displayName existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0.12] occurrences matches {1..1} matches {  -- OID
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.159"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0000] occurrences matches {0..1} matches {  -- Diagnóza
+                        include
+                            archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0.23] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                    }
+                }
+            }
+            ELEMENT[at0.2] occurrences matches {1..1} matches {  -- ID očkovania
+                value existence matches {1..1} matches {
+                    II[at0.3] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0.4] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.60.50"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0.15] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.16] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.30"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0051"] = <
+                    text = <"Dátum spozorovania">
+                    description = <"Dátum spozorovania reakcie na alergiu.">
+                >
+                ["at0100"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka lekára k alergii">
+                >
+                ["at0056"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0003"] = <
+                    text = <"Typ reakcie">
+                    description = <"Typy nežiadúcich reakcií pacienta na látky, jedlo alebo lieky.">
+                >
+                ["at0041"] = <
+                    text = <"Typ alergie">
+                    description = <"Popis a kód zisteného klinického prejavu typu alergie u pacienta. Klinický prejav je vyberaný z číselníka typov alergií.">
+                >
+                ["at0000.1"] = <
+                    text = <"Reakcia na očkovanie">
+                    description = <"Informácie o nežiaducich reakciách na očkovanie pacienta">
+                >
+                ["at0.2"] = <
+                    text = <"ID očkovania">
+                    description = <"Identidfikátor očkovania, ku ktorému sa reakcia vzťahuje. Ak ide o zápis reakcie spolu s vykonaným očkovaním neuvádza sa.">
+                >
+                ["at0.3"] = <
+                    text = <"II">
+                    description = <"Odkaz na archetyp OckovaciZaznam">
+                >
+                ["at0029.6"] = <
+                    text = <"Prejav">
+                    description = <"Zistený klinický prejav alergie u pacienta. Klinický prejav je vyberaný z číselníka typov alergií alebo je vyberaná diagnóza.">
+                >
+                ["at0000"] = <
+                    text = <"Diagnóza">
+                    description = <"Popis a kód zistenej diagnózy ako klinického prejavu alergie u pacienta. Klinický prejav je vyberaný z číselníka diagnóz.">
+                >
+                ["at0027.5"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0.8"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0018.9"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0.10"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0045.11"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0.12"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0007.13"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0.14"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0001.18"] = <
+                    text = <"Alergén">
+                    description = <"Popis alergénu, ktorý je zodpovedný za alergickú reakciu. Ak ide o alergiu na látky, je využívaný číselník typov alergénov, ak ide o alergiu na lieky, je využívaný číselník ATC skupín.">
+                >
+                ["at0021.19"] = <
+                    text = <"Látka">
+                    description = <"Popis alergénu - látky ak je zodpovedná za alergickú reakciu. Využívaný je číselník  typov alergénov.">
+                >
+                ["at0016.20"] = <
+                    text = <"Liečivo">
+                    description = <"Popis alergénu - liečiva ak je zodpovedné za alergickú reakciu. Využívaný je číselník ATC skupín.">
+                >
+                ["at0.15"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0.16"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["sk"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

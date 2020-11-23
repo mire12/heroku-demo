@@ -1,0 +1,134 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>ZrusZapisZPacientskehoSumaru_v2</Class>
+      <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</MessageID>
+      <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>1</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <EHR_EXTRACT xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="CEN/13606/RM">
+        <ehr_system>
+          <extension>987654321FNsPBB</extension>
+          <root>
+            <oid>1.3.158.00165387.100.30.20</oid>
+          </root>
+        </ehr_system>
+        <subject_of_care>
+          <extension>%PACIENT%</extension>
+          <assigningAuthorityName>NCZI</assigningAuthorityName>
+          <validTime>
+            <low>
+              <time>2012-08-22T10:00:00</time>
+            </low>
+            <high>
+              <time>3000-12-31T10:00:00</time>
+            </high>
+          </validTime>
+          <root>
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </subject_of_care>
+        <time_created>
+          <time>2018-06-01T14:27:01</time>
+        </time_created>
+        <rm_id>EN13606</rm_id>
+        <all_compositions>
+          <name xsi:type="SIMPLE_TEXT">
+            <originalText>DefaultComposition</originalText>
+          </name>          
+          <synthesised>true</synthesised>          
+          <content xsi:type="ENTRY">
+            <name xsi:type="SIMPLE_TEXT">
+              <originalText>Storno záznamu z dôvodu chyby</originalText>
+            </name>
+            <archetype_id>CEN-EN13606-ENTRY.Chirurgicky_vykon.v1/at0000</archetype_id>
+            <rc_id>
+              <extension>00000112345678905</extension>
+              <assigningAuthorityName>FNsP F. D. R.</assigningAuthorityName>
+              <validTime>
+                <low>
+                  <time>2012-10-23T10:00:00</time>
+                </low>
+                <high>
+                  <time>3000-12-31T10:00:00</time>
+                </high>
+              </validTime>
+              <root>
+                <oid>1.3.158.00165387.100.50.40.20</oid>
+              </root>
+            </rc_id>
+            <synthesised>false</synthesised>
+            <feeder_audit>
+              <ehr_system>
+                <extension>987654321FNsPBB</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.30.20</oid>
+                </root>
+              </ehr_system>
+              <time_committed>
+                <time>2018-06-01T14:26:01</time>
+              </time_committed>
+              <committer>
+                <extension>00000100040</extension>
+                <assigningAuthorityName>NCZI</assigningAuthorityName>
+                <validTime>
+                  <low>
+                    <time>2012-08-22T10:00:00</time>
+                  </low>
+                  <high>
+                    <time>3000-12-31T10:00:00</time>
+                  </high>
+                </validTime>
+                <root>
+                  <oid>1.3.158.00165387.100.40.90</oid>
+                </root>
+              </committer>
+              <version_status>
+                <codeValue>VER04</codeValue>
+              </version_status>
+              <previous_version>
+                <extension>123450060118482345511</extension>
+                <assigningAuthorityName>FNsP F. D. R.</assigningAuthorityName>
+                <validTime>
+                  <low>
+                    <time>2012-08-22T10:00:00</time>
+                  </low>
+                  <high>
+                    <time>3000-12-31T10:00:00</time>
+                  </high>
+                </validTime>
+                <root>
+                  <oid>1.3.158.00165387.100.50.40.100</oid>
+                </root>
+              </previous_version>
+            </feeder_audit>
+            <uncertainty_expressed>false</uncertainty_expressed>
+          </content>
+        </all_compositions>
+      </EHR_EXTRACT>
+    </Data>
+    <Result>
+      <Code>0</Code>
+	  <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Registracia/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Registracia/v1" elementFormDefault="qualified">
+  <xs:complexType name="Kontakt">
+    <xs:annotation>
+      <xs:documentation>Vstupné parametre pre službu 'ZapisRegistraciuOUPZSVstup'.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Hodnota" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Email alebo telefonne cislo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PublikovanyKontakt" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Publikovany kontakt.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypKontaktu" type="TypKontaktu" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Udaj o type kontaktu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TypKontaktu" final="restriction" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="TelCislo" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

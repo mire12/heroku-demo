@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:element name="KodPZS" type="KodPZS" />
+  <xs:complexType name="KodPZS">
+    <xs:annotation>
+      <xs:documentation>Kód poskytovateľa zdr. starostlivosti pridelený ÚDZS.
+Kód odborného útvaru (= kód PZS).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Kod">
+        <xs:sequence>
+          <xs:element name="KodPZS" type="string12" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Kód poskytovateľa pridelený ÚDZS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PozastaveniePlatnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Kod" type="Kod" />
+  <xs:complexType name="Kod" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Kód</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="KodZPr" type="KodZPr" />
+  <xs:complexType name="KodZPr">
+    <xs:annotation>
+      <xs:documentation>Kód zdravotníckeho pracovníka pridelený ÚDZS.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Kod">
+        <xs:sequence>
+          <xs:element name="KodZPr" type="string9" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Kód zdr. parcovníka - 9 znakový kód pridelený ÚDZS.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PozastaveniePlatnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

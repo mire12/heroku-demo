@@ -1,0 +1,233 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.IPL.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp sa má používať na zaznamenanie a presnos údajov individuálne pripraveného lieku a doplňujúcich údajov lieku potrebných počas procesov predpísania lieku lekárom, vydania lieku v lekárni a podania lieku lekárom alebo užívania lieku pacientom.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Individualne pripraveny liek
+        parts existence matches {0..1} cardinality matches {1..*; unordered} matches {
+            CLUSTER[at0006] occurrences matches {1..1} matches {  -- Identifikačné údaje
+                parts existence matches {0..1} cardinality matches {1..4; unordered; unique} matches {
+                    ELEMENT[at0008] occurrences matches {0..1} matches {  -- Názov IPL
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0028] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0011] occurrences matches {0..1} matches {  -- Popis IPL
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0029] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0004] occurrences matches {0..1} matches {  -- ID magistraliter prípravku
+                        value existence matches {0..1} matches {
+                            II[at0002] occurrences matches {1..1} matches {  -- II
+                                root existence matches {1..1} matches {
+                                    OID[at0003] occurrences matches {1..1} matches {  -- 
+                                        oid existence matches {0..1} matches {""}
+                                    }
+                                }
+                                extension existence matches {0..1} matches {""}
+                            }
+                        }
+                    }
+                    ELEMENT[at0007] occurrences matches {0..1} matches {  -- Kód lieku
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0012] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0025] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0200] occurrences matches {0..*} matches {  -- Zložka
+                parts existence matches {0..1} cardinality matches {1..4; unordered} matches {
+                    ELEMENT[at0201] occurrences matches {1..1} matches {  -- Popis zložky
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0202] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0206] occurrences matches {0..1} matches {  -- Farmaceutická surovina
+                        value existence matches {0..1} matches {
+                            CV[at0207] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingSchemeName existence matches {0..1} matches {"ATC"}
+                                displayName existence matches {0..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0208] occurrences matches {0..1} matches {  -- Množstvo zložky
+                        value existence matches {0..1} matches {
+                            PQ[at0209] occurrences matches {1..1} matches {  -- PQ
+                                units existence matches {1..1} matches {*}
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0021] occurrences matches {0..1} matches {  -- Zámerné prekročenie 
+                        value existence matches {0..1} matches {
+                            BL[at0023] occurrences matches {1..1} matches {  -- BL
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0024] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Individualne pripraveny liek">
+                    description = <"IPL_MPD">
+                >
+                ["at0008"] = <
+                    text = <"Názov IPL">
+                    description = <"Pomenovanie individuálne pripraveného lieku, napr. tekutý púder, borchladivý krém, solutio Castellany. V prípade IPL pripraveného na základe magistraliter receptúry by mal byť po správnosti názov IPL totožný s názvom magistraliter prípravku.">
+                >
+                ["at0011"] = <
+                    text = <"Popis IPL">
+                    description = <"Atribút slúži na popis ad Hoc zloženia, ak nie je možné v štruktúrovanej forme zloženie popísať. Tiež slúži lekárovi na voľný popis ako má lekárnik postupovať pri tvorbe lieku.">
+                >
+                ["at0014"] = <
+                    text = <"Dávkovanie">
+                    description = <"V prípade predpísania lieku je povinná aspoň jedna dávkovacia schéma.
+V prípade podania lieku lekárom je povinná aspoň jedna dávkovacia schéma.
+V prípade výdaja lieku v lekárni je zakázané udávať dávkovaciu schému.">
+                >
+                ["at0017"] = <
+                    text = <"Zložka IPL">
+                    description = <"Ak sú zložky IPL zadané v štruktúrovanej forme, tak sa prenášajú ako množina príslušných archetypov.">
+                >
+                ["at0028"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0029"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0006"] = <
+                    text = <"Identifikačné údaje">
+                    description = <"Údaje umožňujúce identifikovať liek v registroch, alebo ho priamo pomenovať a určiť.">
+                >
+                ["at0013"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0004"] = <
+                    text = <"ID magistraliter prípravku">
+                    description = <"Identifikátor magistraliter prípravku z registrov, na základe ktorého má byť, alebo bol IPL pripravený.">
+                >
+                ["at0016"] = <
+                    text = <"CLUSTER">
+                    description = <"This is a CLUSTER object">
+                >
+                ["at0200"] = <
+                    text = <"Zložka">
+                    description = <"Údaje jednej zložky IPL.">
+                >
+                ["at0201"] = <
+                    text = <"Popis zložky">
+                    description = <"Názov, popis alebo iná charakteristika zložky. Použije sa, ak nie je možné zložku identifikovať v registroch.">
+                >
+                ["at0202"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0203"] = <
+                    text = <"Množstvo zložky">
+                    description = <"Množstvo danej zložky použitej na tvorbu lieku.">
+                >
+                ["at0206"] = <
+                    text = <"Farmaceutická surovina">
+                    description = <"Identifikátor farmaceutickej suroviny z registrov.">
+                >
+                ["at0207"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0208"] = <
+                    text = <"Množstvo zložky">
+                    description = <"Množstvo danej zložky použitej na tvorbu lieku.">
+                >
+                ["at0209"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at200"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"Kód lieku">
+                    description = <"Fiktívny kód vydaného individuálne pripraveného lieku, ktorý je potrebný pre potreby zdravotnej poisťovne. Reprezentuje napríklad celkovú cenu namiešaného lieku.">
+                >
+                ["at0012"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0021"] = <
+                    text = <"Zámerné prekročenie ">
+                    description = <"Pri zámernom prekročení najvyššej dávky liečiva v humánnom lieku musí predpisujúci lekár dávku liečiva vypísať slovom po latinsky a označiť ju výkričníkom.">
+                >
+                ["at0023"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0002"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

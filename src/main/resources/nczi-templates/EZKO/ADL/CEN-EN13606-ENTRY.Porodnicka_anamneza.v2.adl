@@ -1,0 +1,84 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Porodnicka_anamneza.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o pôrodníckej anamnéze pacientky, ktorá je súčasťou pacientskeho sumára. Obsahuje informáciu o predpokladanom termíne pôrodu.">
+            keywords = <"Termín","pôrodu">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Pôrodnícka anamnéza
+        items existence matches {0..1} cardinality matches {1..2; ordered; unique} matches {
+            ELEMENT[at0001] occurrences matches {1..1} matches {  -- Predpokladaný dátum pôrodu
+                value existence matches {0..1} matches {
+                    DATE[at0002] occurrences matches {1..1} matches {  -- DATE
+                        date existence matches {1..1} matches {yyyy-mm-dd}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0.15] occurrences matches {1..1} matches {  -- 
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.16] occurrences matches {1..1} matches {  -- 
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.60"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pôrodnícka anamnéza">
+                    description = <"Pôrodnícka anamnéza pacientky - údaje súvisiace s predpokladaným termínom pôrodu.">
+                >
+                ["at0001"] = <
+                    text = <"Predpokladaný dátum pôrodu">
+                    description = <"Predpokladaný termín pôrodu. Termín pôrodu je vždy nahradený každým novým záznamom z dôvodu aktualizácie informácie. ">
+                >
+                ["at0002"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0.15"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0.16"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+            >
+        >
+    >

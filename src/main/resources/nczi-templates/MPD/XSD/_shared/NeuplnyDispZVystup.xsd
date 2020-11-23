@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="VystupneVarovanieMedikacie.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+
+  <xs:complexType name="NeuplnyDispZVystup">
+    <xs:sequence>
+      <xs:element name="IdDispenzacnyZaznam" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak NZIS zaeviduje dispenzačný záznam, na výstupe vráti identifikátor zaevidovaného dispenzačného záznamu. Tento identifikátor môže byť potom použitý na doplnenie údajov neúplného receptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdMedikacnyZaznam" type="rm:II" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor medikačného záznamu, ktorý sa má vytvoriť na základe daného dispenzačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPreskripcnyZaznam" type="rm:II" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor preskripčného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MedZVytvoreny" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či bol v systéme NZIS vytvorený medikačný záznam s daným identifikátorom. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Varovanie" type="VystupneVarovanie" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Pri zakladaní receptu sa spúšťajú kontroly údajov receptu, napríklad na preskripčné obmedzenia alebo kontrola receptu znalostným systémom. Zistené varovania NZIS poskytne v tejto štruktúre na výstupe.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

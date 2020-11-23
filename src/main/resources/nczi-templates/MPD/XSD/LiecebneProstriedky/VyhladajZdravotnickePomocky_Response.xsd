@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Cena.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="VyhladajZdravotnickePomockyVystup" type="VyhladajZdravotnickePomockyVystup" />
+  <xs:complexType name="VyhladajZdravotnickePomockyVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupom služby je zoznam zdravotníckych pomôcok.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravPomocka" type="ZdravotnickaPomockaInfo" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam zdravotníckych pomôcok, ktoré vyhovujú vyhľadávacím kritériám.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZdravotnickaPomockaInfo">
+    <xs:annotation>
+      <xs:documentation>Registrovaná zdravotnícka pomôcka, ktorá môže byť predpísaná a na zákalde tohto predpisu aj vydaná.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Cena" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna výška ceny ZP vo výdajni (spoločná pre deti aj dospelých).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna výška doplatku poistenca za zdravotnícku pomôcku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok18" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna výška doplatku poistenca za zdravotnícku pomôcku pre deti do 18 rokov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPomocky" type="IdZP" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPodskupiny" type="IdSkupinaZdravotnickychPomocok" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Id podskupiny zdravotníckych pomocok. Rozlíšiť podskupiny ktoré zodpovedajú jednej skupine je možné iba na základe doplnku názvu, preto je dobré ponúknuť ID ako rozlišovač.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPomocky" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodSkupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód skupiny zdravotníckych pomôcok. Identifikuje podskupinu, nie zo ZdravPom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovPomocky" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovSkupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov skupiny zdravotníckych pomôcok. Identifikuje podskupinu, nie zo ZdravPom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vyrobca" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov výrobcu zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

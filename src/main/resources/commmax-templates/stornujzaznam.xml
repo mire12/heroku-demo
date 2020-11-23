@@ -1,0 +1,140 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <!-- Stornovat zaznam moze iba lekar, ktory pracuje na OU PZS, na ktorom bol zaznam vytvoreny -->
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>StornujZaznamOVysetreni_v5</Class>
+      <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d14</MessageID>
+      <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d14</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>2</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <EHR_EXTRACT xmlns="CEN/13606/RM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ehr_system>
+          <extension>ACEsystem</extension>
+          <root>
+            <oid>1.3.158.00165387.100.30.20</oid>
+          </root>
+        </ehr_system>
+        <subject_of_care>
+          <extension>%PACIENT%</extension>
+          <root>
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </subject_of_care>
+        <time_created>
+          <time>2018-06-19T18:01:17.2709684+02:00</time>
+        </time_created>
+        <rm_id>EN13606</rm_id>
+        <all_compositions>
+          <name xsi:type="SIMPLE_TEXT">
+            <originalText>DefaultComposition</originalText>
+          </name>
+          <synthesised>true</synthesised>
+          <content xsi:type="ENTRY">
+            <name xsi:type="SIMPLE_TEXT">
+              <originalText>Dovod storna (Integracny test)</originalText>
+            </name>
+            <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0000.1</archetype_id>
+			<!-- record id, identifikator EHR zaznamu, ktory sa posiela do NZIS. Generuje sa metodou, ktora je popisana v dokumente x070 – Detailna_specifikacia_rozhrania_Volanie_sluzieb – kapitola 5.4.4. – Identifikácia zdravotných záznamov -->
+            <rc_id>
+              <extension>014620583700000000786</extension>
+              <root>
+                <oid>1.3.158.00165387.100.60.90</oid>
+              </root>
+            </rc_id>
+            <synthesised>false</synthesised>
+			<!-- citlivost (dovernost) zaznamu. NZIS momentalne prcuje iba s hodnotami 3 (bezny zaznam) a 5 (doverny zaznam, pre odbornosti psychiatria a psychologia). -->
+            <sensitivity>3</sensitivity>
+            <feeder_audit>
+			  <!-- identifikator (string) systemu IS PZS, z ktoreho sprava odchadza -->
+              <ehr_system>
+                <extension>ACEsystem</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.30.20</oid>
+                </root>
+              </ehr_system>
+			  <!-- timestamp, kedy bola sprava odoslana do NZIS -->
+              <time_committed>
+                <time>2018-06-19T18:01:49.3501730+02:00</time>
+              </time_committed>
+			  <!-- zdravotny pracovnik, ktory spravu odosiela. Uvadza sa JRUZ ID (je mozne ziskat z karty ePZP) -->
+              <committer>
+                <extension>00000100040</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.40.90</oid>
+                </root>
+              </committer>
+			  <!-- verzia je stav zaznamu. VER04 = storno.  -->
+              <version_status>
+                <codeValue>VER04</codeValue>
+              </version_status>
+			  <!-- RCID zaznamu, ktory bude stornovany -->
+              <previous_version>
+                <extension>014620582700000000760</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.60.90</oid>
+                </root>
+              </previous_version>
+			  <!-- RCID zaznamu, ktory bude stornovany -->
+              <version_set_id>
+                <extension>014620582700000000760</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.60.90</oid>
+                </root>
+              </version_set_id>
+            </feeder_audit>
+            <uncertainty_expressed>false</uncertainty_expressed>
+			<!-- informacie o PZS a lekarovi, ktory stornuje spravu -->
+            <info_provider>
+              <function>
+			    <!-- odbornost lekara, ktory stornuje spravu - ciselnik identifikuje OID -->
+                <codingScheme>
+                  <oid>1.3.158.00165387.100.10.34</oid>
+                </codingScheme>
+                <codingSchemeVersion>2</codingSchemeVersion>
+                <codeValue>00000115899</codeValue>
+                <displayName>Vnútorné lekárstvo</displayName>
+              </function>
+			  <!-- JRUZ ID lekara, ktory stornuje spravu -->
+              <performer>
+                <extension>00000100040</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.40.90</oid>
+                </root>
+              </performer>
+			  <!-- JRUZ ID oddelenia, z ktoreho sa sa posiela storno -->
+              <healthcare_facillity>
+                <extension>00000000018</extension>
+                <root>
+                  <oid>1.3.158.00165387.100.40.70</oid>
+                </root>
+              </healthcare_facillity>
+            </info_provider>
+          </content>
+        </all_compositions>
+      </EHR_EXTRACT>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

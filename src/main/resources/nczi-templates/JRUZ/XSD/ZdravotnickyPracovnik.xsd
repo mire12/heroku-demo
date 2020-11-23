@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Vztah.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="IdentifikacnyPredmet.xsd" />
+  <xs:include schemaLocation="KodPZSaZPr.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:element name="RegistraciaVKomore" type="RegistraciaVKomore" />
+  <xs:complexType name="RegistraciaVKomore">
+    <xs:annotation>
+      <xs:documentation>Registrácia v regististri komory.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RegistracneCislo" type="ID" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Registračné číslo zdravotníckeho pracovníka v príslušnej komore.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pozastavenie" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Komora" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Povolanie" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DovodUkonceniaRegistracie" type="IdPolozkaCiselnikaDovodUkonceniaAPozastavenia" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DovodDocasnehoPozastaveniaRegistracie" type="IdPolozkaCiselnikaDovodUkonceniaAPozastavenia" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OdbornaSposobilost" type="OdbornaSposobilost" />
+  <xs:complexType name="OdbornaSposobilost">
+    <xs:annotation>
+      <xs:documentation>Odborná spôsobilosť zdravotníckeho pracovníka - až po jej splnení môže vykonávať príslušné zdravotnícke povolanie.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Povolanie" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="SpecifikaciaOdboru" type="IdPolozkaCiselnikaSpecifikaciaOdboru" minOccurs="1" maxOccurs="1" />
+      <xs:element name="LegislativnyPredpis" type="IdPolozkaCiselnikaLegislativnyPredpis" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnickyPracovnik" type="ZdravotnickyPracovnik" />
+  <xs:complexType name="ZdravotnickyPracovnik">
+    <xs:annotation>
+      <xs:documentation>Zdravotnícky pracovník. 
+Platnosť a pozastavenie sa odvodzuje od platnosti a pozastavenia registrácie v komore.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MedzinarodnyIDZPr" type="ID" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Medzinárodný identifikátor zdravotníckeho pracovníka.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RegistraciaVKomore" type="RegistraciaVKomore" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OdbornaSposobilost" type="OdbornaSposobilost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="KodZPr" type="KodZPr" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PravnyVztahZPr_Subjekt" type="PravnyVztahZPr_Subjekt" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ZmluvnyVztahZPr_OUPZS_ZP" type="ZmluvnyVztahZPr_OUPZS_ZP" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdentifikacnyPredmetZPr" type="IdentifikacnyPredmet" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PersonData" type="PersonData" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TitulyZPr" type="TitulyZPr" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdLicenciaZPr" type="IdLicenciaZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdZPr_Zoznam" type="IdZPr_Zoznam" />
+  <xs:complexType name="IdZPr_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam ID zdravotných pracovníkov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TitulyZPr" type="TitulyZPr" />
+  <xs:complexType name="TitulyZPr">
+    <xs:sequence>
+      <xs:element name="TitulZaMenomZPr" type="IdPolozkaCiselnikaTitulZaMenomZPr" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ProfTitulZPrPodlaOS" type="IdPolozkaCiselnikaProfTitulZPrPodlaOS" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="TitulPredMenomZPr" type="IdPolozkaCiselnikaTitulPredMenomZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZmluvnyVztahZPr_OUPZS_ZP" type="ZmluvnyVztahZPr_OUPZS_ZP" />
+  <xs:complexType name="ZmluvnyVztahZPr_OUPZS_ZP">
+    <xs:annotation>
+      <xs:documentation>Zmluvný vzťah pre  zdravotníckeho pracovníka so:
+- zdravotnou poisťovňou a poskytovateľom zdravotnej starostlivosti</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+          <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+          <xs:element name="LekarskeMiesto" type="d14.14" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PozastaveniePlatnosti" type="Platnost" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PravnyVztahZPr_Subjekt" type="PravnyVztahZPr_Subjekt" />
+  <xs:complexType name="PravnyVztahZPr_Subjekt">
+    <xs:annotation>
+      <xs:documentation>Právny vzťah medzi subjektom a Zdravotníckym pracovníkom. Pričom subjekt je buďPZS a/alebo Inou Organizáciou alebo ZP.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="PravnyVztah">
+        <xs:sequence>
+          <xs:element name="ID" type="ID" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Licencia" type="Licencia" />
+  <xs:complexType name="Licencia">
+    <xs:sequence>
+      <xs:element name="IdLicenciaZPr" type="IdLicenciaZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="NazovLicencie" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Jednoznačné označenie licencie v NCZI.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CisloRozhodnutiaOVydani" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo rozhodnutia o vydaní licencie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CisloRozhodnutiaOZruseni" type="string50" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CisloRozhodnutiaOPozastaveni" type="string50" minOccurs="1" maxOccurs="1" />
+      <xs:element name="StudijnyOdbor" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PovolaniaZPr" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DruhLicencie" type="IdPolozkaCiselnikaDruhLicencieZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pozastavenie" type="Platnost" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Vydal" type="IdPolozkaCiselnikaKomora" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Specializacia_CertPracCinnost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DovodUkonceniaPlatnosti" type="IdPolozkaCiselnikaDovodUkonPozastLicencie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DovodPozastaveniaLicencie" type="IdPolozkaCiselnikaDovodUkonPozastLicencie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UzivatelLicencie" type="UzivatelLicencie" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PovolanieZPr_Zoznam" type="PovolanieZPr_Zoznam" />
+  <xs:complexType name="PovolanieZPr_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam povolaní zdr. pracovníka.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PovolanieZPr" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UzivatelLicencie" type="UzivatelLicencie" />
+  <xs:complexType name="UzivatelLicencie">
+    <xs:sequence>
+      <xs:element name="UzivatelLicenciePZS" type="IdPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor držiteľa licencie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UzivatelLicencieZPr" type="IdZPr" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor držiteľa licencie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

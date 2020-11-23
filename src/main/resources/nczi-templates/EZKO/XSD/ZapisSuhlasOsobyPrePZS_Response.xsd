@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/SpravaSuhlasov/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/SpravaSuhlasov/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IdSuhlasu" type="tns:IdSuhlasu" />
+  <xs:complexType name="IdSuhlasu">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="suhlasId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

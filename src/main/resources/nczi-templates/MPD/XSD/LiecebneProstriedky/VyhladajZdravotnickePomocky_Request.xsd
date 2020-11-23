@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajZdravotnickePomockyVstup" type="VyhladajZdravotnickePomockyVstup" />
+  <xs:complexType name="VyhladajZdravotnickePomockyVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné vyhľadávacie kritériá zdravotníckych pomôcok.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CenaDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Horný interval obmedznia ceny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CenaOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dolný interval obmedzenia ceny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Datum" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>dátum ku ktorému sa vyhľadáva</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokDetiDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Horný interval obmedznia doplatku poistenca za zdravotnícku pomôcku pre deti do 18 rokov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokDetiOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dolný interval obmedznia doplatku poistenca za zdravotnícku pomôcku pre deti do 18 rokov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Horný interval obmedznia doplatku poistenca za zdravotnícku pomôcku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dolný interval obmedznia doplatku poistenca za zdravotnícku pomôcku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPomocky" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodSkupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód skupiny zdravotníckych pomôcok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovPomocky" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov, alebo časť názvy zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovSkupiny" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu skupiny zdravotníckych pomôcok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Filtračné kritérium na lekárske odbornosti, ktoré môžu predpisovať pomôcky. Ak nie je zadaná žiadna odbornosť, hľadá sa vo všetkých pomôckach.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vyrobca" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu výrobcu zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

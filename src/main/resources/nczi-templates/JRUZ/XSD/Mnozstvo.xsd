@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:element name="Mnozstvo" type="Mnozstvo" />
+  <xs:complexType name="Mnozstvo">
+    <xs:annotation>
+      <xs:documentation>Definuje množstvo a jednotku.
+Napríklad (na object diagrame):
+
+	- 3 kg 
+	- 0.02 mg
+	- 2 dni
+	- 4 ml</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Hodnota" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Velkosť udávaného množstva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MernaJednotka" type="IdPolozkaCiselnikaMerneJednotky" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cena" type="Cena" />
+  <xs:complexType name="Cena">
+    <xs:annotation>
+      <xs:documentation>Cena je modelovaná ako množstvo aby bolo možné zadať rôzne meny a konverzie medzi nimi použitím modelu pre jednotky</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Mnozstvo">
+        <xs:sequence>
+          <xs:element name="Mena" type="IdPolozkaCiselnikaMena" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cena_v2" type="Cena_v2" />
+  <xs:complexType name="Cena_v2">
+    <xs:annotation>
+      <xs:documentation>Cena je modelovaná ako množstvo aby bolo možné zadať rôzne meny a konverzie medzi nimi použitím modelu pre jednotky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Hodnota" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Velkosť udávaného množstva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Mena" type="IdPolozkaCiselnikaMena" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

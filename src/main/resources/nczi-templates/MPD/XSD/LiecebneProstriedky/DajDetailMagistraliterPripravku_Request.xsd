@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="DajDetailMagistraliterPripravkuVstup" type="DajDetailMagistraliterPripravkuVstup" />
+  <xs:complexType name="DajDetailMagistraliterPripravkuVstup">
+    <xs:annotation>
+      <xs:documentation>Identifikácia magistraliter prípravku a prípadná požiadavka na znalostné údaje.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AjZnalosti" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikácia, či majú byť spolu s údajmi magistraliter prípravku poskytnuté aj znalostné údaje.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikatorPripravku" type="IdMagistraliter" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor magistraliter prípravku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

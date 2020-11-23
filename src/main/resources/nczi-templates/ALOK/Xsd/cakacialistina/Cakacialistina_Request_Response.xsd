@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1"
+    elementFormDefault="qualified">
+    
+    <xs:include schemaLocation="..\_shared\Identifikatory.xsd" />
+    <xs:include schemaLocation="..\_shared\Obecne.xsd" />
+    
+    <xs:element name="CLPodanieZiadanky_Request" type="CLPodanieZiadanky_Request" />
+    <xs:element name="CLPodanieZiadanky_Response" type="CLPodanieZiadanky_Response" />
+    <xs:element name="CLZiskanieStavuZaradenia_Request" type="CLZiskanieStavuZaradenia_Request" />
+    <xs:element name="CLZiskanieStavuZaradenia_Response" type="CLZiskanieStavuZaradenia_Response" />
+    <xs:element name="CLZiskanieZiadaniek_Request" type="CLZiskanieZiadaniek_Request" />
+    <xs:element name="CLZiskanieZiadaniek_Response" type="CLZiskanieZiadaniek_Response" />
+    <xs:element name="CLZapisZoznamu_Request" type="CLZapisZoznamu_Request" />
+    <xs:element name="CLZapisZoznamu_Response" type="CLZapisZoznamu_Response" />
+    
+    <xs:simpleType name="ZiadankaDoCLTypEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A_ZARADENIE" />
+            <xs:enumeration value="B_ODKLAD_PRJZS" />
+            <xs:enumeration value="C_ODKLAD_PZS" />
+            <xs:enumeration value="D_ZRUSENIE_ODKLADU" />
+            <xs:enumeration value="E_VYRADENIE" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="CLStavZaznamuEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ZARADENY" />
+            <xs:enumeration value="ODKLAD" />
+            <xs:enumeration value="ODKLAD_NA_VZ" />
+            <xs:enumeration value="VYRADENY" />
+            <xs:enumeration value="VYRADENY_NA_VZ" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="ZdravotnyVykon">
+        <xs:sequence>
+            <xs:element name="Popis" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnyVykon" type="IdZdravotnyVykonDiagnozy" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Diagnoza" type="IdDiagnoza" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLVyradenie">
+        <xs:sequence>
+            <xs:element name="datum" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="dovod" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLLiek">
+        <xs:sequence>
+            <xs:element name="kodLieku" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="mnozstvo" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+            <xs:element name="cena" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZiadanka">
+        <xs:sequence>
+            <xs:element name="ID_Pacienta" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="notifikacnyMod" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumVytvorenia" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="poznamka" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="typZiadosti" type="ZiadankaDoCLTypEnum" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumZaradenia" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="planovanyDatum" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+            <xs:element name="mnozstvoVykonov" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="cenaVykonov" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+            <xs:element name="mena" type="IdMena" minOccurs="1" maxOccurs="1" />
+            <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnaPoistovna" type="IdZP" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnyVykonPreDiagnozu" type="ZdravotnyVykon" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Diagnoza" type="IdDiagnoza" minOccurs="1" maxOccurs="1" />
+            <xs:element name="vyradenie" type="CLVyradenie" minOccurs="0" maxOccurs="1" />
+            <xs:element name="liek" type="CLLiek" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZaradeniePacienta">
+        <xs:sequence>
+            <xs:element name="ID_pacienta" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="nazov" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="planovanyDatum" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+            <xs:element name="poradie" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="datumAktualizacie" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+            <xs:element name="stavZaznamu" type="CLStavZaznamuEnum" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumZaradenia" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumVyradenia" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnaPoistovna" type="IdZP" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnyVykonPreDiagnozu" type="IdZdravotnyVykonDiagnozy" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Diagnoza" type="IdDiagnoza" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ZaznamCL">
+        <xs:sequence>
+            <xs:element name="ID_pacienta" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="idPripadu" type="xs:int" minOccurs="1" maxOccurs="1" />
+            <xs:element name="PredpokladanyDatum" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="StavZaznamu" type="CLStavZaznamuEnum" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumZaradenia" type="xs:date" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumVyradenia" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="poradie" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Diagnoza" type="IdDiagnoza" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CakaciaListina">
+        <xs:sequence>
+            <xs:element name="nazov" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="poradiePreNotifikaciu" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="datumPreNotifikaciu" type="xs:date" minOccurs="0" maxOccurs="1" />
+            <xs:element name="datumAktualizacie" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+            <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnaPoistovna" type="IdZP" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZdravotnyVykonPreDiagnozu" type="ZdravotnyVykon" minOccurs="1" maxOccurs="1" />
+            <xs:element name="ZaznamCL" type="ZaznamCL" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLPodanieZiadanky_Request">
+        <xs:sequence>
+            <xs:element name="CLZiadanka" type="CLZiadanka" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLPodanieZiadanky_Response">
+        <xs:sequence>
+            <xs:element name="idZiadanky" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZiskanieStavuZaradenia_Request">
+        <xs:sequence>
+            <xs:element name="ID_pacienta" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="planovanyDatumOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+            <xs:element name="planovanyDatumDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+            <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ZdravotnaPoistovna" type="IdZP" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ZdravotnyVykonPreDiagnozu" type="IdZdravotnyVykonDiagnozy" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Diagnoza" type="IdDiagnoza" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZiskanieStavuZaradenia_Response">
+        <xs:sequence>
+            <xs:element name="ID_pacienta" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="CLZaradeniePacienta" type="CLZaradeniePacienta" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZiskanieZiadaniek_Request">
+        <xs:sequence>
+            <xs:element name="datumPrijatiaOd" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+            <xs:element name="datumPrijatiaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+            <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ZdravotnaPoistovna" type="IdZP" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZiskanieZiadaniek_Response">
+        <xs:sequence>
+            <xs:element name="CLZiadanka" type="CLZiadanka" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZapisZoznamu_Request">
+        <xs:sequence>
+            <xs:element name="CakaciaListina" type="CakaciaListina" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="CLZapisZoznamu_Response">
+        <xs:sequence>
+            <xs:element name="pocetZaznamov" type="xs:int" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

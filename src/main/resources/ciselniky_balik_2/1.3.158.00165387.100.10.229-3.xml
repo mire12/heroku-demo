@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Titul za menom zdravotníckeho pracovníka</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-04-21</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.229</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-01</DatumOd>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000610832</codeValue>
+      <displayName>CSc.</displayName>
+      <Skratka>51</Skratka>
+      <Popis>kandidát vied, vedecká hodnosť priznaná podľa predchádzajúcich predpisov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000610840</codeValue>
+      <displayName>DrSc.</displayName>
+      <Skratka>52</Skratka>
+      <Popis>doktor vied (doctor scientarium), vedecká hodnosť udeľovaná podľa doterajších predpisov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000610857</codeValue>
+      <displayName>PhD.</displayName>
+      <Skratka>53</Skratka>
+      <Popis>doktor (philosophiae doctor), akademický titul za menom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000610865</codeValue>
+      <displayName>ArtD.</displayName>
+      <Skratka>54</Skratka>
+      <Popis>doktor umenia (artis doctor), akademický titul za menom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883864</codeValue>
+      <displayName>FCCP</displayName>
+      <Skratka>64</Skratka>
+      <Popis>Fellow of the College of Chest Physicians, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883872</codeValue>
+      <displayName>FETCS</displayName>
+      <Skratka>65</Skratka>
+      <Popis>Fellow of the European Board Thoracic and Cardiovascular, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883880</codeValue>
+      <displayName>FESC</displayName>
+      <Skratka>66</Skratka>
+      <Popis>Fellow of the European Society of Cardiology, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883898</codeValue>
+      <displayName>FRCP</displayName>
+      <Skratka>67</Skratka>
+      <Popis>Fellow of the Royal College of Physicians, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883906</codeValue>
+      <displayName>FEBU</displayName>
+      <Skratka>68</Skratka>
+      <Popis>Fellow of the European Board of Urology, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883914</codeValue>
+      <displayName>FEBNM</displayName>
+      <Skratka>69</Skratka>
+      <Popis>Fellow of the European Board of Nuclear Medicine, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000610899</codeValue>
+      <displayName>DiS</displayName>
+      <Skratka>81</Skratka>
+      <Popis>diplomovaný špecialista; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom, pre zdravotnícke odbory vzdelania podľa zák. č. 245/2008 Z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000610907</codeValue>
+      <displayName>DiS.art</displayName>
+      <Skratka>82</Skratka>
+      <Popis>diplomovaný umelec; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom podľa zák. č. 245/2008 Z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089551606</codeValue>
+      <displayName>MHA</displayName>
+      <Skratka>89</Skratka>
+      <Popis>Master of  Health Administration </Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020313284</codeValue>
+      <displayName>MSc</displayName>
+      <Skratka>90</Skratka>
+      <Popis>Master of Science in Health Services Management; akademický titul pridelený v zahraničí sa uvádza za priezviskom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774349</codeValue>
+      <displayName>MPH</displayName>
+      <Skratka>91</Skratka>
+      <Popis>Master of Public Health</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774356</codeValue>
+      <displayName>MBA</displayName>
+      <Skratka>92</Skratka>
+      <Popis>Master of Business Administration</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883922</codeValue>
+      <displayName>MIAC</displayName>
+      <Skratka>93</Skratka>
+      <Popis>Member of the International Academy of Cytology,zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883930</codeValue>
+      <displayName>M.A.</displayName>
+      <Skratka>94</Skratka>
+      <Popis>Master of Arts, titul udelený v zahraničí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883948</codeValue>
+      <displayName>MRCPI</displayName>
+      <Skratka>95</Skratka>
+      <Popis>Member of the Royal College of Physicians of Ireland, zahraniční členský titul</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883955</codeValue>
+      <displayName>D.U.E.R.C.C.</displayName>
+      <Skratka>96</Skratka>
+      <Popis>Diplôme Universitaire Européen de Recherche Clinique en Cancérologie, vedecká hodnosť udelená v zahraničí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883963</codeValue>
+      <displayName>DABMG</displayName>
+      <Skratka>97</Skratka>
+      <Popis>Diplomat of the American Board of Medical Genetics, titul udelený v zahraničí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883971</codeValue>
+      <displayName>Dr.SVS.</displayName>
+      <Skratka>98</Skratka>
+      <Popis>Docteur de la Science de la Vie et de la Santé, titul udelený v zahraničí, vedecká hodnosť udelená v zahraničí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000774364</codeValue>
+      <displayName>iný</displayName>
+      <Skratka>99</Skratka>
+      <Popis>iný</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208873844</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>00</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

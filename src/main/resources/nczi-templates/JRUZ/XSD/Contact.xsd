@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:element name="Number" type="Number" />
+  <xs:complexType name="Number">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre štruktúrované telefónne číslo.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FormattedNumber" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje reprezentáciu telekomunikačného číselného reťazca.
+Formát reprezentácie: Textový reťazec, tvorený tromi skupinami znakov, pričom prvá skupina začína znakom „+“ alebo znakmi „00“.
+Hodnoty: Vypĺňa sa v súlade s aktuálnym číslovacím plánom, ktorý zverejňuje Telekomunikačný úrad.
+Založené na: Opatrenie Telekomunikačného úradu Slovenskej republiky z 1. februára 2007 č. O – 14/2007 o číslovacom pláne.
+Poznámky: Takáto podoba sa ťažko parsuje. Ak je použité formátované číslo, nepoužíva sa neformátovaná podoba. 
+Príklad použitia: +421 48 4324134.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InternationalCountryCode" type="string10" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód krajiny podľa ITU, ktorý identifikuje špecifickú krajinu, krajiny v integrovanom číselnom pláne alebo špecifickú geografickú oblasť.
+Formát reprezentácie: Textový reťazec, ktorý začína znakom „+“ alebo znakmi „00“. 
+Hodnoty: Vypĺňa sa v súlade s číslovacím plánom, ktorý svojím opatrením vydáva Telekomunikačný úrad.
+Založené na: Opatrenie Telekomunikačného úradu Slovenskej republiky z 1. februára 2007 č. O – 14/2007 o číslovacom pláne.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalNumber" type="string10" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Niektoré oblasti majú dve predvoľby – vnútroštátne a zahraničné medzimestské predvoľby, tento prvok obsahuje vnútroštátnu predvoľbu.
+Hodnoty: Nemá predpísaný obsah.
+Poznámky: V Slovenskej republike sa nepoužíva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AreaCityCode" type="string10" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Definuje buď číslovanie v rámci jednej krajiny (alebo skupiny krajín či geografickej oblasti), alebo sieť – službu.
+V Slovenskej republike je to ekvivalent národného cieľového kódu.
+Hodnoty: Vypĺňa sa v súlade s číslovacím plánom, ktorý svojím opatrením vydáva Telekomunikačný úrad.
+Založené na: Opatrenie Telekomunikačného úradu Slovenskej republiky z 1. februára 2007 č. O – 14/2007 o číslovacom pláne.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubscriberNumber" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo, ktoré identifikuje užívateľa siete alebo číslovacej oblasti.
+Formát reprezentácie: Textový reťazec.
+Hodnoty: Pre čísla slovenských operátorov sa vypĺňa v súlade s číslovacím plánom, ktorý svojím opatrením vydáva Telekomunikačný úrad. Obsahuje aspoň jednu číslicu.
+Založené na: Opatrenie Telekomunikačného úradu Slovenskej republiky z 1. februára 2007 č. O – 14/2007 o číslovacom pláne.
+Poznámky: Okrem číslic môže najmä v údajoch zo zahraničia obsahovať medzery, spojovacie znamienka alebo periódy.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Extension" type="string10" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Môže obsahovať PBX linku, PIN pagera, faxovú podadresu alebo ďalšie doplňujúce adresné informácie.
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Nemá predpísaný obsah.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InternetAddress" type="InternetAddress" />
+  <xs:complexType name="InternetAddress">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre elektronický kontakt.
+[Poznámky: Používa sa pre rôzne súčasti internetovej adresy ako e-mail alebo webová adresa.
+Možno použiť viackrát. Prvá adresa v poradí je prioritná.]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Address" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa kontakt pre rôzne typy elektronických adries.
+Formát reprezentácie: Uvádza sa v tvare URI ako „typ: adresa“. Adresa je v tvare textových reťazcov oddelených bodkami. Vo väčšine prípadov hneď za znakom „:“ nasleduje zdvojený znak „//“. V prípade emailovej adresy sa namiesto prvej bodky uvádza znak „@“.
+Hodnoty: Rozoznávajú sa typy ako mailto (mailová adresa), http (webová adresa), ftp, ldap a podobne. časť adresy vo väčšine prípadov dodržiava radenie textových reťazcov podľa podradenia doménových mien.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DsigKeyInfo" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Medzinárodný štandard pre digitálne podpisy podľa W3C-XMLDSig.
+[Formát reprezentácie: V súlade s definíciami k W3C-XMLD Sig.]
+[Hodnoty: V súlade s definíciami k W3CXMLD Sig.]
+[Založené na: Odporúčania W3C XMLSignature Syntax and Processing.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TelephoneAddress" type="TelephoneAddress" />
+  <xs:complexType name="TelephoneAddress">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre telefonický kontakt.
+[Poznámky: Možno použiť viackrát. Prvá adresa v poradí je prioritná.]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Number" type="Number" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TelephoneType" type="IdPolozkaCiselnikaTelephoneType" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

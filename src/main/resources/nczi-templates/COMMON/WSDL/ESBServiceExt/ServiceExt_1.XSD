@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/eHtalkMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://eHealth.gov.sk/eHtalkMessage">
+  <xs:import schemaLocation="ServiceExt_2.XSD" namespace="http://eHealth.gov.sk/Common/v1"/>
+  <xs:complexType name="eHtalkMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EnvelopeVersion" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Header">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="MessageInfo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="Class" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="MessageID" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="CorrelationID" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="BusinessID" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="ChannelInfoReply" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="SenderInfo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="SecurityToken">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:any minOccurs="0" maxOccurs="unbounded"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="1" name="UserContext" type="q1:UserContext" xmlns:q1="http://eHealth.gov.sk/Common/v1"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Body">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Data">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:any minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="Result">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string"/>
+                  <xs:element minOccurs="0" maxOccurs="1" name="Details">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:any minOccurs="0" maxOccurs="unbounded"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

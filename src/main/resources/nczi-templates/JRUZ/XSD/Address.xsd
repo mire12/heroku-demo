@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="CorporateBody.xsd" />
+  <xs:include schemaLocation="PhysicalPerson.xsd" />
+  <xs:element name="BLH" type="BLH" />
+  <xs:complexType name="BLH">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre súradnicu v tvare B,L,H.
+[Založené na: Európsky terestrický referenčný systém 1989.]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AxisB" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje B-ovú súradnicu.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: ETRS-89.]
+[Poznámky: Príklad použitia: 48,123456]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AxisL" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje L-ovú súradnicu.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: ETRS-89.]
+[Poznámky: Príklad použitia: 18,123456]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AxisH" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje H-ovú súradnicu.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: ETRS-89.]
+[Poznámky: Príklad použitia: 365,12.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Recipient" type="Recipient" />
+  <xs:complexType name="Recipient">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok na identifikáciu príjemcu.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AdditionalText" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Môže obsahovať ďalšie smerovacie informácie príjemcu. Zvyčajne udáva ďalšiu navigáciu po doručení poštovou službou.
+[Formát reprezentácie: Textový reťazec.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Poznámky : Je možné použiť viackrát.
+Príklady použitia: anketa, daňové priznanie.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorporateBodyFullName" type="CorporateBodyFullName" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PersonName" type="PersonName" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressPoint" type="AddressPoint" />
+  <xs:complexType name="AddressPoint">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok, ktorý je priamym priestorovým identifikátorom adresy v súradniciach záväzných súradnicových systémov.
+[Poznámky: Používa sa najmä pre potrebu GPS navigácie. 
+Používa rovinné súradnice x, y v systéme JTSK a nadmorskú výšku h v systéme Bpv a priestorové súradnice BLH v súradnicovom systéme ETRS 89. Na vzájomný prevod súradníc sa používa jednotný transformačný kľúč zverejnený v Spravodajcovi ÚRGG SR.]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AddressPointID" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Prvok určujúci presné umiestnenie objektu, odvodzuje sa od vchodu.
+[Formát reprezentácie: Textový reťazec zložený z dvanástich cifier.]
+[Hodnoty: Prvých šesť cifier určuje katastrálne územie, ostatných šesť tvorí poradové pozície.]
+Gestor: ÚGKK SR</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BLH" type="BLH" minOccurs="0" maxOccurs="1" />
+      <xs:element name="xyh" type="xyh" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xyh" type="xyh" />
+  <xs:complexType name="xyh">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre súradnicu v tvare x,y,h.
+[Založené na: Súradnicový systém S-JTSK, výškový systém Bpv.]
+[Poznámky: Principiálne určuje bežné použitie v súradnicovom systéme jednotnej trigonometrickej siete katastrálnej a baltskom výškovom systéme.]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AxisX" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje X-ovú súradnicu.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: Norma S-JTSK.]
+[Poznámky: Príklad použitia: 1279338,64]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AxisY" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje Y-ovú súradnicu.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: Norma S-JTSK.]
+[Poznámky: Príklad použitia: 566986,96]]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HeightH" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje nadmorskú výšku h.
+[Formát reprezentácie: Číslo.]
+[Hodnoty: Nemá predpísaný obsah.]
+[Založené na: Norma S-JTSK.]
+[Poznámky: Príklad použitia: 123,96]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhysicalAddress" type="PhysicalAddress" />
+  <xs:complexType name="PhysicalAddress">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre poštovú adresu.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypAdresy" type="IdPolozkaCiselnikaTypAdresy" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Určuje v akom kontexte je adresa použitá.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AddressLine" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Formátovaná informácia, ktorá jednoznačne určuje adresu (katastrálne územie, názov hospodárskej usadlosti a podobne).
+[Formát reprezentácie: Obsahuje celú adresu v jednom reťazci so všetkými časťami v správnom poradí, resp. na správnom mieste. Oddelenie častí sa uvádza pomocou prázdneho znaku.]
+[Hodnoty: Nemá predpísaný obsah, neobsahuje však meno príjemcu, na to je určený podprvok Príjemca. Obsahuje ľubovoľné podprvky prvku Fyzická adresa.]
+[Poznámky: Takáto forma adresy nedokáže byť jednoducho parsovaná. V prípade dekompozície na jednotlivé podradené prvky Fyzickej adresy sa tento dátový prvok nepoužíva. Z príslušných číselníkov, podľa ktorých sa vypĺňajú jednotlivé podradené prvky Fyzickej adresy, obsahuje len textovú informáciu, a nie kódové označenie a podobne. Prvok sa používa najmä na potreby jednoduchej tlače.
+V podmienkach Slovenskej republiky sa odporúča nepoužívať.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" type="IdPolozkaCiselnikaCountry" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Pre štát použiť č. 0086</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Region" type="IdPolozkaCiselnikaRegion" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kraj
+
+Predstavuje federatívny štát, provinciu a/alebo šľachtické členenie území.
+Hodnoty: Nemá predpísaný obsah.
+Poznámky: Je možné použiť viackrát, v takom prípade je poradie použitia určujúce. Vojenské adresy sa ukladajú viacnásobne (hierarchicky od najvyššieho po najnižší región) – 1. región = armádny / letecký / námorný poštový úrad, 2. región (dvojznakové označenie časti sveta ako AE = Európa, AA = obe Ameriky a podobne).
+V Slovenskej republike sa takéto členenie nerozoznáva, v zahraničí je však bežne používané.
+
+Pre kraj použiť č. 0049</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="County" type="IdPolozkaCiselnikaCounty" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zložený dátový prvok pre číselník obsahujúci údaje o okrese ako územnosprávnom členení.
+[Formát reprezentácie: V podradených prvkoch sa uvádza textová informácia podľa použitého atribútu číselníka.]
+[Hodnoty: V prípade Slovenskej republiky sa podradené prvky vypĺňajú v súlade s číselníkom Štatistického úradu Slovenskej republiky č. 0048 Lokálne štatistické územné jednotky 1 – okresy.]
+[Poznámky: V Slovenskej republike sa takéto členenie nezvykne pri zasielaní poštou používať, v zahraničí je to však bežné.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Municipality" type="IdPolozkaCiselnikaMunicipality" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obec/mesto. (Pre obec navrhujeme namiesto číselníka ŠÚ SR č. 0025 použiť  číselník ŠÚ SR č. 0051. Dôvod - RO používa č. 0051.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="District" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Uvádza sa časť obce.
+[Formát reprezentácie: Textová informácia.]
+[Formát reprezentácie: Nemá predpísaný tvar. Neuvádza sa, ak je časť obce zároveň aj obcou (časti obcí Bratislava a Košice a podobne).]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StreetName" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje názov ulice. Ak osada nemá názov ulice, udáva sa tu názov osady.
+Hodnoty: Ak má obec definovaný vlastný register, zoznam alebo číselník ulíc, vypĺňa sa v súlade s ním, ak nemá, obsah sa nepredpisuje. Ak sa má udávať názov osady, vypĺňa sa v súlade s číselníkom Štatistického úradu Slovenskej republiky č. 0025 Lokálne štatistické územné jednotky 2 – obce. Uvádza sa položka NAZSKS.
+Založené na: Vyhláška Ministerstva vnútra Slovenskej republiky č. 31/2003 Z. z., ktorou sa ustanovujú podrobnosti
+o označovaní ulíc a iných verejných priestranstiev a o číslovaní stavieb.
+Poznámky: Údaje sa zadávajú z dôvodu porovnateľnosti v neskrátenej podobe. Mnohé ulice sú v zahraničí označované
+číselne – toto sa nepovažuje za číselný údaj za ulicou, tak ako sa udáva v Slovenskej republike. Tento prvok nie je zložený dátový prvok pre číselník.
+Príklady použitia: Lachova, Námestie P. O. Hviezdoslava, Nad humnom, 5223 W High Road.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BuildingNumber" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje názov budovy alebo číslo domu.
+Hodnoty: Nemá predpísaný obsah.
+Poznámky: Môže obsahovať aj nečíselné znaky, preto je definované ako reťazec.
+Príklady použitia: 10, 23A, 18/III, Berlaymont.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PropertyRegistrationNumber" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje súpisné číslo budovy.
+Formát reprezentácie: Obsahuje číslo.
+Hodnoty: Nemá predpísaný obsah.
+Poznámky: Používa sa najmä pre obce, kde neexistujú ulice. Nakoľko budova má súpisné číslo, ale zároveň môže mať aj orientačné číslo, nie sú tieto dva údaje totožné.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Unit" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Tento prvok je určený na bližšie určenie miesta v rámci budovy, ak je to potrebné.
+Formát reprezentácie: Textový reťazec.
+Hodnoty: Nemá predpísaný obsah, používa sa však iba raz, a preto obsahuje celú informáciu, t. j. aj prípadné viacnásobné členenie.
+Poznámky: Príklady použitia: Blok D, dielňa, 4. poschodie vpravo, byt 41.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BuildingIndex" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Tento prvok je identifikátorom adresy v informačnom systéme registra obyvateľov.
+[Formát reprezentácie: Číselný reťazec s maximálne desiatimi ciframi.]
+[Hodnoty: Nemá predpísaný obsah.]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AddressPoint" type="AddressPoint" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DeliveryAddress" type="DeliveryAddress" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="type" use="optional" type="EnumAddressType">
+      <xs:annotation>
+        <xs:documentation>Bližší popis kategórie adresy ako bydlisko, sídlo,ústredie.
+[Hodnoty:
+type=postOfficeBoxAddress
+Označuje, že adresa je P. O. BOX.
+type=streetAddress
+Označuje, že ide o bežnú fyzickú adresu príjemcu, ktorou nie je P. O. BOX.
+type=militaryAddress
+Označuje, že adresa sa riadi vojenským zaradením.
+type=undefined
+Označuje neznámy/neuvedený typ, rovnaký význam má úplné neuvedenie atribútu type.]
+[Poznámky: Uvádza sa kvôli rozlíšeniu typu adresy, tento atribút však nie je povinný.]</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="DeliveryAddress" type="DeliveryAddress" />
+  <xs:complexType name="DeliveryAddress">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok presnejšie určujúci adresu.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PostalCode" type="IdPolozkaCiselnikaPSC" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje kód, ktorý ustanovili po&amp;scaron;tové autority na účely doručovania po&amp;scaron;ty.
+Formát reprezentácie: Textový reťazec.
+Hodnoty: Pre slovenské adresy sa uvádza podľa platného zoznamu Slovenskej po&amp;scaron;ty.
+Poznámky: Zahraničné po&amp;scaron;tové smerové čísla majú častokrát nečíselný charakter. Reťazec sa vždy uvádza spolu, čo znamená, že sa neoddeľuje medzerou.
+
+Pre krajinu = SK kontrola na číselník PSČ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostOfficeBox" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Poštový priečinok.
+Formát reprezentácie: Textový reťazec začínajúci definovanou hodnotou a končiaci číslom.
+Hodnoty: Vždy sa uvádza aj text „P.O.BOX“.
+Poznámky: Príklady použitia: P.O.BOX 32, P.O.BOX 311.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Recipient" type="Recipient" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EnumAddressType">
+    <xs:annotation>
+      <xs:documentation>Bližší popis kategórie adresy ako bydlisko, sídlo,ústredie.
+[Hodnoty:
+type=postOfficeBoxAddress
+Označuje, že adresa je P. O. BOX.
+type=streetAddress
+Označuje, že ide o bežnú fyzickú adresu príjemcu, ktorou nie je P. O. BOX.
+type=militaryAddress
+Označuje, že adresa sa riadi vojenským zaradením.
+type=undefined
+Označuje neznámy/neuvedený typ, rovnaký význam má úplné neuvedenie atribútu type.]
+[Poznámky: Uvádza sa kvôli rozlíšeniu typu adresy, tento atribút však nie je povinný.]</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="postOfficeBoxAddress">
+        <xs:annotation>
+          <xs:documentation>Označuje, že adresa je P. O. BOX.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="streetAddress">
+        <xs:annotation>
+          <xs:documentation>Označuje, že ide o bežnú fyzickú adresu príjemcu, ktorou nie je P. O. BOX.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="militaryAddress">
+        <xs:annotation>
+          <xs:documentation>Označuje, že adresa sa riadi vojenským zaradením.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="undefined">
+        <xs:annotation>
+          <xs:documentation>Označuje neznámy/neuvedený typ, rovnaký význam má úplné neuvedenie atribútu type.]</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Miesto" type="Miesto" />
+  <xs:complexType name="Miesto">
+    <xs:annotation>
+      <xs:documentation>miesto narodenia/ úmrtia</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Country" type="IdPolozkaCiselnikaCountry" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Municipality" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+      <xs:element name="County" type="IdPolozkaCiselnikaCounty" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

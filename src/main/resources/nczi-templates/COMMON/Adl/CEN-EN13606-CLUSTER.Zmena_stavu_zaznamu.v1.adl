@@ -1,0 +1,83 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2018-03-27">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Zmena stavu
+        parts existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            ELEMENT[at0151] occurrences matches {1..1} matches {  -- Čas zmeny stavu
+                value existence matches {0..1} matches {
+                    TS[at0152] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-mm-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0153] occurrences matches {0..1} matches {  -- Dôvod zmeny stavu
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0154] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0155] occurrences matches {1..1} matches {  -- Autor
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Zmena stavu">
+                    description = <"‌Informácie o zmene stavu záznamu. Údaje generuje systém. Nezadáva sa na vstupe.">
+                >
+                ["at0151"] = <
+                    text = <"Čas zmeny stavu">
+                    description = <"Dátum a čas vykonania zmeny stavu">
+                >
+                ["at0153"] = <
+                    text = <"Dôvod zmeny stavu">
+                    description = <"Zdôvodnenie vykonania zmeny stavu pre auditné účely. Využíva sa len pri úkone storno záznamu, pri iných typoch záznamu dôvod nemusí byť uvádzaný. ">
+                >
+                ["at0155"] = <
+                    text = <"Autor">
+                    description = <"Identifikačné údaje zdravotníckeho pracovníka, ktorý zmenu stavu vykonal">
+                    comment = <"This node was originaly a slot node, it was solved to {CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1}">
+                >
+                ["at0152"] = <
+                    text = <"TS">
+                    description = <"">
+                >
+                ["at0154"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >

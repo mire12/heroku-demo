@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Zaradenie do evidenčného počtu</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.226</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000441840</codeValue>
+      <displayName>v evidenčnom počte; vykonávajúci prácu</displayName>
+      <Skratka>A</Skratka>
+      <Popis>v prípade právnych vztahov 01 -10</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000619494</codeValue>
+      <displayName>mimo evidenčný počet; dočasne nevykonávajúci prácu</displayName>
+      <Skratka>N</Skratka>
+      <Popis>v prípade právnych vztahov 01 - 10</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000619502</codeValue>
+      <displayName>nesleduje sa</displayName>
+      <Skratka>X</Skratka>
+      <Popis>v prípade právnych vztahov 26, 28, 30, 40 alebo 99</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208878918</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>Z</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

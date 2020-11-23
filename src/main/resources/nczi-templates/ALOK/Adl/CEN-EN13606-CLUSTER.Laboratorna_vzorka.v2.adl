@@ -1,0 +1,278 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Laboratorna_vzorka.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Laboratórna vzorka určená pre laboratórne vyšetrenie">
+            keywords = <"Laboratórna vzorka">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Laboratórna vzorka
+        parts existence matches {0..1} cardinality matches {5..*; ordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- Anatomické miesto odberu
+                value existence matches {1..1} matches {
+                    CV[at0004] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {"ANATOMICKE_MIESTO"}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0009] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.115"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            ELEMENT[at0006] occurrences matches {1..1} matches {  -- Dátum a čas odberu
+                value existence matches {1..1} matches {
+                    TS[at0008] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0010] occurrences matches {1..1} matches {  -- EX ID vzorky
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0012] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.{0,50}/}
+                    }
+                }
+            }
+            ELEMENT[at0014] occurrences matches {0..1} matches {  -- Dátum a čas prijatia
+                value existence matches {0..1} matches {
+                    TS[at0016] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- ID vzorky
+                value existence matches {0..1} matches {
+                    II[at0091] occurrences matches {1..1} matches {  -- II
+						extension existence matches {1..1} matches {/.*/}
+						root existence matches {1..1} matches {
+                            OID[at0092] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.60.40"}
+                            }
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- Množstvo odobratej vzorky
+                value existence matches {1..1} matches {
+                    PQ[at0018] occurrences matches {1..1} matches {  -- PQ
+						units existence matches {1..1} matches {
+							CS[at0001] occurrences matches {1..1} matches {  -- CS
+								codeValue existence matches {1..1} matches {/.*/}
+								codingScheme existence matches {1..1} matches {
+									OID[at0006] occurrences matches {1..1} matches {  -- 
+										oid existence matches {1..1} matches {"1.3.158.00165387.100.10.87"}
+									}
+								}
+								codingSchemeName existence matches {1..1} matches {/.*/}
+								codingSchemeVersion existence matches {1..1} matches {/\d+/}
+							}
+						}
+						value existence matches {1..1} matches {|>-99999.0..<999999.0|}
+                    }
+                }
+            }
+            ELEMENT[at0026] occurrences matches {0..1} matches {  -- Poznámka - Okolnosti odberu
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0028] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+            ELEMENT[at0030] occurrences matches {0..1} matches {  -- Riziko
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0033] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+            ELEMENT[at0035] occurrences matches {0..1} matches {  -- Spôsob odberu
+                value existence matches {1..1} matches {
+                    CV[at0037] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {"SPOSOB_ODBERU_LABORATORNEJ_VZORKY"}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0044] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.121"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            ELEMENT[at0047] occurrences matches {1..1} matches {  -- Typ vzorky
+                value existence matches {1..1} matches {
+                    CV[at0049] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {"TYP_LABORATORNEJ_VZORKY"}
+                        displayName existence matches {0..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0050] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.93"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0020] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Laboratórna vzorka">
+                    description = <"Laboratórna vzorka na účel laboratórneho vyšetrenia">
+                >
+                ["at0002"] = <
+                    text = <"Anatomické miesto odberu">
+                    description = <"Anatomické miesto, odkiaľ je vzorka odobratá.
+Číselník obsahujúci zoznam anatomických pojmov pre potreby identifikácie konkrétneho anatomického miesta odberu vzorky.
+">
+                >
+                ["at0004"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0006"] = <
+                    text = <"Dátum a čas odberu">
+                    description = <"Dátum a čas, kedy bol vykonaný odber ">
+                >
+                ["at0008"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0010"] = <
+                    text = <"EX ID vzorky">
+                    description = <"Externý identifikátor vzorky, ktorý slúži na komunikáciu ambulancie a laboratória 
+
+Poznámka: spôsob a formu identifikácie vzorky stanovuje LAB">
+                >
+                ["at0012"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0014"] = <
+                    text = <"Dátum a čas prijatia">
+                    description = <"Dátum a čas prijatia laboratórnej vzorky do laboratória">
+                >
+                ["at0016"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0003"] = <
+                    text = <"ID vzorky">
+                    description = <" NZIS Identifikátor laboratórnej vzorky.">
+                >
+                ["at0013"] = <
+                    text = <"Množstvo odobratej vzorky">
+                    description = <"Množstvo odobratej vzorky pre účel laboratórnych vyšetrení">
+                >
+                ["at0018"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0026"] = <
+                    text = <"Poznámka - Okolnosti odberu">
+                    description = <"Poznámka k vzorke. 
+
+Napríklad: Všetky podmienky, ktoré musia byť splnené pred odberom vzorky napr. plný močový mechúr, nalačno alebo špeciálne pokyny pre zaobchádzanie alebo okamžité spracovanie vzorky. Môže byť tiež použitý pre dokumentáciu všetkých známych odchýlok spracovania napr. prijímateľ ZS nebol nalačno.
+Tiež je možné zaznamenať, ktoré z podmienok neboli splnené tak, aby laboratóriom správne interpretovalo výsledok testu.">
+                >
+                ["at0028"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0030"] = <
+                    text = <"Riziko">
+                    description = <"Potenciálne riziko alebo biohazard spojený so zberom a spracovaním vzorky – či vzorka predstavuje riziko pre ostatné osoby. Napr. HIV pozitívny, infekčné ochorenie ...">
+                >
+                ["at0033"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0035"] = <
+                    text = <"Spôsob odberu">
+                    description = <"Popis, ako bola vzorka odobratá. Napr. Venózny odber, biopsia. resekcia ...
+Odkaz na čísleník SposobOdberuVzorky">
+                >
+                ["at0037"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0047"] = <
+                    text = <"Typ vzorky">
+                    description = <"Čiselníková hodnota typu vzorky.
+Číselník definuje typ vzorky pre laboratórne vyšetrenie
+
+Príklad :
+serum
+urea
+plasma
+....
+">
+                >
+                ["at0049"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0009"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0044"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0050"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0091"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0092"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["sk"] = <
+            items = <
+                ["ac0002"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >

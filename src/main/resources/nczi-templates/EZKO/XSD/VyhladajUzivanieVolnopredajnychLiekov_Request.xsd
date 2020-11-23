@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd"/>
+  <xs:element name="VyhladajUzivanieVolnopredajnychLiekovVstup" type="tns:VyhladajUzivanieVolnopredajnychLiekovVstup" />
+  <xs:complexType name="VyhladajUzivanieVolnopredajnychLiekovVstup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumOd" nillable="true" >
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime">
+            <xs:minInclusive value="1900-01-01T00:00:00"/>
+            <xs:maxInclusive value="7999-12-31T23:59:59"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumDo" nillable="true" >
+        <xs:simpleType>
+          <xs:restriction base="xs:dateTime">
+            <xs:minInclusive value="1900-01-01T00:00:00"/>
+            <xs:maxInclusive value="7999-12-31T23:59:59"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdZdravotnickehoPracovnika" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodPZS" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Strankovanie" xmlns:q52="http://eHealth.gov.sk/EzkCommon/v1" type="q52:Strankovanie" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Triedenie" xmlns:q53="http://eHealth.gov.sk/EzkCommon/v1" type="q53:Radenie" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/ZdravotnickyPracovnikOU.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="StornujVydajZEReceptuVstup" type="StornujVydajZEReceptuVstup" />
+  <xs:complexType name="StornujVydajZEReceptuVstup">
+    <xs:annotation>
+      <xs:documentation>Na vstupe služby je potrebné identifikovať dispenzačný záznam (alebo dispenzačné záznamy), zadať dôvod stornovania a identifikačné údaje zdravotníckeho pracovníka.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DovodStornacie" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dôvod stornácie je povinný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdDispenzacnyZaznam" type="rm:II" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam identifikátorov dispenzačných záznamov, ktoré sa majú vystornovať.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrijimatelZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor prijímateľa zdravotnej starostlivosti, ktorého záznamom sa ide manipulovať.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StornoZPrac" type="ZdravotnickyPracovnikOU" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

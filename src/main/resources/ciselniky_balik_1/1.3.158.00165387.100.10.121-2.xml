@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Spôsob odberu laboratórnej vzorky</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-06-01</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.121</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000357608</codeValue>
+      <displayName>venózny odber</displayName>
+      <Skratka>VO</Skratka>
+      <Popis>venózny odber</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000357616</codeValue>
+      <displayName>biopsia</displayName>
+      <Skratka>BP</Skratka>
+      <Popis>biopsia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707281</codeValue>
+      <displayName>resekcia</displayName>
+      <Skratka>RK</Skratka>
+      <Popis>resekcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707299</codeValue>
+      <displayName>arteriálny odber</displayName>
+      <Skratka>AO</Skratka>
+      <Popis>arteriálny odber</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707307</codeValue>
+      <displayName>výter</displayName>
+      <Skratka>VY</Skratka>
+      <Popis>výter</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707315</codeValue>
+      <displayName>sonda</displayName>
+      <Skratka>SD</Skratka>
+      <Popis>sonda</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707323</codeValue>
+      <displayName>do misky, skúmavky (stolica, spútum)</displayName>
+      <Skratka>DO</Skratka>
+      <Popis>do misky, skúmavky /stolica, spútum/</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000707331</codeValue>
+      <displayName>ster (krčok maternice)</displayName>
+      <Skratka>ST</Skratka>
+      <Popis>ster /krčok maternice/</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000139</codeValue>
+      <displayName>punktát aeróbne</displayName>
+      <Skratka>PE</Skratka>
+      <Popis>odber tekutiny z dutiny punkciou za aeróbnych podmienok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000147</codeValue>
+      <displayName>punktát anaeróbne</displayName>
+      <Skratka>PN</Skratka>
+      <Popis>odber tekutiny z dutiny punkciou za anaeróbnych podmienok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020002101</codeValue>
+      <displayName>kapilárny odber C</displayName>
+      <Skratka>KO</Skratka>
+      <Popis>kapilárny odber C</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208873117</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671164</codeValue>
+      <displayName>cievkovanie</displayName>
+      <Skratka>CO</Skratka>
+      <Popis>odber tekutiny pomocou cievky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671180</codeValue>
+      <displayName>zoškrab (z rohovky, kože)</displayName>
+      <Skratka>ZP</Skratka>
+      <Popis>zoškrab tkaniva z povrchu anatomickej štruktúry</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671214</codeValue>
+      <displayName>epilácia</displayName>
+      <Skratka>EP</Skratka>
+      <Popis>odstránenie vlasov/ochlpenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671248</codeValue>
+      <displayName>výplach (laváž)</displayName>
+      <Skratka>LV</Skratka>
+      <Popis>získanie materiálu výplachom /dutiny, bronchov a pod./</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671289</codeValue>
+      <displayName>ster (koža, rana)</displayName>
+      <Skratka>SK</Skratka>
+      <Popis>ster z kože/povrchu rany</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671313</codeValue>
+      <displayName>ster (perianálny) </displayName>
+      <Skratka>SA</Skratka>
+      <Popis>ster z kože v oblasti konečníka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671347</codeValue>
+      <displayName>ster (uretra)</displayName>
+      <Skratka>SM</Skratka>
+      <Popis>ster z močovej rúry</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671370</codeValue>
+      <displayName>ster (vagína)</displayName>
+      <Skratka>SV</Skratka>
+      <Popis>ster z pošvy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671412</codeValue>
+      <displayName>ster (bukálna sliznica)</displayName>
+      <Skratka>SB</Skratka>
+      <Popis>ster z bukálnej sliznice</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671446</codeValue>
+      <displayName>punktát (amniocentéza)</displayName>
+      <Skratka>PA</Skratka>
+      <Popis>punktát z amniotického vaku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671479</codeValue>
+      <displayName>zlep perianálny</displayName>
+      <Skratka>ZA</Skratka>
+      <Popis>zlep z oblasti konečníka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671503</codeValue>
+      <displayName>výter z rekta</displayName>
+      <Skratka>VR</Skratka>
+      <Popis>výter z rekta</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671537</codeValue>
+      <displayName>ster (laryngeálny)</displayName>
+      <Skratka>SL</Skratka>
+      <Popis>ster z laryngu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671578</codeValue>
+      <displayName>moč stredný prúd</displayName>
+      <Skratka>PM</Skratka>
+      <Popis>odber moča zo stredného prúdu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671602</codeValue>
+      <displayName>moč cievkovaný</displayName>
+      <Skratka>MC</Skratka>
+      <Popis>moč získaný cievkovaním</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671636</codeValue>
+      <displayName>moč punkcia</displayName>
+      <Skratka>MP</Skratka>
+      <Popis>moč získaný punkciou močového mechúra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089671669</codeValue>
+      <displayName>ster z ucha</displayName>
+      <Skratka>SU</Skratka>
+      <Popis>ster z vonkajšieho zvukovodu</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

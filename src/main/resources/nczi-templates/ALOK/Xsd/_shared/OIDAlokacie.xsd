@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://eHealth.gov.sk/Allocation/v1"
+           targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+           elementFormDefault="qualified">
+  
+	<xs:include schemaLocation="DataTypes.xsd" />
+
+  <xs:element name="OIDLaboratornaZiadanka" type="OIDLaboratornaZiadanka"/>
+
+  <xs:complexType name="OIDLaboratornaZiadanka">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.20"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDLaboratornyVysledok" type="OIDLaboratornyVysledok"/>
+
+  <xs:complexType name="OIDLaboratornyVysledok">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.10"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDReakciaNaOckovanie" type="OIDReakciaNaOckovanie"/>
+
+  <xs:complexType name="OIDReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.30"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDLaboratornaVzorka" type="OIDLaboratornaVzorka"/>
+
+  <xs:complexType name="OIDLaboratornaVzorka">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.40"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDZaznamOOckovani" type="OIDZaznamOOckovani"/>
+
+  <xs:complexType name="OIDZaznamOOckovani">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.50"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDPripomenutieOckovania" type="OIDPripomenutieOckovania"/>
+
+  <xs:complexType name="OIDPripomenutieOckovania">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.60"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDPripomenutiePreventivnejPrehliadky" type="OIDPripomenutiePreventivnejPrehliadky"/>
+
+  <xs:complexType name="OIDPripomenutiePreventivnejPrehliadky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.70"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDZaznamOZobrazovacomVysetreni" type="OIDZaznamOZobrazovacomVysetreni"/>
+
+  <xs:complexType name="OIDZaznamOZobrazovacomVysetreni">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.80"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDZaznamOOdbornomVysetreni" type="OIDZaznamOOdbornomVysetreni"/>
+
+  <xs:complexType name="OIDZaznamOOdbornomVysetreni">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.90"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="OIDLekarskaPrepustaciaSprava" type="OIDLekarskaPrepustaciaSprava"/>
+
+  <xs:complexType name="OIDLekarskaPrepustaciaSprava">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.60.100"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

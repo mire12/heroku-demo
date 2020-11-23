@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DoplnAtribut.xsd" />
+  <xs:include schemaLocation="ZdravotnickaPomocka.xsd" />
+  <xs:include schemaLocation="PrijimatelZS.xsd" />
+  <xs:include schemaLocation="PoskytovatelZS.xsd" />
+  <xs:include schemaLocation="DietetickaPotravina.xsd" />
+  <xs:include schemaLocation="ZdravotnaPoistovna.xsd" />
+  <xs:include schemaLocation="ZdravotnickyPracovnik.xsd" />
+  <xs:include schemaLocation="OckovaciKalendar.xsd" />
+  <xs:include schemaLocation="Ciselnik.xsd" />
+  <xs:include schemaLocation="Mng.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="Lieky.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:element name="AktualizujReferencnuSkupinu_Response" type="AktualizujReferencnuSkupinu_Response" />
+  <xs:complexType name="AktualizujReferencnuSkupinu_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na aktualizaciu referenčnej skupiny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdReferencnaSkupina" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujReferencnuSkupinu_Request" type="AktualizujReferencnuSkupinu_Request" />
+  <xs:complexType name="AktualizujReferencnuSkupinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu referenčnej skupiny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferencnaSkupina" type="ReferencnaSkupina_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZrusZaznam_Request" type="ZrusZaznam_Request" />
+  <xs:complexType name="ZrusZaznam_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zrušenie zoznamu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZrusZaznam_Response" type="ZrusZaznam_Response" />
+  <xs:complexType name="ZrusZaznam_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na zrušenie zoznamu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="vysledok" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výsledok rušenia záznamu.
+true - ak operácia prebehla v poriadku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPocetObjektov_Request" type="DajPocetObjektov_Request" />
+  <xs:complexType name="DajPocetObjektov_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na počet objektov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OID" type="OID" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPocetObjektov_Response" type="DajPocetObjektov_Response" />
+  <xs:complexType name="DajPocetObjektov_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na počet objektov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PocetObjektov" type="PocetObjektov" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujCiselnik_Request" type="AktualizujCiselnik_Request" />
+  <xs:complexType name="AktualizujCiselnik_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Ciselnik" type="Ciselnik" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujOckovaciKalendar_Response" type="AktualizujOckovaciKalendar_Response" />
+  <xs:complexType name="AktualizujOckovaciKalendar_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOckovaciKalendar" type="IdOckovaciKalendar" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujOckovaciKalendar_Request" type="AktualizujOckovaciKalendar_Request" />
+  <xs:complexType name="AktualizujOckovaciKalendar_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OckovaciKalendar" type="OckovaciKalendar" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZdrPomocku_Response" type="AktualizujZdrPomocku_Response" />
+  <xs:complexType name="AktualizujZdrPomocku_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizaciu zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZPr_Request" type="AktualizujZPr_Request" />
+  <xs:complexType name="AktualizujZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickyPracovnik" type="ZdravotnickyPracovnik" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZPr_Response" type="AktualizujZPr_Response" />
+  <xs:complexType name="AktualizujZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZP_Request" type="AktualizujZP_Request" />
+  <xs:complexType name="AktualizujZP_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnaPoistovna" type="ZdravotnaPoistovna" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZP_Response" type="AktualizujZP_Response" />
+  <xs:complexType name="AktualizujZP_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu skupiny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDietetickuPotravinu_Request" type="AktualizujDietetickuPotravinu_Request" />
+  <xs:complexType name="AktualizujDietetickuPotravinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DietetickaPotravina" type="DietetickaPotravina_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDietetickuPotravinu_Response" type="AktualizujDietetickuPotravinu_Response" />
+  <xs:complexType name="AktualizujDietetickuPotravinu_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na aktualizáciu dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdDietetickaPotravina" type="IdDietetickaPotravina" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujLiek_Response" type="AktualizujLiek_Response" />
+  <xs:complexType name="AktualizujLiek_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdLiek" type="IdLiek" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujLiek_Request" type="AktualizujLiek_Request" />
+  <xs:complexType name="AktualizujLiek_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Liek" type="Liek_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPZS_Request" type="AktualizujPZS_Request" />
+  <xs:complexType name="AktualizujPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PoskytovatelZS" type="PoskytovatelZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPZS_Response" type="AktualizujPZS_Response" />
+  <xs:complexType name="AktualizujPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoved na aktualizáciu PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPrZS_Request" type="AktualizujPrZS_Request" />
+  <xs:complexType name="AktualizujPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PrijimatelZS" type="PrijimatelZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPrZS_Response" type="AktualizujPrZS_Response" />
+  <xs:complexType name="AktualizujPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujCiselnik_Response" type="AktualizujCiselnik_Response" />
+  <xs:complexType name="AktualizujCiselnik_Response">
+    <xs:annotation>
+      <xs:documentation>Oúpoveď  na aktualizáciu číselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OID" type="OID" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZdrPomocku_Request" type="AktualizujZdrPomocku_Request" />
+  <xs:complexType name="AktualizujZdrPomocku_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka" type="ZdravotnickaPomocka_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujSkupinuZdravotnickychPomocok_Request" type="AktualizujSkupinuZdravotnickychPomocok_Request" />
+  <xs:complexType name="AktualizujSkupinuZdravotnickychPomocok_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu skupiny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujSkupinuZdravotnickychPomocok_Response" type="AktualizujSkupinuZdravotnickychPomocok_Response" />
+  <xs:complexType name="AktualizujSkupinuZdravotnickychPomocok_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu skupiny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdSkupinaZdrPom" type="IdSkupinaZdravotnickychPomocok" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPodskupinuDietetickejPotraviny_Response" type="AktualizujPodskupinuDietetickejPotraviny_Response" />
+  <xs:complexType name="AktualizujPodskupinuDietetickejPotraviny_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu podskupiny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPodskupinaDP" type="IdPodskupinaDietetickejPotraviny" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPodskupinuDietetickejPotraviny_Request" type="AktualizujPodskupinuDietetickejPotraviny_Request" />
+  <xs:complexType name="AktualizujPodskupinuDietetickejPotraviny_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu podskupiny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PodskupinaDP" type="PodskupinaDP_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZPrDoplnujuciUdaj_Request" type="AktualizujZPrDoplnujuciUdaj_Request" />
+  <xs:complexType name="AktualizujZPrDoplnujuciUdaj_Request">
+    <xs:sequence>
+      <xs:element name="Licencia" type="Licencia" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujZPrDoplnujuciUdaj_Response" type="AktualizujZPrDoplnujuciUdaj_Response" />
+  <xs:complexType name="AktualizujZPrDoplnujuciUdaj_Response">
+    <xs:sequence>
+      <xs:element name="IdLicenciaZPr" type="IdLicenciaZPr" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujLiekovuAlergiu_Request" type="AktualizujLiekovuAlergiu_Request" />
+  <xs:complexType name="AktualizujLiekovuAlergiu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu liekovej alergie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LiekovaAlergia" type="LiekovaAlergia_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujLiekovuAlergiu_Response" type="AktualizujLiekovuAlergiu_Response" />
+  <xs:complexType name="AktualizujLiekovuAlergiu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu liekovej alergie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdLiekovaAlergia" type="IdLiekovaAlergia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDavkovanie_Response" type="AktualizujDavkovanie_Response" />
+  <xs:complexType name="AktualizujDavkovanie_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu dávkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdDavkovanie" type="IdDavkovanie" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDavkovanie_Request" type="AktualizujDavkovanie_Request" />
+  <xs:complexType name="AktualizujDavkovanie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu dávkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Davkovanie" type="Davkovanie" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujKontraindikaciu_Response" type="AktualizujKontraindikaciu_Response" />
+  <xs:complexType name="AktualizujKontraindikaciu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu kontraindikácie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdKontraindikacia" type="IdKontraindikacia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujInterakciu_Response" type="AktualizujInterakciu_Response" />
+  <xs:complexType name="AktualizujInterakciu_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na aktualizáciu interakcie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdInterakcia" type="IdInterakcia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujInterakciu_Request" type="AktualizujInterakciu_Request" />
+  <xs:complexType name="AktualizujInterakciu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu interakcie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Interakcie" type="Interakcia_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujKontraindikaciu_Request" type="AktualizujKontraindikaciu_Request" />
+  <xs:complexType name="AktualizujKontraindikaciu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu kontraindikácie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Kontraindikacia" type="Kontraindikacia_v2" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujMagistraliter_Request" type="AktualizujMagistraliter_Request" />
+  <xs:complexType name="AktualizujMagistraliter_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu magistraliter </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Magistraliter" type="Magistraliter" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujMagistraliter_Response" type="AktualizujMagistraliter_Response" />
+  <xs:complexType name="AktualizujMagistraliter_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdMagistraliter" type="IdMagistraliter" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPZSDoplnujuciUdaj_Request" type="AktualizujPZSDoplnujuciUdaj_Request" />
+  <xs:complexType name="AktualizujPZSDoplnujuciUdaj_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu doplnujuceho udaja PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Licencia" type="Licencia" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DokladPZS" type="DokladPZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujPZSDoplnujuciUdaj_Response" type="AktualizujPZSDoplnujuciUdaj_Response" />
+  <xs:complexType name="AktualizujPZSDoplnujuciUdaj_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu doplnujuceho udaja PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdLicenciaZPr" type="IdLicenciaZPr" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdDokladPZS" type="IdDokladPZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDoplnujuciAtribut_Request" type="AktualizujDoplnujuciAtribut_Request" />
+  <xs:complexType name="AktualizujDoplnujuciAtribut_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu dopĺňujúceho atribútu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DoplnujuceReferencneUdaje" type="DoplnujuceReferencneUdaje" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujDoplnujuciAtribut_Response" type="AktualizujDoplnujuciAtribut_Response" />
+  <xs:complexType name="AktualizujDoplnujuciAtribut_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na aktualizáciu doplňujúceho atribútu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PotvrdTransakciu_Request" type="PotvrdTransakciu_Request" />
+  <xs:complexType name="PotvrdTransakciu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypEntity" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PotvrdTransakciu_Response" type="PotvrdTransakciu_Response" />
+  <xs:complexType name="PotvrdTransakciu_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="SpustiTransakciu_Request" type="SpustiTransakciu_Request" />
+  <xs:complexType name="SpustiTransakciu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypEntity" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpustiTransakciu_Response" type="SpustiTransakciu_Response" />
+  <xs:complexType name="SpustiTransakciu_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ZrusTransakciu_Request" type="ZrusTransakciu_Request" />
+  <xs:complexType name="ZrusTransakciu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypEntity" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZrusTransakciu_Response" type="ZrusTransakciu_Response" />
+  <xs:complexType name="ZrusTransakciu_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizaciu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

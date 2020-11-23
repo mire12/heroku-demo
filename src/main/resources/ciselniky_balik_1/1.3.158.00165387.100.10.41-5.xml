@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Orgán príslušný na vydanie rozhodnutia v zdravotníctve</codingSchemeName>
+    <codingSchemeVersion>5</codingSchemeVersion>
+    <DatumPoslednejZmeny>2020-05-27</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Dátum začiatku platnosti</Nazov>
+      <MinPocetnost>1</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Dátum konca platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.41</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2020-06-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116012</codeValue>
+      <displayName>Slovenská lekárska komora</displayName>
+      <Skratka>01</Skratka>
+      <Popis>v skrátenom tvare "SLK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>16.01.1992</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000116020</codeValue>
+      <displayName>Slovenská komora zubných lekárov</displayName>
+      <Skratka>02</Skratka>
+      <Popis>v skrátenom tvare "SKZL"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>16.01.1992</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347187</codeValue>
+      <displayName>Slovenská lekárnická komora</displayName>
+      <Skratka>03</Skratka>
+      <Popis>v skrátenom tvare "SLEK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>16.01.1992</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347179</codeValue>
+      <displayName>Slovenská komora sestier a pôrodných asistentiek</displayName>
+      <Skratka>04</Skratka>
+      <Popis>v skrátenom tvare "SKSAPA"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>22.06.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347161</codeValue>
+      <displayName>Slovenská komora medicínsko-technických pracovníkov</displayName>
+      <Skratka>05</Skratka>
+      <Popis>v skrátenom tvare "SKMTP"; pôvodne Slovenská komora laborantov, asistentov a technikov (SKLAT)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>29.12.2007</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347153</codeValue>
+      <displayName>Slovenská komora fyzioterapeutov</displayName>
+      <Skratka>06</Skratka>
+      <Popis>v skrátenom tvare "SKF"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>29.12.2007</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347146</codeValue>
+      <displayName>Slovenská komora zubných technikov</displayName>
+      <Skratka>07</Skratka>
+      <Popis>v skrátenom tvare "SKZT"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>16.01.1992</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347138</codeValue>
+      <displayName>Slovenská komora ortopedických technikov</displayName>
+      <Skratka>08</Skratka>
+      <Popis>v skrátenom tvare "SKOrT"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>29.12.2007</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347112</codeValue>
+      <displayName>Slovenská komora iných zdravotníckych pracovníkov</displayName>
+      <Skratka>09</Skratka>
+      <Popis>v skrátenom tvare "SKIZP"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>29.12.2007</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347120</codeValue>
+      <displayName>Slovenská komora psychológov</displayName>
+      <Skratka>10</Skratka>
+      <Popis>v skrátenom tvare "SKP"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>13.07.1994</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000154</codeValue>
+      <displayName>Slovenská komora zdravotníckych záchranárov</displayName>
+      <Skratka>11</Skratka>
+      <Popis>v skrátenom tvare "SKZZ"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.04.2013</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895342</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva Bratislava, hlavné mesto so sídlom v Bratislave</displayName>
+      <Skratka>21</Skratka>
+      <Popis>RÚVZ Bratislava</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895359</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Trnave</displayName>
+      <Skratka>22</Skratka>
+      <Popis>RÚVZ Trnava</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895367</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Dunajskej Strede</displayName>
+      <Skratka>23</Skratka>
+      <Popis>RÚVZ Dunajská Streda</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895375</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Galante</displayName>
+      <Skratka>24</Skratka>
+      <Popis>RÚVZ Galanta</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895383</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Senici</displayName>
+      <Skratka>25</Skratka>
+      <Popis>RÚVZ Senec</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895391</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Trenčíne</displayName>
+      <Skratka>26</Skratka>
+      <Popis>RÚVZ Trenčín</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895409</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Považskej Bystrici</displayName>
+      <Skratka>27</Skratka>
+      <Popis>RÚVZ Považská Bystrica</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895417</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva v Prievidzi so sídlom v Bojniciach</displayName>
+      <Skratka>28</Skratka>
+      <Popis>RÚVZ Prievidza</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895425</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Nitre</displayName>
+      <Skratka>29</Skratka>
+      <Popis>RÚVZ Nitra</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895433</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Topoľčanoch</displayName>
+      <Skratka>30</Skratka>
+      <Popis>RÚVZ Topoľčany</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895441</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Nových Zámkoch</displayName>
+      <Skratka>31</Skratka>
+      <Popis>RÚVZ Nové Zámky</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895458</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Komárne</displayName>
+      <Skratka>32</Skratka>
+      <Popis>RÚVZ Komárno</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895466</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Leviciach</displayName>
+      <Skratka>33</Skratka>
+      <Popis>RÚVZ Levice</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895474</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Žiline</displayName>
+      <Skratka>34</Skratka>
+      <Popis>RÚVZ Žilina</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895482</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Čadci</displayName>
+      <Skratka>35</Skratka>
+      <Popis>RÚVZ Čadca</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895508</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Dolnom Kubíne</displayName>
+      <Skratka>36</Skratka>
+      <Popis>RÚVZ Dolný Kubín</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895524</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Martine</displayName>
+      <Skratka>37</Skratka>
+      <Popis>RÚVZ Martin</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895557</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Liptovskom Mikuláši</displayName>
+      <Skratka>38</Skratka>
+      <Popis>RÚVZ Liptovský Mikuláš</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895565</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Banskej Bystrici</displayName>
+      <Skratka>39</Skratka>
+      <Popis>RÚVZ Banská Bystrica</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895581</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Lučenci</displayName>
+      <Skratka>40</Skratka>
+      <Popis>RÚVZ Lučenec</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895607</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom vo Veľkom Krtíši</displayName>
+      <Skratka>41</Skratka>
+      <Popis>RÚVZ Veľký Krtíš</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895615</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Rimavskej Sobote</displayName>
+      <Skratka>42</Skratka>
+      <Popis>RÚVZ Rimavská Sobota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895631</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom vo Zvolene</displayName>
+      <Skratka>43</Skratka>
+      <Popis>RÚVZ Zvolen</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895656</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Žiari nad Hronom</displayName>
+      <Skratka>44</Skratka>
+      <Popis>RÚVZ Žiar nad Hronom</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895664</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Poprade</displayName>
+      <Skratka>45</Skratka>
+      <Popis>RÚVZ Poprad</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895672</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Prešove</displayName>
+      <Skratka>46</Skratka>
+      <Popis>RÚVZ Prešov</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895680</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Bardejove</displayName>
+      <Skratka>47</Skratka>
+      <Popis>RÚVZ Bardejov</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895698</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom vo Vranove nad Topľou</displayName>
+      <Skratka>48</Skratka>
+      <Popis>RÚVZ Vranov nad Topľou</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895706</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom vo Svidníku</displayName>
+      <Skratka>49</Skratka>
+      <Popis>RÚVZ Svidník</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895714</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Humennom</displayName>
+      <Skratka>50</Skratka>
+      <Popis>RÚVZ Humenné</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882833</codeValue>
+      <displayName>Odbor právny Ministerstva zdravotníctva Slovenskej republiky</displayName>
+      <Skratka>51</Skratka>
+      <Popis>v skrátenom tvare "OP MZ SR", pôvodne Sekcia legislatívno-právna Ministerstva zdravotníctva Slovenskej republiky so skráteným tvarom "SLP MZ SR"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882841</codeValue>
+      <displayName>Sekcia farmácie a liekovej politiky Ministerstva zdravotníctva Slovenskej republiky</displayName>
+      <Skratka>52</Skratka>
+      <Popis>v skrátenom tvare "SFLP MZ SR"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882866</codeValue>
+      <displayName>Štátna kúpeľná komisia Ministerstva zdravotníctva Slovenskej republiky</displayName>
+      <Skratka>53</Skratka>
+      <Popis>v skrátenom tvare "ŠKK MZ SR"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882882</codeValue>
+      <displayName>Bratislavský samosprávny kraj</displayName>
+      <Skratka>61</Skratka>
+      <Popis>v skrátenom tvare "BSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882908</codeValue>
+      <displayName>Trnavský samosprávny kraj</displayName>
+      <Skratka>62</Skratka>
+      <Popis>v skrátenom tvare "TTSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882924</codeValue>
+      <displayName>Trenčiansky samosprávny kraj</displayName>
+      <Skratka>63</Skratka>
+      <Popis>v skrátenom tvare "TSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882957</codeValue>
+      <displayName>Nitriansky samosprávny kraj</displayName>
+      <Skratka>64</Skratka>
+      <Popis>v skrátenom tvare "NSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020882973</codeValue>
+      <displayName>Žilinský samosprávny kraj</displayName>
+      <Skratka>65</Skratka>
+      <Popis>v skrátenom tvare "ŽSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883005</codeValue>
+      <displayName>Banskobystrický samosprávny kraj</displayName>
+      <Skratka>66</Skratka>
+      <Popis>v skrátenom tvare "BBSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883021</codeValue>
+      <displayName>Prešovský samosprávny kraj</displayName>
+      <Skratka>67</Skratka>
+      <Popis>v skrátenom tvare "PSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883039</codeValue>
+      <displayName>Košický samosprávny kraj</displayName>
+      <Skratka>68</Skratka>
+      <Popis>v skrátenom tvare "KSK"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.2002</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883054</codeValue>
+      <displayName>Odbor informačných systémov Úradu pre dohľad nad zdravotnou starostlivosťou</displayName>
+      <Skratka>71</Skratka>
+      <Popis>v skrátenom tvare "OIS ÚDZS", pôvodne Úrad pre dohľad nad zdravotnou starostlivosťou so skráteným tvarom "ÚDZS"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.11.2004</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089855171</codeValue>
+      <displayName>Právny odbor Úradu pre dohľad nad zdravotnou starostlivosťou</displayName>
+      <Skratka>72</Skratka>
+      <Popis>v skrátenom tvare "PO ÚDZS"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.06.2019</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883658</codeValue>
+      <displayName>Živnostenský Úrad</displayName>
+      <Skratka>81</Skratka>
+      <Popis>v skrátenom tvare "ŽÚ"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1992</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895722</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Starej Ľubovni</displayName>
+      <Skratka>82</Skratka>
+      <Popis>RÚVZ Stará Ľubovňa</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895730</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Košiciach</displayName>
+      <Skratka>83</Skratka>
+      <Popis>RÚVZ Košice</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895748</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Michalovciach</displayName>
+      <Skratka>84</Skratka>
+      <Popis>RÚVZ Michalovce</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895755</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Rožňave</displayName>
+      <Skratka>85</Skratka>
+      <Popis>RÚVZ Rožňava</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895763</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Spišskej Novej Vsi</displayName>
+      <Skratka>86</Skratka>
+      <Popis>RÚVZ Spišská Nová ves</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089895771</codeValue>
+      <displayName>Regionálny úrad verejného zdravotníctva so sídlom v Trebišove</displayName>
+      <Skratka>87</Skratka>
+      <Popis>RÚVZ Trebišov</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21.05.2020</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089737916</codeValue>
+      <displayName>Štátny ústav pre kontrolu liečiv</displayName>
+      <Skratka>91</Skratka>
+      <Popis>v skrátenom tvare "ŠÚKL"</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>15.06.2018</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871368</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>98</Skratka>
+      <Popis>neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.11.2015</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

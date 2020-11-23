@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://eHealth.gov.sk/Allocation/v1" 
+           targetNamespace="http://eHealth.gov.sk/Allocation/v1" 
+           elementFormDefault="qualified">
+	<xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="OIDAlokacie.xsd" />
+  
+	<xs:element name="IdLaboratornaZiadanka" type="IdLaboratornaZiadanka"/>
+  
+	<xs:complexType name="IdLaboratornaZiadanka">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Laboratornej ziadanky</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDLaboratornaZiadanka" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+	</xs:complexType>
+
+  <xs:element name="IdLaboratornaZiadankaCriteria" type="IdLaboratornaZiadankaCriteria" />
+
+  <xs:complexType name="IdLaboratornaZiadankaCriteria">
+    <xs:sequence>
+      <xs:element name="IdLaboratornaZiadanka" type="IdLaboratornaZiadanka" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EXIdLaboratornaZiadankaLAB" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EXIdLaboratornaZiadankaPZS" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  
+  <xs:element name="IdLaboratornyVysledok" type="IdLaboratornyVysledok"/>
+  
+  <xs:complexType name="IdLaboratornyVysledok">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Laboratorneho vysledku</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDLaboratornyVysledok" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdReakciaNaOckovanie" type="IdReakciaNaOckovanie"/>
+
+  <xs:complexType name="IdReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Reakcie na ockovanie</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDReakciaNaOckovanie" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdLaboratornaVzorka" type="IdLaboratornaVzorka"/>
+
+  <xs:complexType name="IdLaboratornaVzorka">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Laboratornej vzorky</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([0-9a-zA-Z])*"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDLaboratornaVzorka" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdLaboratornaVzorkaCriteria" type="IdLaboratornaVzorkaCriteria" />
+  
+  <xs:complexType name="IdLaboratornaVzorkaCriteria">
+    <xs:sequence>
+      <xs:element name="IdLaboratornaVzorka" type="IdLaboratornaVzorka" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EXIdLaboratornaVzorka" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  
+  <xs:element name="IdZaznamOOckovani" type="IdZaznamOOckovani"/>
+
+  <xs:complexType name="IdZaznamOOckovani">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Zaznamu o ockovani</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDZaznamOOckovani" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdPripomenutieOckovania" type="IdPripomenutieOckovania"/>
+
+  <xs:complexType name="IdPripomenutieOckovania">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Pripomenutia ockovania</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDPripomenutieOckovania" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdPripomenutiePreventivnejPrehliadky" type="IdPripomenutiePreventivnejPrehliadky"/>
+
+  <xs:complexType name="IdPripomenutiePreventivnejPrehliadky">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Pripomenutia preventivnej prehliadky</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDPripomenutiePreventivnejPrehliadky" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdZaznamOZobrazovacomVysetreni" type="IdZaznamOZobrazovacomVysetreni"/>
+
+  <xs:complexType name="IdZaznamOZobrazovacomVysetreni">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Zaznamu o zobrazovacom vysetreni</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDZaznamOZobrazovacomVysetreni" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdZaznamOOdbornomVysetreni" type="IdZaznamOOdbornomVysetreni"/>
+
+  <xs:complexType name="IdZaznamOOdbornomVysetreni">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Zaznamu o odbornom vysetreni</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDZaznamOOdbornomVysetreni" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdLekarskaPrepustaciaSprava" type="IdLekarskaPrepustaciaSprava"/>
+
+  <xs:complexType name="IdLekarskaPrepustaciaSprava">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Externý identifikátor Lekarskej prepustacej spravy</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9]){21}"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="root" type="OIDLekarskaPrepustaciaSprava" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="IdLekarskehoVysetrenia" type="IdLekarskehoVysetrenia"/>
+
+  <xs:complexType name="IdLekarskehoVysetrenia">
+    <xs:complexContent>
+      <xs:extension base="II">
+        <xs:sequence></xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdVL" type="IdOdporucaniaNaVysetrenie" />
+  <xs:complexType name="IdOdporucaniaNaVysetrenie">
+    <xs:complexContent>
+      <xs:extension base="II">
+        <xs:sequence></xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+</xs:schema>

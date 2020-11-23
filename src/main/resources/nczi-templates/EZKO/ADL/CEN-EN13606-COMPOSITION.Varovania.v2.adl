@@ -1,0 +1,58 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Varovania.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie lekárskych varovaní o zdravotnom stave pacienta, ktoré sú súčasťou pacientskeho sumára.">
+            keywords = <"Pacientsky","sumár","Varovania","Alergia","Alergén","Nežiadúca","reakcia">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Varovania
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0002] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Neziaduca_reakcia.v2/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Varovania">
+                    description = <"Zoznam alergií /nežiadúcich reakcií pacienta">
+                >
+                ["at0002"] = <
+                    text = <"Nežiaduce reakcie">
+                    description = <"Zoznam nežiaducich reakcií pacienta.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

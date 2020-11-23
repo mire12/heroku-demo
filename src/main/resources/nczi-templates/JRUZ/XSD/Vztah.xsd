@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:element name="Vztah" type="Vztah" />
+  <xs:complexType name="Vztah">
+    <xs:annotation>
+      <xs:documentation>Vzťah</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PravnyVztah" type="PravnyVztah" />
+  <xs:complexType name="PravnyVztah" abstract="true">
+    <xs:annotation>
+      <xs:documentation>Právny vzťah.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="PracovnyUvazok" type="d14.14" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Celkový pracovný úväzok v právnom vzťahu – rozsah celkového pracovného úväzku v uvedenom právnom vzťahu v prepočte na tzv. plný úväzok, tzn. konkrétna hodnota v rozpätí od 0,001 do 1,000. Desatinné číslo. 3 desatiny.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TypPravnehoVztahu" type="IdPolozkaCiselnikaTypPravnehoVztahuZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="VykonavanaPraca" type="VykonavanaPraca" minOccurs="1" maxOccurs="unbounded" />
+          <xs:element name="ZaradenieDoEvidPoctu" type="IdPolozkaCiselnikaZaradenieDoEvidPoctu" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VykonavanaPraca" type="VykonavanaPraca" />
+  <xs:complexType name="VykonavanaPraca">
+    <xs:annotation>
+      <xs:documentation>Vykonávaná práca</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Povolanie" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MiestoVykonu" type="IdPolozkaCiselnikaMunicipality" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PoskytovanieZSvOdbore" type="IdPolozkaCiselnikaPoskytovanieZSvOdbore" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CleneniePracovnehoUvazku" type="d14.14" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Funkcia" type="IdPolozkaCiselnikaFunkciaZPr" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OsetrujuciLekar" type="OsetrujuciLekar" />
+  <xs:complexType name="OsetrujuciLekar">
+    <xs:annotation>
+      <xs:documentation>Ošetrujúci lekár špecialista, u ktorých je pacient dispenzarizovaný.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ZmluvnyLekar" type="ZmluvnyLekar" />
+  <xs:complexType name="ZmluvnyLekar">
+    <xs:annotation>
+      <xs:documentation>Zmluvný lekár - kapitujúci lekár.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+          <xs:element name="ZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="1" />
+          <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

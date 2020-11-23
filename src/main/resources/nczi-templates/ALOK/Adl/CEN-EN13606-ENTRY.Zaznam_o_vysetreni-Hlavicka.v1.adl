@@ -1,0 +1,145 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.blood_pressure.v1
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2019-11-25">
+        ["name"] = <"MNO">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci hlavičku záznamu o vykonanom vyšetrení pacienta. Záznam neobsahuje samotné údaje <items>. Dôvodom použitia je napr. prípad, keď je potrebné preniesť informáciu o zázname, ktorého obsah nesmie byť zverejnený (Reštrikčný záznam)
+">
+            keywords = <"Záznam","o","vyšetrení","pacienta","Vyšetrenie","pacienta","Odborné","vyšetrenie","Odporúčanie","na","vyšetrenie","Reštrikčný","záznam">
+        >
+    >
+
+definition
+    ENTRY[at0000.1] occurrences matches {1..1} matches {  -- Hlavička záznamu o vyšetrení
+        rc_id existence matches {1..1} matches {
+            II[at0.70] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.41] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.80","1.3.158.00165387.100.60.90","1.3.158.00165387.100.60.100"}
+                    }
+                }
+            }
+        }
+        synthesised existence matches {1..1} matches {false; false}
+        sensitivity existence matches {1..1} matches {|>1..<5|}
+        feeder_audit existence matches {1..1} matches {
+            AUDIT_INFO[at5.72] occurrences matches {1..1} matches {  -- 
+                ehr_system existence matches {1..1} matches {
+                    II[at5.76] occurrences matches {1..1} matches {*}  -- 
+                }
+                time_committed existence matches {1..1} matches {*}
+                previous_version existence matches {0..1} matches {
+                    II[at5.77] occurrences matches {1..1} matches {  -- 
+                        root existence matches {1..1} matches {
+                            OID[at5.80] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.60.90","1.3.158.00165387.100.60.110"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+                version_set_id existence matches {0..1} matches {
+                    II[at5.78] occurrences matches {1..1} matches {  -- 
+                        root existence matches {1..1} matches {
+                            OID[at5.79] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.60.90","1.3.158.00165387.100.60.110"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+                version_status existence matches {0..1} matches {
+                    CS[at0001] occurrences matches {1..1} matches {*}  -- 
+                }
+                committer existence matches {1..1} matches {
+                    II[at5.75] occurrences matches {1..1} matches {*}  -- 
+                }
+            }
+        }
+        uncertainty_expressed existence matches {1..1} matches {false; false}
+        info_provider existence matches {1..1} matches {
+            FUNCTIONAL_ROLE[at5.73] occurrences matches {0..1} matches {  -- 
+                function existence matches {0..1} matches {
+                    CV[at5.74] occurrences matches {0..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {*}
+                        codingSchemeVersion existence matches {1..1} matches {*}
+                        displayName existence matches {0..1} matches {*}
+                        codingScheme existence matches {0..1} matches {
+                            OID[at5.81] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.34"}
+                            }
+                        }
+                    }
+                }
+                performer existence matches {1..1} matches {
+                    II[at5.83] occurrences matches {1..1} matches {*}  -- 
+                }
+                healthcare_facillity existence matches {0..1} matches {
+                    II[at5.84] occurrences matches {0..1} matches {*}  -- 
+                }
+            }
+        }
+        policy_ids existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+            II[at0122] occurrences matches {1..1} matches {  -- 
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0123] occurrences matches {1..1} matches {  -- 
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.200"}
+                    }
+                }
+            }
+        }
+        items existence matches {0..1} cardinality matches {0..*; unordered} matches {*}
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0.41"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at0.70"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0000.1"] = <
+                    text = <"Hlavička záznamu o vyšetrení">
+                    description = <"Záznam o vyšetrení  - Hlavička záznamu z vyšetrenia (OV, LPS, ZV)">
+                >
+                ["at0122"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at5.72"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at5.73"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_bindings = <
+    >
+    constraint_bindings = <
+    >

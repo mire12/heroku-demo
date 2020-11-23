@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ indikátora kvality</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.155</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116996</codeValue>
+      <displayName>Skríning rakoviny krčku maternice</displayName>
+      <Skratka>A1.01</Skratka>
+      <Popis>Pomer počtu pacientiek, u ktorých bol vykonaný skríning krčka maternice, k počtu všetkých pacientiek v starostlivosti lekára vo veku 23 až 64 rokov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000117002</codeValue>
+      <displayName>Prevencia-gynekológia</displayName>
+      <Skratka>A2.01</Skratka>
+      <Popis>Pomer počtu pacientiek, u ktorých bola vykonaná gynekologická preventívna prehliadka (okrem vyšetrení v tehotenstve) k celkovému počtu kapitovaných pacientiek</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752709</codeValue>
+      <displayName>Manažment chronickej starostlivosti – diabetológia</displayName>
+      <Skratka>A2.02</Skratka>
+      <Popis>Pomer prijatí do ústavnej zdravotnej starostlivosti s dg. E10 - E14 pacientov dispenzarizovaných v diabetologickej ambulancii k celkovému počtu pacientov dispenzarizovaných v diabetologickej ambulancii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752717</codeValue>
+      <displayName>Manažment chronickej starostlivosti – pneumológia</displayName>
+      <Skratka>A2.03</Skratka>
+      <Popis>Pomer prijatí do ústavnej zdravotnej starostlivosti s dg. J45 astmatických pacientov dispenzarizovaných v pneumologickej ambulancii k celkovému počtu astmatických pacientov dispenzarizovaných v pneumologickej ambulancii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752725</codeValue>
+      <displayName>Nepredpokladané prijatia do ústavnej starostlivosti po jednodňovej chirurgii</displayName>
+      <Skratka>A2.04</Skratka>
+      <Popis>Pomer pacientov, ktorí podstúpili  jednodňovú zdravotnú starostlivosť v označených špecifických odboroch a boli následne prijatí (do 72 hodín) do ústavnej zdravotnej starostlivosti ku všetkým pacientom, ktorí podstúpili  jednodňovú zdravotnú starostlivosť  v danom špecalizačnom odbore</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752733</codeValue>
+      <displayName>Zubný kaz u poistencov vo veku do 18 rokov</displayName>
+      <Skratka>A2.05</Skratka>
+      <Popis>Pomer počtu zubných výplní u poistencov vo veku do 18 rokov veku k celkovému počtu extrakcií u poistencov vo veku do 18 rokov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752741</codeValue>
+      <displayName>Zubný kaz u poistencov vo veku nad 18 rokov</displayName>
+      <Skratka>A2.06</Skratka>
+      <Popis>Pomer počtu zubných výplní u poistencov vo veku nad 18 rokov veku k celkovému počtu extrakcií u poistencov vo veku nad 18 rokov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752758</codeValue>
+      <displayName>Úmrtnosť - celková</displayName>
+      <Skratka>B1.01</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov k počtu všetkých hospitalizovaných pacientov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752766</codeValue>
+      <displayName>Úmrtnosť po perkutánnej koronárnej intervencii</displayName>
+      <Skratka>B1.02</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov  po perkutánnej koronárnej intervencii do 30 dní k počtu hospitalizovaných pacientov,  u ktorých bola vykonaná perkutánna koronárna intervencia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752774</codeValue>
+      <displayName>Úmrtnosť po zlomenine stehennej kosti</displayName>
+      <Skratka>B1.03</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov so zlomeninou krčka stehnovej kosti (dg. S72.0 až S72.9 ) do 30 dní po neodkladnom prijatí do ústavnej zdravotnej starostlivosti k počtu všetkých pacientov prijatých s touto diagnózou  ( dg. S72.0 až S72.9 ) vo veku 65 rokov a viac</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752782</codeValue>
+      <displayName>Úmrtie na infarkt myokardu po neodkladnom prijatí (vek 35 - 74 rokov)</displayName>
+      <Skratka>B1.04</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov s infarktom myokardu (MKCH-10: I21 alebo I22) do 30 dní po neodkladnom prijatí do ústavnej zdravotnej starostlivosti k počtu všetkých pacientov prijatých s touto diagnózou vo veku 35 – 74 rokov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752790</codeValue>
+      <displayName>Úmrtie na akútnu mozgovo-cievnu príhodu</displayName>
+      <Skratka>B1.05</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov s akútnou mozgovo-cievnou príhodou (MKCH-10: I61 - I64) do 30 dní po neodkladnom prijatí do ústavnej zdravotnej starostlivosti k počtu všetkých pacientov prijatých s touto diagnózou</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752808</codeValue>
+      <displayName>Úmrtie po náhrade bedrového kĺbu</displayName>
+      <Skratka>B1.06</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov po náhrade bedrového kĺbu do 30 dní po výkone v ústavnej starostlivosti k počtu všetkých hospitalizovaných pacientov, ktorí podstúpili náhradu bedrového kĺbu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752816</codeValue>
+      <displayName>Úmrtnosť po operačných výkonoch</displayName>
+      <Skratka>B1.07</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov  do 30 dní po operačnom výkone k celkovému počtu operovaných pacientov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752824</codeValue>
+      <displayName>Úmrtnosť po intervenčných výkonoch</displayName>
+      <Skratka>B1.08</Skratka>
+      <Popis>Pomer počtu úmrtí hospitalizovaných pacientov  do 30 dní po intervenčnom výkone v odboroch interná medicína, gastroenterológia, kardiológia  k celkovému počtu pacientov podrobených intervenčným výkonom v uvedených odboroch</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752832</codeValue>
+      <displayName>Materská úmrtnosť</displayName>
+      <Skratka>B1.09</Skratka>
+      <Popis>Pomer počtu zomretých pacientiek v priamej príčinnej súvislosti s pôrodom k celkovému počtu pôrodov  na danom oddelení</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752840</codeValue>
+      <displayName>Rehospitalizovanosť celková do 30 dní</displayName>
+      <Skratka>B1.10</Skratka>
+      <Popis>Pomer počtu opakovaných hospitalizácií do 30 dní na tú istú skupinu diagnóz k počtu pacientov hospitalizovaných na tú istú skupinu diagnóz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752857</codeValue>
+      <displayName>Rehospitalizovanosť celková do 90 dní</displayName>
+      <Skratka>B1.11</Skratka>
+      <Popis>Pomer počtu opakovaných hospitalizácií do 90 dní na tú istú skupinu diagnóz k počtu pacientov hospitalizovaných na tú istú skupinu diagnóz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752865</codeValue>
+      <displayName>Reoperovanosť</displayName>
+      <Skratka>B1.12</Skratka>
+      <Popis>Pomer počtu reoperovaných pacientov do 28 dní po prepustení po operačnom výkone k celkovému počtu operovaných pacientov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752873</codeValue>
+      <displayName>Rehospitalizácia na J45.0 (Pneumónia)</displayName>
+      <Skratka>B1.13</Skratka>
+      <Popis>Pomer pacientov prijatých do ústavnej zdravotnej starostlivosti s dg. J12 až J18 do 28 dní po prepustení z ústavnej zdravotnej starostlivosti s dg. J45.0 až J45.9 ku všetkým prepusteným pacientom, ktorí boli hospitalizovaní s  dg. J45.0 až J45.9</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752881</codeValue>
+      <displayName>Dekubity</displayName>
+      <Skratka>B1.14</Skratka>
+      <Popis>Pomer počtu identifikovaných pacientov s dg. L89, vzniknutou počas hospitalizácie  ku všetkým hospitalizovaným pacientom v ústavnom zdravotníckom zariadení</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752899</codeValue>
+      <displayName>Nozokomiálna nákaza</displayName>
+      <Skratka>B1.15</Skratka>
+      <Popis>Pomer identifikovaných prípadov nozokomiálnych infekcií počas poskytovania zdravotnej starostlivosti k celkovému počtu hospitalizovaných pacientov (týkajúcich sa predovšetkým katétrov a intravenóznych kanýl)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752907</codeValue>
+      <displayName>Operovanosť</displayName>
+      <Skratka>B2.01</Skratka>
+      <Popis>Pomer počtu operovaných pacientov k  počtu hospitalizovaných pacientov na oddeleniach chirurgických odborov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752915</codeValue>
+      <displayName>Spokojnosť pacienta</displayName>
+      <Skratka>B3.01</Skratka>
+      <Popis>Prieskum štandardizovaným dotazníkom.Podľa metodiky zdravotných poisťovní zabezpečujúcou reprezentatívnosť pre každé oddelenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752923</codeValue>
+      <displayName>Index prevencie u dospelých poistencov</displayName>
+      <Skratka>C1.01</Skratka>
+      <Popis>Pomer počtu poistencov u ktorých bola vykonaná preventívna prehliadka k celkovému počtu kapitovaných poistencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752931</codeValue>
+      <displayName>Pacienti vyšetrení na ambulancii  lekárskej služby prvej pomoci (LSPP)  pre dospelých</displayName>
+      <Skratka>C1.02</Skratka>
+      <Popis>Pomer počtu kapitovaných pacientov ošetrených počas LSPP k počtu kapitovaných poistencov (týka sa pacientov v starostlivosti hodnoteného lekára všeobecnej ambulantnej zdravotnej starostlivosti pre dospelých)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752949</codeValue>
+      <displayName>Úroveň návštevnosti dospelých poistencov</displayName>
+      <Skratka>C1.03</Skratka>
+      <Popis>Pomer počtu návštev  u pacienta (výkony č. 25, 26, 29)  k  počtu kapitovaných  poistencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752956</codeValue>
+      <displayName>Manažment akútnej starostlivosti</displayName>
+      <Skratka>C2.01</Skratka>
+      <Popis>Pomer počtu neodkladných prijatí do ústavnej zdravotnej starostlivosti pre vybrané diagnózy  k počtu kapitovaných poistencov, vybrané dg.:H66.0, H66.4, H66.9;J02.0, J02.8, J02.9; J03.0; J03.8, J03.9; J04.0; J06.0, J06.8, J06.9; J31.0, J31.2; N30</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752964</codeValue>
+      <displayName>Manažment chronickej starostlivosti dospelých poistencov</displayName>
+      <Skratka>C2.02</Skratka>
+      <Popis>Pomer počtu neodkladných prijatí do ústavnej zdravotnej starostlivosti pre vybrané diagnózy k  počtu kapitovaných poistencov, vybrané dg.: J45.0, J45.1, J45.8, J45.9; J46; E10; E11; E12; E13; E14</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752972</codeValue>
+      <displayName>Index prevencie u poistencov do 1 roku veku</displayName>
+      <Skratka>D1.01</Skratka>
+      <Popis>Pomer počtu vykonaných preventívnych prehliadok u poistencov  v prvom roku veku k počtu kapitovaných poistencov  do 1 roku veku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752980</codeValue>
+      <displayName>Index prevencie u poistencov vo veku 11 a 17 rokov</displayName>
+      <Skratka>D1.02</Skratka>
+      <Popis>Pomer počtu vykonaných preventívnych vyšetrení celkového cholesterolu v 11 a 17 roku života (výkon č. 159b) u poistencov k celkovému počtu poistencov v tejto vekovej skupine v starostlivosti lekára</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000752998</codeValue>
+      <displayName>Pacienti vyšetrení na ambulancii lekárskej služby prvej pomoci (LSPP)  pre deti a dorast</displayName>
+      <Skratka>D1.03</Skratka>
+      <Popis>Pomer počtu kapitovaných pacientov ošetrených počas LSPP k počtu kapitovaných poistencov (týka sa pacientov v starostlivosti hodnoteného lekára všeobecnej ambulantnej zdravotnej starostlivosti pre deti a dorast)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753004</codeValue>
+      <displayName>Úroveň návštevnosti detí a dorastu</displayName>
+      <Skratka>D1.04</Skratka>
+      <Popis>Pomer počtu  návštev v domácnosti (výkony č. 25, 26, 29)  k počtu kapitovaných poistencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753012</codeValue>
+      <displayName>Manažment akútnej starostlivosti u detí a dorastu</displayName>
+      <Skratka>D2.01</Skratka>
+      <Popis>Pomer počtu neodkladných prijatí do ústavnej zdravotnej starostlivosti pre vybrané diagnózy k počtu kapitovaných poistencov, vybrané dg.:H66.0, H66.4, H66.9;J02.0, J02.8, J02.9; J03.0; J03.8, J03.9; J04.0; J06.0, J06.8, J06.9; J31.0, J31.2; N30</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753020</codeValue>
+      <displayName>Indikovanie výkonov SVLZ poskytovateľom špecializovanej ambulantnej starostlivosti (ŠAS)</displayName>
+      <Skratka>E1.01</Skratka>
+      <Popis>Pomer priemerných nákladov na výkony SVLZ indikované jednému jednoznačne identifikovanému pacientovi poskytovateľom ŠAS k  priemerným nákladom na výkony SVLZ indikované jednému pacientovi všetkými poskytovateľmi ŠAS príslušnej odbornosti.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753038</codeValue>
+      <displayName>Indikovanie výkonov SVLZ poskytovateľom všeobecnej ambulantnej starostlivosti (VAS)</displayName>
+      <Skratka>E1.02</Skratka>
+      <Popis>Pomer priemerných nákladov na výkony SVLZ indikované jednému jednoznačne identifikovanému pacientovi poskytovateľom VAS k priemerným nákladom na výkony SVLZ indikované jednému pacientovi všetkými poskytovateľmi VAS príslušnej odbornosti.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753046</codeValue>
+      <displayName>Indikovanie výkonov dopravnej služby poskytovateľom špecializovanej ambulantnej starostlivosti (ŠAS)</displayName>
+      <Skratka>E1.03</Skratka>
+      <Popis>Pomer nákladov na výkony dopravnej služby indikované poskytovateľom ŠAS k celkovým nákladom na výkony dopravnej služby.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753053</codeValue>
+      <displayName>Indikovanie výkonov dopravnej služby poskytovateľom všeobecnej  ambulantnej starostlivosti (VAS)</displayName>
+      <Skratka>E1.04</Skratka>
+      <Popis>Pomer nákladov na výkony dopravnej služby indikované poskytovateľmi VAS k celkovým nákladom na výkony dopravnej služby.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753061</codeValue>
+      <displayName>Frekvencia pacientov v špecializovanej ambulantnej starostlivosti (ŠAS)</displayName>
+      <Skratka>E1.05</Skratka>
+      <Popis>Pomer počtu jednoznačne identifikovaných pacientov vyšetrených v ambulancii (ŠAS) k celkovému počtu pacientov ošetrených v ambulancii v sledovanom období.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753079</codeValue>
+      <displayName>Frekvencia pacientov vo všeobecnej ambulantnej starostlivosti (VAS)</displayName>
+      <Skratka>E1.06</Skratka>
+      <Popis>Pomer počtu jednoznačne identifikovaných pacientov vyšetrených v ambulancii (VAS) k celkovému počtu pacientov ošetrených v ambulancii v sledovanom období.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753087</codeValue>
+      <displayName>Preskripcia liekov v špecializovanej ambulantnej starostlivosti (ŠAS)</displayName>
+      <Skratka>E1.07</Skratka>
+      <Popis>Pomer priemerných nákladov na lieky predpísané a odporučené poskytovateľom ŠAS jednému jednoznačne identifikovanému pacientovi k priemerným nákladom na lieky predpísané a odporučené jednému pacientovi všetkými poskytovateľmi ŠAS v príslušnej odbornosti.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753095</codeValue>
+      <displayName>Preskripcia zdravotníckych pomôcok v špecializovanej ambulantnej starostlivosti (ŠAS)</displayName>
+      <Skratka>E1.08</Skratka>
+      <Popis>Pomer priemerných nákladov na zdravotnícke pomôcky predpísané poskytovateľom ŠAS jednému jednoznačne identifikovanému pacientovi k priemerným nákladom na zdravotnícke pomôcky predpísané jednému pacientovi všetkými poskytovateľmi ŠAS v príslušnej odbornosti.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753103</codeValue>
+      <displayName>Preskripcia liekov vo všeobecnej  ambulantnej starostlivosti  (VAS)</displayName>
+      <Skratka>E1.09</Skratka>
+      <Popis>Pomer priemerných nákladov na lieky predpísané poskytovateľom VAS (len vlastná preskripcia) jednému jednoznačne identifikovanému pacientovi k priemerným nákladom na lieky predpísané jednému pacientovi všetkými poskytovateľmi VAS v príslušnej odbornosti.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000753111</codeValue>
+      <displayName>Jednodňová starostlivosť</displayName>
+      <Skratka>E1.10</Skratka>
+      <Popis>Pomer počtu výkonov v príslušnom odbore poskytnutých formou jednodňovej starostlivosti k celkovému počtu identických  výkonov poskytnutých v ústavnej starostlivosti v príslušnom odbore.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208874552</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXXXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

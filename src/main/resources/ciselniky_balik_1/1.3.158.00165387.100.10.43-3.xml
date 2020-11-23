@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Regionálna štatistická územná jednotka 3 - kraj</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2019-10-30</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Kód položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Názov položky (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>3</IdAtributu>
+      <Nazov>Názov položky (en) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>4</IdAtributu>
+      <Nazov>Skrátený názov položky (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>5</IdAtributu>
+      <Nazov>Skratka názvu položky (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>6</IdAtributu>
+      <Nazov>Doplňujúci obsah (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>7</IdAtributu>
+      <Nazov>Merná jednotka (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>8</IdAtributu>
+      <Nazov>Poznámka</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>9</IdAtributu>
+      <Nazov>Zahŕňa (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>10</IdAtributu>
+      <Nazov>Tiež zahŕňa (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>11</IdAtributu>
+      <Nazov>Vylučuje (sk) (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>12</IdAtributu>
+      <Nazov>Dátum platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>13</IdAtributu>
+      <Nazov>Začiatok účinnosti (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>14</IdAtributu>
+      <Nazov>Koniec účinnosti (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>15</IdAtributu>
+      <Nazov>Logické poradie položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>16</IdAtributu>
+      <Nazov>Legislatívna uznateľnosť (úč/kon.úč)</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.43</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2019-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116053</codeValue>
+      <displayName>Bratislavský kraj</displayName>
+      <Skratka>SK010</Skratka>
+      <Popis>Bratislavský kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK010</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Bratislavský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Bratislava</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Bratislavský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408534</codeValue>
+      <displayName>Trnavský kraj</displayName>
+      <Skratka>SK021</Skratka>
+      <Popis>Trnavský kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK021</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Trnavský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Trnava</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Trnavský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>2</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408542</codeValue>
+      <displayName>Trenčiansky kraj</displayName>
+      <Skratka>SK022</Skratka>
+      <Popis>Trenčiansky kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK022</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Trenčiansky kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Trenčín</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Trenčiansky kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>3</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408559</codeValue>
+      <displayName>Nitriansky kraj</displayName>
+      <Skratka>SK023</Skratka>
+      <Popis>Nitriansky kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK023</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Nitriansky kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Nitra</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Nitriansky kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>4</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408567</codeValue>
+      <displayName>Žilinský kraj</displayName>
+      <Skratka>SK031</Skratka>
+      <Popis>Žilinský kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK031</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Žilinský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Žilina</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Žilinský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>5</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000116061</codeValue>
+      <displayName>Banskobystrický kraj</displayName>
+      <Skratka>SK032</Skratka>
+      <Popis>Banskobystrický kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK032</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Banskobystrický kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Banská Bystrica</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Banskobystrický kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>6</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408575</codeValue>
+      <displayName>Prešovský kraj</displayName>
+      <Skratka>SK041</Skratka>
+      <Popis>Prešovský kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK041</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Prešovský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Prešov</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Prešovský kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>7</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408583</codeValue>
+      <displayName>Košický kraj</displayName>
+      <Skratka>SK042</Skratka>
+      <Popis>Košický kraj</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SK042</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Košický kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Region of Košice</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Košický kraj</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>8</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>13.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.08.2004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000408591</codeValue>
+      <displayName>Zahraničie</displayName>
+      <Skratka>SKZZ</Skratka>
+      <Popis>Zahraničie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SKZZ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zahraničie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Extra-regio</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Zahraničie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>06.12.2013</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.2013</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>22.09.2014</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020629341</codeValue>
+      <displayName>Zahraničie</displayName>
+      <Skratka>SKZZZ</Skratka>
+      <Popis>Zahraničie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>SKZZZ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zahraničie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Extra-regio</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS>Zahraničie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>22.09.2014</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.09.2014</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089888750</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>SKNEZ</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

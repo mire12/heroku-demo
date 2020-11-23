@@ -1,0 +1,125 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Krvna_skupina.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o výsledkoch vyšetrení pacienta - krvná skupina.">
+            keywords = <"Krvná skupina">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Krvná skupina
+        items existence matches {0..1} cardinality matches {2..*; unordered} matches {
+            ELEMENT[at0318] occurrences matches {1..1} matches {  -- Názov krvnej skupiny
+                value existence matches {0..1} matches {
+                    CV[at0009] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {" "}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0001] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.66"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0326] occurrences matches {1..1} matches {  -- Dátum vyšetrenia
+                value existence matches {0..1} matches {
+                    DATE[at0328] occurrences matches {1..1} matches {  -- 
+                        date existence matches {1..1} matches {yyyy-mm-dd}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0018] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0002] occurrences matches {1..1} matches {  -- II
+                root existence matches {1..1} matches {
+                    OID[at0003] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.30"}
+                    }
+                }
+                extension existence matches {1..1} matches {*}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Krvná skupina">
+                    description = <"Vyšetrenie krvnej skupiny pacienta.">
+                >
+                ["at0318"] = <
+                    text = <"Názov krvnej skupiny">
+                    description = <"Výsledok testu krvnej skupiny pacienta. Výber krvnej skupiny je z číselníka typov krvných skupín 1.3.158.00165387.100.10.66">
+                >
+                ["at0326"] = <
+                    text = <"Dátum vyšetrenia">
+                    description = <"Dátum vyšetrenia krvnej skupiny. Dátum nesmie byť neskôr ako je dátum zaznamenania záznamu do doplnkových zdravotných záznamov. ">
+                >
+                ["at0016"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka zdravotníckeho pracovníka k vyšetreniu krvnej skupiny.">
+                >
+                ["at0018"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0009"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0328"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0002"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0003"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+            >
+        >
+    >

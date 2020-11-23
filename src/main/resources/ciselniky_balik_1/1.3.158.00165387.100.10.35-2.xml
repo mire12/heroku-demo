@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Druh očkovaní</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.35</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000115915</codeValue>
+      <displayName>Diftéria</displayName>
+      <Skratka>D</Skratka>
+      <Popis>Diftéria (Záškrt)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000115923</codeValue>
+      <displayName>Tetanus</displayName>
+      <Skratka>T</Skratka>
+      <Popis>Tetanus</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346304</codeValue>
+      <displayName>Pertussis</displayName>
+      <Skratka>P</Skratka>
+      <Popis>Pertussis (Čierny kašeľ)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346320</codeValue>
+      <displayName>Morbilli</displayName>
+      <Skratka>MO</Skratka>
+      <Popis>Morbilli (Osýpky)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346346</codeValue>
+      <displayName>Mumps</displayName>
+      <Skratka>M</Skratka>
+      <Popis>Mumps (Príušnice)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346379</codeValue>
+      <displayName>Rubeola</displayName>
+      <Skratka>R</Skratka>
+      <Popis>Rubeola (Ružienka)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346395</codeValue>
+      <displayName>Poliomyelitis</displayName>
+      <Skratka>IPV</Skratka>
+      <Popis>Poliomyelitis (Detská obrna)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346411</codeValue>
+      <displayName>Vírusová hepatitída B</displayName>
+      <Skratka>VHB</Skratka>
+      <Popis>Vírusová hepatitída B</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776773</codeValue>
+      <displayName>Vírusová hepatitíde A</displayName>
+      <Skratka>VHA</Skratka>
+      <Popis>Vírusová hepatitída A</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346437</codeValue>
+      <displayName>Hemofilové invazívne infekcie</displayName>
+      <Skratka>HIB</Skratka>
+      <Popis>Hemofilové invazívne infekcie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000346452</codeValue>
+      <displayName>Invazívne pneumokokové ochorenia</displayName>
+      <Skratka>IPO</Skratka>
+      <Popis>Invazívne pneumokokové ochorenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776898</codeValue>
+      <displayName>Ochorenia vyvolané rotavírusmi</displayName>
+      <Skratka>RTV</Skratka>
+      <Popis>Ochorenia vyvolané rotavírusmi</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776781</codeValue>
+      <displayName>Variola</displayName>
+      <Skratka>VRL</Skratka>
+      <Popis>Variola (Pravé kiahne)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776872</codeValue>
+      <displayName>Varicella</displayName>
+      <Skratka>VRC</Skratka>
+      <Popis>Varicella (Ovčie kiahne)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776807</codeValue>
+      <displayName>Cholera</displayName>
+      <Skratka>CHL</Skratka>
+      <Popis>Cholera</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776815</codeValue>
+      <displayName>Chrípka</displayName>
+      <Skratka>CHR</Skratka>
+      <Popis>Chrípka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776823</codeValue>
+      <displayName>Žltá zimnica</displayName>
+      <Skratka>ZZ</Skratka>
+      <Popis>Žltá zimnica</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776856</codeValue>
+      <displayName>Brušný týfus</displayName>
+      <Skratka>BTF</Skratka>
+      <Popis>Brušný týfus</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776914</codeValue>
+      <displayName>Rabies</displayName>
+      <Skratka>BES</Skratka>
+      <Popis>Rabies (Besnota)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776948</codeValue>
+      <displayName>Japonská encefalitída B</displayName>
+      <Skratka>JEF</Skratka>
+      <Popis>Japonská encefalitída B</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776955</codeValue>
+      <displayName>Kliešťová encefalitída</displayName>
+      <Skratka>KEF</Skratka>
+      <Popis>Kliešťová encefalitída</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777029</codeValue>
+      <displayName>Meningokoková meningitída</displayName>
+      <Skratka>MKM</Skratka>
+      <Popis>Meningokoková meningitída</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777037</codeValue>
+      <displayName>Ochorenia vyvolané ľudskými papilomavírusmi</displayName>
+      <Skratka>HPV</Skratka>
+      <Popis>Ochorenia vyvolané ľudskými papilomavírusmi</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777003</codeValue>
+      <displayName>Tuberkulóza</displayName>
+      <Skratka>TBC</Skratka>
+      <Popis>Tuberkulóza</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869784</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

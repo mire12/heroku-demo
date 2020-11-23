@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="http://eHealth.gov.sk/Allocation/v1"
+		   elementFormDefault="qualified"
+>
+	<xs:include schemaLocation="../_shared/Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/Obecne.xsd" />
+
+	<!-- Request -->
+	<xs:element name="NotifikacnaSprava" type="NotifikacnaSprava" />
+	<xs:element name="SpravyCriteria" type="SpravyCriteria" />
+	<xs:element name="PracovnikOdbornehoUtvaru" type="PracovnikOdbornehoUtvaru" />
+	<xs:element name="IdentifikatorSpravy" type="IdentifikatorSpravy"/>
+	<xs:element name="Sprava" type="Sprava"/>
+	<xs:element name="SpravyZoznam" type="SpravyZoznam" />
+  <xs:element name="SpravyZoznam_v2" type="SpravyZoznam_v2" />
+  <xs:element name="IdentifikatorPrZS" type="IdentifikatorPrZS"/>
+  <xs:element name="PocetSprav" type="PocetSprav"/>
+  <xs:element name="SpravyPrePrZSCriteria" type="SpravyPrePrZSCriteria"/>
+  <xs:element name="IdentifikatorSpravyPrePrZS" type="IdentifikatorSpravyPrePrZS"/>
+  <xs:element name="SpravaZdravPrac" type="SpravaZdravPrac"/>
+  <xs:element name="SpravaNaKontakt" type="SpravaNaKontakt" />
+  <xs:element name="SpravaOUPZS" type="SpravaOUPZS" />
+  <xs:element name="IdentifikatorySprav" type="IdentifikatorySprav"/>
+  <xs:element name="ZneplatniSpravuPrePrZS_Request" type="ZneplatniSpravuPrePrZS_Request" />
+
+
+  <xs:complexType name="Sprava">
+    <xs:sequence>
+      <xs:element name="IdSablony" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOdoslaniaNotifikacie" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DatumOdoslaniaDoSchrankySprav" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ExterneIdSpravy" type="II" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Parameter" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="ExternyNotifikacnyKontakt" type="NotifikacnyKontakt" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParameterSpravy">
+    <xs:sequence>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Hodnota" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NotifikacnyKontakt">
+    <xs:choice minOccurs="1" maxOccurs="1">
+      <xs:element name="telefonneCislo" type="xs:string"/>
+      <xs:element name="emailAdresa" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+	<xs:complexType name="NotifikacnaSprava">
+		<xs:sequence>
+      <xs:element name="PredmetSpravy" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[\p{L}\p{Nd}\s_\-\(\)\{\}\.\|\\/&quot;]*" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TeloSpravy" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[\p{L}\p{Nd}\s_\-\(\)\{\}\.\|\\/&quot;]*" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+			<xs:element name="DatumOdoslania" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IdPacienta" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+  <xs:complexType name="DetailSpravy">
+    <xs:sequence>
+      <xs:element name="DatumOdoslania" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdSpravy" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PredmetSpravy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StavPrecitania" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TeloSpravy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DetailSpravy_v2">
+    <xs:sequence>
+      <xs:element name="DatumOdoslania" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdSpravy" type="xs:long" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PredmetSpravy" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="StavPrecitania" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TeloSpravy" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Parametre" type="ParametreSpravy" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParametreSpravy">
+    <xs:sequence>
+      <xs:element name="Parameter" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpravyCriteria">
+		<xs:sequence>
+			<xs:element name="ZdravotnickyPracovnik" type="PracovnikOdbornehoUtvaru" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DatumPrijatiaOd" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DatumPrijatiaDo" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="StavPrecitania" type="StavPrecitaniaEnum" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="StavPrecitaniaEnum">
+		<xs:annotation>
+			<xs:documentation>
+				Umožňuje zadefinovať v akom stave chcem vyhľadať požadovaný výsledok.
+				Je možné definovať žiadny alebo práve jeden stav.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VSETKY">
+				<xs:annotation>
+					<xs:documentation>
+						Všetky spravy
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PRECITANE">
+				<xs:annotation>
+					<xs:documentation>
+						Len prečítane správy
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NEPRECITANE">
+				<xs:annotation>
+					<xs:documentation>
+						Len neprečítané správy
+					</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="SpravyZoznam">
+		<xs:sequence>
+			<xs:element name="Sprava" type="DetailSpravy" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+  <xs:complexType name="SpravyZoznam_v2">
+    <xs:sequence>
+      <xs:element name="Sprava" type="DetailSpravy_v2" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentifikatorSpravy">
+		<xs:sequence>
+			<xs:element name="IdSpravy" type="xs:long" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ZdravotnickyPracovnik" type="PracovnikOdbornehoUtvaru" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+  <xs:complexType name="IdentifikatorPrZS">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PocetSprav">
+    <xs:sequence>
+      <xs:element name="PocetNeprecitanychSprav" type="xs:int" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpravyPrePrZSCriteria">
+    <xs:sequence>
+      <xs:element name="DatumPrijatiaDo" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumPrijatiaOd" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StavPrecitania" type="StavPrecitaniaEnum" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentifikatorSpravyPrePrZS">
+    <xs:sequence>
+      <xs:element name="IdSpravy" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ZneplatniSpravuPrePrZS_Request">
+    <xs:sequence>
+      <xs:element name="IdSpravy" type="xs:long" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ExterneIdSpravy" type="II" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpravaZdravPrac">
+    <xs:sequence>
+      <xs:element name="IdSablony" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ZdravPrac" type="PracovnikOdbornehoUtvaru" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOdoslaniaDoSchrankySprav" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ParameterZdravPrac" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpravaNaKontakt">
+    <xs:sequence>
+      <xs:element name="IdSablony" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ExternyNotifikacnyKontakt" type="NotifikacnyKontakt" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Parameter" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpravaOUPZS">
+    <xs:sequence>
+      <xs:element name="IdSablony" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OdbornyUtvar" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="IdentifikaciaOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="OdoslatNotifikacie" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DatumOdoslaniaDoSchrankySprav" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Parameter" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="SpravaNaZapisZdravPrac" type="SpravaNaZapisZdravPrac" />
+  <xs:complexType name="SpravaNaZapisZdravPrac">
+    <xs:sequence>
+      <xs:element name="DatumOdoslania" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ZdravPrac" type="PracovnikOdbornehoUtvaru" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PredmetSpravy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TeloSpravy" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ParametrizovanyText" type="ParametrizovanyText"/>
+  <xs:complexType name="ParametrizovanyText">
+    <xs:sequence>
+      <xs:element name="PredmetText" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TeloText" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PredmetTextNotf" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TeloTextNotf" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="SpravaNaZapisPrZS" type="SpravaNaZapisPrZS"/>
+  <xs:complexType name="SpravaNaZapisPrZS">
+    <xs:sequence>
+      <xs:element name="PredmetSpravy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PredmetSpravyNotf" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TeloSpravy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TeloSpravyNotf" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+      <xs:element name="DatumOdoslaniaNotifikacie" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOdoslaniaDoSchrankySprav" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="TypSablony" type="TypSablony"/>
+  <xs:complexType name="TypSablony">
+    <xs:sequence>
+      <xs:element name="IdSablony" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="PozadovaneParametreSablony" type="ParameterSpravy" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IdentifikatorySprav">
+    <xs:sequence>
+      <xs:element name="IdSpravy" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdNotfSpravy" type="xs:long" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

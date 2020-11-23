@@ -1,0 +1,151 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Pouzivana_zdravotnicka_pomocka.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o lekárskych pomôckach pacienta">
+            keywords = <"Implantát","Zdravotnícka pomôcka">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Používaná zdravotnícka pomôcka
+        items existence matches {0..1} cardinality matches {1..*; ordered} matches {
+            ELEMENT[at0104] occurrences matches {0..1} matches {  -- Druh
+                value existence matches {0..1} matches {
+                    CV[at0039] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0001] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.126"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {*}
+                        codingSchemeName existence matches {0} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0132] occurrences matches {0..1} matches {  -- Dátum implantácie
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0140] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0387] occurrences matches {0..1} matches {  -- Obchodný názov
+                value existence matches {0..1} matches {
+                    II[at0003] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0004] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.40.10"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0006] occurrences matches {0..1} matches {  -- Popis zdravotníckej pomôcky 
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0044] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/; ""}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0007] occurrences matches {1..1} matches {  -- II
+                root existence matches {1..1} matches {
+                    OID[at0008] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.100"}
+                    }
+                }
+                extension existence matches {1..1} matches {*}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Používaná zdravotnícka pomôcka">
+                    description = <"Zdravotnícka pomôcka alebo implantát zavedený pacientovi.">
+                >
+                ["at0039"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0006"] = <
+                    text = <"Popis zdravotníckej pomôcky ">
+                    description = <"Popis zdravotnej pomôcky v prípade, že nebol dohľadaný druh ZP v číselníku.">
+                >
+                ["at0003"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0004"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0007"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0008"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0044"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0104"] = <
+                    text = <"Druh">
+                    description = <"Druh zdravotníckej pomôcky alebo implantátu zavedeného pacientovi. Využíva sa číselník typov zdravotníckych pomôcok a implantátov 1.3.158.00165387.100.10.126">
+                >
+                ["at0132"] = <
+                    text = <"Dátum implantácie">
+                    description = <"Dátum implantácie zdravotníckej pomôcky resp. implantátu pacientovi. dátum implantácie nemôže byť neskôr ako je dátum zaznamenania informácie do pacientského sumáru.">
+                >
+                ["at0387"] = <
+                    text = <"Obchodný názov">
+                    description = <"Obchodný názov zdravotníckej pomôcky implantovanej pacientovi podľa registra zdravotníckych pomôcok.
+">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+                ["at0140"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+            >
+        >
+    >

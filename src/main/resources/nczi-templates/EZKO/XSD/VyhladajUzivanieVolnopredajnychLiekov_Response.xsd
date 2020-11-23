@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="VyhladajUzivanieVolnopredajnychLiekovVystup" type="tns:VyhladajUzivanieVolnopredajnychLiekovVystup" />
+  <xs:complexType name="VyhladajUzivanieVolnopredajnychLiekovVystup">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="DrugTotalCount" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lieky" type="tns:UzivanieVolnopredajnehoLiekuVystup" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="UzivanieVolnopredajnehoLiekuVystup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UzivanieVolnopredajnehoLieku">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="KodSUKLText" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="UzivanieVolnopredajnehoLieku">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPacienta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumOd" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumDo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nazov" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="KodSUKL" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PocetBaleni" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Popis" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  
+  <xs:complexType name="AnonymizedPersonalUsedDrug">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UzivanieVolnopredajnehoLiekuVystup">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="CreateDate" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PatientId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+
+</xs:schema>

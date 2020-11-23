@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:element name="VyhladajLiecivaVystup" type="VyhladajLiecivaVystup" />
+  <xs:complexType name="VyhladajLiecivaVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupom služby je množina liečiv.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferencneSkupiny" type="ReferencnaSkupinaInfo" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Výsledný zoznam referenčných skupín.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReferencnaSkupinaInfo">
+    <xs:annotation>
+      <xs:documentation>Základné informácie liečiva sú reprezentované údajmi referenčnej skupiny.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AtcKod" type="IdPolozkaCiselnikaATC" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód liečiva tak ako je uvedený v prílohe č. 1 zákona 362/2011.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CestaPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Cesta podania tak ako je uvedený v prílohe č. 1 zákona 362/2011. Atribút je naplnený popisom položky číselníka CestaPodanie, nie ID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvuReferencnejSkupiny" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu obsahuje informáciu o sile, cesta podania, liekovej forme a veľkosti balenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReferencnejSkupiny" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Jednoznačný identifikátor referenčnej skupiny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeGenerickyPredpisovane" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či je toto liečivo genericky predpisované k danému dátumu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov referenčnej skupiny a teda liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

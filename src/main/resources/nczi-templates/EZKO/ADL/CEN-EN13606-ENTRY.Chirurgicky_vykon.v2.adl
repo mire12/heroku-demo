@@ -1,0 +1,136 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Chirurgicky_vykon.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o osobnej anamnéze a zdravotných problémoch pacienta. Informácie sú poskytované o chirurgických výkonoch.">
+            keywords = <"Osobná anamnéza","Chirurgické výkony">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Chirurgický / invazívny výkon
+        items existence matches {0..1} cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0196] occurrences matches {1..*} matches {  -- Typ
+                value existence matches {0..1} matches {
+                    CV[at0009] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {" "}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0001] occurrences matches {0..1} matches {  -- OID
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.20.26"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                        codingSchemeName existence matches {0} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0011] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/; ""}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0006] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                        codingSchemeName existence matches {1..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..*} matches {  -- Približný dátum výkonu
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0007] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {*}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0004] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {*}
+                root existence matches {1..1} matches {
+                    OID[at0005] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {0..1} matches {"1.3.158.00165387.100.50.40.20"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Chirurgický / invazívny výkon">
+                    description = <"Vykonaný závažný chirurgický výkon.">
+                >
+                ["at0008"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka lekára k chirurgickému výkonu. Poznámka je popísaná voľným textom a slúži ako doplňujúca informácia k vybranému typu chirurgického výkonu. ">
+                >
+                ["at0009"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0011"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0196"] = <
+                    text = <"Typ">
+                    description = <"Typ chirurgického výkonu je vyberaný z číselníka chirurgických výkonov 1.3.158.00165387.100.20.26.">
+                >
+                ["at0001"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0006"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"Približný dátum výkonu">
+                    description = <"Približný dátum vykonania chirurgického výkonu. Nesmie byť neskôr ako dátum zaznamenia do doplnkových zdravotných záznamov. ">
+                >
+                ["at0004"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0005"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Cluster definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (zneplatnil záznam/ vykonal storno záznamu) ">
+                >
+                ["at0007"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+            >
+        >
+    >

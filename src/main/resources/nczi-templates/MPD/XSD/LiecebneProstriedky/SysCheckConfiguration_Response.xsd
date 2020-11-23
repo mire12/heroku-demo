@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Common/v1" targetNamespace="http://eHealth.gov.sk/Common/v1" elementFormDefault="qualified">
+	
+	<xs:element name="SysCheckConfiguration_Response" type="SysCheckConfiguration_Response"/>
+  <xs:complexType name="SysCheckConfiguration_Response">
+		<xs:sequence>
+			<xs:element name="Status" type="Status" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Zoznam stavov komponentov</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+  <xs:complexType name="Status">
+    <xs:sequence>
+			<xs:element name="Component" type="ComponentType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifikátor komponentu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ErrorCode" type="ErrorCodeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Kód chyby</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Detail" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Textový popis chyby. Naplnený len v prípade, ak rozširuje alebo upresňuje generálny názov chyby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="ComponentType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9\.\-_/\(\) ]+" />
+      <xs:minLength value="1" />
+      <xs:maxLength value="200" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ErrorCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9]+" />
+      <xs:minLength value="0" />
+      <xs:maxLength value="7" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+	
+</xs:schema>

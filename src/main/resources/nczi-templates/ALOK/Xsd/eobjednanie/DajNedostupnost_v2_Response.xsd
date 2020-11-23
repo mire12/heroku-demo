@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="DajNedostupnostResponse" type="tns:DajNedostupnostResponse" />
+
+  <xs:complexType name="DajNedostupnostResponse">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Nedostupnosti" nillable="true" type="tns:ArrayOfNedostupnost">
+        <xs:annotation>
+          <xs:documentation>Pole Nedostupností</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfNedostupnost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Nedostupnost" nillable="true" type="tns:Nedostupnost" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Nedostupnost">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumCasOd" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Začiatok nedostupnosti. Od tohto dátumu a času už OÚ PZS neposkytuje zdravotnú starostlivosť.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumCasDo" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Koniec nedostupnosti. Do tohto dátumu a času ešte OÚ PZS neposkytuje zdravotnú starostlivosť.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="IdNedostupnosti" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Interný identifikátor v ISOO. Ak parameter nie je vyplnený, system vytvorí novú nedostupnosť. Ak je parameter vyplnený, systém zmení existujúcu nedostupnosť.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="IdKalendara" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Kalendar, ku ktorému sa nedostupnosť vzťahuje.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Textová poznámka zadaná lekárom. Zobrazí sa na NZP. Pacientovi poskytuje dodatočnú informáciu, napríklad kto zastupuje počas nedostupnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="TypNedostupnosti" xmlns:q20="CEN/13606/RM" type="q20:CV">
+        <xs:annotation>
+          <xs:documentation>Referencia do číselníka 1.3.158.00165387.100.10.323.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ZastupujeOuPZS" xmlns:q21="CEN/13606/RM" type="q21:II">
+        <xs:annotation>
+          <xs:documentation>JRUZ ID OÚ PZS, ktoré zastupuje počas nedostupnosti. Funkcionalita momentálne nie je podporovaná, bude realizovaná v balíku 2.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externé ID pridelené IS PZS. Musí byť konzistentné s IdNedostupnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

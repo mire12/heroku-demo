@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/eHealthArchivation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/eHealthArchivation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd" /> 
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="DajOriginalnyZdravotnyZaznam_Request" type="tns:DajOriginalnyZdravotnyZaznam_Request" />
+  <xs:complexType name="DajOriginalnyZdravotnyZaznam_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PatientId" xmlns:q1="http://eHealth.gov.sk/EzkCommon/v1" type="q1:IdPrjZS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RC_Id" xmlns:q2="CEN/13606/RM" type="q2:II" />
+    </xs:sequence>
+  </xs:complexType>
+    
+</xs:schema>

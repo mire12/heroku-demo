@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/ZnalostnaInformacia.xsd" />
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/Cena.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="DajDetailLiekuVystup" type="DajDetailLiekuVystup" />
+  <xs:complexType name="DajDetailLiekuVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupné informácie požadovaného lieku. Všetky údaje sú platné v registri k momentu volania služby.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LiekDetail" type="DajDetailLiekuInfo" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Znalosti" type="ZnalostnaInformacia" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DajDetailLiekuInfo">
+    <xs:annotation>
+      <xs:documentation>Výstupom služby sú detailné informácie o požadovanom lieku.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AtcKod" type="IdPolozkaCiselnikaATC" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CestaPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Spôsob podania lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumUvedeniaNaTrhSR" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum uvedenia na trh SR.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DostupnostLiekuVSR" type="IdPolozkaCiselnikaDostupnostLiekuVSR" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dostupnosť lieku v SR.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GTIN" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Používaný obvykle vo formáte čiarového EAN kódu na lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdLieku" type="IdLiek" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Interný identifikátor lieku v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikacnaSkupina" type="IdPolozkaCiselnikaIndikacnaSkupina" minOccurs="1" maxOccurs="1" />
+      <xs:element name="JednotkovaDavka" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Jednotková dávka lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeKategorizovany" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je liek kategorizovaný v čase volania služby.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JePredpisovanyGenericky" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či je liek predpisovaný genericky podľa z. 362/23011</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeRegistrovany" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Je registrovaný ak je aktuálny systémový dátum a čas v rozsahu platnosti registračných údajov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LiekovaForma" type="IdPolozkaCiselnikaLiekovaForma" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Lieková forma lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObsahAntibiotik" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje o obsahu protimikrobiálnych antibiotík. True hodnota znamená, že ich obsahuje.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObsahChemoterapeutik" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či liek obsahuje chemoterapeutiká.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OPL" type="IdPolozkaCiselnikaOmamnePsychotropneLatky" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o obsahu omamaných a psychotropných látok v lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginalitaLieku" type="IdPolozkaCiselnikaOriginalita" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Označenie, či je liek pôvodný, alebo generikum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pil" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príbalové informácie pre pacienta (PIL)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostRegistracieDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti registrácie lieku. Ak nie je vyplnené pre registrovaný liek, tak bez obmedzenia platnosti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostRegistracieOd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti registrácie lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RegistracneCislo" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Pridelené registračné číslo lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Spc" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Súhrn charakteristických vlastností lieku (SPC)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StavRegistracie" type="IdPolozkaCiselnikaStavRegistracie" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Stav registrácie lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuklKod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ŠÚKL kód lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UradneUrcenaCena" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úradne určená cena nekategorizovaného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VelkostBalenia" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Veľkosť balenia v kusových, objemových alebo hmotnostných jednotkách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ViacnasobnaPreskripcia" type="IdPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je možné daný liek predpísať na viacnásobný recept.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ViazanostNaPredpis" type="IdPolozkaCiselnikaViazanostNaLP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Viazanosť na lekársky predpis.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VyrobcaLieku" type="IdPolozkaCiselnikaVyrobcaLieku" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Výrobca daného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZlozenieLieku" type="ZlozkaLieku" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zložka - liečivo daného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UpozornenieSUKL" type="UpozornenieSUKL" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Upozornenia, ktoré vydá ŠÚKL pre daný liek.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KategorizacneUdaje" type="DajDetailLiekuKategorizacia" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je daný liek kategorizovaný, eviduje sa k nemu aj doplňujúca množina údajov vyplývajúcich z kategorizácie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZlozkaLieku">
+    <xs:annotation>
+      <xs:documentation>Zložka lieku - účinná alebo pomocná látka.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AtcKod" type="IdPolozkaCiselnikaATC" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InnKod" type="IdPolozkaCiselnikaINN" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>INN kód liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Mnozstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>množstvo zložky v jednotkovej dávke.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UcinnaLatka" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Označenie účinnej látky. Látky označené false sú pomocné.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UpozornenieSUKL">
+    <xs:annotation>
+      <xs:documentation>Priestor pre zaznamenanie rôznych upozornení k lieku, ktoré je možné aplikovať alebo zobraziť pri preskripcii a dispenzácii, napr. zákaz výdaja určitej šarže lieku, informácia o dočasnej nedostupnosti lieku a pod.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti upozornenia</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti upozornenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis upozornenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DovodUpozornenia" type="IdPolozkaCiselnikaLiekoveUpozornenieTyp" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dovod upozornenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DajDetailLiekuKategorizacia">
+    <xs:annotation>
+      <xs:documentation>Doplňujúce údaje v prípade, že liek je kategorizovaný.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IndikacneObmedzenie" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Text indikačného obmedzenia daného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaLekaren" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna cena lieku v lekárni.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaVyrobcu" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna cena výrobcu alebo dovozcu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxDoplatokPoistenca" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna výška doplatku poistenca za liek.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxDoplatokPoistencaPercenta" type="xs:decimal" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálny doplatok poistenca vyjadrený pomerom jeho doplatku na maximálne cene v lekárni. Vyjadruje sa v percentách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxUhradaZoZP" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna výška úhrady na základe verejného zdravotného poistenia za liek.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti kategorizácie lieku. Pokiaľ nie je zadaná, tak bez obmedzenia platnosti do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti kategorizácie lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetSDL" type="xs:decimal" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počed štandardných dávok lieku v balení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Preskripčné obmedzenia lieku. Ide o záznamy z číselníka lekárskych odborností, ktoré môžu daný liek predpisovať. V prípade, že sa k lieku neviažu preskripčné obmedzenia, môžu ho úpredpisovať všetk oprávnené osoby.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SposobUhrady" type="IdPolozkaCiselnikaSposobUhradyLieku" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Spôsob úhrady za liek.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StavKategorizacie" type="IdPolozkaCiselnikaStavKategorizacie" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Stav, v ktorom sa nacháda táto množina kategorizačných údajov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasReviznehoLekara" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či existuje obmedzenie úhrady na základe verejného zdravotného poistenia na predchádzajúce schválenie predpisovania lieku revíznym lekárom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

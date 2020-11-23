@@ -1,0 +1,73 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-FOLDER.Pacientsky_sumarEDS.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180328">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Pacientsky sumár je management summary pacienta (zhrnutie), ktoré obsahuje sumár najdôležitejšich informácii, ktoré sú nevyhntnutné pre zdravotníckeho pracovníka pri poskytovaní zdravotnej starostlivosti. ">
+            keywords = <"Zdravotný problém","Lieková anamnéza","Pôrodnícka anamnéza","Varovania">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+            use = <"Lieková anamnéza
+Varovania
+Zdravotné problémy
+Pôrodnícka anamnéza
+">
+        >
+    >
+
+definition
+    FOLDER[at0000] occurrences matches {1..1} matches {  -- Pacientsky sumár
+        sub_folders existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            FOLDER[at0002] occurrences matches {0..1} matches {  -- Pôrodnícka anamnéza
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0004] occurrences matches {0..*} matches {  -- Varovania
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0006] occurrences matches {0..*} matches {  -- Zdravotné problémy
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0007] occurrences matches {0..*} matches {  -- Lieková anamnéza
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pacientsky sumár">
+                    description = <"Pacientsky sumár">
+                >
+                ["at0002"] = <
+                    text = <"Pôrodnícka anamnéza">
+                    description = <"Informácie o  predpokladanom dátume pôrodu.">
+                >
+                ["at0004"] = <
+                    text = <"Varovania">
+                    description = <"Lekárske varovania o zdravotnom stave pacienta (alergie a alergické reakcie)">
+                >
+                ["at0006"] = <
+                    text = <"Zdravotné problémy">
+                    description = <"Informácie sú poskytované pre Život ovplyvňujúce záznamy diagnózach, informácia o reštrikčných záznamoch a implantované zdravotné pomôcky.">
+                >
+                ["at0007"] = <
+                    text = <"Lieková anamnéza">
+                    description = <"Lieková anamnéza, obsahuje  zoznam užívaných liekov pacienta.">
+                >
+            >
+        >
+    >

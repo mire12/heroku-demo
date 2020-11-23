@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (c) 2004-2010 IBIME, Universidad Polit�cnica de Valencia, Spain -->
+<!-- This file is published under the CC-BY license. -->
+<!-- You can distribute, remix, tweak, and build upon this file, even commercially, as long as you credit the copyright holder for the original creation. -->
+<!-- http://creativecommons.org/ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="CEN/13606/RM" targetNamespace="CEN/13606/RM" elementFormDefault="qualified" version="v20100218" id="EN13606-RM.xsd">
+  <xs:include schemaLocation="TS14796-dataTypes.xsd" />
+
+  <!-- II Ehr System -->
+  <xs:complexType name="OIDEhrSystem">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.30.20" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IIEhrSystem">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" maxOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" maxOccurs="0" />
+          <xs:element name="root" type="OIDEhrSystem" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II Ehr Id -->
+  <xs:complexType name="OIDEhrId">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <!--<xs:enumeration value="xxx" />-->
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IIEhrId">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1" />
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDEhrId" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II Subject Of Care -->
+  <xs:complexType name="OIDSubjectOfCare">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.40.110" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IISubjectOfCare">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1" />
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDSubjectOfCare" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II RC ID -->
+  <xs:complexType name="OIDRcId">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IIRcId">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1" />
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDRcId" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- FUNCTIONAL_ROLE_COMPOSER -->
+  <xs:complexType name="FUNCTIONAL_ROLE_COMPOSER">
+    <xs:complexContent>
+      <xs:restriction base="FUNCTIONAL_ROLE">
+        <xs:sequence>
+          <xs:element name="function" type="CVFunction" minOccurs="1" />
+          <xs:element name="performer" type="IIPerformer" minOccurs="1" />
+          <xs:element name="mode" type="CS" minOccurs="0" />
+          <xs:element name="healthcare_facillity" type="IIHealthcareFacility" minOccurs="1" />
+          <xs:element name="service_setting" type="CV" minOccurs="0" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II Performer -->
+  <xs:complexType name="OIDPerformer">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.40.90" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IIPerformer">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1" />
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDPerformer" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II Healthcare facility -->
+  <xs:complexType name="OIDHealthcareFacility">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.40.70" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IIHealthcareFacility">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1" />
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0" />
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDHealthcareFacility" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- CV Function -->
+  <xs:complexType name="OIDFunction">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.10.34" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CVFunction">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codingScheme" type="OIDFunction" minOccurs="1" />
+          <xs:element name="codingSchemeName" type="xs:string" minOccurs="0" maxOccurs="0" />
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codeValue" type="xs:string" minOccurs="1" />
+          <xs:element name="displayName" type="xs:string" minOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- FUNCTIONAL_ROLE_COMPOSER -->
+  <xs:complexType name="AUDIT_INFO_COMMITTAL">
+    <xs:complexContent>
+      <xs:restriction base="AUDIT_INFO">
+        <xs:sequence>
+          <xs:element name="ehr_system" type="IIEhrSystem" minOccurs="1" />
+          <xs:element name="time_committed" type="TS" minOccurs="1" />
+          <xs:element name="committer" type="IICommitter" minOccurs="1" />
+          <xs:element name="version_status" type="CSVersionStatus" minOccurs="1" />
+          <xs:element name="reason_for_revision" type="CV" minOccurs="0" />
+          <xs:element name="previous_version" type="II" minOccurs="0" />
+          <xs:element name="version_set_id" type="II" minOccurs="0" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- II Committer -->
+  <xs:complexType name="OIDCommitter">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="1.3.158.00165387.100.40.90" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IICommitter">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" type="xs:string" minOccurs="1"/>
+          <xs:element name="assigningAuthorityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="validTime" type="IVLTS" minOccurs="0" />
+          <xs:element name="root" type="OIDCommitter"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- CS Version Status -->
+  <xs:complexType name="OIDVersionStatus">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CSVersionStatus">
+    <xs:complexContent>
+      <xs:restriction base="CS">
+        <xs:sequence>
+          <xs:element name="codingScheme" type="OIDVersionStatus" minOccurs="0" maxOccurs="0" />
+          <xs:element name="codingSchemeName" type="xs:string" minOccurs="0" maxOccurs="0"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="0"/>
+          <xs:element name="codeValue" minOccurs="1" >
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="VER00">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Draft - The version is known at the time of committal to be incomplete
+                      (because additional information is expected later) or the
+                      necessary authorizations have not been made: VER00 implies
+                      that the EHR_recipient might in future expect to receive a more
+                      definitive updated version of this RECORD_COMPONENT.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="VER01">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Finished - The version is committed with the intention of being a final
+                      version, with no anticipated reason for revision.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="VER02">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Update - The version is an update of the previous version, usually by
+                      adding supplementary information that was not available at the
+                      time of committal.
+                      NOTE Revision is intended for additions usually to be made by the
+                      original author within a short time frame, and not for recoding an
+                      evolving clinical story.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="VER03">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Correction - The version corrects errors made in the recording of the
+                      previous version.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="VER04">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Deletion - The version logically deletes the previous version (e.g. if the
+                      RECORD_COMPONENT had been placed in the wrong
+                      patient's EHR).
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="OIDStructureType">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- CS Structure type -->
+  <xs:complexType name="CSStructureType">
+    <xs:complexContent>
+      <xs:restriction base="CS">
+        <xs:sequence>
+          <xs:element name="codingScheme" type="OIDStructureType" minOccurs="0" maxOccurs="0" />
+          <xs:element name="codingSchemeName" type="xs:string" minOccurs="0" maxOccurs="0" />
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="0" />
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1" >
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="STRC01">
+                  <xs:annotation>
+                    <xs:documentation>
+                      List - The CLUSTER contains a set of CLUSTERs
+                      and/or ELEMENTs that is intended to be
+                      represented as an ordered or unordered list, or a
+                      set of ELEMENTs that are intended to represent a
+                      single row in a table.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="STRC02">
+                  <xs:annotation>
+                    <xs:documentation>
+                      Table - The CLUSTER contains a set of CLUSTERS that
+                      are intended to each represent a column in a
+                      table.
+                    </xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="boolean_uncertainty_expressed">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="false"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

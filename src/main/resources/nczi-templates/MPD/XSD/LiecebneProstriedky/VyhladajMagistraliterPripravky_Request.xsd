@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajMagistraliterPripravkyVstup" type="VyhladajMagistraliterPripravkyVstup" />
+  <xs:complexType name="VyhladajMagistraliterPripravkyVstup">
+    <xs:annotation>
+      <xs:documentation>Vyhľadávacie kritériá magistraliter prípravkov.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

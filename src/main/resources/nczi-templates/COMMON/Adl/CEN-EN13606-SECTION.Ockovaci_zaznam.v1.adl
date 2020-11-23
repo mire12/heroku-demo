@@ -1,0 +1,403 @@
+﻿archetype (adl_version=1.4)
+    CEN-EN13606-SECTION.Ockovaci_zaznam.v1
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20110913">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Záznam o jednom vykonanom očkovaní a  pripadných reakciách na toto očkovanie.">
+            keywords = <"Očkovací záznam","Vykonané očkovanie">
+        >
+    >
+
+definition
+    SECTION[at0000.1] occurrences matches {1..1} matches {  -- Očkovací záznam
+        members existence matches {0..1} cardinality matches {1..*; unordered} matches {
+            ENTRY[at0001.3] occurrences matches {1..1} matches {  -- Záznam o očkovaní
+                items existence matches {0..1} cardinality matches {3..*; unordered; unique} matches {
+                    ELEMENT[at0004] occurrences matches {1..*} matches {  -- Druh očkovania
+                        value existence matches {1..1} matches {
+                            CV[at0005] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {1..1} matches {/.*/}
+                                displayName existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0028] occurrences matches {1..1} matches {  -- OID
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.35"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0012.20] occurrences matches {0..1} matches {  -- Poznámka
+                        value existence matches {1..1} matches {
+                            SIMPLE_TEXT[at0013.12] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0014] occurrences matches {1..1} matches {  -- Typ očkovania
+                        value existence matches {1..1} matches {
+                            CV[at0015] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {1..1} matches {/.*/}
+                                displayName existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0029] occurrences matches {1..1} matches {  -- OID
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.36"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0018] occurrences matches {1..1} matches {  -- Očkovacia dávka
+                        parts existence matches {0..1} cardinality matches {2..3; unordered; unique} matches {
+                            ELEMENT[at0006] occurrences matches {1..1} matches {  -- Počet dávok
+                                value existence matches {1..1} matches {
+                                    INT[at0007.4] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {|>0..<999|}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0008] occurrences matches {0..1} matches {  -- Poradie dávky
+                                value existence matches {1..1} matches {
+                                    INT[at0016.6] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {|>0..<999|}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0010] occurrences matches {1..1} matches {  -- Posledná dávka
+                                value existence matches {1..1} matches {
+                                    BL[at0011.8] occurrences matches {1..1} matches {  -- BL
+                                        value existence matches {1..1} matches {true, false}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0001] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {1..1} matches {"STRC01"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0021] occurrences matches {0..1} matches {  -- Vykonané očkovanie
+                        parts existence matches {0..1} cardinality matches {2..2; unordered; unique} matches {
+                            ELEMENT[at0002] occurrences matches {1..1} matches {  -- Dátum a čas vykonania očkovania
+                                value existence matches {1..1} matches {
+                                    TS[at0003] occurrences matches {1..1} matches {  -- TS
+                                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0.2] occurrences matches {1..1} matches {  -- Vakcína
+                                parts existence matches {0..1} cardinality matches {3..*; unordered; unique} matches {
+                                    ELEMENT[at0.9] occurrences matches {1..1} matches {  -- Očkovacia látka
+                                        value existence matches {1..1} matches {
+                                            II[at0.11] occurrences matches {1..1} matches {  -- 
+                                                root existence matches {1..1} matches {
+                                                    OID[at0031] occurrences matches {1..1} matches {  -- 
+                                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.40.50"}
+                                                    }
+                                                }
+                                                extension existence matches {1..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0.13] occurrences matches {0..1} matches {  -- Poznámka
+                                        value existence matches {1..1} matches {
+                                            SIMPLE_TEXT[at0.15] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0.17] occurrences matches {1..1} matches {  -- Šarža
+                                        value existence matches {1..1} matches {
+                                            SIMPLE_TEXT[at0.19] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0.14] occurrences matches {1..1} matches {  -- Množstvo
+                                        value existence matches {1..1} matches {
+                                            PQ[at0.18] occurrences matches {1..1} matches {  -- PQ
+                                                units existence matches {1..1} matches {
+                                                    CS[at0012] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {1..1} matches {/.*/}
+                                                        codingScheme existence matches {1..1} matches {
+                                                            OID[at0030] occurrences matches {1..1} matches {  -- 
+                                                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.87"}
+                                                            }
+                                                        }
+						                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                                                    }
+                                                }
+                                                value existence matches {1..1} matches {|>0.0..<999999.0|}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0038] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {1..1} matches {"STRC01"}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0025] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {1..1} matches {"STRC01"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0026] occurrences matches {0..1} matches {  -- Zrušené očkovanie
+                        parts existence matches {0..1} cardinality matches {2..*; unordered; unique} matches {
+                            ELEMENT[at0.5] occurrences matches {1..1} matches {  -- Dôvod zrušenia očkovania
+                                value existence matches {1..1} matches {
+                                    CV[at0.6] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {1..1} matches {/.*/}
+                                        displayName existence matches {1..1} matches {/.*/}
+                                        codingScheme existence matches {1..1} matches {
+                                            OID[at0032] occurrences matches {1..1} matches {  -- OID
+                                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.116"}
+                                            }
+                                        }
+                                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0013] occurrences matches {1..1} matches {  -- Dátum a čas plánovaného očkovania
+                                value existence matches {1..1} matches {
+                                    TS[at0027] occurrences matches {1..1} matches {  -- TS
+                                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0039] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {1..1} matches {"STRC01"}
+                            }
+                        }
+                    }
+                }
+                rc_id existence matches {1..1} matches {
+                    II[at0007] occurrences matches {1..1} matches {  -- 
+                        extension existence matches {1..1} matches {/.*/}
+                        root existence matches {1..1} matches {
+                            OID[at0009] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.60.50"}
+                            }
+                        }
+                    }
+                }
+            }
+            allow_archetype ENTRY[at0000] occurrences matches {0..*} matches {  -- Reakcia na očkovanie
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Neziaduca_reakcia-Reakcia_na_ockovanie.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+	        II[at1007] occurrences matches {1..1} matches {  -- 
+		        extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+			        OID[at1009] occurrences matches {1..1} matches {  -- OID
+				        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.50"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"CISELNIK_JEDNOTIEK", ...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0002"] = <
+                    text = <"Dátum a čas vykonania očkovania">
+                    description = <"Dátum a čas podania očkovacej látky. ">
+                >
+                ["at0003"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0004"] = <
+                    text = <"Druh očkovania">
+                    description = <"Odkaz na jednoduché druhy očkovania. V prípade kombinovaného očkovania sú uvedené všetky jeho zložky. Číselník na báze SNOMED CT 1.3.158.00165387.100.10.35">
+                >
+                ["at0005"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0006"] = <
+                    text = <"Počet dávok">
+                    description = <"Celkový počet dávok, ktoré predpisuje očkovacia schéma.">
+                >
+                ["at0008"] = <
+                    text = <"Poradie dávky">
+                    description = <"Poradie dávky očkovania, v prípade, že sa jedná o očkovanie, ktoré je vykonané vo viacerých dávkach.">
+                >
+                ["at0010"] = <
+                    text = <"Posledná dávka">
+                    description = <"Príznak (ANO/NIE), či sa jedná o poslednú dávku očkovania v prípade očkovania vykonávaného vo viacerých dávkach. ">
+                >
+                ["at0014"] = <
+                    text = <"Typ očkovania">
+                    description = <"Typ očkovania podľa očkovacieho kalendára – číselník Typ očkovania 1.3.158.00165387.100.10.36">
+                >
+                ["at0015"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0000.1"] = <
+                    text = <"Očkovací záznam">
+                    description = <"Vykonané alebo zrušené očkovania pacienta">
+                >
+                ["at0.2"] = <
+                    text = <"Vakcína">
+                    description = <"Obsahuje základné informácie ohľadom podávaných očkovacích látok ">
+                >
+                ["at0001.3"] = <
+                    text = <"Záznam o očkovaní">
+                    description = <"Obsahuje spoločné atribúty vykonaného a zrušeného očkovania. V prípade, že sa jedná o záznam o vykonanom očkovaní, je potrebné vyplniť CLUSTER Vykonané očkovanie. V prípade, že sa jedná o záznam o zrušenom očkovaní, je potrebné vyplniť CLUSTER Zrušené očkovanie. ">
+                >
+                ["at0.9"] = <
+                    text = <"Očkovacia látka">
+                    description = <"Registrovaný liek z registra liekov. Odkaz na register liekov.">
+                >
+                ["at0.13"] = <
+                    text = <"Poznámka">
+                    description = <"Popis očkovania resp. poznámka lekára k vykonanému očkovaniu pacienta.">
+                >
+                ["at0.15"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.17"] = <
+                    text = <"Šarža">
+                    description = <"Šarža očkovacej látky">
+                >
+                ["at0.19"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0000"] = <
+                    text = <"Reakcia na očkovanie">
+                    description = <"Informácie o nežiaducich reakciách na očkovanie pacienta">
+                >
+                ["at0007.4"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0016.6"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0011.8"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0.14"] = <
+                    text = <"Množstvo">
+                    description = <"Množstvo očkovacej látky">
+                >
+                ["at0.18"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0013.12"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0012.20"] = <
+                    text = <"Poznámka">
+                    description = <"Popis očkovania resp. poznámka lekára k vykonanému očkovaniu pacienta.">
+                >
+                ["at0018"] = <
+                    text = <"Očkovacia dávka">
+                    description = <"Obsahuje základné informácie ohľadom podávaných očkovacích dávok ">
+                >
+                ["at0021"] = <
+                    text = <"Vykonané očkovanie">
+                    description = <"Zoznam elementov, ktoré je potrebné vyplniť v prípade, že daný záznam popisuje vykonané očkovanie pacienta. ">
+                >
+                ["at0026"] = <
+                    text = <"Zrušené očkovanie">
+                    description = <"Zoznam elementov, ktoré je potrebné vyplniť v prípade, že daný záznam popisuje zrušené očkovanie pacienta. ">
+                >
+                ["at0.5"] = <
+                    text = <"Dôvod zrušenia očkovania">
+                    description = <"Dôvod zrušenia resp. rozhodnutia o nevykonaní očkovania.
+Napr: Pacient je tuberkulín pozitívny, očkovanie TBC nepotrebné">
+                >
+                ["at0.6"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"Dátum a čas plánovaného očkovania">
+                    description = <"Dátum a čas kedy bolo zrušené očkovanie plánované. ">
+                >
+                ["at0027"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0028"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0029"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0032"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0030"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0031"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at1009"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at1007"] = <
+                    text = <"II">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["CISELNIK_JEDNOTIEK"] = <
+            items = <
+            >
+        >
+    >
+    constraint_binding = <
+    >

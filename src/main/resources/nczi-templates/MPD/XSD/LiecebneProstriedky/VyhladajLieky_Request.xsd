@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajLiekyVstup" type="VyhladajLiekyVstup" />
+  <xs:complexType name="VyhladajLiekyVstup">
+    <xs:annotation>
+      <xs:documentation>
+        Vyhľadávacie kritériá, podľa ktorých sa vyhľadajú lieky. Vo všeobecnosti platí, že ak sa niektoré z nepovinných vyhľadávacích kritérií na vstupe nezadá, tak toto kritérium neobmedzuje vyhľadávanie.
+        Napr. Ak je PlatnaKategorizácia:
+
+        - true - vyhľadávajú sa iba kategorizované lieky
+        - false - vyhľadávajú sa iba nekategorizované lieky
+        - null - vyhľadávajú sa aj kategorizované aj nekategorizované lieky.
+
+        Ak je zadané kritérium CenaOd alebo CenaDo, tak sa
+
+        - pre kategorizované lieky obmedzuje Konečná cena v lekárni
+        - pre nekategorizované lieky sa obmedzuje úradne určená cena (pokiaľ existuje)
+        - pre lieky kde neexistuje úradne určená cena, namá zmysel
+
+        Ak je zadané kritérium DoplatokOd alebo DoplatokDo, tak musí byť PlatnaKategorizacia=true, pretože má zmysel vyhľadávať iba kategorizované lieky.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AtcKod" type="IdPolozkaCiselnikaATC" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa ATC kódu alebo jeho časti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CenaDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa ceny do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CenaOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa ceny od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokDo" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa doplatku do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokOd" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa doplatku od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DostupnostLiekuVSR" type="IdPolozkaCiselnikaDostupnostLiekuVSR" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa dostupnosti lieku v SR.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumUvedeniaNaTrhSROd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa dátumu uvedenia na trh SR od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumUvedeniaNaTrhSRDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa dátumu uvedenia na trh SR do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SilaUcinnejLatkyOd" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa sily účinnej látky lieku od.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SilaUcinnejLatkyDo" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa sily účinnej látky lieku do.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JednotkovaDavka" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa jednotkovej dávky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndikacnaSkupina" type="IdPolozkaCiselnikaIndikacnaSkupina" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa indikačnej skupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LiekovaForma" type="IdPolozkaCiselnikaLiekovaForma" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa liekových foriem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovLieku" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa názvu alebo časti názvu lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovVyrobcu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa názvu alebo časti názvu výrobcu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnaKategorizacia" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa platnosti kategorizácie lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnaRegistracia" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa platnosti registrácie lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzenie" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa preskripčných obmedzení. Vracajú sa iba lieky, ktoré môže predpisovať lekár s danou špecializáciou.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SposobPodania" type="IdPolozkaCiselnikaCestaPodania" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Filtrácia podľa liekových foriem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuklKod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa ŠÚKL kódu alebo jeho časti.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VelkostBalenia" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie podľa veľkosti balenia lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZoradeniePodlaCenyANazvu" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Možnosť využiť triediace kritérium zaslania výsledkov zoradených podľa ceny a následne podľa názvu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypVyhladavania" type="TypVyhladavania" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Špecifikuje typ vyhľadávania liekov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TypVyhladavania">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VyhladavanieLiekov">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie liekov.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyReferencnaSkupina">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - lieky rovnakej referenčnej skupiny alebo podskupiny.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyLiecivoASila">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - lieky s rovnakým liečivom a rovnakou silou liečiva, líšia sa iba veľkosťou balenia.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyLiecivo">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - lieky so rovnakým liečivom, môžu mať rôzny obsah tohto liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyGenerika">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - generické lieky.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyATC">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - lieky s rovankým ATC kódom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AlternativyIndikacnaSkupina">
+        <xs:annotation>
+          <xs:documentation>Vyhľadávanie alternatív k zvolenému lieku - lieky tej istej indikačnej skupiny</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

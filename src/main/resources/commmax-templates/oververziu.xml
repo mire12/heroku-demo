@@ -1,0 +1,266 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+	<EnvelopeVersion>2.0</EnvelopeVersion>
+	<Header>
+		<MessageInfo>
+			<Class>ZapisZaznamOVysetreni_v5</Class>
+			<MessageID>4d80e511-4b64-4217-a71d-10b090d7477a</MessageID>
+			<CorrelationID>4d80e511-4b64-4217-a71d-10b090d7477a</CorrelationID>
+			<BusinessID/>
+			<ChannelInfoReply/>
+		</MessageInfo>
+		<SenderInfo>
+			<SecurityToken/>
+			<UserContext>
+				<Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+					<codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+					<codingSchemeVersion>4</codingSchemeVersion>
+					<codeValue>00000461517</codeValue>
+				</Specialization>
+				<IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+					<extension>00020008694</extension>
+					<rootOID>1.3.158.00165387.100.40.70</rootOID>
+				</IdentifikatorOUPZS>
+			</UserContext>
+		</SenderInfo>
+	</Header>
+	<Body>
+		<Data>
+			<EHR_EXTRACT xmlns="CEN/13606/RM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<ehr_system>
+					<extension>ACEsystem</extension>
+					<root>
+						<oid>1.3.158.00165387.100.30.20</oid>
+					</root>
+				</ehr_system>
+				<subject_of_care>
+					<extension>%PACIENT%</extension>
+					<root>
+						<oid>1.3.158.00165387.100.40.110</oid>
+					</root>
+				</subject_of_care>
+				<time_created>
+					<time>2020-10-22T12:36:59</time>
+				</time_created>
+				<rm_id>EN13606</rm_id>
+				<all_compositions>
+					<name xsi:type="SIMPLE_TEXT">
+						<originalText>DefaultComposition</originalText>
+					</name>
+					<synthesised>true</synthesised>
+					<content xsi:type="ENTRY">
+						<name xsi:type="SIMPLE_TEXT">
+							<originalText>Záznam o vyšetrení - Specialization: Záznam o odbornom vyšetrení</originalText>
+						</name>
+						<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0000.1</archetype_id>
+						<rc_id>
+							<extension>001476645300147664536</extension>
+							<root>
+								<oid>1.3.158.00165387.100.60.90</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<sensitivity>3</sensitivity>
+						<feeder_audit>
+							<ehr_system>
+								<extension>ACEsystem</extension>
+								<root>
+									<oid>1.3.158.00165387.100.30.20</oid>
+								</root>
+							</ehr_system>
+							<time_committed>
+								<time>2018-10-22T12:36:59</time>
+							</time_committed>
+							<committer>
+								<extension>00020003901</extension>
+								<root>
+									<oid>1.3.158.00165387.100.40.90</oid>
+								</root>
+							</committer>
+							<version_status>
+								<codeValue>VER01</codeValue>
+							</version_status>
+						</feeder_audit>
+						<uncertainty_expressed>false</uncertainty_expressed>
+						<info_provider>
+							<function>
+								<codingScheme>
+									<oid>1.3.158.00165387.100.10.34</oid>
+								</codingScheme>
+								<codingSchemeVersion>1</codingSchemeVersion>
+								<codeValue>00000461517</codeValue>
+								<displayName>všeobecné lekárstvo</displayName>
+							</function>
+							<performer>
+								<extension>00020003901</extension>
+								<root>
+									<oid>1.3.158.00165387.100.40.90</oid>
+								</root>
+							</performer>
+							<healthcare_facillity>
+								<extension>00020008694</extension>
+								<root>
+									<oid>1.3.158.00165387.100.40.70</oid>
+								</root>
+							</healthcare_facillity>
+						</info_provider>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Dátum a čas odoslania</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0101</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="TS">
+								<time>2018-10-22T12:36:59</time>
+							</value>
+						</items>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Dátum a čas vyšetrenia</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0.2</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="TS">
+								<time>2019-10-22T12:36:59</time>
+							</value>
+						</items>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Anamnéza</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0.8</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>
+									5321 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis dui ac tortor eleifend, sit amet congue purus laoreet. Integer vitae sapien ac eros semper facilisis euismod nec metus. Aenean quis metus nisl. Fusce semper dapibus augue, non sollicitudin quam varius nec. Aenean pharetra nibh a blandit finibus. Sed aliquam ipsum vel consectetur ornare. Sed in mauris lobortis, blandit lorem non, facilisis velit. Etiam finibus in diam in ornare. Suspendisse lacinia turpis at ullamcorper molestie.
+									Ut sed tortor massa. Pellentesque fermentum ex a convallis facilisis. Cras tempor scelerisque ipsum, vel efficitur tortor sodales at. Aenean viverra vel justo ut elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc facilisis euismod nisl, et lacinia neque mollis at. Quisque nisi leo, hendrerit vel blandit et, consequat sed nulla. Quisque in faucibus lorem, ut laoreet est. Mauris vestibulum risus libero, sed aliquam ligula sollicitudin eu.
+									Pellentesque ultrices, sapien vel fringilla aliquam, dolor est pellentesque lorem, et tristique mi nulla sit amet augue. Curabitur faucibus purus lacinia vulputate malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris blandit odio non feugiat bibendum. Suspendisse dolor diam, finibus a tincidunt id, sodales eget diam. Pellentesque at ultrices magna. Praesent at orci magna. Aliquam porta nunc vitae tincidunt fermentum. Donec ante nulla, dictum sed tortor ac, aliquet consequat quam. Vivamus felis mi, varius quis urna eu, malesuada interdum sem.
+									Proin placerat leo sit amet eros blandit, vitae imperdiet sem pellentesque. Suspendisse lectus turpis, pharetra sit amet pulvinar ac, bibendum at turpis. Morbi ullamcorper ligula vitae enim imperdiet rutrum. Duis scelerisque imperdiet lorem, ac faucibus turpis ultrices in. Pellentesque bibendum imperdiet diam. Aliquam sit amet cursus metus. Suspendisse potenti. Nam elit metus, tempus sed enim at, convallis finibus erat. Morbi ante odio, placerat sed mollis id, accumsan nec dui. Aenean at orci nisl. Integer mollis, justo et porta sollicitudin, augue enim fermentum dui, eget scelerisque lorem purus porta neque. Fusce vitae tortor non mauris euismod sagittis. Fusce pharetra a nisl ac tristique.
+									Mauris sodales justo nec mauris bibendum condimentum. Nulla tristique, tellus a consectetur faucibus, velit sapien fermentum dui, eu consectetur neque tellus ac augue. Donec placerat enim tristique nisi aliquam, id porttitor magna scelerisque. Vivamus at orci in dui varius tristique. Curabitur at augue sodales, bibendum arcu eget, laoreet enim. Cras est ante, auctor ac sapien in, efficitur ultrices mi. Morbi nibh nunc, efficitur ac nisl sed, lobortis suscipit turpis. Phasellus consequat justo quis dolor volutpat, a fermentum erat lacinia. Ut risus augue, pharetra eu laoreet id, semper vitae risus. Fusce sed ipsum quis diam aliquam suscipit. Morbi cursus magna eget auctor egestas. Aenean quis malesuada massa, non aliquam purus.
+									Ut volutpat facilisis orci vitae dapibus. Integer sit amet aliquet lorem, sed ullamcorper lacus. Integer laoreet a sapien ac faucibus. Mauris scelerisque velit vel ante interdum lacinia. Phasellus finibus ac tellus et viverra. Nullam quis pretium augue, sit amet ornare ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris malesuada sed lacus vitae luctus. Mauris ut pellentesque velit. Cras malesuada tellus erat, non suscipit mauris sollicitudin sed. Maecenas commodo, augue vel auctor sollicitudin, nisl nunc tempor nisi, a laoreet sapien enim ac sem. Nam aliquet faucibus leo, id imperdiet turpis mollis sit amet. Praesent tellus nisl, sodales id pellentesque vel, convallis finibus sapien.
+									Curabitur nec sodales magna. Sed tincidunt risus nibh, id egestas risus dapibus venenatis. Morbi feugiat orci felis, sollicitudin ultrices ex malesuada eu. Quisque ultricies, tellus et vehicula interdum, risus ipsum pharetra mauris, at viverra dolor nibh et neque. Suspendisse posuere augue eget sodales egestas. Cras vulputate lacinia finibus. Vestibulum nec placerat tortor, interdum viverra nulla. Phasellus blandit scelerisque posuere. Suspendisse lacinia metus purus.
+									Nullam eleifend facilisis purus id ullamcorper. Nunc efficitur porta ipsum. Proin sed purus sed libero fermentum ultrices. Aenean mauris nisi, placerat vel blandit in, placerat id felis. Donec rhoncus risus ut tincidunt aliquet. Quisque ullamcorper augue non feugiat tincidunt. Praesent fringilla leo sed tellus blandit porttitor. Proin cursus congue sapien, finibus feugiat quam auctor ac. Praesent fringilla eget orci eu congue. Fusce sit amet pellentesque lectus. Phasellus sed consequat arcu, sed aliquam leo. Cras pellentesque, ex ac malesuada commodo, neque odio molestie justo, iaculis rutrum justo lectus id nulla. Fusce mauris tortor, commodo quis posuere eget, porttitor vel arcu. Duis sodales fermentum ante eget pretium. Fusce in lacus sed neque semper dignissim at a orci. Mauris iaculis porttitor nunc sit amet finibus.
+									Cras iaculis, elit in feugiat commodo, enim massa commodo velit, ac ullamcorper leo tortor et mauris. Nulla mattis ante in laoreet cursus. Suspendisse maximus nisi sit amet libero faucibus cursus. Praesent feugiat placerat leo ut cursus cras amet.
+								</originalText>
+							</value>
+						</items>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Dispenzarizácia</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0.10</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="BL">
+								<value>false</value>
+							</value>
+						</items>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Odporúčanie</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0.12</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>
+									Dieta s obmedzením purínov, zvýšit príjem tekutín na 2,5 - 3l denne
+									1721 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo massa quis varius iaculis. Integer vitae massa magna. Praesent fringilla, urna ac ultricies pretium, felis erat aliquet ipsum, ut rhoncus purus risus sed enim. Pellentesque in lectus arcu. Donec dignissim metus nec ornare semper. Duis blandit metus augue, sed aliquam dui euismod eu. Sed aliquet ultrices nulla, et convallis libero.
+									Phasellus placerat nunc tortor, quis dictum libero dapibus eget. Pellentesque id mi rhoncus, feugiat eros at, rutrum dolor. Pellentesque interdum magna non bibendum congue. Maecenas non magna faucibus, finibus tortor at, ornare ligula. Praesent at risus neque. Quisque bibendum ante ante, ac fringilla neque sodales in. Suspendisse semper ut orci in volutpat. Integer non fermentum odio. Sed pulvinar posuere dignissim. Curabitur sagittis fringilla erat vitae tincidunt. Suspendisse suscipit justo at laoreet viverra. Donec et nisl risus. Morbi venenatis facilisis ligula, ut sollicitudin nibh lobortis eget. Ut pulvinar mattis tincidunt. Praesent maximus rutrum magna, ac accumsan enim porta ut. Pellentesque scelerisque at lectus at fermentum.
+									Aliquam erat volutpat. Pellentesque porta lorem convallis molestie pulvinar. In pretium auctor urna, bibendum ultrices metus accumsan nec. Suspendisse at erat diam. Praesent faucibus fermentum eros vitae tincidunt. Sed eu volutpat est. Phasellus eget odio eget est imperdiet dignissim id at leo. Duis ut elit ac est auctor efficitur vitae sed justo. Nunc libero elit, scelerisque eu vulputate eget, blandit quis eros. Fusce pulvinar ultrices diam id venenatis. Nulla quis scelerisque neque. Cras luctus velit in mollis fringilla. Curabitur magna libero, tincidunt sed.
+								</originalText>
+							</value>
+						</items>
+						<items xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Urgentnosť vyšetrenia</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0117</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="CV">
+								<codingScheme>
+									<oid>1.3.158.00165387.100.10.123</oid>
+								</codingScheme>
+								<codingSchemeVersion>1</codingSchemeVersion>
+								<codeValue>00000116814</codeValue>
+								<displayName>Bežné</displayName>
+							</value>
+						</items>
+						<items xsi:type="CLUSTER">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Odosielajúci lekár</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0200</archetype_id>
+							<synthesised>false</synthesised>
+							<structure_type>
+								<codeValue>STRC01</codeValue>
+							</structure_type>
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<originalText>Identifikácia ZPrac</originalText>
+								</name>
+								<archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0002</archetype_id>
+								<synthesised>false</synthesised>
+								<value xsi:type="II">
+									<extension>00020003901</extension>
+									<root>
+										<oid>1.3.158.00165387.100.40.90</oid>
+									</root>
+								</value>
+							</parts>
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<originalText>Identifikácia OÚ PZS</originalText>
+								</name>
+								<archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0007</archetype_id>
+								<synthesised>false</synthesised>
+								<value xsi:type="II">
+									<extension>00020008694</extension>
+									<root>
+										<oid>1.3.158.00165387.100.40.70</oid>
+									</root>
+								</value>
+							</parts>
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<originalText>Špecializácia lekára</originalText>
+								</name>
+								<archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0012</archetype_id>
+								<synthesised>false</synthesised>
+								<value xsi:type="CV">
+									<codingScheme>
+										<oid>1.3.158.00165387.100.10.34</oid>
+									</codingScheme>
+									<codingSchemeVersion>1</codingSchemeVersion>
+									<codeValue>00000461517</codeValue>
+									<displayName>všeobecné lekárstvo</displayName>
+								</value>
+							</parts>
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<originalText>Nezmluvný lekár</originalText>
+								</name>
+								<archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0016</archetype_id>
+								<synthesised>false</synthesised>
+								<value xsi:type="BL">
+									<value>false</value>
+								</value>
+							</parts>
+						</items>
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<originalText>Potreba sedácie</originalText>
+							</name>
+							<archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v1/at0.53</archetype_id>
+							<synthesised>false</synthesised>
+							<value xsi:type="BL">
+								<value>true</value>
+							</value>
+						</parts>
+					</content>
+				</all_compositions>
+			</EHR_EXTRACT>
+		</Data>
+		<Result>
+			<Code>0</Code>
+			<Message/>
+		</Result>
+	</Body>
+</eHtalkMessage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ kontaktnej osoby</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>displayNameEng</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>PopisEng</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.29</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000776559</codeValue>
+      <displayName>Najbližší príbuzný</displayName>
+      <Skratka>NP</Skratka>
+      <Popis>Najbližší príbuzný</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>next of kin</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>next of kin</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000776567</codeValue>
+      <displayName>Kontakt pre prípad núdze</displayName>
+      <Skratka>KPN</Skratka>
+      <Popis>Kontakt pre prípad núdze</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>emergency contact</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>emergency contact</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208874644</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

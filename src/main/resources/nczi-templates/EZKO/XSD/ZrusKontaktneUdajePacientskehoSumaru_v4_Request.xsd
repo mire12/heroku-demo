@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="ZrusKontaktneUdajePacientskehoSumaraVstup_v4" nillable="true" type="tns:ZrusKontaktneUdajePacientskehoSumaraVstup_v4" />
+  <xs:complexType name="ZrusKontaktneUdajePacientskehoSumaraVstup_v4">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="EhrSystem" xmlns:q45="CEN/13606/RM" type="q45:II">
+        <xs:annotation>
+          <xs:documentation>Identifikátor IS PZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" xmlns:q46="CEN/13606/RM" type="q46:II">
+        <xs:annotation>
+            <xs:documentation>Šifrovaný identifikátor pacienta</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="RcId" xmlns:q47="CEN/13606/RM" type="q47:II">
+        <xs:annotation>
+            <xs:documentation>Zoznam identifikátorov záznamov pacienta, ktoré sa majú vymazať</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

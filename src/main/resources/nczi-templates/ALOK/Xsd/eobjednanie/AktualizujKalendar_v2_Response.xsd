@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+  
+  <xs:element name="AktualizujKalendarResponse" type="tns:AktualizujKalendarResponse" />
+  
+  <xs:complexType name="AktualizujKalendarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdKalendara" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ZoznamKolidujucichObjednavok" type="tns:ArrayOfKolidujucaObjednavka">
+        <xs:annotation>
+            <xs:documentation>Zoznam kolidujúcich objednávok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfKolidujucaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KolidujucaObjednavka" nillable="true" type="tns:KolidujucaObjednavka" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="KolidujucaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="KodChyby" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Návratový kód z volania webových služieb. Dostupný len pri chybe alebo varovaní.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="PopisChyby" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Textový popis návratového kódu. Dostupný len pri chybe alebo varovaní.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="NovyStav" type="tns:StavObjednavky">
+        <xs:annotation>
+            <xs:documentation>Stav objednávky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="IdObjednavky" type="xs:int">
+        <xs:annotation>
+            <xs:documentation>ID objednávky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Externé ID objednávky zo systému IS PZS. Slúži pre potreby IS PZS, na identifikáciu objednávky z requestu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="StavObjednavky">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nova" />
+      <xs:enumeration value="Potvrdena" />
+      <xs:enumeration value="Realizovana" />
+      <xs:enumeration value="Zrusena" />
+      <xs:enumeration value="PacientSaNedostavil" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

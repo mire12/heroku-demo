@@ -1,0 +1,99 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>VyhladajZaznamyOVysetreniach_v5</Class>
+      <MessageID>18471d51-3e0a-4e1a-a2a5-c32572b7ec94</MessageID>
+      <CorrelationID>18471d51-3e0a-4e1a-a2a5-c32572b7ec94</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>4</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <ZaznamOVysetreniCriteria_v5 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/Allocation/v1">
+        <DatumDo>2020-10-17</DatumDo>
+        <DatumOd>2020-01-16</DatumOd>
+        <Pacient>
+          <extension>%PACIENT%</extension>
+          <root>
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </Pacient>
+        <!--<IdZaznamu>000</IdZaznamu>-->
+        <TypVysetrenia>ZAZNAM_O_ODBORNOM_VYSETRENI</TypVysetrenia>
+        <!--<TypVysetrenia>ZAZNAM_PREPUSTACIA_SPRAVA</TypVysetrenia>-->
+        <!--<TypVysetrenia>ZAZNAM_O_ZOBRAZOVACOM_VYSETRENI</TypVysetrenia>-->
+        <!--<NazovVysetrenia>[[NAZOV.VYSETRENIA]]</NazovVysetrenia>-->
+        <VlastneZaznamy>false</VlastneZaznamy>
+        <KompletnyZaznam>false</KompletnyZaznam>        
+        <Citlivost>3</Citlivost>
+        <PopisMedikacnychZaznamov>false</PopisMedikacnychZaznamov>
+        <!--<OdborneZameranie>
+          <codeValue>00000351502</codeValue>
+          <codingScheme>
+              <oid>1.3.158.00165387.100.10.39</oid>
+          </codingScheme>
+          <codingSchemeVersion>1</codingSchemeVersion>
+          <displayName>všeobecné lekárstvo</displayName>
+        </OdborneZameranie>-->
+        <!--<OdbornyUtvarPZS>
+            <extension>[[IDOUPZS]]</extension>
+            <root>
+                <oid>1.3.158.00165387.100.40.70</oid>
+            </root>
+        </OdbornyUtvarPZS>-->
+        <!--<PoskytovatelZS>
+            <extension>00020161717</extension>
+            <root>
+                <oid>1.3.158.00165387.100.40.80</oid>
+            </root>
+        </PoskytovatelZS>-->
+        <!--<IDVymennehoListku>
+            <IDVymennehoListku_RT>1.3.158.00165387.100.60.100</IDVymennehoListku_RT>
+            <IDVymennehoListku_EX>054303121905430312198</IDVymennehoListku_EX>
+        </IDVymennehoListku>
+        <IDZaznamuVysetrenia>
+            <IDZaznamuVysetrenia_RT>1.3.158.00165387.100.60.100</IDZaznamuVysetrenia_RT>
+            <IDZaznamuVysetrenia_EX>054303121905430312198</IDZaznamuVysetrenia_EX>
+        </IDZaznamuVysetrenia>-->
+        <!--<DatumVysetreniaOd>2017-11-13T07:00:00</DatumVysetreniaOd>
+        <DatumVysetreniaDo>2017-11-13T10:00:00</DatumVysetreniaDo>-->
+        <!--<ZdravotnickaOdbornost>
+          <codeValue>00000461517</codeValue>
+          <codingScheme>
+              <oid>1.3.158.00165387.100.10.34</oid>
+          </codingScheme>
+          <codingSchemeVersion>1</codingSchemeVersion>
+          <displayName>všeobecné lekárstvo</displayName>
+        </ZdravotnickaOdbornost>-->
+        <Strankovanie_Metadata>
+          <VelkostStranky>100</VelkostStranky>
+          <Index>1</Index>
+        </Strankovanie_Metadata>
+        <!--<Triedenie_Metadata>
+          <Pole>DatumVysetrenia</Pole>
+          <Typ>ASC</Typ>
+        </Triedenie_Metadata>-->
+      </ZaznamOVysetreniCriteria_v5>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

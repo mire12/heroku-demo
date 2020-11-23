@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1"
+    elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/Obecne.xsd"/>
+  <xs:include schemaLocation="../_shared/DataTypes.xsd"/>
+
+  <xs:element name="VyhladajRezervaciePacienta_Request" type="VyhladajRezervaciePacienta_Request"/>
+  <xs:element name="VyhladajRezervaciePacienta_Response" type="VyhladajRezervaciePacienta_Response"/>
+  <xs:element name="VyhladajRezervacie_Request" type="VyhladajRezervacie_Request"/>
+  <xs:element name="VyhladajRezervacie_Response" type="VyhladajRezervacie_Response"/>
+  <xs:element name="ZapisRezervaciuPacient_Request" type="ZapisRezervaciuPacient_Request"/>
+  <xs:element name="ZapisRezervaciu_Request" type="ZapisRezervaciu_Request"/>
+  <xs:element name="ZapisRezervaciu_Response" type="ZapisRezervaciu_Response"/>
+  <xs:element name="RezervujTerminPreVymennyListok_Request" type="RezervujTerminPreVymennyListok_Request"/>
+  <xs:element name="VyhladajKalendare_Request" type="VyhladajKalendare_Request"/>
+  <xs:element name="VyhladajKalendare_Response" type="VyhladajKalendare_Response"/>
+  <xs:element name="VyhladajVolneTerminy_Request" type="VyhladajVolneTerminy_Request"/>
+  <xs:element name="VyhladajVolneTerminy_Response" type="VyhladajVolneTerminy_Response"/>
+  <xs:element name="VytvorKalendar_Request" type="VytvorKalendar_Request"/>
+  <xs:element name="VytvorKalendar_Response" type="VytvorKalendar_Response"/>
+  <xs:element name="PotvrdenieRezervacie_Request" type="PotvrdenieRezervacie_Request"/>
+  <xs:element name="PotvrdenieRezervacie_Response" type="PotvrdenieRezervacie_Response"/>
+  <xs:element name="ZrusKalendar_Request" type="ZrusKalendar_Request"/>
+  <xs:element name="AktualizujRezervaciu_Request" type="AktualizujRezervaciu_Request"/>
+  <xs:element name="AktualizujKalendar_Request" type="AktualizujKalendar_Request"/>
+
+  <xs:simpleType name="TypRezervacie">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0_RezervaciaNaVymennyListok"/>
+      <xs:enumeration value="1_RezervaciaNaPrimarnuZS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="StavRezervacie">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0_ZADANA"/>
+      <xs:enumeration value="1_POTVRDENA"/>
+      <xs:enumeration value="2_NAVRHNUTA"/>
+      <xs:enumeration value="3_ZAMIETNUTA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="RezervaciaNaVymennyListok">
+    <xs:sequence>
+      <xs:element name="idVymennehoListka" type="II" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RezervaciaNaPrimarnuZS">
+    <xs:sequence>
+      <xs:element name="popis" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="datumVytvorenia" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RezervaciaVKalendariPacienta">
+    <xs:sequence>
+      <xs:element name="IdKalendara" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdVlastnikaKalendara" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdRezervacie" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="datumRezervacie" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="predstihPripomenutia" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="stav" type="StavRezervacie" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="datumZmeny" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:choice>
+        <xs:element name="RezervaciaNaVymennyListok" type="RezervaciaNaVymennyListok"/>
+        <xs:element name="RezervaciaNaPrimarnuZS" type="RezervaciaNaPrimarnuZS"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RezervaciaVKalendari">
+    <xs:complexContent>
+      <xs:extension base="RezervaciaVKalendariPacienta">
+        <xs:sequence>
+          <xs:element name="osobneUdajePacienta" type="xs:base64Binary" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="OdporucaneVysetrenia">
+    <xs:sequence>
+      <xs:element name="ExternyIDVymennehoListku" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajRezervaciePacienta_Request">
+    <xs:sequence>
+      <xs:element name="idRezervacie" type="xs:long" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="obdobieOd" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="obdobieDo" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="idPacienta" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="typRezervacie" type="TypRezervacie" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="idVymennehoListku" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajRezervaciePacienta_Response">
+    <xs:sequence>
+      <xs:element name="rezervacie" type="RezervaciaVKalendariPacienta" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajRezervacie_Request">
+    <xs:sequence>
+      <xs:element name="idKalendara" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="idRezervacie" type="xs:long" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="obdobieOd" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="obdobieDo" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="typRezervacie" type="TypRezervacie" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="idVymennehoListku" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="zmenaOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="zmenaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajRezervacie_Response">
+    <xs:sequence>
+      <xs:element name="rezervacie" type="RezervaciaVKalendari" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />
+  </xs:complexType>
+
+  <xs:complexType name="ZapisRezervaciuPacient_Request">
+    <xs:sequence>
+      <xs:element name="idSlotu" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ID_PrZS_sifrovany" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="predstihPripomenutia" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:choice>
+        <xs:element name="RezervaciaNaPrimarnuZS" type="RezervaciaNaPrimarnuZS"/>
+        <xs:element name="idVymennehoListku" type="OdporucaneVysetrenia"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RezervujTerminPreVymennyListok_Request">
+    <xs:sequence>
+      <xs:element name="idSlotu" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ID_PrZS_sifrovany" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="predstihPripomenutia" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="idVymennehoListku" type="OdporucaneVysetrenia" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ZapisRezervaciu_Request">
+    <xs:complexContent>
+      <xs:extension base="ZapisRezervaciuPacient_Request">
+        <xs:sequence>
+          <xs:element name="stav" type="StavRezervacie" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ZapisRezervaciu_Response">
+    <xs:sequence>
+      <xs:element name="idRezervacie" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Stav" type="StavRezervacie"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TimeSlot">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TimeSlotId" type="xs:long"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Termin" type="xs:dateTime"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Trvanie" type="xs:int"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumZrusenia" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Kalendar">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarId" type="xs:long"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="TypVysetrenia" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="PodmienkySchvalovania" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="PodmienkyRezervacie" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Nazov" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="JePotrebnyVymennyListok" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdOdborneZameranieOU" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="SchvalovatAutomaticky" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="CreatedDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumZrusenia" type="xs:dateTime"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="TimeSlots">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeSlot" type="TimeSlot"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajKalendare_Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="KalendarId" type="xs:long"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Platny" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdOUPZS" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdOdborneZameranieOU" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Strankovanie" type="Strankovanie_Metadata"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajKalendare_Response">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarArray">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Kalendar"
+                type="Kalendar"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajVolneTerminy_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarId" type="xs:long"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ObdobieOd" type="xs:dateTime"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ObdobieDo" type="xs:dateTime"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Strankovanie" type="Strankovanie_Metadata"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajVolneTerminy_Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Kalendar" type="Kalendar"/>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" />
+  </xs:complexType>
+
+  <xs:complexType name="VytvorKalendar_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Kalendar" type="Kalendar" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VytvorKalendar_Response">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarId" type="xs:long"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!--
+    PotvrdenieRezervaciePacient_Request and Response are 
+      exactly the same so we will use these same elements. 
+  -->
+  <xs:complexType name="PotvrdenieRezervacie_Request">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="RezervacieId" type="xs:long"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="Stav" type="StavRezervacie"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PotvrdenieRezervacie_Response">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="Stav" type="StavRezervacie"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ZrusKalendar_Request">
+    <xs:all>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarId" type="xs:long"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ZachovatRezervacie" type="xs:boolean"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AktualizujRezervaciu_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RezervacieId" type="xs:long"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Stav" type="StavRezervacie"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdSlotu" type="xs:long"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PredstihPripomenutia" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AktualizujKalendar_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="KalendarId" type="xs:long"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="TypVysetrenia" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PodmienkySchvalovania" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PodmienkyRezervacie" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="Nazov" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="JePotrebnyVymennyListok" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="SchvalovatAutomaticky" type="xs:boolean"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ZachovatRezervacie" type="xs:boolean"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="ObdobieArray">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="unbounded" name="Obdobie">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element minOccurs="1" maxOccurs="1" name="Koniec" type="xs:dateTime"/>
+                  <xs:element minOccurs="1" maxOccurs="1" name="Zaciatok" type="xs:dateTime"/>
+                  <xs:element minOccurs="1" maxOccurs="1" name="TimeSlots">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeSlot" type="TimeSlot"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

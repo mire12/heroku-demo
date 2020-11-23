@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/NeuplnyDispZVystup.xsd" />
+  <xs:include schemaLocation="../_shared/VystupneVarovanieMedikacie.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="DoplnNeuplnyEReceptVystup" type="DoplnNeuplnyEReceptVystup" />
+  <xs:complexType name="DoplnNeuplnyEReceptVystup">
+    <xs:annotation>
+      <xs:documentation>Na výstupe vráti NZIS informáciu či bolo doplnenie receptu úspešné, alebo nie. Ak nebolo tak formou varovaní vráti informáciu o dôvode.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdReceptu" type="rm:II" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak NZIS zaeviduje recept, na výstupe vráti identifikátor zaevidovaného receptu. Tento identifikátor môže byť potom použitý na doplnenie údajov neúplného receptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZapisUspesny" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či sa elektronický recept (prípadne jeho dispenzačný záznam) založil aj v databáze systému NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DispZ" type="NeuplnyDispZVystup" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

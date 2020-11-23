@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Dôvod ukončenia zdravotného poistenia</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.68</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116293</codeValue>
+      <displayName>Úmrtie poistenca</displayName>
+      <Skratka>M</Skratka>
+      <Popis>Úmrtie poistenca alebo jeho vyhlásenie za mŕtveho</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000116301</codeValue>
+      <displayName>Osoba s trvalým pobytom SR z dôvodov uvedených v § 5 odsek 2 zákona č. 580/2004 Z. z.</displayName>
+      <Skratka>K</Skratka>
+      <Popis>U fyzickej osoby, ktorá má trvalý pobyt na území Slovenskej republiky, verejné zdravotné poistenie zaniká deň pred dňom, kedy nastali skutočnosti uvedené v § 3 ods. 2 písm. a) až c) alebo dňom zániku trvalého pobytu na území Slovenskej republiky. (iné zahraničie okrem EÚ)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777599</codeValue>
+      <displayName>Osoba bez trvalého bobytu v SR z dôvodov uvedených v § 5 odsek 3 zákona č. 580/2004 Z. z.</displayName>
+      <Skratka>C</Skratka>
+      <Popis>U fyzickej osoby, ktorá nemá trvalý pobyt na území Slovenskej republiky, verejné zdravotné poistenie zaniká dňom zániku skutočností uvedených v § 3 ods. 3 – týka sa Cudzincov.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777615</codeValue>
+      <displayName>Osoba s trvalým pobytom SR pracujúca v EÚ</displayName>
+      <Skratka>E</Skratka>
+      <Popis>Podľa Nariadenia Rady EHS č. 1408/71 a Nariadenia Rady EHS č. 574/72.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777631</codeValue>
+      <displayName>Prevod poistného kmeňa</displayName>
+      <Skratka>R</Skratka>
+      <Popis>Prevod poistného kmeňa podľa § 61 zákona č. 581/2004 Z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777649</codeValue>
+      <displayName>Zlúčenie poisťovní</displayName>
+      <Skratka>Z</Skratka>
+      <Popis>Ukončenie poistného vzťahu z dôvodu Zlúčenia zdravotnej poisťovne s inou zdravotnou poisťovňou</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777656</codeValue>
+      <displayName>Prepoistenie do VšZP</displayName>
+      <Skratka>25</Skratka>
+      <Popis>Prepoistenie do VšZP</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777664</codeValue>
+      <displayName>Prepoistenie do poisťovne Dôvera</displayName>
+      <Skratka>24</Skratka>
+      <Popis>Prepoistenie do poisťovne Dôvera</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000777672</codeValue>
+      <displayName>Prepoistenie do poisťovne Union</displayName>
+      <Skratka>27</Skratka>
+      <Popis>Prepoistenie do poisťovne Union</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031456</codeValue>
+      <displayName>Prepoistenie do VšZP z dôvodu vzniku statusu NRP</displayName>
+      <Skratka>85</Skratka>
+      <Popis>Prepoistenie do VšZP - nezaopatrený rodinný príslušník (NRP) osoby z iného členského štátu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031464</codeValue>
+      <displayName>Prepoistenie do poisťovne Dôvera z dôvodu vzniku statusu NRP</displayName>
+      <Skratka>84</Skratka>
+      <Popis>Prepoistenie do poisťovne Dôvera - nezaopatrený rodinný príslušník (NRP) osoby z iného členského štátu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020031472</codeValue>
+      <displayName>Prepoistenie do poisťovne Union z dôvodu vzniku statusu NRP</displayName>
+      <Skratka>87</Skratka>
+      <Popis>Prepoistenie do poisťovne Union - nezaopatrený rodinný príslušník (NRP) osoby z iného členského štátu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869164</codeValue>
+      <displayName>Odhlásenie poistenca pri zániku účasti na verejnom zdravotnom poistení</displayName>
+      <Skratka>P</Skratka>
+      <Popis>Dôvod ukončenia je povolený iba pre poistný vzťah do roku 2004 vrátane. Ukončenie poistného vzťahu z dôvodu iného ako je § 5 zákona č. 580/2004 Z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869271</codeValue>
+      <displayName>Ukončenie poistného vzťahu  z dôvodu transformácie zdravotnej poisťovne na akciovú spoločnosť</displayName>
+      <Skratka>T</Skratka>
+      <Popis>Vypĺňa sa pri prechode zdravotnej poisťovne pod nový číselný kód pri hromadnom ukončení poistných vzťahov v roku 2005 pre zdravotnú poisťovňu so starým číselným kódom</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869289</codeValue>
+      <displayName>Preddefinovaná hodnota v CRP</displayName>
+      <Skratka>N</Skratka>
+      <Popis>Technický údaj CRP</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869305</codeValue>
+      <displayName>Ukončenie poistného vzťahu v zdravotnej poisťovni z dôvodu vzniku statusu NRP</displayName>
+      <Skratka>A</Skratka>
+      <Popis>Ukončenie poistného vzťahu v zdravotnej poisťovni z dôvodu vzniku statusu "Nezaopatrený rodinný príslušník"</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869321</codeValue>
+      <displayName>Ukončenie statusu NRP v zdravotnej poisťovni nositeľa</displayName>
+      <Skratka>B</Skratka>
+      <Popis>Ukončenie statusu "Nezaopatrený rodinný príslušník" v zdravotnej poisťovni nositeľa</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869347</codeValue>
+      <displayName>Prepoistenie dieťaťa v priebehu prvých 60 dní</displayName>
+      <Skratka>D</Skratka>
+      <Popis>Prepoistenie dieťaťa do zdravotnej poisťovne, do ktorej bola na neho podaná prihláška v lehote 60 dní. Zadáva zdravotná poisťovňa matky, ktorá ukončuje poistný vzťah dieťaťa. (§6 ods. 8 zákona č. 580/2004 Z. z.)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869362</codeValue>
+      <displayName>Automatické ukončenie poistného vzťahu u dieťaťa do 60 dní</displayName>
+      <Skratka>G</Skratka>
+      <Popis>Generované výlučne v CRP pri automatickom ukončení poistného vzťahu v zdravotnej poisťovni matky v lehote 60 dní, pokiaľ ZP matky riadne neukončila poistný vzťah v prípade podania prihlášky na dieťa v inej zdravotnej poisťovni. (§6 ods. 8 zákona č. 580/2004 Z. z.)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869388</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

@@ -1,0 +1,159 @@
+﻿archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Vysledok_testu_kvantitativny.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120426">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Entita pre evidovanie kvantitatívnej hodnoty výsledku a referenčných hodnôt.
+">
+            keywords = <"Výsledok testu kvantitatívny">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Výsledok testu kvantitatívny
+        parts existence matches {0..1} cardinality matches {1..*; unordered} matches {
+            CLUSTER[at0002] occurrences matches {0..*} matches {  -- Referenčné hodnoty
+                parts existence matches {0..1} cardinality matches {3..3; unordered; unique} matches {
+                    ELEMENT[at0009] occurrences matches {1..1} matches {  -- Hodnota
+                        value existence matches {1..1} matches {
+                            PQ[at0011] occurrences matches {1..1} matches {  -- PQ
+                                units existence matches {1..1} matches {
+                                    CS[at0001] occurrences matches {1..1} matches {  -- CS
+                                        codeValue existence matches {1..1} matches {/.*/}
+                                        codingScheme existence matches {1..1} matches {
+                                            OID[at0006] occurrences matches {1..1} matches {  -- 
+                                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.87"}
+                                            }
+                                        }
+                                        codingSchemeName existence matches {1..1} matches {/.*/}
+                                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                                    }
+                                }
+                                value existence matches {1..1} matches {|>-99999.0..<999999.0|}
+                            }
+                        }
+                    }
+                    ELEMENT[at0017] occurrences matches {1..1} matches {  -- Hranica
+                        value existence matches {1..1} matches {
+                            SIMPLE_TEXT[at0019] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {"MINIMUM","MAXIMUM","MINIMUM_EXACT","MAXIMUM_EXACT"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0024] occurrences matches {1..1} matches {  -- Prípad
+                        value existence matches {1..1} matches {
+                            SIMPLE_TEXT[at0026] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0025] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            ELEMENT[at0028] occurrences matches {1..1} matches {  -- Výsledok
+                value existence matches {1..1} matches {
+                    PQ[at0030] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0007] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0014] occurrences matches {1..1} matches {  -- 
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeName existence matches {1..1} matches {/.*/}
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                        value existence matches {1..1} matches {|>-999999.0..<999999.0|}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0029] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Výsledok testu kvantitatívny">
+                    description = <"Entita pre evidovanie kvantitatívnej hodnoty výsledku a referenčných hodnôt.
+Výsledok je v tomto prípade prezentovaný atribútmi:
+- Hodnota
+- Merná jednotka
+- Referenčné hodnoty: (Minimum, Maximum, Minimum exact, Maimum exact), alebo interpretačné pásma (negatívne od-do, hraničné od-do, pozitívne nad ...)">
+                >
+                ["at0002"] = <
+                    text = <"Referenčné hodnoty">
+                    description = <"Zoznam referenčných hodnôt – hranice a spôsob určenia hranice
+Pri určení hraníc min-max sa tento element opakuje 2x raz ako minimum a raz ako maximum.">
+                >
+                ["at0009"] = <
+                    text = <"Hodnota">
+                    description = <"Hodnota hranice">
+                >
+                ["at0011"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0017"] = <
+                    text = <"Hranica">
+                    description = <"Odkaz na enumeraciu Hranica. Možné hodnoty MINIMUM, MAXIMUM, MINIMUM_EXACT, MAXIMUM_EXACT">
+                >
+                ["at0019"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0024"] = <
+                    text = <"Prípad">
+                    description = <"Popis určenia danej referenčnej hranice testu, na ktorý sa referenčná hranica viaže. Zapíšu sa všetky kritéria, ktoré upravovali/posúvali referenčnú hranicu. Môže to byť vek, hmotnosť, pohlavie a pod.">
+                >
+                ["at0026"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0028"] = <
+                    text = <"Výsledok">
+                    description = <"Hodnota výsledku">
+                >
+                ["at0030"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0001"] = <
+                    text = <"CS">
+                    description = <"This is a CS object">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

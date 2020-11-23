@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd" /> 
+	
+  <xs:element name="VyhladajZaznamyEzkTlacRequest" type="tns:VyhladajZaznamyEzkTlacRequest" />  
+  <xs:complexType name="VyhladajZaznamyEzkTlacRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TypyStranok" type="tns:ArrayOfTypStrankyEZK" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LogPristupu" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ZaznamyOd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ZaznamyDo" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ArrayOfTypStrankyEZK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TypStranky" xmlns:q48="http://eHealth.gov.sk/EzkCommon/v1" type="q48:TypStrankyEZK" />
+    </xs:sequence>
+  </xs:complexType>  
+  
+</xs:schema>

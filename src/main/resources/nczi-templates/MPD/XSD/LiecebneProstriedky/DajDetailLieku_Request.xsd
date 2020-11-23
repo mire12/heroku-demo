@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="DajDetailLiekuVstup" type="DajDetailLiekuVstup" />
+  <xs:complexType name="DajDetailLiekuVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné informácie na identifikáciu lieku a požiadavky na dáta.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdLieku" type="IdLiek" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifkátor lieku v NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pil" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa má poskytnúť aj PIL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Spc" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa má poskytnúť aj SPC.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Znalosti" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa majú poskytnúť aj znalostné informácie o lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

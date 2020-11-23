@@ -1,0 +1,133 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Vysledok.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {0..*} matches {  -- Vysledok
+        parts existence matches {0..1} cardinality matches {1..7; ordered; unique} matches {
+            allow_archetype CLUSTER[at0019] occurrences matches {1..1} matches {  -- Realizovaný test
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Laboratorny_test.v1/}
+            }
+            allow_archetype CLUSTER[at0007] occurrences matches {0..1} matches {  -- Požadovaný test
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Laboratorny_test.v1/}
+            }
+            ELEMENT[at0049] occurrences matches {0..1} matches {  -- Kritická hodnota
+                value existence matches {1..1} matches {
+                    BL[at0051] occurrences matches {1..1} matches {  -- 
+                        value existence matches {1..1} matches {true, false; false}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0014] occurrences matches {0..1} matches {  -- Výsledok testu kvantitatívny
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Vysledok_testu_kvantitativny.v1/}
+            }
+            allow_archetype CLUSTER[at0002] occurrences matches {0..1} matches {  -- Výsledok testu popisný
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Vysledok_testu_popisny.v2/}
+            }
+            ELEMENT[at0003] occurrences matches {1..1} matches {  -- Validoval
+                value existence matches {0..1} matches {
+                    II[at0004] occurrences matches {1..1} matches {  -- II
+							extension existence matches {1..1} matches {/.*/}                        
+							root existence matches {0..1} matches {
+								OID[at0005] occurrences matches {0..1} matches {  -- 
+									oid existence matches {0..1} matches {"1.3.158.00165387.100.40.90"}
+                            }
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0006] occurrences matches {0..1} matches {  -- Akreditácia
+                value existence matches {0..1} matches {
+                    BL[at0008] occurrences matches {1..1} matches {  -- BL
+                        value existence matches {1..1} matches {true, false; false}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Vysledok">
+                    description = <"Výsledok merania jednej položky">
+                >
+                ["at0002"] = <
+                    text = <"Výsledok testu popisný">
+                    description = <"Zapísanie výsledku popisne.
+Poznámka: je možné použiť súčasne s kvantitatívnym výsledkom.
+">
+                >
+                ["at0007"] = <
+                    text = <"Požadovaný test">
+                    description = <"V prípade, že realizovaný test je nad rámec požadovaných testov, tento element sa neuvádza.">
+                >
+                ["at0014"] = <
+                    text = <"Výsledok testu kvantitatívny">
+                    description = <"Zapísanie výsledku kvantitatívne.
+Poznámka: je možné použiť súčasne s popisným výsledkom.
+">
+                >
+                ["at0019"] = <
+                    text = <"Realizovaný test">
+                    description = <"Uvádzajú sa reálne vykonané testy, môžu byť aj iné ako boli uvedené na žiadanke o laboratórne vyšetrenie. 
+Všetky realizované testy laboratóriom, ktoré boli viazané na danú vzorku.">
+                >
+                ["at0049"] = <
+                    text = <"Kritická hodnota">
+                    description = <"Príznak, či výsledok testu nadobúda kritickú hodnotu – hodnota mimo štandard, referenčný rozsah, či bežný fyziologický nález.">
+                >
+                ["at0051"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Validoval">
+                    description = <"JRUZ identifikátor schvaľujúceho zdravotníckeho pracovníka laboratória">
+                >
+                ["at0004"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"Akreditácia">
+                    description = <"Príznak, ak laboratórium, ktoré realizovalo konkrétny test má akreditáciu pre tento test.
+Hodnota „áno“ znamená, že laboratórium má akreditáciu podľa SNAS (Slovenská akreditačná služba) a hodnota „nie“ znamená, že nemá  akreditáciu.">
+                >
+                ["at0008"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+            >
+        >
+    >

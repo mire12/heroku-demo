@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkCommon/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkCommon/v1" xmlns:rm="CEN/13606/RM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:import namespace="CEN/13606/RM" schemaLocation="SdsRestrictionsEn13606.xsd" />    
+    
+    <xs:complexType name="IdPolozkaCiselnikaTypKontaktu">
+        <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="IdPolozkaCiselnika" type="tns:IdPolozkaCiselnikaTypKontaktuType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="IdPolozkaCiselnikaTypKontaktuType">
+        <xs:annotation>
+            <xs:documentation>JRUZ identifikátor číselníka s OID=1.3.158.00165387.100.10.54</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="rm:CVPolozkaCiselnikaTypKontaktu">
+                <xs:sequence />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+</xs:schema>

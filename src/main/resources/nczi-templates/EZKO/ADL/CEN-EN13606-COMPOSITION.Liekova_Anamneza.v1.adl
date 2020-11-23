@@ -1,0 +1,45 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Liekova_Anamneza.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2018-04-04">
+    >
+    lifecycle_state = <"Private">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Lieková Anamnéza
+        content existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            allow_archetype ENTRY[at0001] occurrences matches {0..*} matches {  -- Lieková Anamnéza
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Liekova_Anamneza.v1/}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Lieková Anamnéza">
+                    description = <"Lieková Anamnéza pacienta určená pre Pacienstsky sumár, je využívaná výhradne len pre čítacie služby ako EHR extrakt, pre zápisové služby nie je používaný.">
+                >
+                ["at0001"] = <
+                    text = <"Lieková Anamnéza">
+                    description = <"Lieková Anamnéza pacienta určená pre Pacienstsky sumár, je využívaná výhradne len pre čítacie služby ako EHR extrakt, pre zápisové služby nie je používaný.">
+                >
+            >
+        >
+    >

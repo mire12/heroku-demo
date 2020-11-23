@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="AlokacieIdentifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="ObecneAnon.xsd" />
+  <xs:element name="AnonymizujZaznamy_Request" type="AnonymizujZaznamy_Request" />
+  <xs:element name="AnonymizujZaznamy_Response" type="AnonymizujZaznamy_Response" />
+  <xs:element name="VyhladajVysetreniaPreAnonymizaciu_Response" type="VyhladajVysetreniaPreAnonymizaciu_Response" />
+  <xs:element name="VyhladajOckovaniaPreAnonymizaciu_Response" type="VyhladajOckovaniaPreAnonymizaciu_Response" />
+  <xs:element name="VyhladajLabVysetreniaPreAnonymizaciu_Response" type="VyhladajLabVysetreniaPreAnonymizaciu_Response" />
+  <xs:complexType name="AnonymizujZaznamy_Request">
+    <xs:annotation>
+      <xs:documentation>identifikátor zapísaného lab vyšetrenia</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Interval" type="Interval" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnonymizujZaznamy_Response">
+    <xs:sequence>
+      <xs:element name="IdZaznamu" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>identifikátor zapísanej anonymizačnej dávky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetZaznamov" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet zapisaných anonymizovnaých záznamov. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajVysetreniaPreAnonymizaciu_Response">
+    <xs:sequence>
+      <xs:element name="Vysetrenia" type="ZaznamOVysetreniAnon" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZaznamOVysetreni" type="ZaznamOVysetreniAnon" />
+  <xs:complexType name="ZaznamOVysetreniAnon">
+    <xs:annotation>
+      <xs:documentation>
+        Archetyp obsahujúci záznam o vykonanom vyšetrení pacienta.
+        Vždy musí byť konkretizovaný pre typ vyšetrenia.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <!--new CHR-198-->
+      <xs:element name="Autor" type="IdZdrPrac" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <!--new CHR-198-->
+      <xs:element name="IdZaznamu" type="IdLekarskehoVysetrenia" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumVysetrenia" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVznikuVysetreniaVNZIS" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypVysetrenia" type="TypLekarskehoVysetreniaAnonEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DiagnozaPriOdoslani" type="DiagnozaAnon" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DiagnostickyZaver" type="DiagnostickyZaverAnon" minOccurs="0" maxOccurs="unbounded" />
+      <!--new CHR-198-->
+      <xs:element name="OdporucanieNaVysetrenie" type="OdporucanieNaVysetrenieAnon" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiagnozaAnon" type="DiagnozaAnon" />
+  <xs:complexType name="DiagnozaAnon">
+    <xs:annotation>
+      <xs:documentation>Archetyp obsahujúci záznam o diagnóze pacienta.  Dané diagnózy je možné definovať výberom z čísleníka MKCH10 alebo popísať voľným textom. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Diagnoza" type="CVDiagnoza" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Upresnenie" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--new CHR-198-->
+  <xs:complexType name="OdporucanieNaVysetrenieAnon">
+    <xs:annotation>
+      <xs:documentation>VL</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdVL" type="IdOdporucaniaNaVysetrenie" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DruhOdbornehoUtvaru" type="CVDruhOU" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranieUtvaru" type="CVOdborneZameranieOU" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiagnostickyZaver" type="DiagnostickyZaverAnon" />
+  <xs:complexType name="DiagnostickyZaverAnon">
+    <xs:annotation>
+      <xs:documentation>Informácie ohľadom diagnóz, ktoré má pacient pri ukončení hospitalizácie. Diagnózu je možné definovať výberom diagnózy z číselníka (MKCH10)  alebo pomocou slovného popisu diagnózy. Tiež je možné definovať hlavnú diagnózu. Hlavná diagnóza môže byť vždy maximálne jedna a pokiaľ definujeme hlavnú diagnózu musí byť táto diagnóza definovaná kódom MKCH10.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="HlavnaDiagnoza" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Diagnoza" type="DiagnozaAnon" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TypLekarskehoVysetreniaAnonEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ODBORNE_VYSETRENIE" />
+      <xs:enumeration value="ZOBRAZOVACIE_VYSETRENIE" />
+      <xs:enumeration value="LEKARSKA_PREPUSTACIA_SPRAVA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VyhladajOckovaniaPreAnonymizaciu_Response">
+    <xs:sequence>
+      <xs:element name="OckovacieZaznamy" type="OckovaciZaznam" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OckovaciZaznam" type="OckovaciZaznam" />
+  <xs:complexType name="OckovaciZaznam">
+    <xs:annotation>
+      <xs:documentation>Archetyp obsahujúci sadu laboratórnych výsledkov jedného vyšetrenia jednej vzorky pre konkrétneho pacienta.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumPlanovanehoOckovania" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVznikuZaznamu" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DovodZruseniaOckovania" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OckovaciaLatka" type="IdOckovaciaLatka" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TypOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ReakciaNaOckovanie" type="ReakciaNaOckovanieAnon" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DruhOckovania" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="OckovanieVykonalOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumVykonaniaOckovania" type="xs:date" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReakciaNaOckovanie" type="ReakciaNaOckovanieAnon" />
+  <xs:complexType name="ReakciaNaOckovanieAnon">
+    <xs:sequence>
+      <xs:element name="Diagnoza" type="CVDiagnoza" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TypAlergie" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajLabVysetreniaPreAnonymizaciu_Response">
+    <xs:sequence>
+      <xs:element name="LabVysledky" type="LaboratornyVysledok" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LaboratornyVysledok" type="LaboratornyVysledok" />
+  <xs:complexType name="LaboratornyVysledok">
+    <xs:annotation>
+      <xs:documentation>Archetyp obsahujúci sadu laboratórnych výsledkov jedného vyšetrenia jednej vzorky pre konkrétneho pacienta.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumOdberuVzorky" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumZaznameniaVysetrenia" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypVzorky" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VysetrenieVykonalOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ZiadatelOVysetrenieOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Polozky" type="VysledokTestuAnon" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VysledokTestu" type="VysledokTestuAnon" />
+  <xs:complexType name="VysledokTestuAnon">
+    <xs:annotation>
+      <xs:documentation>Výsledok merania jednej položky - jeden test</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumUvolneniaVysledku" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum a čas, kedy bola položka uvoľnená laboratóriom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornaPolozka" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PozadovanyZiadatelom" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či test bol požadovaný žiadateľom, alebo bol navyše indikovaný laboratóriom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KategoriaVysledku" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

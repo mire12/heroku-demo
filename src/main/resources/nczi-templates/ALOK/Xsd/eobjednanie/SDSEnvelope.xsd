@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eHealth.gov.sk/SDS/v2" version="1.0" elementFormDefault="qualified">
+    <xsd:element name="SDSEnvelope">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="RandomData" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="IdPrzs" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                <xsd:element name="Data" minOccurs="1" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            Cely tento typ je len obalka, ktora je taktiez zasifrovana a az v ramci nej v ramci data elementu su ulozene nase data
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:any minOccurs="1" maxOccurs="1" namespace="##any" processContents="lax" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

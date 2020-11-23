@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="DajPocetZaznamovPacientaVstup" targetNamespace="http://eHealth.gov.sk/MPD/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1"
+           elementFormDefault="qualified">
+  <xs:element name="DajPocetZaznamovPacientaVstup" nillable="true" type="DajPocetZaznamovPacientaVstup" />
+
+  <xs:complexType name="DajPocetZaznamovPacientaVstup">
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="IdPrZS">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor prijímateľa zdr. starostlivosti.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="II">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="II">
+    <xs:sequence>
+      <xs:element name="extension" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifikátor záznamu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="rootOID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Konštanta definujúca oblasť
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

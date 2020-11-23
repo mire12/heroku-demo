@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="PhysicalPerson.xsd" />
+  <xs:include schemaLocation="Address.xsd" />
+  <xs:include schemaLocation="Contact.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="CorporateBody.xsd" />
+  <xs:include schemaLocation="Vztah.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="IdentifikacnyPredmet.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:element name="IDPredmetyPrZS" type="IDPredmetyPrZS" />
+  <xs:complexType name="IDPredmetyPrZS">
+    <xs:annotation>
+      <xs:documentation>Identifikačné predmety pre Prijímateľa ZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdentifikacnyPredmetPrZS" type="IdentifikacnyPredmet" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrijimatelZS" type="PrijimatelZS" />
+  <xs:complexType name="PrijimatelZS">
+    <xs:annotation>
+      <xs:documentation>Prijímateľ ZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRUZ identifikátor PrZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikacnyPredmetPrZS" type="IdentifikacnyPredmet" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ZdravotnePoistenie" type="ZdravotnePoistenie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OsetrujuciLekar" type="OsetrujuciLekar" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="KontaktneUdaje" type="KontaktneUdaje" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OptOutPrZS" type="OptOutPrZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PersonData" type="PersonData" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ZmluvnyLekar" type="ZmluvnyLekar" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdPrimarnyZaznamIdCRP" type="IdPrZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnePoistenie" type="ZdravotnePoistenie" />
+  <xs:complexType name="ZdravotnePoistenie">
+    <xs:annotation>
+      <xs:documentation>Eviduje jedno poistenie poistenca v rámci jednej zdravotnej poisťovne.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Vztah">
+        <xs:sequence>
+          <xs:element name="DatumRegistracie" type="xs:date" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Dátum registrácie prihlášky.
+Pri kolízii poisťovní, je primárna poisťovna tá, do ktorej podal poistenec prihlášku ako prvú.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UhradenePoistne" type="xs:boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Príznak, či má prijímateľ zdr. starostlivosti uhradené poistné.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PlatitelZP" type="PlatitelZP" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="PreukazZP" type="IdIDPredmet" minOccurs="0" maxOccurs="1" />
+          <xs:element name="EuropskyPreukazZP" type="IdIDPredmet" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="IdPobockaZP" type="IdPobockaZP" minOccurs="0" maxOccurs="1" />
+          <xs:element name="TypZdrPoistenia" type="IdPolozkaCiselnikaTypZdrPoistenia" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DovodUkonceniaZdrPoistenia" type="IdPolozkaCiselnikaDovodUkonceniaZdrPoistenia" minOccurs="0" maxOccurs="1" />
+          <xs:element name="IdPoistencaZP" type="IdPoistencaZP" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="NazovZP" type="CorporateBodyFullName" minOccurs="0" maxOccurs="1" />
+          <xs:element name="KodZP" type="ID" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlatitelZP" type="PlatitelZP" />
+  <xs:complexType name="PlatitelZP">
+    <xs:annotation>
+      <xs:documentation>Platiteľ zdravotného poistenia.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TypPlatitelaZP" type="IdPolozkaCiselnikaTypPlatitelaZP" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IDPlatitela" type="ID" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdPrZS_Zoznam" type="IdPrZS_Zoznam" />
+  <xs:complexType name="IdPrZS_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam JRUZ identifikátorov prijímateľov zdr. starostlivosti.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KontaktneUdaje" type="KontaktneUdaje" />
+  <xs:complexType name="KontaktneUdaje">
+    <xs:annotation>
+      <xs:documentation>Kontaktné údaje</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="InternetAddress" type="InternetAddress" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TelephoneAddress" type="TelephoneAddress" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PhysicalAddress" type="PhysicalAddress" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZP_PrZS" type="ZP_PrZS" />
+  <xs:complexType name="ZP_PrZS">
+    <xs:annotation>
+      <xs:documentation>Priebeh zdravotných poisťovní prijímateľa ZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoriaZdravotnehoPoistenia" type="HistoriaZdravotnehoPoistenia" />
+  <xs:complexType name="HistoriaZdravotnehoPoistenia">
+    <xs:annotation>
+      <xs:documentation>História zdravotného poistenia</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnePoistenie" type="ZdravotnePoistenie" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OsobneUdajePrZS" type="OsobneUdajePrZS" />
+  <xs:complexType name="OsobneUdajePrZS">
+    <xs:sequence>
+      <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OsobneUdajePrZSData" type="OsobneUdajePrZSData" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OsobneUdajePrZSData" type="OsobneUdajePrZSData" />
+  <xs:complexType name="OsobneUdajePrZSData">
+    <xs:sequence>
+      <xs:element name="ID" type="ID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Birth" type="Birth" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PersonName" type="PersonName" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdPoistencaZP" type="IdPoistencaZP" />
+  <xs:complexType name="IdPoistencaZP">
+    <xs:simpleContent>
+      <xs:extension base="string50" />
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="DajDetailLiecivaVstup" type="DajDetailLiecivaVstup" />
+  <xs:complexType name="DajDetailLiecivaVstup">
+    <xs:annotation>
+      <xs:documentation>Požadované liečivo sa určuje identifikátorom referenčnej skupiny.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AjLieky" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či požadujeme zoznam liekov ktoré sa predpisujú týmto liečivom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AjZnalosti" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ak je true, tak služba na výstupe ponúkne aj znalostné informácie daného liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReferencnejSkupiny" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód požadovanej referečnej skupiny liečiva.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

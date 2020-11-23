@@ -1,0 +1,325 @@
+﻿archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_zobrazovacom_vysetreni.v3
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2018-03-20">
+        ["name"] = <"MNO">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci záznam o vykonanom zobrazovacom vyšetrení pacienta. 
+">
+            keywords = <"Záznam o vyšetrení pacienta","Vyšetrenie pacienta">
+        >
+    >
+
+definition
+    ENTRY[at0000.1] occurrences matches {1..1} matches {  -- Záznam o vyšetrení - Specialization: Záznam o zobrazovacom vyšetrení
+        items existence matches {0..1} cardinality matches {2..*; unordered} matches {
+            ELEMENT[at0101] occurrences matches {0..1} matches {  -- Dátum a čas odoslania
+                value existence matches {1..1} matches {
+                    TS[at0102] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0.2] occurrences matches {1..1} matches {  -- Dátum a čas vyšetrenia
+                value existence matches {1..1} matches {
+                    TS[at0.3] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0011] occurrences matches {0..1} matches {  -- Popis
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Textovy_popis.v1/}
+            }
+            CLUSTER[at0103.7] occurrences matches {0..*} matches {  -- Diagnostický záver
+                parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                    ELEMENT[at0108] occurrences matches {0..1} matches {  -- Hlavná diagnóza
+                        value existence matches {1..1} matches {
+                            BL[at0109] occurrences matches {1..1} matches {  -- BL
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0104] occurrences matches {1..1} matches {  -- Diagnóza
+                        include
+                            archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0000] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0200] occurrences matches {0..1} matches {  -- Odosielajúci lekár
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+            }
+            ELEMENT[at0117] occurrences matches {1..1} matches {  -- Urgentnosť vyšetrenia
+                value existence matches {1..1} matches {
+                    CV[at0118.10] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0.11] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.123"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0111] occurrences matches {0..*} matches {  -- Diagnóza pri odoslaní
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+            }
+            ELEMENT[at0999] occurrences matches {0..1} matches {  -- Požiadavka na vyšetrenie
+                value existence matches {0..1} matches {
+                    II[at0998] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0997] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.60.110"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0.34] occurrences matches {0..1} matches {  -- Názov vyšetrenia
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0.39] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,512}/}
+                    }
+                }
+            }
+            ELEMENT[at0.50] occurrences matches {0..1} matches {  -- Interná poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0.55] occurrences matches {1..1} matches {  -- 
+                        originalText existence matches {0..1} matches {/[\s\S]{0,6000}/}
+                    }
+                }
+            }
+            ELEMENT[at0105] occurrences matches {0..1} matches {  -- Modalita zobrazovacieho vyšetrenia
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0106] occurrences matches {1..1} matches {  -- 
+                        originalText existence matches {0..1} matches {/[\s\S]{0,512}/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0500] occurrences matches {0..1} matches {  -- Zmena stavu záznamu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zmena_stavu_zaznamu.v1/}
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0.70] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.71] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.80"}
+                    }
+                }
+            }
+        }
+        synthesised existence matches {1..1} matches {false; false}
+        sensitivity existence matches {1..1} matches {|>1..<5|}
+        feeder_audit existence matches {1..1} matches {
+            AUDIT_INFO[at5.72] occurrences matches {1..1} matches {  -- 
+                ehr_system existence matches {1..1} matches {
+                    II[at5.76] occurrences matches {1..1} matches {*}  -- 
+                }
+                time_committed existence matches {1..1} matches {*}
+                previous_version existence matches {0..1} matches {
+                    II[at5.77] occurrences matches {1..1} matches {  -- 
+                        root existence matches {1..1} matches {
+                            OID[at5.80] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.60.80"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+                version_set_id existence matches {0..1} matches {
+                    II[at5.78] occurrences matches {1..1} matches {  -- 
+                        root existence matches {1..1} matches {
+                            OID[at5.79] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.60.80"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+                version_status existence matches {0..1} matches {
+                    CS[at0001] occurrences matches {1..1} matches {*}  -- CS
+                }
+                committer existence matches {1..1} matches {
+                    II[at5.75] occurrences matches {1..1} matches {*}  -- 
+                }
+            }
+        }
+        uncertainty_expressed existence matches {1..1} matches {false; false}
+        info_provider existence matches {1..1} matches {
+            FUNCTIONAL_ROLE[at5.73] occurrences matches {0..1} matches {  -- 
+                function existence matches {0..1} matches {
+                    CV[at5.74] occurrences matches {0..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {*}
+                        codingSchemeVersion existence matches {1..1} matches {*}
+                        displayName existence matches {0..1} matches {*}
+                        codingScheme existence matches {0..1} matches {
+                            OID[at5.81] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.34"}
+                            }
+                        }
+                    }
+                }
+                performer existence matches {1..1} matches {
+                    II[at5.83] occurrences matches {1..1} matches {*}  -- II
+                }
+                healthcare_facillity existence matches {0..1} matches {
+                    II[at5.84] occurrences matches {0..1} matches {*}  -- II
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DIAGNOZA-MKCH10", ...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0101"] = <
+                    text = <"Dátum a čas odoslania">
+                    description = <"Dátum a čas, kedy bol pacient odoslaný na vyšetrenie.
+Informácie o odoslaní vyplní ošetrujúci lekár v prípade, že bol pacient k nemu odoslaný na základe papierového výmenného lístka. Údaje lekár prepíše z údajov uvedených na VL. V prípade vyšetrenia na základe elektronického VL naplní len identifikátor VL, na základe ktorého bolo vyšetrenie vykonané. Údaje o odoslaní v tomto prípade nemusí vypĺňaťť 
+(ALTERNATIVA – IS PZS ich naplní z údajov o VL.) ">
+                >
+                ["at0000.1"] = <
+                    text = <"Záznam o vyšetrení - Specialization: Záznam o zobrazovacom vyšetrení">
+                    description = <"Záznam o vyšetrení  - Specialization: Záznam o zobrazovacom vyšetrení - 1.3.158.00165387.100.60.80">
+                >
+                ["at0.2"] = <
+                    text = <"Dátum a čas vyšetrenia">
+                    description = <"Dátum a čas ukončenia vyšetrenia. ">
+                >
+                ["at0.3"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0011"] = <
+                    text = <"Popis">
+                    description = <"Sumarizácia výsledku (popis) zobrazovacieho vyšetrenia.">
+                >
+                ["at0102"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0111"] = <
+                    text = <"Diagnóza pri odoslaní">
+                    description = <"Odkaz na diagnózy, ktoré boli zistené pri odosielaní pacienta, resp. kvôli ktorým bol pacient prijatý. Informácie o odoslaní vyplní ošetrujúci lekár v prípade, že pacienta prijal na základe papierového výmenného lístka. Údaje lekár prepíše z údajov uvedených na VL. V prípade vyšetrenia na základe elektronického VL údaje o odoslaní naplní IS PZS z údajov na VL. ">
+                >
+                ["at0108"] = <
+                    text = <"Hlavná diagnóza">
+                    description = <"Príznak, že daná diagnóza je hlavná. Ak IS PZS nepoužíva stanovenie hlavnej diagnózy, hlavná diagnóza je vždy prvá v poradí. ">
+                >
+                ["at0109"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0117"] = <
+                    text = <"Urgentnosť vyšetrenia">
+                    description = <"Urgentnosť vyšetrenia. Odkaz na číselník, obsahujúci stupne urgentnosti resp. naliehavosti vyšetrenia.">
+                >
+                ["at0200"] = <
+                    text = <"Odosielajúci lekár">
+                    description = <"Lekár, ktorý pacienta na vyšetrenie odoslal. Odkaz na archetyp Zdravotnicky_pracovnik_odborneho_utvaru. 
+Informácie o odoslaní vyplní ošetrujúci lekár v prípade, že bol pacient k nemu odoslaný na základe papierového výmenného lístka. Údaje lekár prepíše z údajov uvedených na VL. V prípade vyšetrenia na základe elektronického VL naplní len identifikátor VL, na základe ktorého bolo vyšetrenie vykonané. Údaje o odoslaní v tomto prípade nemusí vypĺňaťť 
+(ALTERNATIVA – IS PZS ich naplní z údajov o VL.) ">
+                >
+                ["at0103.7"] = <
+                    text = <"Diagnostický záver">
+                    description = <"Informácie ohľadom diagnóz, ktoré má pacient pri ukončení vyšetrenia. Diagnózu je možné definovať výberom diagnózy z číselníka (MKCH10) a doplnením slovného popisu diagnózy. Tiež je možné definovať hlavnú diagnózu. Hlavná diagnóza môže byť vždy maximálne jedna.">
+                >
+                ["at0104"] = <
+                    text = <"Diagnóza">
+                    description = <"Diagnóza vyjadrená kódom z MKCH10, ktorú má pacient po vyšetrení, resp. pri ukončení hospitalizácie.">
+                >
+                ["at0118.10"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0.11"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0999"] = <
+                    text = <"Požiadavka na vyšetrenie">
+                    description = <"Odkaz (link) na „Odporúčané vyšetrenie“ (id. výmenného lístka), ktorým je vyšetrenie požadované. Vyplnením tohto atribútu môže autor výmenného lístka pristúpiť k výsledku zdravotného záznamu. ">
+                >
+                ["at0998"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0.70"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0.71"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at0.34"] = <
+                    text = <"Názov vyšetrenia">
+                    description = <"Názov vyšetrenia prostredníctvom, ktorého bude možné vyšetrenie neskôr vyhľadať.">
+                >
+                ["at0.39"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0.50"] = <
+                    text = <"Interná poznámka">
+                    description = <"Časť zdravotnej dokumentácie, do ktorej lekár môže uviesť popis, ktorý bude zdieľaný medzi zdravotníckymi pracovníkmi ale nebude prístupný pacientovi ani po prihlásení sa do elektronickej zdravotnej knižky.">
+                >
+                ["at0105"] = <
+                    text = <"Modalita zobrazovacieho vyšetrenia">
+                    description = <"Kód modality zobrazovacieho vyšetrenia.
+CT; RTG; NMR; MRI; SPECT; PET; ECG; EEG; US; MEG; DSA; NIRS; OCT'; EIT; ...
+">
+                >
+                ["at0106"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0.55"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0500"] = <
+                    text = <"Zmena stavu záznamu">
+                    description = <"Definuje štruktúru auditných informácií o zmene stavu záznamu. Slúži len pre čítacie služby v prípade, že daný záznam bol editovaný lekárom (potvrdil klinický záver/ vykonal storno záznamu) ">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+        ["DIAGNOZA-MKCH10"] = <
+            items = <
+            >
+        >
+    >
+    constraint_binding = <
+    >

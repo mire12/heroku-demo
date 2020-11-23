@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/ZnalostnaInformacia.xsd" />
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:element name="DajDetailMagistraliterPripravkuVystup" type="DajDetailMagistraliterPripravkuVystup" />
+  <xs:complexType name="DajDetailMagistraliterPripravkuVystup">
+    <xs:annotation>
+      <xs:documentation>Vo výstupe služba vracia údaje magistraliter prípravku, jeho zloženie a ak bolo požadované tak aj znalostné informácie jednotlivých zložiek.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MagistraliterPripravok" type="MagistraliterDetail" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Údaje magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Znalosti" type="ZnalostnaInformacia" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MagistraliterDetail">
+    <xs:annotation>
+      <xs:documentation>Podrobné údaje magistraliter prípravku.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CasPouzitelnosti" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Definicia" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Exaktný popis prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DlhodobyPredpisMagistraliter" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či môže byť magistraliter predpisovaný na dlhodobé recepty.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikatorPripravku" type="IdMagistraliter" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor prípravku v JRÚZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovMedzinarodny" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Medzinárodný názov prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovSk" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Krátky popis prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Priprava" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis postupu prípravy magistraliter pripravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SkuskaNaKvalitu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis akým postupom sa overuje kvalita daného prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SkuskyTotoznosti" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis postupu, akým sa overuje, či sa jedná o daný prípravok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StanovenieObsahu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis akým spôsobom sa stanovuje obsah výsledného prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Uchovanie" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis akým spôsobom sa má uchovávať výsledný prípravok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Vlastnosti" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis vlastností výsledného prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Zlozka" type="ZlozkaPripravku" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zložka magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZlozkaPripravku">
+    <xs:annotation>
+      <xs:documentation>Údaje zložky magistraliter prípravku.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FarmaceutickaSurovina" type="IdPolozkaCiselnikaFarmaceutickaSurovina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor farmaceutickej suroviny, ktorá je zložkou daného magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MnozstvoZlozky" type="Mnozstvo" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

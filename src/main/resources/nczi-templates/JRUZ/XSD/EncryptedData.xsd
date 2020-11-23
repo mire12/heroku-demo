@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/SDS/v1" targetNamespace="http://eHealth.gov.sk/SDS/v1" elementFormDefault="qualified">
+	<xs:simpleType name="EncryptedContent">
+		<xs:restriction base="xs:base64Binary"/>
+	</xs:simpleType>
+	<xs:element name="EncryptedData" type="EncryptedData"/>
+	<xs:complexType name="EncryptedData">
+		<xs:annotation>
+			<xs:documentation>Kontajner pre SDS envelope v base64</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="EncryptedContent"/>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

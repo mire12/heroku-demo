@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Contact.xsd" />
+  <xs:include schemaLocation="Address.xsd" />
+  <xs:include schemaLocation="CorporateBody.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="PhysicalPerson.xsd" />
+  <xs:element name="PersonData" type="PersonData" />
+  <xs:complexType name="PersonData">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok na rôzne informácie o osobe.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PhysicalPerson" type="PhysicalPerson" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Fyzická osoba</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorporateBody" type="CorporateBody" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Právnická osoba</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalAddress" type="PhysicalAddress" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Fyzická adresa</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TelephoneAddress" type="TelephoneAddress" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Telefónna adresa</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InternetAddress" type="InternetAddress" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Internetová adresa</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ID" type="ID" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Identifikátor</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KontaktnaOsoba" type="PersonName" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ID" type="ID" />
+  <xs:complexType name="ID">
+    <xs:annotation>
+      <xs:documentation>Zložený dátový prvok pre rôzne identifikátory.
+Poznámka: Nejedná sa o technické ID, je to atribút RČ, IČO ...atď.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifierValue" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Obsahuje samotnú hodnotu použitého identifikátora.
+Formát reprezentácie: V závislosti od typu identifikátora vo v&amp;scaron;eobecnosti je to reťazec znakov.
+Poznámky: Uvádza sa vo dvojici s Typom identifikátora. Je možné viacnásobné použitie, pričom pre každý typ identifikátora sa môže použiť práve raz.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifierType" type="IdPolozkaCiselnikaIdentifierType" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

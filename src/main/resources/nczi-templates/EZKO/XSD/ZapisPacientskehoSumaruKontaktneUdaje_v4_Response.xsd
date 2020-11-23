@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="PotvrdenieUlozeniaZmien" nillable="true" type="tns:PotvrdenieUlozeniaZmien">
+   <xs:annotation>
+      <xs:documentation>
+        Prázdny element, ktorý slúži len ako potvrdenie úspešného vykonania všetkých zmien požadovaných na vstupe služby.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="PotvrdenieUlozeniaZmien" /> 
+
+</xs:schema>

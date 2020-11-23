@@ -1,0 +1,3349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ zainteresovanej osoby</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Kód položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>3</IdAtributu>
+      <Nazov>Názov položky [en] [úč/kon.úč] </Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>4</IdAtributu>
+      <Nazov>Skrátený názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>5</IdAtributu>
+      <Nazov>Skratka názvu položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>6</IdAtributu>
+      <Nazov>Doplňujúci obsah [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>7</IdAtributu>
+      <Nazov>Merná jednotka [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>8</IdAtributu>
+      <Nazov>Poznámka</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>9</IdAtributu>
+      <Nazov>Zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>10</IdAtributu>
+      <Nazov>Tiež zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>11</IdAtributu>
+      <Nazov>Vylučuje [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>12</IdAtributu>
+      <Nazov>Dátum platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>13</IdAtributu>
+      <Nazov>Začiatok účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>14</IdAtributu>
+      <Nazov>Koniec účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>15</IdAtributu>
+      <Nazov>Logické poradie položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>16</IdAtributu>
+      <Nazov>Legislatívna uznateľnosť [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.63</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020885133</codeValue>
+      <displayName>Predseda predstavenstva</displayName>
+      <Skratka>5</Skratka>
+      <Popis>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>5</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Predseda predstavenstva</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885141</codeValue>
+      <displayName>Podpredseda predstavenstva</displayName>
+      <Skratka>6</Skratka>
+      <Popis>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>6</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Podpredseda predstavenstva</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885158</codeValue>
+      <displayName>Člen predstavenstva</displayName>
+      <Skratka>7</Skratka>
+      <Popis>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>7</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen predstavenstva</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>akciová spoločnosť, družstvo, európska spoločnosť, oblastná organizácia cestovného ruchu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885166</codeValue>
+      <displayName>Člen dozornej rady</displayName>
+      <Skratka>8</Skratka>
+      <Popis>Člen dozornej rady</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>8</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen dozornej rady</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885174</codeValue>
+      <displayName>Generálny riaditeľ</displayName>
+      <Skratka>9</Skratka>
+      <Popis>európske družstvo</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>9</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Generálny riaditeľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>európske družstvo</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885182</codeValue>
+      <displayName>Riaditeľ</displayName>
+      <Skratka>10</Skratka>
+      <Popis>štátny podnik, európske združenie územnej spolupráce, školy a školské zariadenia, neziskové organizácie poskytujúce všeobecne prospešné služby</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>10</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Riaditeľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>štátny podnik, európske združenie územnej spolupráce, školy a školské zariadenia, neziskové organizácie poskytujúce všeobecne prospešné služby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885190</codeValue>
+      <displayName>Zástupca riaditeľa</displayName>
+      <Skratka>11</Skratka>
+      <Popis>štátny podnik</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>11</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zástupca riaditeľa</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>štátny podnik</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885208</codeValue>
+      <displayName>Výkonný riaditeľ</displayName>
+      <Skratka>12</Skratka>
+      <Popis>krajská organizácia cestovného ruchu, oblastná organizácia cestovného ruchu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>12</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Výkonný riaditeľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>krajská organizácia cestovného ruchu, oblastná organizácia cestovného ruchu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885216</codeValue>
+      <displayName>Rektor</displayName>
+      <Skratka>13</Skratka>
+      <Popis>vysoká škola</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>13</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Rektor</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>vysoká škola</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885224</codeValue>
+      <displayName>Guvernér</displayName>
+      <Skratka>14</Skratka>
+      <Popis>NBS</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>14</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Guvernér</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>NBS</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885232</codeValue>
+      <displayName>Vedúci organizačnej zložky</displayName>
+      <Skratka>15</Skratka>
+      <Popis>organizačná zložka podniku zahraničnej osoby</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>15</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vedúci organizačnej zložky</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>organizačná zložka podniku zahraničnej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885240</codeValue>
+      <displayName>Správca</displayName>
+      <Skratka>16</Skratka>
+      <Popis>nadácia, neinvestičný fond</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>16</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Správca</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>nadácia, neinvestičný fond</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885257</codeValue>
+      <displayName>Člen výboru</displayName>
+      <Skratka>17</Skratka>
+      <Popis>pozemkové spoločenstvo</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>17</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen výboru</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>pozemkové spoločenstvo</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885265</codeValue>
+      <displayName>Predseda</displayName>
+      <Skratka>18</Skratka>
+      <Popis>spoločenstvo vlastníkov bytov a nebytových priestorov, samoprávny kraj, profesné komory</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>18</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Predseda</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>spoločenstvo vlastníkov bytov a nebytových priestorov, samoprávny kraj, profesné komory</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885273</codeValue>
+      <displayName>Starosta</displayName>
+      <Skratka>19</Skratka>
+      <Popis>obec</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>19</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Starosta</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>obec</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885281</codeValue>
+      <displayName>Primátor</displayName>
+      <Skratka>20</Skratka>
+      <Popis>mesto</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>20</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Primátor</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>mesto</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885299</codeValue>
+      <displayName>Minister</displayName>
+      <Skratka>21</Skratka>
+      <Popis>ministerstvo</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>21</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Minister</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>ministerstvo</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885307</codeValue>
+      <displayName>Vedúci úradu</displayName>
+      <Skratka>22</Skratka>
+      <Popis>orgán verejnej moci (napr. úrad vlády)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>22</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vedúci úradu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>orgán verejnej moci (napr. úrad vlády)</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885315</codeValue>
+      <displayName>Vedúci kancelárie</displayName>
+      <Skratka>23</Skratka>
+      <Popis>orgán verejnej moci (napr. kancelária prezidenta, ústavného súdu, NR SR, verejného ochrancu práv)</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>23</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vedúci kancelárie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>orgán verejnej moci (napr. kancelária prezidenta, ústavného súdu, NR SR, verejného ochrancu práv)</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885323</codeValue>
+      <displayName>Prokurista</displayName>
+      <Skratka>24</Skratka>
+      <Popis>Prokurista</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>24</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Prokurista</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885331</codeValue>
+      <displayName>Predseda správnej rady</displayName>
+      <Skratka>25</Skratka>
+      <Popis>Predseda správnej rady</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>25</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Predseda správnej rady</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885349</codeValue>
+      <displayName>Podpredseda správnej rady</displayName>
+      <Skratka>26</Skratka>
+      <Popis>Podpredseda správnej rady</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>26</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Podpredseda správnej rady</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885356</codeValue>
+      <displayName>Člen správnej rady</displayName>
+      <Skratka>27</Skratka>
+      <Popis>Člen správnej rady</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>27</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen správnej rady</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885364</codeValue>
+      <displayName>Člen dozornej rady</displayName>
+      <Skratka>28</Skratka>
+      <Popis>Člen dozornej rady</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>28</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen dozornej rady</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885372</codeValue>
+      <displayName>Zakladateľ</displayName>
+      <Skratka>29</Skratka>
+      <Popis>Zakladateľ</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>29</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zakladateľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885380</codeValue>
+      <displayName>Zriaďovateľ</displayName>
+      <Skratka>30</Skratka>
+      <Popis>Zriaďovateľ</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>30</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zriaďovateľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885398</codeValue>
+      <displayName>Navrhovateľ</displayName>
+      <Skratka>31</Skratka>
+      <Popis>Navrhovateľ</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>31</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Navrhovateľ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885406</codeValue>
+      <displayName>Člen prípravného výboru</displayName>
+      <Skratka>32</Skratka>
+      <Popis>Člen prípravného výboru</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>32</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen prípravného výboru</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885414</codeValue>
+      <displayName>Zodpovedný zástupca</displayName>
+      <Skratka>33</Skratka>
+      <Popis>prevádzkáreň živnostníka</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>33</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zodpovedný zástupca</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>prevádzkáreň živnostníka</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885422</codeValue>
+      <displayName>Správca konkurznej podstaty</displayName>
+      <Skratka>35</Skratka>
+      <Popis>Správca konkurznej podstaty</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>35</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Správca konkurznej podstaty</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885430</codeValue>
+      <displayName>Vyrovnávací správca</displayName>
+      <Skratka>36</Skratka>
+      <Popis>Vyrovnávací správca</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>36</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vyrovnávací správca</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885448</codeValue>
+      <displayName>Iná zainteresovaná osoba</displayName>
+      <Skratka>37</Skratka>
+      <Popis>napr. pri cirkevných organizáciách</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>37</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Iná zainteresovaná osoba</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>napr. pri cirkevných organizáciách</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.02.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885455</codeValue>
+      <displayName>Správca reštrukturalizačného konania</displayName>
+      <Skratka>39</Skratka>
+      <Popis>Správca reštrukturalizačného konania</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>39</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Správca reštrukturalizačného konania</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885463</codeValue>
+      <displayName>Zriaďovateľ ZO</displayName>
+      <Skratka>87</Skratka>
+      <Popis>Zriaďovateľ ZO</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>87</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zriaďovateľ ZO</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885471</codeValue>
+      <displayName>Správca vyrovnacieho konania</displayName>
+      <Skratka>88</Skratka>
+      <Popis>Správca vyrovnacieho konania</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>88</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Správca vyrovnacieho konania</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885489</codeValue>
+      <displayName>v.o.s., ktorej imanie sa preberá</displayName>
+      <Skratka>89</Skratka>
+      <Popis>v.o.s., ktorej imanie sa preberá</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>89</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>v.o.s., ktorej imanie sa preberá</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885497</codeValue>
+      <displayName>Prokurista zahraničnej osoby</displayName>
+      <Skratka>90</Skratka>
+      <Popis>Prokurista zahraničnej osoby</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>90</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Prokurista zahraničnej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885505</codeValue>
+      <displayName>Člen EZHZ</displayName>
+      <Skratka>91</Skratka>
+      <Popis>Člen EZHZ</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>91</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen EZHZ</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885513</codeValue>
+      <displayName>Spoločník v.o.s., ktorý prevzal jej imanie</displayName>
+      <Skratka>92</Skratka>
+      <Popis>Spoločník v.o.s., ktorý prevzal jej imanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>92</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Spoločník v.o.s., ktorý prevzal jej imanie</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885521</codeValue>
+      <displayName>Likvidátor zahraničnej osoby</displayName>
+      <Skratka>93</Skratka>
+      <Popis>Likvidátor zahraničnej osoby</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>93</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Likvidátor zahraničnej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885539</codeValue>
+      <displayName>Jediný akcionár a.s.</displayName>
+      <Skratka>94</Skratka>
+      <Popis>Jediný akcionár a.s.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>94</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Jediný akcionár a.s.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885547</codeValue>
+      <displayName>Zakladateľ štátneho podniku</displayName>
+      <Skratka>95</Skratka>
+      <Popis>Zakladateľ štátneho podniku</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>95</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Zakladateľ štátneho podniku</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885554</codeValue>
+      <displayName>Vedúci podniku zahraničnej osoby / organizačnej zložky podniku zahraničnej osoby</displayName>
+      <Skratka>96</Skratka>
+      <Popis>Vedúci podniku zahraničnej osoby / organizačnej zložky podniku zahraničnej osoby</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>96</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vedúci podniku zahraničnej osoby / organizačnej zložky podniku zahraničnej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885562</codeValue>
+      <displayName>Vedúci odštepného závodu / inej organizačnej zložky podniku</displayName>
+      <Skratka>97</Skratka>
+      <Popis>Vedúci odštepného závodu / inej organizačnej zložky podniku</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>97</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Vedúci odštepného závodu / inej organizačnej zložky podniku</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885570</codeValue>
+      <displayName>Člen dozorného orgánu</displayName>
+      <Skratka>98</Skratka>
+      <Popis>Člen dozorného orgánu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>98</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Člen dozorného orgánu</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885588</codeValue>
+      <displayName>Spoločník v.o.s. / s.r.o.</displayName>
+      <Skratka>99</Skratka>
+      <Popis>Spoločník v.o.s. / s.r.o.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>99</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Spoločník v.o.s. / s.r.o.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>23.04.2015</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

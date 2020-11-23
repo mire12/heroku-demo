@@ -1,0 +1,195 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Liek.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp sa má používať na zaznamenanie a presnos údajov lieku a doplňujúcich údajov lieku potrebných počas procesov predpísania lieku lekárom, vydania lieku v lekárni a podania lieku lekárom alebo užívania lieku pacientom. Archetyp umožňuje preniesť údaje ako registrovaného lieku tak aj liečiva pre potreby generickej preskripcie.">
+            use = <"Archetyp obsahuje slot pre archetyp s údajmi lieku a ďalšie štruktúry určené pre zaznamenanie a prenos údajov pre jednotlivé procesy. Podľa toho, v akom procese je archetyp použitý, je potrebné použiť aj príslušnú štruktúru údajov.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Liek
+        parts existence matches {0..1} cardinality matches {1..1; unordered} matches {
+            CLUSTER[at0004] occurrences matches {0..1} matches {  -- Náhradný humánny liek
+                parts existence matches {0..1} cardinality matches {4..*; unordered; unique} matches {
+                    ELEMENT[at0402] occurrences matches {1..1} matches {  -- ATC
+                        value existence matches {0..1} matches {
+                            CV[at0413] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingSchemeName existence matches {0..1} matches {"ATC"}
+                                displayName existence matches {0..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0405] occurrences matches {1..1} matches {  -- Cesta podania
+                        value existence matches {0..1} matches {
+                            CV[at0401] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingSchemeName existence matches {0..1} matches {"CESTA_PODANIA"}
+                                displayName existence matches {0..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0408] occurrences matches {1..1} matches {  -- Lieková forma
+                        value existence matches {0..1} matches {
+                            CV[at0403] occurrences matches {1..1} matches {  -- CV
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingSchemeName existence matches {0..1} matches {"LIEKOVA_FORMA"}
+                                displayName existence matches {0..1} matches {*}
+                            }
+                        }
+                    }
+                    CLUSTER[at0003] occurrences matches {1..*} matches {  -- Sila Lieku
+                        parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                            ELEMENT[at0411] occurrences matches {1..1} matches {  -- Sila dávky
+                                value existence matches {0..1} matches {
+                                    PQ[at0404] occurrences matches {1..1} matches {  -- PQ
+                                        units existence matches {1..1} matches {*}
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0407] occurrences matches {1..1} matches {  -- Jednotková dávka
+                                value existence matches {0..1} matches {
+                                    PQ[at410] occurrences matches {1..1} matches {  -- 
+                                        units existence matches {1..1} matches {*}
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0066] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    CLUSTER[at0025] occurrences matches {0..1} matches {  -- Odporúčania pre výdaj liekov
+                        parts existence matches {0..1} cardinality matches {1..*; unordered; unique} matches {
+                            allow_archetype CLUSTER[at0027] occurrences matches {0..1} matches {  -- Odporúčaný liek
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Registrovany_liek.v1/}
+                            }
+                            allow_archetype CLUSTER[at0030] occurrences matches {0..*} matches {  -- Zakázané lieky
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Registrovany_liek.v1/}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0066] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0069] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0008] occurrences matches {0..1} matches {  -- Registrovaný liek
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Registrovany_liek.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0068] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Liek">
+                    description = <"Údaje lieku alebo liečiva. Časť Náhradný humánny liek slúži na popis parametrov genericky predpisovaného alebo vydávaného lieku. 
+Existuje buď časť Registrovný liek alebo časť Náhradný humánny liek, nikdy nie obe naraz.">
+                >
+                ["at0004"] = <
+                    text = <"Náhradný humánny liek">
+                    description = <"Údaje náhradného humánneho lieku, ktorý sa predpisuje.">
+                >
+                ["at0008"] = <
+                    text = <"Registrovaný liek">
+                    description = <"V prípade, že sa predpisuje, vydáva alebo užíva konkrétny registrovaný liek, tak v tejto štruktúre sú uvedené jeho údaje.">
+                >
+                ["at0025"] = <
+                    text = <"Odporúčania pre výdaj liekov">
+                    description = <"V prípade predpisania nahrádného humánneho lieku lekár môže odporučiť konkrétny liek alebo zakázať výdaj niektorých. Tieto odporúčania lekár uvedie tu.">
+                >
+                ["at0027"] = <
+                    text = <"Odporúčaný liek">
+                    description = <"Údaje lieku, ktorého výdaj je lekárom odporúčaný. Používa sa pri generickom predpise lieku. ">
+                >
+                ["at0030"] = <
+                    text = <"Zakázané lieky">
+                    description = <"Údaje liekov, ktorých výdaj lekár zakazuje. Používa sa pri generickom predpise lieku.">
+                >
+                ["at0401"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0402"] = <
+                    text = <"ATC">
+                    description = <"Identifikácia liečiva prostredníctvom ATC klasifikácie.">
+                >
+                ["at0403"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0404"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0405"] = <
+                    text = <"Cesta podania">
+                    description = <"Identifikácia cesty podania náhradného humánneho lieku.">
+                >
+                ["at0407"] = <
+                    text = <"Jednotková dávka">
+                    description = <"Jednotková dávka vzhľadom na ktorú sa uvádza množstvo liečiva. Potrebujeme vedieť či 5mg v 100 ml alebo v 10 ml.">
+                >
+                ["at0408"] = <
+                    text = <"Lieková forma">
+                    description = <"Lieková forma náhraného humánneho lieku.">
+                >
+                ["at0411"] = <
+                    text = <"Sila dávky">
+                    description = <"Definícia sily jednej dávky náhradného humánneho lieku.">
+                >
+                ["at0413"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at410"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Sila Lieku">
+                    description = <"Definícia sily lieku v jednom balení. Balenie moze mat viacnásobnu silu lieku definovanou pomocou jednotkovej dávky a sily dávky.">
+                >
+            >
+        >
+    >

@@ -1,0 +1,49 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>DajZaznamOVysetreni_v5</Class>
+      <MessageID>00d89471-b0cb-4800-bb68-bb96039844a4</MessageID>
+      <CorrelationID>00d89471-b0cb-4800-bb68-bb96039844a4</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>2</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <IdentifikatorZaznamuVysetrenia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/Allocation/v1">
+        <IdZaznamuVysetrenia>
+          <extension>198542717419854271749</extension>
+          <root>
+            <oid>1.3.158.00165387.100.60.90</oid>
+          </root>
+        </IdZaznamuVysetrenia>
+        <!-- identifikator pacienta / zasifrovany ESID / volanie metody CerateEsid - napr. string esid = ecc.CreateEsid("00000000018", zprAuthToken, ehtalkMsg); -->
+        <Pacient>
+          <extension>%PACIENT%</extension>
+          <root>
+            <oid>1.3.158.00165387.100.40.110</oid>
+          </root>
+        </Pacient>
+      </IdentifikatorZaznamuVysetrenia>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message/>
+    </Result>
+  </Body>
+</eHtalkMessage>

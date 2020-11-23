@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>DajOUPZS_v1</Class>
+      <MessageID>ca71acaa-72d0-4e3f-8718-2181e1b05998</MessageID>
+      <CorrelationID>3682fe34-a2a0-4504-bef3-dda548207555</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>8</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <DajOUPZS_Request xmlns="http://eHealth.gov.sk/JRUZ/v1">
+    <IdOUPZS>
+        <extension>00020009882</extension>
+        <root>
+            <oid>1.3.158.00165387.100.40.70</oid>
+        </root>
+    </IdOUPZS>
+    <Aktualnost_Metadata>
+        <Datum>2020-08-16T19:54:45</Datum>
+    </Aktualnost_Metadata>
+</DajOUPZS_Request>
+    </Data>
+    <Result>
+      <Code>0</Code>
+      <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

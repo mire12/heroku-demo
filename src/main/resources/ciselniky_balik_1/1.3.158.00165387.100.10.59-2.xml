@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Titul za menom</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Kód položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>3</IdAtributu>
+      <Nazov>Názov položky [en] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>4</IdAtributu>
+      <Nazov>Skrátený názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>5</IdAtributu>
+      <Nazov>Skratka názvu položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>6</IdAtributu>
+      <Nazov>Doplňujúci obsah [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>7</IdAtributu>
+      <Nazov>Merná jednotka [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>8</IdAtributu>
+      <Nazov>Poznámka [sk]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>9</IdAtributu>
+      <Nazov>Zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>10</IdAtributu>
+      <Nazov>Tiež zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>11</IdAtributu>
+      <Nazov>Vylučuje [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>12</IdAtributu>
+      <Nazov>Dátum platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>13</IdAtributu>
+      <Nazov>Začiatok účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>14</IdAtributu>
+      <Nazov>Koniec účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>15</IdAtributu>
+      <Nazov>Logické poradie položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>16</IdAtributu>
+      <Nazov>Legislatívna uznateľnosť [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.59</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000116236</codeValue>
+      <displayName>CSc.</displayName>
+      <Skratka>51</Skratka>
+      <Popis>kandidát vied, vedecká hodnosť priznaná podľa predchádzajúcich predpisov</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>51</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>CSc.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>kandidát vied, vedecká hodnosť priznaná podľa predchádzajúcich predpisov</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>29.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000441337</codeValue>
+      <displayName>DrSc.</displayName>
+      <Skratka>52</Skratka>
+      <Popis>doktor vied (doctor scientarium), vedecká hodnosť udeľovaná podľa doterajších predpisov</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>52</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>DrSc.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>doktor vied (doctor scientarium), vedecká hodnosť udeľovaná podľa doterajších predpisov</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>29.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000441345</codeValue>
+      <displayName>PhD.</displayName>
+      <Skratka>53</Skratka>
+      <Popis>doktor (philosophiae doctor), akademický titul za menom</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>53</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>PhD.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>doktor (philosophiae doctor), akademický titul za menom</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>10.05.1999</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>10.05.1999</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000441352</codeValue>
+      <displayName>ArtD.</displayName>
+      <Skratka>54</Skratka>
+      <Popis>doktor umenia (artis doctor), akademický titul za menom</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>54</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>ArtD.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>doktor umenia (artis doctor), akademický titul za menom</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>09.11.2000</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>09.11.2000</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000196</codeValue>
+      <displayName>doc.</displayName>
+      <Skratka>71</Skratka>
+      <Popis>docent, vedecko-pedagogický alebo umelecko-pedagogický titul</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>71</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>doc.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>docent, vedecko-pedagogický alebo umelecko-pedagogický titul</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>29.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>14.05.2012</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000204</codeValue>
+      <displayName>prof.</displayName>
+      <Skratka>72</Skratka>
+      <Popis>profesor, vedecko-pedagogický alebo umelecko-pedagogický titul</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>72</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>prof.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>profesor, vedecko-pedagogický alebo umelecko-pedagogický titul</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>29.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1997</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>14.05.2012</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000441378</codeValue>
+      <displayName>DiS</displayName>
+      <Skratka>81</Skratka>
+      <Popis>diplomovaný špecialista; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom, pre zdravotnícke odbory vzdelania podľa zák. č. 245/2008</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>81</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>DiS</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>diplomovaný špecialista; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom, pre zdravotnícke odbory vzdelania podľa zák. č. 245/2008</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>15.07.2008</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.09.2008</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000441386</codeValue>
+      <displayName>DiS.art</displayName>
+      <Skratka>82</Skratka>
+      <Popis>Pôvodný význam bol: diplomovaný umelec; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom podľa zák. č. 245/2008. Od 1.9.2015 bol novelou zákona č. 245/2008 zavedený nový význam: diplomovaný špecialista umenia; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>82</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>DiS.art</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Pôvodný význam bol: diplomovaný umelec; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom podľa zák. č. 245/2008. Od 1.9.2015 bol novelou zákona č. 245/2008 zavedený nový význam: diplomovaný špecialista umenia; absolventský diplom vyššieho odborného vzdelávania; titul sa uvádza za priezviskom.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS>15.07.2008</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.09.2008</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

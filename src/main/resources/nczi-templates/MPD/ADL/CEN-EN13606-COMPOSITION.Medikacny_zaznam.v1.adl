@@ -1,0 +1,681 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Medikacny_zaznam.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Medikačný záznam v sebe nesie informácie o liečebnom prostriedku, ktorý prijímateľ zdravotnej starostlivosti užíva, používa, alebo mu bol priamo podaný v ambulantnej alebo ústavnej starostlivosti. Jeden medikačný záznam reprezentuje užívanie, používanie alebo podanie práve jedného liečebného prostriedku.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Medikacny zaznam
+        content existence matches {0..1} cardinality matches {2..2; unordered} matches {
+            SECTION[at0051] occurrences matches {1..1} matches {  -- Hlavička
+                members existence matches {0..1} cardinality matches {1..5; unordered; unique} matches {
+                    ENTRY[at0057] occurrences matches {0..1} matches {  -- Platnosť
+                        items existence matches {0..1} cardinality matches {1..4; unordered; unique} matches {
+                            ELEMENT[at0098] occurrences matches {0..1} matches {  -- Pôvodná platnosť do
+                                value existence matches {0..1} matches {
+                                    DATE[at0100] occurrences matches {1..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {yyyy-mm-dd}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0043] occurrences matches {1..1} matches {  -- Platnosť od
+                                value existence matches {0..1} matches {
+                                    DATE[at0048] occurrences matches {1..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {yyyy-mm-dd}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0042] occurrences matches {0..1} matches {  -- Platnosť do
+                                value existence matches {0..1} matches {
+                                    DATE[at0044] occurrences matches {1..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {yyyy-mm-dd}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0026] occurrences matches {0..1} matches {  -- Rezerva
+                                value existence matches {0..1} matches {
+                                    INT[at0037] occurrences matches {1..1} matches {  -- INT
+                                        value existence matches {1..1} matches {*}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0090] occurrences matches {0..1} matches {  -- Storno
+                        items existence matches {0..1} cardinality matches {3..3; unordered; unique} matches {
+                            ELEMENT[at0071] occurrences matches {1..1} matches {  -- Dôvod storna
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0099] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0065] occurrences matches {1..1} matches {  -- Čas storna
+                                value existence matches {0..1} matches {
+                                    TS[at0097] occurrences matches {1..1} matches {  -- TS
+                                        time existence matches {1..1} matches {????-??-??T??:??:??}
+                                    }
+                                }
+                            }
+                            allow_archetype CLUSTER[at0095] occurrences matches {1..1} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+                            }
+                        }
+                    }
+                    ENTRY[at0092] occurrences matches {0..1} matches {  -- Zneplatnenie
+                        items existence matches {0..1} cardinality matches {3..3; unordered; unique} matches {
+                            ELEMENT[at0045] occurrences matches {1..1} matches {  -- Dôvod zneplatnenia
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0027] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0039] occurrences matches {1..1} matches {  -- Čas zneplatnenia
+                                value existence matches {0..1} matches {
+                                    TS[at0021] occurrences matches {1..1} matches {  -- TS
+                                        time existence matches {1..1} matches {????-??-??T??:??:??}
+                                    }
+                                }
+                            }
+                            allow_archetype CLUSTER[at0101] occurrences matches {1..1} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+                            }
+                        }
+                    }
+                    ENTRY[at0104] occurrences matches {1..1} matches {  -- Administratívne údaje medikačného záznamu
+                        items existence matches {0..1} cardinality matches {2..3; unordered; unique} matches {
+                            CLUSTER[at0009] occurrences matches {0..1} matches {  -- Lekár
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {
+                                        include
+                                            archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+                                    }
+                                    allow_archetype CLUSTER[at0015] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0020] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0012] occurrences matches {1..1} matches {  -- Identifikačné údaje
+                                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                                    ELEMENT[at0050] occurrences matches {0..1} matches {  -- ID elektronického receptu
+                                        value existence matches {0..1} matches {
+                                            II[at0040] occurrences matches {1..1} matches {  -- II
+                                                root existence matches {1..1} matches {
+                                                    OID[at0041] occurrences matches {1..1} matches {  -- 
+                                                        oid existence matches {0..1} matches {""}
+                                                    }
+                                                }
+                                                extension existence matches {0..1} matches {""}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0035] occurrences matches {1..1} matches {  -- ID medikačného záznamu
+                                        value existence matches {0..1} matches {
+                                            II[at0047] occurrences matches {1..1} matches {  -- II
+                                                root existence matches {1..1} matches {
+                                                    OID[at0049] occurrences matches {1..1} matches {  -- 
+                                                        oid existence matches {0..1} matches {""}
+                                                    }
+                                                }
+                                                extension existence matches {0..1} matches {""}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0059] occurrences matches {0..1} matches {  -- ID dispenzačného záznamu
+                                        value existence matches {0..1} matches {
+                                            II[at0030] occurrences matches {1..1} matches {  -- II
+                                                root existence matches {1..1} matches {
+                                                    OID[at0033] occurrences matches {1..1} matches {  -- 
+                                                        oid existence matches {0..1} matches {""}
+                                                    }
+                                                }
+                                                extension existence matches {0..1} matches {""}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0084] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0032] occurrences matches {1..1} matches {  -- Doplňujúce informácie medikačného záznamu
+                                parts existence matches {0..1} cardinality matches {1..3; unordered; unique} matches {
+                                    CLUSTER[at0076] occurrences matches {0..1} matches {  -- Vynútenie zápisu
+                                        parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                                            ELEMENT[at0081] occurrences matches {0..1} matches {  -- Dôvod vynútenia zápisu
+                                                value existence matches {0..1} matches {
+                                                    SIMPLE_TEXT[at0085] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                        originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0025] occurrences matches {1..1} matches {  -- Vynútenie
+                                                value existence matches {0..1} matches {
+                                                    BL[at0031] occurrences matches {1..1} matches {  -- BL
+                                                        value existence matches {1..1} matches {true, false; true}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        structure_type existence matches {1..1} matches {
+                                            CS[at0077] occurrences matches {1..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"STRC01"}
+                                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0125] occurrences matches {1..1} matches {  -- Pôvod medikačného záznamu
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0038] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {1..1} matches {"InformaciaOdPacienta","NaZakladeLekarskehoPredpisu","PodanieLekarom"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {  -- Overenie znalostným systémom
+                                        value existence matches {0..1} matches {
+                                            BL[at0011] occurrences matches {1..1} matches {  -- BL
+                                                value existence matches {1..1} matches {true, false; true}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0088] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0002] occurrences matches {0..1} matches {  -- Odporúčanie pri preskripčnom obmedzení
+                        items existence matches {0..1} cardinality matches {2..2; unordered; unique} matches {
+                            ELEMENT[at0003] occurrences matches {1..1} matches {  -- Dátum odporúčania
+                                value existence matches {0..1} matches {
+                                    DATE[at0007] occurrences matches {1..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {yyyy-mm-dd}
+                                    }
+                                }
+                            }
+                            allow_archetype CLUSTER[at0017] occurrences matches {1..1} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0052] occurrences matches {1..1} matches {  -- Telo
+                members existence matches {0..1} cardinality matches {1..1; unordered; unique} matches {
+                    ENTRY[at0001] occurrences matches {1..1} matches {  -- Liečebný prostriedok
+                        items existence matches {0..1} cardinality matches {2..*; unordered} matches {
+                            CLUSTER[at0062] occurrences matches {1..1} matches {  -- Údaje o množstve
+                                parts existence matches {0..1} cardinality matches {1..2; unordered; unique} matches {
+                                    ELEMENT[at0004] occurrences matches {0..1} matches {  -- Počet balení
+                                        value existence matches {0..1} matches {
+                                            REAL[at0070] occurrences matches {1..1} matches {  -- REAL
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0024] occurrences matches {0..1} matches {  -- Celkové množstvo
+                                        value existence matches {0..1} matches {
+                                            PQ[at0086] occurrences matches {1..1} matches {  -- PQ
+                                                units existence matches {1..1} matches {*}
+                                                value existence matches {1..1} matches {*}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0093] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0008] occurrences matches {0..1} matches {  -- Doplňujúce informácie
+                                parts existence matches {0..1} cardinality matches {1..1; unordered; unique} matches {
+                                    ELEMENT[at0073] occurrences matches {1..1} matches {  -- Správa lekára
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0075] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0096] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                            allow_archetype CLUSTER[at0129] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Davkovacia_schema.v1/}
+                            }
+                            allow_archetype CLUSTER[at0133] occurrences matches {1..1} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicka_pomocka.v1/}
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Dieteticka_potravina.v1/}
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.IPL.v1/}
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Liek.v1/}
+                            }
+                            allow_archetype CLUSTER[at0094] occurrences matches {0..1} matches {
+                                include
+                                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Medikacny zaznam">
+                    description = <"Medikačný záznam v sebe nesie informácie o liečebnom prostriedku, ktorý prijímateľ zdravotnej starostlivosti užíva, používa, alebo mu bol priamo podaný v ambulantnej alebo ústavnej starostlivosti. Jeden medikačný záznam reprezentuje užívanie, používanie alebo podanie práve jedného liečebného prostriedku.">
+                >
+                ["at0001"] = <
+                    text = <"Liečebný prostriedok">
+                    description = <"Jeden medikačný záznam v sebe nesie informáciu o práve jednom použitom liečebnom prostriedku (liek, individuálne pripravený liek, zdravotnícka pomôcka, dietetická potravina).">
+                >
+                ["at0016"] = <
+                    text = <"Lekár">
+                    description = <"Informácie o lekároch, ktorí boli súčasťou procesu preskripcie týchto liečebných prostriedkov. Ide o predpisujúceho, odporúčajúceho, zastupovaného a revízneho lekára.">
+                >
+                ["at0032"] = <
+                    text = <"Doplňujúce informácie medikačného záznamu">
+                    description = <"Doplňujúce informácie slúžia na vysvetlenie pôvodu medikačného zázbamu, na zachytenie informácií súvisiacich s vyžiadaním overenia medikačného záznamu znalostným systémom, a na zachytenie prípadného vynútenia zápisu medikačného záznamu napriek varovaniam znalostného systému.">
+                >
+                ["at0042"] = <
+                    text = <"Platnosť do">
+                    description = <"Informácia, kedy sa prestal používať liečebný prostriedok.">
+                >
+                ["at0044"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0046"] = <
+                    text = <"Identifikačné údaje">
+                    description = <"Identifikačné údaje medikačného záznamu potrebné pre jeho prípadné prepojenie s inými záznamami.">
+                >
+                ["at0050"] = <
+                    text = <"ID elektronického receptu">
+                    description = <"Identifikátor elektronického receptu, na základe ktorého medikačný záznam vznikol.">
+                >
+                ["at0043"] = <
+                    text = <"Platnosť od">
+                    description = <"Informácia, kedy sa začal používať liečebný prostriedok.">
+                >
+                ["at0048"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0073"] = <
+                    text = <"Správa lekára">
+                    description = <"Priestor pre lekára na zadanie neštruktúrovanej informácie o podaní liečebného prostriedku a o liečbe. Napr. správa lekára, iná poznámka, upozornenie a podobne.">
+                >
+                ["at0075"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0076"] = <
+                    text = <"Vynútenie zápisu">
+                    description = <"NZIS môže v prípade existencie varovania znalostného systému odmietnuť zápis medikačného záznamu. Nastavením kladnej hodnoty tohto atribútu sa vynucuje jeho zápis napriek varovaniu.">
+                >
+                ["at0081"] = <
+                    text = <"Dôvod vynútenia zápisu">
+                    description = <"Textový popis dôvodu, prečo zdravotnícky pracovník vynucuje zápis.">
+                >
+                ["at0085"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0180"] = <
+                    text = <"Údaje lieku">
+                    description = <"Identifikácia lieku z registra a prípadne aj jeho údaje.">
+                >
+                ["at0183"] = <
+                    text = <"Dávkovanie">
+                    description = <"Predpísané dávkovanie lieku.">
+                >
+                ["at0067"] = <
+                    text = <"Zložka IPL">
+                    description = <"Ak sú zložky IPL zadané v štruktúrovanej forme, tak sa prenášajú ako množina príslušných archetypov.">
+                >
+                ["at0074"] = <
+                    text = <"Dávkovanie">
+                    description = <"Predpísané dávkovanie lieku.">
+                >
+                ["at0166"] = <
+                    text = <"Dávkovanie">
+                    description = <"Predpísané dávkovanie liečiva">
+                >
+                ["at0170"] = <
+                    text = <"Odporúčaný liek">
+                    description = <"V prípade, že lekár predpisuje liečivo (generická preskripcia) a odporučí aj konkrétny liek, tak daný registrovaný liek sa uvedie tu. Identifikácia lieku z registra a jeho údaje.">
+                >
+                ["at0192"] = <
+                    text = <"Údaje pomôcky">
+                    description = <"Identifikácia pomôcky z registra a prípadne aj jej údaje.">
+                >
+                ["at0216"] = <
+                    text = <"Dávkovanie">
+                    description = <"Predpísané dávkovanie dietetika">
+                >
+                ["at0219"] = <
+                    text = <"Údaje dietetika">
+                    description = <"Identifikácia dietetickej potraviny z registra a prípadne jej údaje.">
+                >
+                ["at0006"] = <
+                    text = <"Ordinujúci lekár">
+                    description = <"Lekár, ktorý daný liečebný prostriedok priamo podal alebo ho predpísal.">
+                >
+                ["at0036"] = <
+                    text = <"Odporúčajúci lekár">
+                    description = <"Lekár, na základe ktorého odporúčania bol liečebny prostriedok predpísaný.">
+                >
+                ["at0069"] = <
+                    text = <"Odporúčajúci lekár">
+                    description = <"Identifikácia lekára, na zaklade ktorého odporučenia bol liečebný prostriedok predpísaný predpisujúcim lekárom.">
+                >
+                ["at0018"] = <
+                    text = <"Dávkovanie">
+                    description = <"Dávkovanie určené podávajúcim alebo predpisujúcim lekárom pri predpísaní lieku, liečiva, IPL (povinne) alebo dietickej potraviny (nepovinne). Pri zdravotníckej pomôcke sa dávkovanie neurčuje.">
+                >
+                ["at0012"] = <
+                    text = <"Identifikačné údaje">
+                    description = <"Identifikátor medikačného záznamu a v prípade, že medikačný záznam vznikol v procese predpisu a výdaja liečebných prostriedkov, aj identifikátory elektronického receptu a dispenzačného záznamu.">
+                >
+                ["at0009"] = <
+                    text = <"Lekár">
+                    description = <"Informácie o lekároch, ktorí boli súčasťou procesu podania alebo predpísania týchto liečebných prostriedkov. Ide o ordinujúceho lekára a prípadne vykonávajúceho zdravotníckeho pracovníka.">
+                >
+                ["at0010"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0022"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0019"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0023"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0014"] = <
+                    text = <"Revízny lekár">
+                    description = <"Identifikácia revízneho lekára, ktorý schvaľoval predpísanie daných liečebných prostriedkov.">
+                >
+                ["at0034"] = <
+                    text = <"CLUSTER">
+                    description = <"This is a CLUSTER object">
+                >
+                ["at0029"] = <
+                    text = <"CLUSTER">
+                    description = <"This is a CLUSTER object">
+                >
+                ["at0039"] = <
+                    text = <"Čas zneplatnenia">
+                    description = <"Dátum a čas, kedy bol záznam v NZIS zneplatnený.">
+                >
+                ["at0045"] = <
+                    text = <"Dôvod zneplatnenia">
+                    description = <"Dôvod, pre ktorý bol záznam zneplatnený.">
+                >
+                ["at0053"] = <
+                    text = <"Zneplatnil">
+                    description = <"Identifikácia zdravotníckeho pracovníka, ktorý daný záznam zneplatnil.">
+                >
+                ["at0072"] = <
+                    text = <"CLUSTER">
+                    description = <"This is a CLUSTER object">
+                >
+                ["at0013"] = <
+                    text = <"CLUSTER">
+                    description = <"This is a CLUSTER object">
+                >
+                ["at0025"] = <
+                    text = <"Vynútenie">
+                    description = <"Príznak vynútenia zápisu.">
+                >
+                ["at0031"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0102"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0008"] = <
+                    text = <"Doplňujúce informácie">
+                    description = <"Doplňujúce neštruktúrované informácie od lekára.">
+                >
+                ["at0028"] = <
+                    text = <"ELEMENT">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0062"] = <
+                    text = <"Údaje o množstve">
+                    description = <"Údaje o podanom, užívanom alebo používanom množstve liečebného prostriedku.">
+                >
+                ["at0004"] = <
+                    text = <"Počet balení">
+                    description = <"Počet balení liečebného prostriedku.">
+                >
+                ["at0024"] = <
+                    text = <"Celkové množstvo">
+                    description = <"Celkové množstvo liečebného prostriedku podaného, užívaného alebo používaného počas platnosti medikačného záznamu.">
+                >
+                ["at0070"] = <
+                    text = <"REAL">
+                    description = <"This is a REAL object">
+                >
+                ["at0086"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0078"] = <
+                    text = <"Predpísaný liečebný prostriedok">
+                    description = <"Liek, liečivo, IPL, zdravotnícka pomôcka alebo dieteticá potravina predpísaná lekárom pre prijímateľa zdravotnej starostlivosti.">
+                >
+                ["at0035"] = <
+                    text = <"ID medikačného záznamu">
+                    description = <"Identifikátor medikačného záznamu. Vytvára ho systém, ktorý medikačný záznam vytvoril. Identifikátor sa kontroluje na zhodu s rc_id na úrovni COMPOSITION medikačného záznamu.">
+                >
+                ["at0059"] = <
+                    text = <"ID dispenzačného záznamu">
+                    description = <"Identifikátor dispenzačného záznamu, na základe ktorého medikačný záznam vznikol.">
+                >
+                ["at0098"] = <
+                    text = <"Pôvodná platnosť do">
+                    description = <"Pri zneplatnení alebo zmene platnosti medikačného záznamu dochádza k zmene atribútu Platnosť do. Zachová sa ale jeho pôvodná hodnota.">
+                >
+                ["at0100"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0125"] = <
+                    text = <"Pôvod medikačného záznamu">
+                    description = <"Informácia o pôvode tohto záznamu:
+Hodnota InformaciaOdPacienta znamená, že daný záznam vytvoril ošetrujúci lekár pri poskytovaní zdravotnej starostlivosti. Informácia o užívaní liečebného prostriedku pochádza od pacienta samotného, lekár ju len zaznamenal.
+Hodnota NaZakladeLekarskehoPredpisu znamená, že daný záznam obsahuje informácie o užívaní liečebného prostriedku, ktorý bol pacientovi vydaný na základe lekárskeho predpisu v lekárni. Môže sa jednať o záznam, ktorý nezaznamenal lekár alebo lekárnik, ale vznikol synteticky spojením údajov eReceptu a dispenzačného záznamu.
+Hodnota PodanieLekarom znamená, že daný záznam obsahuje informácie o podaní liečebného prostriedku priamo zdravotníckym pracovníkom v ambulancii alebo v ústavnej starostlivosti. Záznam vytvoril zdravotnícky pracovník.">
+                >
+                ["at0005"] = <
+                    text = <"Overenie znalostným systémom">
+                    description = <"NZIS poskytuje služby na overenie zadávaných údajov medikačného záznamu znalostným systémom.  Pole slúži na prenos požiadavky na vykonanie tejto kontroly. Kladná hodnota znamená, že kontrolu zdravotnícky pracovník požaduje.
+Ide tu o vyjadrenie vôle zdravotníckeho pracovníka, služba prijímajúca správu to ale, na základe svojej konfigurácie, nemusí rešpektovať.">
+                >
+                ["at0011"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0015"] = <
+                    text = <"Vykonávajúci zdravotnícky pracovník">
+                    description = <"Doplňujúca informácia o ďalších zdravotníckych pracovníkoch, ktorí podávali liečebný prostriedok, alebo asistovali pri jeho podávaní (napríklad zdravotné sestry, ďalší lekár ktorý pomáhal pri podávaní).">
+                >
+                ["at0021"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0027"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0030"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0040"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0047"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0051"] = <
+                    text = <"Hlavička">
+                    description = <"Hlavička medikačného záznamu s administratívnymi, identifikačnými a inými údajmi doplňujúcimi klinické dáta v časti Telo medikačného záznamu.">
+                >
+                ["at0052"] = <
+                    text = <"Telo">
+                    description = <"Telo medikačného záznamu obsahuje nosnú časť klinických údajov o podanom, používanom a užívanom liečebnom prostriedku.">
+                >
+                ["at0057"] = <
+                    text = <"Platnosť">
+                    description = <"Dátumový rozsah platnosti medikačného záznamu a v prípade, že došlo k zmene platnosti je k dispozícii aj prvotná pôvodná platnosť pred zmenou.">
+                >
+                ["at0065"] = <
+                    text = <"Čas storna">
+                    description = <"Dátum a čas, kedy bol záznam v NZIS stornovaný.">
+                >
+                ["at0071"] = <
+                    text = <"Dôvod storna">
+                    description = <"Dôvod, pre ktorý bol záznam stornovaný.">
+                >
+                ["at0082"] = <
+                    text = <"Stornoval">
+                    description = <"Identifikácia zdravotníckeho pracovníka, ktorý daný záznam stornoval.">
+                >
+                ["at0090"] = <
+                    text = <"Storno">
+                    description = <"Informácie o čase, dôvode a autorovi storna medikačného záznamu.">
+                >
+                ["at0092"] = <
+                    text = <"Zneplatnenie">
+                    description = <"Informácie o čase, dôvode a autorovi zneplatnenia medikačného záznamu.">
+                >
+                ["at0095"] = <
+                    text = <"Stornoval">
+                    description = <"Identifikácia zdravotníckeho pracovníka, ktorý záznam stornoval.">
+                >
+                ["at0097"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0099"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0101"] = <
+                    text = <"Zneplatnil">
+                    description = <"Identifikácia zdravotníckeho pracovníka, ktorý záznam zneplatnil.">
+                >
+                ["at0104"] = <
+                    text = <"Administratívne údaje medikačného záznamu">
+                    description = <"Administratívne údaje obsahujú identifikátory spojené s medikačným záznamom, identifikáciu lekárov a iné doplňujúce informácie súvisiace s podaním, užívaním alebo používaním liečebného prostriedku. ">
+                >
+                ["at0129"] = <
+                    text = <"Dávkovanie">
+                    description = <"Dávkovanie určené podávajúcim alebo predpisujúcim lekárom pri predpísaní lieku, liečiva, IPL (povinne) alebo dietickej potraviny (nepovinne). Pri zdravotníckej pomôcke sa dávkovanie neurčuje.">
+                >
+                ["at0133"] = <
+                    text = <"Použitý liečebný prostriedok">
+                    description = <"Užívaný liek, liečivo, individuálne pripravený liek, zdravotnícka pomôcka alebo dietetická potravina.">
+                >
+                ["at0002"] = <
+                    text = <"Odporúčanie pri preskripčnom obmedzení">
+                    description = <"Ak bol liek podaný na základe odporúčania, je potrebné uviesť údaje odporúčania.">
+                >
+                ["at0003"] = <
+                    text = <"Dátum odporúčania">
+                    description = <"Dátum lekárskej správy, v ktorej lekár odporúčal predpísanie humánneho lieku ...">
+                >
+                ["at0007"] = <
+                    text = <"DATE">
+                    description = <"This is a DATE object">
+                >
+                ["at0017"] = <
+                    text = <"Odporučil">
+                    description = <"Identifikácia lekára, na zaklade ktorého odporučenia bol liečebný prostriedok podaný.">
+                >
+                ["at0056"] = <
+                    text = <"Varovanie znalostného systému">
+                    description = <"Ak znalostný systém NZIS pri zápise medikačného záznamu identifikoval varovania znalostného systému, tak ich k medikačnému záznamu pripojí.">
+                >
+                ["at0094"] = <
+                    text = <"Diagnóza">
+                    description = <"Diagnóza, na ktorú sa daný liečebný prostriedok používa.">
+                >
+                ["at0026"] = <
+                    text = <"Rezerva">
+                    description = <"Veľkosť rezervy v dňoch, o ktorú bola predĺžená platnosť medikačného záznamu. Rezerva zohľadňuje nepredvídané odchýlky, ktoré môžu predĺžiť užívanie liečebného prostriedku.">
+                >
+                ["at0037"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0038"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

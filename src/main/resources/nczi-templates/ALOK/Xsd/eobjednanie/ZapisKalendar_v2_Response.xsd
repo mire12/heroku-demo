@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ZapisKalendarResponse" type="tns:ZapisKalendarResponse" />
+  
+  <xs:complexType name="ZapisKalendarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdKalendara" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>ID novo vytvoreného kalendára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externé ID kalendára pridelené v systéme IS PZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

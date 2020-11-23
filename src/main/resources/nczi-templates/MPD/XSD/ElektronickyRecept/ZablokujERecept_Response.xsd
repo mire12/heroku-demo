@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:element name="ZablokujEReceptVystup" type="ZablokujEReceptVystup" />
+  <xs:complexType name="ZablokujEReceptVystup">
+    <xs:annotation>
+      <xs:documentation>NZIS vo výstupe vráti buď informáciu o úspešnom zablokovaní / odblokovaní receptu, alebo informáciu prečo operácia nemohla prebehnúť.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="BlokovanieUspesne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či operácia blokovania alebo odblokovania receptu prebehla úspešne.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdblokovanieUspesne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či operácia prebehla blokovania alebo odblokovania receptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

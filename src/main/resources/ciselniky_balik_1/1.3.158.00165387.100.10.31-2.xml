@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Dôvod ukončenia a dočasného pozastavenia registrácie</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.31</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020884219</codeValue>
+      <displayName>doživotný zákaz výkonu zdravotníckeho povolania uložený právoplatným rozhodnutím súdu</displayName>
+      <Skratka>01</Skratka>
+      <Popis>§ 63b ods. 1  písm. c) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884227</codeValue>
+      <displayName>strata spôsobilosti na právne úkony v celom rozsahu</displayName>
+      <Skratka>11</Skratka>
+      <Popis>§ 63b ods. 1  písm. b) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884235</codeValue>
+      <displayName>nesplnenie podmienky zdravotnej spôsobilosti podľa § 32 zák. č. 578/2004 Z. z.</displayName>
+      <Skratka>12</Skratka>
+      <Popis>§ 63b ods. 1  písm. b) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884243</codeValue>
+      <displayName>strata bezúhonnosti podľa § 38 zák. č. 578/2004 Z. z. alebo podľa zákona č. 455/1991 Zb.</displayName>
+      <Skratka>13</Skratka>
+      <Popis>§ 63b ods. 1  písm. b) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884250</codeValue>
+      <displayName>nesplnenie podmienky odbornej spôsobilosti podľa § 33 až § 35 zák. č. 578/2004 Z. z.</displayName>
+      <Skratka>14</Skratka>
+      <Popis>§ 63b ods. 1  písm. b) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884268</codeValue>
+      <displayName>porušenie povinnosti uloženej príslušnými orgánmi počas krízovej sitácie a uloženie pokuty ministerstvom zdravotníctva</displayName>
+      <Skratka>21</Skratka>
+      <Popis>§ 63b ods. 1  písm. d) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884276</codeValue>
+      <displayName>žiadosť zdravotníckeho pracovníka o zrušenie registrácie v súvislosti s ukončením výkonu zdravotníckeho povolania</displayName>
+      <Skratka>31</Skratka>
+      <Popis>§ 63b ods. 1  písm. a) zák. č. 578/2004 Z. z., v prípade súbehu viacerých dôvodov zrušenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884284</codeValue>
+      <displayName>dočasný zakáz výkonu zdravotníckeho povolania</displayName>
+      <Skratka>41</Skratka>
+      <Popis>§ 63a písm. b) zák. č. 578/2004 Z. z., v prípade súbehu obidvoch dôvodov dočasného pozastavenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884292</codeValue>
+      <displayName>žiadosť zdravotníckeho pracovníka o dočasné pozastavenie registrácie z dôvodu prerušenia výkonu zdravotníckeho povolania</displayName>
+      <Skratka>42</Skratka>
+      <Popis>§ 63a písm. a) zák. č. 578/2004 Z. z., v prípade súbehu obidvoch dôvodov dočasného pozastavenia registrácie je vo veci voľby kódu určujúca nižšia číselná hodnota kódu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884300</codeValue>
+      <displayName>zánik registrácie</displayName>
+      <Skratka>51</Skratka>
+      <Popis>§ 63d zák. č. 578/2004 Z. z.</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869222</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>98</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

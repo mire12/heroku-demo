@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Mnozstvo.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:element name="OptOutPrZS" type="OptOutPrZS" />
+  <xs:complexType name="OptOutPrZS">
+    <xs:annotation>
+      <xs:documentation>Príznak OptOut pre prijímateľa zdravotníckej starostlivosti</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OptOut" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak OPT OUT.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UradneUrcenaCena" type="UradneUrcenaCena" />
+  <xs:complexType name="UradneUrcenaCena">
+    <xs:annotation>
+      <xs:documentation>Úradne určená cena lieku (cena lieku od výrobcu alebo dovozcu, ktorá nemôže byť prekročená pri prvom predaji lieku na území Slovenskej republiky)[EUR]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="UradneUrcenaCenaLieku" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úradne určená cena lieku (cena lieku od výrobcu alebo dovozcu, ktorá nemôže byť prekročená pri prvom predaji lieku na území Slovenskej republiky)[EUR]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Platnost" type="Platnost" />
+  <xs:complexType name="Platnost">
+    <xs:annotation>
+      <xs:documentation>Platnosť odbornej spôsobilosti.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="II_Validovane" type="II_Validovane" />
+  <xs:complexType name="II_Validovane">
+    <xs:annotation>
+      <xs:documentation>Validovanie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EvidovaneVJRUZ" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>True v prípade, že externý identifikátor je evidovaný v JRUZ, nezohľadňuje platnosť a iné atribúty.
+False v prípade, že externý identifkátor nie je evidovaný v JRUZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OptOutPrZS" type="OptOutPrZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UkoncenaPlatnost" type="PlatnostUkoncena" minOccurs="0" maxOccurs="1" />
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlatnostUkoncena" type="PlatnostUkoncena" />
+  <xs:complexType name="PlatnostUkoncena">
+    <xs:annotation>
+      <xs:documentation>Platnosť ukončenia</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="UkoncenaPlatnost" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>True v prípade, že má ukončenú platnosť.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" />
+  <xs:complexType name="Strankovanie_Metadata">
+    <xs:annotation>
+      <xs:documentation>Stránkovanie METADAT</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VelkostStranky" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo stránky slúži na výpočet posunu (offsetu) počiatočného záznamu v rámci súboru údajov dodávaneho danou službou. Veľkosť stránky (tj. počet dodávaných záznamov v rámci stránky) je fixne stanovený pre každú službu v závislosti od predpokladaného objemu údajov pre každý záznam. Prvá stránka v dávke má vždy číslo 0. Prvý záznam v dávke má poradové číslo &lt;Stranka&gt;*&lt;Veľkosť stránky&gt;, v rámci stránky služba vracia údaje, ktorých poradové číslo je väčšie alebo rovné ako &lt;Stranka&gt;*&lt;Veľkosť stránky&gt; a súčasne menšie ako &lt;Stranka+1&gt;*&lt;Veľkosť stránky&gt;.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Index" type="xs:int" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" />
+  <xs:complexType name="Aktualnost_Metadata">
+    <xs:annotation>
+      <xs:documentation>Aktuálnosť METADAT</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum sa vypĺňa len v prípade potreby historických údajov - údaje k danému dátumu.
+Nevyplnený dátum znamená, že sa jedná o aktuálne dáta.
+
+V prípade synchronizačných služieb, dátum určuje od akého obdobia sú požadované údaje o zmenách.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Overenie" type="Overenie" />
+  <xs:complexType name="Overenie">
+    <xs:sequence>
+      <xs:element name="Overenie" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UradneUrcenaCena_v2" type="UradneUrcenaCena_v2" />
+  <xs:complexType name="UradneUrcenaCena_v2">
+    <xs:annotation>
+      <xs:documentation>Úradne určená cena lieku (cena lieku od výrobcu alebo dovozcu, ktorá nemôže byť prekročená pri prvom predaji lieku na území Slovenskej republiky)[EUR]</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="UradneUrcenaCenaLieku" type="Cena_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Úradne určená cena lieku (cena lieku od výrobcu alebo dovozcu, ktorá nemôže byť prekročená pri prvom predaji lieku na území Slovenskej republiky)[EUR]</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transakcia_Metadata" type="Transakcia_Metadata" />
+  <xs:complexType name="Transakcia_Metadata">
+    <xs:sequence>
+      <xs:element name="ExterneID" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

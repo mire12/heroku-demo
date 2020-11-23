@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1" elementFormDefault="qualified">
+	<xs:include schemaLocation="DataTypes.xsd"/>
+
+  <xs:complexType name="OIDPolozkaCiselnika">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="[0-9.]+"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+	<xs:complexType name="OIDPrjZS">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="OIDPrZSType" minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+  <xs:simpleType name="OIDPrZSType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0.0.0.0.0.0.100" />                  <!--Pseudo ID-->
+      <xs:enumeration value="1.3.158.00165387.100.40.100" />
+      <xs:enumeration value="1.3.158.00165387.100.40.110" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="IIPrjZS">
+    <xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" type="xs:string" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Šifrovaný identifikátor prijímateľa zdravotnej starostlivosti</xs:documentation>
+            </xs:annotation>
+            <!--<xs:simpleType>
+              <xs:restriction base ="xs:string">
+                <xs:pattern value="([a-zA-Z0-9])*"/>
+              </xs:restriction>
+            </xs:simpleType>-->
+          </xs:element>
+          <xs:element name="root" type="OIDPrjZS" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+	<xs:complexType name="OIDOUPZS">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.70"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IIOUPZS">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:sequence>
+					<xs:element name="extension" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikátor OU PZS (externý identifikátor)</xs:documentation>
+						</xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="\s*|(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+					</xs:element>
+					<xs:element name="root" type="OIDOUPZS" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDZPrac">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.90"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IIZPrac">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:sequence>
+					<xs:element name="extension" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikátor ZPrac (externý identifikátor)</xs:documentation>
+						</xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+					</xs:element>
+					<xs:element name="root" type="OIDZPrac" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDZP">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.60"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IIZP">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:sequence>
+					<xs:element name="extension" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikátor ZP (externý identifikátor)</xs:documentation>
+						</xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+					</xs:element>
+					<xs:element name="root" type="OIDZP" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDLiek">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.50"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="IILiek">
+		<xs:complexContent>
+      <xs:restriction base="II">
+        <xs:sequence>
+          <xs:element name="extension" minOccurs="1" type="xs:string" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor Lieku (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="root" type="OIDLiek" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+  <xs:complexType name="OIDTypVzorky">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.93"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CVTypVzorky">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor typu vzorky (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDTypVzorky" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="OIDDietetickaPotravina">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.30"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CVDietetickaPotravina">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor DietetickaPotravina (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDDietetickaPotravina" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDZdravotnickaPomocka">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.10"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CVZdravotnickaPomocka">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor ZdravotnickaPomocka (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDZdravotnickaPomocka" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDZdravotnyVykon">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.26"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CVZdravotnyVykon">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor ZdravotnyVykon (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDZdravotnyVykon" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDDiagnoza">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.25"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CVDiagnoza">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor Diagnoza (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDDiagnoza" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDOckovaciKalendar">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.20"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CVOckovaciKalendar">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor OckovaciKalendar (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDOckovaciKalendar" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDPZS">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.80"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IIPZS">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:sequence>
+					<xs:element name="extension" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikátor PZS (externý identifikátor)</xs:documentation>
+						</xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+					</xs:element>
+					<xs:element name="root" type="OIDPZS" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OIDLiecivo">
+		<xs:complexContent>
+			<xs:restriction base="OID">
+				<xs:sequence>
+					<xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.40.40"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CVLiecivo">
+		<xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor Liecivo (externý identifikátor)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDLiecivo" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+  <xs:complexType name="OIDMena">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.205"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVMena">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor Meny</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDMena" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="OIDZdravotnyVykonDiagnozy">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.253"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVZdravotnyVykonDiagnozy">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Identifikátor Meny</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDZdravotnyVykonDiagnozy" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="OIDZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.34"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDZdravotnickaOdbornost" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDOdborneZameranieUtvaru">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.39"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVOdborneZameranieUtvaru">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDOdborneZameranieUtvaru" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.39" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDOdborneZameranieOU" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDDruhOU">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.37" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVDruhOU">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDDruhOU" minOccurs="1" maxOccurs="1" />
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDDovodPristupuKZdravotnejDokumentacii">
+    <xs:complexContent>
+      <xs:restriction base="OID">
+        <xs:sequence>
+          <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" fixed="1.3.158.00165387.100.10.257"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVDovodPristupuKZdravotnejDokumentacii">
+    <xs:complexContent>
+      <xs:restriction base="CV">
+        <xs:sequence>
+          <xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="(\d{11})?" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="codingScheme" type="OIDDovodPristupuKZdravotnejDokumentacii" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

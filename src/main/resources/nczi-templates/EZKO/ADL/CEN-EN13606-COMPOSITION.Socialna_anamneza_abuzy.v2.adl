@@ -1,0 +1,59 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Socialna_anamneza_abuzy.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o abúzach pacienta, ktoré sú súčasťou pacientskeho sumára.">
+            keywords = <"Abúzy">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Sociálna anamnéza a abúzy
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0001] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Abuzy_zivotospravy.v2/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Sociálna anamnéza a abúzy">
+                    description = <"Sociálna anamnéza a abúzy. Údaje o abúzoch a životospráve, ktoré sú podstatné pre zdravotný stav pacienta">
+                >
+                ["at0001"] = <
+                    text = <"Abúzy">
+                    description = <"Zlozvyky (požívanie alkoholu, kávy, cigariet, drog,...) 
+">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

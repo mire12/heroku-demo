@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+  <xs:element name="VytvorObjednavkuRequest" type="tns:VytvorObjednavkuRequest" />
+
+  <xs:complexType name="VytvorObjednavkuRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="NoveObjednavky" nillable="true" type="tns:ArrayOfNovaObjednavka">
+            <xs:annotation>
+              <xs:documentation>Údaje o objednávkach, ktoré sa majú vytvoriť</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="DatumVytvorenia" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Dátum a čas vytvorenia objednávky.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="1" maxOccurs="1" name="ehr_system" xmlns:q16="CEN/13606/RM" type="q16:IIEhrSystem">
+            <xs:annotation>
+              <xs:documentation>Identifikácia systému PZS, v ktorom bol záznam vytvorený. Max 50 znakov. Kód tvorcovi IS PZS vydáva prevádzkovateľ riešenia po prijatí žiadosti tvorcu IS PZS na overenie zhody.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q12="CEN/13606/RM" type="q12:II">
+        <xs:annotation>
+          <xs:documentation>ID OU poskytovateľa zdravotnej starostlivosti (ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q13="CEN/13606/RM" type="q13:II">
+        <xs:annotation>
+          <xs:documentation>ID zdravotníckeho pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfNovaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NovaObjednavka" nillable="true" type="tns:NovaObjednavka" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="NovaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="TerminVysetrenia" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Presný čas a dátum objednávky. Ak už má objednávka pridelený čas vyšetrenia, musí sa zhodovať s hodnotou požadovanou pacientom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DruhVysetrenia" xmlns:q14="CEN/13606/RM" type="q14:CV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdKalendara" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>ID kalendára, pre ktorý sa má vytvoriť objednávka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPrZS" xmlns:q15="CEN/13606/RM" type="q15:II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Poznámka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="PacientData" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>Zašifrované údaje o pacientovi: meno, priezvisko, rok narodenia, telefón a email</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ZaslatUpozornenieNaBliziaciSaTermin" nillable="true" type="xs:boolean">
+        <xs:annotation>
+            <xs:documentation>Príznak, či sa má pacientovi odoslať upozornenie na nadchádzajúci termín vyšetrenia. Prednastavená hodnota je false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      
+      <xs:element minOccurs="1" maxOccurs="1" name="TypIntervalu" type="tns:TypCasovehoIntervalu">
+        <xs:annotation>
+            <xs:documentation>Príznak, či sa jedná o objednávku na ordinačné alebo doplnkové ordinačné hodiny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ID pridelené objednávke v systéme IS PZS pre identifikáciu záznamu po spracovani službou ISOO. Korešpondujúci záznam NovyStavObjednavky v response je dohľadateľný na základe tohoto parametra. ISOO tento údaj ukladá pre kontrolu konzistentnosti dát.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="TypCasovehoIntervalu">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtvaracieHodiny" />
+      <xs:enumeration value="OrdinacneHodiny" />
+      <xs:enumeration value="DoplnkoveOrdinacneHodiny" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

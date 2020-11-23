@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1" elementFormDefault="qualified">
+	<xs:include schemaLocation="DataTypes.xsd"/>
+	<xs:include schemaLocation="OID.xsd"/>
+
+	<xs:element name="IdPrjZS" type="IdPrjZS"/>
+	<xs:complexType name="IdPrjZS">
+		<xs:annotation>
+			<xs:documentation>Šifrovaný JRUZ identifikátor prijímateľa zdr. starostlivosti.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IIPrjZS">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="IdOUPZS" type="IdOUPZS"/>
+	<xs:complexType name="IdOUPZS">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor odborného útvaru PZS.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IIOUPZS">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZdrPrac" type="IdZdrPrac"/>
+	<xs:complexType name="IdZdrPrac">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor zdr. pracovníka.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IIZPrac">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZP" type="IdZP"/>
+	<xs:complexType name="IdZP">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor zdravotnej poisťovne.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IIZP">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdLiek" type="IdLiek"/>
+	<xs:complexType name="IdLiek">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor lieku.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IILiek">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+  <xs:element name="IdOckovaciaLatka" type="IdOckovaciaLatka"/>
+  <xs:complexType name="IdOckovaciaLatka">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor lieku.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="IILiek">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdTypVzorky" type="IdTypVzorky"/>
+  <xs:complexType name="IdTypVzorky">
+    <xs:annotation>
+      <xs:documentation>JRUZ identifikátor typu vzorky.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CVTypVzorky">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdDietetickaPotravina" type="IdDietetickaPotravina"/>
+	<xs:complexType name="IdDietetickaPotravina">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor dietetickej potraviny.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVDietetickaPotravina">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka"/>
+	<xs:complexType name="IdZdravotnickaPomocka">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor zdr. pomôcky.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVZdravotnickaPomocka">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZdravotnyVykon" type="IdZdravotnyVykon"/>
+	<xs:complexType name="IdZdravotnyVykon">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor zdr. výkonu.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVZdravotnyVykon">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdDiagnoza" type="IdDiagnoza"/>
+	<xs:complexType name="IdDiagnoza">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor diagnózy.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVDiagnoza">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdOckovaciKalendar" type="IdOckovaciKalendar"/>
+	<xs:complexType name="IdOckovaciKalendar">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor očkovacieho kalendára.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVOckovaciKalendar">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdPolozkaCiselnika" type="IdPolozkaCiselnika"/>
+	<xs:complexType name="IdPolozkaCiselnika">
+		<xs:annotation>
+			<xs:documentation>
+				JRUZ identifikátor položky číselníka.
+				Formát eHealth
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="codeValue" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikátor Lieku (externý identifikátor)</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\s*|\d{11})?" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="codingScheme" type="OIDPolozkaCiselnika" minOccurs="1" maxOccurs="1" />
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdPZS" type="IdPZS"/>
+	<xs:complexType name="IdPZS">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor poskytovateľa zdr. starostlivosti.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="IIPZS">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdPolozkaCiselnikaISVS" type="IdPolozkaCiselnikaISVS"/>
+	<xs:complexType name="IdPolozkaCiselnikaISVS">
+		<xs:annotation>
+			<xs:documentation>
+				Identifikátor položky číselníka.
+				Formát ISVS
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CV">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdPobockaZP" type="IdPobockaZP"/>
+	<xs:complexType name="IdPobockaZP">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor pobočky zdravotnej poisťovne.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="II">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdLiecivo" type="IdLiecivo"/>
+	<xs:complexType name="IdLiecivo">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor liečiva.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVLiecivo">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZariadeniePZS" type="IdZariadeniePZS"/>
+	<xs:complexType name="IdZariadeniePZS">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor Zariadenia PZS.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="II">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdMena" type="IdMena"/>
+	<xs:complexType name="IdMena">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor liečiva.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVMena">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="IdZdravotnyVykonDiagnozy" type="IdZdravotnyVykonDiagnozy"/>
+	<xs:complexType name="IdZdravotnyVykonDiagnozy">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor liečiva.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVZdravotnyVykonDiagnozy">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="IdZdravotnickaOdbornost" type="IdZdravotnickaOdbornost"/>
+	<xs:complexType name="IdZdravotnickaOdbornost">
+		<xs:annotation>
+			<xs:documentation>JRUZ identifikátor liečiva.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CVZdravotnickaOdbornost">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+  	<xs:complexType name="IdOdborneZameranieUtvaru">
+	    <xs:annotation>
+	      <xs:documentation>Odborné zameranie útvaru v zariadení - 1.3.158.00165387.100.10.39</xs:documentation>
+	    </xs:annotation>
+	    <xs:complexContent>
+	      <xs:extension base="CVOdborneZameranieUtvaru">
+	        <xs:sequence/>
+	      </xs:extension>
+	    </xs:complexContent>
+	</xs:complexType>
+  <xs:complexType name="IdentifikatorZaznamu">
+    <xs:sequence>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentifikatorZaznamu" type="IdentifikatorZaznamu"/>
+</xs:schema>

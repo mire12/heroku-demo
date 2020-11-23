@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1" elementFormDefault="qualified">
+	<xs:element name="II" type="II"/>
+	<xs:complexType name="II">
+		<xs:annotation>
+			<xs:documentation>Descriptor.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="extension" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identifikátor entity (externý identifikátor)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="root" type="OID" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CV" type="CV"/>
+	<xs:complexType name="CV">
+		<xs:sequence>
+      <xs:element name="codeValue" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="codingScheme" type="OID" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="displayName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="OID" type="OID"/>
+	<xs:complexType name="OID">
+		<xs:sequence>
+      <xs:element name="oid" type="xs:string" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="IVLDATE" type="IVLDATE"/>
+	<xs:complexType name="IVLDATE">
+		<xs:sequence>
+			<xs:element name="high" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="low" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SIMPLE_TEXT" type="SIMPLE_TEXT"/>
+	<xs:complexType name="SIMPLE_TEXT">
+		<xs:sequence>
+			<xs:element name="originalText" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

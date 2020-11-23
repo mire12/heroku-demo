@@ -1,0 +1,2464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Odborné zameranie v zariadení</codingSchemeName>
+    <codingSchemeVersion>4</codingSchemeVersion>
+    <DatumPoslednejZmeny>2018-03-02</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Rozsirenie/nasledovnik v KZPr</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.39</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2018-06-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000351312</codeValue>
+      <displayName>vnútorné lekárstvo</displayName>
+      <Skratka>001</Skratka>
+      <Popis>vnútorné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351320</codeValue>
+      <displayName>infektológia</displayName>
+      <Skratka>002</Skratka>
+      <Popis>infektológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351338</codeValue>
+      <displayName>pneumológia a ftizeológia</displayName>
+      <Skratka>003</Skratka>
+      <Popis>pneumológia a ftizeológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351346</codeValue>
+      <displayName>neurológia</displayName>
+      <Skratka>004</Skratka>
+      <Popis>neurológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351353</codeValue>
+      <displayName>psychiatria</displayName>
+      <Skratka>005</Skratka>
+      <Popis>psychiatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351361</codeValue>
+      <displayName>pracovné lekárstvo</displayName>
+      <Skratka>006</Skratka>
+      <Popis>pracovné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351379</codeValue>
+      <displayName>pediatria</displayName>
+      <Skratka>007</Skratka>
+      <Popis>pediatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351387</codeValue>
+      <displayName>všeobecná starostlivosť o deti a dorast</displayName>
+      <Skratka>008</Skratka>
+      <Popis>všeobecná starostlivosť o deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351395</codeValue>
+      <displayName>gynekológia a pôrodníctvo</displayName>
+      <Skratka>009</Skratka>
+      <Popis>gynekológia a pôrodníctvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351403</codeValue>
+      <displayName>chirurgia</displayName>
+      <Skratka>010</Skratka>
+      <Popis>chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351411</codeValue>
+      <displayName>ortopédia</displayName>
+      <Skratka>011</Skratka>
+      <Popis>ortopédia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351429</codeValue>
+      <displayName>urológia</displayName>
+      <Skratka>012</Skratka>
+      <Popis>urológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351437</codeValue>
+      <displayName>úrazová chirurgia</displayName>
+      <Skratka>013</Skratka>
+      <Popis>úrazová chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351445</codeValue>
+      <displayName>otorinolaryngológia</displayName>
+      <Skratka>014</Skratka>
+      <Popis>otorinolaryngológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351452</codeValue>
+      <displayName>oftalmológia</displayName>
+      <Skratka>015</Skratka>
+      <Popis>oftalmológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351460</codeValue>
+      <displayName>stomatológia</displayName>
+      <Skratka>016</Skratka>
+      <Popis>stomatológia</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>802</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351478</codeValue>
+      <displayName>pediatrická gynekológia</displayName>
+      <Skratka>017</Skratka>
+      <Popis>pediatrická gynekológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351486</codeValue>
+      <displayName>dermatovenerológia</displayName>
+      <Skratka>018</Skratka>
+      <Popis>dermatovenerológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351494</codeValue>
+      <displayName>klinická onkológia</displayName>
+      <Skratka>019</Skratka>
+      <Popis>klinická onkológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351502</codeValue>
+      <displayName>všeobecné lekárstvo</displayName>
+      <Skratka>020</Skratka>
+      <Popis>všeobecné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351510</codeValue>
+      <displayName>dorastové lekárstvo</displayName>
+      <Skratka>022</Skratka>
+      <Popis>dorastové lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351528</codeValue>
+      <displayName>rádiológia</displayName>
+      <Skratka>023</Skratka>
+      <Popis>rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351536</codeValue>
+      <displayName>klinická biochémia</displayName>
+      <Skratka>024</Skratka>
+      <Popis>klinická biochémia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351544</codeValue>
+      <displayName>anestéziológia a intenzívna medicína</displayName>
+      <Skratka>025</Skratka>
+      <Popis>anestéziológia a intenzívna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351551</codeValue>
+      <displayName>telovýchovné lekárstvo</displayName>
+      <Skratka>026</Skratka>
+      <Popis>telovýchovné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351569</codeValue>
+      <displayName>fyziatria, balneológia a liečebná rehabilitácia</displayName>
+      <Skratka>027</Skratka>
+      <Popis>fyziatria, balneológia a liečebná rehabilitácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351577</codeValue>
+      <displayName>súdne lekárstvo</displayName>
+      <Skratka>028</Skratka>
+      <Popis>súdne lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351585</codeValue>
+      <displayName>patologická anatómia</displayName>
+      <Skratka>029</Skratka>
+      <Popis>patologická anatómia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351593</codeValue>
+      <displayName>hematológia a transfuziológia</displayName>
+      <Skratka>031</Skratka>
+      <Popis>hematológia a transfuziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351601</codeValue>
+      <displayName>urgentná medicína</displayName>
+      <Skratka>032</Skratka>
+      <Popis>urgentná medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351619</codeValue>
+      <displayName>klinická mikrobiológia</displayName>
+      <Skratka>034</Skratka>
+      <Popis>klinická mikrobiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351627</codeValue>
+      <displayName>neurochirurgia</displayName>
+      <Skratka>037</Skratka>
+      <Popis>neurochirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351635</codeValue>
+      <displayName>plastická chirurgia</displayName>
+      <Skratka>038</Skratka>
+      <Popis>plastická chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351643</codeValue>
+      <displayName>ortopedická protetika</displayName>
+      <Skratka>039</Skratka>
+      <Popis>ortopedická protetika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351650</codeValue>
+      <displayName>klinická imunológia a alergológia</displayName>
+      <Skratka>040</Skratka>
+      <Popis>klinická imunológia a alergológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351668</codeValue>
+      <displayName>radiačná onkológia</displayName>
+      <Skratka>043</Skratka>
+      <Popis>radiačná onkológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351676</codeValue>
+      <displayName>foniatria</displayName>
+      <Skratka>044</Skratka>
+      <Popis>foniatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351684</codeValue>
+      <displayName>reumatológia</displayName>
+      <Skratka>045</Skratka>
+      <Popis>reumatológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351692</codeValue>
+      <displayName>algeziológia</displayName>
+      <Skratka>046</Skratka>
+      <Popis>algeziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351700</codeValue>
+      <displayName>nukleárna medicína</displayName>
+      <Skratka>047</Skratka>
+      <Popis>nukleárna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351718</codeValue>
+      <displayName>gastroenterológia</displayName>
+      <Skratka>048</Skratka>
+      <Popis>gastroenterológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351726</codeValue>
+      <displayName>kardiológia</displayName>
+      <Skratka>049</Skratka>
+      <Popis>kardiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351734</codeValue>
+      <displayName>diabetológia, poruchy látkovej premeny a výživy</displayName>
+      <Skratka>050</Skratka>
+      <Popis>diabetológia, poruchy látkovej premeny a výživy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351742</codeValue>
+      <displayName>neonatológia</displayName>
+      <Skratka>051</Skratka>
+      <Popis>neonatológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351759</codeValue>
+      <displayName>čeľustná ortopédia</displayName>
+      <Skratka>053</Skratka>
+      <Popis>čeľustná ortopédia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351767</codeValue>
+      <displayName>parodontológia</displayName>
+      <Skratka>054</Skratka>
+      <Popis>parodontológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351775</codeValue>
+      <displayName>stomatologická protetika</displayName>
+      <Skratka>055</Skratka>
+      <Popis>stomatologická protetika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351783</codeValue>
+      <displayName>angiológia</displayName>
+      <Skratka>056</Skratka>
+      <Popis>angiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351791</codeValue>
+      <displayName>epidemiológia</displayName>
+      <Skratka>059</Skratka>
+      <Popis>epidemiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351809</codeValue>
+      <displayName>geriatria</displayName>
+      <Skratka>060</Skratka>
+      <Popis>geriatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351817</codeValue>
+      <displayName>medicínska informatika a bioštatistika</displayName>
+      <Skratka>061</Skratka>
+      <Popis>medicínska informatika a bioštatistika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351825</codeValue>
+      <displayName>lekárska genetika</displayName>
+      <Skratka>062</Skratka>
+      <Popis>lekárska genetika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351833</codeValue>
+      <displayName>nefrológia</displayName>
+      <Skratka>063</Skratka>
+      <Popis>nefrológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351841</codeValue>
+      <displayName>endokrinológia</displayName>
+      <Skratka>064</Skratka>
+      <Popis>endokrinológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351858</codeValue>
+      <displayName>klinická farmakológia</displayName>
+      <Skratka>065</Skratka>
+      <Popis>klinická farmakológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351866</codeValue>
+      <displayName>zdravotnícka informatika</displayName>
+      <Skratka>066</Skratka>
+      <Popis>zdravotnícka informatika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351874</codeValue>
+      <displayName>gynekologická sexuológia</displayName>
+      <Skratka>067</Skratka>
+      <Popis>gynekologická sexuológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351882</codeValue>
+      <displayName>cievna chirurgia</displayName>
+      <Skratka>068</Skratka>
+      <Popis>cievna chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351890</codeValue>
+      <displayName>kardiochirurgia</displayName>
+      <Skratka>069</Skratka>
+      <Popis>kardiochirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351908</codeValue>
+      <displayName>maxilofaciálna chirurgia</displayName>
+      <Skratka>070</Skratka>
+      <Popis>maxilofaciálna chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089552844</codeValue>
+      <displayName>klinická osteológia</displayName>
+      <Skratka>071</Skratka>
+      <Popis>klinická osteológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351916</codeValue>
+      <displayName>korektívna dermatológia</displayName>
+      <Skratka>072</Skratka>
+      <Popis>korektívna dermatológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351924</codeValue>
+      <displayName>medicína drogových závislostí</displayName>
+      <Skratka>073</Skratka>
+      <Popis>medicína drogových závislostí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351932</codeValue>
+      <displayName>gerontopsychiatria</displayName>
+      <Skratka>074</Skratka>
+      <Popis>gerontopsychiatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351940</codeValue>
+      <displayName>audiológia</displayName>
+      <Skratka>075</Skratka>
+      <Popis>audiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351957</codeValue>
+      <displayName>letecké lekárstvo</displayName>
+      <Skratka>076</Skratka>
+      <Popis>letecké lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351965</codeValue>
+      <displayName>onkológia v otorinolaryngológii</displayName>
+      <Skratka>079</Skratka>
+      <Popis>onkológia v otorinolaryngológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020000014</codeValue>
+      <displayName>nemocničná lekáreň</displayName>
+      <Skratka>080</Skratka>
+      <Popis>nemocničná lekáreň</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351973</codeValue>
+      <displayName>cystická fibróza</displayName>
+      <Skratka>091</Skratka>
+      <Popis>cystická fibróza</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020310504</codeValue>
+      <displayName>dlhodobá intenzívna starostlivosť</displayName>
+      <Skratka>095</Skratka>
+      <Popis>dlhodobá intenzívna starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351981</codeValue>
+      <displayName>JIS geriatrická</displayName>
+      <Skratka>098</Skratka>
+      <Popis>JIS geriatrická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000351999</codeValue>
+      <displayName>posudkové lekárstvo</displayName>
+      <Skratka>100</Skratka>
+      <Popis>posudkové lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352005</codeValue>
+      <displayName>medicínska informatika</displayName>
+      <Skratka>101</Skratka>
+      <Popis>medicínska informatika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352013</codeValue>
+      <displayName>pediatrická neurológia</displayName>
+      <Skratka>104</Skratka>
+      <Popis>pediatrická neurológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352021</codeValue>
+      <displayName>detská psychiatria</displayName>
+      <Skratka>105</Skratka>
+      <Popis>detská psychiatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352039</codeValue>
+      <displayName>hrudníková chirurgia</displayName>
+      <Skratka>106</Skratka>
+      <Popis>hrudníková chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352047</codeValue>
+      <displayName>detská chirurgia</displayName>
+      <Skratka>107</Skratka>
+      <Popis>detská chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352054</codeValue>
+      <displayName>pediatrická ortopédia</displayName>
+      <Skratka>108</Skratka>
+      <Popis>pediatrická ortopédia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352062</codeValue>
+      <displayName>pediatrická urológia</displayName>
+      <Skratka>109</Skratka>
+      <Popis>pediatrická urológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352070</codeValue>
+      <displayName>klinická bakteriológia</displayName>
+      <Skratka>110</Skratka>
+      <Popis>klinická bakteriológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352088</codeValue>
+      <displayName>klinická parazitológia</displayName>
+      <Skratka>111</Skratka>
+      <Popis>klinická parazitológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352096</codeValue>
+      <displayName>klinická virológia</displayName>
+      <Skratka>112</Skratka>
+      <Popis>klinická virológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352104</codeValue>
+      <displayName>mikrobiológia životného prostredia</displayName>
+      <Skratka>113</Skratka>
+      <Popis>mikrobiológia životného prostredia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352112</codeValue>
+      <displayName>pediatrická otorinolaryngológia</displayName>
+      <Skratka>114</Skratka>
+      <Popis>pediatrická otorinolaryngológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352120</codeValue>
+      <displayName>detské zubné lekárstvo</displayName>
+      <Skratka>115</Skratka>
+      <Popis>detské zubné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352138</codeValue>
+      <displayName>detská dermatovenerológia</displayName>
+      <Skratka>116</Skratka>
+      <Popis>detská dermatovenerológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352146</codeValue>
+      <displayName>inštrumentovanie v operačnej sále</displayName>
+      <Skratka>129</Skratka>
+      <Popis>inštrumentovanie v operačnej sále</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352153</codeValue>
+      <displayName>materno-fetálna medicína</displayName>
+      <Skratka>130</Skratka>
+      <Popis>materno-fetálna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352161</codeValue>
+      <displayName>výchova k zdraviu</displayName>
+      <Skratka>131</Skratka>
+      <Popis>výchova k zdraviu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352179</codeValue>
+      <displayName>výchovná starostlivosť</displayName>
+      <Skratka>132</Skratka>
+      <Popis>výchovná starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352187</codeValue>
+      <displayName>vyšetrovacie metódy v patológii a súdnom lekárstve</displayName>
+      <Skratka>133</Skratka>
+      <Popis>vyšetrovacie metódy v patológii a súdnom lekárstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352195</codeValue>
+      <displayName>zdravotnícke pomôcky</displayName>
+      <Skratka>134</Skratka>
+      <Popis>zdravotnícke pomôcky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352203</codeValue>
+      <displayName>ergoterapia</displayName>
+      <Skratka>135</Skratka>
+      <Popis>ergoterapia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352211</codeValue>
+      <displayName>pediatrická imunológia a alergiológia</displayName>
+      <Skratka>140</Skratka>
+      <Popis>pediatrická imunológia a alergiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352229</codeValue>
+      <displayName>klinická logopédia</displayName>
+      <Skratka>141</Skratka>
+      <Popis>klinická logopédia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352237</codeValue>
+      <displayName>špeciálna pedagogika</displayName>
+      <Skratka>142</Skratka>
+      <Popis>špeciálna pedagogika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352245</codeValue>
+      <displayName>liečebná pedagogika</displayName>
+      <Skratka>143</Skratka>
+      <Popis>liečebná pedagogika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352252</codeValue>
+      <displayName>klinická psychológia</displayName>
+      <Skratka>144</Skratka>
+      <Popis>klinická psychológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352260</codeValue>
+      <displayName>pediatrická reumatológia</displayName>
+      <Skratka>145</Skratka>
+      <Popis>pediatrická reumatológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352278</codeValue>
+      <displayName>klinická fyzika</displayName>
+      <Skratka>146</Skratka>
+      <Popis>klinická fyzika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352286</codeValue>
+      <displayName>pediatrická endokrinológia a diabetológia, poruchy látkovej premeny a výživy</displayName>
+      <Skratka>153</Skratka>
+      <Popis>pediatrická endokrinológia a diabetológia, poruchy látkovej premeny a výživy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352294</codeValue>
+      <displayName>pediatrická gastroenterológia, hepatológia a výživa</displayName>
+      <Skratka>154</Skratka>
+      <Popis>pediatrická gastroenterológia, hepatológia a výživa</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352302</codeValue>
+      <displayName>pediatrická kardiológia</displayName>
+      <Skratka>155</Skratka>
+      <Popis>pediatrická kardiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352310</codeValue>
+      <displayName>pediatrická pneumológia a ftizeológia</displayName>
+      <Skratka>156</Skratka>
+      <Popis>pediatrická pneumológia a ftizeológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352328</codeValue>
+      <displayName>lekárenstvo</displayName>
+      <Skratka>160</Skratka>
+      <Popis>lekárenstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352336</codeValue>
+      <displayName>sestra</displayName>
+      <Skratka>161</Skratka>
+      <Popis>sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352344</codeValue>
+      <displayName>pediatrická nefrológia</displayName>
+      <Skratka>163</Skratka>
+      <Popis>pediatrická nefrológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352351</codeValue>
+      <displayName>fyziológia a psychológia práce</displayName>
+      <Skratka>166</Skratka>
+      <Popis>fyziológia a psychológia práce</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352369</codeValue>
+      <displayName>klinická a populačná pediatria</displayName>
+      <Skratka>167</Skratka>
+      <Popis>klinická a populačná pediatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352377</codeValue>
+      <displayName>klinická genetika</displayName>
+      <Skratka>168</Skratka>
+      <Popis>klinická genetika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352385</codeValue>
+      <displayName>klinická imunológia, alergiológia a antiinfekčná imunológia</displayName>
+      <Skratka>169</Skratka>
+      <Popis>klinická imunológia, alergiológia a antiinfekčná imunológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352393</codeValue>
+      <displayName>zubná technika</displayName>
+      <Skratka>170</Skratka>
+      <Popis>zubná technika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352401</codeValue>
+      <displayName>masér</displayName>
+      <Skratka>173</Skratka>
+      <Popis>masér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352419</codeValue>
+      <displayName>LSPP všeobecná ambulantná starostlivosť pre dospelých - ambulantná</displayName>
+      <Skratka>174</Skratka>
+      <Popis>LSPP všeobecná ambulantná starostlivosť pre dospelých - ambulantná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352427</codeValue>
+      <displayName>LSPP všeobecná ambulantná starostlivosť pre dospelých - návštevná</displayName>
+      <Skratka>175</Skratka>
+      <Popis>LSPP všeobecná ambulantná starostlivosť pre dospelých - návštevná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352435</codeValue>
+      <displayName>LSPP všeobecná ambulantná starostlivosť pre deti a dorast - ambulantná</displayName>
+      <Skratka>176</Skratka>
+      <Popis>LSPP všeobecná ambulantná starostlivosť pre deti a dorast - ambulantná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352443</codeValue>
+      <displayName>LSPP všeobecná ambulantná starostlivosť pre deti a dorast - návštevná</displayName>
+      <Skratka>177</Skratka>
+      <Popis>LSPP všeobecná ambulantná starostlivosť pre deti a dorast - návštevná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352450</codeValue>
+      <displayName>LSPP stomatologická pre dospelých</displayName>
+      <Skratka>178</Skratka>
+      <Popis>LSPP stomatologická pre dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352468</codeValue>
+      <displayName>rýchla lekárska pomoc</displayName>
+      <Skratka>179</Skratka>
+      <Popis>rýchla lekárska pomoc</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352476</codeValue>
+      <displayName>rýchla zdravotná pomoc</displayName>
+      <Skratka>180</Skratka>
+      <Popis>rýchla zdravotná pomoc</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352484</codeValue>
+      <displayName>vrtuľníková záchranná zdravotná služba</displayName>
+      <Skratka>181</Skratka>
+      <Popis>vrtuľníková záchranná zdravotná služba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352492</codeValue>
+      <displayName>doprava poistencov</displayName>
+      <Skratka>183</Skratka>
+      <Popis>doprava poistencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352500</codeValue>
+      <displayName>centrálny príjem / urgentný príjem</displayName>
+      <Skratka>184</Skratka>
+      <Popis>centrálny príjem / urgentný príjem</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352518</codeValue>
+      <displayName>centrálne operačné sály</displayName>
+      <Skratka>185</Skratka>
+      <Popis>centrálne operačné sály</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352526</codeValue>
+      <displayName>centrálna sterilizácia</displayName>
+      <Skratka>186</Skratka>
+      <Popis>centrálna sterilizácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352534</codeValue>
+      <displayName>funkčná diagnostika</displayName>
+      <Skratka>187</Skratka>
+      <Popis>funkčná diagnostika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352542</codeValue>
+      <displayName>tkaninové zariadenie</displayName>
+      <Skratka>188</Skratka>
+      <Popis>tkaninové zariadenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352559</codeValue>
+      <displayName>očná banka</displayName>
+      <Skratka>190</Skratka>
+      <Popis>očná banka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352567</codeValue>
+      <displayName>popáleninové</displayName>
+      <Skratka>191</Skratka>
+      <Popis>popáleninové</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352575</codeValue>
+      <displayName>doliečovacie</displayName>
+      <Skratka>192</Skratka>
+      <Popis>doliečovacie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352583</codeValue>
+      <displayName>ústavná ošetrovateľská starostlivosť</displayName>
+      <Skratka>193</Skratka>
+      <Popis>ústavná ošetrovateľská starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352591</codeValue>
+      <displayName>novorodenecké postele</displayName>
+      <Skratka>194</Skratka>
+      <Popis>novorodenecké postele</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352609</codeValue>
+      <displayName>JIS interná</displayName>
+      <Skratka>196</Skratka>
+      <Popis>JIS interná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352617</codeValue>
+      <displayName>JIS kardiologická</displayName>
+      <Skratka>197</Skratka>
+      <Popis>JIS kardiologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352625</codeValue>
+      <displayName>JIS metabolická</displayName>
+      <Skratka>198</Skratka>
+      <Popis>JIS metabolická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352633</codeValue>
+      <displayName>JIS pediatrická</displayName>
+      <Skratka>199</Skratka>
+      <Popis>JIS pediatrická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352641</codeValue>
+      <displayName>JIS pneumologická a ftizeologická</displayName>
+      <Skratka>200</Skratka>
+      <Popis>JIS pneumologická a ftizeologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352658</codeValue>
+      <displayName>JIS neurologická</displayName>
+      <Skratka>201</Skratka>
+      <Popis>JIS neurologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352666</codeValue>
+      <displayName>JIS chirurgická</displayName>
+      <Skratka>202</Skratka>
+      <Popis>JIS chirurgická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352674</codeValue>
+      <displayName>JRSN /jednotka resuscitačnej starostlivosti o novorodencov</displayName>
+      <Skratka>203</Skratka>
+      <Popis>JRSN /jednotka resuscitačnej starostlivosti o novorodencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352682</codeValue>
+      <displayName>dlhodobo chorých</displayName>
+      <Skratka>205</Skratka>
+      <Popis>dlhodobo chorých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352690</codeValue>
+      <displayName>chirurgia ruky</displayName>
+      <Skratka>206</Skratka>
+      <Popis>chirurgia ruky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352708</codeValue>
+      <displayName>transplantačné</displayName>
+      <Skratka>207</Skratka>
+      <Popis>transplantačné</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352716</codeValue>
+      <displayName>dialyzačné</displayName>
+      <Skratka>208</Skratka>
+      <Popis>dialyzačné</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352724</codeValue>
+      <displayName>klinická hematológia</displayName>
+      <Skratka>209</Skratka>
+      <Popis>klinická hematológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352732</codeValue>
+      <displayName>sonografia</displayName>
+      <Skratka>212</Skratka>
+      <Popis>sonografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352740</codeValue>
+      <displayName>biobanka</displayName>
+      <Skratka>213</Skratka>
+      <Popis>biobanka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352757</codeValue>
+      <displayName>referenčné laboratórium</displayName>
+      <Skratka>214</Skratka>
+      <Popis>referenčné laboratórium</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352765</codeValue>
+      <displayName>mikrochirurgia oka</displayName>
+      <Skratka>215</Skratka>
+      <Popis>mikrochirurgia oka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352773</codeValue>
+      <displayName>hepatológia</displayName>
+      <Skratka>216</Skratka>
+      <Popis>hepatológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352781</codeValue>
+      <displayName>LSPP stomatologická pre deti a dorast</displayName>
+      <Skratka>217</Skratka>
+      <Popis>LSPP stomatologická pre deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352799</codeValue>
+      <displayName>nemocničná krvná banka</displayName>
+      <Skratka>218</Skratka>
+      <Popis>nemocničná krvná banka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352807</codeValue>
+      <displayName>detská onkológia</displayName>
+      <Skratka>219</Skratka>
+      <Popis>detská onkológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352815</codeValue>
+      <displayName>poruchy metabolizmu</displayName>
+      <Skratka>220</Skratka>
+      <Popis>poruchy metabolizmu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352823</codeValue>
+      <displayName>invazívna diagnostika a intervenčná liečba v kardiológii a angiológii</displayName>
+      <Skratka>221</Skratka>
+      <Popis>invazívna diagnostika a intervenčná liečba v kardiológii a angiológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352831</codeValue>
+      <displayName>gastroenterologická chirurgia</displayName>
+      <Skratka>222</Skratka>
+      <Popis>gastroenterologická chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352849</codeValue>
+      <displayName>neuropsychiatria</displayName>
+      <Skratka>223</Skratka>
+      <Popis>neuropsychiatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352856</codeValue>
+      <displayName>inštrumentovanie v operačnej sále v gynekológii a pôrodníctve</displayName>
+      <Skratka>224</Skratka>
+      <Popis>inštrumentovanie v operačnej sále v gynekológii a pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352864</codeValue>
+      <displayName>laboratórna medicína</displayName>
+      <Skratka>225</Skratka>
+      <Popis>laboratórna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352872</codeValue>
+      <displayName>tropická medicína</displayName>
+      <Skratka>226</Skratka>
+      <Popis>tropická medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352880</codeValue>
+      <displayName>verejné zdravotníctvo</displayName>
+      <Skratka>227</Skratka>
+      <Popis>verejné zdravotníctvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352898</codeValue>
+      <displayName>magnetická rezonancia</displayName>
+      <Skratka>228</Skratka>
+      <Popis>magnetická rezonancia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352906</codeValue>
+      <displayName>onkológia v gynekológii</displayName>
+      <Skratka>229</Skratka>
+      <Popis>onkológia v gynekológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352914</codeValue>
+      <displayName>mykológia</displayName>
+      <Skratka>230</Skratka>
+      <Popis>mykológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352922</codeValue>
+      <displayName>psychosomatická a behaviorálna medicína</displayName>
+      <Skratka>231</Skratka>
+      <Popis>psychosomatická a behaviorálna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352930</codeValue>
+      <displayName>osteodenzitometria</displayName>
+      <Skratka>232</Skratka>
+      <Popis>osteodenzitometria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352948</codeValue>
+      <displayName>invazívna katétrová diagnostika a liečba porúch srdcového rytmu a implantácia kardiostimulátorov</displayName>
+      <Skratka>234</Skratka>
+      <Popis>invazívna katétrová diagnostika a liečba porúch srdcového rytmu a implantácia kardiostimulátorov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352955</codeValue>
+      <displayName>zásahové stredisko záchrannej zdravotnej služby</displayName>
+      <Skratka>235</Skratka>
+      <Popis>zásahové stredisko záchrannej zdravotnej služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352963</codeValue>
+      <displayName>rýchla lekárska pomoc s vybavením mobilnej intenzívnej jednotky</displayName>
+      <Skratka>238</Skratka>
+      <Popis>rýchla lekárska pomoc s vybavením mobilnej intenzívnej jednotky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352971</codeValue>
+      <displayName>ošetrovateľstvo v zdraví pri práci</displayName>
+      <Skratka>240</Skratka>
+      <Popis>ošetrovateľstvo v zdraví pri práci</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352989</codeValue>
+      <displayName>psychoterapia</displayName>
+      <Skratka>241</Skratka>
+      <Popis>psychoterapia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000352997</codeValue>
+      <displayName>operačné stredisko záchrannej zdravotnej služby</displayName>
+      <Skratka>243</Skratka>
+      <Popis>operačné stredisko záchrannej zdravotnej služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353003</codeValue>
+      <displayName>intenzívna ošetrovateľská starostlivosť o dospelých</displayName>
+      <Skratka>244</Skratka>
+      <Popis>intenzívna ošetrovateľská starostlivosť o dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353011</codeValue>
+      <displayName>intenzívna ošetrovateľská starostlivosť v pediatrii</displayName>
+      <Skratka>245</Skratka>
+      <Popis>intenzívna ošetrovateľská starostlivosť v pediatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353029</codeValue>
+      <displayName>intenzívna ošetrovateľská starostlivosť v neonatológii</displayName>
+      <Skratka>246</Skratka>
+      <Popis>intenzívna ošetrovateľská starostlivosť v neonatológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353037</codeValue>
+      <displayName>ultrazvuk v gynekológii a pôrodníctve</displayName>
+      <Skratka>247</Skratka>
+      <Popis>ultrazvuk v gynekológii a pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353045</codeValue>
+      <displayName>ošetrovateľská starostlivosť o dialyzovaných pacientov</displayName>
+      <Skratka>248</Skratka>
+      <Popis>ošetrovateľská starostlivosť o dialyzovaných pacientov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353052</codeValue>
+      <displayName>ošetrovateľská starostlivosť v odboroch vnútorného lekárstva</displayName>
+      <Skratka>249</Skratka>
+      <Popis>ošetrovateľská starostlivosť v odboroch vnútorného lekárstva</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353060</codeValue>
+      <displayName>ošetrovateľská starostlivosť v odboroch chirurgie</displayName>
+      <Skratka>250</Skratka>
+      <Popis>ošetrovateľská starostlivosť v odboroch chirurgie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353078</codeValue>
+      <displayName>ošetrovateľská starostlivosť v pediatrii</displayName>
+      <Skratka>251</Skratka>
+      <Popis>ošetrovateľská starostlivosť v pediatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353086</codeValue>
+      <displayName>ošetrovateľská starostlivosť v psychiatrii</displayName>
+      <Skratka>252</Skratka>
+      <Popis>ošetrovateľská starostlivosť v psychiatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353094</codeValue>
+      <displayName>ošetrovateľská starostlivosť v komunite</displayName>
+      <Skratka>253</Skratka>
+      <Popis>ošetrovateľská starostlivosť v komunite</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353102</codeValue>
+      <displayName>ošetrovateľská starostlivosť v onkológii</displayName>
+      <Skratka>254</Skratka>
+      <Popis>ošetrovateľská starostlivosť v onkológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353110</codeValue>
+      <displayName>špecializovaná urgentná starostlivosť</displayName>
+      <Skratka>255</Skratka>
+      <Popis>špecializovaná urgentná starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353128</codeValue>
+      <displayName>intenzívna starostlivosť v gynekológii a pôrodníctve</displayName>
+      <Skratka>256</Skratka>
+      <Popis>intenzívna starostlivosť v gynekológii a pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353136</codeValue>
+      <displayName>pôrodná asistencia a starostlivosť o ženu v rodine a komunite</displayName>
+      <Skratka>257</Skratka>
+      <Popis>pôrodná asistencia a starostlivosť o ženu v rodine a komunite</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353144</codeValue>
+      <displayName>špeciálne laboratórne a diagnostické metódy v hematológii a transfúziológii</displayName>
+      <Skratka>258</Skratka>
+      <Popis>špeciálne laboratórne a diagnostické metódy v hematológii a transfúziológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353151</codeValue>
+      <displayName>laboratórne a diagnostické metódy v hematológii a transfúziológii</displayName>
+      <Skratka>259</Skratka>
+      <Popis>laboratórne a diagnostické metódy v hematológii a transfúziológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353169</codeValue>
+      <displayName>vyšetrovacie metódy v klinickej cytológii</displayName>
+      <Skratka>261</Skratka>
+      <Popis>vyšetrovacie metódy v klinickej cytológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353177</codeValue>
+      <displayName>vyšetrovacie metódy v klinickej mikrobiológii</displayName>
+      <Skratka>262</Skratka>
+      <Popis>vyšetrovacie metódy v klinickej mikrobiológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353185</codeValue>
+      <displayName>vyšetrovacie metódy v genetike</displayName>
+      <Skratka>266</Skratka>
+      <Popis>vyšetrovacie metódy v genetike</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353193</codeValue>
+      <displayName>mamológia</displayName>
+      <Skratka>271</Skratka>
+      <Popis>mamológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353201</codeValue>
+      <displayName>liečebná výživa</displayName>
+      <Skratka>272</Skratka>
+      <Popis>liečebná výživa</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353219</codeValue>
+      <displayName>fyzioterapia porúch psychomotorického vývoja</displayName>
+      <Skratka>273</Skratka>
+      <Popis>fyzioterapia porúch psychomotorického vývoja</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353227</codeValue>
+      <displayName>fyzioterapia funkčných a štrukturálnych porúch pohybového systému</displayName>
+      <Skratka>274</Skratka>
+      <Popis>fyzioterapia funkčných a štrukturálnych porúch pohybového systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353235</codeValue>
+      <displayName>fyzioterapia porúch CNS</displayName>
+      <Skratka>275</Skratka>
+      <Popis>fyzioterapia porúch CNS</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353243</codeValue>
+      <displayName>fyzioterapia v športe a telovýchove</displayName>
+      <Skratka>276</Skratka>
+      <Popis>fyzioterapia v športe a telovýchove</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353250</codeValue>
+      <displayName>ergonomika a rehabilitačné inžinierstvo</displayName>
+      <Skratka>277</Skratka>
+      <Popis>ergonomika a rehabilitačné inžinierstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353268</codeValue>
+      <displayName>arytmia a koronárna jednotka</displayName>
+      <Skratka>278</Skratka>
+      <Popis>arytmia a koronárna jednotka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353276</codeValue>
+      <displayName>echokardiografia a ultrazvukové vyšetrenie cievneho systému</displayName>
+      <Skratka>279</Skratka>
+      <Popis>echokardiografia a ultrazvukové vyšetrenie cievneho systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353284</codeValue>
+      <displayName>fyzioterapia psychosomatických a civilizačných ochorení</displayName>
+      <Skratka>282</Skratka>
+      <Popis>fyzioterapia psychosomatických a civilizačných ochorení</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353292</codeValue>
+      <displayName>sociálna práca v zdravotníctve</displayName>
+      <Skratka>283</Skratka>
+      <Popis>sociálna práca v zdravotníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353300</codeValue>
+      <displayName>vyšetrovacie metódy v lekárskej genetike</displayName>
+      <Skratka>285</Skratka>
+      <Popis>vyšetrovacie metódy v lekárskej genetike</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353318</codeValue>
+      <displayName>fyzioterapia respiračných ochorení</displayName>
+      <Skratka>288</Skratka>
+      <Popis>fyzioterapia respiračných ochorení</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353326</codeValue>
+      <displayName>reprodukčná medicína</displayName>
+      <Skratka>289</Skratka>
+      <Popis>reprodukčná medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353334</codeValue>
+      <displayName>mikrochirurgia v otorinolaryngológii</displayName>
+      <Skratka>290</Skratka>
+      <Popis>mikrochirurgia v otorinolaryngológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353342</codeValue>
+      <displayName>liečebná rehabilitácia a fyzioterapia porúch vybraných systémov</displayName>
+      <Skratka>291</Skratka>
+      <Popis>liečebná rehabilitácia a fyzioterapia porúch vybraných systémov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353359</codeValue>
+      <displayName>výskum v gynekologicko-pôrodníckom ošetrovateľstve</displayName>
+      <Skratka>292</Skratka>
+      <Popis>výskum v gynekologicko-pôrodníckom ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353367</codeValue>
+      <displayName>výskum v ošetrovateľstve</displayName>
+      <Skratka>293</Skratka>
+      <Popis>výskum v ošetrovateľstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353375</codeValue>
+      <displayName>poradenská psychológia</displayName>
+      <Skratka>295</Skratka>
+      <Popis>poradenská psychológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353383</codeValue>
+      <displayName>pracovná a organizačná psychológia</displayName>
+      <Skratka>296</Skratka>
+      <Popis>pracovná a organizačná psychológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353391</codeValue>
+      <displayName>školská psychológia</displayName>
+      <Skratka>297</Skratka>
+      <Popis>školská psychológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353409</codeValue>
+      <displayName>akupunktúra</displayName>
+      <Skratka>299</Skratka>
+      <Popis>akupunktúra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353417</codeValue>
+      <displayName>andrológia</displayName>
+      <Skratka>302</Skratka>
+      <Popis>andrológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353425</codeValue>
+      <displayName>abdominálna ultrasonografia u dospelých</displayName>
+      <Skratka>303</Skratka>
+      <Popis>abdominálna ultrasonografia u dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353433</codeValue>
+      <displayName>klinické pracovné lekárstvo a klinická toxikológia</displayName>
+      <Skratka>306</Skratka>
+      <Popis>klinické pracovné lekárstvo a klinická toxikológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353441</codeValue>
+      <displayName>gynekologická urológia</displayName>
+      <Skratka>312</Skratka>
+      <Popis>gynekologická urológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353458</codeValue>
+      <displayName>onkológia v chirurgii</displayName>
+      <Skratka>319</Skratka>
+      <Popis>onkológia v chirurgii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353466</codeValue>
+      <displayName>onkológia v urológii</displayName>
+      <Skratka>322</Skratka>
+      <Popis>onkológia v urológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353474</codeValue>
+      <displayName>pediatrická anestéziológia</displayName>
+      <Skratka>323</Skratka>
+      <Popis>pediatrická anestéziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353482</codeValue>
+      <displayName>vyšetrovacie metódy v klinickej biochémii</displayName>
+      <Skratka>324</Skratka>
+      <Popis>vyšetrovacie metódy v klinickej biochémii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353490</codeValue>
+      <displayName>anestéziológia a intenzívna starostlivosť</displayName>
+      <Skratka>325</Skratka>
+      <Popis>anestéziológia a intenzívna starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353508</codeValue>
+      <displayName>pediatrická hematológia a onkológia</displayName>
+      <Skratka>329</Skratka>
+      <Popis>pediatrická hematológia a onkológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353516</codeValue>
+      <displayName>pediatrická infektológia</displayName>
+      <Skratka>331</Skratka>
+      <Popis>pediatrická infektológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353524</codeValue>
+      <displayName>pediatrická intenzívna medicína</displayName>
+      <Skratka>332</Skratka>
+      <Popis>pediatrická intenzívna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353532</codeValue>
+      <displayName>paliatívna medicína</displayName>
+      <Skratka>334</Skratka>
+      <Popis>paliatívna medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353540</codeValue>
+      <displayName>rehabilitácia v detskom veku</displayName>
+      <Skratka>335</Skratka>
+      <Popis>rehabilitácia v detskom veku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353557</codeValue>
+      <displayName>pediatrická oftalmológia</displayName>
+      <Skratka>336</Skratka>
+      <Popis>pediatrická oftalmológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353565</codeValue>
+      <displayName>rehabilitácia v gynekológii</displayName>
+      <Skratka>337</Skratka>
+      <Popis>rehabilitácia v gynekológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353573</codeValue>
+      <displayName>rehabilitácia v pôrodníctve</displayName>
+      <Skratka>339</Skratka>
+      <Popis>rehabilitácia v pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353581</codeValue>
+      <displayName>sexuológia</displayName>
+      <Skratka>340</Skratka>
+      <Popis>sexuológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353599</codeValue>
+      <displayName>pediatrická urgentná medicína</displayName>
+      <Skratka>341</Skratka>
+      <Popis>pediatrická urgentná medicína</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353607</codeValue>
+      <displayName>detská hematológia a transfuziológia</displayName>
+      <Skratka>342</Skratka>
+      <Popis>detská hematológia a transfuziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353615</codeValue>
+      <displayName>špeciálna rádiológia</displayName>
+      <Skratka>343</Skratka>
+      <Popis>špeciálna rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353623</codeValue>
+      <displayName>mikrobiológia a biológia životného prostredia</displayName>
+      <Skratka>344</Skratka>
+      <Popis>mikrobiológia a biológia životného prostredia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353631</codeValue>
+      <displayName>dentoalveolárna chirurgia</displayName>
+      <Skratka>345</Skratka>
+      <Popis>dentoalveolárna chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353649</codeValue>
+      <displayName>laboratórne a diagnostické metódy v klinickej imunológii a alergológii</displayName>
+      <Skratka>346</Skratka>
+      <Popis>laboratórne a diagnostické metódy v klinickej imunológii a alergológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353656</codeValue>
+      <displayName>choroby slizníc ústnej dutiny</displayName>
+      <Skratka>347</Skratka>
+      <Popis>choroby slizníc ústnej dutiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353664</codeValue>
+      <displayName>implantológia</displayName>
+      <Skratka>348</Skratka>
+      <Popis>implantológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353672</codeValue>
+      <displayName>vyšetrovacie metódy v kardiológii</displayName>
+      <Skratka>349</Skratka>
+      <Popis>vyšetrovacie metódy v kardiológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353680</codeValue>
+      <displayName>onkológia vo vnútornom lekárstve</displayName>
+      <Skratka>350</Skratka>
+      <Popis>onkológia vo vnútornom lekárstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353698</codeValue>
+      <displayName>perfuziológia</displayName>
+      <Skratka>351</Skratka>
+      <Popis>perfuziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353706</codeValue>
+      <displayName>psychiatria pre dospelých</displayName>
+      <Skratka>352</Skratka>
+      <Popis>psychiatria pre dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353714</codeValue>
+      <displayName>zdravotnícka ekológia</displayName>
+      <Skratka>353</Skratka>
+      <Popis>zdravotnícka ekológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353722</codeValue>
+      <displayName>ošetrovateľská starostlivosť</displayName>
+      <Skratka>355</Skratka>
+      <Popis>ošetrovateľská starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353730</codeValue>
+      <displayName>intenzívna starostlivosť v pediatrii</displayName>
+      <Skratka>357</Skratka>
+      <Popis>intenzívna starostlivosť v pediatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353748</codeValue>
+      <displayName>mukogingiválna chirurgia</displayName>
+      <Skratka>358</Skratka>
+      <Popis>mukogingiválna chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353755</codeValue>
+      <displayName>príprava cytostatík</displayName>
+      <Skratka>364</Skratka>
+      <Popis>príprava cytostatík</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353763</codeValue>
+      <displayName>ošetrovateľská starostlivosť o dospelých</displayName>
+      <Skratka>365</Skratka>
+      <Popis>ošetrovateľská starostlivosť o dospelých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353771</codeValue>
+      <displayName>preventívne pracovné lekárstvo a toxikológia</displayName>
+      <Skratka>366</Skratka>
+      <Popis>preventívne pracovné lekárstvo a toxikológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353789</codeValue>
+      <displayName>psychiatrická sexuológia</displayName>
+      <Skratka>367</Skratka>
+      <Popis>psychiatrická sexuológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353797</codeValue>
+      <displayName>ošetrovateľská starostlivosť v detskej psychiatrii</displayName>
+      <Skratka>368</Skratka>
+      <Popis>ošetrovateľská starostlivosť v detskej psychiatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353805</codeValue>
+      <displayName>stomatologická starostlivosť</displayName>
+      <Skratka>369</Skratka>
+      <Popis>stomatologická starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353813</codeValue>
+      <displayName>sociálna starostlivosť</displayName>
+      <Skratka>370</Skratka>
+      <Popis>sociálna starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353821</codeValue>
+      <displayName>psychosomatické a behaviorálne ošetrovateľstvo</displayName>
+      <Skratka>373</Skratka>
+      <Popis>psychosomatické a behaviorálne ošetrovateľstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353839</codeValue>
+      <displayName>zabezpečovanie kvality transfúznych liekov</displayName>
+      <Skratka>375</Skratka>
+      <Popis>zabezpečovanie kvality transfúznych liekov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353847</codeValue>
+      <displayName>služby zdravia pri práci</displayName>
+      <Skratka>377</Skratka>
+      <Popis>služby zdravia pri práci</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353854</codeValue>
+      <displayName>fyzioterapia vybraných ochorení pohybového systému</displayName>
+      <Skratka>378</Skratka>
+      <Popis>fyzioterapia vybraných ochorení pohybového systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353862</codeValue>
+      <displayName>pediatrická rádiológia</displayName>
+      <Skratka>393</Skratka>
+      <Popis>pediatrická rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089552869</codeValue>
+      <displayName>vyšetrovacie metódy v hematológii a transfúziológii</displayName>
+      <Skratka>516</Skratka>
+      <Popis>vyšetrovacie metódy v hematológii a transfúziológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353870</codeValue>
+      <displayName>osteológia</displayName>
+      <Skratka>520</Skratka>
+      <Popis>osteológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353888</codeValue>
+      <displayName>chirurgia prsníka</displayName>
+      <Skratka>522</Skratka>
+      <Popis>chirurgia prsníka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353896</codeValue>
+      <displayName>komplexná diagnostika a liečba pri vrodených a získaných poruchách hemostázy</displayName>
+      <Skratka>524</Skratka>
+      <Popis>komplexná diagnostika a liečba pri vrodených a získaných poruchách hemostázy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353904</codeValue>
+      <displayName>klinická psychofyziológia (neurofeedback a biofeedback)</displayName>
+      <Skratka>525</Skratka>
+      <Popis>klinická psychofyziológia (neurofeedback a biofeedback)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353912</codeValue>
+      <displayName>diagnostika a liečba chorôb uropoetického systému v pediatrii</displayName>
+      <Skratka>527</Skratka>
+      <Popis>diagnostika a liečba chorôb uropoetického systému v pediatrii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353920</codeValue>
+      <displayName>spirometria</displayName>
+      <Skratka>529</Skratka>
+      <Popis>spirometria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353938</codeValue>
+      <displayName>terapeutické monitorovanie liečiv</displayName>
+      <Skratka>530</Skratka>
+      <Popis>terapeutické monitorovanie liečiv</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353946</codeValue>
+      <displayName>tropické lekárstvo</displayName>
+      <Skratka>531</Skratka>
+      <Popis>tropické lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353953</codeValue>
+      <displayName>ultrazvuk v ortopédii</displayName>
+      <Skratka>532</Skratka>
+      <Popis>ultrazvuk v ortopédii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353961</codeValue>
+      <displayName>ultrazvukové vyšetrovacie metódy</displayName>
+      <Skratka>533</Skratka>
+      <Popis>ultrazvukové vyšetrovacie metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353979</codeValue>
+      <displayName>ultrazvukové vyšetrovacie metódy v pôrodníctve</displayName>
+      <Skratka>534</Skratka>
+      <Popis>ultrazvukové vyšetrovacie metódy v pôrodníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353987</codeValue>
+      <displayName>urogenitálna rádiológia</displayName>
+      <Skratka>535</Skratka>
+      <Popis>urogenitálna rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000353995</codeValue>
+      <displayName>reumoortopédia</displayName>
+      <Skratka>536</Skratka>
+      <Popis>reumoortopédia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354001</codeValue>
+      <displayName>rehabilitačné metódy</displayName>
+      <Skratka>537</Skratka>
+      <Popis>rehabilitačné metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354019</codeValue>
+      <displayName>preventívna závodná zdravotná služba</displayName>
+      <Skratka>539</Skratka>
+      <Popis>preventívna závodná zdravotná služba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354027</codeValue>
+      <displayName>nové rehabilitačné metódy</displayName>
+      <Skratka>541</Skratka>
+      <Popis>nové rehabilitačné metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354035</codeValue>
+      <displayName>neurorehabilitácia</displayName>
+      <Skratka>542</Skratka>
+      <Popis>neurorehabilitácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354043</codeValue>
+      <displayName>neurorádiológia</displayName>
+      <Skratka>543</Skratka>
+      <Popis>neurorádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354050</codeValue>
+      <displayName>primárna starostlivosť o deti a dorast</displayName>
+      <Skratka>544</Skratka>
+      <Popis>primárna starostlivosť o deti a dorast</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354068</codeValue>
+      <displayName>neurologická onkológia</displayName>
+      <Skratka>545</Skratka>
+      <Popis>neurologická onkológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354076</codeValue>
+      <displayName>neurogeriatria</displayName>
+      <Skratka>546</Skratka>
+      <Popis>neurogeriatria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354084</codeValue>
+      <displayName>muskuloskeletálna rádiológia</displayName>
+      <Skratka>547</Skratka>
+      <Popis>muskuloskeletálna rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354092</codeValue>
+      <displayName>manuálna terapia</displayName>
+      <Skratka>548</Skratka>
+      <Popis>manuálna terapia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354100</codeValue>
+      <displayName>laserové techniky</displayName>
+      <Skratka>549</Skratka>
+      <Popis>laserové techniky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354118</codeValue>
+      <displayName>chemoterapia</displayName>
+      <Skratka>550</Skratka>
+      <Popis>chemoterapia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354126</codeValue>
+      <displayName>závodné zdravotné služby</displayName>
+      <Skratka>552</Skratka>
+      <Popis>závodné zdravotné služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354134</codeValue>
+      <displayName>gynekologická imunológia</displayName>
+      <Skratka>553</Skratka>
+      <Popis>gynekologická imunológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354142</codeValue>
+      <displayName>kardiovaskulárna rádiológia</displayName>
+      <Skratka>556</Skratka>
+      <Popis>kardiovaskulárna rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354159</codeValue>
+      <displayName>audiometria</displayName>
+      <Skratka>557</Skratka>
+      <Popis>audiometria</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354167</codeValue>
+      <displayName>endoskopické vyšetrovacie metódy v jednotlivých odboroch</displayName>
+      <Skratka>558</Skratka>
+      <Popis>endoskopické vyšetrovacie metódy v jednotlivých odboroch</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354175</codeValue>
+      <displayName>funkčné vyšetrovacie metódy</displayName>
+      <Skratka>559</Skratka>
+      <Popis>funkčné vyšetrovacie metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354183</codeValue>
+      <displayName>invazívne a intervenčné diagnostické a terapeutické postupy v kardiológii</displayName>
+      <Skratka>560</Skratka>
+      <Popis>invazívne a intervenčné diagnostické a terapeutické postupy v kardiológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354191</codeValue>
+      <displayName>kalmetizácia</displayName>
+      <Skratka>561</Skratka>
+      <Popis>kalmetizácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354209</codeValue>
+      <displayName>kardiologické vyšetrovacie metódy</displayName>
+      <Skratka>562</Skratka>
+      <Popis>kardiologické vyšetrovacie metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354217</codeValue>
+      <displayName>sterilizácia a dezinfekcia zdravotníckych pomôcok</displayName>
+      <Skratka>563</Skratka>
+      <Popis>sterilizácia a dezinfekcia zdravotníckych pomôcok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354225</codeValue>
+      <displayName>organizácia a techniky v tkanivových bankách</displayName>
+      <Skratka>564</Skratka>
+      <Popis>organizácia a techniky v tkanivových bankách</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354233</codeValue>
+      <displayName>ošetrovateľská starostlivosť o diabetikov</displayName>
+      <Skratka>565</Skratka>
+      <Popis>ošetrovateľská starostlivosť o diabetikov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354241</codeValue>
+      <displayName>ošetrovateľská starostlivosť v multikultúrnych komunitách</displayName>
+      <Skratka>566</Skratka>
+      <Popis>ošetrovateľská starostlivosť v multikultúrnych komunitách</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354258</codeValue>
+      <displayName>ošetrovateľská starostlivosť v primárnej starostlivosti</displayName>
+      <Skratka>567</Skratka>
+      <Popis>ošetrovateľská starostlivosť v primárnej starostlivosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354266</codeValue>
+      <displayName>starostlivosť o drogovo závislých</displayName>
+      <Skratka>568</Skratka>
+      <Popis>starostlivosť o drogovo závislých</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354274</codeValue>
+      <displayName>vyšetrovacie metódy v klinickej neurofyziológii a neurodiagnostike</displayName>
+      <Skratka>569</Skratka>
+      <Popis>vyšetrovacie metódy v klinickej neurofyziológii a neurodiagnostike</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354282</codeValue>
+      <displayName>plánované rodičovstvo a antikoncepcia</displayName>
+      <Skratka>570</Skratka>
+      <Popis>plánované rodičovstvo a antikoncepcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354290</codeValue>
+      <displayName>psychofyzická príprava na pôrod</displayName>
+      <Skratka>571</Skratka>
+      <Popis>psychofyzická príprava na pôrod</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354308</codeValue>
+      <displayName>kardiologické a funkčné vyšetrovacie metódy</displayName>
+      <Skratka>572</Skratka>
+      <Popis>kardiologické a funkčné vyšetrovacie metódy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354316</codeValue>
+      <displayName>mamografia</displayName>
+      <Skratka>575</Skratka>
+      <Popis>mamografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354324</codeValue>
+      <displayName>počítačová tomografia - CT</displayName>
+      <Skratka>576</Skratka>
+      <Popis>počítačová tomografia - CT</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354332</codeValue>
+      <displayName>afaziológia</displayName>
+      <Skratka>577</Skratka>
+      <Popis>afaziológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354340</codeValue>
+      <displayName>drogové závislosti</displayName>
+      <Skratka>578</Skratka>
+      <Popis>drogové závislosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354357</codeValue>
+      <displayName>endoskopia uropoetického systému</displayName>
+      <Skratka>579</Skratka>
+      <Popis>endoskopia uropoetického systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354365</codeValue>
+      <displayName>dopravná psychológia</displayName>
+      <Skratka>580</Skratka>
+      <Popis>dopravná psychológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354373</codeValue>
+      <displayName>mobilizačné techniky</displayName>
+      <Skratka>581</Skratka>
+      <Popis>mobilizačné techniky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354381</codeValue>
+      <displayName>reflexná terapia podľa Vojtu</displayName>
+      <Skratka>582</Skratka>
+      <Popis>reflexná terapia podľa Vojtu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354399</codeValue>
+      <displayName>techniky terapie lymfedému</displayName>
+      <Skratka>583</Skratka>
+      <Popis>techniky terapie lymfedému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354407</codeValue>
+      <displayName>audioprotetika</displayName>
+      <Skratka>584</Skratka>
+      <Popis>audioprotetika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354415</codeValue>
+      <displayName>diagnostická a intervenčná ezofagogastroduodenoskopia</displayName>
+      <Skratka>585</Skratka>
+      <Popis>diagnostická a intervenčná ezofagogastroduodenoskopia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354423</codeValue>
+      <displayName>diagnostická a intervenčná kolonoskopia</displayName>
+      <Skratka>586</Skratka>
+      <Popis>diagnostická a intervenčná kolonoskopia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354431</codeValue>
+      <displayName>diagnostika a liečba imunopatologických stavov v gynekológii</displayName>
+      <Skratka>587</Skratka>
+      <Popis>diagnostika a liečba imunopatologických stavov v gynekológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354449</codeValue>
+      <displayName>endoskopická retrográdna cholangiopankreatikografia</displayName>
+      <Skratka>588</Skratka>
+      <Popis>endoskopická retrográdna cholangiopankreatikografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354456</codeValue>
+      <displayName>farmakoekonomika</displayName>
+      <Skratka>589</Skratka>
+      <Popis>farmakoekonomika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354464</codeValue>
+      <displayName>chemoterapia infekčných chorôb</displayName>
+      <Skratka>590</Skratka>
+      <Popis>chemoterapia infekčných chorôb</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354472</codeValue>
+      <displayName>chemoterapia nádorov</displayName>
+      <Skratka>591</Skratka>
+      <Popis>chemoterapia nádorov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354480</codeValue>
+      <displayName>intenzívna starostlivosť vo vnútornom lekárstve</displayName>
+      <Skratka>592</Skratka>
+      <Popis>intenzívna starostlivosť vo vnútornom lekárstve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354498</codeValue>
+      <displayName>intervenčná rádiológia</displayName>
+      <Skratka>593</Skratka>
+      <Popis>intervenčná rádiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354506</codeValue>
+      <displayName>intervenčná ultrasonografia v urológii</displayName>
+      <Skratka>594</Skratka>
+      <Popis>intervenčná ultrasonografia v urológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354514</codeValue>
+      <displayName>mamodiagnostika v gynekológii</displayName>
+      <Skratka>595</Skratka>
+      <Popis>mamodiagnostika v gynekológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354522</codeValue>
+      <displayName>mamodiagnostika v rádiológii</displayName>
+      <Skratka>596</Skratka>
+      <Popis>mamodiagnostika v rádiológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354530</codeValue>
+      <displayName>endoskopia respiračného systému</displayName>
+      <Skratka>597</Skratka>
+      <Popis>endoskopia respiračného systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354548</codeValue>
+      <displayName>klinické skúšanie liekov</displayName>
+      <Skratka>598</Skratka>
+      <Popis>klinické skúšanie liekov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354555</codeValue>
+      <displayName>spondylochirurgia</displayName>
+      <Skratka>599</Skratka>
+      <Popis>spondylochirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354563</codeValue>
+      <displayName>JIS onkologická</displayName>
+      <Skratka>601</Skratka>
+      <Popis>JIS onkologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354571</codeValue>
+      <displayName>JIS infekčná</displayName>
+      <Skratka>602</Skratka>
+      <Popis>JIS infekčná</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354589</codeValue>
+      <displayName>JIS spondylochirurgická</displayName>
+      <Skratka>603</Skratka>
+      <Popis>JIS spondylochirurgická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354597</codeValue>
+      <displayName>JIS otorinolaryngologická</displayName>
+      <Skratka>604</Skratka>
+      <Popis>JIS otorinolaryngologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354605</codeValue>
+      <displayName>pôrodná asistentka bez špecializácie</displayName>
+      <Skratka>605</Skratka>
+      <Popis>pôrodná asistentka bez špecializácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354613</codeValue>
+      <displayName>JIS gynekologická</displayName>
+      <Skratka>609</Skratka>
+      <Popis>JIS gynekologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354621</codeValue>
+      <displayName>domáca ošetrovateľská starostlivosť</displayName>
+      <Skratka>610</Skratka>
+      <Popis>domáca ošetrovateľská starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354639</codeValue>
+      <displayName>JIS ortopedická</displayName>
+      <Skratka>611</Skratka>
+      <Popis>JIS ortopedická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354647</codeValue>
+      <displayName>JIS urologická</displayName>
+      <Skratka>612</Skratka>
+      <Popis>JIS urologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354654</codeValue>
+      <displayName>JIS úrazová</displayName>
+      <Skratka>613</Skratka>
+      <Popis>JIS úrazová</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354662</codeValue>
+      <displayName>ústavná hospicová starostlivosť</displayName>
+      <Skratka>620</Skratka>
+      <Popis>ústavná hospicová starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354670</codeValue>
+      <displayName>JIS centrálna</displayName>
+      <Skratka>625</Skratka>
+      <Popis>JIS centrálna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354688</codeValue>
+      <displayName>JIS kardiochirurgická</displayName>
+      <Skratka>626</Skratka>
+      <Popis>JIS kardiochirurgická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354696</codeValue>
+      <displayName>domáca hospicová starostlivosť</displayName>
+      <Skratka>630</Skratka>
+      <Popis>domáca hospicová starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354704</codeValue>
+      <displayName>JIS hematologická</displayName>
+      <Skratka>631</Skratka>
+      <Popis>JIS hematologická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354712</codeValue>
+      <displayName>JIS neurochirurgická</displayName>
+      <Skratka>637</Skratka>
+      <Popis>JIS neurochirurgická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354720</codeValue>
+      <displayName>preprava biologického materiálu</displayName>
+      <Skratka>650</Skratka>
+      <Popis>preprava biologického materiálu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871731</codeValue>
+      <displayName>JIS angiológia</displayName>
+      <Skratka>660</Skratka>
+      <Popis>JIS angiológia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354738</codeValue>
+      <displayName>JIS cievnej chirurgie</displayName>
+      <Skratka>668</Skratka>
+      <Popis>JIS cievnej chirurgie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354746</codeValue>
+      <displayName>JIS maxilofaciálna chirurgia</displayName>
+      <Skratka>670</Skratka>
+      <Popis>JIS maxilofaciálna chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354753</codeValue>
+      <displayName>fyzioterapeut</displayName>
+      <Skratka>685</Skratka>
+      <Popis>fyzioterapeut</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354761</codeValue>
+      <displayName>JIS popáleninová</displayName>
+      <Skratka>691</Skratka>
+      <Popis>JIS popáleninová</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354779</codeValue>
+      <displayName>biomedicínsky výskum - všeobecne</displayName>
+      <Skratka>700</Skratka>
+      <Popis>biomedicínsky výskum - všeobecne</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354787</codeValue>
+      <displayName>pediatrická echokardiografia</displayName>
+      <Skratka>701</Skratka>
+      <Popis>pediatrická echokardiografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354795</codeValue>
+      <displayName>produktívne a terapeutické hemaferézy</displayName>
+      <Skratka>702</Skratka>
+      <Popis>produktívne a terapeutické hemaferézy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354803</codeValue>
+      <displayName>spracovanie, kryokonzervácia a kontrola kvality transplantátov krvotvorných buniek</displayName>
+      <Skratka>703</Skratka>
+      <Popis>spracovanie, kryokonzervácia a kontrola kvality transplantátov krvotvorných buniek</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354811</codeValue>
+      <displayName>transplantácia kmeňových krvotvorných buniek</displayName>
+      <Skratka>704</Skratka>
+      <Popis>transplantácia kmeňových krvotvorných buniek</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354829</codeValue>
+      <displayName>invazívna katétrová diagnostika a liečba porúch srdcového rytmu</displayName>
+      <Skratka>705</Skratka>
+      <Popis>invazívna katétrová diagnostika a liečba porúch srdcového rytmu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354837</codeValue>
+      <displayName>JIS hrudníková chirurgia</displayName>
+      <Skratka>706</Skratka>
+      <Popis>JIS hrudníková chirurgia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354845</codeValue>
+      <displayName>JISN / jednotka intenzívnej starostlivosti o novorodencov</displayName>
+      <Skratka>707</Skratka>
+      <Popis>JISN / jednotka intenzívnej starostlivosti o novorodencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354852</codeValue>
+      <displayName>JVSN / jednotka vysokošpecializovanej starostlivosti o novorodencov</displayName>
+      <Skratka>708</Skratka>
+      <Popis>JVSN / jednotka vysokošpecializovanej starostlivosti o novorodencov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354860</codeValue>
+      <displayName>JIS psychiatrická</displayName>
+      <Skratka>709</Skratka>
+      <Popis>JIS psychiatrická</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354878</codeValue>
+      <displayName>implantácia kardiostimulátorov</displayName>
+      <Skratka>710</Skratka>
+      <Popis>implantácia kardiostimulátorov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354886</codeValue>
+      <displayName>echokardiografia</displayName>
+      <Skratka>711</Skratka>
+      <Popis>echokardiografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354894</codeValue>
+      <displayName>ultrazvukové vyšetrenie cievneho systému</displayName>
+      <Skratka>712</Skratka>
+      <Popis>ultrazvukové vyšetrenie cievneho systému</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354902</codeValue>
+      <displayName>ošetrovateľská starostlivosť v hematológii a transfuziológii</displayName>
+      <Skratka>713</Skratka>
+      <Popis>ošetrovateľská starostlivosť v hematológii a transfuziológii</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354910</codeValue>
+      <displayName>ortoptika a pleoptika</displayName>
+      <Skratka>714</Skratka>
+      <Popis>ortoptika a pleoptika</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354928</codeValue>
+      <displayName>paliatívna ošetrovateľská starostlivosť</displayName>
+      <Skratka>715</Skratka>
+      <Popis>paliatívna ošetrovateľská starostlivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354936</codeValue>
+      <displayName>vaňové a bazénové kúpele</displayName>
+      <Skratka>770</Skratka>
+      <Popis>vaňové a bazénové kúpele</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354944</codeValue>
+      <displayName>vodoliečba</displayName>
+      <Skratka>771</Skratka>
+      <Popis>vodoliečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354951</codeValue>
+      <displayName>elektroliečba</displayName>
+      <Skratka>772</Skratka>
+      <Popis>elektroliečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354969</codeValue>
+      <displayName>teploliečba</displayName>
+      <Skratka>773</Skratka>
+      <Popis>teploliečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354977</codeValue>
+      <displayName>inhalačná liečba</displayName>
+      <Skratka>774</Skratka>
+      <Popis>inhalačná liečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354985</codeValue>
+      <displayName>svetloliečba</displayName>
+      <Skratka>775</Skratka>
+      <Popis>svetloliečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000354993</codeValue>
+      <displayName>podávanie podkožných plynových injekcií</displayName>
+      <Skratka>776</Skratka>
+      <Popis>podávanie podkožných plynových injekcií</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355008</codeValue>
+      <displayName>podávanie klasických masáží</displayName>
+      <Skratka>777</Skratka>
+      <Popis>podávanie klasických masáží</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355016</codeValue>
+      <displayName>individuálna rehabilitácia</displayName>
+      <Skratka>778</Skratka>
+      <Popis>individuálna rehabilitácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355024</codeValue>
+      <displayName>trakčná liečba</displayName>
+      <Skratka>779</Skratka>
+      <Popis>trakčná liečba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871764</codeValue>
+      <displayName>zubné lekárstvo</displayName>
+      <Skratka>802</Skratka>
+      <Popis>zubné lekárstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355032</codeValue>
+      <displayName>ošetrovateľstvo</displayName>
+      <Skratka>804</Skratka>
+      <Popis>ošetrovateľstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355040</codeValue>
+      <displayName>diplomovaná všeobecná sestra</displayName>
+      <Skratka>805</Skratka>
+      <Popis>diplomovaná všeobecná sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355057</codeValue>
+      <displayName>pôrodná asistencia</displayName>
+      <Skratka>806</Skratka>
+      <Popis>pôrodná asistencia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355065</codeValue>
+      <displayName>diplomovaná pôrodná asistentka</displayName>
+      <Skratka>807</Skratka>
+      <Popis>diplomovaná pôrodná asistentka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355073</codeValue>
+      <displayName>masér</displayName>
+      <Skratka>818</Skratka>
+      <Popis>masér</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355081</codeValue>
+      <displayName>očný optik</displayName>
+      <Skratka>824</Skratka>
+      <Popis>očný optik</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355099</codeValue>
+      <displayName>fyzioterapia</displayName>
+      <Skratka>844</Skratka>
+      <Popis>fyzioterapia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355107</codeValue>
+      <displayName>diplomovaný fyzioterapeut</displayName>
+      <Skratka>846</Skratka>
+      <Popis>diplomovaný fyzioterapeut</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355115</codeValue>
+      <displayName>klinické ošetrovateľstvo a rehabilitácie</displayName>
+      <Skratka>859</Skratka>
+      <Popis>klinické ošetrovateľstvo a rehabilitácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355123</codeValue>
+      <displayName>ošetrovateľstvo a rehabilitácia</displayName>
+      <Skratka>867</Skratka>
+      <Popis>ošetrovateľstvo a rehabilitácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355131</codeValue>
+      <displayName>diplomovaná detská sestra</displayName>
+      <Skratka>868</Skratka>
+      <Popis>diplomovaná detská sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355149</codeValue>
+      <displayName>všeobecná sestra</displayName>
+      <Skratka>869</Skratka>
+      <Popis>všeobecná sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355156</codeValue>
+      <displayName>diplomovaná psychiatrická sestra</displayName>
+      <Skratka>870</Skratka>
+      <Popis>diplomovaná psychiatrická sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355164</codeValue>
+      <displayName>diplomovaná operačná sestra</displayName>
+      <Skratka>871</Skratka>
+      <Popis>diplomovaná operačná sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355172</codeValue>
+      <displayName>diplomovaná kozmetologická sestra</displayName>
+      <Skratka>872</Skratka>
+      <Popis>diplomovaná kozmetologická sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355180</codeValue>
+      <displayName>diplomovaná ženská sestra</displayName>
+      <Skratka>874</Skratka>
+      <Popis>diplomovaná ženská sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355198</codeValue>
+      <displayName>detská sestra</displayName>
+      <Skratka>875</Skratka>
+      <Popis>detská sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355206</codeValue>
+      <displayName>psychiatrická sestra</displayName>
+      <Skratka>876</Skratka>
+      <Popis>psychiatrická sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355214</codeValue>
+      <displayName>ženská sestra</displayName>
+      <Skratka>878</Skratka>
+      <Popis>ženská sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355222</codeValue>
+      <displayName>zubná sestra</displayName>
+      <Skratka>879</Skratka>
+      <Popis>zubná sestra</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355230</codeValue>
+      <displayName>masér pre zrakovo hendikepovaných</displayName>
+      <Skratka>887</Skratka>
+      <Popis>masér pre zrakovo hendikepovaných</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020310512</codeValue>
+      <displayName>dentálna hygiena</displayName>
+      <Skratka>931</Skratka>
+      <Popis>dentálna hygiena</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020310553</codeValue>
+      <displayName>ošetrovateľská starostlivosť v zariadení sociálnych služieb</displayName>
+      <Skratka>993</Skratka>
+      <Popis>ošetrovateľská starostlivosť v zariadení sociálnych služieb</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020310520</codeValue>
+      <displayName>ošetrovateľská starostlivosť v zariadení sociálnoprávnej ochrany detí a sociálnej kurately</displayName>
+      <Skratka>994</Skratka>
+      <Popis>ošetrovateľská starostlivosť v zariadení sociálnoprávnej ochrany detí a sociálnej kurately</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355248</codeValue>
+      <displayName>výdajňa ortopedicko-protetických zdravotníckych pomôcok</displayName>
+      <Skratka>995</Skratka>
+      <Popis>výdajňa ortopedicko-protetických zdravotníckych pomôcok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355255</codeValue>
+      <displayName>výdajňa audio-protetických zdravotníckych pomôcok</displayName>
+      <Skratka>996</Skratka>
+      <Popis>výdajňa audio-protetických zdravotníckych pomôcok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000355263</codeValue>
+      <displayName>vlásenkárstvo - výroba parochní v zdravotníctve</displayName>
+      <Skratka>997</Skratka>
+      <Popis>vlásenkárstvo - výroba parochní v zdravotníctve</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871798</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>444</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

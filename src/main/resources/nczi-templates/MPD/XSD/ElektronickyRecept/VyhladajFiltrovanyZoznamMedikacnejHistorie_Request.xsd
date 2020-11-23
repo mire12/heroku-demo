@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="VyhladajFiltrovanyZoznamMedikacnejHistorieVstup" type="VyhladajFiltrovanyZoznamMedikacnejHistorieVstup" />
+  <xs:complexType name="VyhladajFiltrovanyZoznamMedikacnejHistorieVstup">
+    <xs:sequence>
+      <xs:element name="Aktualna" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, že je požadovaná iba aktuálna medikácia (užívané lieky).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumDo" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vracané budú tie medikačné záznamy, ktorých aspoň časť intervalu platnosti je menší ako tento dátum. Ak nie je vyplnený atribút Aktualna, je tento údaj povinný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOd" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vracané budú tie medikačné záznamy, ktorých aspoň časť intervalu platnosti je väčší ako tento dátum. Ak nie je vyplnený atribút Aktualna, je tento údaj povinný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Výsledný zoznam bude filtrovaný len na dignózy uvedené tu na vstupe.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor PrZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+			<xs:element name="KriteriaLieky" type="VyberoveKriteria" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Požadované stránkovanie a triedenie pre záznamy s liekmi na výstupe služby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KriteriaIPL" type="VyberoveKriteria" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Požadované stránkovanie a triedenie pre záznamy s IPL na výstupe služby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KriteriaDietetika" type="VyberoveKriteria" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Požadované stránkovanie a triedenie pre záznamy s dietetickými potravinami na výstupe služby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="KriteriaPomocky" type="VyberoveKriteria" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Požadované stránkovanie a triedenie pre záznamy so zdravotníckymi pomôckami na výstupe služby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+    </xs:sequence>
+  </xs:complexType>
+	<xs:complexType name="VyberoveKriteria">
+		<xs:annotation>
+			<xs:documentation>Nastavenie triedenia a stránkovania pre jednotlivé liečebné prostriedky na výstupe služby.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ZoradenieVzostupne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Príznak, či budú záznamy vo výstupe zoradené vzostupne (TRUE) alebo zostupne (FALSE).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PozadovaneNaVystupe" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Informácia, či je daný liečebný prostriedok požadovaný na výstupe.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Triedenie" type="TriedenieMedikacnychZaznamov" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Nastavenie triedenia záznamov na výstupe.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1">
+ 				<xs:annotation>
+					<xs:documentation>Nastavenie stránkovania záznamov na výstupe.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TriedenieMedikacnychZaznamov">
+		<xs:annotation>
+			<xs:documentation>Zoznam atrivútov, podľa ktorých je umožnené zoraďovať. Predvolený atribút je 'PLATNOST_OD'.</xs:documentation>
+		</xs:annotation>
+    <xs:restriction base="xs:string">
+			<xs:enumeration value="PLATNOST_OD"/>
+			<xs:enumeration value="PLATNOST_DO"/>
+			<xs:enumeration value="NAZOV_LIECEBNEHO_PROSTRIEDKU"/>
+    </xs:restriction>
+	</xs:simpleType>
+</xs:schema>

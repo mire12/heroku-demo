@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/eHtalk" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://eHealth.gov.sk/eHtalk">
+  <xs:import schemaLocation="ServiceExt_1.XSD" namespace="http://eHealth.gov.sk/eHtalkMessage"/>
+  <xs:element name="Receive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="value" type="q1:eHtalkMessage" xmlns:q1="http://eHealth.gov.sk/eHtalkMessage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ReceiveResult" type="q2:eHtalkMessage" xmlns:q2="http://eHealth.gov.sk/eHtalkMessage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

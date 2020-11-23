@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" targetNamespace="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="IIIDPredmet" type="IIIDPredmet" />
+  <xs:complexType name="IIIDPredmet">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZariadeniePZS" type="OIDZariadeniePZS" />
+  <xs:complexType name="OIDZariadeniePZS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIZariadeniePZS" type="IIZariadeniePZS" />
+  <xs:complexType name="IIZariadeniePZS">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="OIDPrZSType">
+    <xs:restriction base="xs:string">
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OIDSkupinaZdravotnickychPomocok" type="OIDSkupinaZdravotnickychPomocok" />
+  <xs:complexType name="OIDSkupinaZdravotnickychPomocok">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IISkupinaZdravotnickychPomocok" type="IISkupinaZdravotnickychPomocok" />
+  <xs:complexType name="IISkupinaZdravotnickychPomocok">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIInterakcia" type="IIInterakcia" />
+  <xs:complexType name="IIInterakcia">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IILicenciaZPr" type="IILicenciaZPr" />
+  <xs:complexType name="IILicenciaZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLicenciaZPr" type="OIDLicenciaZPr" />
+  <xs:complexType name="OIDLicenciaZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIMagistraliter" type="IIMagistraliter" />
+  <xs:complexType name="IIMagistraliter">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMagistraliter" type="OIDMagistraliter" />
+  <xs:complexType name="OIDMagistraliter">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLiekovaAlergia" type="OIDLiekovaAlergia" />
+  <xs:complexType name="OIDLiekovaAlergia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIPodskupinaDietetickejPotraviny" type="IIPodskupinaDietetickejPotraviny" />
+  <xs:complexType name="IIPodskupinaDietetickejPotraviny">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDavkovanie" type="OIDDavkovanie" />
+  <xs:complexType name="OIDDavkovanie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIDavkovanie" type="IIDavkovanie" />
+  <xs:complexType name="IIDavkovanie">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIKontraindikacia" type="IIKontraindikacia" />
+  <xs:complexType name="IIKontraindikacia">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKontraindikacia" type="OIDKontraindikacia" />
+  <xs:complexType name="OIDKontraindikacia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IILiekovaAlergia" type="IILiekovaAlergia" />
+  <xs:complexType name="IILiekovaAlergia">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDInterakcia" type="OIDInterakcia" />
+  <xs:complexType name="OIDInterakcia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPodskupinaDietetickejPotraviny" type="OIDPodskupinaDietetickejPotraviny" />
+  <xs:complexType name="OIDPodskupinaDietetickejPotraviny">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPrZS" type="OIDPrZS" />
+  <xs:complexType name="OIDPrZS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIPrZS" type="IIPrZS" />
+  <xs:complexType name="IIPrZS">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOUPZS" type="OIDOUPZS" />
+  <xs:complexType name="OIDOUPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIOUPZS" type="IIOUPZS" />
+  <xs:complexType name="IIOUPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZPr" type="OIDZPr" />
+  <xs:complexType name="OIDZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIZPr" type="IIZPr" />
+  <xs:complexType name="IIZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZP" type="OIDZP" />
+  <xs:complexType name="OIDZP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIZP" type="IIZP" />
+  <xs:complexType name="IIZP">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLiek" type="OIDLiek" />
+  <xs:complexType name="OIDLiek">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IILiek" type="IILiek" />
+  <xs:complexType name="IILiek">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IILekaren" type="IILekaren" />
+  <xs:complexType name="IILekaren">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDietetickaPotravina" type="OIDDietetickaPotravina" />
+  <xs:complexType name="OIDDietetickaPotravina">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIDietetickaPotravina" type="IIDietetickaPotravina" />
+  <xs:complexType name="IIDietetickaPotravina">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZdravotnickaPomocka" type="OIDZdravotnickaPomocka" />
+  <xs:complexType name="OIDZdravotnickaPomocka">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIZdravotnickaPomocka" type="IIZdravotnickaPomocka" />
+  <xs:complexType name="IIZdravotnickaPomocka">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOckovaciKalendar" type="OIDOckovaciKalendar" />
+  <xs:complexType name="OIDOckovaciKalendar">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIOckovaciKalendar" type="IIOckovaciKalendar" />
+  <xs:complexType name="IIOckovaciKalendar">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPZS" type="OIDPZS" />
+  <xs:complexType name="OIDPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIPZS" type="IIPZS" />
+  <xs:complexType name="IIPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDReferencnaSkupina" type="OIDReferencnaSkupina" />
+  <xs:complexType name="OIDReferencnaSkupina">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIReferencnaSkupina" type="IIReferencnaSkupina" />
+  <xs:complexType name="IIReferencnaSkupina">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIDPredmet" type="OIDIDPredmet" />
+  <xs:complexType name="OIDIDPredmet">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPobockaZP" type="OIDPobockaZP" />
+  <xs:complexType name="OIDPobockaZP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIPobockaZP" type="IIPobockaZP" />
+  <xs:complexType name="IIPobockaZP">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDInaOrg" type="OIDInaOrg" />
+  <xs:complexType name="OIDInaOrg">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIInaOrg" type="IIInaOrg" />
+  <xs:complexType name="IIInaOrg">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IIDokladPZS" type="IIDokladPZS" />
+  <xs:complexType name="IIDokladPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:II">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDokladPZS" type="OIDDokladPZS" />
+  <xs:complexType name="OIDDokladPZS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

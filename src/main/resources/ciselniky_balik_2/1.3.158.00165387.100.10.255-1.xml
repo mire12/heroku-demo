@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Sesterské diagnózy</codingSchemeName>
+    <codingSchemeVersion>1</codingSchemeVersion>
+    <DatumPoslednejZmeny>2018-11-19</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.255</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2019-01-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>02089744532</codeValue>
+      <displayName>Adaptácia</displayName>
+      <Skratka>A100-109</Skratka>
+      <Popis>A100-109 Adaptácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744540</codeValue>
+      <displayName>Narušená adaptácia jednotlivca</displayName>
+      <Skratka>A100</Skratka>
+      <Popis>Narušená adaptácia jednotlivca</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744557</codeValue>
+      <displayName>Riziko narušenej adaptácie jednotlivca</displayName>
+      <Skratka>A101</Skratka>
+      <Popis>Riziko narušenej adaptácie jednotlivca</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744565</codeValue>
+      <displayName>Narušená adaptácia rodiny</displayName>
+      <Skratka>A102</Skratka>
+      <Popis>Narušená adaptácia rodiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744573</codeValue>
+      <displayName>Riziko narušenej adaptácie rodiny</displayName>
+      <Skratka>A103</Skratka>
+      <Popis>Riziko narušenej adaptácie rodiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744581</codeValue>
+      <displayName>Aktivita</displayName>
+      <Skratka>A110-119</Skratka>
+      <Popis>A110-119 Aktivita</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744599</codeValue>
+      <displayName>Intolerancia aktivity</displayName>
+      <Skratka>A110</Skratka>
+      <Popis>Intolerancia aktivity</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744607</codeValue>
+      <displayName>Riziko intolerancie aktivity</displayName>
+      <Skratka>A111</Skratka>
+      <Popis>Riziko intolerancie aktivity</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744615</codeValue>
+      <displayName>Nedostatok náhradných aktivít</displayName>
+      <Skratka>A112</Skratka>
+      <Popis>Nedostatok náhradných aktivít</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744623</codeValue>
+      <displayName>Imobilita</displayName>
+      <Skratka>A113</Skratka>
+      <Popis>Imobilita</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744631</codeValue>
+      <displayName>Riziko vzniku imobility</displayName>
+      <Skratka>A114</Skratka>
+      <Popis>Riziko vzniku imobility</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744649</codeValue>
+      <displayName>Obmedzená pohyblivosť</displayName>
+      <Skratka>A115</Skratka>
+      <Popis>Obmedzená pohyblivosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744656</codeValue>
+      <displayName>Riziko úrazu, poranenia</displayName>
+      <Skratka>A116</Skratka>
+      <Popis>Riziko úrazu, poranenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744664</codeValue>
+      <displayName>Vyčerpanosť, únava</displayName>
+      <Skratka>A117</Skratka>
+      <Popis>Vyčerpanosť, únava</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744672</codeValue>
+      <displayName>Alergická reakcia</displayName>
+      <Skratka>A120-129</Skratka>
+      <Popis>A120-129 Alergická reakcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744680</codeValue>
+      <displayName>Alergická reakcia na lieky</displayName>
+      <Skratka>A120</Skratka>
+      <Popis>Alergická reakcia na lieky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744698</codeValue>
+      <displayName>Alergická reakcia na potraviny</displayName>
+      <Skratka>A121</Skratka>
+      <Popis>Alergická reakcia na potraviny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744706</codeValue>
+      <displayName>Alergická reakcia na uštipnutie</displayName>
+      <Skratka>A122</Skratka>
+      <Popis>Alergická reakcia na uštipnutie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744714</codeValue>
+      <displayName>Kontaktná alergická reakcia</displayName>
+      <Skratka>A123</Skratka>
+      <Popis>Kontaktná alergická reakcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744722</codeValue>
+      <displayName>Riziko alergickej reakcie</displayName>
+      <Skratka>A124</Skratka>
+      <Popis>Riziko alergickej reakcie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744730</codeValue>
+      <displayName>Aspirácia</displayName>
+      <Skratka>A130-139</Skratka>
+      <Popis>A130-139 Aspirácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744748</codeValue>
+      <displayName>Aspirácia</displayName>
+      <Skratka>A130</Skratka>
+      <Popis>Aspirácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744755</codeValue>
+      <displayName>Riziko aspirácie</displayName>
+      <Skratka>A131</Skratka>
+      <Popis>Riziko aspirácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744763</codeValue>
+      <displayName>Bezmocnosť, beznádej</displayName>
+      <Skratka>B100-109</Skratka>
+      <Popis>B100-109 Bezmocnosť, beznádej</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744771</codeValue>
+      <displayName>Bezmocnosť</displayName>
+      <Skratka>B100</Skratka>
+      <Popis>Bezmocnosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744789</codeValue>
+      <displayName>Beznádej</displayName>
+      <Skratka>B101</Skratka>
+      <Popis>Beznádej</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744797</codeValue>
+      <displayName>Duchovná tieseň</displayName>
+      <Skratka>B102</Skratka>
+      <Popis>Duchovná tieseň</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744805</codeValue>
+      <displayName>Bolesť</displayName>
+      <Skratka>B110-119</Skratka>
+      <Popis>B110-119 Bolesť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744813</codeValue>
+      <displayName>Akútna bolesť</displayName>
+      <Skratka>B110</Skratka>
+      <Popis>Akútna bolesť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744821</codeValue>
+      <displayName>Chronická bolesť</displayName>
+      <Skratka>B111</Skratka>
+      <Popis>Chronická bolesť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744839</codeValue>
+      <displayName>Riziko vzniku bolesti</displayName>
+      <Skratka>B112</Skratka>
+      <Popis>Riziko vzniku bolesti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744847</codeValue>
+      <displayName>Dekubit</displayName>
+      <Skratka>D100-109</Skratka>
+      <Popis>D100-109 Dekubit</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744854</codeValue>
+      <displayName>Dekubit I. štádium</displayName>
+      <Skratka>D100</Skratka>
+      <Popis>Dekubit I. štádium</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744862</codeValue>
+      <displayName>Dekubit II. štádium</displayName>
+      <Skratka>D101</Skratka>
+      <Popis>Dekubit II. štádium</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744870</codeValue>
+      <displayName>Dekubit III. štádium</displayName>
+      <Skratka>D102</Skratka>
+      <Popis>Dekubit III. štádium</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744888</codeValue>
+      <displayName>Dekubit IV. – V. štádium</displayName>
+      <Skratka>D103</Skratka>
+      <Popis>Dekubit IV. – V. štádium</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744896</codeValue>
+      <displayName>Riziko vzniku dekubitov</displayName>
+      <Skratka>D104</Skratka>
+      <Popis>Riziko vzniku dekubitov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744904</codeValue>
+      <displayName>Dojčenie</displayName>
+      <Skratka>D110-119</Skratka>
+      <Popis>D110-119 Dojčenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744912</codeValue>
+      <displayName>Neúčinné dojčenie</displayName>
+      <Skratka>D110</Skratka>
+      <Popis>Neúčinné dojčenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744920</codeValue>
+      <displayName>Riziko neúčinného dojčenia</displayName>
+      <Skratka>D111</Skratka>
+      <Popis>Riziko neúčinného dojčenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744938</codeValue>
+      <displayName>Prerušené dojčenie</displayName>
+      <Skratka>D112</Skratka>
+      <Popis>Prerušené dojčenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744946</codeValue>
+      <displayName>Riziko prerušeného dojčenia</displayName>
+      <Skratka>D113</Skratka>
+      <Popis>Riziko prerušeného dojčenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744953</codeValue>
+      <displayName>Dýchanie</displayName>
+      <Skratka>D120-129</Skratka>
+      <Popis>D120-129 Dýchanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744961</codeValue>
+      <displayName>Neúčinné dýchanie</displayName>
+      <Skratka>D120</Skratka>
+      <Popis>Neúčinné dýchanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744979</codeValue>
+      <displayName>Neúčinné čistenie dýchacích ciest</displayName>
+      <Skratka>D121</Skratka>
+      <Popis>Neúčinné čistenie dýchacích ciest</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744987</codeValue>
+      <displayName>Neschopnosť udržiavania spontánneho dýchania</displayName>
+      <Skratka>D122</Skratka>
+      <Popis>Neschopnosť udržiavania spontánneho dýchania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089744995</codeValue>
+      <displayName>Riziko dusenia</displayName>
+      <Skratka>D123</Skratka>
+      <Popis>Riziko dusenia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745000</codeValue>
+      <displayName>Riziko hypoxie</displayName>
+      <Skratka>D124</Skratka>
+      <Popis>Riziko hypoxie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745018</codeValue>
+      <displayName>Edukácia a vedomosti</displayName>
+      <Skratka>E100-119</Skratka>
+      <Popis>E100-119 Edukácia a vedomosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745026</codeValue>
+      <displayName>Nedostatok informácií</displayName>
+      <Skratka>E100</Skratka>
+      <Popis>Nedostatok informácií</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745034</codeValue>
+      <displayName>Riziko deficitu informácií</displayName>
+      <Skratka>E101</Skratka>
+      <Popis>Riziko deficitu informácií</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745042</codeValue>
+      <displayName>Nezáujem o informácie</displayName>
+      <Skratka>E102</Skratka>
+      <Popis>Nezáujem o informácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745059</codeValue>
+      <displayName>Nedostatok vedomostí</displayName>
+      <Skratka>E103</Skratka>
+      <Popis>Nedostatok vedomostí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745067</codeValue>
+      <displayName>Riziko nedostatku vedomostí</displayName>
+      <Skratka>E104</Skratka>
+      <Popis>Riziko nedostatku vedomostí</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745075</codeValue>
+      <displayName>Intoxikácia</displayName>
+      <Skratka>I100-109</Skratka>
+      <Popis>I100-109 Intoxikácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745083</codeValue>
+      <displayName>Intoxikácia</displayName>
+      <Skratka>I100</Skratka>
+      <Popis>Intoxikácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745091</codeValue>
+      <displayName>Riziko intoxikácie</displayName>
+      <Skratka>I101</Skratka>
+      <Popis>Riziko intoxikácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745109</codeValue>
+      <displayName>Izolácia sociálna</displayName>
+      <Skratka>I110-119</Skratka>
+      <Popis>I110-119 Izolácia sociálna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745117</codeValue>
+      <displayName>Sociálna izolácia</displayName>
+      <Skratka>I110</Skratka>
+      <Popis>Sociálna izolácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745125</codeValue>
+      <displayName>Riziko sociálnej izolácie</displayName>
+      <Skratka>I111</Skratka>
+      <Popis>Riziko sociálnej izolácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745133</codeValue>
+      <displayName>Infekcia</displayName>
+      <Skratka>I120-129</Skratka>
+      <Popis>I120-129 Infekcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745141</codeValue>
+      <displayName>Infekcia</displayName>
+      <Skratka>I120</Skratka>
+      <Popis>Infekcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745158</codeValue>
+      <displayName>Riziko vzniku infekcie</displayName>
+      <Skratka>I121</Skratka>
+      <Popis>Riziko vzniku infekcie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745166</codeValue>
+      <displayName>Komunikácia</displayName>
+      <Skratka>K100-109</Skratka>
+      <Popis>K100-109 Komunikácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745174</codeValue>
+      <displayName>Narušená verbálna komunikácia</displayName>
+      <Skratka>K100</Skratka>
+      <Popis>Narušená verbálna komunikácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745182</codeValue>
+      <displayName>Riziko narušenia verbálnej komunikácie</displayName>
+      <Skratka>K101</Skratka>
+      <Popis>Riziko narušenia verbálnej komunikácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745190</codeValue>
+      <displayName>Narušená neverbálna komunikácia</displayName>
+      <Skratka>K102</Skratka>
+      <Popis>Narušená neverbálna komunikácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745208</codeValue>
+      <displayName>Riziko narušenia neverbálnej komunikácie</displayName>
+      <Skratka>K103</Skratka>
+      <Popis>Riziko narušenia neverbálnej komunikácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745216</codeValue>
+      <displayName>Narušená sociálna interakcia</displayName>
+      <Skratka>K104</Skratka>
+      <Popis>Narušená sociálna interakcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745224</codeValue>
+      <displayName>Koža a tkanivá</displayName>
+      <Skratka>K110-129</Skratka>
+      <Popis>K110-129 Koža a tkanivá</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745232</codeValue>
+      <displayName>Narušená celistvosť kože</displayName>
+      <Skratka>K110</Skratka>
+      <Popis>Narušená celistvosť kože</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745240</codeValue>
+      <displayName>Riziko narušenia celistvosti kože</displayName>
+      <Skratka>K111</Skratka>
+      <Popis>Riziko narušenia celistvosti kože</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745257</codeValue>
+      <displayName>Narušená celistvosť tkanív</displayName>
+      <Skratka>K112</Skratka>
+      <Popis>Narušená celistvosť tkanív</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745265</codeValue>
+      <displayName>Riziko narušenia celistvosti tkanív</displayName>
+      <Skratka>K113</Skratka>
+      <Popis>Riziko narušenia celistvosti tkanív</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745273</codeValue>
+      <displayName>Zmenený vzhľad kože</displayName>
+      <Skratka>K114</Skratka>
+      <Popis>Zmenený vzhľad kože</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745281</codeValue>
+      <displayName>Svrbenie kože</displayName>
+      <Skratka>K115</Skratka>
+      <Popis>Svrbenie kože</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745299</codeValue>
+      <displayName>Zmenený vzhľad tkanív</displayName>
+      <Skratka>K116</Skratka>
+      <Popis>Zmenený vzhľad tkanív</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745307</codeValue>
+      <displayName>Riziko krvácania</displayName>
+      <Skratka>K117</Skratka>
+      <Popis>Riziko krvácania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745315</codeValue>
+      <displayName>Nedostatočné prekrvenie tkanív</displayName>
+      <Skratka>K118</Skratka>
+      <Popis>Nedostatočné prekrvenie tkanív</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745323</codeValue>
+      <displayName>Riziko nedostatočného prekrvenia tkanív</displayName>
+      <Skratka>K119</Skratka>
+      <Popis>Riziko nedostatočného prekrvenia tkanív</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745331</codeValue>
+      <displayName>Zmena sliznice ústnej dutiny</displayName>
+      <Skratka>K120</Skratka>
+      <Popis>Zmena sliznice ústnej dutiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745349</codeValue>
+      <displayName>Psychické stavy a procesy</displayName>
+      <Skratka>P100-119</Skratka>
+      <Popis>P100-119 Psychické stavy a procesy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745356</codeValue>
+      <displayName>Narušená pamäť</displayName>
+      <Skratka>P100</Skratka>
+      <Popis>Narušená pamäť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745364</codeValue>
+      <displayName>Zmena poznávacích funkcií</displayName>
+      <Skratka>P101</Skratka>
+      <Popis>Zmena poznávacích funkcií</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745372</codeValue>
+      <displayName>Zmenený myšlienkový proces</displayName>
+      <Skratka>P102</Skratka>
+      <Popis>Zmenený myšlienkový proces</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745380</codeValue>
+      <displayName>Zmenený psychický stav</displayName>
+      <Skratka>P103</Skratka>
+      <Popis>Zmenený psychický stav</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745398</codeValue>
+      <displayName>Riziko zmeny psychického stavu</displayName>
+      <Skratka>P104</Skratka>
+      <Popis>Riziko zmeny psychického stavu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745406</codeValue>
+      <displayName>Nadmerná duševná záťaž</displayName>
+      <Skratka>P105</Skratka>
+      <Popis>Nadmerná duševná záťaž</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745414</codeValue>
+      <displayName>Citová tieseň</displayName>
+      <Skratka>P106</Skratka>
+      <Popis>Citová tieseň</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745422</codeValue>
+      <displayName>Zmena správania</displayName>
+      <Skratka>P107</Skratka>
+      <Popis>Zmena správania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745430</codeValue>
+      <displayName>Psychické zneužívanie</displayName>
+      <Skratka>P108</Skratka>
+      <Popis>Psychické zneužívanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745448</codeValue>
+      <displayName>Smútok</displayName>
+      <Skratka>P109</Skratka>
+      <Popis>Smútok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745455</codeValue>
+      <displayName>Anticipačný smútok</displayName>
+      <Skratka>P110</Skratka>
+      <Popis>Anticipačný smútok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745463</codeValue>
+      <displayName>Strach</displayName>
+      <Skratka>P111</Skratka>
+      <Popis>Strach</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745471</codeValue>
+      <displayName>Úzkosť</displayName>
+      <Skratka>P112</Skratka>
+      <Popis>Úzkosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745489</codeValue>
+      <displayName>Rast a vývin</displayName>
+      <Skratka>R100-109</Skratka>
+      <Popis>R100-109 Rast a vývin</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745497</codeValue>
+      <displayName>Zaostávanie vo vývine a raste</displayName>
+      <Skratka>R100</Skratka>
+      <Popis>Zaostávanie vo vývine a raste</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745505</codeValue>
+      <displayName>Riziko zmeny vo vývine a raste</displayName>
+      <Skratka>R101</Skratka>
+      <Popis>Riziko zmeny vo vývine a raste</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745513</codeValue>
+      <displayName>Rodina</displayName>
+      <Skratka>R110-119</Skratka>
+      <Popis>R110-119 Rodina</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745521</codeValue>
+      <displayName>Narušené vzťahy rodine</displayName>
+      <Skratka>R110</Skratka>
+      <Popis>Narušené vzťahy rodine</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745539</codeValue>
+      <displayName>Riziko narušenia vzťahov v rodine</displayName>
+      <Skratka>R111</Skratka>
+      <Popis>Riziko narušenia vzťahov v rodine</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745547</codeValue>
+      <displayName>Neúčinné riešenie problémov rodiny</displayName>
+      <Skratka>R112</Skratka>
+      <Popis>Neúčinné riešenie problémov rodiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745554</codeValue>
+      <displayName>Rola</displayName>
+      <Skratka>R120-129</Skratka>
+      <Popis>R120-129 Rola</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745562</codeValue>
+      <displayName>Porucha prijatia roly</displayName>
+      <Skratka>R120</Skratka>
+      <Popis>Porucha prijatia roly</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745570</codeValue>
+      <displayName>Riziko neakceptovania roly</displayName>
+      <Skratka>R121</Skratka>
+      <Popis>Riziko neakceptovania roly</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745588</codeValue>
+      <displayName>Narušené plnenie roly</displayName>
+      <Skratka>R122</Skratka>
+      <Popis>Narušené plnenie roly</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745596</codeValue>
+      <displayName>Riziko neplnenia roly</displayName>
+      <Skratka>R123</Skratka>
+      <Popis>Riziko neplnenia roly</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745604</codeValue>
+      <displayName>Odmietanie plnenia roly</displayName>
+      <Skratka>R124</Skratka>
+      <Popis>Odmietanie plnenia roly</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745612</codeValue>
+      <displayName>Sebaopatera</displayName>
+      <Skratka>S100-119</Skratka>
+      <Popis>S100-119 Sebaopatera</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745620</codeValue>
+      <displayName>Nedostatočná sebaopatera osobnej hygiene</displayName>
+      <Skratka>S100</Skratka>
+      <Popis>Nedostatočná sebaopatera osobnej hygiene</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745638</codeValue>
+      <displayName>Deficit sebaopatery osobnej hygiene</displayName>
+      <Skratka>S101</Skratka>
+      <Popis>Deficit sebaopatery osobnej hygiene</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745646</codeValue>
+      <displayName>Riziko deficitu sebaopatery osobnej hygiene</displayName>
+      <Skratka>S102</Skratka>
+      <Popis>Riziko deficitu sebaopatery osobnej hygiene</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745653</codeValue>
+      <displayName>Nedostatočná sebaopatera prijímaní potravy</displayName>
+      <Skratka>S103</Skratka>
+      <Popis>Nedostatočná sebaopatera prijímaní potravy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745661</codeValue>
+      <displayName>Deficit sebaopatery prijímaní potravy</displayName>
+      <Skratka>S104</Skratka>
+      <Popis>Deficit sebaopatery prijímaní potravy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745679</codeValue>
+      <displayName>Riziko deficitu sebaopatery prijímaní potravy</displayName>
+      <Skratka>S105</Skratka>
+      <Popis>Riziko deficitu sebaopatery prijímaní potravy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745687</codeValue>
+      <displayName>Nedostatočná sebaopatera vo vyprázdňovaní</displayName>
+      <Skratka>S106</Skratka>
+      <Popis>Nedostatočná sebaopatera vo vyprázdňovaní</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745695</codeValue>
+      <displayName>Deficit sebaopatery vo vyprázdňovaní</displayName>
+      <Skratka>S107</Skratka>
+      <Popis>Deficit sebaopatery vo vyprázdňovaní</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745703</codeValue>
+      <displayName>Riziko deficitu sebaopatery vo vyprázdňovaní</displayName>
+      <Skratka>S108</Skratka>
+      <Popis>Riziko deficitu sebaopatery vo vyprázdňovaní</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745711</codeValue>
+      <displayName>Nedostatočná sebaopatera v úprave zovňajšku</displayName>
+      <Skratka>S109</Skratka>
+      <Popis>Nedostatočná sebaopatera v úprave zovňajšku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745729</codeValue>
+      <displayName>Deficit sebaopatery úprave zovňajšku</displayName>
+      <Skratka>S110</Skratka>
+      <Popis>Deficit sebaopatery úprave zovňajšku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745737</codeValue>
+      <displayName>Riziko deficitu sebaopatery v úprave zovňajšku</displayName>
+      <Skratka>S111</Skratka>
+      <Popis>Riziko deficitu sebaopatery v úprave zovňajšku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745745</codeValue>
+      <displayName>Nedostatočná sebaopatera v úprave okolia</displayName>
+      <Skratka>S112</Skratka>
+      <Popis>Nedostatočná sebaopatera v úprave okolia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745752</codeValue>
+      <displayName>Deficit sebaopatery v úprave okolia</displayName>
+      <Skratka>S113</Skratka>
+      <Popis>Deficit sebaopatery v úprave okolia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745760</codeValue>
+      <displayName>Riziko deficitu sebaopatery v úprave okolia</displayName>
+      <Skratka>S114</Skratka>
+      <Popis>Riziko deficitu sebaopatery v úprave okolia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745778</codeValue>
+      <displayName>Deficit sebaopatery v aktivitách denného života</displayName>
+      <Skratka>S115</Skratka>
+      <Popis>Deficit sebaopatery v aktivitách denného života</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745786</codeValue>
+      <displayName>Sebakoncepcia</displayName>
+      <Skratka>S120-129</Skratka>
+      <Popis>S120-129 Sebakoncepcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745794</codeValue>
+      <displayName>Narušená sebakoncepcia</displayName>
+      <Skratka>S120</Skratka>
+      <Popis>Narušená sebakoncepcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745802</codeValue>
+      <displayName>Riziko narušenia sebakoncepcie</displayName>
+      <Skratka>S121</Skratka>
+      <Popis>Riziko narušenia sebakoncepcie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745810</codeValue>
+      <displayName>Sebapoškodzovanie</displayName>
+      <Skratka>S122</Skratka>
+      <Popis>Sebapoškodzovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745828</codeValue>
+      <displayName>Riziko sebapoškodzovania</displayName>
+      <Skratka>S123</Skratka>
+      <Popis>Riziko sebapoškodzovania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745836</codeValue>
+      <displayName>Porucha prijatia vzhľadu vlastného tela</displayName>
+      <Skratka>S124</Skratka>
+      <Popis>Porucha prijatia vzhľadu vlastného tela</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745844</codeValue>
+      <displayName>Sexualita</displayName>
+      <Skratka>S130-139</Skratka>
+      <Popis>S130-139 Sexualita</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745851</codeValue>
+      <displayName>Sexuálna dysfunkcia</displayName>
+      <Skratka>S130</Skratka>
+      <Popis>Sexuálna dysfunkcia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745869</codeValue>
+      <displayName>Riziko sexuálnej dysfunkcie</displayName>
+      <Skratka>S131</Skratka>
+      <Popis>Riziko sexuálnej dysfunkcie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745877</codeValue>
+      <displayName>Spánok</displayName>
+      <Skratka>S140-149</Skratka>
+      <Popis>S140-149 Spánok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745885</codeValue>
+      <displayName>Narušený spánok</displayName>
+      <Skratka>S140</Skratka>
+      <Popis>Narušený spánok</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745893</codeValue>
+      <displayName>Spánková deprivácia</displayName>
+      <Skratka>S141</Skratka>
+      <Popis>Spánková deprivácia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745901</codeValue>
+      <displayName>Riziko poruchy spánku</displayName>
+      <Skratka>S142</Skratka>
+      <Popis>Riziko poruchy spánku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745919</codeValue>
+      <displayName>Spolupráca</displayName>
+      <Skratka>S150-159</Skratka>
+      <Popis>S150-159 Spolupráca</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745927</codeValue>
+      <displayName>Nedostatočná spolupráca jednotlivca</displayName>
+      <Skratka>S150</Skratka>
+      <Popis>Nedostatočná spolupráca jednotlivca</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745935</codeValue>
+      <displayName>Nedostatočná spolupráca rodiny</displayName>
+      <Skratka>S151</Skratka>
+      <Popis>Nedostatočná spolupráca rodiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745943</codeValue>
+      <displayName>Neschopnosť spolupráce</displayName>
+      <Skratka>S152</Skratka>
+      <Popis>Neschopnosť spolupráce</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745950</codeValue>
+      <displayName>Neochota spolupracovať</displayName>
+      <Skratka>S153</Skratka>
+      <Popis>Neochota spolupracovať</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745968</codeValue>
+      <displayName>Telesné tekutiny</displayName>
+      <Skratka>T100-109</Skratka>
+      <Popis>T100-109 Telesné tekutiny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745976</codeValue>
+      <displayName>Znížený objem telesných tekutín</displayName>
+      <Skratka>T100</Skratka>
+      <Popis>Znížený objem telesných tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745984</codeValue>
+      <displayName>Riziko deficitu objemu telesných tekutín</displayName>
+      <Skratka>T101</Skratka>
+      <Popis>Riziko deficitu objemu telesných tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089745992</codeValue>
+      <displayName>Zvýšený objem telesných tekutín</displayName>
+      <Skratka>T102</Skratka>
+      <Popis>Zvýšený objem telesných tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746008</codeValue>
+      <displayName>Riziko zvýšeného objemu telesných tekutín</displayName>
+      <Skratka>T103</Skratka>
+      <Popis>Riziko zvýšeného objemu telesných tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746016</codeValue>
+      <displayName>Telesná teplota</displayName>
+      <Skratka>T110-119</Skratka>
+      <Popis>T110-119 Telesná teplota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746024</codeValue>
+      <displayName>Znížená telesná teplota</displayName>
+      <Skratka>T110</Skratka>
+      <Popis>Znížená telesná teplota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746032</codeValue>
+      <displayName>Zvýšená telesná teplota</displayName>
+      <Skratka>T111</Skratka>
+      <Popis>Zvýšená telesná teplota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746040</codeValue>
+      <displayName>Horúčka</displayName>
+      <Skratka>T112</Skratka>
+      <Popis>Horúčka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746057</codeValue>
+      <displayName>Porucha termoregulácie</displayName>
+      <Skratka>T113</Skratka>
+      <Popis>Porucha termoregulácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746065</codeValue>
+      <displayName>Riziko poruchy termoregulácie</displayName>
+      <Skratka>T114</Skratka>
+      <Popis>Riziko poruchy termoregulácie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746073</codeValue>
+      <displayName>Vyprázdňovanie</displayName>
+      <Skratka>V100-119</Skratka>
+      <Popis>V100-119 Vyprázdňovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746081</codeValue>
+      <displayName>Zápcha</displayName>
+      <Skratka>V100</Skratka>
+      <Popis>Zápcha</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746099</codeValue>
+      <displayName>Riziko vzniku zápchy</displayName>
+      <Skratka>V101</Skratka>
+      <Popis>Riziko vzniku zápchy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746107</codeValue>
+      <displayName>Hnačka</displayName>
+      <Skratka>V102</Skratka>
+      <Popis>Hnačka</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746115</codeValue>
+      <displayName>Inkontinencia stolice</displayName>
+      <Skratka>V103</Skratka>
+      <Popis>Inkontinencia stolice</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746123</codeValue>
+      <displayName>Zmenené vyprázdňovanie stolice</displayName>
+      <Skratka>V104</Skratka>
+      <Popis>Zmenené vyprázdňovanie stolice</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746131</codeValue>
+      <displayName>Meteorizmus</displayName>
+      <Skratka>V105</Skratka>
+      <Popis>Meteorizmus</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746149</codeValue>
+      <displayName>Retencia moča</displayName>
+      <Skratka>V106</Skratka>
+      <Popis>Retencia moča</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746156</codeValue>
+      <displayName>Inkontinencia moča</displayName>
+      <Skratka>V107</Skratka>
+      <Popis>Inkontinencia moča</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746164</codeValue>
+      <displayName>Pomočovanie</displayName>
+      <Skratka>V108</Skratka>
+      <Popis>Pomočovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746172</codeValue>
+      <displayName>Zmenené vyprázdňovanie moča</displayName>
+      <Skratka>V109</Skratka>
+      <Popis>Zmenené vyprázdňovanie moča</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746180</codeValue>
+      <displayName>Výživa</displayName>
+      <Skratka>V120-139</Skratka>
+      <Popis>V120-139 Výživa</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746198</codeValue>
+      <displayName>Zmenená výživa – väčší príjem ako telesná potreba</displayName>
+      <Skratka>V120</Skratka>
+      <Popis>Zmenená výživa – väčší príjem ako telesná potreba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746206</codeValue>
+      <displayName>Riziko väčšieho príjmu potravy ako telesná potreba</displayName>
+      <Skratka>V121</Skratka>
+      <Popis>Riziko väčšieho príjmu potravy ako telesná potreba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746214</codeValue>
+      <displayName>Zmenená výživa – menší príjem ako telesná potreba</displayName>
+      <Skratka>V122</Skratka>
+      <Popis>Zmenená výživa – menší príjem ako telesná potreba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746222</codeValue>
+      <displayName>Riziko menšieho príjmu potravy ako telesná potreba</displayName>
+      <Skratka>V123</Skratka>
+      <Popis>Riziko menšieho príjmu potravy ako telesná potreba</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746230</codeValue>
+      <displayName>Odmietanie potravy</displayName>
+      <Skratka>V124</Skratka>
+      <Popis>Odmietanie potravy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746248</codeValue>
+      <displayName>Riziko odmietania potravy</displayName>
+      <Skratka>V125</Skratka>
+      <Popis>Riziko odmietania potravy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746255</codeValue>
+      <displayName>Porucha prehĺtania</displayName>
+      <Skratka>V126</Skratka>
+      <Popis>Porucha prehĺtania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746263</codeValue>
+      <displayName>Riziko poruchy prehĺtania</displayName>
+      <Skratka>V127</Skratka>
+      <Popis>Riziko poruchy prehĺtania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746271</codeValue>
+      <displayName>Nechutenstvo</displayName>
+      <Skratka>V128</Skratka>
+      <Popis>Nechutenstvo</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746289</codeValue>
+      <displayName>Riziko nechutenstva</displayName>
+      <Skratka>V129</Skratka>
+      <Popis>Riziko nechutenstva</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746297</codeValue>
+      <displayName>Nevoľnosť</displayName>
+      <Skratka>V130</Skratka>
+      <Popis>Nevoľnosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746305</codeValue>
+      <displayName>Zvracanie</displayName>
+      <Skratka>V131</Skratka>
+      <Popis>Zvracanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746313</codeValue>
+      <displayName>Riziko zvracania</displayName>
+      <Skratka>V132</Skratka>
+      <Popis>Riziko zvracania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746321</codeValue>
+      <displayName>Pálenie záhy</displayName>
+      <Skratka>V133</Skratka>
+      <Popis>Pálenie záhy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746339</codeValue>
+      <displayName>Riziko pálenia záhy</displayName>
+      <Skratka>V134</Skratka>
+      <Popis>Riziko pálenia záhy</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746347</codeValue>
+      <displayName>Zvýšený príjem tekutín</displayName>
+      <Skratka>V135</Skratka>
+      <Popis>Zvýšený príjem tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746354</codeValue>
+      <displayName>Riziko zvýšeného príjmu tekutín</displayName>
+      <Skratka>V136</Skratka>
+      <Popis>Riziko zvýšeného príjmu tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746362</codeValue>
+      <displayName>Znížený príjem tekutín</displayName>
+      <Skratka>V137</Skratka>
+      <Popis>Znížený príjem tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746370</codeValue>
+      <displayName>Riziko zníženého príjmu tekutín</displayName>
+      <Skratka>V138</Skratka>
+      <Popis>Riziko zníženého príjmu tekutín</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746388</codeValue>
+      <displayName>Zmyslové vnímanie</displayName>
+      <Skratka>Z100-119</Skratka>
+      <Popis>Z 100-119 Zmyslové vnímanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746396</codeValue>
+      <displayName>Zmenené vnímanie chuti</displayName>
+      <Skratka>Z100</Skratka>
+      <Popis>Zmenené vnímanie chuti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746404</codeValue>
+      <displayName>Riziko zmeneného vnímania chuti</displayName>
+      <Skratka>Z101</Skratka>
+      <Popis>Riziko zmeneného vnímania chuti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746412</codeValue>
+      <displayName>Zmenené vnímanie čuchu</displayName>
+      <Skratka>Z102</Skratka>
+      <Popis>Zmenené vnímanie čuchu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746420</codeValue>
+      <displayName>Riziko zmeneného vnímania čuchu</displayName>
+      <Skratka>Z103</Skratka>
+      <Popis>Riziko zmeneného vnímania čuchu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746438</codeValue>
+      <displayName>Zmenené sluchové vnímanie</displayName>
+      <Skratka>Z104</Skratka>
+      <Popis>Zmenené sluchové vnímanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746446</codeValue>
+      <displayName>Riziko zmeneného sluchového vnímania</displayName>
+      <Skratka>Z105</Skratka>
+      <Popis>Riziko zmeneného sluchového vnímania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746453</codeValue>
+      <displayName>Zmenené hmatové vnímanie</displayName>
+      <Skratka>Z106</Skratka>
+      <Popis>Zmenené hmatové vnímanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746461</codeValue>
+      <displayName>Riziko zmeneného hmatového vnímania</displayName>
+      <Skratka>Z107</Skratka>
+      <Popis>Riziko zmeneného hmatového vnímania</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746479</codeValue>
+      <displayName>Zmenené zrakové vnímanie</displayName>
+      <Skratka>Z108</Skratka>
+      <Popis>Zmenené zrakové vnímanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089746487</codeValue>
+      <displayName>Riziko zmeneného zrakového vnímania</displayName>
+      <Skratka>Z109</Skratka>
+      <Popis>Riziko zmeneného zrakového vnímania</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Dohody o zastupovaní</codingSchemeName>
+    <codingSchemeVersion>1</codingSchemeVersion>
+    <DatumPoslednejZmeny>2019-01-30</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Dovody</Nazov>
+      <MinPocetnost>1</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.325</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2019-02-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>02089849091</codeValue>
+      <displayName>Plánované pracovné voľno</displayName>
+      <Skratka>101</Skratka>
+      <Popis>Požiadavka na zastupovanie z dôvodu plánovaného pracovného voľna na strane lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodNepritomnosti</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849125</codeValue>
+      <displayName>Neplánované pracovné voľno</displayName>
+      <Skratka>102</Skratka>
+      <Popis>Požiadavka na zastupovanie z dôvodu neplánovaného pracovného voľna na strane lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodNepritomnosti</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849141</codeValue>
+      <displayName>Technické a prevádzkové obmedzenia</displayName>
+      <Skratka>103</Skratka>
+      <Popis>Požiadavka na zastupovanie z dôvodu technického a prevádzkového obmedzenia na strane lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodNepritomnosti</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849166</codeValue>
+      <displayName>Práceneschopnosť</displayName>
+      <Skratka>104</Skratka>
+      <Popis>Požiadavka na zastupovanie z dôvodu práceneschopnosti lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodNepritomnosti</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849182</codeValue>
+      <displayName>Iné</displayName>
+      <Skratka>199</Skratka>
+      <Popis>Požiadavka na zastupovanie z iného bližšie nešpecifikovaného dôvodu na strane lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodNepritomnosti</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849208</codeValue>
+      <displayName>Kapacitné obmedzenie</displayName>
+      <Skratka>201</Skratka>
+      <Popis>Odmietnutie zastupovania z dôvodu kapacitného obmedzenia na strane prijímajúceho lekára</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodOdmietnutia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849224</codeValue>
+      <displayName>Prevádzkové dôvody</displayName>
+      <Skratka>202</Skratka>
+      <Popis>Odmietnutie zastupovania z prevádzkových dôvodov na strane prijímajúceho lekára</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodOdmietnutia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849240</codeValue>
+      <displayName>Dôvod odmietnutia zastupovania nešpecifikovaný</displayName>
+      <Skratka>299</Skratka>
+      <Popis>Odmietnutie zastupovania z iného bližšie nešpecifikovaného dôvodu na strane prijímajúceho lekára</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodOdmietnutia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849265</codeValue>
+      <displayName>Plánované pracovné voľno predčasne ukončené</displayName>
+      <Skratka>301</Skratka>
+      <Popis>Požiadavka na zastupovanie ukončená z dôvodu predčasne ukončeného plánovaného pracovného voľna lekára odosielateľa</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodUkoncenia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849281</codeValue>
+      <displayName>Neplánované pracovné voľno predčasne ukončené</displayName>
+      <Skratka>302</Skratka>
+      <Popis>Požiadavka na zastupovanie ukončená z dôvodu ukončenia neplánovaného pracovného voľna lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodUkoncenia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849307</codeValue>
+      <displayName>Technické a prevádzkové obmedzenie ukončené</displayName>
+      <Skratka>303</Skratka>
+      <Popis>Požiadavka na zastupovanie ukončená z dôvodu ukončenia technického a prevádzkového obmedzenia na strane lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodUkoncenia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849323</codeValue>
+      <displayName>Práceneschopnosť ukončená</displayName>
+      <Skratka>304</Skratka>
+      <Popis>Požiadavka na zastupovanie ukončená z dôvodu ukončenia práceneschopnosti lekára žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodUkoncenia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849349</codeValue>
+      <displayName>Iný dôvod ukončenia zastupovania</displayName>
+      <Skratka>399</Skratka>
+      <Popis>Požiadavka na zastupovanie ukončená z iného žiadajúceho zastupovanie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>DovodUkoncenia</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089849364</codeValue>
+      <displayName>Neznáma hodnota</displayName>
+      <Skratka>999</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>NeznamaHodnota</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

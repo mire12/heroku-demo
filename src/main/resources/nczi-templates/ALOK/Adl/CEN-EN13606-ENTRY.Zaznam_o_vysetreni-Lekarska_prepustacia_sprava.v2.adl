@@ -1,0 +1,408 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Lekarska_prepustacia_sprava.v2
+specialize
+    CEN-EN13606-ENTRY.Zaznam_o_vysetreni.v1
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20110816">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci záznam o vykonanom vyšetrení pacienta. 
+Špecializovaný pre lekársku prepúšťaciu správu.">
+            keywords = <"Záznam o vyšetrení pacienta","Vyšetrenie pacienta","Lekárska prepúšťacia správa">
+        >
+    >
+
+definition
+    ENTRY[at0000.1] occurrences matches {1..1} matches {  -- Záznam o vyšetrení- Specialization: Lekárska prepúšťacia správa
+        items existence matches {0..1} cardinality matches {5..*; unordered} matches {
+            ELEMENT[at0101] occurrences matches {0..1} matches {  -- Dátum a čas odoslania
+                value existence matches {1..1} matches {
+                    TS[at0102] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0.2] occurrences matches {0..1} matches {  -- Anamnéza
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.3] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,20000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.4] occurrences matches {1..1} matches {  -- Dátum a čas  prepustenia
+                value existence matches {1..1} matches {
+                    TS[at0.5] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0.7] occurrences matches {1..1} matches {  -- Dátum a čas prijatia
+                value existence matches {1..1} matches {
+                    TS[at0.8] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0.9] occurrences matches {0..1} matches {  -- Epikríza
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.10] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,10000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.13] occurrences matches {1..1} matches {  -- Objektívny nález
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.14] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,7000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.15] occurrences matches {0..1} matches {  -- Odporúčanie
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.16] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,3000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.19] occurrences matches {0..1} matches {  -- Terajšie ochorenie
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.20] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,7000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.21] occurrences matches {0..1} matches {  -- Výsledok vykonaného vyšetrenia
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.22] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,85000}/}
+                    }
+                }
+            }
+            ELEMENT[at0.23] occurrences matches {0..1} matches {  -- Záver pri prijatí
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0.24] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,7000}/}
+                    }
+                }
+            }
+            CLUSTER[at0.31] occurrences matches {0..*} matches {  -- Operačné výkony
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0.42] occurrences matches {1..1} matches {  -- Popis
+                        value existence matches {1..1} matches {
+                            SIMPLE_TEXT[at0.44] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,8000}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0.27] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                    }
+                }
+            }
+            CLUSTER[at0103.17] occurrences matches {0..*} matches {  -- Diagnostický záver
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0108] occurrences matches {0..1} matches {  -- Hlavná diagnóza
+                        value existence matches {1..1} matches {
+                            BL[at0109] occurrences matches {1..1} matches {  -- BL
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                    allow_archetype CLUSTER[at0104] occurrences matches {1..1} matches {  -- Diagnóza
+                        include
+                            archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0.26] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0200] occurrences matches {0..1} matches {  -- Odosielajúci lekár
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+            }
+            allow_archetype CLUSTER[at0002] occurrences matches {1..1} matches {  -- Odborný zástupca
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+            }
+            CLUSTER[at0.71] occurrences matches {0..*} matches {  -- Medikácia
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0.74] occurrences matches {0..1} matches {  -- Medikačný záznam
+                        value existence matches {1..1} matches {
+                            II[at0.76] occurrences matches {1..1} matches {  -- II
+                                root existence matches {1..1} matches {
+                                    OID[at0.77] occurrences matches {1..1} matches {  -- 
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.70.10"}
+                                    }
+                                }
+                                extension existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0.79] occurrences matches {0..1} matches {  -- Popis medikácie
+                        value existence matches {1..1} matches {
+                            SIMPLE_TEXT[at0.81] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,5000}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0.34] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {"STRC01"}
+                    }
+                }
+            }
+            ELEMENT[at0.6] occurrences matches {1..1} matches {  -- Urgentnosť vyšetrenia
+                value existence matches {1..1} matches {
+                    CV[at0.11] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0.25] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.123"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0111] occurrences matches {0..*} matches {  -- Diagnóza pri odoslaní
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+            }
+            ELEMENT[at0999] occurrences matches {0..1} matches {  -- Požiadavka na vyšetrenie
+                value existence matches {0..1} matches {
+                    II[at0998] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0997] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.60.110"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0.40] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.41] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.100"}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0101"] = <
+                    text = <"Dátum a čas odoslania">
+                    description = <"Dátum a čas, kedy bol pacient odoslaný na vyšetrenie">
+                >
+                ["at0102"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0000.1"] = <
+                    text = <"Záznam o vyšetrení- Specialization: Lekárska prepúšťacia správa">
+                    description = <"Záznam o vyšetrení - Specialization: Lekárska prepúšťacia správa - 1.3.158.00165387.100.60.100">
+                >
+                ["at0.2"] = <
+                    text = <"Anamnéza">
+                    description = <"Údaje o zdravotnom stave pacienta a jeho pokrvných príbuzných pred súčastnou chorobou
+">
+                >
+                ["at0.3"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.4"] = <
+                    text = <"Dátum a čas  prepustenia">
+                    description = <"Dátum a čas kedy bol pacient prepustený z hospitalizácie. ">
+                >
+                ["at0.5"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0.7"] = <
+                    text = <"Dátum a čas prijatia">
+                    description = <"Dátum a čas kedy bol pacient prijatý na hospitalizáciu. ">
+                >
+                ["at0.8"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0.9"] = <
+                    text = <"Epikríza">
+                    description = <"Celkový záver lekára o ochorení">
+                >
+                ["at0.10"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.13"] = <
+                    text = <"Objektívny nález">
+                    description = <"Objektívny nález zistený počas vyšetrenia pacienta">
+                >
+                ["at0.14"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.15"] = <
+                    text = <"Odporúčanie">
+                    description = <"Odporúčanie">
+                >
+                ["at0.16"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.19"] = <
+                    text = <"Terajšie ochorenie">
+                    description = <"Popis aktuálneho ochorenia pacienta">
+                >
+                ["at0.20"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.21"] = <
+                    text = <"Výsledok vykonaného vyšetrenia">
+                    description = <"Zoznam výsledkov vykonaných vyšetrení">
+                >
+                ["at0.22"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.23"] = <
+                    text = <"Záver pri prijatí">
+                    description = <"Záver pri prijatí pacienta ">
+                >
+                ["at0.24"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0.31"] = <
+                    text = <"Operačné výkony">
+                    description = <"Operačné výkony, ktoré boli vykonané počas hospitalizácie. Sú tvorené popisom. Nejedná sa o záznam v operačnej knihe, jedná sa len o stručný popis najdôležitejších operácií počas hospitalizácie. ">
+                >
+                ["at0.42"] = <
+                    text = <"Popis">
+                    description = <"Popis operačného zákroku
+">
+                >
+                ["at0.44"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0111"] = <
+                    text = <"Diagnóza pri odoslaní">
+                    description = <"Odkaz na diagnózy, ktoré boli zistené pri odosielaní pacienta, resp. kvôli ktorým bol pacient odoslaný. Dané diagnózy je tiež možné popísať voľným textom. ">
+                >
+                ["at0200"] = <
+                    text = <"Odosielajúci lekár">
+                    description = <"Lekár, ktorý pacienta na vyšetrenie odoslal. Archetyp Zdravotnicky_pracovnik_odborneho_utvaru. Vždy obsahuje aj Id OUPZS">
+                >
+                ["at0002"] = <
+                    text = <"Odborný zástupca">
+                    description = <"Fyzická osoba, ktorá osobne zodpovedá za odborné poskytnutie zdravotnej starostlivosti. Archetyp Zdravotnicky_pracovnik_odborneho_utvaru. Vždy obsahuje aj Id OUPZS">
+                >
+                ["at0.71"] = <
+                    text = <"Medikácia">
+                    description = <"Zoznam medikačných údajov ako sú
+názov lieku, účinná látka, dávkovanie, ktoré sa viažú na daného pacienta">
+                >
+                ["at0.74"] = <
+                    text = <"Medikačný záznam">
+                    description = <"Objekt obsahujúci všetky informácie o medikácií aplikovanej
+pacientovi. ">
+                >
+                ["at0.76"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0.79"] = <
+                    text = <"Popis medikácie">
+                    description = <"Slovný popis medikácie pacienta">
+                >
+                ["at0.81"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0108"] = <
+                    text = <"Hlavná diagnóza">
+                    description = <"Príznak, že daná diagnóza je hlavná. ">
+                >
+                ["at0109"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0.6"] = <
+                    text = <"Urgentnosť vyšetrenia">
+                    description = <"Urgentnosť vyšetrenia. Číselník, obsahujúci stupne urgentnosti resp. naliehavosti vyšetrenia.
+
+Predpokladaný obsah: 
+- bežné
+- prednostné
+- urgentné
+">
+                >
+                ["at0.11"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0103.17"] = <
+                    text = <"Diagnostický záver">
+                    description = <"Informácie ohľadom diagnóz, ktoré má pacient pri ukončení hospitalizácie. Diagnózu je možné definovať výberom diagnózy z číselníka (MKCH10)  alebo pomocou slovného popisu diagnózy. Tiež je možné definovať hlavnú diagnózu. Hlavná diagnóza môže byť vždy maximálne jedna a pokiaľ definujeme hlavnú diagnózu, musí byť táto diagnóza definovaná kódom MKCH10.">
+                >
+                ["at0104"] = <
+                    text = <"Diagnóza">
+                    description = <"Diagnóza vyjadrená kódom z MKCH10, ktorú má pacient po vyšetrení, resp. pri ukončení hospitalizácie.">
+                >
+                ["at0.25"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0999"] = <
+                    text = <"Požiadavka na vyšetrenie">
+                    description = <"Odkaz na záznam, ktorým je vyšetrenie požadované. Tento údaj musí vyplniť ošetrujúci lekár, aby bol žiadateľ o vyšetrenie (autor výmenného lístka) notifikovaný o tom, že vyšetrenie bolo vykonané.">
+                >
+                ["at0998"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0.40"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0.41"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

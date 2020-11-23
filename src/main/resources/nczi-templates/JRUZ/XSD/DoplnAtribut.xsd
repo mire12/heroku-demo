@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="Ciselnik.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:element name="EntitaDoplnujuciAtribut_Zoznam" type="EntitaDoplnujuciAtribut_Zoznam" />
+  <xs:complexType name="EntitaDoplnujuciAtribut_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam doplnujucich atribútov entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DoplnujuciAtribut" type="DoplnujuciAtribut" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Entita_DoplnujuciAtribut" type="Entita_DoplnujuciAtribut" />
+  <xs:complexType name="Entita_DoplnujuciAtribut">
+    <xs:annotation>
+      <xs:documentation>Doplňujúce atribúty entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdAtributu" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>identifikátor atribútu v rámci entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string100" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MinPocetnost" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MaxPocetnost" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="codingScheme" type="OID" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Typ" type="EnumTypDoplAtributu" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZahlavieDoplnujucichAtributovEntity" type="ZahlavieDoplnujucichAtributovEntity" />
+  <xs:complexType name="ZahlavieDoplnujucichAtributovEntity">
+    <xs:annotation>
+      <xs:documentation>Zahlavie doplňujúcich atribútov entity</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Entita_DoplnujuciAtribut" type="Entita_DoplnujuciAtribut" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="codingScheme" type="OID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoplnujuciAtribut" type="DoplnujuciAtribut" />
+  <xs:complexType name="DoplnujuciAtribut">
+    <xs:annotation>
+      <xs:documentation>Doplňujúci atribút</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdAtributu" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="HodnotaS" type="string200" minOccurs="0" maxOccurs="1" />
+      <xs:element name="HodnotaI" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <xs:element name="HodnotaD" type="d14.14" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Referencia" type="CV" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoplnujuceReferencneUdaje" type="DoplnujuceReferencneUdaje" />
+  <xs:complexType name="DoplnujuceReferencneUdaje">
+    <xs:annotation>
+      <xs:documentation>Doplňujúce referenčné údaje.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="1" />
+      <xs:element name="EntitaDoplnujuciAtribut_Zoznam" type="EntitaDoplnujuciAtribut_Zoznam" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ZahlavieDoplnujucichAtributovEntity" type="ZahlavieDoplnujucichAtributovEntity" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

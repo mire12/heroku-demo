@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+  
+  <xs:element name="UzatvorObjednavkuRequest" type="tns:UzatvorObjednavkuRequest" />
+  
+  <xs:complexType name="UzatvorObjednavkuRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZoznamObjednavok" type="tns:ArrayOfUzatvorenaObjednavka">
+            <xs:annotation>
+            <xs:documentation>Pole Identifikátorov objednávok, ktoré majú byť uzatvorené.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+          <xs:element minOccurs="0" maxOccurs="1" name="UzavreteDna" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+            <xs:documentation>Dátum a čas kedy OÚ PZS uzavrel objednávku</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdOUPZS" xmlns:q12="CEN/13606/RM" type="q12:II">
+        <xs:annotation>
+          <xs:documentation>ID OU poskytovateľa zdravotnej starostlivosti (ambulancie)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdZPr" xmlns:q13="CEN/13606/RM" type="q13:II">
+        <xs:annotation>
+          <xs:documentation>ID zdravotníckeho pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfUzatvorenaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UzatvorenaObjednavka" nillable="true" type="tns:UzatvorenaObjednavka" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="UzatvorenaObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DovodUzavretia" xmlns:q17="CEN/13606/RM" type="q17:CV" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NovyStav" type="tns:StavObjednavky">
+        <xs:annotation>
+          <xs:documentation>Nový stav objednávky z vymenovaného typu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="IdObjednavky" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>ID objednávky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ID pridelené objednávke v systéme ISPZS pre identifikáciu záznamu a kontrolu konzistencie dát. Bude spracované nasledovne:ISOO vyhľadá objednávku podľa IdObjednavky. Ak na objednávke nie je údaj ExterneId, tak ho uložíAk ExterneId už na objednávke je, tak ho skontroluje. V prípade, že je sa údaj zaslaný z ISPZS líši s údajom v ISOO, pre danú objednávku je vrátená informácia o chybe.Ostatné objednávky z dávky budú spracované.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:simpleType name="StavObjednavky">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nova" />
+      <xs:enumeration value="Potvrdena" />
+      <xs:enumeration value="Realizovana" />
+      <xs:enumeration value="Zrusena" />
+      <xs:enumeration value="PacientSaNedostavil" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

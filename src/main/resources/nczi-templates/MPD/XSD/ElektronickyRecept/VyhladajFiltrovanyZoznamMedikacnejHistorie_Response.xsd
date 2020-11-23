@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:element name="VyhladajFiltrovanyZoznamMedikacnejHistorieVystup" type="VyhladajFiltrovanyZoznamMedikacnejHistorieVystup" />
+  <xs:complexType name="VyhladajFiltrovanyZoznamMedikacnejHistorieVystup">
+    <xs:annotation>
+      <xs:documentation>Výstup služby obsahuje zoznamy jednotlivých typov medikačných záznamov.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor PrZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZoznamDietetika" type="ZoznamDietetika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zoznam medikačných záznamov s dietetickými potravinami.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZoznamIPL" type="ZoznamIPL" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zoznam medikačných záznamov s individuálne pripraveným liekom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZoznamPomocky" type="ZoznamZdravotnickePomocky" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zoznam medikačných záznamov so zdravotníckymi pomôckami.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZoznamLieky" type="ZoznamLieky" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zoznam medikačných záznamov s liekom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoznamLieky">
+    <xs:annotation>
+      <xs:documentation>Zoznam medikačných záznamov s liekmi.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+			<xs:element name="PocetNajdenychZaznamov" type="xs:int" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Celkový počet nájdených záznamov medikácie liekov.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <xs:element name="MedikacnyZaznamLiek" type="PolozkaLiek" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PolozkaLiek">
+    <xs:annotation>
+      <xs:documentation>Základné údaje medikačného záznamu, ktorý obsahuje registrovaný liek.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AktivnyDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AktivnyOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Davkovanie" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Textový popis dávkovania zadávaný lekárom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor diagnózy (vrátane displayName).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu lieku z medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>RDBMS-Z ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IIZaznamu" type="rm:II" minOccurs="1" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation>II ID medikačného záznamu.</xs:documentation>
+      </xs:annotation>
+      </xs:element>
+      <xs:element name="IndStorno" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je medikačný záznam stornovaný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodSUKL" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unikátny kód pridelený lieku Štátnym ústavom pre kontrolu liečiv pri jeho registrácii.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov lieku z medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoznamIPL">
+    <xs:annotation>
+      <xs:documentation>Zoznam medikačných záznamov s individuálne pripravenými liekmi.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+			<xs:element name="PocetNajdenychZaznamov" type="xs:int" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Celkový počet nájdených záznamov medikácie IPL.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <xs:element name="MedikacnyZaznamIPL" type="PolozkaIPL" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Medikačné záznamy.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PolozkaIPL">
+    <xs:annotation>
+      <xs:documentation>Základné údaje medikačného záznamu, ktorý obsahuje individuálne pripravený liek.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AktivnyDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AktivnyOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CelkoveMnozstvo" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o množstve lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor diagnózy (vrátane displayName).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>RDBMS-Z ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IIZaznamu" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>II ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndStorno" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je medikačný záznam stornovaný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov individuálne pripraveného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoznamDietetika">
+    <xs:annotation>
+      <xs:documentation>Zoznam medikačných záznamov s dietetickými pomôckami.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+			<xs:element name="PocetNajdenychZaznamov" type="xs:int" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Celkový počet nájdených záznamov medikácie dietetických potravín.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <xs:element name="MedikacnyZaznamDietetikum" type="PolozkaDietetickaPotravina" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Medikačné záznamy.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PolozkaDietetickaPotravina">
+    <xs:annotation>
+      <xs:documentation>Základné údaje medikačného záznamu, ktorý obsahuje dietetickú potravinu.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AktivnyDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AktivnyOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor diagnózy (vrátane displayName).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>RDBMS-Z ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IIZaznamu" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>II ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndStorno" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je medikačný záznam stornovaný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov dietetickej potraviny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pocet" type="xs:decimal" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o množstve dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoznamZdravotnickePomocky">
+    <xs:annotation>
+      <xs:documentation>Zoznam medikačných záznamov so zdravotníckymi pomôckami.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+			<xs:element name="PocetNajdenychZaznamov" type="xs:int" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Celkový počet nájdených záznamov medikácie zdravotníckych pomôcok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+      <xs:element name="MedikacnyZaznamPomocka" type="PolozkaZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam medikačných záznamov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PolozkaZdravotnickaPomocka">
+    <xs:annotation>
+      <xs:documentation>Základné údaje medikačného záznamu, ktorý obsahuje zdravotnícku pomôcku.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AktivnyDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AktivnyOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku platnosti medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="IdPolozkaCiselnikaDiagnoza" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>CV identifikátor diagnózy (vrátane displayName).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>RDBMS-Z ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IIZaznamu" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>II ID medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IndStorno" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či je medikačný záznam stornovaný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdravotnickej pomocky z medikačného záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pocet" type="xs:decimal" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o množstve vydaných alebo používaných pomôcok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

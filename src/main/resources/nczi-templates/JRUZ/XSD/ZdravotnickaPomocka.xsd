@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Mnozstvo.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:element name="PrislusenstvoZdrPom" type="PrislusenstvoZdrPom" />
+  <xs:complexType name="PrislusenstvoZdrPom">
+    <xs:annotation>
+      <xs:documentation>Doplňujúce informácie o príslušenstve poskytovanom pri prvom výdaji alebo počas používania danej pomôcky.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Popis" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis príslušenstva k zdravotníckej pomôcke</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PriVydaji" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Označenie príslušenstva vydávaného spolu s pomôckou pri výdaji pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinancneLimityZdrPom" type="FinancneLimityZdrPom" />
+  <xs:complexType name="FinancneLimityZdrPom">
+    <xs:annotation>
+      <xs:documentation>Finančné obmedzenia zdravotníckych pomôcok.
+Zdroj :
+Zdravotnícke pomôcky ... Časť 2 - Limitové tabuľky.
+cast_2_limity.rtf
+Hodnoty :
+PODSKUPINA
+NÁZOV DRUHU ZdrPom TRIEDA FINANČNÝ LIMIT
+L12 -ÚPRAVA POMôCOK SKUPINY L do 50 % ÚZP zdravotníckych pomôcok triedy L2
+...
+Popis :
+Finančné obmedzenie (zvyčajne % limit z pôvodnej ceny na opravy a úpravy už vydaných pomôcok)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Popis" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis finančného limitu zdr. pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndikacneObmedzenieZdrPom" type="IndikacneObmedzenieZdrPom" />
+  <xs:complexType name="IndikacneObmedzenieZdrPom">
+    <xs:annotation>
+      <xs:documentation>Indikačné obmedzenia zdravotníckych pomôcok.
+Zdroj :
+Zdravotnícke pomôcky ... Časť 2 - Limitové tabuľky.
+cast_2_limity.rtf
+Hodnoty :
+PODSKUPINA
+NÁZOV DRUHU ZdrPom TRIEDA INDIKAČNÉ OBMEDZENIA
+A3 - GÁZOVÉ TAMPÓNY A 3 Gázové skrútené tampóny pre deti a nezaopatrené osoby do dovŕšenia 25 rokov 
+pre dospelých: 
+intenzifikovaný režim
+...
+.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Popis" type="string2000" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis indikačného obmedzenia zdr. pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KategorizacneUdajeZdrPom" type="KategorizacneUdajeZdrPom" />
+  <xs:complexType name="KategorizacneUdajeZdrPom">
+    <xs:annotation>
+      <xs:documentation>Cena zdravotníckych pomôcok.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CiselnyZnakKN" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>číselný znak kombinovanej nomenklatúry nariadenia Rady (EHS) č. 2658/87 o tarifnej a štatistickej nomenklatúre a o Spoločnom colnom sadzobníku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiDoplatok" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v EUR za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiDoplatokPercenta" type="d14.14" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v % za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiUhradaZP" type="Cena" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v EUR za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokPercenta" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v % za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaVyrobcu" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna cena od výrobcu alebo dovozcu v eurách bez dane z pridanej hodnoty</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaZdrPom" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna cena zdravotníckej pomôcky v lekárni/výdajni</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SadzbaDph" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>v %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZP" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasZdravotnejPoistovne" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="FinancneLimityZdrPom" type="FinancneLimityZdrPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IndikacneObmedzenieZdrPom" type="IndikacneObmedzenieZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="detiSposobUhrady" type="IdPolozkaCiselnikaSposobUhradyZdrPom" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zdravotnícke pomôcky plne uhrádzané na základe zdravotného poistenia. Zdravotnícke pomôcky čiastočne uhrádzané na základe zdravotného poistenia. Kombinácia plnej a čiastočnej úhrady. Zdravotnícka pomôcka poskytovaná pri ambulantnej starostlivosti v ambulancii  lekára, vykazuje sa zdravotnej poisťovni poistenca na osobitnom zúčtovacom doklade. Podľa časti A – Limitná časť.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SposobUhradyZdrPom" type="IdPolozkaCiselnikaSposobUhradyZdrPom" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PreskripcneObmedzeniaZdrPom" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MnozstvoveLimityZdrPom" type="MnozstvoveLimityZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MnozstvoveLimityZdrPom" type="MnozstvoveLimityZdrPom" />
+  <xs:complexType name="MnozstvoveLimityZdrPom">
+    <xs:annotation>
+      <xs:documentation>Množstvové limity zdravotníckych pomôcok
+... množstevné obmedzenie za obdobie
+Zdroj :
+Zdravotnícke pomôcky ... Časť 2 - Limitové tabuľky.
+cast_2_limity.rtf</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CharakteristikaLimitu" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis doplňujúcich podmienok, kedy sa daný limit aplikuje. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TextLimitu" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Text množstvového limitu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom" />
+  <xs:complexType name="SkupinaZdrPom">
+    <xs:annotation>
+      <xs:documentation>Skupina a podskupina zdravotníckych pomôcok.
+Skupina zdravotníckych pomôcok.
+Zdroj :
+V položke NAZ v zozname zdravotníckych pomôcok - Zdravotnícke pomôcky ... Časť 2 - Limitové tabuľky.
+cast_2_limity.rtf
+Hodnoty :
+A - Obväzový materiál, náplasti a zdravotnícke pomôcky, ktoré slúžia na aplikáciu liečiva
+B - Zdravotnícke pomôcky pre inkontinentných poistencov
+D - Zdravotnícke pomôcky pre diabetikov
+E - Parochne a príčesky z prírodných a umelých vlasov
+F - Zdravotnícke pomôcky pre stomikov
+G - Zdravotné pančuchy, pančuchové nohavice, návleky a iné pomôcky pre kompresívnu liečbu
+F - Sériovo vyrábané prsné epitézy
+I - Individuálne vyhotovované ortopedicko-protetické pomôcky a príslušenstvo k nim
+J - Hromadne vyrábané ortopedicko-protetické pomôcky a príslušenstvo k nim
+K - Rehabilitačné a kompenzačné pomôcky
+L - Vozíky a kočíky, mobilné chodúľky, zdviháky chorých, špeciálne postele a príslušenstvo k nim
+N - Pomôcky pre sluchovo postihnutých, načúvacie prístroje a príslušenstvo k nim
+O - Okuliare a pomôcky pre zrakovo postihnutých a príslušenstvo k nim
+
+Podskupina zdravotníckych pomôcok
+V položke PODSK v zozname zdravotníckych pomôcok - Opatrenie MZ SR ... Zdravotnícke pomôcky ... Časť 3 - Zoznam zdr. pomôcok,.... 
+cast_3_Zoznam_201103.xls
+Časť 2 - Limitové tabuľky
+cast_2_limity.rtf
+Podskupina Názov druhu
+A1 OBVÄZ HYDROFILNÝ
+A2 GÁZA HYDROFILNÁ
+A3 GÁZOVÉ TAMPÓNY
+.....</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdSkupinaZdravotnickychPomocok" type="IdSkupinaZdravotnickychPomocok" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRÚZ identifikátor skupiny zdravotníckych pomôcok</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasZdravotnejPoistovne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa na predpis zdravotníckej pomôcky nevyžaduje najprv súhlas zdravotnej poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZP" type="Cena" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za podskupinu zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Prislusenstvo" type="PrislusenstvoZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="FinancneLimityZdrPom" type="FinancneLimityZdrPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IndikacneObmedzenieZdrPom" type="IndikacneObmedzenieZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MnozstvovyLimit" type="MnozstvoveLimityZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PreskripcneObmedzeniaZdrPom" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Skupina" type="IdSkupinaZdravotnickychPomocok" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnickaPomocka" type="ZdravotnickaPomocka" />
+  <xs:complexType name="ZdravotnickaPomocka">
+    <xs:annotation>
+      <xs:documentation>Zákon 362/2011 §2 (19)
+Zdravotnícka pomôcka je nástroj, prístroj, zariadenie,počítačový program, materiál alebo iný výrobok používaný samostatne alebo v kombinácii určený výrobcom na diagnostické, preventívne, monitorovacie účely alebo liečebné čely, na zmiernenie ochorenia alebo na kompenzáciu zranenia, zdravotného postihnutia,na skúmanie, nahradenie alebo zmenu anatomickej časti tela alebo fyziologického procesu, na reguláciu počatia, ktorého hlavný účinok sa nezískal farmakologickými prostriedkami, imunologickými prostriedkami ani metabolizmom, ale ktorého činnosť možno podporovať týmito prostriedkami; za zdravotnícku pomôcku sa považuje aj príslušenstvo zdravotníckej pomôcky, ktoré je pecificky určené výrobcom na použitie spolu so zdravotníckou pomôckou.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Doplnok" type="string100" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Veľkosť a typ zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRÚZ identifikátor zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeNaMieru" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či ide o individuálne zhotovovanú alebo upravovanú zdrav. pom. V takomto prípade nemusí byť definovaná v kategorizácii cena, k zdrav. pomôcke na mieru sa pristupuje podobne ako k individuálne pripravovaným liekom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeSpecialnyZdravMaterial" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či ide o &amp;scaron;peciálny zdravotnícky materiál. Táto skupina zdrav. pomôcok sa nepredpisuje, takže nás nezaujíma.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdravotníckej pomôcky pridelený Štátnym ústavom pre kontrolu liečiv.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NavodNaPouzitie" type="string2000" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis, návod na použitie - informácia od výrobcu zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetKusovVBaleni" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet kusov zdravotníckych pomôcok  v balení</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UcelUrcenia" type="string2000" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Účel určenia je používanie, na ktoré je zdravotnícka
+pomôcka určená podľa údajov uvedených výrobcom
+na zdravotníckej pomôcke alebo na jej obale, v návode
+na použitie alebo v propagačných materiáloch.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZakladnyFunkcnyTyp" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Základný funkčný typ zdravotníckej pomôcky v danej skupine pomôcok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PrislusenstvoZdrPom" type="PrislusenstvoZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="KategorizacneUdajeZdrPom" type="KategorizacneUdajeZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DruhZdrPom" type="IdPolozkaCiselnikaDruhZdrPomAImplantatov" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MernaJednotka" type="IdPolozkaCiselnikaMernaJednotkaZdravPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VyrobcaZdrPom" type="IdPolozkaCiselnikaVyrobcaZdrPom" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Trieda" type="IdPolozkaCiselnikaTriedaZdravotnickejPomocky" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DlzkaPlatnostiReceptu" type="Mnozstvo" minOccurs="1" maxOccurs="1" />
+      <xs:element name="UradneUrcenaCena" type="UradneUrcenaCena" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdSkupinaZdravotnickychPomocok" type="IdSkupinaZdravotnickychPomocok" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnickaPomocka_Zoznam" type="ZdravotnickaPomocka_Zoznam" />
+  <xs:complexType name="ZdravotnickaPomocka_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka" type="ZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkupinaZdrPom_Zoznam" type="SkupinaZdrPom_Zoznam" />
+  <xs:complexType name="SkupinaZdrPom_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam skupin zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkupinaZdrPom_v2" type="SkupinaZdrPom_v2" />
+  <xs:complexType name="SkupinaZdrPom_v2">
+    <xs:annotation>
+      <xs:documentation>Skupina a podskupina zdravotníckych pomôcok.
+Skupina zdravotníckych pomôcok.
+Zdroj :
+V položke NAZ v zozname zdravotníckych pomôcok - Zdravotnícke pomôcky ... Časť 2 - Limitové tabuľky.
+cast_2_limity.rtf
+Hodnoty :
+A - Obväzový materiál, náplasti a zdravotnícke pomôcky, ktoré slúžia na aplikáciu liečiva
+B - Zdravotnícke pomôcky pre inkontinentných poistencov
+D - Zdravotnícke pomôcky pre diabetikov
+E - Parochne a príčesky z prírodných a umelých vlasov
+F - Zdravotnícke pomôcky pre stomikov
+G - Zdravotné pančuchy, pančuchové nohavice, návleky a iné pomôcky pre kompresívnu liečbu
+F - Sériovo vyrábané prsné epitézy
+I - Individuálne vyhotovované ortopedicko-protetické pomôcky a príslušenstvo k nim
+J - Hromadne vyrábané ortopedicko-protetické pomôcky a príslušenstvo k nim
+K - Rehabilitačné a kompenzačné pomôcky
+L - Vozíky a kočíky, mobilné chodúľky, zdviháky chorých, špeciálne postele a príslušenstvo k nim
+N - Pomôcky pre sluchovo postihnutých, načúvacie prístroje a príslušenstvo k nim
+O - Okuliare a pomôcky pre zrakovo postihnutých a príslušenstvo k nim
+
+Podskupina zdravotníckych pomôcok
+V položke PODSK v zozname zdravotníckych pomôcok - Opatrenie MZ SR ... Zdravotnícke pomôcky ... Časť 3 - Zoznam zdr. pomôcok,.... 
+cast_3_Zoznam_201103.xls
+Časť 2 - Limitové tabuľky
+cast_2_limity.rtf
+Podskupina Názov druhu
+A1 OBVÄZ HYDROFILNÝ
+A2 GÁZA HYDROFILNÁ
+A3 GÁZOVÉ TAMPÓNY
+.....</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdSkupinaZdravotnickychPomocok" type="IdSkupinaZdravotnickychPomocok" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRÚZ identifikátor skupiny zdravotníckych pomôcok</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string255" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="string255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis podskupiny zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasZdravotnejPoistovne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia, či sa na predpis zdravotníckej pomôcky nevyžaduje najprv súhlas zdravotnej poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZPCena" type="Cena_v2" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za podskupinu zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaJednotka" type="string100" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UhradaZPPercenta" type="d14.14" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Prislusenstvo" type="PrislusenstvoZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="FinancneLimityZdrPom" type="FinancneLimityZdrPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IndikacneObmedzenieZdrPom" type="IndikacneObmedzenieZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MnozstvovyLimit" type="MnozstvoveLimityZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PreskripcneObmedzeniaZdrPom" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnickaPomocka_v2" type="ZdravotnickaPomocka_v2" />
+  <xs:complexType name="ZdravotnickaPomocka_v2">
+    <xs:annotation>
+      <xs:documentation>Zákon 362/2011 §2 (19)
+Zdravotnícka pomôcka je nástroj, prístroj, zariadenie,počítačový program, materiál alebo iný výrobok používaný samostatne alebo v kombinácii určený výrobcom na diagnostické, preventívne, monitorovacie účely alebo liečebné čely, na zmiernenie ochorenia alebo na kompenzáciu zranenia, zdravotného postihnutia,na skúmanie, nahradenie alebo zmenu anatomickej časti tela alebo fyziologického procesu, na reguláciu počatia, ktorého hlavný účinok sa nezískal farmakologickými prostriedkami, imunologickými prostriedkami ani metabolizmom, ale ktorého činnosť možno podporovať týmito prostriedkami; za zdravotnícku pomôcku sa považuje aj príslušenstvo zdravotníckej pomôcky, ktoré je pecificky určené výrobcom na použitie spolu so zdravotníckou pomôckou.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Doplnok" type="string100" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Veľkosť a typ zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>JRÚZ identifikátor zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeNaMieru" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či ide o individuálne zhotovovanú alebo upravovanú zdrav. pom. V takomto prípade nemusí byť definovaná v kategorizácii cena, k zdrav. pomôcke na mieru sa pristupuje podobne ako k individuálne pripravovaným liekom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="JeSpecialnyZdravMaterial" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Či ide o &amp;scaron;peciálny zdravotnícky materiál. Táto skupina zdrav. pomôcok sa nepredpisuje, takže nás nezaujíma.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Kod" type="string50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdravotníckej pomôcky pridelený Štátnym ústavom pre kontrolu liečiv.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NavodNaPouzitie" type="string2000" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis, návod na použitie - informácia od výrobcu zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="string200" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdravotníckej pomôcky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetKusovVBaleni" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet kusov zdravotníckych pomôcok  v balení</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UcelUrcenia" type="string2000" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Účel určenia je používanie, na ktoré je zdravotnícka
+pomôcka určená podľa údajov uvedených výrobcom
+na zdravotníckej pomôcke alebo na jej obale, v návode
+na použitie alebo v propagačných materiáloch.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZakladnyFunkcnyTyp" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Základný funkčný typ zdravotníckej pomôcky v danej skupine pomôcok.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PrislusenstvoZdrPom" type="PrislusenstvoZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="KategorizacneUdajeZdrPom" type="KategorizacneUdajeZdrPom_v2" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="DruhZdrPom" type="IdPolozkaCiselnikaDruhZdrPomAImplantatov" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MernaJednotka" type="IdPolozkaCiselnikaMernaJednotkaZdravPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VyrobcaZdrPom" type="IdPolozkaCiselnikaVyrobcaZdrPom" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Trieda" type="IdPolozkaCiselnikaTriedaZdravotnickejPomocky" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DlzkaPlatnostiReceptu" type="Mnozstvo" minOccurs="1" maxOccurs="1" />
+      <xs:element name="UradneUrcenaCena" type="UradneUrcenaCena_v2" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KategorizacneUdajeZdrPom_v2" type="KategorizacneUdajeZdrPom_v2" />
+  <xs:complexType name="KategorizacneUdajeZdrPom_v2">
+    <xs:annotation>
+      <xs:documentation>Cena zdravotníckych pomôcok.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CiselnyZnakKN" type="string50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>číselný znak kombinovanej nomenklatúry nariadenia Rady (EHS) č. 2658/87 o tarifnej a štatistickej nomenklatúre a o Spoločnom colnom sadzobníku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiDoplatok" type="Cena_v2" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v EUR za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiDoplatokPercenta" type="d14.14" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v % za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DetiUhradaZP" type="Cena_v2" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za zdravotnícku pomôcku pre deti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Doplatok" type="Cena_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v EUR za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplatokPercenta" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady poistenca v % za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaVyrobcu" type="Cena_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna cena od výrobcu alebo dovozcu v eurách bez dane z pridanej hodnoty</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCenaZdrPom" type="Cena_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna cena zdravotníckej pomôcky v lekárni/výdajni</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SadzbaDph" type="d14.14" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>v %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UhradaZP" type="Cena_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>maximálna výška úhrady v EUR zdravotnej poisťovne za zdravotnícku pomôcku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SuhlasZdravotnejPoistovne" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="FinancneLimityZdrPom" type="FinancneLimityZdrPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IndikacneObmedzenieZdrPom" type="IndikacneObmedzenieZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MnozstvoveLimityZdrPom" type="MnozstvoveLimityZdrPom" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="detiSposobUhrady" type="IdPolozkaCiselnikaSposobUhradyZdrPom" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SposobUhradyZdrPom" type="IdPolozkaCiselnikaSposobUhradyZdrPom" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="1" maxOccurs="1" />
+      <xs:element name="PreskripcneObmedzeniaZdrPom" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdSkupinaZdravotnickychPomocok" type="IdSkupinaZdravotnickychPomocok" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnickaPomocka_v2_Zoznam" type="ZdravotnickaPomocka_v2_Zoznam" />
+  <xs:complexType name="ZdravotnickaPomocka_v2_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka" type="ZdravotnickaPomocka_v2" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkupinaZdrPom_v2_Zoznam" type="SkupinaZdrPom_v2_Zoznam" />
+  <xs:complexType name="SkupinaZdrPom_v2_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam skupin zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom_v2" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

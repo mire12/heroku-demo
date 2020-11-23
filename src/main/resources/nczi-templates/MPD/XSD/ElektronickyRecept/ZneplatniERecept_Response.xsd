@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:element name="ZneplatniEReceptVystup" type="ZneplatniEReceptVystup" />
+  <xs:complexType name="ZneplatniEReceptVystup">
+    <xs:annotation>
+      <xs:documentation>NZIS overí či môže byť recept zneplatnený. Ak áno, tak túto informáciu vráti.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZneplatnenieUspesne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o úspechu alebo neúspechu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

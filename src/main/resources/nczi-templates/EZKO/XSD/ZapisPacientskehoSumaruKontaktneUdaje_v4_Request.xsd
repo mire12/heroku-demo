@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+  <xs:import namespace="http://eHealth.gov.sk/EzkJruzAgent/v1" schemaLocation="EzkJruzAgent.xsd" />
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd" />
+
+  <xs:element name="KontaktneUdajePacientskehoSumaraVstup_v4" nillable="true" type="tns:KontaktneUdajePacientskehoSumaraVstup_v4" />
+  <xs:complexType name="KontaktneUdajePacientskehoSumaraVstup_v4">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:KontaktneUdajePacientskehoSumaraZaklad_v4" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="KontaktneUdajePacientskehoSumaraZaklad_v4" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Data" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>Kontaktné údaje občana v štruktúre PacientskySumarKontaktneUdajeDataPlain_v4 (Aktuálny pobyt) šifrované na zdravotníckeho pracovníka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" xmlns:q37="CEN/13606/RM" type="q37:II">
+        <xs:annotation>
+          <xs:documentation>Šifrovaný identifikátor pacienta</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PreferovaniPracovniciZdravotnejStarostlivosti" type="tns:ArrayOfPreferovanyZdravotnickyPracovnik_v4" />
+    </xs:sequence>
+  </xs:complexType>  
+
+  <xs:complexType name="ArrayOfPreferovanyZdravotnickyPracovnik_v4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreferovanyPracovnikZdravotnejStarostlivosti" nillable="true" type="tns:PreferovanyZdravotnickyPracovnik_v4" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PreferovanyZdravotnickyPracovnik_v4">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:KontaktnyZaznamBase_v4">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="MenoAPriezvisko" type="tns:CeleMenoOsoby">
+            <xs:annotation>
+              <xs:documentation>Meno a priezvisko preferovaného zdravotníckeho pracovníka</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="ZdravotnickaOdbornost" xmlns:q38="http://eHealth.gov.sk/EzkCommon/v1" type="q38:IdPolozkaCiselnika">
+            <xs:annotation>
+              <xs:documentation>Zdravotnícka odbornosť z JRÚZ číselníka 1.3.158.00165387.100.10.34</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Adresa" type="tns:AdresaOsoby_v4">
+            <xs:annotation>
+              <xs:documentation>Adresa preferovaného zdravotníckeho pracovníka</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Telefon" >
+            <xs:annotation>
+              <xs:documentation>Telefónne preferovaného zdravotníckeho pracovníka</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" >
+            <xs:annotation>
+              <xs:documentation>Poznámka k záznamu</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Email" >
+            <xs:annotation>
+              <xs:documentation>Emailova adresa preferovaného zdravotníckeho pracovníka</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="4000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="IdPracovnika" xmlns:q39="CEN/13606/RM" type="q39:II">
+            <xs:annotation>
+              <xs:documentation>Identifikátor preferovaného zdravotníckeho pracovníka v JRÚZ registri 1.3.158.00165387.100.40.90</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="Kod" >
+            <xs:annotation>
+              <xs:documentation>Kód preferovaného zdravotníckeho pracovníka</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="UdajePZS" type="tns:UdajePZS">
+            <xs:annotation>
+              <xs:documentation>Údaje o PZS, v ktorom pôsobí preferovaný zdravotnícky pracovník</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="KontaktnyZaznamBase_v4" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EhrSystem" xmlns:q40="CEN/13606/RM" type="q40:II">
+        <xs:annotation>
+          <xs:documentation>Identifikátor IS PZS. Pri zápise je povinný.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="RcId" xmlns:q40="CEN/13606/RM" type="q40:II">
+        <xs:annotation>
+          <xs:documentation>Identifikátor záznamu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdZaznamu" nillable="true" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>Identifikátor kontaktného údaju v NZIS</xs:documentation>
+        </xs:annotation>
+      </xs:element>            
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumZaznamenania" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Dátum a čas zaznamenania kontaktného údaju v NZIS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Autor" xmlns:q41="CEN/13606/RM" type="q41:II">
+        <xs:annotation>
+          <xs:documentation>
+            Autor záznamu kontaktného údaju. 
+            Pri zápise sa neuvádza, systém Autora odvodí z identity aktora volania. 
+            V prípade zdravotníckeho pracovníka je tu vložený jeho JRÚZ identifikátor. 
+            V prípade občana je v extension reťazec Občan a v oid reťazec 1.3.158.00165387.100.40.100_E2
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LenNaCitanie" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Element sa pri zápise nevyužíva. 
+            Príznak, či je záznam určený len na čítanie alebo je možné ho upraviť cez službu ZapisPacientskehoSumaruKontaktneUdaje_v4, resp. zmazať cez službu ZrusKontaktneUdajePacientskehoSumaru_v4.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CeleMenoOsoby">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="KrstneMeno" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="Priezvisko" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AdresaOsoby_v4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Ulica" >
+        <xs:annotation>
+          <xs:documentation>Adresa osoby</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CisloPopisne" >
+        <xs:annotation>
+          <xs:documentation>Popisne cislo</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UzemnospravnaJednotka" xmlns:q42="http://eHealth.gov.sk/EzkCommon/v1" type="q42:IdPolozkaCiselnika">
+        <xs:annotation>
+          <xs:documentation>Položka z JRÚZ číselníka 1.3.158.00165387.100.10.43</xs:documentation>
+        </xs:annotation>        
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PSC" xmlns:q43="http://eHealth.gov.sk/EzkCommon/v1" type="q43:IdPolozkaCiselnika">
+        <xs:annotation>
+          <xs:documentation>Položka z JRÚZ číselníka 1.3.158.00165387.100.10.150</xs:documentation>
+        </xs:annotation>        
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Mesto" xmlns:q44="http://eHealth.gov.sk/EzkCommon/v1" type="q44:IdPolozkaCiselnika">
+        <xs:annotation>
+          <xs:documentation>Položka z JRÚZ číselníka 1.3.158.00165387.100.10.45</xs:documentation>
+        </xs:annotation>        
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Krajina" xmlns:q45="http://eHealth.gov.sk/EzkCommon/v1" type="q45:IdPolozkaCiselnika">
+        <xs:annotation>
+          <xs:documentation>Položka z JRÚZ číselníka 1.3.158.00165387.100.10.51</xs:documentation>
+        </xs:annotation>        
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UdajePZS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Nazov" >
+        <xs:annotation>
+          <xs:documentation>Názov poskytovateľa zdravotnej starostlivosti</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Kod" >
+        <xs:annotation>
+          <xs:documentation>Kód poskytovateľa zdravotnej starostlivosti</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DruhOdbornejCinnosti" xmlns:q28="http://eHealth.gov.sk/EzkCommon/v1" type="q28:IdPolozkaCiselnika">
+        <xs:annotation>
+          <xs:documentation>Položka z JRÚZ číselníka 1.3.158.00165387.100.10.39</xs:documentation>
+        </xs:annotation>        
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

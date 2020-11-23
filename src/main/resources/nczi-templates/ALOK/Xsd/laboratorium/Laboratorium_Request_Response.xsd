@@ -1,0 +1,1104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+  <xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://eHealth.gov.sk/Allocation/v1"
+	elementFormDefault="qualified"
+	>
+
+  <xs:include schemaLocation="../_shared/AlokacieIdentifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/Obecne.xsd" />
+  <xs:include schemaLocation="../_shared/ObecneAnon.xsd" />
+  <xs:include schemaLocation="../_shared/Anonymizacia_Request_Response.xsd" />
+  <xs:include schemaLocation="../_shared/EhrFields.xsd" />
+
+  <xs:include schemaLocation="../_shared/Identifikatory.xsd" />
+
+  <!-- Request -->
+  <xs:element name="LaboratornyVysledokIdentifikator" type="LaboratornyVysledokIdentifikator"/>
+  <xs:element name="LaboratornyVysledokIdentifikator_v2" type="LaboratornyVysledokIdentifikator_v2" />
+  <xs:element name="ZiadankaIdentifikator" type="ZiadankaIdentifikator"/>
+  <xs:element name="OstatneVysetrenieCriteria" type="OstatneVysetrenieCriteria" />
+  <xs:element name="LaboratornaZiadankaIdentifikator" type="LaboratornaZiadankaIdentifikator"/>
+  <xs:element name="LaboratorneVysetreniaCriteria" type="LaboratorneVysetreniaCriteria" />
+
+  <xs:element name="LaboratorneZiadankyLaboratoriaCriteria" type="LaboratorneZiadankyLaboratoriaCriteria"/>
+  <xs:element name="LaboratorneZiadankyPacientaCriteria" type="LaboratorneZiadankyPacientaCriteria"/>
+  <xs:element name="LaboratorneVysledkyCriteria" type="LaboratorneVysledkyCriteria"/>
+  <xs:element name="LaboratorneVysledkyCriteria_v2" type="LaboratorneVysledkyCriteria_v2" />
+  <xs:element name="LaboratornePolozkyPreZapis" type="LaboratornePolozkyPreZapis" />
+  <xs:element name="VyhladajLaboratoriaCriteria" type="VyhladajLaboratoriaCriteria"/>
+  <xs:element name="LaboratornaZiadankaStav" type="LaboratornaZiadankaStav" />
+  <xs:element name="ZoznamLaboratorneVysledky" type="ZoznamLaboratorneVysledky" />
+  <xs:element name="DajLaboratorneVysetreniePreZiadatela_Request" type="DajLaboratorneVysetreniePreZiadatela_Request"/>
+  <xs:element name="PrevezmiLaboratornuZiadanku_Response" type="xs:string" />
+  <xs:element name="ZapisLaboratornePolozkyLaboratoria_Response" type="xs:string" />
+  <xs:element name="ZrusLaboratornuZiadanku_Response" type="xs:string" />
+  <xs:element name="LaboratornyVysledokId" type="LaboratornyVysledokId"/>
+  <xs:element name="LaboratorneZiadankyZoznam" type="LaboratorneZiadankyZoznam" />
+  <xs:element name="LaboratornyVysledokIdentifikatory" type="LaboratornyVysledokIdentifikatory" />
+  <!-- Request end -->
+
+  <xs:complexType name="DajLaboratorneVysetreniePreZiadatela_Request">
+    <xs:sequence>
+      <xs:element name="InternyIdentifikatorVzorky" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IdentifikatorZiadanky" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9a-zA-Z]){21}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornyVysledokIdentifikator">
+    <xs:sequence>
+      <xs:element name="Vysledok" type="IdLaboratornyVysledok" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornyVysledokIdentifikator_v2">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Vysledok" type="IdLaboratornyVysledok" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Vzorka" type="IdLaboratornaVzorkaCriteria" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Ziadanka" type="IdLaboratornaZiadankaCriteria" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornyVysledokId">
+    <xs:sequence>
+      <xs:element name="Vysledok" type="IdLaboratornyVysledok" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ZiadankaIdentifikator">
+    <xs:sequence>
+      <xs:element name="Ziadanka" type="IdLaboratornaZiadanka" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornaZiadankaIdentifikator">
+    <xs:sequence>
+      <xs:element name="Ziadanka" type="IdLaboratornaZiadanka" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratorneZiadankyLaboratoriaCriteria">
+    <xs:sequence>
+      <xs:element name="DatumVytvoreniaZiadankyDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kontroluje sa dátum vytvorenia žiadanky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVytvoreniaZiadankyOd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kontroluje sa dátum vytvorenia žiadanky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExternyIdentifikatorVzorky" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Externý identifikátor vzorky, ktorý slúži na komunikáciu ambulancie a laboratória. </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9a-zA-Z])*" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IdentifikatorVzorky" type="IdLaboratornaVzorka" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor laboratórnej vzorky. Musí byť zabezpečená jeho jednoznačnosť v celom systéme NZIS. Mal by podporovať využitie systému čiarových kódov 2D/3D.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StavyZiadanky" type="StavZiadankyEnum" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StavZiadankyEnum">
+    <xs:annotation>
+      <xs:documentation>Zoznam možných stavov, v ktorých môže byť ukončené laboratórne vyšetrenie na základe žiadanky.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEPREVZATA">
+        <xs:annotation>
+          <xs:documentation>Ukončený</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PREVZATA">
+        <xs:annotation>
+          <xs:documentation>Prerušené spracovanie</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZRUSENA">
+        <xs:annotation>
+          <xs:documentation>Dočasný, neúplný výsledok.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="LaboratorneZiadankyPacientaCriteria">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StavZiadanky" type="StavZiadankyEnum" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="ExternyIdentifikatorVzorky" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IdentifikatorVzorky" type="IdLaboratornaVzorka" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratorneVysledkyCriteria">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu laboratorneho vysledku v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StavVysledku" type="StavVysledkuEnum" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="LaboratornaVzorka" type="IdLaboratornaVzorka" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LaboratornaPolozka" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornaZiadanka" type="IdLaboratornaZiadanka" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DatumOdberuVzorkyOd" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumOdberuVzorkyDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="TypVzorky" type="IdTypVzorky" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Triedenie_Metadata" type="Triedenie_LabVysetreniaPacienta" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--VyhladajLabVysetreniaPacienta_v2-->
+  <xs:complexType name="LaboratorneVysledkyCriteria_v2">
+    <xs:sequence>
+      <!--Maximálna požadovaná citlivosť záznamov. Default = 5-->
+      <xs:element name="Citlivost" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <!--Dátum a čas kompletizácie a vytvorenia laboratórneho výsledku. Ak nie je vyplnený, použije sa dátum zaradenia záznamu do EHR - time_commited-->
+      <xs:element name="DatumVysetreniaDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <!--Dátum a čas kompletizácie a vytvorenia laboratórneho výsledku. Ak nie je vyplnený, použije sa dátum zaradenia záznamu do EHR - time_commited-->
+      <xs:element name="DatumVysetreniaOd" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <!--Dátum zápisu do nzis (time_created)-->
+      <xs:element name="DatumZapisuDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <!--Dátum zápisu do nzis (time_created)-->
+      <xs:element name="DatumZapisuOd" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <!-- 
+      Identifikátor laboratórnej žiadanky.
+
+      Obsahuje identifikátor a typ identifikátora
+      Povolené sú nasledovné typy:
+      - PZS_EX - externý identifikátor generovaný poskytovateľom ZS
+      - LAB_EX - externý identifikátor generovaný laboratóriom
+      - INTERNAL - interný identifikátor OID: 1.3.158.00165387.100.60.20
+      -->
+      <xs:element name="LaboratornaZiadankaId" type="LaboratornaZiadankaIdTyp" minOccurs="0" maxOccurs="unbounded" />
+      <!--
+      Identifikátor realizovaného laboratórneho testu.
+      Laboratórny výsledok -> Výsledok testu -> Výsledok -> Realizovaný test
+      Môže nadobúdať nasledovné typy:
+      - LOINC kod podľa OID=2.16.840.1.113883.6.1
+      - LOINC_JRUZ
+      - LAB_KOD 
+      -->
+      <xs:element name="LaboratornyTestId" type="LaboratornyTestIdTyp" minOccurs="0" maxOccurs="unbounded" />
+      <!--Šifrovaný identifikátor pacienta-->
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <!--Stav laboratórneho výseldku.-->
+      <xs:element name="StavVysledku" type="StavVysledkuEnum" minOccurs="0" maxOccurs="unbounded" />
+      <!--
+      Príznak, či sa majú vyhľadávať vlastné záznamy alebo záznamy podľa definovaného prístupu CM. 
+      Ak je nastavený na TRUE - vyhľadávajú sa len vlastné záznamy
+      Ak je nastavený na FALSE - vyhľadávajú sa záznamy podľa consentu
+      Ak nie je uvedený, vyhľadávajú sa vlastné záznamy aj zaznamý podľa consentu
+      -->
+      <xs:element name="VlastneZaznamy" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StavVysledkuEnum">
+    <xs:annotation>
+      <xs:documentation>
+        Umožňuje zadefinovať v akom stave chcem vyhľadať požadovaný výsledok.
+        Je možné definovať žiadne, práve jedno alebo množinu stavov.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FINAL">
+        <xs:annotation>
+          <xs:documentation>
+            Ukončený
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CORRECTED">
+        <xs:annotation>
+          <xs:documentation>
+            Oprava výsledkov
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ABORTED">
+        <xs:annotation>
+          <xs:documentation>
+            Prerušené spracovanie
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERIM">
+        <xs:annotation>
+          <xs:documentation>
+            Dočasný, neúplný výsledok.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LaboratornyTestIdTypEnum">
+    <xs:annotation>
+      <xs:documentation>Zoznam povolených typov identifikátorov, ktoré môžu byť použité na identifikáciu laboratórneho testu.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOINC">
+        <xs:annotation>
+          <xs:documentation>kod podľa OID=2.16.840.1.113883.6.1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOINC_JRUZ">
+        <xs:annotation>
+          <xs:documentation>LOINC z JRUZ ("stary")</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAB_KOD">
+        <xs:annotation>
+          <xs:documentation>kod z laboratoria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LaboratornaZiadankaIdTypEnum">
+    <xs:annotation>
+      <xs:documentation>Zoznam povolených typov identifikátorov, ktoré môžu byť použité na identifikáciu laboratórnej žiadanky.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PZS_EX">
+        <xs:annotation>
+          <xs:documentation>externý identifikátor generovaný poskytovateľom ZS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAB_EX">
+        <xs:annotation>
+          <xs:documentation>externý identifikátor generovaný laboratóriom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERNAL">
+        <xs:annotation>
+          <xs:documentation>interný identifikátor OID: 1.3.158.00165387.100.60.20</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LaboratornyTestIdTyp">
+    <xs:sequence>
+      <xs:element name="Identifikator" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypIdentifikatora" type="LaboratornyTestIdTypEnum" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LaboratornaZiadankaIdTyp">
+    <xs:sequence>
+      <xs:element name="Identifikator" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypIdentifikatora" type="LaboratornaZiadankaIdTypEnum" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LaboratornaZiadankaStav">
+    <xs:sequence>
+      <xs:element name="StavZiadanky" type="StavZiadankyEnum" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="LaboratornaZiadankaId" type="LaboratornaZiadankaId"/>
+  <xs:complexType name="LaboratornaZiadankaId">
+    <xs:sequence>
+      <xs:element name="IdentifikatorVzorky" type="IdLaboratornaVzorka" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vygenerovaný identifikátor vzorky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Ziadanka" type="IdLaboratornaZiadanka" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratorneVysetreniaCriteria">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Poistovna" type="IdZP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník ZdravotnaPoistovna</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník PrijimatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ZoznamLaboratornychVysledkov" type="ZoznamLaboratornychVysledkov"/>
+  <xs:complexType name="ZoznamLaboratornychVysledkov">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Vysetrenia" type="LaboratorneVysledkyZakladneUdaje" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratorneVysledkyZakladneUdaje">
+    <xs:sequence>
+      <xs:element name="LaboratornyVysledokZakladneUdaje" type="LaboratornyVysledokZakladneUdaje" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="LaboratornyVysledokZakladneUdaje" type="LaboratornyVysledokZakladneUdaje"/>
+  <xs:complexType name="LaboratornyVysledokZakladneUdaje">
+    <xs:annotation>
+      <xs:documentation>Laboratorne vysledok so zoznamom poloziek bez uvedenia hodnoty</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumOdberu" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum a čas kompletizácie a vytvorenia laboratórneho výsledku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZaznamenanyLekarom" type="IdZdrPrac" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník ZdravotnickyPracovnik</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Ziadatel" type="PracovnikOdbornehoUtvaru" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Polozky" type="Polozka" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Polozka">
+    <xs:sequence>
+      <xs:element name="Polozka" type="LaboratornaPolozkaBezVysledku" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="LaboratornaPolozkaBezVysledku" type="LaboratornaPolozkaBezVysledku"/>
+  <xs:complexType name="LaboratornaPolozkaBezVysledku">
+    <xs:annotation>
+      <xs:documentation>Laboratorne vysledok so zoznamom poloziek bez uvedenia hodnoty</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PozadovanyZiadatelom" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či test bol požadovaný žiadateľom, alebo bol navyše indikovaný laboratóriom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornaPolozka" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornePolozkyPreZapis">
+    <xs:sequence>
+      <xs:element name="LaboratornePolozky" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PlatnostOd" type="xs:dateTime" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="PlatnostDo" type="xs:dateTime" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odborný útvar poskytovateľa ZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VyhladajLaboratoriaCriteria">
+    <xs:sequence>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov laboratória</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PozadovaneLabPol" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Poistovna" type="IdZP" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník ZdravotnaPoistovna</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Region" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník Region</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="County" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník Country</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Municipality" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník Municipality</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odborný útvar poskytovateľa ZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="VyhladajLaboratoriaZoznam" type="VyhladajLaboratoriaZoznam"/>
+  <xs:complexType name="VyhladajLaboratoriaZoznam">
+    <xs:sequence>
+      <xs:element name="Laboratoria" type="VyhladaneLaboratorium" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladaneLaboratorium" type="VyhladaneLaboratorium"/>
+  <xs:complexType name="VyhladaneLaboratorium">
+    <xs:sequence>
+      <xs:element name="ZmluvneZdravotnePoistovne" type="IdZP" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník ZdravotnaPoistovna</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laboratorium" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornePolozky" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OstatneVysetrenieCriteria">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník PrijimatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornePolozky" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Odkaz na číselník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="DatumVysetreniaZoznam" type="DatumVysetreniaZoznam"/>
+  <xs:complexType name="DatumVysetreniaZoznam">
+    <xs:sequence>
+      <xs:element name="Zoznam" type="DatumOstatnehoVysetrenia" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="DatumOstatnehoVysetrenia" type="DatumOstatnehoVysetrenia"/>
+  <xs:complexType name="DatumOstatnehoVysetrenia">
+    <xs:sequence>
+      <xs:element name="DatumOdberu" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum ostatného objednania vyšetrenia - vyplnený len ak bolo objednané a ešte nebol výsledok uvoľnený, resp. nebola ukončená platnosť žiadanky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumUvolneniaVysledku" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum a čas, kedy bola položka naposledy uvoľnená laboratóriom. Ak ešte nebola položka testovaná je toto pole nevyplnené, je nevyplnené aj v prípade, že výsledok testu danej položky už bol vykonaný ale ešte nebol uvoľnený laboratóriom.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornaPolozka" type="IdPolozkaCiselnika" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník LaboratornaPolozka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratorneZiadankyZoznam">
+    <xs:sequence>
+      <xs:element name="LaboratornaZiadanka" type="LaboratornaZiadanka" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Laboratorna ziadanka laboratoria</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikacneUdajePacientov" type="xs:base64Binary" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornaZiadanka">
+    <xs:sequence>
+      <xs:element name="StavZiadanky" type="StavZiadankyEnum" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Stav laboratórnej žiadanky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnujuceUdaje" type="xs:string" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Doplňujúca informácia pre laboratórium ohľadom laboratórnej žiadanky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Laboratorium" type="AIILaboratorium" minOccurs="1" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Laboratórium , kde požadujem vykonať vyšetrenie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypPlatcuZaLaboratornyVykon" type="CV" minOccurs="1" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>V rámci informácie o tom, kto uhrádza laboratórny výkon, môže pre laboratórium lekár uviesť, z akého zdroja bude výkon uhrádzaný.
+Na výber budú v prvej etape tieto atribúty:
+- Poisťovňa. Úhradu realizuje poisťovňa pacienta
+- Poskytovateľ. Úhradu realizuje poskytovateľ zdravotnej starostlivosti</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PozadovaneTesty" type="CV" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="IdReferencneZiadanky" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="SpristupnenieVysledku" type="xs:boolean" minOccurs="1" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Príznak, či výsledok vyšetrenia môže byť pacientovi prístupný</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UrgentnostVysetrenia" type="CV" minOccurs="1" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Číselník, ktorý obsahuje: Bežné, prednostné, urgentné. 
+Odkaz na čiselník UrgentnostVysetrenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LaboratornaVzorka" type="LaboratornaVzorka" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Laboratórna vzorka určená pre laboratórne vyšetrenie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Diagnoza" type="Diagnoza" minOccurs="0" maxOccurs="unbounded" >
+      	<xs:annotation>
+          <xs:documentation>Diagnóza pacienta, ktorú je možné  definovať výberom z číselníka MKCH10 alebo popísať voľným textom. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>ehr_system - Identifikácia systému PZS, v ktorom bol EHR Extract vytvorený. Max 50 znakov. Kód  tvorcovi IS PZS vydáva prevádzkovateľ riešenia po prijatí žiadosti tvorcu IS PZS na overenie zhody. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EhrID" type="AIIEhrID" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>ehr_id - The identity of the EHR from which this EHR Extract has been
+created. It must be unique for that EHR Provider system for this
+subjectofcare.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EhrTimeCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>time_created - Dátum a čas, kedy bol vytvorený EHR Extract.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EhrRmID" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>rm_id - Položka bude obsahovať reťazec "EN13606". Ide o identifikáciu a verziu referenčného modelu, podľa ktorého je EHR Extract vytvorený.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComCommitter" type="AIIComCommitter" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>committal.committer - Používateľ zodpovedný za uloženie záznamu do EHR príjemcu zdravotnej starostlivosti.  Je požadované, aby Composer a Committer bol vždy ten istý pracovník. Položka je povinná ak má COMPOSITION položku synthesised = FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComTimeCommitted" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>committal.time_committed - Dátum a čas, kedy bol záznam uložený do ehr_system a stal sa súčasťou EHR. Položka je povinná ak má COMPOSITION položku synthesised = FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecRcID" type="AIIRecRcID" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>rc_id - Globálny jednoznačný identifikátor, ktorým je uzol v hierarchii EHR identifikovaný v systéme, ktorý vykonal prvý zápis údajov. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecSynthesised" type="xs:boolean" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>synthesised - V prípade že sa jedná o syntetizovaný uzol (nie je definované archetypom) hodnota je "TRUE", a v prípade, že je uzol definovaný archetypom, tak hodnota je "FALSE".</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecArchetype_ID" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>archetype_id - Jedinečný identifikátor uzla archetypu, ktorému component zodpovedá (Referencia na ADL archetypu). V prípade, že sa jedná o koreňový uzol, je uvedený názov napríklad „CEN-EN13606-ENTRY.Neziaduca_reakcia.v1“.  V prípade iného uzla je uvedený názov archetypu a identifikátor uzla spojený znakom „/“ napr. CEN-EN13606-ENTRY.Neziaduca_reakcia.v1/at0029</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecName_OT" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>name - Názov uvádzať ako obyčajný text (je umožnené ho uvádzať aj ako kódovanú hodnotu) a obsahuje klinický koncept, ktorý zodpovedá zaslanému EHR a preberá hodnotu popisu položky z archetypu. Napríklad "Diagnóza", "Alergén" a pod.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EntUncertainlyExpressed" type="xs:boolean" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+          <xs:documentation>uncertainty_expressed - Položka je povinná a definovaná iba pre Type = "ENTRY" a je vždy nastavená na "FALSE". Ak by bola nastavená na "TRUE", špecifikuje, že tento atribút obsahuje údaje, ktoré majú určitý stupeň neistoty a je potrebné byť opatrný pri automatizovanom spracovaní údajov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComHealthcareFacility" type="AIIComHealthcareFacility" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>composer.healthcare_facillity – Identifikácia OU PZS kde bol záznam vytvorený. Položka je povinná ak má COMPOSITION položku synthesised = FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComPerformer" type="AIIComPerformer" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>composer.performer - Identifikácia zdravotníckeho pracovníka, ktorý záznam v pôvodnom systéme vytvoril. Položka je povinná ak má COMPOSITION položku synthesised = FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>subject_of_care - Unikátny identifikátor príjmateľa zdravotnej starostlivosti, z ktorého bol EHR Extract vytvorený a je definovaný systémom PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Sensitivity" type="xs:int" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>sensitivity – Položka udáva citlivosť údajov uvedených v kompozícii. Povolené hodnoty sú od „1“ po „5“, pričom najnižšia citlivosť je „1“ a najvyššia citlivosť je „5“. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComFunction" type="CV" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikácia zdravotníckej odbornosti zdravotníckeho pracovníka, ktorý záznam v pôvodnom systéme vytvoril podľa číselníka Zdravotníckych odborností OID 1.3.158.00165387.100.10.34. Položka je povinná ak má COMPOSITION položku synthesised = FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIIdentifikatorZiadanky">
+    <xs:sequence>
+      <xs:element name="IdentifikatorZiadanky_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikatorZiadanky_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIILiek">
+    <xs:sequence>
+      <xs:element name="Liek_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Liek_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LaboratornaVzorka">
+    <xs:sequence>
+      <xs:element name="AnatomickeMiestoOdberu" type="ACV" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Anatomické miesto, odkiaľ je vzorka odobratá.
+Číselník obsahujúci zoznam anatomických pojmov pre potreby identifikácie konkrétneho anatomického miesta.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOdberu" type="xs:dateTime" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Dátum a čas, kedy bol vykonaný odber </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumPrijatia" type="xs:dateTime" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Dátum a čas prijatia laboratórnej vzorky do laboratória</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExternyIdentifikator" type="xs:string" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Externý identifikátor vzorky, ktorý slúži na komunikáciu ambulancie a laboratória </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Identifikator" type="xs:string" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>ID vzorky
+Identifikátor laboratórnej vzorky. Musí byť zabezpečená jeho jednoznačnosť v celom systéme NZIS. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MnozstvoOdobratejVzorky" type="Mnozstvo" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+          <xs:documentation>Množstvo odobratej vzorky pre účel laboratórneho vyšetrenia</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OkolnostiOdberu" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+          <xs:documentation>Všetky podmienky, ktoré musia byť splnené pred odberom vzorky napr. plný močový mechúr, nalačno alebo špeciálne pokyny pre zaobchádzanie alebo okamžité spracovanie vzorky. Môže byť tiež použitý pre dokumentáciu všetkých známych odchýlok spracovania napr. pacient nebol nalačno.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+          <xs:documentation>Poznámka k vzorke</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Riziko" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+          <xs:documentation>Potenciálne riziko alebo biohazard spojený so zberom a spracovaním vzorky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikaciaOUPZS" type="AIIIdentifikaciaOUPZS" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Pracovník odoberajúci vzorku - Identifikácia OÚ PZS
+Identifikácia odborného útvaru poskytovateľa zdravotnej starostlivosti z JRÚZ, do ktorého zdravotnícky pracovník patrí.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikaciaZPrac" type="AIIIdentifikaciaZPrac" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Pracovník odoberajúci vzorku - Identifikácia ZPrac
+Identifikácia zdravotníckeho pracovníka v JRÚZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NezmluvnyLekar" type="xs:boolean" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+      		<xs:documentation>Pracovník odoberajúci vzorku - Nezmluvný lekár
+Doplňujúci atribút, ktorý sa použije na prenos informácie, že daný zdravotnícky pracovník - lekár, nemal pri svojom úkone zmluvný vzťah k poisťovni pacienta a teda, že tento úkon si bude hradiť pacient. Použije sa napríklad pri predpisovaní liekov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecializaciaLekara" type="ACV" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Pracovník odoberajúci vzorku - Špecializácia lekára
+Šprecializácia tohto lekára, pod ktoru prebehla operácia, ktorú daný lekár vykonával.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SposobOdberu" type="ACV" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Popis, ako bola vzorka odobratá. Napr. Venózny odber, biopsia. resekcia ...
+Odkaz na čísleník SposobOdberuVzorky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Transport" type="xs:string" minOccurs="0" maxOccurs="1">
+      	<xs:annotation>
+          <xs:documentation>Požiadavky na konzervačné látky alebo dopravný prostriedok pre manipuláciu so vzorkou.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransportnyObal" type="ACV" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Číselník typov transportných obalov pre transport vzorky do laboratória.
+Odkaz na číslenik TransportnyObal</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypVzorky" type="ACV" minOccurs="0" maxOccurs="1" >
+      	<xs:annotation>
+      		<xs:documentation>Čiselníková hodnota typu vzorky.
+Číselník definuje typ vzorky pre laboratórne vyšetrenie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KlinickeUdajePacienta" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+          <xs:documentation>Klinické údaje pacienta evidované pri odbere vzorky na laboratórne vyšetrenie.</xs:documentation>
+        </xs:annotation>
+                <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Diureza" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                            	<xs:documentation>Diuréza
+Hodnota diurézy zistená pri odbere vzorky</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CasovaHodnota" type="Mnozstvo" minOccurs="0" maxOccurs="1" >
+                  	<xs:annotation>
+                      <xs:documentation>Časový úsek
+Obdobie, počas ktorého sa vykonal odber vzorky pre diurézu.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Mnozstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1" >
+                  	<xs:annotation>
+                      <xs:documentation>Hodnota diurézy</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="FazaMenstruacnehoCyklu" type="ACV" minOccurs="0" maxOccurs="1" >
+            	<xs:annotation>
+                <xs:documentation>Fáza menštruačného cyklu</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="HmotnostPacienta" type="Mnozstvo" minOccurs="0" maxOccurs="1" >
+            	<xs:annotation>
+                <xs:documentation>Hmotnosť pacienta zistená pri odbere vzorky</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1">
+            	<xs:annotation>
+                <xs:documentation>Doplňujúca informácia ku klinickým údajom pacienta. </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="TyzdenGravidity" type="xs:int" minOccurs="0" maxOccurs="1">
+            	<xs:annotation>
+                <xs:documentation>Týždeň tehotenstva zistený pri odbere vzorky</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="VyskaPacienta" type="Mnozstvo" minOccurs="0" maxOccurs="1" >
+            	<xs:annotation>
+                <xs:documentation>Výška pacienta v súčasnosti</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Medikacia" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                            	<xs:documentation>Informácia o medikácii pacienta.
+Môže byť tvorená slovným popisom, prípadne doplnená odkazom na užívaný liek s informáciou o dávkovaní daného lieku.</xs:documentation>
+              </xs:annotation>
+                            <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1" >
+                  	<xs:annotation>
+                      <xs:documentation>Doplňujúca informácia k aktívnej medikácii pacienta</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="UzivaneLieky" minOccurs="0" maxOccurs="1">
+                                        <xs:annotation>
+                      <xs:documentation>Informácia o užívaných liekoch pacienta. Je tvorená odkazom na užívaný liek, prípadne textovým popisom alebo dávkovacou schémou </xs:documentation>
+                    </xs:annotation>
+                                        <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="UzivanyLiek" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Liek" type="AIILiek" minOccurs="1" maxOccurs="1" >
+                              	<xs:annotation>
+                                  <xs:documentation>Identifikátor lieku, dietetickej potraviny alebo IPL.</xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="PoznamkaKUzivanemuLieku" type="xs:string" minOccurs="0" maxOccurs="unbounded" >
+                              	<xs:annotation>
+                                  <xs:documentation>Poznámka k užívanému lieku alebo jeho dávkovaniu.</xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="DavkovaciaSchema" minOccurs="0" maxOccurs="1">
+                                                                <xs:annotation>
+                                  <xs:documentation>Dávkovacia schéma určuje dávkovanie uvedeného lieku v čase odberu vzorky</xs:documentation>
+                                </xs:annotation>
+                                                                <xs:complexType>
+                                  <xs:sequence>
+                                    <xs:element name="AdManusMedici" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="CasyDavkovania" minOccurs="0" maxOccurs="1">
+                                      <xs:complexType>
+                                        <xs:sequence>
+                                          <xs:element name="CasDavkovania" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                              <xs:sequence>
+                                                <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1" />
+                                                <xs:element name="TypCasovehoUdaju" minOccurs="1" maxOccurs="1">
+                                                  <xs:complexType>
+                                                    <xs:sequence>
+                                                      <xs:element name="CasPresne" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+                                                      <xs:element name="CasPriblizne" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                                      <xs:element name="CasUdalost" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                                    </xs:sequence>
+                                                  </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="VelkostDavkyOd" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                                                <xs:element name="VelkostDavkyDo" type="Mnozstvo" minOccurs="1" maxOccurs="1" />
+                                              </xs:sequence>
+                                            </xs:complexType>
+                                          </xs:element>
+                                        </xs:sequence>
+                                      </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="CasovyRozostupDavok" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="DavkaMnozstvaDo" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="DavkaMnozstvaOd" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="DlzkaUzitia" type="Mnozstvo" minOccurs="0" maxOccurs="1"/>
+                                    <xs:element name="DlzkaUzivania" type="xs:int" minOccurs="1" maxOccurs="1" />
+                                    <xs:element name="DoplnokDavkovania" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="ObdobieDavkovania" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="PocetOpakovaniDavky" type="xs:int" minOccurs="0" maxOccurs="1" />
+                                    <xs:element name="Popis" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                    <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1" />
+                                    <xs:element name="TypDavkovania" type="xs:string" minOccurs="1" maxOccurs="1" />
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VysledokTestu">
+    <xs:sequence>
+      <xs:element name="DatumUvolneniaVysledku" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Interpretacia" type="ACV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="KritickaHodnota" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LaboratornaPolozka" type="ACV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PozadovanyZiadatelom" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="VysledokPopisny" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Vysledok" type="xs:string" minOccurs="1" maxOccurs="1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VysledokKvantitativny" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Vysledok" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ReferencneHodnoty" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ReferencnaHodnota" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="RefHodnota" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Hranica" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="Pripad" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VysledokMikrobiologicky" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="CitlivostiATB" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CitlivostATB" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ATB" type="ACV" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="Citlivost" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="Interpretacia" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="Poznamka" type="xs:string" minOccurs="0" maxOccurs="1" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Mikroorganizmus" type="ACV" minOccurs="1" maxOccurs="1" />
+            <xs:element name="PocetOrganizmov" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PocetMikroorganizmovKvantitativny" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+                  <xs:element name="PocetMikroorganizmovSemiKvantitativny" type="xs:string" minOccurs="0" maxOccurs="1" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="SposobKultivacie" type="ACV" minOccurs="0" maxOccurs="1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ZoznamLaboratorneVysledky">
+    <xs:sequence>
+      <xs:element name="LaboratornyVysledok" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DatumKompletizacie" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IdentifikatorZiadanky" type="AIIIdentifikatorZiadanky" minOccurs="0" maxOccurs="1" />
+            <xs:element name="NazovVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="StavVysledku" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ZaverecnaSprava" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="0" maxOccurs="1" />
+            <xs:element name="EhrID" type="AIIEhrID" minOccurs="0" maxOccurs="1" />
+            <xs:element name="EhrTimeCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EhrRmID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ComCommitter" type="AIIComCommitter" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ComTimeCommitted" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RecRcID" type="AIIRecRcID" minOccurs="0" maxOccurs="1" />
+            <xs:element name="RecSynthesised" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RecArchetype_ID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RecName_OT" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EntUncertainlyExpressed" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ComHealthcareFacility" type="AIIComHealthcareFacility" minOccurs="0" maxOccurs="1" />
+            <xs:element name="ComPerformer" type="AIIComPerformer" minOccurs="0" maxOccurs="1" />
+            <xs:element name="LaboratornaVzorka" type="LaboratornaVzorka" minOccurs="1" maxOccurs="1" />
+            <xs:element name="VysledkyTestu" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VysledokTestu" type="VysledokTestu" minOccurs="1" maxOccurs="unbounded" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ZiadatelOVysetrenie" type="PracovnikOdbornehoUtvaru" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Sensitivity" type="xs:int" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Diagnozy" type="Diagnozy" minOccurs="0" maxOccurs="1" />
+            <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ID zaznamu laboratorneho vysledku v databazi</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="CelkovyPocetZaznamov" default="0" />
+  </xs:complexType>
+
+  <xs:complexType name="AIILaboratorium">
+    <xs:sequence>
+      <xs:element name="Laboratorium_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Laboratorium_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PozadovaneTesty">
+    <xs:sequence>
+      <xs:element name="PozadovanyTest" type="ACV" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AIIReferencnaZiadanka">
+    <xs:sequence>
+      <xs:element name="ReferencnaZiadanka_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ReferencnaZiadanka_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Diagnozy">
+    <xs:sequence>
+      <xs:element name="Diagnoza" type="Diagnoza" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LaboratornyVysledokIdentifikatory">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Vysledok" type="IdLaboratornyVysledok" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

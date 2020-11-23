@@ -1,0 +1,480 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Davkovacia_schema.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Schéma umožňuje zachytiť plán dávkovania predpísaného liečebného prostriedku.">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Davkovacia schema
+        parts existence matches {0..1} cardinality matches {5..*; unordered} matches {
+            ELEMENT[at0005] occurrences matches {1..1} matches {  -- Popis
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0006] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                    }
+                }
+            }
+            ELEMENT[at0007] occurrences matches {1..1} matches {  -- Typ dávkovania
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0004] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {1..1} matches {"CasovyRozstup","Intervaly","JednorazovePodanie","PodlaPotreby","PrestavkaVDavkovani"}
+                    }
+                }
+            }
+            ELEMENT[at0009] occurrences matches {1..1} matches {  -- Ad Manus Medici
+                value existence matches {1..1} matches {
+                    BL[at0010] occurrences matches {1..1} matches {  -- BL
+                        value existence matches {1..1} matches {true, false; false}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- Počet opakovaní dávky
+                value existence matches {1..1} matches {
+                    INT[at0033] occurrences matches {1..1} matches {  -- INT
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            CLUSTER[at0017] occurrences matches {0..*} matches {  -- Čas dávkovania
+                parts existence matches {0..1} cardinality matches {3..4; unordered} matches {
+                    ELEMENT[at0015] occurrences matches {1..1} matches {  -- Poradie
+                        value existence matches {1..1} matches {
+                            INT[at0018] occurrences matches {1..1} matches {  -- INT
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    CLUSTER[at0046] occurrences matches {1..1} matches {  -- Typ časového údaju
+                        parts existence matches {0..1} cardinality matches {1..1; unordered; unique} matches {
+                            ELEMENT[at0057] occurrences matches {0..1} matches {  -- Čas presne
+                                value existence matches {1..1} matches {
+                                    TS[at0064] occurrences matches {1..1} matches {  -- TS
+                                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0066] occurrences matches {0..1} matches {  -- Čas približne
+                                value existence matches {1..1} matches {
+                                    SIMPLE_TEXT[at0068] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0070] occurrences matches {0..1} matches {  -- Čas udalosť
+                                value existence matches {1..1} matches {
+                                    SIMPLE_TEXT[at0072] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                                    }
+                                }
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0022] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0077] occurrences matches {0..1} matches {  -- Veľkosť dávky od
+                        value existence matches {1..1} matches {
+                            PQ[at0002] occurrences matches {1..1} matches {  -- PQ
+                                units existence matches {1..1} matches {
+                                    CS[at0031] occurrences matches {1..1} matches {  -- Dĺžka užitia
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingScheme existence matches {0..1} matches {
+                                            OID[at0032] occurrences matches {0..1} matches {  -- 
+                                                oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                            }
+                                        }
+                                        codingSchemeVersion existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                    ELEMENT[at0001] occurrences matches {1..1} matches {  -- Veľkosť dávky do
+                        value existence matches {1..1} matches {
+                            PQ[at0008] occurrences matches {1..1} matches {  -- PQ
+                                units existence matches {1..1} matches {
+                                    CS[at0030] occurrences matches {1..1} matches {  -- Obdobie dávkovania
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingScheme existence matches {0..1} matches {
+                                            OID[at0034] occurrences matches {0..1} matches {  -- 
+                                                oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                            }
+                                        }
+                                        codingSchemeVersion existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                                value existence matches {1..1} matches {*}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0081] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {0..1} matches {  -- Doplnok dávkovania
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0023] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                    }
+                }
+            }
+            ELEMENT[at0054] occurrences matches {0..1} matches {  -- Dávka množstva od
+                value existence matches {1..1} matches {
+                    PQ[at0055] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0014] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingScheme existence matches {0..1} matches {
+                                    OID[at0027] occurrences matches {0..1} matches {  -- Dávka množstva od
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0058] occurrences matches {0..1} matches {  -- Dávka množstva do
+                value existence matches {1..1} matches {
+                    PQ[at0059] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0024] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingScheme existence matches {0..1} matches {
+                                    OID[at0028] occurrences matches {0..1} matches {  -- Dávka množstva do
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0062] occurrences matches {0..1} matches {  -- Časový rozostup dávok
+                value existence matches {1..1} matches {
+                    PQ[at0063] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0026] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingScheme existence matches {0..1} matches {
+                                    OID[at0029] occurrences matches {0..1} matches {  -- Časový rozostup dávok
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0012] occurrences matches {0..1} matches {  -- Obdobie dávkovania
+                value existence matches {1..1} matches {
+                    PQ[at0025] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0016] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingScheme existence matches {0..1} matches {
+                                    OID[at0021] occurrences matches {0..1} matches {  -- 
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {0..1} matches {*}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0036] occurrences matches {1..1} matches {  -- Dĺžka užívania
+                value existence matches {1..1} matches {
+                    INT[at0037] occurrences matches {1..1} matches {  -- INT
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0048] occurrences matches {1..1} matches {  -- Poradie
+                value existence matches {1..1} matches {
+                    INT[at0075] occurrences matches {1..1} matches {  -- INT
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0065] occurrences matches {0..1} matches {  -- Dĺžka užitia
+                value existence matches {1..1} matches {
+                    PQ[at0069] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0020] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {/.*/}
+                                codingScheme existence matches {0..1} matches {
+                                    OID[at0019] occurrences matches {0..1} matches {  -- 
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeVersion existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        value existence matches {1..1} matches {*}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0003] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Davkovacia schema">
+                    description = <"Dávkovacia schéma určuje dávkovanie v určitom čase. Ak lekár predpíše rovnaké dávkovanie počas užívania lieku, tak na určenie dávkovania stačí jedna schéma. Ak napríklad na začiatku užívania má pacient brať zvýšenú dávku a po troch dňoch prejsť na slabšiu dávku, tak schémy sú dve, odlíšené dátumovými platnosťami.
+
+Rozlišujeme tieto dávkovania:
+
+Podľa potreby
+Dávkovanie nie je presné.
+
+Jednorazovo
+Liek je podaný jednorazovo, stačí zaznamenať čas a množstvo
+
+Každých X hodín - zadaný časový odstup
+Liek je podávaný v pravidelných časových rozstupoch. Definujeme dĺžku rozstupu a množstvo liekov.
+
+X krát denne - zadaný počet opakovaní
+Liek je podaný niekoľkokrát za časové obdobie. Zadáme počet dĺžku časového obdobia (deň, týždeň, ...) počet opakovaní. Ak chceme môžeme zadať aj spresnenie času a množstva. Ak beriem liek každých 8 hodín, tak prirodzené je zadať ho pomocou časového odstupu (každých 8 hodín). Môžeme ho zadať aj počtom opakovaní - 3 krát denne s spresnením času (7:00 - 15:00 - 23:00).">
+                >
+                ["at0002"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0004"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0005"] = <
+                    text = <"Popis">
+                    description = <"Neštruktúrovaná textová reprezentácia dávkovania. V prípade, že lekár zadáva dávkovanie v štruktúrovanej forme,  predpokladá sa, že jeho IS tento atribút vygeneruje podľa štruktúrovanej formy.">
+                >
+                ["at0006"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0007"] = <
+                    text = <"Typ dávkovania">
+                    description = <"Určuje jeden z typov dávkovania:
+PodlaPotreby - Nie je presne dané, kedy pacient užíva lieky. Ako nepovinná informácia sa zaznamenáva, koľko má užiť. Príkladom takéhoto dávkovania je, užívajte ibalgin pri bolestiach 1-2 tbl. Nie je povedané koľko krát denne, ako dlho ... .
+Jednorazovo - Liek je podaný jednorazovo, stačí zaznamenať čas a množstvo.
+CasovyRozostup - Liek je podávaný v pravidelných časových rozostupoch. Definujeme dĺžku rozostupu a množstvo liekov.
+Intervaly - Liek je podaný niekoľkokrát za časové obdobie. Zadáme počet dĺžku časového obdobia (deň, týždeň, ...) počet opakovaní. Ak chceme môžeme zadať aj upresnenie času a množstva.
+PrestavkaVDavkovani - Slúži na zachytenie prestávky medzi dvoma dávkovaniami. Dôležitá je zadaná dĺžka trvania prestávky v dávkovaní v dňoch (DavkovaciaSchema.DlzkaUzivania).">
+                >
+                ["at0009"] = <
+                    text = <"Ad Manus Medici">
+                    description = <"Príznak, že liek má byť vydaný pacientovi a podať ho má priamo lekár. Môže byť kladné, iba ak Typ dávkovania je Jednorazovo.">
+                >
+                ["at0010"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0011"] = <
+                    text = <"Počet opakovaní dávky">
+                    description = <"Používa sa iba ak je Typ dávkovania má hodnotu Intervaly. Určuje počet opakovaní za časovú jednotku. Napríklad ak sa má užívať 3x denne, tak tu bude zachytená hodnota 3.">
+                >
+                ["at0012"] = <
+                    text = <"Obdobie dávkovania">
+                    description = <"Používa sa ak Typ dávkovania má hodnotu Intervaly na zachytenie obdobia. Pri dávkovaní 3x za deň slúži na zachytenie hodnoty 1 deň. V množstve je teda potrebné použiť časovú jednotku.">
+                >
+                ["at0013"] = <
+                    text = <"Doplnok dávkovania">
+                    description = <"Voľné doplňujúce informácie k dávkovaniu.">
+                >
+                ["at0015"] = <
+                    text = <"Poradie">
+                    description = <"Poradie danej dávky.">
+                >
+                ["at0017"] = <
+                    text = <"Čas dávkovania">
+                    description = <"Detailizuje čas a veľkosť dávky v prípade dávkovania typu Intervaly. Ak má Typ dávkovania hodnotu Interval, tak zadanie týchto údajov je povinné. Zároveň celá kolekcia musí byť použitá toľko krát, akú hodnotu má Počet opakovaní dávky.">
+                >
+                ["at0018"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0023"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0025"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0027"] = <
+                    text = <"Dávka množstva od">
+                    description = <"Používa sa iba na zadanie rozsahu dávkovania, napríklad 1 až 2 tablety. Tu sa určí práve hodnota 1. Ak je predpísané presné množstvo, tak sa nepoužíva. Presná hodnota bude zachytená v davkovanieMnozstvoDo.">
+                >
+                ["at0028"] = <
+                    text = <"Dávka množstva do">
+                    description = <"Používa sa na zachytenie presného množstva dávky, a aj na zachytenie rozsahu dávky. Pri presnej dávke (1 tableta) sa použije na zachytenie tejto hodnoty. Pri rozsahu (1 až 2 tablety) sa použije na zachytenie hodnoty 2 tablety.">
+                >
+                ["at0029"] = <
+                    text = <"Časový rozostup dávok">
+                    description = <"Používa sa, a je povinné, ak je typDavkovania = 3. Určuje časový rozostup medzi dávkami. V kolekcii množstvo teda musí byť použitá časová jednotka.">
+                >
+                ["at0030"] = <
+                    text = <"Obdobie dávkovania">
+                    description = <"Používa sa ak typDavkovania = 4 na zachytenie obdobia. Pri dávkovaní 3x za deň slúži na zachytenie hodnoty 1 deň. V kolekcii množstvo je teda potrebné použiť časovú jednotku.">
+                >
+                ["at0031"] = <
+                    text = <"Dĺžka užitia">
+                    description = <"Vo väčšine prípadov bude 0. V niektorých prípadoch ale predstavuje čas, ktorý vyžaduje aplikácia lieku. Napríklad:
+infúzia tečie nejaký čas
+po inekcie treba pol hodinu počkať
+po nakvapkaní do očí treba mať 5 minút zavreté oči
+zábal na hodinu
+
+Túto informáciu bude v budúcnosti možné využiť na podrobné plánovanie podávania liekov.">
+                >
+                ["at0033"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0036"] = <
+                    text = <"Dĺžka užívania">
+                    description = <"Počet dní počas ktorých sa má užívať. Ak napr. lekár predpíše liek obsahujúci 20 tbl, užívanie 1-0-1 tak by to vydržalo 10 dní, ale chce aby bral iba týždeň. V takom prípade do tohto atribútu nastaví 7.">
+                >
+                ["at0037"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0046"] = <
+                    text = <"Typ časového údaju">
+                    description = <"Určuje, či časový údaj je presne stanovený čas, približný čas alebo špecifikácia nejakej časovej udalosti.">
+                >
+                ["at0048"] = <
+                    text = <"Poradie">
+                    description = <"V prípade, že je zadaných viacero dávkovacích schém, tak na seba nadväzujú (v definovanom poradí) a každá z nich má uvedenú dĺžku užívania. Vďaka kombinácii atribútov poradie a dĺžka užívania je možné evidovať rôzne dávkovanie v čase.">
+                >
+                ["at0054"] = <
+                    text = <"Dávka množstva od">
+                    description = <"Používa sa iba na zadanie rozsahu dávkovania, napríklad 1 až 2 tablety. Tu sa určí práve hodnota 1. Ak je predpísané presné množstvo, tak sa nepoužíva. Presná hodnota bude zachytená v Dávka množstva do.">
+                >
+                ["at0055"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0057"] = <
+                    text = <"Čas presne">
+                    description = <"Používa sa na určenie presného času užitia dávky, napr. 12:00.">
+                >
+                ["at0058"] = <
+                    text = <"Dávka množstva do">
+                    description = <"Používa sa na zachytenie presného množstva dávky, a aj na zachytenie rozsahu dávky. Pri presnej dávke (1 tableta) sa použije na zachytenie tejto hodnoty. Pri rozsahu (1 až 2 tablety) sa použije na zachytenie hodnoty 2 tablety.">
+                >
+                ["at0059"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0062"] = <
+                    text = <"Časový rozostup dávok">
+                    description = <"Používa sa, a je povinné, ak typ dávkovania je časový rozostup. Určuje časový rozstup medzi dávkami. V jednotke množstva teda musí byť použitá časová jednotka.">
+                >
+                ["at0063"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0064"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0065"] = <
+                    text = <"Dĺžka užitia">
+                    description = <"Vo väčšine prípadov sa nepoužije. V niektorých prípadoch ale predstavuje čas, ktorý vyžaduje aplikácia lieku. Napríklad: infúzia tečie nejaký čas, po injekcii treba pol hodinu počkať, po nakvapkaní do očí treba mať 5 minút zavreté oči, zábal na hodinu. Túto informáciu bude v budúcnosti možné využiť na podrobné plánovanie podávania liekov.">
+                >
+                ["at0066"] = <
+                    text = <"Čas približne">
+                    description = <"Používa sa na určenie presného času užitia dávky, napr. ráno, na obed, večer.">
+                >
+                ["at0068"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0069"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0070"] = <
+                    text = <"Čas udalosť">
+                    description = <"Používa sa na určenie presného času užitia dávky, napr. pred večerou, po raňajkách, pred spaním.">
+                >
+                ["at0072"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0075"] = <
+                    text = <"INT">
+                    description = <"This is a INT object">
+                >
+                ["at0077"] = <
+                    text = <"Veľkosť dávky od">
+                    description = <"Určenie spodnej hranice veľkosti dávky, ktorá má byť užitá v danom čase.
+Používa sa len v prípade zadania rozsahu dávkovania, napríklad 1 až 2 tablety. Tu sa určí práve hodnota 1. Ak je predpísané presné množstvo, tak sa nepoužíva. Presná hodnota bude zachytená v Veľkosť dávky do.">
+                >
+                ["at0001"] = <
+                    text = <"Veľkosť dávky do">
+                    description = <"Určenie veľkosti dávky, ktorá má byť užitá v danom čase.
+Používa sa na zachytenie presného množstva dávky, a aj na zachytenie rozsahu dávky. Pri presnej dávke (1 tableta) sa použije na zachytenie tejto hodnoty. Pri rozsahu (1 až 2 tablety) sa použije na zachytenie hodnoty 2 tablety.">
+                >
+                ["at0008"] = <
+                    text = <"PQ">
+                    description = <"This is a PQ object">
+                >
+                ["at0081"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["sk"] = <
+            items = <
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

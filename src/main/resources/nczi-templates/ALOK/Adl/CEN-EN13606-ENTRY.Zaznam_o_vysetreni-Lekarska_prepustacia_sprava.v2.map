@@ -1,0 +1,24 @@
+archetype
+    CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Lekarska_prepustacia_sprava.v2
+
+description
+    original_author = <
+        ["date"] = <"20110816">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci záznam o vykonanom vyšetrení pacienta. 
+Špecializovaný pre lekársku prepúšťaciu správu.">
+            keywords = <"Záznam o vyšetrení pacienta","Vyšetrenie pacienta","Lekárska prepúšťacia správa">
+        >
+    >
+
+objectBuilder
+    object_builder_definition = <"<?xml version='1.0' encoding='UTF-8'?><objectBuilder hasBagSemantics='false'><sourcePaths><sourcePath>/source[anySource]/type[XML]/document[anyDocument]/element[linkEHRvirtualIDPatient]</sourcePath></sourcePaths></objectBuilder>">
+mapping
+    map_definitions = <
+    >
+
+

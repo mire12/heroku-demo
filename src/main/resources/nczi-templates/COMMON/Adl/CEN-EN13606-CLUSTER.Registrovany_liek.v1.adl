@@ -1,0 +1,115 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Registrovany_liek.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20121129">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Registrovany liek
+        parts existence matches {0..1} cardinality matches {4..4; unordered} matches {
+            ELEMENT[at0002] occurrences matches {1..1} matches {  -- Názov
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0017] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {1..1} matches {  -- Doplnok názvu
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0014] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0008] occurrences matches {1..1} matches {  -- ŠÚKL kód
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0018] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {1..1} matches {  -- ID lieku
+                value existence matches {0..1} matches {
+                    II[at0015] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0016] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {0..1} matches {""}
+                            }
+                        }
+                        extension existence matches {0..1} matches {""}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0013] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Registrovany liek">
+                    description = <"Registrovany liek">
+                >
+                ["at0002"] = <
+                    text = <"Názov">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0005"] = <
+                    text = <"Doplnok názvu">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0008"] = <
+                    text = <"ŠÚKL kód">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0011"] = <
+                    text = <"ID lieku">
+                    description = <"This is a ELEMENT object">
+                >
+                ["at0014"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0015"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0017"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0018"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

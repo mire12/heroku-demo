@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Mnozstvo.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="OverObjemLiekovVystup" type="OverObjemLiekovVystup" />
+  <xs:complexType name="OverObjemLiekovVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupom zo služby je zoznam vydaných liekov za určené obdobie, ktoré obsahujú liečivá podľa vstupov služby.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VydanyLiek" type="VydanyLiek" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam vydaných liekov, ktoré vyhovujú kritériam služby.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VydanyIPL" type="VydanyIPL" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="VydanyML" type="VydanyMagistraLiter" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VydanyLiek">
+    <xs:annotation>
+      <xs:documentation>Vydaný liek spolu s informáciou o množstve.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikaciaLieku" type="IdLiek" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor vydaného lieku. Uvedie sa v prípade registrovaného lieku. Ak bol vydaný IPL, tak ten identifikovaný nie je.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovLieku" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov vydaného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetBaleni" type="xs:decimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet balení vydaného registrovaného lieku.
+
+Ak bol predpísaný a vydaný registrovaný liek, tak DispZ_Liek.pocetBaleni obsahuje informáciu o vydanom počte balení.
+Ak bol predpísaný IPL a vydaný registrovaný ilek, tak DispZ_IPL.celkoveMnozstvo môže obsahovať informáciu o vydanom počte balení</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VydanyIPL">
+    <xs:annotation>
+      <xs:documentation>Vydaný IPL - nebol vydaný ani liek, ani magistraliter prípravok. Do výsledkuje pridaný preto, že obsahuje farmaceutickú surovinu ktorá bola na vstupe.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CelkoveMnozstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="NazovIPL" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov vydaného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Neštruktúrované informácie o zložení IPL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VydanyMagistraLiter">
+    <xs:annotation>
+      <xs:documentation>Vydaný magistraliter prípravok spolu s informáciou o množstve.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CelkoveMnozstvo" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikaciaMagistraliter" type="IdMagistraliter" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor vydaného magistraliter prípravku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovMagistraliterPripravku" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov vydaného lieku.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

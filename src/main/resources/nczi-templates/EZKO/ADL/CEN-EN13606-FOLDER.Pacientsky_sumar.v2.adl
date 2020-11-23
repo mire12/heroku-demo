@@ -1,0 +1,97 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-FOLDER.Pacientsky_sumar.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20111222">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Pacientsky sumár poskytuje základné informácie o zdravotnom stave pacienta. Informuje o jeho alergiách, prekonaných závažných ochoreniach a chirurgických výkonoch, o aktuálnom zdravotnom stave, výsledkoch vyšetrení tlaku krvi a krvnej skupiny, sociálnej, liekovej a pôrodníckej anamnéze.">
+            keywords = <"Varovanie","Osobná","anamnéza","Zdravotný","problém","Sociálna","anamnéza","Lieková","anamnéza","Pôrodnícka","anamnéza","Výsledky","vyšetrení">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+            use = <"Lieková anamnéza
+Osobná anamnéza
+Výsledky vyšetrení
+Varovania
+Zdravotné problémy
+Sociálna anamnéza
+Pôrodnícka anamnéza
+">
+        >
+    >
+
+definition
+    FOLDER[at0000] occurrences matches {1..1} matches {  -- Pacientsky sumár
+        sub_folders existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            FOLDER[at0001] occurrences matches {0..*} matches {  -- Osobná anamnéza
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0002] occurrences matches {0..1} matches {  -- Pôrodnícke záznamy
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0003] occurrences matches {0..*} matches {  -- Sociálna anamnéza
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0004] occurrences matches {0..*} matches {  -- Varovania
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0005] occurrences matches {0..*} matches {  -- Výsledky vyšetrení 
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0006] occurrences matches {0..*} matches {  -- Záznamy zdravotných problémov
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+            FOLDER[at0007] occurrences matches {0..*} matches {  -- Lieková anamnéza
+                sub_folders existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pacientsky sumár">
+                    description = <"Pacientsky sumár">
+                >
+                ["at0001"] = <
+                    text = <"Osobná anamnéza">
+                    description = <"Osobná anamnéza pacienta. Záznamy o vykonaných očkovaniach, zdravotných obmedzeniach, chirurgických výkonoch a terapeutických odporúčaniach.">
+                >
+                ["at0002"] = <
+                    text = <"Pôrodnícke záznamy">
+                    description = <"Informácie o  predpokladanom dátume pôrodu.">
+                >
+                ["at0003"] = <
+                    text = <"Sociálna anamnéza">
+                    description = <"Sociálna anamnéza pacienta, rôzne druhy abúz">
+                >
+                ["at0004"] = <
+                    text = <"Varovania">
+                    description = <"Lekárske varovania o zdravotnom stave pacienta (alergie a alergické reakcie)">
+                >
+                ["at0005"] = <
+                    text = <"Výsledky vyšetrení ">
+                    description = <"Výsledky vyšetrení - krvná skupina, krvný tlak, vitálne a antropometrické hodnoty">
+                >
+                ["at0006"] = <
+                    text = <"Záznamy zdravotných problémov">
+                    description = <"Záznamy, ktoré informujú o život ovplyvňujúcich diagnózach a implantovaných zdravotných pomôckach.">
+                >
+                ["at0007"] = <
+                    text = <"Lieková anamnéza">
+                    description = <"Lieková anamnéza, obsahuje  zoznam užívaných liekov pacienta.">
+                >
+            >
+        >
+    >

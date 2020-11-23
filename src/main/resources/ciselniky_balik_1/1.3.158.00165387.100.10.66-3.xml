@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typy krvných skupín</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2018-01-26</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.66</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2018-04-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000401075</codeValue>
+      <displayName>0 RhD pozitívna</displayName>
+      <Skratka>0+</Skratka>
+      <Popis>0 RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401083</codeValue>
+      <displayName>0 RhD negatívna</displayName>
+      <Skratka>0-</Skratka>
+      <Popis>0 RhD negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732719</codeValue>
+      <displayName>0 RhD w/v</displayName>
+      <Skratka>0W</Skratka>
+      <Popis>0 RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401091</codeValue>
+      <displayName>A RhD  pozitívna</displayName>
+      <Skratka>A+</Skratka>
+      <Popis>A RhD  pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732727</codeValue>
+      <displayName>A1 RhD pozitívna</displayName>
+      <Skratka>A1+</Skratka>
+      <Popis>A1 RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401109</codeValue>
+      <displayName>B RhD pozitívna</displayName>
+      <Skratka>B+</Skratka>
+      <Popis>B RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401117</codeValue>
+      <displayName>AB RhD pozitívna</displayName>
+      <Skratka>AB+</Skratka>
+      <Popis>AB RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732735</codeValue>
+      <displayName>AB RhD w/v</displayName>
+      <Skratka>ABW</Skratka>
+      <Popis>AB RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732743</codeValue>
+      <displayName>A RhD w/v</displayName>
+      <Skratka>AW</Skratka>
+      <Popis>A RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401125</codeValue>
+      <displayName>A RhD negatívna</displayName>
+      <Skratka>A-</Skratka>
+      <Popis>A RhD negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732750</codeValue>
+      <displayName>A1 RhD  negatívna</displayName>
+      <Skratka>A1-</Skratka>
+      <Popis>A1 RhD  negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732768</codeValue>
+      <displayName>A1B RhD  negatívna</displayName>
+      <Skratka>A1B-</Skratka>
+      <Popis>A1B RhD  negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732776</codeValue>
+      <displayName>A1B RhD pozitívna</displayName>
+      <Skratka>A1B+</Skratka>
+      <Popis>A1B RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732784</codeValue>
+      <displayName>A1B RhD w/v</displayName>
+      <Skratka>A1BW</Skratka>
+      <Popis>A1B RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732792</codeValue>
+      <displayName>A1 RhD w/v</displayName>
+      <Skratka>A1W</Skratka>
+      <Popis>A1 RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732800</codeValue>
+      <displayName>A2 RhD  negatívna</displayName>
+      <Skratka>A2-</Skratka>
+      <Popis>A2 RhD  negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732818</codeValue>
+      <displayName>A2 RhD pozitívna</displayName>
+      <Skratka>A2+</Skratka>
+      <Popis>A2 RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732826</codeValue>
+      <displayName>A2B  negatívna</displayName>
+      <Skratka>A2B-</Skratka>
+      <Popis>A2B  negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732834</codeValue>
+      <displayName>A2B RhD pozitívna</displayName>
+      <Skratka>A2B+</Skratka>
+      <Popis>A2B RhD pozitívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732842</codeValue>
+      <displayName>A2 RhD w/v</displayName>
+      <Skratka>A2W </Skratka>
+      <Popis>A2 RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401133</codeValue>
+      <displayName>B RhD negatívna</displayName>
+      <Skratka>B-</Skratka>
+      <Popis>B RhD negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089732859</codeValue>
+      <displayName>B RhD w/v</displayName>
+      <Skratka>BW</Skratka>
+      <Popis>B RhD w/v</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000401141</codeValue>
+      <displayName>AB RhD negatívna</displayName>
+      <Skratka>AB-</Skratka>
+      <Popis>AB RhD negatívna</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208874891</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

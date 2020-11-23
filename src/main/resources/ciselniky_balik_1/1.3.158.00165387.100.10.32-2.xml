@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Charakter očkovania</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.32</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020884128</codeValue>
+      <displayName>povinné pravidelné očkovanie osôb, ktoré dosiahli určený vek</displayName>
+      <Skratka>1</Skratka>
+      <Popis>povinné pravidelné očkovanie osôb, ktoré dosiahli určený vek</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884136</codeValue>
+      <displayName>povinné očkovanie osôb, ktoré sú vystavené zvýšenému nebezpečenstvu vybraných nákaz</displayName>
+      <Skratka>2</Skratka>
+      <Popis>povinné očkovanie osôb, ktoré sú vystavené zvýšenému nebezpečenstvu vybraných nákaz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884144</codeValue>
+      <displayName>povinné očkovanie osôb, ktoré sú profesionálne vystavené zvýšenému nebezpečenstvu vybraných nákaz</displayName>
+      <Skratka>3</Skratka>
+      <Popis>povinné očkovanie osôb, ktoré sú profesionálne vystavené zvýšenému nebezpečenstvu vybraných nákaz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884151</codeValue>
+      <displayName>odporúčané očkovanie osôb, ktoré sú vystavené zvýšenému nebezpečenstvu vybraných nákaz</displayName>
+      <Skratka>4</Skratka>
+      <Popis>odporúčané očkovanie osôb, ktoré sú vystavené zvýšenému nebezpečenstvu vybraných nákaz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884169</codeValue>
+      <displayName>odporúčané očkovanie osôb, ktoré sú profesionálne vystavené zvýšenému nebezpečenstvu vybraných nákaz</displayName>
+      <Skratka>5</Skratka>
+      <Popis>odporúčané očkovanie osôb, ktoré sú profesionálne vystavené zvýšenému nebezpečenstvu vybraných nákaz</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884177</codeValue>
+      <displayName>očkovanie osôb cestujúcich do cudziny a z cudziny</displayName>
+      <Skratka>6</Skratka>
+      <Popis>očkovanie osôb cestujúcich do cudziny a z cudziny</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884185</codeValue>
+      <displayName>očkovanie osôb na vlastnú žiadosť</displayName>
+      <Skratka>7</Skratka>
+      <Popis>očkovanie osôb na vlastnú žiadosť</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020884193</codeValue>
+      <displayName>povinné mimoriadne očkovanie</displayName>
+      <Skratka>8</Skratka>
+      <Popis>povinné mimoriadne očkovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208869180</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>99</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

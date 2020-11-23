@@ -1,0 +1,2190 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Vztah.xsd" />
+  <xs:include schemaLocation="DoplnAtribut.xsd" />
+  <xs:include schemaLocation="PhysicalPerson.xsd" />
+  <xs:include schemaLocation="Ciselnik.xsd" />
+  <xs:include schemaLocation="ZdravotnickyPracovnik.xsd" />
+  <xs:include schemaLocation="ZdravotnickaPomocka.xsd" />
+  <xs:include schemaLocation="PrijimatelZS.xsd" />
+  <xs:include schemaLocation="Contact.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:include schemaLocation="IdentifikacnyPredmet.xsd" />
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="IdCiselniky.xsd" />
+  <xs:include schemaLocation="OckovaciKalendar.xsd" />
+  <xs:include schemaLocation="Lieky.xsd" />
+  <xs:include schemaLocation="ZdravotnaPoistovna.xsd" />
+  <xs:include schemaLocation="PoskytovatelZS.xsd" />
+  <xs:include schemaLocation="DietetickaPotravina.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:element name="VyhladajDietetickuPotravinu_Request" type="VyhladajDietetickuPotravinu_Request" />
+  <xs:complexType name="VyhladajDietetickuPotravinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadaniedietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajDietetickuPotravinu_Kriteria" type="VyhladajDietetickuPotravinu_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujOptOutPrZS_Request" type="AktualizujOptOutPrZS_Request" />
+  <xs:complexType name="AktualizujOptOutPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu OptOut pre PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OptOutPrZS" type="OptOutPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDietetickuPotravinu_Request" type="DajDietetickuPotravinu_Request" />
+  <xs:complexType name="DajDietetickuPotravinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na dietetickú potravinu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdDietetickaPotravina" type="IdDietetickaPotravina" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDietetickuPotravinu_Response" type="DajDietetickuPotravinu_Response" />
+  <xs:complexType name="DajDietetickuPotravinu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na dietetickú potravinu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DietetickaPotravina" type="DietetickaPotravina_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPZS_Response" type="DajZmenyPZS_Response" />
+  <xs:complexType name="DajZmenyPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS_Zoznam" type="IdPZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZP_Response" type="DajZP_Response" />
+  <xs:complexType name="DajZP_Response">
+    <xs:annotation>
+      <xs:documentation>Buď je vyplnený JRUZ identifikátor pobočky zdr. poisťovne alebo JRUZ identifikátor zdr. poisťovne.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnaPoistovna" type="ZdravotnaPoistovna" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyElIDPredmetuPrZS_Request" type="DajZmenyElIDPredmetuPrZS_Request" />
+  <xs:complexType name="DajZmenyElIDPredmetuPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny el. identif. predmetu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_v2_Request" type="DajDavkuJRUZIdentifikator_v2_Request" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na davku JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DajDavkuJRUZIdentifikator_Kriteria" type="DajDavkuJRUZIdentifikator_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_v2_Response" type="DajDavkuJRUZIdentifikator_v2_Response" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoved na davku JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajDavkuJRUZIdentifikator" type="DajDavkuJRUZIdentifikator_v2" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOUPZS_Request" type="VyhladajOUPZS_Request" />
+  <xs:complexType name="VyhladajOUPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadanie OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajOUPZS_Kriteria" type="VyhladajOUPZS_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajDietetickuPotravinu_Response" type="VyhladajDietetickuPotravinu_Response" />
+  <xs:complexType name="VyhladajDietetickuPotravinu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DietetickaPotravina_Zoznam" type="DietetickaPotravina_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajReferencnuSkupinu_Request" type="DajReferencnuSkupinu_Request" />
+  <xs:complexType name="DajReferencnuSkupinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na referenčnú skupinu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdReferencnaSkupina" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajReferencnuSkupinu_Response" type="DajReferencnuSkupinu_Response" />
+  <xs:complexType name="DajReferencnuSkupinu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na referenčnú skupinu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferencnaSkupina" type="ReferencnaSkupina" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajLiek_Request" type="DajLiek_Request" />
+  <xs:complexType name="DajLiek_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na liek</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdLiek" type="IdLiek" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajLiek_Response" type="DajLiek_Response" />
+  <xs:complexType name="DajLiek_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na liek</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Liek" type="Liek_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajReferencnuSkupinu_Response" type="VyhladajReferencnuSkupinu_Response" />
+  <xs:complexType name="VyhladajReferencnuSkupinu_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na vyhľadanie referenčnej skupiny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferencnaSkupina_Zoznam" type="ReferencnaSkupina_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiek_Response" type="VyhladajLiek_Response" />
+  <xs:complexType name="VyhladajLiek_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Liek_Zoznam" type="Liek_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOckovaciKalendar_Request" type="DajOckovaciKalendar_Request" />
+  <xs:complexType name="DajOckovaciKalendar_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na očkovací kalendár</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOckovaciKalendar" type="IdOckovaciKalendar" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOckovaciKalendar_Response" type="DajOckovaciKalendar_Response" />
+  <xs:complexType name="DajOckovaciKalendar_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na očkovací kalendár</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OckovaciKalendar" type="OckovaciKalendar" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOckovaciKalendar_Response" type="VyhladajOckovaciKalendar_Response" />
+  <xs:complexType name="VyhladajOckovaciKalendar_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď pre vyhľadanie očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OckovaciKalendar_Zoznam" type="OckovaciKalendar_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPZS_Request" type="DajPZS_Request" />
+  <xs:complexType name="DajPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZariadeniePZS" type="IdZariadeniePZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPZS_Response" type="DajPZS_Response" />
+  <xs:complexType name="DajPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PoskytovatelZS" type="PoskytovatelZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOUPZS_Request" type="DajOUPZS_Request" />
+  <xs:complexType name="DajOUPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOUPZS_Response" type="DajOUPZS_Response" />
+  <xs:complexType name="DajOUPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OdbornyUtvarPZS" type="PoskytovatelZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOUPZS_Response" type="VyhladajOUPZS_Response" />
+  <xs:complexType name="VyhladajOUPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS_Zoznam" type="IdOUPZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmluvneZPpreLAB_Request" type="DajZmluvneZPpreLAB_Request" />
+  <xs:complexType name="DajZmluvneZPpreLAB_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmluvne ZP pre LAB</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmluvneZPpreLAB_Response" type="DajZmluvneZPpreLAB_Response" />
+  <xs:complexType name="DajZmluvneZPpreLAB_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmluvne ZP pre LAB</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZP_Zoznam" type="IdZP_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujElIdentifikacnyPredmetPrZS_Response" type="AktualizujElIdentifikacnyPredmetPrZS_Response" />
+  <xs:complexType name="AktualizujElIdentifikacnyPredmetPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu El. Identifikačného predmetu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujOptOutPrZS_Response" type="AktualizujOptOutPrZS_Response" />
+  <xs:complexType name="AktualizujOptOutPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na aktualizáciu OptOut pre PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZdravotnickuPomocku_Request" type="DajZdravotnickuPomocku_Request" />
+  <xs:complexType name="DajZdravotnickuPomocku_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zdravotnícku pomôcku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZdravotnickaPomocka" type="IdZdravotnickaPomocka" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZP_Request" type="DajZP_Request" />
+  <xs:complexType name="DajZP_Request">
+    <xs:annotation>
+      <xs:documentation>Buď je vyplnený JRUZ identifikátor pobočky zdr. poisťovne alebo JRUZ identifikátor zdr. poisťovne.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPobockaZP" type="IdPobockaZP" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZP_Kriteria" type="VyhladajZP_Kriteria" />
+  <xs:complexType name="VyhladajZP_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritériá pre vyhľadanie zdravotnej poisťovne / pobočky zdr. poisťovne.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="KodZP" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdr. poisťovne/pobočky zdr. poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovZP" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdr. poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodPobockyZP" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód pobočky zdr. poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovPobockyZP" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov pobočky zdr. poisťovne</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDZdrPoi" type="IdZP" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDPobockaZdrPoi" type="IdPobockaZP" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOUPZS_Kriteria" type="VyhladajOUPZS_Kriteria" />
+  <xs:complexType name="VyhladajOUPZS_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie OUPZS podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NazovPZS" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>NazovPZS sa ma vyhladavat z CorporateBodyFullName</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodOUPZS" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód odborného útvaru PZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovOUPZS" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov odborného útvaru PZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodLekara" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Municipality" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="CountyCV" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RegionCV" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MunicipalityCV" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DruhUtvaru" type="IdPolozkaCiselnikaDruhUtvaru" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranieOU" type="IdPolozkaCiselnikaOdborneZameranieOU" minOccurs="0" maxOccurs="1" />
+      <xs:element name="FulltextNazov" type="StringText" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahLABaZP_Request" type="OverVztahLABaZP_Request" />
+  <xs:complexType name="OverVztahLABaZP_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overenie vzťahu LAB a ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahLABaZP_Response" type="OverVztahLABaZP_Response" />
+  <xs:complexType name="OverVztahLABaZP_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na overenie vzťahu LAB a ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Vztah" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zistenie, či existuje platný zmluvný vzťah medzi OÚ PZS - Laboratórium a zdr. poisťovňou.
+TRUE - existuje platný zmluvný vzťah
+FALSE - neexistuje platný zmluvný vzťah</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahOUPZSaZPr_Request" type="OverVztahOUPZSaZPr_Request" />
+  <xs:complexType name="OverVztahOUPZSaZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overenie vzťahu OUPZS a ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPovolanieZPr" type="IdPolozkaCiselnikaPovolaniaZPr" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahOUPZSaZPr_Response" type="OverVztahOUPZSaZPr_Response" />
+  <xs:complexType name="OverVztahOUPZSaZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na overenie vzťahu OUPZS a ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Vztah" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o tom, či existuje platný pracovno-právny vzťah medzi OÚ PZS a zdr. pracovníkom.
+TRUE - existuje platný pracovno-právny vzťah
+FALSE - neexistuje platný pracovno-právny vzťah</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZPr_Kriteria" type="VyhladajZPr_Kriteria" />
+  <xs:complexType name="VyhladajZPr_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritériá pre vyhľadanie ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="kodLekara" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód lekára - 9 znakový kód pridelený ÚDZS v tvare:
+L99999SLL, kde:
+
+	- l99999 je osobný identifikátor lekára, zubného lekára a vybraného zdravotníckeho pracovníka.
+
+Skladá sa z návestia l – znaku podľa kategórie pracovníkov v zdravotníctve, ktorý je vždy veľkým písmenom (A = lekár, B = zubný lekár, C = farmaceut, D = sestra, E = pôrodná asistentka, F = laborant,  G = asistent, I = iný zdravotnícky pracovník a N = bez kategórie) a päťmiestneho čísla, ktoré bude vytvorené generovaním náhodných čísiel.
+
+	- sll je trojmiestnym numerickým subkódom takej zdravotníckej odbornosti, na vykonávanie ktorej je lekár, zubný lekár alebo vybraný zdravotnícky pracovník odborne spôsobilý a v ktorej môže vykonávať zdravotnícke povolanie. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="kodOUPZS" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="meno" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Meno lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="priezvisko" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Priezvisko lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="obec" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="0" maxOccurs="1" />
+      <xs:element name="odborneZameranieOU" type="IdPolozkaCiselnikaOdborneZameranieOU" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AktualizujElIdentifikacnyPredmetPrZS_Request" type="AktualizujElIdentifikacnyPredmetPrZS_Request" />
+  <xs:complexType name="AktualizujElIdentifikacnyPredmetPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na aktualizáciu El. Identifikačného predmetu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ElIdentifikacnyPredmetPrZS" type="IdentifikacnyPredmet" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPrZS_Request" type="DajPrZS_Request" />
+  <xs:complexType name="DajPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverPoistnyVztahZPaPrZS_Request" type="OverPoistnyVztahZPaPrZS_Request" />
+  <xs:complexType name="OverPoistnyVztahZPaPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overeniepoistného  vzťahu  ZP a PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverPoistnyVztahZPaPrZS_Response" type="OverPoistnyVztahZPaPrZS_Response" />
+  <xs:complexType name="OverPoistnyVztahZPaPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Opodveď na overeniepoistného  vzťahu  ZP a PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Vztah" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Informácia o tom, či existuje poistný vzťah medzi zdr. poisťovňou a prijímateľom zdr. starostlivosti.
+TRUE - existuje platný poistný vzťah
+FALSE - neexistuje platný poistný vzťah</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_v2_Kriteria" type="VyhladajPrZS_v2_Kriteria" />
+  <xs:complexType name="VyhladajPrZS_v2_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie PrZS podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Meno" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Priezvisko" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikacnyPredmet_Kriteria" type="IdentifikacnyPredmet_Kriteria" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ID" type="ID" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOckovaciKalendar_Kriteria" type="VyhladajOckovaciKalendar_Kriteria" />
+  <xs:complexType name="VyhladajOckovaciKalendar_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritéria pre vyhľadanie očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="rok" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Rok, pre ktorý platí daný očkovací kalendár.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov daného očkovacieho kalendára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajKontaktPrZS_Request" type="DajKontaktPrZS_Request" />
+  <xs:complexType name="DajKontaktPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na kontakt PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajDietetickuPotravinu_Kriteria" type="VyhladajDietetickuPotravinu_Kriteria" />
+  <xs:complexType name="VyhladajDietetickuPotravinu_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Kritéria na vyhľadaniedietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Kod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód dietetickej potraviny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokNazvu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Doplnok názvu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GlutenFree" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Označenie gluten free potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdDietetickaPotravina" type="IdDietetickaPotravina" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajOckovaciKalendar_Request" type="VyhladajOckovaciKalendar_Request" />
+  <xs:complexType name="VyhladajOckovaciKalendar_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka pre vyhľadanie očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajOckovaciKalendar_Kriteria" type="VyhladajOckovaciKalendar_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajReferencnuSkupinu_Kriteria" type="VyhladajReferencnuSkupinu_Kriteria" />
+  <xs:complexType name="VyhladajReferencnuSkupinu_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie referenčnej skupiny podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ATC" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód referenčnej skupiny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov referenčnej skupiny</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdReferencnaSkupina" type="IdReferencnaSkupina" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiek_Kriteria" type="VyhladajLiek_Kriteria" />
+  <xs:complexType name="VyhladajLiek_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritéria na vyhľadanie lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ATC" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ATC kód lieku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KodSukl" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód lieku pridelený ŠÚKL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov lieku</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdLiek" type="IdLiek" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiek_Request" type="VyhladajLiek_Request" />
+  <xs:complexType name="VyhladajLiek_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadanie lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="stranka" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VyhladajLiek_Kriteria" type="VyhladajLiek_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_v2_Request" type="VyhladajPrZS_v2_Request" />
+  <xs:complexType name="VyhladajPrZS_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na Vyhľadanie PrZS </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajPrZS_Kriteria" type="VyhladajPrZS_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPZS_Request" type="DajZmenyPZS_Request" />
+  <xs:complexType name="DajZmenyPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny PZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPZS" type="IdPZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZdravotnickuPomocku_Kriteria" type="VyhladajZdravotnickuPomocku_Kriteria" />
+  <xs:complexType name="VyhladajZdravotnickuPomocku_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Kritéria pre vyhľadanie zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="kod" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Kód zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov zdravotníckej pomôcky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZdrPom" type="IdZdravotnickaPomocka" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenySkupinyZdravotnickychPomocok_Request" type="DajZmenySkupinyZdravotnickychPomocok_Request" />
+  <xs:complexType name="DajZmenySkupinyZdravotnickychPomocok_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny skupiny zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajElIdentifikacnyPredmetPrZS_Request" type="DajElIdentifikacnyPredmetPrZS_Request" />
+  <xs:complexType name="DajElIdentifikacnyPredmetPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na El.identifikačný predmet PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajElIdentifikacnyPredmetPrZS_Response" type="DajElIdentifikacnyPredmetPrZS_Response" />
+  <xs:complexType name="DajElIdentifikacnyPredmetPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na el. identifikačný predmet PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ElIdentifikacnyPredmetPrZS" type="IdentifikacnyPredmet" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajKontaktPrZS_Response" type="DajKontaktPrZS_Response" />
+  <xs:complexType name="DajKontaktPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Cez PersonData a PhysicalPerson dohľadá referenčné kontakty prijímateľa zdr. starostlivosti.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TelephoneAddress" type="TelephoneAddress" minOccurs="0" maxOccurs="1" />
+      <xs:element name="InternetAddress" type="InternetAddress" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOptOutPrZS_Request" type="DajOptOutPrZS_Request" />
+  <xs:complexType name="DajOptOutPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na OptOut PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajOptOutPrZS_Response" type="DajOptOutPrZS_Response" />
+  <xs:complexType name="DajOptOutPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na príznak OptOut PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OptOutPrZS" type="OptOutPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPrZS_Response" type="DajPrZS_Response" />
+  <xs:complexType name="DajPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PrijimatelZS" type="PrijimatelZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZP_PrZS_Request" type="DajZP_PrZS_Request" />
+  <xs:complexType name="DajZP_PrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na evidované poistenia  PrZS v ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajZP_PrZS_Kriteria" type="DajZP_PrZS_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZP_PrZS_Response" type="DajZP_PrZS_Response" />
+  <xs:complexType name="DajZP_PrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na evidované poistenia  PrZS v ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZP_PrZS" type="ZP_PrZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_v2_Response" type="VyhladajPrZS_v2_Response" />
+  <xs:complexType name="VyhladajPrZS_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS_Zoznam" type="IdPrZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZP_Response" type="VyhladajZP_Response" />
+  <xs:complexType name="VyhladajZP_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnaPoistovna_Zoznam" type="ZdravotnaPoistovna_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajSkupinuZdrPomocok_Request" type="DajSkupinuZdrPomocok_Request" />
+  <xs:complexType name="DajSkupinuZdrPomocok_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na skupinu zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdSkupinaZdravotnickychPomocok" type="IdSkupinaZdravotnickychPomocok" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajSkupinuZdrPomocok_Response" type="DajSkupinuZdrPomocok_Response" />
+  <xs:complexType name="DajSkupinuZdrPomocok_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na skupinu zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom" type="SkupinaZdrPom_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZdravotnickuPomocku_Response" type="DajZdravotnickuPomocku_Response" />
+  <xs:complexType name="DajZdravotnickuPomocku_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zdravotnícku pomôcku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka" type="ZdravotnickaPomocka_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZdravotnickuPomocku_Request" type="VyhladajZdravotnickuPomocku_Request" />
+  <xs:complexType name="VyhladajZdravotnickuPomocku_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka pre vyhľadanie zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajZdravotnickuPomocku_Kriteria" type="VyhladajZdravotnickuPomocku_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZdravotnickuPomocku_Response" type="VyhladajZdravotnickuPomocku_Response" />
+  <xs:complexType name="VyhladajZdravotnickuPomocku_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď pre vyhľadanie zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka_Zoznam" type="ZdravotnickaPomocka_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZPr_Request" type="DajZPr_Request" />
+  <xs:complexType name="DajZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZPr_Response" type="DajZPr_Response" />
+  <xs:complexType name="DajZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickyPracovnik" type="ZdravotnickyPracovnik" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZPr_Response" type="VyhladajZPr_Response" />
+  <xs:complexType name="VyhladajZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr_Zoznam" type="IdZPr_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZPr_Request" type="VyhladajZPr_Request" />
+  <xs:complexType name="VyhladajZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka pre vyhľadanie ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajZPr_Kriteria" type="VyhladajZPr_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZP_PrZS_Kriteria" type="DajZP_PrZS_Kriteria" />
+  <xs:complexType name="DajZP_PrZS_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Možnosť zadať časový interval v prípade potreby zistenia histórie evidovaných poistení prijímateľa zdr. starostlivosti.
+
+Môžu nastať nasledovné možnosti:
+
+	- zadané oba dátumy - zisťuje sa história poistení prijímateľa zdr. starostlivosti v zadanom časovom intervale (Dátum od - Dátum do) vrátane
+	- nezadané oba dátumy - nezisťuje sa história poistení prijímateľa zdr. starostlivosti 
+	- zadaný Dátum od - zisťuje sa história poistení prijímateľa zdr. starostlivosti v časovom intervale (Dátum od - do nekonečna)
+	- zadaný Dátum do - zisťuje sa história poistení prijímateľa zdr. starostlivosti v časovom intervale (nekonečno v minulosti - Dátum do)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum konca sledovaného intervalu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum začiatku sledovaného intervalu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyElIDPredmetuPrZS_Response" type="DajZmenyElIDPredmetuPrZS_Response" />
+  <xs:complexType name="DajZmenyElIDPredmetuPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny el. identif. predmetu PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MapovanieElIDPredmetuPrZS" type="IDPredmetyPrZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverJRUZIdentifikatory_Request" type="OverJRUZIdentifikatory_Request" />
+  <xs:complexType name="OverJRUZIdentifikatory_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overenie JRUZ Identifikator</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverJRUZIdentifikatory_Response" type="OverJRUZIdentifikatory_Response" />
+  <xs:complexType name="OverJRUZIdentifikatory_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na overenie JRUZ Identifikator</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II_Validovane" type="II_Validovane" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajReferencnuSkupinu_Request" type="VyhladajReferencnuSkupinu_Request" />
+  <xs:complexType name="VyhladajReferencnuSkupinu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadanie referenčnej skupiny </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajReferencnuSkupinu_Kriteria" type="VyhladajReferencnuSkupinu_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajZP_Request" type="VyhladajZP_Request" />
+  <xs:complexType name="VyhladajZP_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadanie ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajZdrPoi_Kriteria" type="VyhladajZP_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajJRUZIdentifikatorPreIAM_Response" type="DajJRUZIdentifikatorPreIAM_Response" />
+  <xs:complexType name="DajJRUZIdentifikatorPreIAM_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď pre JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Id" type="II" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VstupneKriteria" type="DajJRUZIdentifikator_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajJRUZIdentifikator_Request" type="DajJRUZIdentifikator_Request" />
+  <xs:complexType name="DajJRUZIdentifikator_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka pre JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajJRUZIdentifikator_Kriteria" type="DajJRUZIdentifikator_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajJRUZIdentifikator_Response" type="DajJRUZIdentifikator_Response" />
+  <xs:complexType name="DajJRUZIdentifikator_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď pre JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Id" type="II" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajJRUZIdentifikator_Kriteria" type="DajJRUZIdentifikator_Kriteria" />
+  <xs:complexType name="DajJRUZIdentifikator_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritéria pre JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZadaneId" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypHladanehoId" type="OID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypZadanehoId" type="IdPolozkaCiselnikaIdentifierType" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyCiselnikov_Request" type="DajZmenyCiselnikov_Request" />
+  <xs:complexType name="DajZmenyCiselnikov_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny číselníkov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OID" type="OID" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyCiselnikov_Response" type="DajZmenyCiselnikov_Response" />
+  <xs:complexType name="DajZmenyCiselnikov_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny číselníkov</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CasOverenia" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Casove razitko k akemu casu bola zmena vyhodnotena.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZahlavieCiselnika_Zoznam" type="ZahlavieCiselnika_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajRodneCisloPrZS_Response" type="DajRodneCisloPrZS_Response" />
+  <xs:complexType name="DajRodneCisloPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď pre rodné číslo PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ID" type="ID" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajRodneCisloPrZS_Request" type="DajRodneCisloPrZS_Request" />
+  <xs:complexType name="DajRodneCisloPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na rodné číslo PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajKontraindikacie_Response" type="DajKontraindikacie_Response" />
+  <xs:complexType name="DajKontraindikacie_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zistenie kontraindikácií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Kontraindikacia" type="Kontraindikacia_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajKontraindikacie_Request" type="DajKontraindikacie_Request" />
+  <xs:complexType name="DajKontraindikacie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na kontraindikácie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdKontraindikacia" type="IdKontraindikacia" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDavkovania_Request" type="DajZmenyDavkovania_Request" />
+  <xs:complexType name="DajZmenyDavkovania_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny dávkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDavkovania_Response" type="DajZmenyDavkovania_Response" />
+  <xs:complexType name="DajZmenyDavkovania_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny dávkovania</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Davkovanie_Zoznam" type="Davkovanie_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkovanie_Request" type="DajDavkovanie_Request" />
+  <xs:complexType name="DajDavkovanie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na dávkovanie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdDavkovanie" type="IdDavkovanie" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkovanie_Response" type="DajDavkovanie_Response" />
+  <xs:complexType name="DajDavkovanie_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na dávkovanie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Davkovanie" type="Davkovanie" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyKontraindikacie_Response" type="DajZmenyKontraindikacie_Response" />
+  <xs:complexType name="DajZmenyKontraindikacie_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny kontraindikácií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Kontraindikacia_Zoznam" type="Kontraindikacia_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyKontraindikacie_Request" type="DajZmenyKontraindikacie_Request" />
+  <xs:complexType name="DajZmenyKontraindikacie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny kontraindikácií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPodskupinyDietetickejPotraviny_Request" type="DajZmenyPodskupinyDietetickejPotraviny_Request" />
+  <xs:complexType name="DajZmenyPodskupinyDietetickejPotraviny_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny podskupiny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPodskupinyDietetickejPotraviny_Response" type="DajZmenyPodskupinyDietetickejPotraviny_Response" />
+  <xs:complexType name="DajZmenyPodskupinyDietetickejPotraviny_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny podskupiny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PodskupinaDP" type="PodskupinaDP_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLiekovejAlergie_Response" type="DajZmenyLiekovejAlergie_Response" />
+  <xs:complexType name="DajZmenyLiekovejAlergie_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny liekovej alergie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LiekoveAlergie_Zoznam" type="LiekoveAlergie_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLiekovejAlergie_Request" type="DajZmenyLiekovejAlergie_Request" />
+  <xs:complexType name="DajZmenyLiekovejAlergie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny liekovej alergie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajLiekovuAlergiu_Response" type="DajLiekovuAlergiu_Response" />
+  <xs:complexType name="DajLiekovuAlergiu_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na liekovú alergiu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LiekovaAlergia" type="LiekovaAlergia_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajLiekovuAlergiu_Request" type="DajLiekovuAlergiu_Request" />
+  <xs:complexType name="DajLiekovuAlergiu_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na liekovú alergiu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdLiekovaAlergia" type="IdLiekovaAlergia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyInterakcie_Response" type="DajZmenyInterakcie_Response" />
+  <xs:complexType name="DajZmenyInterakcie_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny interakcií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Interakcie_Zoznam" type="Interakcie_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajInterakcie_Request" type="DajInterakcie_Request" />
+  <xs:complexType name="DajInterakcie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na Interakciu</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdInterakcia" type="IdInterakcia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajInterakcie_Response" type="DajInterakcie_Response" />
+  <xs:complexType name="DajInterakcie_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na interakcie</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Interakcie" type="Interakcia_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyInterakcie_Request" type="DajZmenyInterakcie_Request" />
+  <xs:complexType name="DajZmenyInterakcie_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny interakcií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPodskupinuDietetickejPotraviny_Request" type="DajPodskupinuDietetickejPotraviny_Request" />
+  <xs:complexType name="DajPodskupinuDietetickejPotraviny_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na podskupinu dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPodskupinaDP" type="IdPodskupinaDietetickejPotraviny" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPodskupinuDietetickejPotraviny_Response" type="DajPodskupinuDietetickejPotraviny_Response" />
+  <xs:complexType name="DajPodskupinuDietetickejPotraviny_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na podskupinu dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PodskupinaDP" type="PodskupinaDP" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajeONarodeniPrZS_Request" type="DajUdajeONarodeniPrZS_Request" />
+  <xs:complexType name="DajUdajeONarodeniPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na údaje o narodení PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajeONarodeniPrZS_Response" type="DajUdajeONarodeniPrZS_Response" />
+  <xs:complexType name="DajUdajeONarodeniPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na údaje o narodení PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Birth" type="Birth" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahZPaZPr_Response" type="OverVztahZPaZPr_Response" />
+  <xs:complexType name="OverVztahZPaZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na overenie vzťahu ZP a ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Vztah" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVztahZPaZPr_Request" type="OverVztahZPaZPr_Request" />
+  <xs:complexType name="OverVztahZPaZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overenie vzťahu ZP a ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OdborVykonavanejCinnosti" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenySkupinyZdravotnickychPomocok_Response" type="DajZmenySkupinyZdravotnickychPomocok_Response" />
+  <xs:complexType name="DajZmenySkupinyZdravotnickychPomocok_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny skupiny zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom_Zoznam" type="SkupinaZdrPom_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyOUPZS_Request" type="DajZmenyOUPZS_Request" />
+  <xs:complexType name="DajZmenyOUPZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyOUPZS_Response" type="DajZmenyOUPZS_Response" />
+  <xs:complexType name="DajZmenyOUPZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny OUPZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdOUPZS_Zoznam" type="IdOUPZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajMagistraliter_Response" type="DajMagistraliter_Response" />
+  <xs:complexType name="DajMagistraliter_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Magistraliter" type="Magistraliter" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajMagistraliter_Request" type="DajMagistraliter_Request" />
+  <xs:complexType name="DajMagistraliter_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajMagistraliter_Kriteria" type="DajMagistraliter_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajMagistraliter_Kriteria" type="DajMagistraliter_Kriteria" />
+  <xs:complexType name="DajMagistraliter_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritéria pre magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AjZnalost" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdMagistraliter" type="IdMagistraliter" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajMagistraliter_Request" type="VyhladajMagistraliter_Request" />
+  <xs:complexType name="VyhladajMagistraliter_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na vyhľadanie magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="VyhladajMagistraliter_kriteria" type="VyhladajMagistraliter_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajMagistraliter_Response" type="VyhladajMagistraliter_Response" />
+  <xs:complexType name="VyhladajMagistraliter_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MagistraliterZoznam" type="MagistraliterZoznam" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajMagistraliter_Kriteria" type="VyhladajMagistraliter_Kriteria" />
+  <xs:complexType name="VyhladajMagistraliter_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vstupné kritériá pre vyhľadávanie Magistraliter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="nazov" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov alebo časť názvu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDietetickejPotraviny_Request" type="DajZmenyDietetickejPotraviny_Request" />
+  <xs:complexType name="DajZmenyDietetickejPotraviny_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDietetickejPotraviny_Response" type="DajZmenyDietetickejPotraviny_Response" />
+  <xs:complexType name="DajZmenyDietetickejPotraviny_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DietetickaPotravina_Zoznam" type="DietetickaPotravina_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLieku_Request" type="DajZmenyLieku_Request" />
+  <xs:complexType name="DajZmenyLieku_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLieku_Response" type="DajZmenyLieku_Response" />
+  <xs:complexType name="DajZmenyLieku_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny lieku</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Liek_Zoznam" type="Liek_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZdravotnickejPomocky_Request" type="DajZmenyZdravotnickejPomocky_Request" />
+  <xs:complexType name="DajZmenyZdravotnickejPomocky_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZdravotnickejPomocky_Response" type="DajZmenyZdravotnickejPomocky_Response" />
+  <xs:complexType name="DajZmenyZdravotnickejPomocky_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka_Zoznam" type="ZdravotnickaPomocka_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZPr_Request" type="DajZmenyZPr_Request" />
+  <xs:complexType name="DajZmenyZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZPr_Response" type="DajZmenyZPr_Response" />
+  <xs:complexType name="DajZmenyZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZPr_Zoznam" type="IdZPr_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyOckovaciehoKalendara_Request" type="DajZmenyOckovaciehoKalendara_Request" />
+  <xs:complexType name="DajZmenyOckovaciehoKalendara_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Stankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyOckovaciehoKalendara_Response" type="DajZmenyOckovaciehoKalendara_Response" />
+  <xs:complexType name="DajZmenyOckovaciehoKalendara_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny očkovacieho kalendára</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="OckovaciKalendar_Zoznam" type="OckovaciKalendar_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZP_Request" type="DajZmenyZP_Request" />
+  <xs:complexType name="DajZmenyZP_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPobockaZP" type="IdPobockaZP" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdZP" type="IdZP" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZP_Response" type="DajZmenyZP_Response" />
+  <xs:complexType name="DajZmenyZP_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny ZP</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnaPoistovna_Zoznam" type="ZdravotnaPoistovna_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyReferencnejSkupiny_Request" type="DajZmenyReferencnejSkupiny_Request" />
+  <xs:complexType name="DajZmenyReferencnejSkupiny_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny referenčnej skupiny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyReferencnejSkupiny_Response" type="DajZmenyReferencnejSkupiny_Response" />
+  <xs:complexType name="DajZmenyReferencnejSkupiny_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny referenčnej skupiny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ReferencnaSkupina_Zoznam" type="ReferencnaSkupina_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyMagistraliter_Request" type="DajZmenyMagistraliter_Request" />
+  <xs:complexType name="DajZmenyMagistraliter_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny magistralitra</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyMagistraliter_Response" type="DajZmenyMagistraliter_Response" />
+  <xs:complexType name="DajZmenyMagistraliter_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na zmeny magistralitra</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MagistraliterZoznam" type="MagistraliterZoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPovolanieZPr_Request" type="DajPovolanieZPr_Request" />
+  <xs:complexType name="DajPovolanieZPr_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka  na povolanie ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPovolanieZPr_Response" type="DajPovolanieZPr_Response" />
+  <xs:complexType name="DajPovolanieZPr_Response">
+    <xs:annotation>
+      <xs:documentation>Opdoveď na povolanie ZPr</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PovolanieZPr_Zoznam" type="PovolanieZPr_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVerziuCiselnikov_Request" type="OverVerziuCiselnikov_Request" />
+  <xs:complexType name="OverVerziuCiselnikov_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OID" type="OID" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverVerziuCiselnikov_Response" type="OverVerziuCiselnikov_Response" />
+  <xs:complexType name="OverVerziuCiselnikov_Response">
+    <xs:sequence>
+      <xs:element name="ZahlavieCiselnika" type="ZahlavieCiselnika" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_Kriteria" type="DajDavkuJRUZIdentifikator_Kriteria" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_Kriteria">
+    <xs:sequence>
+      <xs:element name="TypHladanehoId" type="OID" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypZadanehoId" type="IdPolozkaCiselnikaIdentifierType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ZadaneInicialy" type="ZadaneInicialy" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDoplnujuceAtributy_Request" type="DajDoplnujuceAtributy_Request" />
+  <xs:complexType name="DajDoplnujuceAtributy_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="II" type="II" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDoplnujuceAtributy_Response" type="DajDoplnujuceAtributy_Response" />
+  <xs:complexType name="DajDoplnujuceAtributy_Response">
+    <xs:sequence>
+      <xs:element name="DoplnujuceReferencneUdaje" type="DoplnujuceReferencneUdaje" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_v2" type="DajDavkuJRUZIdentifikator_v2" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_v2">
+    <xs:sequence>
+      <xs:element name="PocetRiadkov" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajePrZSPreVyhodnotenieMPD_Request" type="DajUdajePrZSPreVyhodnotenieMPD_Request" />
+  <xs:complexType name="DajUdajePrZSPreVyhodnotenieMPD_Request">
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajePrZSPreVyhodnotenieMPD_Response" type="DajUdajePrZSPreVyhodnotenieMPD_Response" />
+  <xs:complexType name="DajUdajePrZSPreVyhodnotenieMPD_Response">
+    <xs:sequence>
+      <xs:element name="UhradenePoistne" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má prijímateľ zdr. starostlivosti uhradené poistné. Ak taký príznak nie je evidovaný vracia sa NULL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PribliznyDatumNarodenia" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Približný dátum narodenia je stanovený ako prvý deň v týzdni v ktorom sa PrZS narodil - posun v&amp;scaron;ak nesmie zasiahnuť do iného mesiaca, je s presnosťou na 7 dní. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Sex" type="IdPolozkaCiselnikaSex" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ExistencnyStav" type="IdPolozkaCiselnikaExistencnyStav" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_v2_Kriteria" type="DajDavkuJRUZIdentifikator_v2_Kriteria" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="DajDavkuJRUZIdentifikator_Kriterium" type="DajDavkuJRUZIdentifikator_Kriterium" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajCiselnik_Response" type="DajCiselnik_Response" />
+  <xs:complexType name="DajCiselnik_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na číselník</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Ciselnik" type="Ciselnik" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajCiselnik_Kriteria" type="DajCiselnik_Kriteria" />
+  <xs:complexType name="DajCiselnik_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Výberové kritéria pre číselník</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OID" type="OID" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajCiselnik_Request" type="DajCiselnik_Request" />
+  <xs:complexType name="DajCiselnik_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na číselník</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajCiselnik_Kriteria" type="DajCiselnik_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuOsobneUdajePrZS_v2_Request" type="DajDavkuOsobneUdajePrZS_v2_Request" />
+  <xs:complexType name="DajDavkuOsobneUdajePrZS_v2_Request">
+    <xs:sequence>
+      <xs:element name="DajDavkuOsobneUdajePrZS_Kriteria" type="DajDavkuOsobneUdajePrZS_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajeOUmrtiPrZS_Request" type="DajUdajeOUmrtiPrZS_Request" />
+  <xs:complexType name="DajUdajeOUmrtiPrZS_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajeOUmrtiPrZS_Response" type="DajUdajeOUmrtiPrZS_Response" />
+  <xs:complexType name="DajUdajeOUmrtiPrZS_Response">
+    <xs:sequence>
+      <xs:element name="Death" type="Death" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmluvnychLekarovPrZS_Request" type="DajZmluvnychLekarovPrZS_Request" />
+  <xs:complexType name="DajZmluvnychLekarovPrZS_Request">
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmluvnychLekarovPrZS_Response" type="DajZmluvnychLekarovPrZS_Response" />
+  <xs:complexType name="DajZmluvnychLekarovPrZS_Response">
+    <xs:sequence>
+      <xs:element name="ZmluvnyLekar" type="ZmluvnyLekar" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPrZS_Request" type="DajZmenyPrZS_Request" />
+  <xs:complexType name="DajZmenyPrZS_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPrZS_Response" type="DajZmenyPrZS_Response" />
+  <xs:complexType name="DajZmenyPrZS_Response">
+    <xs:sequence>
+      <xs:element name="IdPrZS_Zoznam" type="IdPrZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverExistenciuElIdentifikacnehoPredmetu_v2_Request" type="OverExistenciuElIdentifikacnehoPredmetu_v2_Request" />
+  <xs:complexType name="OverExistenciuElIdentifikacnehoPredmetu_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na typy El.identifikačných predmetov pre PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OverExistenciuEIIdentifikacnehoPredmetu_Kriteria" type="OverExistenciuEIIdentifikacnehoPredmetu_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverExistenciuElIdentifikacnehoPredmetu_v2_Response" type="OverExistenciuElIdentifikacnehoPredmetu_v2_Response" />
+  <xs:complexType name="OverExistenciuElIdentifikacnehoPredmetu_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na el. identifikačný predmet PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ExistencieEIDPredmetov" type="ExistenciaTypuEIDPredmetuPrePrZS_v2" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaPrZSVyplnenyDatumUmrtia_v2_Request" type="MaPrZSVyplnenyDatumUmrtia_v2_Request" />
+  <xs:complexType name="MaPrZSVyplnenyDatumUmrtia_v2_Request">
+    <xs:sequence>
+      <xs:element name="MaPrZSVyplnenyDatumUmrtia_Kriteria" type="MaPrZSVyplnenyDatumUmrtia_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaPrZSVyplnenyDatumUmrtia_v2_Response" type="MaPrZSVyplnenyDatumUmrtia_v2_Response" />
+  <xs:complexType name="MaPrZSVyplnenyDatumUmrtia_v2_Response">
+    <xs:sequence>
+      <xs:element name="MaVyplnenyDatumUmrtia" type="Overenie" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaPrZSVyplnenyDatumUmrtia_v2_Kriteria" type="MaPrZSVyplnenyDatumUmrtia_v2_Kriteria" />
+  <xs:complexType name="MaPrZSVyplnenyDatumUmrtia_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum (znamená dátum, ku ktorému zisťujeme, či je pacient evidovaný ako mŕtvy- má vyplnený dátum úmrtia</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverExistenciuEIIdentifikacnehoPredmetu_v2_Kriteria" type="OverExistenciuEIIdentifikacnehoPredmetu_v2_Kriteria" />
+  <xs:complexType name="OverExistenciuEIIdentifikacnehoPredmetu_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="TypEIDPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverZmluvnehoLekaraPrZS_v2_Request" type="OverZmluvnehoLekaraPrZS_v2_Request" />
+  <xs:complexType name="OverZmluvnehoLekaraPrZS_v2_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPolozkaCiselnikaZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverZmluvnehoLekaraPrZS_v2_Response" type="OverZmluvnehoLekaraPrZS_v2_Response" />
+  <xs:complexType name="OverZmluvnehoLekaraPrZS_v2_Response">
+    <xs:sequence>
+      <xs:element name="MaPlatnuDohodu" type="Overenie" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZoznamIDPrZS_v2_Kriteria" type="DajZoznamIDPrZS_v2_Kriteria" />
+  <xs:complexType name="DajZoznamIDPrZS_v2_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie PrZS podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumNarodeniaDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Koncový dátum pre vyhľadávanie prijímateľov zdr. starostlivosti podľa dátumu narodenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumNarodeniaOd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Začiatočný dátum pre vyhľadávanie prijímateľov zdr. starostlivosti podľa dátumu narodenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Municipality" type="CV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="County" type="CV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Pohlavie" type="CV" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZoznamIDPrZS_v2_Response" type="DajZoznamIDPrZS_v2_Response" />
+  <xs:complexType name="DajZoznamIDPrZS_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS_Zoznam" type="IdPrZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZoznamIDPrZS_v2_Request" type="DajZoznamIDPrZS_v2_Request" />
+  <xs:complexType name="DajZoznamIDPrZS_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na Vyhľadanie PrZS </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajZoznamIDPrZS_Kriteria" type="DajZoznamIDPrZS_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_Kriterium" type="DajDavkuJRUZIdentifikator_Kriterium" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_Kriterium">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie PrZS podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Meno" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Priezvisko" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RodneCislo" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Rodné číslo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PocetRiadkov" type="xs:int" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_Response" type="VyhladajPrZS_Response" />
+  <xs:complexType name="VyhladajPrZS_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na vyhľadanie PrZS</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS_Zoznam" type="IdPrZS_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_Request" type="VyhladajPrZS_Request" />
+  <xs:complexType name="VyhladajPrZS_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na Vyhľadanie PrZS </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="VyhladajPrZS_Kriteria" type="VyhladajPrZS_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajPrZS_Kriteria" type="VyhladajPrZS_Kriteria" />
+  <xs:complexType name="VyhladajPrZS_Kriteria">
+    <xs:annotation>
+      <xs:documentation>Vyhľadanie PrZS podľa zadaných kritérií</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CisloPreukazu" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Číslo preukazu prijímateľa zdr. starostlivosti v zdravotnej poisťovni</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumNarodeniaOd" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Meno" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Priezvisko" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RodneCislo" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Rodné číslo</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumNarodeniaDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_Request" type="DajDavkuJRUZIdentifikator_Request" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na davku JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajDavkuJRUZIdentifikator_Kriteria" type="DajDavkuJRUZIdentifikator_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuJRUZIdentifikator_Response" type="DajDavkuJRUZIdentifikator_Response" />
+  <xs:complexType name="DajDavkuJRUZIdentifikator_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoved na davku JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MapovanieId" type="MapovanieId" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentifikacnyPredmet_Kriteria" type="IdentifikacnyPredmet_Kriteria" />
+  <xs:complexType name="IdentifikacnyPredmet_Kriteria">
+    <xs:sequence>
+      <xs:element name="Cislo" type="string50" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypIdentifikacnehoPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverJRUZIdentifikatory_v2_Request" type="OverJRUZIdentifikatory_v2_Request" />
+  <xs:complexType name="OverJRUZIdentifikatory_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na overenie JRUZ Identifikator</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="II" minOccurs="0" maxOccurs="1" />
+      <xs:element name="II" type="II" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverJRUZIdentifikatory_v2_Response" type="OverJRUZIdentifikatory_v2_Response" />
+  <xs:complexType name="OverJRUZIdentifikatory_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Odpoveď na overenie JRUZ Identifikator</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="II_Validovane" type="II_Validovane" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUnikatnyKodPolozky_Response" type="DajUnikatnyKodPolozky_Response" />
+  <xs:complexType name="DajUnikatnyKodPolozky_Response">
+    <xs:annotation>
+      <xs:documentation>Odpove? s unikátnom kódom položky ?íselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codeValue" type="string11" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUnikatnyKodPolozky_Request" type="DajUnikatnyKodPolozky_Request" />
+  <xs:complexType name="DajUnikatnyKodPolozky_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na unikátny kód položky ?íselníka</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DajJRUZIdentifikatorPreIAM_Request" type="DajJRUZIdentifikatorPreIAM_Request" />
+  <xs:complexType name="DajJRUZIdentifikatorPreIAM_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka pre JRUZ identifikátor</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DajJRUZIdentifikator_Kriteria" type="DajJRUZIdentifikator_Kriteria" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajePreVyhodnotenieCM_v2_Request" type="DajUdajePreVyhodnotenieCM_v2_Request" />
+  <xs:complexType name="DajUdajePreVyhodnotenieCM_v2_Request">
+    <xs:sequence>
+      <xs:element name="OverovanyDatumUmrtia" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OverZmluvnehoLekara_Kriteria" type="OverZmluvnehoLekara_Kriteria" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OverExistenciuElIdentifikacnehoPredmetu_CM_Kriteria" type="OverExistenciuElIdentifkacnehoPredmetu_CM_Kriteria" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverExistenciuElIdentifkacnehoPredmetu_CM_Kriteria" type="OverExistenciuElIdentifkacnehoPredmetu_CM_Kriteria" />
+  <xs:complexType name="OverExistenciuElIdentifkacnehoPredmetu_CM_Kriteria">
+    <xs:sequence>
+      <xs:element name="TypEIDPredmetu" type="IdPolozkaCiselnikaTypIdentifikacnehoPredmetu" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverZmluvnehoLekara_Kriteria" type="OverZmluvnehoLekara_Kriteria" />
+  <xs:complexType name="OverZmluvnehoLekara_Kriteria">
+    <xs:sequence>
+      <xs:element name="IdZPr" type="IdZPr" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPolozkaCiselnikaZdravotnickaOdbornost" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajUdajePreVyhodnotenieCM_v2_Response" type="DajUdajePreVyhodnotenieCM_v2_Response" />
+  <xs:complexType name="DajUdajePreVyhodnotenieCM_v2_Response">
+    <xs:sequence>
+      <xs:element name="MaVyplnenyDatumUmrtia" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EvidovanyVJRUZ" type="xs:boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="MaDohoduSoZdrPrac" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ExistencieEIDPredmetov" type="ExistenciaTypuEIDPredmetuPrePrZS_v2" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZakladneOsobneUdajePrZS_v2_Request" type="DajZakladneOsobneUdajePrZS_v2_Request" />
+  <xs:complexType name="DajZakladneOsobneUdajePrZS_v2_Request">
+    <xs:sequence>
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZakladneOsobneUdajePrZS_v2_Response" type="DajZakladneOsobneUdajePrZS_v2_Response" />
+  <xs:complexType name="DajZakladneOsobneUdajePrZS_v2_Response">
+    <xs:sequence>
+      <xs:element name="PersonName" type="PersonName" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DateOfBirth" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdPobockaZP" type="IdPobockaZP" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZahlavieCiselnika_v2_Request" type="DajZahlavieCiselnika_v2_Request" />
+  <xs:complexType name="DajZahlavieCiselnika_v2_Request">
+    <xs:sequence>
+      <xs:element name="DajZahlavieCiselnika_Kriteria" type="DajCiselnik_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZahlavieCiselnika_v2_Response" type="DajZahlavieCiselnika_v2_Response" />
+  <xs:complexType name="DajZahlavieCiselnika_v2_Response">
+    <xs:sequence>
+      <xs:element name="ZahlavieCiselnika" type="ZahlavieCiselnika" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajKontraindikacie_v2_Request" type="VyhladajKontraindikacie_v2_Request" />
+  <xs:complexType name="VyhladajKontraindikacie_v2_Request">
+    <xs:sequence>
+      <xs:element name="VyhladajKontraindikacie_v2_Kriteria" type="VyhladajKontraindikacie_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajInterakcie_v2_Request" type="VyhladajInterakcie_v2_Request" />
+  <xs:complexType name="VyhladajInterakcie_v2_Request">
+    <xs:sequence>
+      <xs:element name="VyhladajInterakcie_v2_Kriteria" type="VyhladajInterakcie_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajInterakcie_v2_Response" type="VyhladajInterakcie_v2_Response" />
+  <xs:complexType name="VyhladajInterakcie_v2_Response">
+    <xs:sequence>
+      <xs:element name="Interakcie_Zoznam" type="Interakcie_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajInterakcie_v2_Kriteria" type="VyhladajInterakcie_v2_Kriteria" />
+  <xs:complexType name="VyhladajInterakcie_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="Komponent_Kriteria" type="Komponent_Kriteria" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdInterakcia" type="IdInterakcia" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Komponent_Kriteria" type="Komponent_Kriteria" />
+  <xs:complexType name="Komponent_Kriteria">
+    <xs:sequence>
+      <xs:element name="ATC" type="ATC_Kriteria" minOccurs="0" maxOccurs="1" />
+      <xs:element name="INN" type="INN_Kriteria" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajKontraindikacie_v2_Response" type="VyhladajKontraindikacie_v2_Response" />
+  <xs:complexType name="VyhladajKontraindikacie_v2_Response">
+    <xs:sequence>
+      <xs:element name="Kontraindikacia_Zoznam" type="Kontraindikacia_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajKontraindikacie_v2_Kriteria" type="VyhladajKontraindikacie_v2_Kriteria" />
+  <xs:complexType name="VyhladajKontraindikacie_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="Komponent_Kriteria" type="Komponent_Kriteria" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdKontraindikacia" type="IdKontraindikacia" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajDavkovania_v2_Request" type="VyhladajDavkovania_v2_Request" />
+  <xs:complexType name="VyhladajDavkovania_v2_Request">
+    <xs:sequence>
+      <xs:element name="VyhladajDavkovania_v2_Kriteria" type="VyhladajDavkovania_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajDavkovania_v2_Response" type="VyhladajDavkovania_v2_Response" />
+  <xs:complexType name="VyhladajDavkovania_v2_Response">
+    <xs:sequence>
+      <xs:element name="Davkovanie_Zoznam" type="Davkovanie_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajDavkovania_v2_Kriteria" type="VyhladajDavkovania_v2_Kriteria" />
+  <xs:complexType name="VyhladajDavkovania_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="Komponent_Kriteria" type="Komponent_Kriteria" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdDavkovanie" type="IdDavkovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiekoveAlergie_v2_Request" type="VyhladajLiekoveAlergie_v2_Request" />
+  <xs:complexType name="VyhladajLiekoveAlergie_v2_Request">
+    <xs:sequence>
+      <xs:element name="VyhladajLiekoveAlergie_v2_Kriteria" type="VyhladajLiekoveAlergie_v2_Kriteria" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiekoveAlergie_v2_Response" type="VyhladajLiekoveAlergie_v2_Response" />
+  <xs:complexType name="VyhladajLiekoveAlergie_v2_Response">
+    <xs:sequence>
+      <xs:element name="LiekoveAlergie_Zoznam" type="LiekoveAlergie_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VyhladajLiekoveAlergie_v2_Kriteria" type="VyhladajLiekoveAlergie_v2_Kriteria" />
+  <xs:complexType name="VyhladajLiekoveAlergie_v2_Kriteria">
+    <xs:sequence>
+      <xs:element name="Komponent_Kriteria_Vstup" type="Komponent_Kriteria" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Komponent_Kriteria_Vystup" type="Komponent_Kriteria" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="IdLiekovaAlergia" type="IdLiekovaAlergia" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajReferencnuSkupinu_v2_Request" type="DajReferencnuSkupinu_v2_Request" />
+  <xs:complexType name="DajReferencnuSkupinu_v2_Request">
+    <xs:sequence>
+      <xs:element name="IdReferencnaSkupina" type="IdReferencnaSkupina" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajReferencnuSkupinu_v2_Response" type="DajReferencnuSkupinu_v2_Response" />
+  <xs:complexType name="DajReferencnuSkupinu_v2_Response">
+    <xs:sequence>
+      <xs:element name="ReferencnaSkupina" type="ReferencnaSkupina_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPodskupinuDietetickejPotraviny_v2_Request" type="DajPodskupinuDietetickejPotraviny_v2_Request" />
+  <xs:complexType name="DajPodskupinuDietetickejPotraviny_v2_Request">
+    <xs:sequence>
+      <xs:element name="IdPodskupinaDP" type="IdPodskupinaDietetickejPotraviny" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajPodskupinuDietetickejPotraviny_v2_Response" type="DajPodskupinuDietetickejPotraviny_v2_Response" />
+  <xs:complexType name="DajPodskupinuDietetickejPotraviny_v2_Response">
+    <xs:sequence>
+      <xs:element name="PodskupinaDP" type="PodskupinaDP_v2" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLieku_v2_Request" type="DajZmenyLieku_v2_Request" />
+  <xs:complexType name="DajZmenyLieku_v2_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyLieku_v2_Response" type="DajZmenyLieku_v2_Response" />
+  <xs:complexType name="DajZmenyLieku_v2_Response">
+    <xs:sequence>
+      <xs:element name="Liek_Zoznam" type="Liek_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDietetickejPotraviny_v2_Request" type="DajZmenyDietetickejPotraviny_v2_Request" />
+  <xs:complexType name="DajZmenyDietetickejPotraviny_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyDietetickejPotraviny_v2_Response" type="DajZmenyDietetickejPotraviny_v2_Response" />
+  <xs:complexType name="DajZmenyDietetickejPotraviny_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny dietetickej potraviny</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DietetickaPotravina_Zoznam" type="DietetickaPotravina_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPodskupinyDietetickejPotraviny_v2_Request" type="DajZmenyPodskupinyDietetickejPotraviny_v2_Request" />
+  <xs:complexType name="DajZmenyPodskupinyDietetickejPotraviny_v2_Request">
+    <xs:sequence>
+      <xs:element name="Aktualnost" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyPodskupinyDietetickejPotraviny_v2_Response" type="DajZmenyPodskupinyDietetickejPotraviny_v2_Response" />
+  <xs:complexType name="DajZmenyPodskupinyDietetickejPotraviny_v2_Response">
+    <xs:sequence>
+      <xs:element name="PodskupinaDP" type="PodskupinaDP_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZdravotnickejPomocky_v2_Request" type="DajZmenyZdravotnickejPomocky_v2_Request" />
+  <xs:complexType name="DajZmenyZdravotnickejPomocky_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenyZdravotnickejPomocky_v2_Response" type="DajZmenyZdravotnickejPomocky_v2_Response" />
+  <xs:complexType name="DajZmenyZdravotnickejPomocky_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny zdravotníckej pomôcky</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnickaPomocka_Zoznam" type="ZdravotnickaPomocka_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenySkupinyZdravotnickychPomocok_v2_Request" type="DajZmenySkupinyZdravotnickychPomocok_v2_Request" />
+  <xs:complexType name="DajZmenySkupinyZdravotnickychPomocok_v2_Request">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny skupiny zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajZmenySkupinyZdravotnickychPomocok_v2_Response" type="DajZmenySkupinyZdravotnickychPomocok_v2_Response" />
+  <xs:complexType name="DajZmenySkupinyZdravotnickychPomocok_v2_Response">
+    <xs:annotation>
+      <xs:documentation>Požiadavka na zmeny skupiny zdravotníckych pomôcok</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SkupinaZdrPom_Zoznam" type="SkupinaZdrPom_v2_Zoznam" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuOsobneUdajePrZS_v2_Response" type="DajDavkuOsobneUdajePrZS_v2_Response" />
+  <xs:complexType name="DajDavkuOsobneUdajePrZS_v2_Response">
+    <xs:sequence>
+      <xs:element name="OsobneUdajePrZS" type="OsobneUdajePrZS" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuOsobneUdajePrZS_Kriterium" type="DajDavkuOsobneUdajePrZS_Kriterium" />
+  <xs:complexType name="DajDavkuOsobneUdajePrZS_Kriterium">
+    <xs:sequence>
+      <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Aktualnost_Metadata" type="Aktualnost_Metadata" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DajDavkuOsobneUdajePrZS_Kriteria" type="DajDavkuOsobneUdajePrZS_Kriteria" />
+  <xs:complexType name="DajDavkuOsobneUdajePrZS_Kriteria">
+    <xs:sequence>
+      <xs:element name="DajDavkuOsobneUdajePrZS_Kriterium" type="DajDavkuOsobneUdajePrZS_Kriterium" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

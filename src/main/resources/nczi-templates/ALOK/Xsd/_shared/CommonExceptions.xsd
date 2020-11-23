@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Common/v1" targetNamespace="http://eHealth.gov.sk/Common/v1" elementFormDefault="qualified">
+
+	<xs:element name="Exception" type="Exception"/>
+	<xs:complexType name="Exception">
+		<xs:annotation>
+			<xs:documentation>Všeobecná výnimka. Vždy je použitá jej konkrétna špecializácia.
+
+Základný dátový typ.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kodChyby" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Jednoznačný identifikátor výnimky</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nazov" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Názov chyby - konštanta</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="popisChyby" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Textový popis chyby. Naplnený len v prípade, ak rozširuje alebo upresňuje generálny názov chyby.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ChybnyAtributNaVstupe" type="ChybnyAtributNaVstupe"/>
+	<xs:complexType name="ChybnyAtributNaVstupe" >
+		<xs:annotation>
+			<xs:documentation>Všeobecná výnimka ako výstup validácie hodnoty atribútu na vstupe.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Exception">
+				<xs:sequence>
+					<xs:element name="atribut" type="xs:string" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Identifikácia atribútu. XML path k atribútu.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="typChyby" type="TypChybyNaVstupeEnum" minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="TypChybyNaVstupeEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEVYPLNENY_ATRIBUT"/>
+			<xs:enumeration value="NEEXISTUJUCA_REFERENCIA"/>
+			<xs:enumeration value="HODNOTA_MIMO_ROZSAH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ExceptionChybnyVstup" type="ExceptionChybnyVstup"/>
+	<xs:complexType name="ExceptionChybnyVstup" >
+		<xs:annotation>
+			<xs:documentation>Všeobecná výnimka, ktorá sa používa pri validácií vstupných štruktúr volania služieb.
+
+Základný dátový typ.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Exception">
+				<xs:sequence>
+					<xs:element name="detail" type="ChybnyAtributNaVstupe" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

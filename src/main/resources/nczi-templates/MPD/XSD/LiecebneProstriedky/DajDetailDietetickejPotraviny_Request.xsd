@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:element name="DajDetailDietetickejPotravinyVstup" type="DajDetailDietetickejPotravinyVstup" />
+  <xs:complexType name="DajDetailDietetickejPotravinyVstup">
+    <xs:annotation>
+      <xs:documentation>Vstpná identifikácia dietetickej potraviny, ktorej údaje sa majú poskytnúť.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Datum" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>dátum ku ktorému sa vyhľadáva</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdDietetika" type="IdDietetickaPotravina" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Vstupná identifikácia dietetickej potraviny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

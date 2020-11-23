@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="CEN/13606/RM" elementFormDefault="qualified" targetNamespace="CEN/13606/RM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CV">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="codingScheme" type="tns:OID" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codingSchemeName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codingSchemeVersion" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codeValue" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="displayName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DATA_VALUE" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="nullFlavor" type="tns:CS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="codingScheme" type="tns:OID" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codingSchemeName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codingSchemeVersion" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="codeValue" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="oid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OIDRcId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDPerformer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDHealthcareFacility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDCommitter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDVersionStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDSubjectOfCare">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDStructureType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDEhrId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDEhrSystem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OIDFunction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OID" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CSVersionStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CS" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CSStructureType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CS" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IVLPQ">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="low" type="tns:PQ" />
+          <xs:element minOccurs="0" maxOccurs="1" name="high" type="tns:PQ" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lowClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="highClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="width" type="tns:PQ" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PQ">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QUANTITY">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="value" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="units" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="property" type="tns:CD" />
+          <xs:element minOccurs="0" maxOccurs="1" name="precision" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="QUANTITY" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DURATION">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QUANTITY">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="days" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="hours" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="minutes" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="seconds" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="fractional_second" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="sign" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QUANTITY">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="numerator" type="tns:PQ" />
+          <xs:element minOccurs="0" maxOccurs="1" name="denominator" type="tns:PQ" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ORD">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:QUANTITY">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="symbol" type="tns:CODED_TEXT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CODED_TEXT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TEXT">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="codedValue" type="tns:CD" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TEXT" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="originalText" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="language" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="charset" type="tns:CS" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SIMPLE_TEXT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TEXT" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CD">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="qualifiers" type="tns:CR" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CV">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="mappings" type="tns:CD" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="inverted" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="qualCode" type="tns:CV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="role" type="tns:CV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EIVL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="event" type="tns:CD" />
+          <xs:element minOccurs="0" maxOccurs="1" name="offset" type="tns:DURATION" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PIVL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="phase" type="tns:IVLTS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="period" type="tns:DURATION" />
+          <xs:element minOccurs="0" maxOccurs="1" name="alignment" type="tns:CD" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IVLTS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="low" type="tns:TS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="high" type="tns:TS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lowClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="highClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="width" type="tns:DURATION" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="time" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DATE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="date" type="xs:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="INT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="REAL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="URI">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="scheme" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="path" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="fragment_id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="uri_query" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="literal" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ED">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="mediaType" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="charset" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="language" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="size" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="compression" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="reference" type="tns:URI" />
+          <xs:element minOccurs="0" maxOccurs="1" name="integrityCheck" type="xs:hexBinary" />
+          <xs:element minOccurs="0" maxOccurs="1" name="integrityCheckAlgorithm" type="tns:CS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="thumbnail" type="tns:ED" />
+          <xs:element minOccurs="0" maxOccurs="1" name="data" type="xs:hexBinary" />
+          <xs:element minOccurs="0" maxOccurs="1" name="alternateString" type="tns:SIMPLE_TEXT" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IVL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="low" type="tns:QUANTITY" />
+          <xs:element minOccurs="0" maxOccurs="1" name="high" type="tns:QUANTITY" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lowClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="highClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="width" type="tns:QUANTITY" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="II">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DATA_VALUE">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="extension" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="assigningAuthorityName" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="validTime" type="tns:IVLTS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="root" type="tns:OID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IIRcId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IICommitter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IIEhrSystem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IIEhrId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IISubjectOfCare">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IIPerformer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IIHealthcareFacility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:II" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CVFunction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CV" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

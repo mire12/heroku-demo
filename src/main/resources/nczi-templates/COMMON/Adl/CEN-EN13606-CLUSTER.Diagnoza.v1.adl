@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Diagnoza.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20111104">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci záznam o diagnóze pacienta.  Dané diagnózy je možné definovať výberom z číselníka MKCH10 alebo popísať voľným textom. ">
+            keywords = <"Diagnóza pacienta">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Diagnóza
+        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+            ELEMENT[at0112] occurrences matches {1..1} matches {  -- Kód diagnózy
+                value existence matches {1..1} matches {
+                    CV[at0113] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0002] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.25"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            ELEMENT[at0114] occurrences matches {0..1} matches {  -- Upresnenie
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0115] occurrences matches {1..1} matches {  -- 
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0008] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {1..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Diagnóza">
+                    description = <"Diagnóza pacienta, ktorú je možné  definovať výberom z číselníka MKCH10 alebo popísať voľným textom. Využíva sa vo viacerých archetypoch. Ako diagnóza po prijatí pacienta do ústavnej starostlivosti, diagnóza na základe, ktorej bol liek predpísaný lekárom, diagnóza pre odporúčania na vyšetrenie alebo žiadanku.  ">
+                >
+                ["at0112"] = <
+                    text = <"Kód diagnózy">
+                    description = <"Diagnóza vyjadrená kódom z MKCH10, ktorá je stanovená pacientovi v rámci diagnostického záveru. ">
+                >
+                ["at0113"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0114"] = <
+                    text = <"Upresnenie">
+                    description = <"Upresnenie diagnózy formou voľného textu. Pre vyplnenie upresnenia je nevyhnutné zaznamenať diagnostický záver v rámci \\\\\\\\\"kódu diagnózy\\\\\\\\\"">
+                >
+                ["at0115"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+            >
+        >
+    >

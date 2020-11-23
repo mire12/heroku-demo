@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/VstupyPreZnalostnySystem.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="OverInterakcieVstup" type="OverInterakcieVstup" />
+  <xs:complexType name="OverInterakcieVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné údaje do služby zahŕňajú množinu liekov a liečiv a prípadnú identifikáciu PrZS.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikatorPrZS" type="IdPrZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikácia PrZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverIbaExistenciuVarovani" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či  znalostný systémo vráti detailný zoznam varovaní, alebo vrati iba infomáciu ci našiel alebo nenašiel varovanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VyhodnotitAjAktivnuLiecbu" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či budú vyhodnotené aj interakcie pre liečebné prostriedky z aktívnej liečby PrjZS (lieky ktoré berie alebo ešte nemá vydané ale sú predpísané), alebo len voči liečebným prostriedkom na vstupe služby. Ak nie je na vstupe zadaný žiadny liečebný prostriedok a tento príznak je nastavený na true, tak výstup služby bude prázdny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VyhodnotitAjZastavenuLiecbu" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či budú znalostným systémom vyhodnotené aj liečebné prostriedky z aktívnej liečby PrjZS, ktoré boli zneplatnené (napríklad pri zastavení liečby). Ak je nastavený na TRUE, tak do vyhodnocovania znalostným systémom budú vstupovať medikačné záznamy pôvodne platné (s pôvodnou neskrátenou platnosťou).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Lieciva" type="LiecivoPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="FarmSurovina" type="FarmaceutickaSurovinaPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Lieky" type="LiekPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MagistraLiter" type="MagistraLiterPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

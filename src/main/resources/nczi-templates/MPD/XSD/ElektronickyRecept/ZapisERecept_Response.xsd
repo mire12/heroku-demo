@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/VystupneVarovanieMedikacie.xsd" />
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="ZapisEReceptVystup" type="ZapisEReceptVystup" />
+  <xs:complexType name="ZapisEReceptVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupné údaje zakladania receptu. Pri založení receptu sa z NZIS vracia identifikátor elektronického receptu a môžu sa vrátiť aj doplňujúce varovania znalostného systému. Ak recept založený nebol, tak sa ID receptu nevráti a vo varovaniach sa vráti dôvod, prečo nebol založený.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdReceptu" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor elektronického receptu z IS PZS, ktorý elektronický recept vytvoril.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZapisUspesny" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či sa elektronický recept založil aj v databáze systému NZIS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneZaznamy" type="PreskripcnyZaznam" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>NZIS vráti po založení elektornického receptu zoznam identifikátorov preskripčných záznamov tohto eReceptu, ako potvrdenie ich zápisu do systému.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Varovania" type="VystupneVarovanie" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Množina varovaní, ktoré NZIS vygeneruje pri zakladaní eReceptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreskripcnyZaznam">
+    <xs:annotation>
+      <xs:documentation>Informácia o identifikátoroch preskripčných záznamov.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPreskripcnyZaznam" type="rm:II" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor preskripčného záznamu vygenerovaný v IS PZS pri zakladaní receptu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

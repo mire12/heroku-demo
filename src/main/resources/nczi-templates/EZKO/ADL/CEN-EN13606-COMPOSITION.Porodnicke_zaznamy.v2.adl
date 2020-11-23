@@ -1,0 +1,58 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Porodnicke_zaznamy.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Pôrodnícke anamnézy pacientky.">
+            keywords = <"Pôrodnícke anamnézy">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Pôrodnícka anamnéza
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0001] occurrences matches {0..1} matches {
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Porodnicka_anamneza.v2/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Pôrodnícka anamnéza">
+                    description = <"Informácia o predpokladanom termíne pôrodu.">
+                >
+                ["at0001"] = <
+                    text = <"Pôrodnícke anamnézy">
+                    description = <"Pôrodnícke anamnézy pacientky obsahujú informácie o predpokladanom termíne pôrodu.">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

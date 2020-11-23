@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkPersonalAccountInsuranceManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkPersonalAccountInsuranceManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkJruzAgent/v1" schemaLocation="EzkJruzAgent.xsd" />
+  <xs:element name="OsobnyUcetPoistenca" nillable="true" type="tns:OsobnyUcetPoistenca" />
+  <xs:complexType name="OsobnyUcetPoistenca">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPacienta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumOd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumDo" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UstavnaZS" type="tns:UstavnaZSRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AmbulantnaZS" type="tns:AmbulantnaZSRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiekZdravotnickaPomocka" type="tns:LiekZdravotnickaPomockaRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DopravnaZS" type="tns:VykonDSRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dispenzarizacia" type="tns:DispenzarizaciaRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FNS" type="tns:FNSRozsirenyZaznam" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CakacieListiny" type="tns:CakaciaListinaRozsirenyZaznam" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="UstavnaZSRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UstavnaZSZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozyPriNastupe" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozyPriPrepusteni" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovTypuHospitalizacie" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TypVykonu" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ZdravotnickyPracovnik" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaZdravotnickehoPracovnika" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OdporucajuciLekar" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OdporucajuciPZS" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="UstavnaZSZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UhradyBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagnozaPriNastupe" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DiagnozaPriPrepusteni" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DatumNastupu" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DatumPrepustenia" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ObdobieHospitalizacie" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PripocitatelnaPolozka" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PocetPripocitatelnychPoloziek" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodZdravotnickehoPracovnika" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TypVykonuSkratka" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Mnozstvo" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TypHospitalizacie" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="UhradyBase" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UhradaPoistovne" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DoplatokPoistenca" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NezaplatenePoistne" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="NepodanaPrihlaska" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PorusenieLiecebnehoRezimu" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="VykonDSZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UhradyBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DatumVykonu" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TypPrepravy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodLekaraOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdosielatela" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Pocet" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozy" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  <xs:element name="VykonDSRozsirenyZaznam" nillable="true" type="tns:VykonDSRozsirenyZaznam" />
+  <xs:complexType name="VykonDSRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VykonDSZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="TypPrepravyPopis" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MenoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MenoLekaraOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaLekaraOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZSOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  
+  
+  
+  <xs:complexType name="AmbulantnaZSZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UhradyBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Datum" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Diagnoza" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodVykonu" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PocetVykonov" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodZdravotnickehoPracovnika" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPoskytovatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PripocitatelnaPolozka" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PocetPripocitatelnychPoloziek" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TypStarostlivosti" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  
+  <xs:complexType name="AmbulantnaZSRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AmbulantnaZSZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovKoduVykonu" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovTypuStarostlivosti" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ZdravotnickyPracovnik" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaZdravotnickehoPracovnika" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OdporucajuciLekar" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OdporucajuciPZS" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  
+  <xs:complexType name="LiekZdravotnickaPomockaZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:UhradyBase">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DatumPredpisania" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DatumVydania" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPredpisujucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSPredpisujucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodPZSVydalLiekPomocku" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodLiekuSUKL" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozy" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Mnozstvo" nillable="true" type="xs:double" />
+          <xs:element minOccurs="1" maxOccurs="1" name="CenaNajlacnejsiehoNahradnehoLieku" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  
+  <xs:complexType name="LiekZdravotnickaPomockaRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LiekZdravotnickaPomockaZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Nazov" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ATCSkupinaLieku" xmlns:q15="http://eHealth.gov.sk/EzkJruzAgent/v1" type="q15:PolozkaCiselnika" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PredpisujuciLekar" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaPredpisujucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZSPredpisujucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OdporucajuciLekar" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZSOdporucajucehoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZSVydajLiekuPomocky" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <xs:element name="DispenzarizaciaRozsirenyZaznam" nillable="true" type="tns:DispenzarizaciaRozsirenyZaznam" />
+  <xs:complexType name="DispenzarizaciaRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DispenzarizaciaZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MenoLekara" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Specializacia" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DovodVyradeniaText" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="DispenzarizaciaZaznam">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumZaradenia" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumVyradenia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozy" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObdobieKontroly" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodLekara" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodPZS" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Frekvencia" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DovodVyradenia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  <xs:element name="FNSRozsirenyZaznam" nillable="true" type="tns:FNSRozsirenyZaznam" />
+  <xs:complexType name="FNSRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FNSZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovLieku" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="FNSZaznam">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodLieku" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PocetBaleni" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumVydania" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodDiagnozy" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodFNS" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+  <xs:element name="CakaciaListinaRozsirenyZaznam" nillable="true" type="tns:CakaciaListinaRozsirenyZaznam" />
+  <xs:complexType name="CakaciaListinaRozsirenyZaznam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CakaciaListinaZaznam">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovDiagnozy" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovPZSOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MenoLekaraOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SpecializaciaLekaraOdosielatela" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovVykonu" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DovodVyradeniaPopis" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovLieku" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NazovAplikovanyLiekZP" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:complexType name="CakaciaListinaZaznam">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumZaradenia" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Diagnoza" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodPZSOdosielatela" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodLekaraOdosielatela" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodVykonu" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumVyradenia" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DovodVyradenia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="KodLieku" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PocetVykonov" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumPlanovanehoVykonu" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Mnozstvo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CenaPlanovanejZS" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DatumRealizacieVykonu" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AplikovanyLiekZP" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SkutocneMnozstvo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CelkovaCena" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StatPoskytnutiaZS" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="BatchTypes" />
+  <xs:element name="BatchTypePAI" nillable="true" type="tns:BatchTypePAI" />
+  <xs:complexType name="BatchTypePAI">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BatchTypes" />
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+
+</xs:schema>

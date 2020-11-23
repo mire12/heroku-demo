@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ liekového upozornenia</codingSchemeName>
+    <codingSchemeVersion>4</codingSchemeVersion>
+    <DatumPoslednejZmeny>2019-04-01</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.22</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2019-04-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00208859454</codeValue>
+      <displayName>?</displayName>
+      <Skratka>?</Skratka>
+      <Popis>?</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859488</codeValue>
+      <displayName>Stiahnutie</displayName>
+      <Skratka>S</Skratka>
+      <Popis>Stiahnutie lieku z trhu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859520</codeValue>
+      <displayName>Pozastavenie</displayName>
+      <Skratka>P</Skratka>
+      <Popis>Pozastavenie výdaja lieku</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859546</codeValue>
+      <displayName>Uvoľnenie</displayName>
+      <Skratka>U</Skratka>
+      <Popis>Uvoľnenie lieku na trh</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208859637</codeValue>
+      <displayName>Neznáma</displayName>
+      <Skratka>---</Skratka>
+      <Popis>Neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089851758</codeValue>
+      <displayName>Obnovenie</displayName>
+      <Skratka>O</Skratka>
+      <Popis>Obnovenie dodávok lieku na trh</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089851766</codeValue>
+      <displayName>Prerušenie</displayName>
+      <Skratka>R</Skratka>
+      <Popis>Prerušenie dodávok lieku na trh</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089851774</codeValue>
+      <displayName>Zrušenie</displayName>
+      <Skratka>Z</Skratka>
+      <Popis>Zrušenie dodávok lieku na trh</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

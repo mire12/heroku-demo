@@ -1,0 +1,234 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Vysledok_testu.v2
+
+concept
+    [at0025]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Výsledok merania jednej položky - jeden test
+">
+            keywords = <"Výsledok testu">
+        >
+    >
+
+definition
+    CLUSTER[at0025] occurrences matches {0..*} matches {  -- Výsledok testu
+        parts existence matches {0..1} cardinality matches {2..*; unordered; unique} matches {
+            ELEMENT[at0032] occurrences matches {1..1} matches {  -- Dátum a čas uvoľnenia výsledku
+                value existence matches {1..1} matches {
+                    TS[at0036] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0042] occurrences matches {0..1} matches {  -- Interpretácia
+                value existence matches {1..1} matches {
+                    CV[at0008] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {"KATEGORIA_VYSLEDKU_LABORATORNEHO"}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0000] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.118"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                    }
+                }
+            }
+            CLUSTER[at0009] occurrences matches {0..*} matches {  -- Žiadanka
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0005] occurrences matches {0..1} matches {  -- ID žiadanky
+                        value existence matches {0..1} matches {
+                            II[at0010] occurrences matches {1..1} matches {  -- II
+                                root existence matches {0..1} matches {
+                                    OID[at0006] occurrences matches {0..1} matches {  -- OID
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.60.20"}
+                                    }
+                                }
+                                extension existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0013] occurrences matches {0..1} matches {  -- EX ID žiadanky LAB
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0015] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,50}/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0016] occurrences matches {0..1} matches {  -- EX ID žiadanky PZS
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0017] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,50}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0011] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            CLUSTER[at0003] occurrences matches {1..*} matches {  -- Vzorka
+                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0021] occurrences matches {0..1} matches {  -- EX ID vzorky
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0022] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,50}/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0023] occurrences matches {0..1} matches {  -- ID vzorky
+                        value existence matches {0..1} matches {
+                            II[at0024] occurrences matches {1..1} matches {  -- II
+                                root existence matches {0..1} matches {
+                                    OID[at0026] occurrences matches {0..1} matches {  -- 
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.60.40"}
+                                    }
+                                }
+                                extension existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0020] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0027] occurrences matches {0..*} matches {  -- Výsledok
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Vysledok.v1/}
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- Poznámka
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0004] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <"DCM", ...>
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0025"] = <
+                    text = <"Výsledok testu">
+                    description = <"Výsledok merania jednej položky - jeden test. 
+">
+                >
+                ["at0032"] = <
+                    text = <"Dátum a čas uvoľnenia výsledku">
+                    description = <"Dátum a čas, kedy bola položka uvoľnená laboratóriom.">
+                >
+                ["at0036"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0042"] = <
+                    text = <"Interpretácia">
+                    description = <"Odkaz na číselník KategoriaVysledku.
+Stručná interpretácia výsledku, napríklad pozitívny.">
+                >
+                ["at0008"] = <
+                    text = <"CV">
+                    description = <"This is a CV object. číselník KategoriaVysledku">
+                >
+                ["at0000"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+                ["at0005"] = <
+                    text = <"ID žiadanky">
+                    description = <"NZIS identifikátor žiadanky.">
+                >
+                ["at0010"] = <
+                    text = <"II">
+                    description = <"Odkaz na žiadanku, na základe ktorej bol laboratórny výsledok vytvorený.">
+                >
+                ["at0009"] = <
+                    text = <"Žiadanka">
+                    description = <"Identifikácia žiadanky (žiadaniek) – zoznam žiadaniek, ktorými sa daný laboratórny test požadoval">
+                >
+                ["at0013"] = <
+                    text = <"EX ID žiadanky LAB">
+                    description = <"Identifikátor žiadanky laboratória (interná identifikácia v informačnom systéme laboratória)">
+                >
+                ["at0015"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"EX ID žiadanky PZS">
+                    description = <"Identifikátor žiadanky žiadateľa, ak tento prideľuje vlastný identifikátor žiadanky (môže byť použitý aj pre účely individuálneho zúčtovania).">
+                >
+                ["at0017"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"Vzorka">
+                    description = <"Identifikácia vzorky (vzoriek) – zoznam vzoriek, z ktorých bol realizovaný laboratórny test.">
+                >
+                ["at0021"] = <
+                    text = <"EX ID vzorky">
+                    description = <"Externý identifikátor vzorky - identifikátor uvedený na vzorke na základe pravidiel stanovených prijímajúcim laboratóriom (nie je pridelený zo strany NZIS).">
+                >
+                ["at0022"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"ID vzorky">
+                    description = <"NZIS identifikátor vzorky.">
+                >
+                ["at0024"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0027"] = <
+                    text = <"Výsledok">
+                    description = <"Element je možné opakovať podľa počtu testov vykonávaných na vzorke. Tiež sa môže opakovať aj v prípade, že objednaný test sa skladá z parciálnych testov. ">
+                >
+                ["at0002"] = <
+                    text = <"Poznámka">
+                    description = <"Poznámka k výsledku testu.">
+                >
+                ["at0004"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >
+    term_binding = <
+        ["DCM"] = <
+            items = <
+            >
+        >
+    >

@@ -1,0 +1,1347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Funkcia zdravotníckeho pracovníka</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2018-09-26</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Dátum začiatku platnosti</Nazov>
+      <MinPocetnost>1</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Dátum konca platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.27</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2018-12-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00208870188</codeValue>
+      <displayName>minister</displayName>
+      <Skratka>001</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>31.01.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870212</codeValue>
+      <displayName>riaditeľ organizácie, vedúci služobného úradu</displayName>
+      <Skratka>002</Skratka>
+      <Popis>hlavný hygienik, regionálny hygienik, top manažér (riaditeľ), predseda ÚDZS apod.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870246</codeValue>
+      <displayName>námestník riaditeľa organizácie</displayName>
+      <Skratka>003</Skratka>
+      <Popis>zástupca hlavného, regionálneho hygienika, top manažér (námestník), zástupca predsedu ÚDZS apod.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870261</codeValue>
+      <displayName>vrchný riaditeľ, generálny riaditeľ, riaditeľ útvaru, sekcie</displayName>
+      <Skratka>004</Skratka>
+      <Popis>napr. v ÚDZS</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870303</codeValue>
+      <displayName>lekár manažér - prednosta kliniky</displayName>
+      <Skratka>005</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870337</codeValue>
+      <displayName>lekár - prednosta kliniky - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>006</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870360</codeValue>
+      <displayName>lekár manažér - zástupca prednostu kliniky</displayName>
+      <Skratka>007</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870394</codeValue>
+      <displayName>lekár - zástupca prednostu kliniky - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>008</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870428</codeValue>
+      <displayName>vedúci odboru</displayName>
+      <Skratka>009</Skratka>
+      <Popis>úradu verejného zdravotníctva, ÚDZS</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870451</codeValue>
+      <displayName>vedúci oddelenia</displayName>
+      <Skratka>010</Skratka>
+      <Popis>úradu verejného zdravotníctva, ÚDZS</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870485</codeValue>
+      <displayName>referent odboru, oddelenia</displayName>
+      <Skratka>011</Skratka>
+      <Popis>úradu verejného zdravotníctva, ÚDZS</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870519</codeValue>
+      <displayName>lekár manažér - primár oddelenia</displayName>
+      <Skratka>012</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870535</codeValue>
+      <displayName>lekár manažér - zástupca primára oddelenia</displayName>
+      <Skratka>013</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870568</codeValue>
+      <displayName>vedúci lekár ambulantnej časti ústavného zariadenia</displayName>
+      <Skratka>014</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870584</codeValue>
+      <displayName>vedúci lekár oddelenia polikliniky</displayName>
+      <Skratka>015</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870600</codeValue>
+      <displayName>lekár špecialista - vedúci odborný lekár, odborný zástupca</displayName>
+      <Skratka>016</Skratka>
+      <Popis>lekár, ktorý získal akúkoľvek lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870626</codeValue>
+      <displayName>lekár špecialista - ordinár</displayName>
+      <Skratka>017</Skratka>
+      <Popis>lekár, ktorý získal akúkoľvek lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870642</codeValue>
+      <displayName>lekár špecialista - všeobecný lekár pre deti a dorast</displayName>
+      <Skratka>018</Skratka>
+      <Popis>lekár, ktorý získal akúkoľvek lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870667</codeValue>
+      <displayName>lekár špecialista - všeobecný lekár pre dospelých</displayName>
+      <Skratka>019</Skratka>
+      <Popis>lekár, ktorý získal akúkoľvek lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870683</codeValue>
+      <displayName>lekár špecialista</displayName>
+      <Skratka>020</Skratka>
+      <Popis>lekár, ktorý získal akúkoľvek lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870709</codeValue>
+      <displayName>lekár bez špecializácie</displayName>
+      <Skratka>021</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870725</codeValue>
+      <displayName>zubný lekár manažér - prednosta kliniky</displayName>
+      <Skratka>022</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870741</codeValue>
+      <displayName>zubný lekár - prednosta kliniky - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>023</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870758</codeValue>
+      <displayName>zubný lekár manažér - zástupca prednostu kliniky</displayName>
+      <Skratka>024</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870766</codeValue>
+      <displayName>zubný lekár - zástupca prednostu kliniky - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>025</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870774</codeValue>
+      <displayName>zubný lekár manažér - primár oddelenia</displayName>
+      <Skratka>026</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870782</codeValue>
+      <displayName>zubný lekár manažér - zástupca primára oddelenia</displayName>
+      <Skratka>027</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870790</codeValue>
+      <displayName>zubný lekár špecialista - vedúci odborný zubný lekár, odborný zástupca</displayName>
+      <Skratka>028</Skratka>
+      <Popis>zubný lekár, ktorý získal akúkoľvek zubno-lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870808</codeValue>
+      <displayName>zubný lekár špecialista - ordinár</displayName>
+      <Skratka>029</Skratka>
+      <Popis>zubný lekár, ktorý získal akúkoľvek zubno-lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870816</codeValue>
+      <displayName>zubný lekár špecialista</displayName>
+      <Skratka>030</Skratka>
+      <Popis>zubný lekár, ktorý získal akúkoľvek zubno-lekársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870824</codeValue>
+      <displayName>zubný lekár bez špecializácie</displayName>
+      <Skratka>031</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870832</codeValue>
+      <displayName>vedúci revízny lekár, zubný lekár, farmaceut alebo sestra</displayName>
+      <Skratka>032</Skratka>
+      <Popis>pôvodne vedúci revízny lekár, zubný lekár alebo farmaceut</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870840</codeValue>
+      <displayName>revízny lekár, zubný lekár, farmaceut alebo sestra</displayName>
+      <Skratka>033</Skratka>
+      <Popis>pôvodne revízny lekár, zubný lekár alebo farmaceut</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870865</codeValue>
+      <displayName>pedagóg na strednej škole, vysokej škole, univerzite</displayName>
+      <Skratka>034</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>31.01.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870873</codeValue>
+      <displayName>hlavný hygienik (mimo rezort MZ SR a nie je riaditeľom predmetnej spravodajskej jednotky)</displayName>
+      <Skratka>035</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870881</codeValue>
+      <displayName>štatistik, informatik</displayName>
+      <Skratka>036</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870899</codeValue>
+      <displayName>vedecký pracovník</displayName>
+      <Skratka>037</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870907</codeValue>
+      <displayName>konateľ neštátneho právneho subjektu - právnickej osoby</displayName>
+      <Skratka>038</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870915</codeValue>
+      <displayName>volený predseda, prezident  apod. spoločnosti, asociácie, združenia, stavovskej organizácie, komory</displayName>
+      <Skratka>039</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>31.01.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870923</codeValue>
+      <displayName>farmaceut manažér - prednosta nemocničnej lekárne</displayName>
+      <Skratka>040</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870931</codeValue>
+      <displayName>farmaceut - prednosta nemocničnej lekárne - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>041</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870949</codeValue>
+      <displayName>farmaceut manažér - zástupca prednostu nemocničnej lekárne</displayName>
+      <Skratka>042</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870956</codeValue>
+      <displayName>farmaceut - zástupca prednostu nemocničnej lekárne - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>043</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870972</codeValue>
+      <displayName>farmaceut manažér - primár nemocničnej lekárne, oddelenia centrálnej sterilizácie</displayName>
+      <Skratka>044</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870998</codeValue>
+      <displayName>farmaceut manažér - zástupca primára nemocničnej lekárne, oddelenia centrálnej sterilizácie</displayName>
+      <Skratka>045</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871004</codeValue>
+      <displayName>farmaceut manažér - vedúci pracovník výrobcu alebo distribútora liekov, zdravotníckych pomôcok</displayName>
+      <Skratka>046</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871012</codeValue>
+      <displayName>farmaceut manažér - lekárnik, odborný zástupca verejnej lekárne</displayName>
+      <Skratka>047</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871020</codeValue>
+      <displayName>farmaceut - lekárnik so špecializáciou</displayName>
+      <Skratka>048</Skratka>
+      <Popis>farmaceut, ktorý získal akúkoľvek farmaceutickú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871038</codeValue>
+      <displayName>farmaceut - lekárnik bez špecializácie</displayName>
+      <Skratka>049</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871046</codeValue>
+      <displayName>farmaceut - vedúci odborný farmaceut, odborný zástupca</displayName>
+      <Skratka>050</Skratka>
+      <Popis>pôvodne farmaceut so špecializáciou - vedúci odborný farmaceut, odborný zástupca</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871053</codeValue>
+      <displayName>farmaceut - vedúci oddelenia</displayName>
+      <Skratka>051</Skratka>
+      <Popis>pôvodne farmaceut so špecializáciou - vedúci oddelenia</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871061</codeValue>
+      <displayName>farmaceut - vedúci úseku</displayName>
+      <Skratka>052</Skratka>
+      <Popis>pôvodne farmaceut so špecializáciou - vedúci úseku</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871079</codeValue>
+      <displayName>farmaceut špecialista</displayName>
+      <Skratka>053</Skratka>
+      <Popis>farmaceut, ktorý získal akúkoľvek farmaceutickú špecializáciu, pôvodne farmaceut so špecializáciou</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871087</codeValue>
+      <displayName>farmaceut bez špecializácie</displayName>
+      <Skratka>054</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871103</codeValue>
+      <displayName>obchodný zástupca výrobcu alebo distribútora liekov, zdravotníckych pomôcok</displayName>
+      <Skratka>055</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>31.01.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871111</codeValue>
+      <displayName>pedagóg</displayName>
+      <Skratka>056</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871129</codeValue>
+      <displayName>zdravotnícky pracovník - iná funkcia</displayName>
+      <Skratka>099</Skratka>
+      <Popis>pôvodne lekár, zubný lekár alebo farmaceut - iná funkcia</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.01.1900</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871137</codeValue>
+      <displayName>sestra - vedúca odborná sestra, odborný zástupca</displayName>
+      <Skratka>101</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871145</codeValue>
+      <displayName>hlavná sestra ústavného zdravotníckeho zariadenia</displayName>
+      <Skratka>102</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871152</codeValue>
+      <displayName>vrchná sestra kliniky alebo oddelenia zdravotníckeho zariadenia</displayName>
+      <Skratka>103</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871160</codeValue>
+      <displayName>staničná sestra</displayName>
+      <Skratka>104</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871178</codeValue>
+      <displayName>sestra špecialistka</displayName>
+      <Skratka>105</Skratka>
+      <Popis>sestra, ktorá získala akúkoľvek sesterskú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871186</codeValue>
+      <displayName>sestra bez špecializácie</displayName>
+      <Skratka>106</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871194</codeValue>
+      <displayName>pôrodná asistentka - vedúca odborná pôrodná asistentka, odborný zástupca</displayName>
+      <Skratka>201</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871202</codeValue>
+      <displayName>hlavná pôrodná asistentka ústavného zdravotníckeho zariadenia</displayName>
+      <Skratka>202</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871210</codeValue>
+      <displayName>vrchná pôrodná asistentka kliniky alebo oddelenia</displayName>
+      <Skratka>203</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871228</codeValue>
+      <displayName>staničná pôrodná asistentka</displayName>
+      <Skratka>204</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871236</codeValue>
+      <displayName>pôrodná asistentka špecialistka</displayName>
+      <Skratka>205</Skratka>
+      <Popis>pôrodná asistentka, ktorá získala akúkoľvek špecializáciu legislatívne prislúchajúcu pôrodnej asistentke</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871244</codeValue>
+      <displayName>pôrodná asistentka bez špecializácie</displayName>
+      <Skratka>206</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871251</codeValue>
+      <displayName>zdravotnícky laborant - vedúci odborný zdravotnícky laborant, odborný zástupca</displayName>
+      <Skratka>301</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871269</codeValue>
+      <displayName>zdravotnícky laborant špecialista</displayName>
+      <Skratka>302</Skratka>
+      <Popis>zdravotnícky laborant, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu zdravotníckemu laborantovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871285</codeValue>
+      <displayName>zdravotnícky laborant bez špecializácie</displayName>
+      <Skratka>303</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871293</codeValue>
+      <displayName>farmaceutický laborant - vedúci odborný farmaceutický laborant, odborný zástupca</displayName>
+      <Skratka>311</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871301</codeValue>
+      <displayName>farmaceutický laborant špecialista</displayName>
+      <Skratka>312</Skratka>
+      <Popis>farmaceutický laborant, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu farmaceutickému laborantovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871319</codeValue>
+      <displayName>farmaceutický laborant bez špecializácie</displayName>
+      <Skratka>313</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871327</codeValue>
+      <displayName>technik pre zdravotnícke pomôcky - vedúci technik pre zdravotnícke pomôcky, odborný zástupca</displayName>
+      <Skratka>321</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871335</codeValue>
+      <displayName>technik pre zdravotnícke pomôcky</displayName>
+      <Skratka>322</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871343</codeValue>
+      <displayName>fyzioterapeut - vedúci odborný fyzioterapeut, odborný zástupca</displayName>
+      <Skratka>401</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871350</codeValue>
+      <displayName>fyzioterapeut špecialista</displayName>
+      <Skratka>402</Skratka>
+      <Popis>fyzioterapeut, ktorý získal akúkoľvek fyzioterapeutickú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871376</codeValue>
+      <displayName>fyzioterapeut bez špecializácie</displayName>
+      <Skratka>403</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871384</codeValue>
+      <displayName>zdravotnícky záchranár - vedúci odborný zdravotnícky záchranár, odborný zástupca</displayName>
+      <Skratka>411</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871392</codeValue>
+      <displayName>zdravotnícky záchranár špecialista</displayName>
+      <Skratka>412</Skratka>
+      <Popis>zdravotnícky záchranár, ktorý získal akúkoľvek záchranársku špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871400</codeValue>
+      <displayName>zdravotnícky záchranár bez špecializácie</displayName>
+      <Skratka>413</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871418</codeValue>
+      <displayName>verejný zdravotník- vedúci odborný verejný zdravotník, odborný zástupca</displayName>
+      <Skratka>421</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871426</codeValue>
+      <displayName>verejný zdravotník špecialista</displayName>
+      <Skratka>422</Skratka>
+      <Popis>farmaceutický laborant, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu verejnému zdravotníkovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871442</codeValue>
+      <displayName>verejný zdravotník bez špecializácie</displayName>
+      <Skratka>423</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871459</codeValue>
+      <displayName>praktická sestra špecialistka</displayName>
+      <Skratka>431</Skratka>
+      <Popis>praktická sestra, ktorá získala akúkoľvek špecializáciu legislatívne prislúchajúcu praktickej sestre, pôvodne zdravotnícky asistent špecialista</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871475</codeValue>
+      <displayName>praktická sestra bez špecializácie</displayName>
+      <Skratka>432</Skratka>
+      <Popis>pôvodne zdravotnícky asistent bez špecializácie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871491</codeValue>
+      <displayName>rádiologický technik - vedúci odborný rádiologický technik, odborný zástupca</displayName>
+      <Skratka>441</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871517</codeValue>
+      <displayName>rádiologický technik špecialista</displayName>
+      <Skratka>442</Skratka>
+      <Popis>rádiologický technik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu rádiologickému technikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871533</codeValue>
+      <displayName>rádiologický technik bez špecializácie</displayName>
+      <Skratka>443</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871558</codeValue>
+      <displayName>dentálna hygienička - vedúca dentálna hygienička, odborný zástupca</displayName>
+      <Skratka>451</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871574</codeValue>
+      <displayName>dentálna hygienička</displayName>
+      <Skratka>452</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871590</codeValue>
+      <displayName>nutričný terapeut - vedúci odborný nutričný terapeut, odborný zástupca</displayName>
+      <Skratka>461</Skratka>
+      <Popis>pôvodne asistent výživy - vedúci odborný asistent výživy, odborný zástupca</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871616</codeValue>
+      <displayName>nutričný terapeut špecialista</displayName>
+      <Skratka>462</Skratka>
+      <Popis>nutričný terapeut, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu nutričnému terapeutovi, pôvodne asistent výživy špecialista</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871632</codeValue>
+      <displayName>nutričný terapeut bez špecializácie</displayName>
+      <Skratka>463</Skratka>
+      <Popis>pôvodne asistent výživy bez špecializácie</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871657</codeValue>
+      <displayName>masér</displayName>
+      <Skratka>471</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871673</codeValue>
+      <displayName>sanitár</displayName>
+      <Skratka>481</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871681</codeValue>
+      <displayName>zubný asistent</displayName>
+      <Skratka>491</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871707</codeValue>
+      <displayName>zubný technik špecialista</displayName>
+      <Skratka>601</Skratka>
+      <Popis>zubný technik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu zubnému technikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871723</codeValue>
+      <displayName>zubný technik bez špecializácie</displayName>
+      <Skratka>602</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871756</codeValue>
+      <displayName>optometrista špecialista</displayName>
+      <Skratka>611</Skratka>
+      <Popis>optometrista, ktorý získal akúkoľvek optometristickú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871780</codeValue>
+      <displayName>optometrista bez špecializácie</displayName>
+      <Skratka>612</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871814</codeValue>
+      <displayName>očný optik špecialista</displayName>
+      <Skratka>621</Skratka>
+      <Popis>očný optik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu očnému optikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871830</codeValue>
+      <displayName>očný optik bez špecializácie</displayName>
+      <Skratka>622</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871855</codeValue>
+      <displayName>ortopedický technik - vedúci odborný ortopedický technik, odborný zástupca</displayName>
+      <Skratka>631</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871871</codeValue>
+      <displayName>ortopedický technik špecialista</displayName>
+      <Skratka>632</Skratka>
+      <Popis>ortopedický technik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu ortopedickému technikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871897</codeValue>
+      <displayName>ortopedický technik bez špecializácie</displayName>
+      <Skratka>633</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871913</codeValue>
+      <displayName>iný zdravotnícky pracovník - logopéd - vedúci odborný logopéd, odborný zástupca</displayName>
+      <Skratka>701</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871939</codeValue>
+      <displayName>iný zdravotnícky pracovník - logopéd špecialista</displayName>
+      <Skratka>702</Skratka>
+      <Popis>logopéd, ktorý získal akúkoľvek logopedickú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871947</codeValue>
+      <displayName>iný zdravotnícky pracovník - logopéd bez špecializácie</displayName>
+      <Skratka>703</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871962</codeValue>
+      <displayName>iný zdravotnícky pracovník - psychológ - vedúci odborný psychológ, odborný zástupca</displayName>
+      <Skratka>721</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208871996</codeValue>
+      <displayName>iný zdravotnícky pracovník - psychológ špecialista</displayName>
+      <Skratka>722</Skratka>
+      <Popis>psychológ, ktorý získal akúkoľvek psychologickú špecializáciu</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872010</codeValue>
+      <displayName>iný zdravotnícky pracovník - psychológ bez špecializácie</displayName>
+      <Skratka>723</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872036</codeValue>
+      <displayName>iný zdravotnícky pracovník - laboratórny diagnostik - vedúci odborný laboratórny diagnostik, odborný zástupca</displayName>
+      <Skratka>731</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872051</codeValue>
+      <displayName>iný zdravotnícky pracovník - laboratórny diagnostik špecialista</displayName>
+      <Skratka>732</Skratka>
+      <Popis>laboratórny diagnostik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu laboratórnemu diagnostikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872077</codeValue>
+      <displayName>iný zdravotnícky pracovník - laboratórny diagnostik bez špecializácie</displayName>
+      <Skratka>733</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872101</codeValue>
+      <displayName>iný zdravotnícky pracovník - liečebný pedagóg - vedúci odborný liečebný pedagóg, odborný zástupca</displayName>
+      <Skratka>741</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872119</codeValue>
+      <displayName>iný zdravotnícky pracovník - liečebný pedagóg špecialista</displayName>
+      <Skratka>742</Skratka>
+      <Popis>liečebný pedagóg, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu liečebnému pedagógovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872135</codeValue>
+      <displayName>iný zdravotnícky pracovník - liečebný pedagóg bez špecializácie</displayName>
+      <Skratka>743</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872150</codeValue>
+      <displayName>iný zdravotnícky pracovník - fyzik - vedúci odborný fyzik, odborný zástupca</displayName>
+      <Skratka>751</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872176</codeValue>
+      <displayName>iný zdravotnícky pracovník - fyzik špecialista</displayName>
+      <Skratka>752</Skratka>
+      <Popis>fyzik, ktorý získal akúkoľvek špecializáciu legislatívne prislúchajúcu fyzikovi</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872200</codeValue>
+      <displayName>iný zdravotnícky pracovník - fyzik bez špecializácie</displayName>
+      <Skratka>753</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872226</codeValue>
+      <displayName>zdravotnícky pracovník manažér - prednosta kliniky v odboroch SVLZ</displayName>
+      <Skratka>901</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872234</codeValue>
+      <displayName>zdravotnícky pracovník - prednosta kliniky v odboroch SVLZ - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>902</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872267</codeValue>
+      <displayName>zdravotnícky pracovník manažér - zástupca prednostu kliniky v odboroch SVLZ</displayName>
+      <Skratka>903</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872275</codeValue>
+      <displayName>zdravotnícky pracovník - zástupca prednostu kliniky v odboroch SVLZ - pedagóg bez manažérskej funkcie</displayName>
+      <Skratka>904</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872291</codeValue>
+      <displayName>zdravotnícky pracovník manažér - primár oddelenia v odboroch SVLZ</displayName>
+      <Skratka>905</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872317</codeValue>
+      <displayName>zdravotnícky pracovník manažér - zástupca primára oddelenia v odboroch SVLZ</displayName>
+      <Skratka>906</Skratka>
+      <Popis>-</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.02.2014</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872333</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>998</Skratka>
+      <Popis>neznáma hodnota</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>01.11.2015</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

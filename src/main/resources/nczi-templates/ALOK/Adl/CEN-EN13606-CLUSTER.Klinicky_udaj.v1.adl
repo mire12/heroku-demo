@@ -1,0 +1,153 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Klinicky_udaj.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Klinicke_udaje
+        parts existence matches {0..1} cardinality matches {0..*; ordered} matches {
+            ELEMENT[at0002] occurrences matches {1..1} matches {  -- Typ údaja
+                value existence matches {0..1} matches {
+                    CV[at0006] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {0..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {*}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0012] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.254"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0010] occurrences matches {1..1} matches {  -- Typ hodnoty
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0011] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {"PQ","S","CV"}
+                    }
+                }
+            }
+            ELEMENT[at0003] occurrences matches {0..1} matches {  -- Hodnota PQ
+                value existence matches {0..1} matches {
+                    PQ[at0009] occurrences matches {1..1} matches {  -- PQ
+                        units existence matches {1..1} matches {
+                            CS[at0001] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {1..1} matches {/.*/}
+                                codingScheme existence matches {1..1} matches {
+                                    OID[at0006] occurrences matches {1..1} matches {  -- CV
+                                        oid existence matches {1..1} matches {"1.3.158.00165387.100.10.87"}
+                                    }
+                                }
+                                codingSchemeName existence matches {1..1} matches {/.*/}
+                                codingSchemeVersion existence matches {1..1} matches {/\d+/}
+                            }
+                        }
+                        value existence matches {1..1} matches {|>-99999.0..<999999.0|}
+                    }
+                }
+            }
+            ELEMENT[at0004] occurrences matches {0..1} matches {  -- Hodnota S
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0008] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                    }
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {  -- Hodnota CV
+                value existence matches {0..1} matches {
+                    CV[at0007] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {0..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {*}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0012] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Klinicke_udaje">
+                    description = <"Klinicke_udaje">
+                >
+                ["at0002"] = <
+                    text = <"Typ údaja">
+                    description = <"Uvádza sa, ktorého klinického údaja sa uvedené hodnoty týkajú. 
+Podľa číselníka: 1.3.158.00165387.100.10.254 ">
+                >
+                ["at0003"] = <
+                    text = <"Hodnota PQ">
+                    description = <"Hodnota klinického údaja vyjadrená mernými jednotkami.">
+                >
+                ["at0004"] = <
+                    text = <"Hodnota S">
+                    description = <"Textový popis klinického údaja">
+                >
+                ["at0005"] = <
+                    text = <"Hodnota CV">
+                    description = <"Hodnota klinického údaja vyjadrená číselníkom.">
+                >
+                ["at0006"] = <
+                    text = <"CV">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"CV">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"Typ hodnoty">
+                    description = <"Podľa uvedeného klinického údaja sa určuje spôsob uvedenia hodnoty. Môže nadobúdať hodnoty: PQ, S, CV
+
+Napr. ak je klinický údaj – Fáza menštruačného cyklu, je typ hodnoty CV, a vyberie sa fáza menštruačného cyklu napr. menopauza.">
+                >
+                ["at0011"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"OID">
+                    description = <"This is a OID object">
+                >
+            >
+        >
+    >

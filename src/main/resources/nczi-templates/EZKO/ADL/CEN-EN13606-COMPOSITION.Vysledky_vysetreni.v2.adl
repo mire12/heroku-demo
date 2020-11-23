@@ -1,0 +1,67 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.Vysledky_vysetreni.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20180326">
+        ["name"] = <"Ján Mikolaj">
+        ["organisation"] = <"Asseco Central Europe, a.s.">
+        ["email"] = <"jan.mikolaj@asseco-ce.com">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Poskytovanie informácií o výsledkoch vyšetrení pacienta - krvná skupina, krvný tlak a výsledky antropometrických meraní.">
+            keywords = <"Krvná skupina","Krvný tlak","Výsledky meraní">
+            copyright = <"(c) 2011 Asseco Central Europe, a.s.">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- Výsledky vyšetrení
+        content existence matches {0..1} cardinality matches {0..*; unordered} matches {
+            allow_archetype ENTRY[at0001] occurrences matches {0..*} matches {  -- Krvná skupina
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Krvna_skupina.v2/}
+            }
+            allow_archetype ENTRY[at0002] occurrences matches {0..*} matches {  -- Krvný tlak
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Krvny_tlak.v2/}
+            }
+            allow_archetype ENTRY[at0003] occurrences matches {0..*} matches {  -- Vitálne a antropometrické hodnoty
+                include
+                    archetype_id/value matches {/CEN-EN13606-ENTRY.Vitalne_a_antropometricke_hodnoty.v2/}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Výsledky vyšetrení">
+                    description = <"Informácie o krvnej skupine pacienta, o meraniach krvného tlaku a údaje o meraniach výšky a váhy pacienta.">
+                >
+                ["at0001"] = <
+                    text = <"Krvná skupina">
+                    description = <"Výsledok zistenia krvnej skupiny ">
+                >
+                ["at0002"] = <
+                    text = <"Krvný tlak">
+                    description = <"Záznamy merania krvného tlaku, pulzu s uvedením miesta , metódy a okolností merania. ">
+                >
+                ["at0003"] = <
+                    text = <"Vitálne a antropometrické hodnoty">
+                    description = <"Záznamy meraní hmotnosti a výšky.">
+                >
+            >
+        >
+    >

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Typ očkovania</codingSchemeName>
+    <codingSchemeVersion>3</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.36</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000115931</codeValue>
+      <displayName>základné očkovanie</displayName>
+      <Skratka>ZAKOC</Skratka>
+      <Popis>základné očkovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000115949</codeValue>
+      <displayName>preočkovanie</displayName>
+      <Skratka>PREOC</Skratka>
+      <Popis>preočkovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883815</codeValue>
+      <displayName>1.preočkovanie</displayName>
+      <Skratka>1PREOC</Skratka>
+      <Popis>1.preočkovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883823</codeValue>
+      <displayName>2. preočkovanie</displayName>
+      <Skratka>2PREOC</Skratka>
+      <Popis>2. preočkovanie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000400622</codeValue>
+      <displayName>I. dávka (základné očkovanie)</displayName>
+      <Skratka>PRDAV</Skratka>
+      <Popis>I. dávka (základné očkovanie)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000400630</codeValue>
+      <displayName>II. dávka (základné očkovanie)</displayName>
+      <Skratka>DRDAV</Skratka>
+      <Popis>II. dávka (základné očkovanie)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000400648</codeValue>
+      <displayName>III. dávka (základné očkovanie)</displayName>
+      <Skratka>TRDAV</Skratka>
+      <Popis>III. dávka (základné očkovanie)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885604</codeValue>
+      <displayName>IV. dávka (základné očkovanie)</displayName>
+      <Skratka>STDAV</Skratka>
+      <Popis>IV. dávka (základné očkovanie)</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208874636</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXXXXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

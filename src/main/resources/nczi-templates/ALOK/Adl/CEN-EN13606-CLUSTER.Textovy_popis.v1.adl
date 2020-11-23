@@ -1,0 +1,75 @@
+﻿archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Textovy_popis.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Textovy_popis
+        parts existence matches {0..1} cardinality matches {1..1; ordered} matches {
+            ELEMENT[at0004] occurrences matches {0..1} matches {  -- Text
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0005] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,85000}/}
+                    }
+                }
+            }
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- Text HTML
+                value existence matches {0..1} matches {
+                    SIMPLE_TEXT[at0003] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {/[\s\S]{0,1000000}/; "HTML"}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Textovy_popis">
+                    description = <"Textovy_popis">
+                >
+                ["at0002"] = <
+                    text = <"Text HTML">
+                    description = <"Uvádza sa text v dátovom type: HTML.">
+                >
+                ["at0004"] = <
+                    text = <"Text">
+                    description = <"Uvádza sa text v dátovom type: simple text.">
+                >
+                ["at0003"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkReservation/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkReservation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="EN13606-RM.xsd"/>
+
+
+  <xs:element name="VyhladajObjednavkyVCaseResponse" type="tns:VyhladajObjednavkyVCaseResponse" />
+  
+  <xs:complexType name="VyhladajObjednavkyVCaseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PacientiData" type="xs:base64Binary">
+        <xs:annotation>
+            <xs:documentation>Zašifrované údaje o pacientoch: meno, priezvisko, rok narodenia, telefón a email</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ZoznamObjednavok" type="tns:ArrayOfObjednavka">
+        <xs:annotation>
+            <xs:documentation>Zoznam objednávok s termínom spadajúcim do zadaného intervalu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ArrayOfObjednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Objednavka" nillable="true" type="tns:Objednavka" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Objednavka">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CisloObjednavky" >
+        <xs:annotation>
+            <xs:documentation>Jedinečný kód objednávky vygenerovaný systémom ISOO. 6-miestny alfanumerický reťazec.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DatumPotvrdenia" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Dátum potvrdenia termínu objednania. Dostupný až po potvrdení objednávky zo strany PZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="IdObjednavky" type="xs:int">
+        <xs:annotation>
+            <xs:documentation>Interné ID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="IdKalendara" nillable="true" type="xs:int">
+        <xs:annotation>
+            <xs:documentation>ID kalendára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DovodZrusenia" xmlns:q1="CEN/13606/RM" type="q1:CV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPrZS" xmlns:q2="CEN/13606/RM" type="q2:II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdOUPZS" xmlns:q3="CEN/13606/RM" type="q3:II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdPotvrdil" xmlns:q4="CEN/13606/RM" type="q4:II" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StavObjednavky" type="tns:StavObjednavky">
+        <xs:annotation>
+            <xs:documentation>Stav objednávky - hodnota z vymenovaného typu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="DruhVysetrenia" xmlns:q5="CEN/13606/RM" type="q5:CV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdZmenil" xmlns:q6="CEN/13606/RM" type="q6:II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdZrusil" xmlns:q7="CEN/13606/RM" type="q7:II" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Poznamka" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Poznámka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="TerminObjednania" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Nepotvrdené objednávky do fronty túto informáciu nemajú. Dostupný v prípade, že je objednávka na dátum a čas, alebo že je objednávka do fronty a PZS ju už potvrdil a pridelil jej dátum a čas. Presný čas a dátum objednania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="VyvolavaciKod" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Vyvolávací kód. Týmto kódom má byť pacient volaný do ambulancie na vyšetrenie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Zmenene" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Dátum a čas poslednej zmeny objednávky, prípadne jej vytvorenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Zrusene" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation>Dátum a čas zrušenia objednávky</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="ZaslatUpozornenieNaBliziaciSaTermin" type="xs:boolean">
+        <xs:annotation>
+            <xs:documentation>Príznak, či sa má zaslať upozornenie na blížiaci sa termín vyšetrenia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="TypIntervalu" type="tns:TypCasovehoIntervalu">
+        <xs:annotation>
+            <xs:documentation>Typ intervalu v kalendári. Rozlišuje medzi ordinačnými a doplnkovými ord. hodinami kalendára. Položka z vymenovaného typu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="ExterneId" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Externé ID pridelené objednávke v systéme IS PZS pre identifikáciu objednávky a kontrolu konzistencie dát.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="Asid" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Identifikátor záznamu s osobnými údajmi pacienta, ktorý je uložený v šifrovanom bloku PacientiData.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="StavObjednavky">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nova" />
+      <xs:enumeration value="Potvrdena" />
+      <xs:enumeration value="Realizovana" />
+      <xs:enumeration value="Zrusena" />
+      <xs:enumeration value="PacientSaNedostavil" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypCasovehoIntervalu">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtvaracieHodiny" />
+      <xs:enumeration value="OrdinacneHodiny" />
+      <xs:enumeration value="DoplnkoveOrdinacneHodiny" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

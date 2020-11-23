@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" elementFormDefault="qualified" targetNamespace="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://eHealth.gov.sk/EzkCommon/v1" schemaLocation="EzkCommon.xsd"/>
+  <xs:element name="VyhladajDoplnujuceInformacieVystup" type="tns:VyhladajDoplnujuceInformacieVystup" />
+  <xs:complexType name="VyhladajDoplnujuceInformacieVystup">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="AdditionalInformationTotalCount" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DoplnujuceInformacie" type="tns:DoplnujucaInformacia" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="DoplnujucaInformacia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Datum" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IdPacienta" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Poznamka" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="512"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element minOccurs="1" maxOccurs="1" name="TypDoplnujucejInformacie" xmlns:q51="http://eHealth.gov.sk/EzkCommon/v1" type="q51:IdPolozkaCiselnika" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

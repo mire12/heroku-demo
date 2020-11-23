@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^dajpacientskysumareds$ dajpacientskysumareds.xml [NC,L,QSA]
+RewriteRule ^zruszapissumarudaje$ zruszapissumarudaje.xml [NC,L,QSA]
+RewriteRule ^zruszapissumar$ zruszapissumar.xml [NC,L,QSA]
+RewriteRule ^zapissumarudaje$ zapissumarudaje.xml [NC,L,QSA]
+RewriteRule ^zapissumarproblemy$ zapissumarproblemy.xml [NC,L,QSA]
+RewriteRule ^stornujzaznam$ stornujzaznam.xml [NC,L,QSA]
+RewriteRule ^vyhladajzaznamypreziadatela$ vyhladajzaznamypreziadatela.xml [NC,L,QSA]
+RewriteRule ^vyhladajzaznamy$ vyhladajzaznamy.xml [NC,L,QSA]
+RewriteRule ^dajzaznamovysetreni$ dajzaznamovysetreni.xml [NC,L,QSA]
+RewriteRule ^dajrodnecislo$ dajrodnecislo.xml [NC,L,QSA]
+RewriteRule ^dajoupzs$ dajoupzs.xml [NC,L,QSA]
+RewriteRule ^dajzpr$ dajzpr.xml [NC,L,QSA]
+RewriteRule ^vysetrenie$ vysetrenie.xml [NC,L,QSA]
+RewriteRule ^jruzid$ jruzid.xml [NC,L,QSA]
+RewriteRule ^oververziu$ oververziu.xml [NC,L,QSA]
+RewriteRule ^zapissuhlasosobyprepzs$ zapissuhlasosobyprepzs.xml [NC,L,QSA]
+RewriteRule ^dajpacientskysumarudaje$ dajpacientskysumarudaje.xml [NC,L,QSA]
+RewriteRule ^dajpacientskysumar$ dajpacientskysumar.xml [NC,L,QSA]
+RewriteRule ^log$ savenczi.php [NC,L,QSA]
+</IfModule>

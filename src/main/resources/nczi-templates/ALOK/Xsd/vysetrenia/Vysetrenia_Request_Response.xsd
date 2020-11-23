@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/Allocation/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/Allocation/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/Identifikatory.xsd"/>
+  <xs:include schemaLocation="../_shared/AlokacieIdentifikatory.xsd"/>
+  <xs:include schemaLocation="../_shared/Obecne.xsd"/>
+  <xs:include schemaLocation="../_shared/ObecneAnon.xsd"/>
+  <xs:include schemaLocation="../_shared/EhrFields.xsd"/>
+  <xs:include schemaLocation="../_shared/Anonymizacia_Request_Response.xsd" />
+  <!-- Request -->
+  <xs:element name="IdentifikatorZaznamuVysetrenia" type="IdentifikatorZaznamuVysetrenia" />
+  <xs:element name="ZaznamOVysetreniCriteria" type="ZaznamOVysetreniCriteria" />
+  <xs:element name="ZaznamOVysetreniCriteria_v3" type="ZaznamOVysetreniCriteria_v3" />
+  <xs:element name="ZaznamOVysetreniCriteria_v5" type="ZaznamOVysetreniCriteria_v5" />
+  <xs:element name="ZoznamZaznamovOVysetreni" type="ZoznamZaznamovOVysetreni" />
+  <xs:element name="IdZaznamuVysetrenia" type="IdZaznamuVysetrenia" />
+  <xs:element name="VyhladajZaznamyOVysetreniachPreZiadatela_Request" type="VyhladajZaznamyOVysetreniachPreZiadatela_Request" />
+  <xs:element name="VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request" type="VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request" />
+  <xs:element name="DajZakladneUdajeVLPreRezervaciu_Request" type="DajZakladneUdajeVLPreRezervaciu_Request" />
+  <xs:element name="DajZakladneUdajeVLPreRezervaciu_Response" type="DajZakladneUdajeVLPreRezervaciu_Response" />
+  <xs:element name="VyhladajMojeRestrikcieZaznamov_Request" type="VyhladajMojeRestrikcieZaznamov_Request" />
+  <xs:element name="VyhladajMojeRestrikcieZaznamov_Response" type="VyhladajMojeRestrikcieZaznamov_Response" />
+  <xs:element name="PrevezmiVymennyListok_Request" type="PrevezmiVymennyListok_Request" />
+  <xs:element name="PrevezmiVymennyListok_Response" type="PrevezmiVymennyListok_Response" />
+  <xs:element name="VyhladajRestrikcieZaznamovPSURequest" type="VyhladajRestrikcieZaznamovPSURequest" />
+  <xs:element name="VyhladajRestrikcieZaznamovPSUResponse" type="VyhladajRestrikcieZaznamovPSUResponse" />
+  <!-- Request END -->
+  <xs:complexType name="VyhladajZaznamyOVysetreniachPreZiadatela_Request">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ExternyIDVymennehoListku" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Externý identifikátor Vymenneho listku. OID: 1.3.158.00165387.100.60.110</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d{6,21}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Odporucanie_Odpoved" type="Odporucanie_Odpoved" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ExternyIDVymennehoListku" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Externý identifikátor Vymenneho listku. OID: 1.3.158.00165387.100.60.110</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d{6,21}" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Odporucanie_Odpoved" type="Odporucanie_Odpoved" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Odporucanie_Odpoved">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VYMENNYLISTOK" />
+      <xs:enumeration value="VYSLEDOK" />
+      <xs:enumeration value="VYMENNYLISTOK_VYSLEDOK" />
+      <xs:enumeration value="VYMENNYLISTOK_S_EXTRAKTOM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IdZaznamuVysetrenia">
+    <xs:sequence>
+      <xs:element name="ExternyIDVymennehoListku" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Externý identifikátor Vymenneho listku. OID: 1.3.158.00165387.100.60.110</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdLekarskehoVysetrenia" type="IdLekarskehoVysetrenia" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdZaznamuVysetrenia_v3">
+    <xs:sequence>
+      <xs:element name="IdLekarskehoVysetrenia" type="IdLekarskehoVysetrenia" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdentifikatorZaznamuVysetrenia">
+    <xs:sequence>
+      <xs:element name="IdZaznamuVysetrenia" type="IdLekarskehoVysetrenia" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DovodPristupu" type="CVDovodPristupuKZdravotnejDokumentacii" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOVysetreniCriteria">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumOd" type="xs:date" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PrijimatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu vysetrenia v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypVysetrenia" type="TypLekarskehoVysetreniaEnum" minOccurs="0" maxOccurs="3">
+        <xs:annotation>
+          <xs:documentation>
+            Odkaz na enumeraciu
+            TypLekarskehoVysetreniaEnum
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdborneZameranie" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdborneZameranieOU</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PoskytovatelZS" type="IdPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PoskytovatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExternyIDVymennehoListku" type="AIIExternyIDVymennehoListku" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDZaznamuVysetrenia" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Odporucanie_Odpoved" type="Odporucanie_Odpoved" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVysetreniaOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVysetreniaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZdravotnickaOdbornost" type="CVZdravotnickaOdbornost" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Špecializácia odosielajúceho alebo ošetrujúceho lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Triedenie_Metadata" type="Triedenie_VysetreniaPacienta" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOVysetreniCriteria_v3">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PrijimatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu vysetrenia v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypVysetrenia" type="TypLekarskehoVysetreniaEnum" minOccurs="0" maxOccurs="3">
+        <xs:annotation>
+          <xs:documentation>
+            Odkaz na enumeraciu
+            TypLekarskehoVysetreniaEnum
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdborneZameranie" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdborneZameranieOU</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PoskytovatelZS" type="IdPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PoskytovatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDVymennehoListku" type="AIIIDVymennehoListku" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IDZaznamuVysetrenia" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Odporucanie_Odpoved" type="Odporucanie_Odpoved" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DatumVysetreniaOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVysetreniaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZdravotnickaOdbornost" type="CVZdravotnickaOdbornost" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Špecializácia odosielajúceho alebo ošetrujúceho lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KompletnyZaznam" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či je požadovaný kompletný záznam bez orezania textu textových položiek na 2000 znakov. Ak nie je uvedený, znamená to hodnotu FALSE.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Triedenie_Metadata" type="Triedenie_VysetreniaPacienta" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOVysetreniCriteria_v5">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum zápisu do NZIS - time_created</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum zápisu do NZIS - time_created</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PrijimatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu vysetrenia v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypVysetrenia" type="TypLekarskehoVysetreniaEnum" minOccurs="0" maxOccurs="3">
+        <xs:annotation>
+          <xs:documentation>
+            Odkaz na enumeraciu
+            TypLekarskehoVysetreniaEnum
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NazovVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Názov vyšetrenia alebo časť jeho časť, ktorá je vyhľadávaná v názve vyšetrenia</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VlastneZaznamy" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak pre vyhľadanie len vlastných záznamov, alebo záznamov podľa evidovaných súhlasov na prístup.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KompletnyZaznam" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či je požadovaný kompletný záznam bez orezania textu. Ak je nastavený na FALSE alebo je nevyplnený, tak vráti prvých 2000 znakov</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Citlivost" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Maximálna citlivosť záznamov, ktoré má byť vyhľadaná</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[1-5]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PopisMedikacnychZaznamov" type="xs:boolean" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Príznak, či sa má pre odkazy na medikačný záznam naplniť do položky Popis transfrormovany popis medikacneho zaznamu z medikácie. Ak nie je vyplnený, považuje sa za FALSE
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdborneZameranie" type="IdOdborneZameranieUtvaru" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník Odborné zameranie utvaru v zariadení - 1.3.158.00165387.100.10.39</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdbornyUtvarPZS" type="IdOUPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdbornyUtvarPZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PoskytovatelZS" type="IdPZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník PoskytovatelZS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDVymennehoListku" type="AIIIDVymennehoListku" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IDZaznamuVysetrenia" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Odporucanie_Odpoved" type="Odporucanie_Odpoved" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Príznak, či je požadovaný VYMENNYLISTOK, VYSLEDOK, alebo VYMENNYLISTOK_VYSLEDOK.
+                            Ak je naplnený, musí byť zadaný aj IDVymennehoListku
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumVysetreniaOd" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DatumVysetreniaDo" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZdravotnickaOdbornost" type="CVZdravotnickaOdbornost" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Špecializácia odosielajúceho alebo ošetrujúceho lekára</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Triedenie_Metadata" type="Triedenie_VysetreniaPacienta" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TypLekarskehoVysetreniaEnum">
+    <xs:annotation>
+      <xs:documentation>
+        Zoznam možných stavov, v ktorých môže byť; ukončené laboratórne
+        vyšetrenie na základe žiadanky.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ZAZNAM_O_ODBORNOM_VYSETRENI">
+        <xs:annotation>
+          <xs:documentation> Záznam o odbornom vyšetrení </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZAZNAM_O_ZOBRAZOVACOM_VYSETRENI">
+        <xs:annotation>
+          <xs:documentation> Záznam o zobrazovacom vyšetrení </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZAZNAM_PREPUSTACIA_SPRAVA">
+        <xs:annotation>
+          <xs:documentation> Záznam o prepúšťacej správe </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AIIMedikacnyZaznam">
+    <xs:sequence>
+      <xs:element name="MedikacnyZaznam_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="MedikacnyZaznam_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIVysledok">
+    <xs:sequence>
+      <xs:element name="Vysledok_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Vysledok_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIPoziadavkaNaVysetrenie">
+    <xs:sequence>
+      <xs:element name="PoziadavkaNaVysetrenie_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PoziadavkaNaVysetrenie_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIExternyIDVymennehoListku">
+    <xs:sequence>
+      <xs:element name="ExternyIDVymennehoListku_RT" type="xs:string" fixed="1.3.158.00165387.100.60.110" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ExternyIDVymennehoListku_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIIDVymennehoListku">
+    <xs:sequence>
+      <xs:element name="IDVymennehoListku_RT" type="xs:string" fixed="1.3.158.00165387.100.60.110" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDVymennehoListku_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIIDZaznamuVysetrenia">
+    <xs:sequence>
+      <xs:element name="IDZaznamuVysetrenia_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDZaznamuVysetrenia_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AIIIDRestrikcieZaznamu">
+    <xs:sequence>
+      <xs:element name="IDRestrikcieZaznamu_RT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDRestrikcieZaznamu_EX" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DiagnostickyZaver">
+    <xs:sequence>
+      <xs:element name="HlavnaDiagnoza" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Diagnoza" type="Diagnoza" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ZivotOvplyvnujucaDiagnoza" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Medikacia">
+    <xs:sequence>
+      <xs:element name="MedikacnyZaznam" type="AIIMedikacnyZaznam" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PopisMedikacie" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ImplantovanaZdravotnickaPomocka">
+    <xs:sequence>
+      <xs:element name="Druh" type="ACV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Alergen">
+    <xs:sequence>
+        <xs:element name="Latka" type="ACV" minOccurs="0" maxOccurs="1" />
+        <xs:element name="Liecivo" type="ACV" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DiagnostickeZavery">
+    <xs:sequence>
+      <xs:element name="DiagnostickyZaver" type="DiagnostickyZaver" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DiagnozyPriOdoslani">
+    <xs:sequence>
+      <xs:element name="DiagnozaPriOdoslani" type="Diagnoza" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Medikacie">
+    <xs:sequence>
+      <xs:element name="Medikacia" type="Medikacia" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperacnyVykon">
+    <xs:sequence>
+      <xs:element name="Popis" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperacneVykony">
+    <xs:sequence>
+      <xs:element name="OperacnyVykon" type="OperacnyVykon" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VysledkyVysetrenia">
+    <xs:sequence>
+      <xs:element name="DatumACasVysetrenia" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Vysledok" type="AIIVysledok" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OdporucaneVysetrenie">
+    <xs:sequence>
+      <xs:element name="DruhSpecializovanehoUtvaru" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IDVymennehoListku" type="AIIIDVymennehoListku" minOccurs="0" maxOccurs="1" />
+      <xs:element name="InformaciaPrePacienta" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranie" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ModalitaZobrazovaciehoVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PozadovaneVysetrenie" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Urgentnost" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Vysledok" type="AIIVysledok" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="VysledkyVysetrenia" type="VysledkyVysetrenia" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Diagnoza" type="Diagnoza" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="ExtraktZdravotnyZaznam" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="VysetrovanyOrgan" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Storno" type="StornoZaznamu" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VersionStatus" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PotrebaSedacie" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DajZakladneUdajeVLPreRezervaciu_Request">
+    <xs:sequence>
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ExternyIDVymennehoListku" type="AIIExternyIDVymennehoListku" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IDVymennehoListku" type="xs:long" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DajZakladneUdajeVLPreRezervaciu_Response">
+    <xs:sequence>
+      <xs:element name="IDVymennehoListku" type="xs:long" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Platnost" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DruhOU" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="OdborneZameranieOU" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="DatumVytvorenia" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="UrgentnostVysetrenia" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="InformaciaPrePacienta" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PozadovaneVysetrenie" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZdrPrac" type="IdZdrPrac" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajMojeRestrikcieZaznamov_Request">
+    <xs:sequence>
+      <xs:element name="DatumRestrikcie" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pacient" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TypVysetrenia" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajMojeRestrikcieZaznamov_Response">
+    <xs:sequence>
+      <xs:element name="RestrikciaZaznamu" type="RestrikciaZaznamu" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PrevezmiVymennyListok_Request">
+    <xs:sequence>
+      <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IDVymennehoListku" type="AIIIDVymennehoListku" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PrevezmiVymennyListok_Response">
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOVysetreni">
+    <xs:sequence>
+      <xs:element name="DatumOdoslania" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DiagnostickeZavery" type="DiagnostickeZavery" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DiagnozyPriOdoslani" type="DiagnozyPriOdoslani" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdosielajuciLekar" type="PracovnikOdbornehoUtvaru" minOccurs="0" maxOccurs="1" />
+      <xs:element name="UrgentnostVysetrenia" type="ACV" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrID" type="AIIEhrID" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrTimeCreated" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EhrRmID" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComCommitter" type="AIIComCommitter" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComTimeCommitted" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RecRcID" type="AIIRecRcID" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RecSynthesised" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RecArchetype_ID" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="RecName_OT" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="EntUncertainlyExpressed" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComHealthcareFacility" type="AIIComHealthcareFacility" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>OUPZS osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComPerformer" type="AIIComPerformer" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ComFunction" type="AIIComFunction" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Specializacia osetrujuceho lekara</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Sensitivity" type="xs:int" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PoziadavkaNaVysetrenie" type="AIIPoziadavkaNaVysetrenie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="OdborneZameranie" type="IdPolozkaCiselnika" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odkaz na čísleník OdborneZameranieOU</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="xs:long" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ID zaznamu vysetrenia v databazi</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Storno" type="StornoZaznamu" minOccurs="0" maxOccurs="1" />
+      <xs:element name="VersionStatus" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="PreviousVersion" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="1" />
+      <xs:element name="NazovVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOOdbornomVysetreni">
+    <xs:complexContent>
+      <xs:extension base="ZaznamOVysetreni">
+        <xs:sequence>
+          <xs:element name="Anamneza" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DatumVysetrenia" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DispenzarizovanostPacienta" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Odporucenie" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PopisVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PopisVysetreniaHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="OdporucaneVysetrenie" type="OdporucaneVysetrenie" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="LenVymennyListok" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Medikacie" type="Medikacie" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PredpokladanyDatumPorodu" type="xs:date" minOccurs="0" maxOccurs="1" />
+          <xs:element name="ImplantovanaZdravotnickaPomocka" type="ImplantovanaZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="Alergen" type="Alergen" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ZaznamOZobrazovacomVysetreni">
+    <xs:complexContent>
+      <xs:extension base="ZaznamOVysetreni">
+        <xs:sequence>
+          <xs:element name="DatumVysetrenia" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PopisVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PopisVysetreniaHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="ModalitaZobrazovaciehoVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LekarskaPrepustaciaSprava">
+    <xs:complexContent>
+      <xs:extension base="ZaznamOVysetreni">
+        <xs:sequence>
+          <xs:element name="Anamneza" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DatumPrepustenia" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DatumPrijatia" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Epikriza" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Medikacie" type="Medikacie" minOccurs="0" maxOccurs="1" />
+          <xs:element name="ObjektivnyNalez" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Odporucanie" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="OperacneVykony" type="OperacneVykony" minOccurs="0" maxOccurs="1" />
+          <xs:element name="OdbornyZastupca" type="PracovnikOdbornehoUtvaru" minOccurs="0" maxOccurs="1" />
+          <xs:element name="TerajsieOchorenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="VysledokVykonanehoVysetrenia" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="VysledokVykonanehoVysetreniaHTML" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="ZaverPriPrijati" type="xs:string" minOccurs="0" maxOccurs="1" />
+          <xs:element name="PredpokladanyDatumPorodu" type="xs:date" minOccurs="0" maxOccurs="1" />
+          <xs:element name="ImplantovanaZdravotnickaPomocka" type="ImplantovanaZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="IdentifikatorHospitalizacnehoPripadu" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ZoznamZaznamovOVysetreni">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ZaznamOOdbornomVysetreni" type="ZaznamOOdbornomVysetreni" />
+      <xs:element name="ZaznamOZobrazovacomVysetreni" type="ZaznamOZobrazovacomVysetreni" />
+      <xs:element name="LekarskaPrepustaciaSprava" type="LekarskaPrepustaciaSprava" />
+    </xs:choice>
+    <xs:attribute name="CelkovyPocetZaznamov" type="xs:int" default="0" />
+  </xs:complexType>
+  <xs:complexType name="RestrikciaZaznamu">
+    <xs:sequence>
+      <xs:element name="DatumVytvorenia" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdRestrikcie" type="AIIIDRestrikcieZaznamu" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZaznamu" type="AIIIDZaznamuVysetrenia" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Pristupy" type="RestrikciaLogPristupu" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RestrikciaLogPristupu">
+    <xs:sequence>
+      <xs:element name="DatumPristupu" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Dovod" type="ACV" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdOUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1" />
+      <xs:element name="IdZdrPrac" type="IdZdrPrac" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RestrikciaZaznamuPrePSU">
+    <xs:sequence>
+      <xs:element name="DatumVytvorenia" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum vytvorenia restrikcie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdRestrikcie" type="AIIIDRestrikcieZaznamu" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor reštrikcie záznamu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="AIIIDZaznamuVysetrenia" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor záznamu, pre ktorý reštrikcia platí</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EhrSystem" type="AIIEhrSystem" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor systému, v ktorom bola vytvorená reštrikcia záznamu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZpr" type="IdZdrPrac" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor pracovníka, ktorý vytvoril reštrikciu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Odbornost" type="CVZdravotnickaOdbornost" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odbornosť zdravotníckeho pracovníka, ktorý vytvoril reštrikciu. Číselník JRUZ Zdravotnícke odbornosti oid = 1.3.158.00165387.100.10.34</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OUPZS" type="IdOUPZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Odborný útvar, v ktorého roli pracovník reštrikciu vytvoril.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajRestrikcieZaznamovPSURequest">
+    <xs:sequence>
+      <xs:element name="IdPrjZS" type="IdPrjZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor prijímateľa zdravotnej starostlivosti. Služba vracia len reštrikcie na zdravotné záznamy tohto PrZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdZaznamu" type="AIIIDZaznamuVysetrenia" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor zdravotného záznamu. Služba vracia len reštrikcie na tento zdravotný záznam.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumRestrikcie" type="xs:dateTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum a čas, ku ktorému je reštrikcia platná. Pri štandardnom volaní služby z PSU alebo z Archívu bude v tomto parametri aktuálny dátum. Ak DatumRestrikcie nie je vyplnený, služba vracia všetky reštrikcie, ktoré spĺňajú ostatné kritériá.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VyhladajRestrikcieZaznamovPSUResponse">
+    <xs:sequence>
+      <xs:element name="RestrikciaZaznamuPrePSU" type="RestrikciaZaznamuPrePSU" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

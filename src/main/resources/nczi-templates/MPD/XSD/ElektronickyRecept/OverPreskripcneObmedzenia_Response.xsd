@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/VystupneVarovanieMedikacie.xsd" />
+  <xs:element name="OverPreskripcneObmedzeniaVystup" type="OverPreskripcneObmedzeniaVystup" />
+  <xs:complexType name="OverPreskripcneObmedzeniaVystup">
+    <xs:annotation>
+      <xs:documentation>Výstupom služby je zoznam varovaní znalostného systému, pre všetky identifikované preskripčné obmedzenia zistené znalostným systémom.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Varovanie" type="VystupneVarovanie" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

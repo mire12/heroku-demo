@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Druh adresy</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>1</IdAtributu>
+      <Nazov>Kód položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>2</IdAtributu>
+      <Nazov>Názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>3</IdAtributu>
+      <Nazov>Názov položky [en] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>4</IdAtributu>
+      <Nazov>Skrátený názov položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>5</IdAtributu>
+      <Nazov>Skratka názvu položky [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>6</IdAtributu>
+      <Nazov>Doplňujúci obsah [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>7</IdAtributu>
+      <Nazov>Merná jednotka [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>8</IdAtributu>
+      <Nazov>Poznámka 1</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>9</IdAtributu>
+      <Nazov>Poznámka 2</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>10</IdAtributu>
+      <Nazov>Zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>11</IdAtributu>
+      <Nazov>Tiež zahŕňa [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>12</IdAtributu>
+      <Nazov>Vylučuje [sk] [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>13</IdAtributu>
+      <Nazov>Dátum platnosti</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>14</IdAtributu>
+      <Nazov>Začiatok účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>15</IdAtributu>
+      <Nazov>Koniec účinnosti [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>16</IdAtributu>
+      <Nazov>Logické poradie položky</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <Ciselnik_DoplnujuciAtribut>
+      <IdAtributu>17</IdAtributu>
+      <Nazov>Legislatívna uznateľnosť [úč/kon.úč]</Nazov>
+      <MinPocetnost>0</MinPocetnost>
+      <MaxPocetnost>1</MaxPocetnost>
+      <Typ>HodnotaS</Typ>
+    </Ciselnik_DoplnujuciAtribut>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.75</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00208870279</codeValue>
+      <displayName>Trvalý pobyt</displayName>
+      <Skratka>100001</Skratka>
+      <Popis>Podľa § 3 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Trvalý pobyt je pobyt občana spravidla v mieste jeho stáleho bydliska na území Slovenskej republiky.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100001</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Trvalý pobyt</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Permanent address</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS>Podľa zákona č. 513/1991 Zb. obchodný zákonník sa stotožňuje s hodnotou bydlisko.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 3 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Trvalý pobyt je pobyt občana spravidla v mieste jeho stáleho bydliska na území Slovenskej republiky.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS>Zákon č. 52/1949 Zb. o hlásení obyvateľstva a o povoľovaní pobytu cudzincom v účinnosti od 1.4.1949 do 31.12.1982.
+Zákon č. 135/1982 Zb. o hlásení a evidencii pobytu občanov 1.1.1983 do 31.12.1999.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>17989</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>17989</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870311</codeValue>
+      <displayName>Prechodný pobyt</displayName>
+      <Skratka>100002</Skratka>
+      <Popis>Podľa § 8 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Prechodný pobyt je pobyt občana mimo miesta trvalého pobytu, kde sa občan dočasne zdržiava.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100002</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Prechodný pobyt</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Temporary address</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 8 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Prechodný pobyt je pobyt občana mimo miesta trvalého pobytu, kde sa občan dočasne zdržiava.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS>Zákon č. 76/1957 Zb. ktorým sa mení a doplňuje zákon o hlásení obyvateľstva a o povoľovaní pobytu cudzincom č. 52/1949 Zb., v účinnosti od 1.3.1958 do 31.12.1982.
+Zákon č. 135/1982 Zb. o hlásení a evidencii pobytu občanov 1.1.1983 do 31.12.1999.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>21245</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>21245</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870345</codeValue>
+      <displayName>Pobyt v zahraničí</displayName>
+      <Skratka>100003</Skratka>
+      <Popis>Podľa § 8 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Prechodný pobyt je pobyt občana mimo miesta trvalého pobytu, kde sa občan dočasne zdržiava.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100003</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Pobyt v zahraničí</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Foreign residence</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 8 zákona č. 253/1998 Z. z. o hlásení pobytu občanov Slovenskej republiky a registri obyvateľov Slovenskej republiky. Prechodný pobyt je pobyt občana mimo miesta trvalého pobytu, kde sa občan dočasne zdržiava.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>35977</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>36526</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870378</codeValue>
+      <displayName>Tolerovaný pobyt</displayName>
+      <Skratka>100004</Skratka>
+      <Popis>Podľa § 58 zákona č. 404/2011 Z. z. o pobyte cudzincov. Tolerovaný pobyt je špecifický typ pobytu, ktorý možno udeliť cudzincovi na kratšie obdobie na základe splnenia určitých podmienok.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100004</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Tolerovaný pobyt</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Tolerated residence</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 58 zákona č. 404/2011 Z. z. o pobyte cudzincov. Tolerovaný pobyt je špecifický typ pobytu, ktorý možno udeliť cudzincovi na kratšie obdobie na základe splnenia určitých podmienok.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS>Zákon č. 48/2002 Z. z. o pobyte cudzincov a o zmene a doplnení niektorých zákonov v účinnosti od 1.4.2002 do 31.12.2011.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>37347</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>37347</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870402</codeValue>
+      <displayName>Sídlo právnickej osoby</displayName>
+      <Skratka>100101</Skratka>
+      <Popis>Podľa § 2 zákona č. 513/1991 Zb. obchodný zákonník. Sídlom právnickej osoby je adresa, ktorá je ako sídlo zapísaná v obchodnom registri alebo živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom. Právnická osoba musí preukázať, že má k nehnuteľnosti alebo jej časti, ktorej adresa je ako jej sídlo alebo miesto podnikania zapísaná v obchodnom registri alebo v živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom, vlastnícke právo alebo užívacie právo, ktoré užívanie nehnuteľnosti alebo jej časti ako sídla nevylučuje, alebo súhlas vlastníka nehnuteľnosti alebo jej časti so zápisom nehnuteľnosti alebo jej časti ako sídla do obchodného registra, živnostenského registra alebo inej evidencie ustanovenej osobitným zákonom.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100101</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Sídlo právnickej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Corporate body seat</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 2 zákona č. 513/1991 Zb. obchodný zákonník. Sídlom právnickej osoby je adresa, ktorá je ako sídlo zapísaná v obchodnom registri alebo živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom. Právnická osoba musí preukázať, že má k nehnuteľnosti alebo jej časti, ktorej adresa je ako jej sídlo alebo miesto podnikania zapísaná v obchodnom registri alebo v živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom, vlastnícke právo alebo užívacie právo, ktoré užívanie nehnuteľnosti alebo jej časti ako sídla nevylučuje, alebo súhlas vlastníka nehnuteľnosti alebo jej časti so zápisom nehnuteľnosti alebo jej časti ako sídla do obchodného registra, živnostenského registra alebo inej evidencie ustanovenej osobitným zákonom.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS>Zákonný článok č. XXXVII/1875 r. z., Uhorský obchodný zákonník, účinný od 1.1.1876 čiastočne až do 30.6.1964.
+Zákon č. 103/1950 Zb., o národných podnikoch priemyslových, účinný od 1.7.1950 do 31.12.1955.
+Zákon č. 55/1955 Zb. o národných podnikoch a niektorých iných hospodárskych organizáciách, účinný od 1.1.1956 do 30.6.1964.
+Zákon č. 109/1964 Zb., hospodársky zakonník, účinný od 1.7.1964 do 31.12.1991.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>01.01.1876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870436</codeValue>
+      <displayName>Miesto podnikania fyzickej osoby</displayName>
+      <Skratka>100102</Skratka>
+      <Popis>Podľa § 2 zákona č. 513/1991 Zb. obchodný zákonník. Miestom podnikania fyzickej osoby je adresa, ktorá je ako miesto podnikania zapísaná v obchodnom registri alebo živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom. Fyzická osoba musí preukázať, že má k nehnuteľnosti alebo jej časti, ktorej adresa je ako jej miesto podnikania zapísaná v obchodnom registri alebo v živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom, vlastnícke právo alebo užívacie právo, ktoré užívanie nehnuteľnosti alebo jej časti ako miesta podnikania nevylučuje, alebo súhlas vlastníka nehnuteľnosti alebo jej časti so zápisom nehnuteľnosti alebo jej časti ako miesta podnikania do obchodného registra, živnostenského registra alebo inej evidencie ustanovenej osobitným zákonom.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100102</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Miesto podnikania fyzickej osoby</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Place of business of natural person</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 2 zákona č. 513/1991 Zb. obchodný zákonník. Miestom podnikania fyzickej osoby je adresa, ktorá je ako miesto podnikania zapísaná v obchodnom registri alebo živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom. Fyzická osoba musí preukázať, že má k nehnuteľnosti alebo jej časti, ktorej adresa je ako jej miesto podnikania zapísaná v obchodnom registri alebo v živnostenskom registri, alebo v inej evidencii ustanovenej osobitným zákonom, vlastnícke právo alebo užívacie právo, ktoré užívanie nehnuteľnosti alebo jej časti ako miesta podnikania nevylučuje, alebo súhlas vlastníka nehnuteľnosti alebo jej časti so zápisom nehnuteľnosti alebo jej časti ako miesta podnikania do obchodného registra, živnostenského registra alebo inej evidencie ustanovenej osobitným zákonom.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS>Zákonný článok č. XXXVII/1875 r. z., Uhorský obchodný zákonník, účinný od 1.1.1876 čiastočne až do 30.6.1964.
+Zákon č. 103/1990 Zb. ktorým sa mení alebo dopĺňa Hospodársky zákonník č. 109/1964 Zb., účinný od 1.5.1990 do 31.12.1991</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>01.01.1876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>01.01.1876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870477</codeValue>
+      <displayName>Prevádzkáreň</displayName>
+      <Skratka>100103</Skratka>
+      <Popis>Podľa § 7 zákona č. 513/1991 Zb. obchodný zákonník. Prevádzkárňou sa rozumie priestor, v ktorom sa uskutočňuje určitá podnikateľská činnosť. Nepoužíva sa ak sa jedná o zdravotnícke zariadenie, na to slúži položka č. 100201. 
+Podľa §17 zákona č. 455/1991 Zb. živnostenský zákon. Prevádzkarňou sa rozumie priestor, v ktorom sa prevádzkuje živnosť; nie je ním priestor súvisiaci s prevádzkovaním živnosti ani technické a technologické zariadenie určené na prevádzkovanie živnosti alebo súvisiace s prevádzkovaním živnosti.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100103</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Prevádzkáreň</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Business premises</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Podľa § 7 zákona č. 513/1991 Zb. obchodný zákonník. Prevádzkárňou sa rozumie priestor, v ktorom sa uskutočňuje určitá podnikateľská činnosť. Nepoužíva sa ak sa jedná o zdravotnícke zariadenie, na to slúži položka č. 100201. 
+Podľa §17 zákona č. 455/1991 Zb. živnostenský zákon. Prevádzkarňou sa rozumie priestor, v ktorom sa prevádzkuje živnosť; nie je ním priestor súvisiaci s prevádzkovaním živnosti ani technické a technologické zariadenie určené na prevádzkovanie živnosti alebo súvisiace s prevádzkovaním živnosti.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>33547</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>33604</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870501</codeValue>
+      <displayName>Adresa miesta výkonu odbornej činnosti</displayName>
+      <Skratka>100104</Skratka>
+      <Popis>Použitie nie je obmedzené iba na oblasť zdravotníctva, ale napr.: 
+- podľa zákona č. 581/2004 Z. z. o zdravotných poisťovniach, dohľade nad zdravotnou starostlivosťou a o zmene a doplnení niektorých zákonov § 20 ods. 1 písm. e) bod 4 v znení zákona č 153/2013 Z. z. o národnom zdravotníckom informačnom systéme a o zmene a doplnení niektorých zákonov, 
+- podľa zákona č. 362/2011 Z. z. o liekoch a zdravotníckych pomôckach a o zmene a doplnení niektorých zákonov § 7  ods. 6 písm. f).</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100104</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Adresa miesta výkonu odbornej činnosti</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Address of specialized activity performance location</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Použitie nie je obmedzené iba na oblasť zdravotníctva, ale napr.: 
+- podľa zákona č. 581/2004 Z. z. o zdravotných poisťovniach, dohľade nad zdravotnou starostlivosťou a o zmene a doplnení niektorých zákonov § 20 ods. 1 písm. e) bod 4 v znení zákona č 153/2013 Z. z. o národnom zdravotníckom informačnom systéme a o zmene a doplnení niektorých zákonov, 
+- podľa zákona č. 362/2011 Z. z. o liekoch a zdravotníckych pomôckach a o zmene a doplnení niektorých zákonov § 7  ods. 6 písm. f).</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>41411</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>41456</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870527</codeValue>
+      <displayName>Miesto prevádzkovania zdravotníckeho zariadenia</displayName>
+      <Skratka>100201</Skratka>
+      <Popis>Adresa zdravotníckeho zariadenia poskytovateľa zdravotnej starostlivosti, prevádzkovanie ktorého bolo povolené podľa príslušnej legislatívy. Podľa zákona č. 578/2004 Z. z. o poskytovateľoch zdravotnej starostlivosti, zdravotníckych pracovníkoch, stavovských organizáciách v zdravotníctve a o zmene a doplnení niektorých zákonov § 25 písm. c), zákona č. 538/2005 Z. z. o prírodných liečivých vodách, prírodných liečebných kúpeľoch, kúpeľných miestach a prírodných minerálnych vodách a o zmene a doplnení niektorých zákonov § 34a ods. 3 písm. d).</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>100201</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Miesto prevádzkovania zdravotníckeho zariadenia</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Place of running a healthcare facility</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Adresa zdravotníckeho zariadenia poskytovateľa zdravotnej starostlivosti, prevádzkovanie ktorého bolo povolené podľa príslušnej legislatívy. Podľa zákona č. 578/2004 Z. z. o poskytovateľoch zdravotnej starostlivosti, zdravotníckych pracovníkoch, stavovských organizáciách v zdravotníctve a o zmene a doplnení niektorých zákonov § 25 písm. c), zákona č. 538/2005 Z. z. o prírodných liečivých vodách, prírodných liečebných kúpeľoch, kúpeľných miestach a prírodných minerálnych vodách a o zmene a doplnení niektorých zákonov § 34a ods. 3 písm. d).</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>38323</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>38353</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>1</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870550</codeValue>
+      <displayName>Kontaktná adresa</displayName>
+      <Skratka>200001</Skratka>
+      <Popis>Spravidla pre účely poštovej komunikácie.</Popis>
+      <DoplnujuciAtribut>
+        <IdAtributu>1</IdAtributu>
+        <HodnotaS>200001</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>2</IdAtributu>
+        <HodnotaS>Kontaktná adresa</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>3</IdAtributu>
+        <HodnotaS>Contact address</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>4</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>5</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>6</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>7</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>8</IdAtributu>
+        <HodnotaS>Spravidla pre účely poštovej komunikácie.</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>9</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>10</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>11</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>12</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>13</IdAtributu>
+        <HodnotaS>6876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>14</IdAtributu>
+        <HodnotaS>6876</HodnotaS>
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>15</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>16</IdAtributu>
+        <HodnotaS />
+      </DoplnujuciAtribut>
+      <DoplnujuciAtribut>
+        <IdAtributu>17</IdAtributu>
+        <HodnotaS>0</HodnotaS>
+      </DoplnujuciAtribut>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

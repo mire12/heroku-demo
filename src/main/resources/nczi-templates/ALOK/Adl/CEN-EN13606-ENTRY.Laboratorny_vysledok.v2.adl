@@ -1,0 +1,210 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Laboratorny_vysledok.v2
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp obsahujúci sadu laboratórnych výsledkov jedného vyšetrenia jednej vzorky pre konkrétneho pacienta.">
+            keywords = <"Laboratórny výsledok">
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Laboratórny výsledok
+        items existence matches {0..1} cardinality matches {1..*; ordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- Dátum a čas kompletizácie
+                value existence matches {1..1} matches {
+                    TS[at0003] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                    }
+                }
+            }
+            ELEMENT[at0010] occurrences matches {1..1} matches {  -- Stav výsledku
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0011] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {1..1} matches {"FINAL","CORRECTED","ABORTED","INTERIM"}
+                    }
+                }
+            }
+            CLUSTER[at0015] occurrences matches {0..1} matches {  -- Nahradený laboratórny výsledok
+                parts existence matches {0..1} cardinality matches {0..2; ordered; unique} matches {
+                    ELEMENT[at0013] occurrences matches {1..1} matches {  -- ID Výsledku
+                        value existence matches {0..1} matches {
+                            II[at0009] occurrences matches {1..1} matches {  -- II
+                                extension existence matches {1..1} matches {/.*/}
+                                root existence matches {0..1} matches {
+                                    OID[at0014] occurrences matches {0..1} matches {  -- 
+                                        oid existence matches {0..1} matches {"1.3.158.00165387.100.60.10"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0018] occurrences matches {1..1} matches {  -- Zdôvodnenie
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0019] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,4000}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0016] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {  -- Diagnóza výstupná
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+            }
+            allow_archetype CLUSTER[at0001] occurrences matches {0..*} matches {  -- Výsledok testu
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Vysledok_testu.v2/}
+            }
+            allow_archetype CLUSTER[at0004] occurrences matches {0..1} matches {  -- Záverečná správa
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Textovy_popis.v1/}
+            }
+            allow_archetype CLUSTER[at0006] occurrences matches {0..*} matches {  -- Laboratórna žiadanka
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Laboratorna_ziadanka.v1/}
+            }
+            ELEMENT[at0007] occurrences matches {0..*} matches {  -- Príloha
+                value existence matches {0..1} matches {
+                    ED[at0008] occurrences matches {1..1} matches {  -- ED
+                        data existence matches {0..1} matches {*}
+                        mediaType existence matches {0..1} matches {
+                            CS[at0017] occurrences matches {0..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"Application/pdf"}
+                                codingSchemeName existence matches {0..1} matches {"IANA::MIME_TYPES"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        rc_id existence matches {1..1} matches {
+            II[at0.70] occurrences matches {1..1} matches {  -- II
+                extension existence matches {1..1} matches {/.*/}
+                root existence matches {1..1} matches {
+                    OID[at0.71] occurrences matches {1..1} matches {  -- OID
+                        oid existence matches {1..1} matches {"1.3.158.00165387.100.60.10"}
+                    }
+                }
+            }
+        }
+        links existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {*}
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Laboratórny výsledok">
+                    description = <"Laboratórny výsledok 
+">
+                >
+                ["at0002"] = <
+                    text = <"Dátum a čas kompletizácie">
+                    description = <"Dátum a čas kompletizácie a vytvorenia laboratórneho výsledku">
+                >
+                ["at0005"] = <
+                    text = <"Diagnóza výstupná">
+                    description = <"Diagnóza prijímateľa ZS, ktorá je vyberaná z číselníka MKCH10 – Zoznam diagnóz, s možnosťou bližšieho spresnenia voľným textom. 
+Určenie predpokladanej diagnózy laboratóriom na základe výsledku laboratórneho vyšetrenia.">
+                >
+                ["at0010"] = <
+                    text = <"Stav výsledku">
+                    description = <"Každý laboratórny výsledok nadobúda práve jeden z definovaných stavov.
+Interpretácia stavov:
+Stav výsledku FINAL znamená ukončené vyšetrenie výsledok je kompletný.
+Stav výsledku ABORTED znamená, že všetky predchádzajúce vyšetrenia sú neplatné. Neskôr však môže byť doplnený ďalší výsledok. Záznam nesmie obsahovať  žiaden výsledok.
+Stav výsledku INTERIM znamená, že lab. výsledok je neúplný a neobsahuje ešte všetky požadované vyšetrenia. Tie budú doplnené v ďalšom lab. výsledku. 
+Stav výsledku CORRECTED znamená, že sa jedná o opravu už zapísaného lab. Výsledku a všetky predchádzajúce vyšetrenia sú neplatné. Pri zápise výsledku s týmto stavom už musí existovať pre danú vzorku aspoň jeden výsledok. Telo musí obsahovať nové namerané hodnoty.
+">
+                >
+                ["at0003"] = <
+                    text = <"TS">
+                    description = <"This is a TS object">
+                >
+                ["at0011"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"This is a SIMPLE_TEXT object">
+                >
+                ["at0001"] = <
+                    text = <"Výsledok testu">
+                    description = <"Výsledok testu 
+Kardinalita 0 je požadovaná len pre stav ABORTED, pre iné stavy je kontrolovaná na väzbu 1..*.
+Výsledok merania jednej položky - jeden test alebo testy, ktoré sú viazané na konkrétnu vzorku.
+">
+                >
+                ["at0.70"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0.71"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"Záverečná správa">
+                    description = <"Slovný popis priebehu laboratórneho vyšetrenia, výsledkov laboratórneho vyšetrenia a stanovených/potvrdených diagnóz. 
+Varianty: HTML, simple text bez formátovania.">
+                >
+                ["at0006"] = <
+                    text = <"Laboratórna žiadanka">
+                    description = <"Odpis laboratórnej žiadanky
+Je povinný ak neexistuje elektronická laboratórna žiadanka. 
+Vyžaduje sa v prvom zápise výsledku">
+                >
+                ["at0007"] = <
+                    text = <"Príloha">
+                    description = <"PDF priloha výsledku obsahuje doplnenie k výsledkom laboratórneho vyšetrenia a iných informácií dôležitých pre ošetrujúceho zdravotníckeho pracovníka. 
+Táto príloha v žiadnom prípade nenahrádza textovú/štruktúrovanú/semištrukturovanú ani inú časť výsledku zapísanú v príslušných štruktúrach laboratórneho výsledku, môže ju však vecne doplňovať, či poskytovať rozširujúce vysvetlenie alebo grafické znázornenie výsledkov.  ">
+                >
+                ["at0008"] = <
+                    text = <"ED">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"ID Výsledku">
+                    description = <"NZIS ID predchádzajúceho/nahrádzaného laboratórneho výsledku. Vytvára referenciu na nahradený laboratórny výsledok.">
+                >
+                ["at0009"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"Nahradený laboratórny výsledok">
+                    description = <"Vytvára referenciu medzi jednotlivými stavmi laboratórneho výsledku.
+Povinné uvádzať pri každej zmene stavu laboratórneho výsledku.
+Slúži na zabezpečenie identifikácie predchádzajúceho laboratórneho výsledku, ktorý bol z akéhokoľvek dôvodu nahradený/doplnený/opravený alebo zrušený.
+">
+                >
+                ["at0018"] = <
+                    text = <"Zdôvodnenie">
+                    description = <"Zdôvodnenie vytvorenia novej verzie výsledku, spolu s vysvetlením zmien a/alebo opráv výsledku.">
+                >
+                ["at0019"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+            >
+        >
+    >

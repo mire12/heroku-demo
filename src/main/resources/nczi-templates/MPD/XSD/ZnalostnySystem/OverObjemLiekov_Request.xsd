@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/VstupyPreZnalostnySystem.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="OverObjemLiekovVstup" type="OverObjemLiekovVstup" />
+  <xs:complexType name="OverObjemLiekovVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné údaje do služby overenia objemu liekov.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DatumDo" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum do určuje koniec obdobia, za ktoré sa bude objem vydaných liekov zisťovať.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DatumOd" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum od určuje začiatok obdobia, za ktoré sa bude objem vydaných liekov zisťovať.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IdentifikatorPrZS" type="IdPrZS" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor PrZS pre ktorého sa bude zisťovať objem vydaných liekov.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RozlozitLiekyNaZlozky" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Určuje, či sa budú hladať len lieky s rovnakým identifikátorom alebo aj lieky s rovnakou zložkou (zložkami) ako má liek (lieky) na vstupe služby.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FarmaceutickaSurovina" type="FarmaceutickaSurovinaPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MagistraLiter" type="MagistraLiterPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Liecivo" type="LiecivoPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Liek" type="LiekPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

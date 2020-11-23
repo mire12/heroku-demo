@@ -1,0 +1,139 @@
+﻿archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Laboratorny_test.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2017-07-31">
+        ["name"] = <"Vladimír Polák">
+        ["language"] = <"sk Slovak">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Laboratorny_test
+        parts existence matches {0..1} cardinality matches {1..4; ordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {  -- LOINC
+                value existence matches {0..1} matches {
+                    II[at0009] occurrences matches {1..1} matches {  -- II
+                        extension existence matches {1..1} matches {/.*/}
+                        root existence matches {0..1} matches {
+                            OID[at0014] occurrences matches {0..1} matches {  -- 
+                                oid existence matches {0..1} matches {"2.16.840.1.113883.6.1"}
+                            }
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {0..1} matches {  -- LOINC JRUZ
+                value existence matches {0..1} matches {
+                    CV[at0012] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0013] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.52"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            CLUSTER[at0003] occurrences matches {0..1} matches {  -- Interná identifikácia testu
+                parts existence matches {0..1} cardinality matches {0..2; unordered; unique} matches {
+                    ELEMENT[at0005] occurrences matches {1..1} matches {  -- Kód
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0007] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,50}/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0006] occurrences matches {1..1} matches {  -- Názov
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0008] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/[\s\S]{0,2000}/}
+                            }
+                        }
+                    }
+                }
+                structure_type existence matches {1..1} matches {
+                    CS[at0004] occurrences matches {1..1} matches {  -- 
+                        codeValue existence matches {0..1} matches {"STRC01"}
+                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0010] occurrences matches {0..1} matches {  -- Úhrada z VZP
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Sposob_uhrady.v1/}
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0001] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"STRC01"}
+                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Laboratorny_test">
+                    description = <"Slúži na identifikáciu laboratórnych testov. Minimálne jeden kód LOINC musí byť vyplnený.">
+                >
+                ["at0002"] = <
+                    text = <"LOINC">
+                    description = <"Slúži na identifikáciu testu prostredníctvom registra LOINC.org.">
+                >
+                ["at0003"] = <
+                    text = <"Interná identifikácia testu">
+                    description = <"Slúži na identifikáciu testu prostredníctvom identifikácie laboratória.">
+                >
+                ["at0005"] = <
+                    text = <"Kód">
+                    description = <"Uvádza sa jedinečný identifikátor testu laboratória.">
+                >
+                ["at0006"] = <
+                    text = <"Názov">
+                    description = <"Uvádza sa názov testu, ktorý prislúcha kódu.">
+                >
+                ["at0007"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"II">
+                    description = <"LOINC kod podľa OID=2.16.840.1.113883.6.1">
+                >
+                ["at0010"] = <
+                    text = <"Úhrada z VZP">
+                    description = <"Je možné uviesť výnimku pre test. Štandardne sa príznak uvádza na žiadanke.">
+                >
+                ["at0011"] = <
+                    text = <"LOINC JRUZ">
+                    description = <"Slúži na identifikáciu testu prostredníctvom lokalizovaného registra LOINC. Identifikácia testu je prostredníctvom JRUZ ID testu. JRUZ ID je priradený kódu LOINC. ">
+                >
+                ["at0012"] = <
+                    text = <"CV">
+                    description = <"JRUZID LOINC kódu">
+                >
+            >
+        >
+    >

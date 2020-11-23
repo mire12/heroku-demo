@@ -1,0 +1,130 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"20120323">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"Archetyp slúži na prenášanie nevyhnutných identifikačných údajov o zdravotníckom pracovníkovi. Hlavné použitie je identifikácia lekára, ktorý spravil určitý úkon (predpísanie lieku, vytvorenie žiadanky o laboratórne vyšetrenie a podobne).">
+        >
+    >
+
+definition
+    CLUSTER[at0000] occurrences matches {1..1} matches {  -- Zdravotnicky pracovnik odborneho utvaru
+        parts existence matches {0..1} cardinality matches {2..4; unordered} matches {
+            ELEMENT[at0002] occurrences matches {1..1} matches {  -- Identifikácia ZPrac
+                value existence matches {0..1} matches {
+                    II[at0004] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0005] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.40.90"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0007] occurrences matches {0..1} matches {  -- Identifikácia OÚ PZS
+                value existence matches {0..1} matches {
+                    II[at0009] occurrences matches {1..1} matches {  -- II
+                        root existence matches {1..1} matches {
+                            OID[at0010] occurrences matches {1..1} matches {  -- 
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.40.70"}
+                            }
+                        }
+                        extension existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0012] occurrences matches {1..1} matches {  -- Špecializácia lekára
+                value existence matches {0..1} matches {
+                    CV[at0014] occurrences matches {1..1} matches {  -- CV
+                        codeValue existence matches {1..1} matches {/.*/}
+                        displayName existence matches {1..1} matches {/.*/}
+                        codingScheme existence matches {1..1} matches {
+                            OID[at0003] occurrences matches {1..1} matches {  -- OID
+                                oid existence matches {1..1} matches {"1.3.158.00165387.100.10.34"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {1..1} matches {/.*/}
+                    }
+                }
+            }
+            ELEMENT[at0016] occurrences matches {0..1} matches {  -- Nezmluvný lekár
+                value existence matches {0..1} matches {
+                    BL[at0019] occurrences matches {1..1} matches {  -- BL
+                        value existence matches {1..1} matches {true, false; false}
+                    }
+                }
+            }
+        }
+        structure_type existence matches {1..1} matches {
+            CS[at0006] occurrences matches {1..1} matches {  -- 
+                codeValue existence matches {1..1} matches {"STRC01"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Zdravotnicky pracovnik odborneho utvaru">
+                    description = <"LekarOdbornehoUtvaru">
+                >
+                ["at0002"] = <
+                    text = <"Identifikácia ZPrac">
+                    description = <"Identifikácia zdravotníckeho pracovníka v JRÚZ.">
+                >
+                ["at0004"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0007"] = <
+                    text = <"Identifikácia OÚ PZS">
+                    description = <"Identifikácia odborného útvaru poskytovateľa zdravotnej starostlivosti z JRÚZ, do ktorého zdravotnícky pracovník patrí.">
+                >
+                ["at0009"] = <
+                    text = <"II">
+                    description = <"This is a II object">
+                >
+                ["at0012"] = <
+                    text = <"Špecializácia lekára">
+                    description = <"Šprecializácia tohto lekára, pod ktoru prebehla operácia, ktorú daný lekár vykonával.">
+                >
+                ["at0014"] = <
+                    text = <"CV">
+                    description = <"This is a CV object">
+                >
+                ["at0016"] = <
+                    text = <"Nezmluvný lekár">
+                    description = <"Doplňujúci atribút, ktorý sa použije na prenos informácie, že daný zdravotnícky pracovník - lekár, nemal pri svojom úkone zmluvný vzťah k poisťovni pacienta a teda, že tento úkon si bude hradiť pacient. Použije sa napríklad pri predpisovaní liekov.">
+                >
+                ["at0019"] = <
+                    text = <"BL">
+                    description = <"This is a BL object">
+                >
+                ["at0003"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

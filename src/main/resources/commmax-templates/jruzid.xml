@@ -1,0 +1,55 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>DajJRUZIdentifikator_GW_v2</Class>
+      <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</MessageID>
+      <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</CorrelationID>
+      <BusinessID/>
+      <ChannelInfoReply/>
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken/>
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
+          <codingSchemeVersion>4</codingSchemeVersion>
+          <codeValue>00000461517</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>00020008694</extension>
+          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+    <Data>
+      <EncryptedData xmlns="http://eHealth.gov.sk/SDS/v1">
+<SDSEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/SDS/v2">
+  <Data>
+    <DajJRUZIdentifikator_Request xmlns = "http://eHealth.gov.sk/JRUZ/v1">
+      <DajJRUZIdentifikator_Kriteria>
+        <ZadaneId>%PACIENT%</ZadaneId>
+        <TypHladanehoId>
+          <oid>1.3.158.00165387.100.40.110</oid>
+        </TypHladanehoId>
+        <TypZadanehoId>
+          <codeValue>00000000182</codeValue>
+          <codingScheme>
+            <oid>1.3.158.00165387.100.10.53</oid>
+          </codingScheme>
+          <codingSchemeVersion>4</codingSchemeVersion>
+        </TypZadanehoId>
+      </DajJRUZIdentifikator_Kriteria>
+    </DajJRUZIdentifikator_Request>
+  </Data>
+</SDSEnvelope>
+      </EncryptedData>
+    </Data>
+    <Result>
+      <Code>0</Code>
+	  <Message />
+    </Result>
+  </Body>
+</eHtalkMessage>

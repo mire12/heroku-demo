@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="../_shared/VstupyPreZnalostnySystem.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Identifikatory.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_IdCiselniky.xsd" />
+  <xs:include schemaLocation="../_shared/MPD_Strankovanie.xsd" />
+  <xs:element name="OverZnalostnymSystemomVstup" type="OverZnalostnymSystemomVstup" />
+  <xs:complexType name="OverZnalostnymSystemomVstup">
+    <xs:annotation>
+      <xs:documentation>Vstupné údaje do služby overenia znalostným systémom. Na vstupe je možné identifikovať PrZS priamo, alebo zadať len údaje osoby potrebné na kontroly znalostným systémom. Ak bude identifikovaný konkrétny PrZS a zároveň aj zadané údaje osoby, tak údaje na vstupe sa použijú pri kontrolách a údaje v NZIS sa odignorujú.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikatorPrZS" type="IdPrZS" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor PrZS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VyhodnotitAjAktivnuLiecbu" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či budú znalostným systémom vyhodnotené aj liečebné prostriedky z aktívnej liečby PrjZS medzi sebou (lieky ktoré berie alebo ešte nemá vydané ale sú predpísané), alebo len voči liečebným prostriedkom na vstupe služby. Ak nie je na vstupe zadaný žiadny liečebný prostriedok a tento príznak je nastavený na true, tak výstup služby bude prázdny.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VyhodnotitAjZastavenuLiecbu" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či budú znalostným systémom vyhodnotené aj liečebné prostriedky z aktívnej liečby PrjZS, ktoré boli zneplatnené (napríklad pri zastavení liečby). Ak je nastavený na TRUE, tak do vyhodnocovania znalostným systémom budú vstupovať medikačné záznamy pôvodne platné (s pôvodnou neskrátenou platnosťou).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverAlergie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má NZIS vykonať na základe vstupných údajov kontrolu alergií.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverDavkovanie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má NZIS vykonať na základe vstupných údajov kontrolu dávkovania.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverIbaExistenciuVarovani" type="xs:boolean" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:annotation>
+          <xs:documentation>Príznak určuje, či  znalostný systémo vráti detailný zoznam varovaní, alebo vrati iba infomáciu ci našiel alebo nenašiel varovanie.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverInterakcie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má NZIS vykonať na základe vstupných údajov kontrolu interakcií.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverKontraindikacie" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má NZIS vykonať na základe vstupných údajov kontrolu kontraindikácií.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverPreskripcneObmedzenia" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Príznak, či má NZIS vykonať na základe vstupných údajov kontrolu preskripčných obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzeniaDatum" type="xs:date" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Dátum, ku ktorému sa majú overiť preskripčné obmedzenia. Ak nie je vyplnený, použije sa aktuálny dátum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzeniaDietPotravina" type="IdDietetickaPotravina" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam dietetických potravín na overenie preskripčných obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreskripcneObmedzeniaZdravPomocka" type="IdZdravotnickaPomocka" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Zoznam zdravotníckych pomôcok na overenie preskripčných obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Liecivo" type="LiecivoPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Stav" type="StavPacienta" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Liek" type="LiekPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="FarmSurovina" type="FarmaceutickaSurovinaPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="MagistraLiter" type="MagistraLiterPreZnalostnySystem" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Strankovanie" type="Strankovanie" minOccurs="0" maxOccurs="1" />
+      <xs:element name="IdentifikaciaZPrac" type="PreskripcneObmedzenia" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Identifikácia zdravotníckeho pracovníka pre overenie preskripčných obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PreskripcneObmedzenia">
+    <xs:annotation>
+      <xs:documentation>Identifikačné údaje zdravotníckeho pracovníka pre overenie preskripčných obmedzení.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentifikaciaZprac" type="IdZPr" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Identifikátor lekára.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OdbornostLekara" type="IdPolozkaCiselnikaZdravotnickaOdbornost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Identifikácia odbornosti lekára pre potreby overenia preskripčných obmedzení.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

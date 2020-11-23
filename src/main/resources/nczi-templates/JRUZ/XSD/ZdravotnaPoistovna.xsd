@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/JRUZ/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/JRUZ/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="DataTypes.xsd" />
+  <xs:include schemaLocation="Identifikatory.xsd" />
+  <xs:include schemaLocation="Obecne.xsd" />
+  <xs:include schemaLocation="Address.xsd" />
+  <xs:include schemaLocation="PersonData.xsd" />
+  <xs:element name="ZdravotnaPoistovna" type="ZdravotnaPoistovna" />
+  <xs:complexType name="ZdravotnaPoistovna">
+    <xs:annotation>
+      <xs:documentation>Zdravotná poisťovňa</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZP" type="IdZP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Externý identifikátor ZP</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PobockaZP" type="PobockaZP" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="PersonData" type="PersonData" minOccurs="1" maxOccurs="1" />
+      <xs:element name="KodPoistovne" type="ID" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PobockaZP" type="PobockaZP" />
+  <xs:complexType name="PobockaZP">
+    <xs:annotation>
+      <xs:documentation>Pobočka zdravotnej poistovne.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdPobockaZP" type="IdPobockaZP" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis je uvedený v KRU - </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Poznamka" type="string200" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Popis je uvedený v KRU - ZPPob.Poznamka</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SidloPobockyZP" type="PhysicalAddress" minOccurs="1" maxOccurs="1" />
+      <xs:element name="KodPobockyZP" type="ID" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Platnost" type="Platnost" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdZP_Zoznam" type="IdZP_Zoznam" />
+  <xs:complexType name="IdZP_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam JRUZ identifikátorov zdravotných poisťovní.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdZP" type="IdZP" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZdravotnaPoistovna_Zoznam" type="ZdravotnaPoistovna_Zoznam" />
+  <xs:complexType name="ZdravotnaPoistovna_Zoznam">
+    <xs:annotation>
+      <xs:documentation>Zoznam zdravotných poisťovní</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ZdravotnaPoistovna" type="ZdravotnaPoistovna" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

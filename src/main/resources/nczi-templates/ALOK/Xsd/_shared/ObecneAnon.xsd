@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://eHealth.gov.sk/Allocation/v1"
+	targetNamespace="http://eHealth.gov.sk/Allocation/v1">
+	
+	<xs:include schemaLocation="Obecne.xsd" />
+
+  <xs:element name="VyhladajZaznamyPreAnonymizaciu_Request" type="VyhladajZaznamyPreAnonymizaciu_Request" />
+	<xs:complexType name="VyhladajZaznamyPreAnonymizaciu_Request">
+		<xs:annotation>
+			<xs:documentation>identifikátor zapísaného lab vyšetrenia</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Interval" type="Interval" minOccurs="1" maxOccurs="1" />
+			<xs:element name="Strankovanie_Metadata" type="Strankovanie_Metadata" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

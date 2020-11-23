@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://eHealth.gov.sk/MPD/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:include schemaLocation="Mnozstvo.xsd" />
+  <xs:element name="DavkovaciaSchema" type="DavkovaciaSchema" />
+  <xs:complexType name="DavkovaciaSchema">
+    <xs:annotation>
+      <xs:documentation>Dávkovacia schéma určuje dávkovanie v určitom čase. Ak lekár predpíše rovnaké dávkovanie počas užívania lieku, tak na urČenie dávkovania stačí jedna schéma. Ak napríklad na začiatku užívania má pacien brať zvýšenú dávku a po troch dňoch prejsť na slabšiu dávku, tak schémy sú dve, odlíšené dátumovými platnosťami.
+
+Rozlišujeme tieto dávkovania:
+
+Podľa potreby
+Dávkovanie nie je presné.
+
+Jednorazovo
+Liek je podaný jednorazovo, stačí zaznamenať čas a množstvo
+
+Každých X hodín - zadaný časový odstup
+Liek je podávaný v pravidelných časových rozostupoch. Definujeme dĺžku rozostupu a množstvo liekov.
+
+X krát denne - zadaný počet opakovaní
+Liek je podaný niekoľkokrát za časové obdobie. Zadáme počet dĺžku časového obdobia (deň, týždeň, ...) počet opakovaní. Ak chceme môžeme zadať aj upresnenie času a množstva. Ak beriem liek každých 8 hodín, tak prirodzené je zadať ho pomocou časového odstupu (každých 8 hodín). Môžeme ho zadať aj počtom opakovaní - 3 krát denne s upresnením času (7:00 - 15:00 - 23:00).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DlzkaUzivania" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Počet dní počas ktorých sa má užívať. Ak napr. lekár predpíše liek obsahujúci 20 tbl, užívanie 1-0-1 tak by to vydržalo 10 dní, ale chce aby bral iba týždeň. V takom prípade do tohto atribútu nastaví 7.
+
+Použije sa aj na určenie aktívnyDo pre MedZ.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>V prípade, že je zadaných viacero dávkovacích schém, tak na seba naväzujú (v definovanom poradí) a každá z nich má uvedenú dĺžku užívania, vďaka tomu vieme kedy začne ďalšia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Popis" type="xs:string" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Pre každé dávkovanie sa zadá aj textový popis. Slúži na zaznamenanie informácie presne v takom tvare ako si to vyžaduje lekár.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdManusMedici" type="xs:boolean" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Môže byť true, iba ak Typ dávkovania je Jednorazovo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DavkovaniePocetOpakovani" type="xs:int" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Používa sa iba ak je Typ dávkovania má hodnotu Intervaly. Určuje počet opakovaní za časovú jednotku. Napríklad ak sa má užívať 3x denne, tak tu bude zachytená hodnota 3.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DoplnokDavkovania" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Voľné doplňujúce informácie k dávkovaniu.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DlzkaUzitia" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DavkovanieMnozstvoOd" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DavkovanieMnozstvoDo" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DavkovanieCasovyRozostup" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DavkovanieObdobie" type="Mnozstvo" minOccurs="0" maxOccurs="1" />
+      <xs:element name="DavkovanieCas" type="DavkovanieCas" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="TypDavkovania" type="TypDavkovania" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DavkovanieCas">
+    <xs:annotation>
+      <xs:documentation>Detailizuje čas a veľkosť dávky v prípade dávkovania typu 101. Ak má Typ dávkovania hodnotu Interval, tak zadanie týchto údajov je povinné. Zároveň celá kolekcia musí byť použitá toľko krát, akú hodnotu má Počet opakovaní dávky.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Poradie" type="xs:int" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Poradie danej dávky.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CasPresne" type="xs:time" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Napr. 12:00. Aspoň jeden atribútov z casPresne, casPriblizne, casUdalost musí byť vyplnený.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CasPriblizne" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Napr. ráno, na obed, večer. Aspoň jeden atribútov z casPresne, casPriblizne, casUdalost musí byť vyplnený.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CasUdalost" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Napr. pred večerou, po raňajkách, pred spaím. Aspoň jeden atribútov z casPresne, casPriblizne, casUdalost musí byť vyplnený.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MnozstvoDo" type="Mnozstvo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Používa sa iba na zadanie rozsahu dávkovania, napríklad 1 až 2 tablety. Tu sa určí práve hodnota 1. Ak je predpísané presné množstvo, tak sa nepoužíva. Presná hodnota bude zachytená v MnozstvoDo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MnozstvoOd" type="Mnozstvo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Používa sa na zachytenie presného množstva dávky, a aj na zachytenie rozsahu dávky. Pri presnej dávke (1 tableta) sa použije na zachytenie tejto hodnoty. Pri rozsahu (1 až 2 tablety) sa použije na zachytenie hodnoty 2 tablety.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TypDavkovania">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PodlaPotreby" />
+      <xs:enumeration value="JednorazovePodanie" />
+      <xs:enumeration value="CasovyRozstup" />
+      <xs:enumeration value="Intervaly" />
+      <xs:enumeration value="PrestavkaVDavkovani" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

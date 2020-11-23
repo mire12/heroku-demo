@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Druh odbornej činnosti</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2015-12-12</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.37</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2015-11-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000000265</codeValue>
+      <displayName>lôžkové oddelenie</displayName>
+      <Skratka>1</Skratka>
+      <Popis>lôžkové oddelenie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000273</codeValue>
+      <displayName>ambulancia</displayName>
+      <Skratka>2</Skratka>
+      <Popis>ambulancia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000281</codeValue>
+      <displayName>pracovisko</displayName>
+      <Skratka>3</Skratka>
+      <Popis>pracovisko</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000299</codeValue>
+      <displayName>útvar jednodňovej zdravotnej starostlivosti</displayName>
+      <Skratka>4</Skratka>
+      <Popis>útvar jednodňovej zdravotnej starostlivosti</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000307</codeValue>
+      <displayName>útvar spoločných vyšetrovacích a liečebných zložiek</displayName>
+      <Skratka>5</Skratka>
+      <Popis>útvar spoločných vyšetrovacích a liečebných zložiek</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000315</codeValue>
+      <displayName>stacionár</displayName>
+      <Skratka>6</Skratka>
+      <Popis>stacionár</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000000323</codeValue>
+      <displayName>ambulancia centrálneho príjmu  a ambulancia ústavnej pohotovostnej služby</displayName>
+      <Skratka>8</Skratka>
+      <Popis>ambulancia centrálneho príjmu  a ambulancia ústavnej pohotovostnej služby</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000347328</codeValue>
+      <displayName>iný druh</displayName>
+      <Skratka>0</Skratka>
+      <Popis>iný druh</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208870295</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>X</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

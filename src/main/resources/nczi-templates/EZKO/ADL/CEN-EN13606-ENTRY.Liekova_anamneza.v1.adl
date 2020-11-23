@@ -1,0 +1,172 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-ENTRY.Liekova_Anamneza.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::sk]>
+
+description
+    original_author = <
+        ["date"] = <"2018-03-27">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+        >
+    >
+
+definition
+    ENTRY[at0000] occurrences matches {1..1} matches {  -- Liekova_Anamneza
+        items existence matches {0..1} cardinality matches {3..10; unordered; unique} matches {
+            ELEMENT[at0007] occurrences matches {0..1} matches {  -- Aktívny Od
+                value existence matches {1..1} matches {
+                    TS[at0001] occurrences matches {1..1} matches {  -- TS
+                        time existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0009] occurrences matches {0..1} matches {  -- Množstvo
+                value existence matches {0..1} matches {
+                    PQ[at0003] occurrences matches {1..1} matches {  -- PQ
+                        value existence matches {1..1} matches {|>-1.7976931348623157E308..<1.7976931348623157E308|}
+                        units existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0011] occurrences matches {1..1} matches {  -- Pôvod
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0012] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {1..1} matches {"Na základe lekárskeho predpisu","Podané lekárom"}
+                    }
+                }
+            }
+            ELEMENT[at0013] occurrences matches {1..1} matches {  -- ID záznamu
+                value existence matches {1..1} matches {
+                    II[at0014] occurrences matches {0..1} matches {  -- II
+                        root existence matches {1..1} matches {*}
+                    }
+                }
+            }
+            ELEMENT[at0015] occurrences matches {0..1} matches {  -- ATC
+                value existence matches {0..1} matches {
+                    CV[at0016] occurrences matches {0..1} matches {  -- CV
+                        codeValue existence matches {0..1} matches {/.*/}
+                        codingSchemeName existence matches {0..1} matches {/.*/}
+                        displayName existence matches {0..1} matches {/.*/}
+                        codingScheme existence matches {0..1} matches {
+                            OID[at0005] occurrences matches {0..1} matches {  -- OID
+                                oid existence matches {0..1} matches {"1.3.158.00165387.100.10.83"}
+                            }
+                        }
+                        codingSchemeVersion existence matches {0..1} matches {*}
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0025] occurrences matches {1..1} matches {  -- Liek
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Registrovany_liek.v1/}
+            }
+            allow_archetype CLUSTER[at0026] occurrences matches {0..*} matches {  -- Duplicita
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Registrovany_liek.v1/}
+            }
+            allow_archetype CLUSTER[at0027] occurrences matches {0..1} matches {  -- Diagnóza
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Diagnoza.v1/}
+            }
+            allow_archetype CLUSTER[at0002] occurrences matches {0..1} matches {  -- Zdravotnícky pracovník
+                include
+                    archetype_id/value matches {/CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/}
+            }
+            ELEMENT[at0004] occurrences matches {0..1} matches {  -- Popis Medikácie
+                value existence matches {1..1} matches {
+                    SIMPLE_TEXT[at0006] occurrences matches {1..1} matches {  -- SIMPLE_TEXT
+                        originalText existence matches {0..1} matches {*}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["sk"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Liekova_Anamneza">
+                    description = <"Lieková anamnéza je automaticky poskytovaná ako súbor informácií o užitých a užívaných liekoch za posledných 6 mesiacov. V prípade použitia v pacientskom sumári slúži výhradne pre čítacie služby. ">
+                >
+                ["at0007"] = <
+                    text = <"Aktívny Od">
+                    description = <"Posledný známy začiatok užívania lieku (Výdaj lieku v lekárni) alebo dátum podania.">
+                >
+                ["at0009"] = <
+                    text = <"Množstvo">
+                    description = <"Množstvo liečebného prostriedku alebo počet predpísaných balení liečebného prostriedku ">
+                >
+                ["at0011"] = <
+                    text = <"Pôvod">
+                    description = <"Pôvod záznamu: Na základe lekárskeho predpisu, Podané lekárom">
+                >
+                ["at0012"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"ID záznamu">
+                    description = <"Identifikátor záznamu na základe, ktorého boli načítané informácie liekovej anamnézy do pacientského sumáru. ">
+                >
+                ["at0014"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"ATC">
+                    description = <"ATC klasifikácia registrovaného lieku, ktorý bol predpísaný a je užívaný alebo bol priamo podaný.">
+                >
+                ["at0016"] = <
+                    text = <"CV">
+                    description = <"OID: 1.3.158.00165387.100.10.83">
+                >
+                ["at0025"] = <
+                    text = <"Liek">
+                    description = <"Informácie o registrovanom lieku, ktorý bol predpísaný a je užívaný alebo bol priamo podaný.">
+                >
+                ["at0026"] = <
+                    text = <"Duplicita">
+                    description = <"Zoznam duplicitných liekov identifikovaných na základe ATC skupiny alebo účinných látok v aktuálnom zozname liekovej anamnézy pacienta. ">
+                >
+                ["at0027"] = <
+                    text = <"Diagnóza">
+                    description = <"Diagnóza na základe ktorej bol liek predpísaný alebo podaný. ">
+                >
+                ["at0002"] = <
+                    text = <"Zdravotnícky pracovník">
+                    description = <"Referencia na zdravotníckeho pracovníka (lekára), na základe ktorého preskripcie záznam vznikol alebo liečebný prostriedok pacientovi priamo podal.">
+                >
+                ["at0005"] = <
+                    text = <"OID">
+                    description = <"">
+                >
+                ["at0001"] = <
+                    text = <"TS">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"PQ">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"Popis Medikácie">
+                    description = <"Textový popis medikácie, z lekárskej správy. Informácie o podaných liekoch, množstve a potiažach pri medikácii.">
+                >
+            >
+        >
+    >

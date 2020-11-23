@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Plánovaná zdravotná starostlivosť podľa čakacieho zoznamu</codingSchemeName>
+    <codingSchemeVersion>4</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-06-22</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.253</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-01</DatumOd>
+      <DatumDo>9999-12-31</DatumDo>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00020883666</codeValue>
+      <displayName>operácia katarakty s implantáciou vnútroočnej šošovky</displayName>
+      <Skratka>WL0101</Skratka>
+      <Popis>operácia katarakty s implantáciou vnútroočnej šošovky</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883674</codeValue>
+      <displayName>operácia defektu srdcovej priehradky alebo Fallotovej tetralógie</displayName>
+      <Skratka>WL0201</Skratka>
+      <Popis>operácia defektu srdcovej priehradky alebo Fallotovej tetralógie</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883682</codeValue>
+      <displayName>operácia vrodenej stenózy alebo insuficiencie aortálneho alebo mitrálneho ústia</displayName>
+      <Skratka>WL0202</Skratka>
+      <Popis>operácia vrodenej stenózy alebo insuficiencie aortálneho alebo mitrálneho ústia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883690</codeValue>
+      <displayName>operácia vrodenej stenózy alebo atrézie aorty alebo v. pulmonalis</displayName>
+      <Skratka>WL0203</Skratka>
+      <Popis>operácia vrodenej stenózy alebo atrézie aorty alebo v. pulmonalis</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883708</codeValue>
+      <displayName>operácia získanej stenózy alebo insuficiencie aortálnej alebo mitrálnej chlopne</displayName>
+      <Skratka>WL0204</Skratka>
+      <Popis>operácia získanej stenózy alebo insuficiencie aortálnej alebo mitrálnej chlopne</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883716</codeValue>
+      <displayName>operácia aneuryzmy aorty</displayName>
+      <Skratka>WL0205</Skratka>
+      <Popis>operácia aneuryzmy aorty</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883724</codeValue>
+      <displayName>operácia na koronárnych artériách</displayName>
+      <Skratka>WL0206</Skratka>
+      <Popis>operácia na koronárnych artériách</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883732</codeValue>
+      <displayName>PTCA koronárnych artérií</displayName>
+      <Skratka>WL0207</Skratka>
+      <Popis>PTCA koronárnych artérií</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883740</codeValue>
+      <displayName>rekonštrukčný výkon na periférnych artériách</displayName>
+      <Skratka>WL0209</Skratka>
+      <Popis>rekonštrukčný výkon na periférnych artériách</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020885612</codeValue>
+      <displayName>implantácia ICD</displayName>
+      <Skratka>WL0210</Skratka>
+      <Popis>implantácia ICD</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883757</codeValue>
+      <displayName>implantácia TEP bedrového kĺbu</displayName>
+      <Skratka>WL0301</Skratka>
+      <Popis>implantácia TEP bedrového kĺbu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883765</codeValue>
+      <displayName>implantácia TEP kolenného kĺbu</displayName>
+      <Skratka>WL0302</Skratka>
+      <Popis>implantácia TEP kolenného kĺbu</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883773</codeValue>
+      <displayName>operácia artrózy vrátane implantácie endoprotézy iných kĺbov</displayName>
+      <Skratka>WL0303</Skratka>
+      <Popis>operácia artrózy vrátane implantácie endoprotézy iných kĺbov</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883781</codeValue>
+      <displayName>operácie instabilít a deformít na chrbtici vrátane použitia externých a interných fixátorov chrbtice</displayName>
+      <Skratka>WL0304</Skratka>
+      <Popis>operácie instabilít a deformít na chrbtici vrátane použitia externých a interných fixátorov chrbtice</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00020883799</codeValue>
+      <displayName>operácie instabilít a deformít na chrbtici vrátane použitia spondyloplastických metód</displayName>
+      <Skratka>WL0305</Skratka>
+      <Popis>operácie instabilít a deformít na chrbtici vrátane použitia spondyloplastických metód</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00208872085</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXXXXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673244</codeValue>
+      <displayName>skríningová mamografia</displayName>
+      <Skratka>WL0401</Skratka>
+      <Popis>skríningová mamografia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673251</codeValue>
+      <displayName>korekčná operácia rázštepu podnebia</displayName>
+      <Skratka>WL0501</Skratka>
+      <Popis>korekčná operácia rázštepu podnebia</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673269</codeValue>
+      <displayName>korekčná operácia rázštepu podnebia s rázštepom pery</displayName>
+      <Skratka>WL0502</Skratka>
+      <Popis>korekčná operácia rázštepu podnebia s rázštepom pery</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089673277</codeValue>
+      <displayName>liečba rádiojódom</displayName>
+      <Skratka>WL0601</Skratka>
+      <Popis>liečba rádiojódom</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>

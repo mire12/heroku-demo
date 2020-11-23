@@ -1,0 +1,1691 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rm="CEN/13606/RM" xmlns="http://eHealth.gov.sk/MPD/v1" targetNamespace="http://eHealth.gov.sk/MPD/v1" elementFormDefault="qualified">
+  <xs:import namespace="CEN/13606/RM" schemaLocation="../../COMMON/TS14796-dataTypes.xsd" />
+  <xs:element name="CVPolozkaCiselnikaTelephoneType" type="CVPolozkaCiselnikaTelephoneType" />
+  <xs:complexType name="CVPolozkaCiselnikaTelephoneType">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIdentifierType" type="OIDIdentifierType" />
+  <xs:complexType name="OIDIdentifierType">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIdentifierType" type="CVPolozkaCiselnikaIdentifierType" />
+  <xs:complexType name="CVPolozkaCiselnikaIdentifierType">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTelephoneType" type="OIDTelephoneType" />
+  <xs:complexType name="OIDTelephoneType">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZainteresovanejOsoby" type="CVPolozkaCiselnikaTypZainteresovanejOsoby" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZainteresovanejOsoby">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZainteresovanejOsoby" type="OIDTypZainteresovanejOsoby" />
+  <xs:complexType name="OIDTypZainteresovanejOsoby">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaFarmaceutickaSurovina" type="CVPolozkaCiselnikaFarmaceutickaSurovina" />
+  <xs:complexType name="CVPolozkaCiselnikaFarmaceutickaSurovina">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypAdresy" type="OIDTypAdresy" />
+  <xs:complexType name="OIDTypAdresy">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhLicencieZPr" type="CVPolozkaCiselnikaDruhLicencieZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhLicencieZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaProfTitulZPrPodlaOS" type="CVPolozkaCiselnikaProfTitulZPrPodlaOS" />
+  <xs:complexType name="CVPolozkaCiselnikaProfTitulZPrPodlaOS">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStavKategorizacie" type="OIDStavKategorizacie" />
+  <xs:complexType name="OIDStavKategorizacie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStavRegistracie" type="OIDStavRegistracie" />
+  <xs:complexType name="OIDStavRegistracie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulZaMenomZPr" type="OIDTitulZaMenomZPr" />
+  <xs:complexType name="OIDTitulZaMenomZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" type="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku" />
+  <xs:complexType name="CVPolozkaCiselnikaMetodyMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDProfTitulZPrPodlaOS" type="OIDProfTitulZPrPodlaOS" />
+  <xs:complexType name="OIDProfTitulZPrPodlaOS">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulPredMenomZPr" type="OIDTitulPredMenomZPr" />
+  <xs:complexType name="OIDTitulPredMenomZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulZaMenomZPr" type="CVPolozkaCiselnikaTitulZaMenomZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulZaMenomZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaInterakcie" type="OIDZavaznostVarovaniaInterakcie" />
+  <xs:complexType name="OIDZavaznostVarovaniaInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDoplnujucehoUdajaInterakcie" type="OIDTypDoplnujucehoUdajaInterakcie" />
+  <xs:complexType name="OIDTypDoplnujucehoUdajaInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie" type="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" type="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDoplnujucehoUdajaInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypLiekovejAlergie" type="CVPolozkaCiselnikaTypLiekovejAlergie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypLiekovejAlergie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulPredMenomZPr" type="CVPolozkaCiselnikaTitulPredMenomZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulPredMenomZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu" type="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypElIdentifikacnehoPredmetu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypElIdentifikacnehoPredmetu" type="OIDTypElIdentifikacnehoPredmetu" />
+  <xs:complexType name="OIDTypElIdentifikacnehoPredmetu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaKontraindikacie" type="OIDZavaznostVarovaniaKontraindikacie" />
+  <xs:complexType name="OIDZavaznostVarovaniaKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMernaJednotkaZdravPom" type="OIDMernaJednotkaZdravPom" />
+  <xs:complexType name="OIDMernaJednotkaZdravPom">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTriedaZdravotnickejPomocky" type="CVPolozkaCiselnikaTriedaZdravotnickejPomocky" />
+  <xs:complexType name="CVPolozkaCiselnikaTriedaZdravotnickejPomocky">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMernaJednotkaZdravPom" type="CVPolozkaCiselnikaMernaJednotkaZdravPom" />
+  <xs:complexType name="CVPolozkaCiselnikaMernaJednotkaZdravPom">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTriedaZdravotnickejPomocky" type="OIDTriedaZdravotnickejPomocky" />
+  <xs:complexType name="OIDTriedaZdravotnickejPomocky">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" type="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaDrzitelRozhodnutiaORegistraciiLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDrzitelRozhodnutiaORegistraciiLieku" type="OIDDrzitelRozhodnutiaORegistraciiLieku" />
+  <xs:complexType name="OIDDrzitelRozhodnutiaORegistraciiLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodUkonPozastLicencie" type="OIDDovodUkonPozastLicencie" />
+  <xs:complexType name="OIDDovodUkonPozastLicencie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhLicencieZPr" type="OIDDruhLicencieZPr" />
+  <xs:complexType name="OIDDruhLicencieZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" type="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMena" type="CVPolozkaCiselnikaMena" />
+  <xs:complexType name="CVPolozkaCiselnikaMena">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMena" type="OIDMena" />
+  <xs:complexType name="OIDMena">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaHodnotenieInterakcie" type="CVPolozkaCiselnikaHodnotenieInterakcie" />
+  <xs:complexType name="CVPolozkaCiselnikaHodnotenieInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaHodnotenieKontraindikacie" type="CVPolozkaCiselnikaHodnotenieKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaHodnotenieKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDHodnotenieKontraindikacie" type="OIDHodnotenieKontraindikacie" />
+  <xs:complexType name="OIDHodnotenieKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDavkovania" type="CVPolozkaCiselnikaTypDavkovania" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDavkovania">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKvalitaZdroja" type="CVPolozkaCiselnikaKvalitaZdroja" />
+  <xs:complexType name="CVPolozkaCiselnikaKvalitaZdroja">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKvalitaZdroja" type="OIDKvalitaZdroja" />
+  <xs:complexType name="OIDKvalitaZdroja">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDHodnotenieInterakcie" type="OIDHodnotenieInterakcie" />
+  <xs:complexType name="OIDHodnotenieInterakcie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDavkovania" type="OIDTypDavkovania" />
+  <xs:complexType name="OIDTypDavkovania">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypLiekovejAlergie" type="OIDTypLiekovejAlergie" />
+  <xs:complexType name="OIDTypLiekovejAlergie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" type="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaTypDoplnujucehoUdajaKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypDoplnujucehoUdajaKontraindikacie" type="OIDTypDoplnujucehoUdajaKontraindikacie" />
+  <xs:complexType name="OIDTypDoplnujucehoUdajaKontraindikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDCountry" type="OIDCountry" />
+  <xs:complexType name="OIDCountry">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMunicipality" type="OIDMunicipality" />
+  <xs:complexType name="OIDMunicipality">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCountry" type="CVPolozkaCiselnikaCountry" />
+  <xs:complexType name="CVPolozkaCiselnikaCountry">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDRegion" type="OIDRegion" />
+  <xs:complexType name="OIDRegion">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaRegion" type="CVPolozkaCiselnikaRegion" />
+  <xs:complexType name="CVPolozkaCiselnikaRegion">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDCounty" type="OIDCounty" />
+  <xs:complexType name="OIDCounty">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMunicipality" type="CVPolozkaCiselnikaMunicipality" />
+  <xs:complexType name="CVPolozkaCiselnikaMunicipality">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCounty" type="CVPolozkaCiselnikaCounty" />
+  <xs:complexType name="CVPolozkaCiselnikaCounty">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPSC" type="OIDPSC" />
+  <xs:complexType name="OIDPSC">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPSC" type="CVPolozkaCiselnikaPSC" />
+  <xs:complexType name="CVPolozkaCiselnikaPSC">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLegalForm" type="OIDLegalForm" />
+  <xs:complexType name="OIDLegalForm">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLegalForm" type="CVPolozkaCiselnikaLegalForm" />
+  <xs:complexType name="CVPolozkaCiselnikaLegalForm">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMaritalStatus" type="OIDMaritalStatus" />
+  <xs:complexType name="OIDMaritalStatus">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMaritalStatus" type="CVPolozkaCiselnikaMaritalStatus" />
+  <xs:complexType name="CVPolozkaCiselnikaMaritalStatus">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSex" type="OIDSex" />
+  <xs:complexType name="OIDSex">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSex" type="CVPolozkaCiselnikaSex" />
+  <xs:complexType name="CVPolozkaCiselnikaSex">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypeOfRelation" type="OIDTypeOfRelation" />
+  <xs:complexType name="OIDTypeOfRelation">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypeOfRelation" type="CVPolozkaCiselnikaTypeOfRelation" />
+  <xs:complexType name="CVPolozkaCiselnikaTypeOfRelation">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDExistencnyStav" type="OIDExistencnyStav" />
+  <xs:complexType name="OIDExistencnyStav">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaExistencnyStav" type="CVPolozkaCiselnikaExistencnyStav" />
+  <xs:complexType name="CVPolozkaCiselnikaExistencnyStav">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZdravotnyVykon" type="OIDZdravotnyVykon" />
+  <xs:complexType name="OIDZdravotnyVykon">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZdravotnyVykon" type="CVPolozkaCiselnikaZdravotnyVykon" />
+  <xs:complexType name="CVPolozkaCiselnikaZdravotnyVykon">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDiagnoza" type="OIDDiagnoza" />
+  <xs:complexType name="OIDDiagnoza">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDiagnoza" type="CVPolozkaCiselnikaDiagnoza" />
+  <xs:complexType name="CVPolozkaCiselnikaDiagnoza">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDFarmaceutickaSurovina" type="OIDFarmaceutickaSurovina" />
+  <xs:complexType name="OIDFarmaceutickaSurovina">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZavaznostVarovaniaLiekovejAlergie" type="OIDZavaznostVarovaniaLiekovejAlergie" />
+  <xs:complexType name="OIDZavaznostVarovaniaLiekovejAlergie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" type="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie" />
+  <xs:complexType name="CVPolozkaCiselnikaZavaznostVarovaniaLiekovejAlergie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypOckovania" type="OIDTypOckovania" />
+  <xs:complexType name="OIDTypOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhZariadenia" type="CVPolozkaCiselnikaDruhZariadenia" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhZariadenia">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZdravotnickaOdbornost" type="CVPolozkaCiselnikaZdravotnickaOdbornost" />
+  <xs:complexType name="CVPolozkaCiselnikaZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypJednotky" type="CVPolozkaCiselnikaTypJednotky" />
+  <xs:complexType name="CVPolozkaCiselnikaTypJednotky">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZakladnaJednotka" type="CVPolozkaCiselnikaZakladnaJednotka" />
+  <xs:complexType name="CVPolozkaCiselnikaZakladnaJednotka">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPredpona" type="CVPolozkaCiselnikaPredpona" />
+  <xs:complexType name="CVPolozkaCiselnikaPredpona">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKonverziaJednotiek" type="CVPolozkaCiselnikaKonverziaJednotiek" />
+  <xs:complexType name="CVPolozkaCiselnikaKonverziaJednotiek">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZasahoveUzemie" type="CVPolozkaCiselnikaZasahoveUzemie" />
+  <xs:complexType name="CVPolozkaCiselnikaZasahoveUzemie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOdborneZameranieOU" type="CVPolozkaCiselnikaOdborneZameranieOU" />
+  <xs:complexType name="CVPolozkaCiselnikaOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhUtvaru" type="CVPolozkaCiselnikaDruhUtvaru" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhUtvaru">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZriadovatel" type="CVPolozkaCiselnikaZriadovatel" />
+  <xs:complexType name="CVPolozkaCiselnikaZriadovatel">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOblastIndikatoraKvality" type="CVPolozkaCiselnikaOblastIndikatoraKvality" />
+  <xs:complexType name="CVPolozkaCiselnikaOblastIndikatoraKvality">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypIndikatoraKvality" type="CVPolozkaCiselnikaTypIndikatoraKvality" />
+  <xs:complexType name="CVPolozkaCiselnikaTypIndikatoraKvality">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPovolaniaZPr" type="CVPolozkaCiselnikaPovolaniaZPr" />
+  <xs:complexType name="CVPolozkaCiselnikaPovolaniaZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika" type="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPravnehoVztahuZdrPracovnika">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKomora" type="CVPolozkaCiselnikaKomora" />
+  <xs:complexType name="CVPolozkaCiselnikaKomora">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZdrPoistenia" type="CVPolozkaCiselnikaTypZdrPoistenia" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZdrPoistenia">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPlatitelaZP" type="CVPolozkaCiselnikaTypPlatitelaZP" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPlatitelaZP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia" type="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodUkonceniaZdrPoistenia">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhOckovania" type="CVPolozkaCiselnikaDruhOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLaboratornePolozky" type="CVPolozkaCiselnikaLaboratornePolozky" />
+  <xs:complexType name="CVPolozkaCiselnikaLaboratornePolozky">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKontaktnejOsoby" type="CVPolozkaCiselnikaTypKontaktnejOsoby" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKontaktnejOsoby">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaMerneJednotky" type="CVPolozkaCiselnikaMerneJednotky" />
+  <xs:complexType name="CVPolozkaCiselnikaMerneJednotky">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyDP" type="CVPolozkaCiselnikaSposobUhradyDP" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyDP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSkupinyLimitovDP" type="CVPolozkaCiselnikaSkupinyLimitovDP" />
+  <xs:complexType name="CVPolozkaCiselnikaSkupinyLimitovDP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaDP" type="CVPolozkaCiselnikaVyrobcaDP" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaDP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAplikacnaFormaDP" type="CVPolozkaCiselnikaAplikacnaFormaDP" />
+  <xs:complexType name="CVPolozkaCiselnikaAplikacnaFormaDP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyLieku" type="CVPolozkaCiselnikaSposobUhradyLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypLiekovehoUpozornenia" type="CVPolozkaCiselnikaTypLiekovehoUpozornenia" />
+  <xs:complexType name="CVPolozkaCiselnikaTypLiekovehoUpozornenia">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIndikacnaSkupina" type="CVPolozkaCiselnikaIndikacnaSkupina" />
+  <xs:complexType name="CVPolozkaCiselnikaIndikacnaSkupina">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaCestaPodania" type="CVPolozkaCiselnikaCestaPodania" />
+  <xs:complexType name="CVPolozkaCiselnikaCestaPodania">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOmamnePsychotropneLatky" type="CVPolozkaCiselnikaOmamnePsychotropneLatky" />
+  <xs:complexType name="CVPolozkaCiselnikaOmamnePsychotropneLatky">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaViazanostNaLP" type="CVPolozkaCiselnikaViazanostNaLP" />
+  <xs:complexType name="CVPolozkaCiselnikaViazanostNaLP">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLiekovaForma" type="CVPolozkaCiselnikaLiekovaForma" />
+  <xs:complexType name="CVPolozkaCiselnikaLiekovaForma">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSkupinyLiekovejFormy" type="CVPolozkaCiselnikaSkupinyLiekovejFormy" />
+  <xs:complexType name="CVPolozkaCiselnikaSkupinyLiekovejFormy">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaATC" type="CVPolozkaCiselnikaATC" />
+  <xs:complexType name="CVPolozkaCiselnikaATC">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaINN" type="CVPolozkaCiselnikaINN" />
+  <xs:complexType name="CVPolozkaCiselnikaINN">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUhradyZdrPom" type="CVPolozkaCiselnikaSposobUhradyZdrPom" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUhradyZdrPom">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaZdrPom" type="CVPolozkaCiselnikaVyrobcaZdrPom" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaZdrPom">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypLiekovehoUpozornenia" type="OIDTypLiekovehoUpozornenia" />
+  <xs:complexType name="OIDTypLiekovehoUpozornenia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKontaktnejOsoby" type="OIDTypKontaktnejOsoby" />
+  <xs:complexType name="OIDTypKontaktnejOsoby">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStavKategorizacie" type="CVPolozkaCiselnikaStavKategorizacie" />
+  <xs:complexType name="CVPolozkaCiselnikaStavKategorizacie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLiekovaForma" type="OIDLiekovaForma" />
+  <xs:complexType name="OIDLiekovaForma">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKontaktu" type="OIDTypKontaktu" />
+  <xs:complexType name="OIDTypKontaktu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStavRegistracie" type="CVPolozkaCiselnikaStavRegistracie" />
+  <xs:complexType name="CVPolozkaCiselnikaStavRegistracie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPovolenieViacnasobnejPreskripcie" type="OIDPovolenieViacnasobnejPreskripcie" />
+  <xs:complexType name="OIDPovolenieViacnasobnejPreskripcie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOmamnePsychotropneLatky" type="OIDOmamnePsychotropneLatky" />
+  <xs:complexType name="OIDOmamnePsychotropneLatky">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVydajNahradnehoHumannehoLieku" type="OIDVydajNahradnehoHumannehoLieku" />
+  <xs:complexType name="OIDVydajNahradnehoHumannehoLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" type="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie" />
+  <xs:complexType name="CVPolozkaCiselnikaPovolenieViacnasobnejPreskripcie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKontaktu" type="CVPolozkaCiselnikaTypKontaktu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKontaktu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" type="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku" />
+  <xs:complexType name="CVPolozkaCiselnikaOkolnostiMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaStrankyEZKO" type="CVPolozkaCiselnikaStrankyEZKO" />
+  <xs:complexType name="CVPolozkaCiselnikaStrankyEZKO">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypOckovania" type="CVPolozkaCiselnikaTypOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaTypOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhyNeziaducichReakcii" type="CVPolozkaCiselnikaDruhyNeziaducichReakcii" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulZaMenom" type="CVPolozkaCiselnikaTitulZaMenom" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulZaMenom">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypKrvnychSkupin" type="CVPolozkaCiselnikaTypKrvnychSkupin" />
+  <xs:complexType name="CVPolozkaCiselnikaTypKrvnychSkupin">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTitulPredMenom" type="CVPolozkaCiselnikaTitulPredMenom" />
+  <xs:complexType name="CVPolozkaCiselnikaTitulPredMenom">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypVzorkyLab" type="CVPolozkaCiselnikaTypVzorkyLab" />
+  <xs:complexType name="CVPolozkaCiselnikaTypVzorkyLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypyDoplnInformacii" type="CVPolozkaCiselnikaTypyDoplnInformacii" />
+  <xs:complexType name="CVPolozkaCiselnikaTypyDoplnInformacii">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAnatomickeMiestaLab" type="CVPolozkaCiselnikaAnatomickeMiestaLab" />
+  <xs:complexType name="CVPolozkaCiselnikaAnatomickeMiestaLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodZruseniaOckovania" type="CVPolozkaCiselnikaDovodZruseniaOckovania" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodZruseniaOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab" type="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab" />
+  <xs:complexType name="CVPolozkaCiselnikaFazyMenstruacnehoCykluLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaKategoriaVysledkuTestuLab" type="CVPolozkaCiselnikaKategoriaVysledkuTestuLab" />
+  <xs:complexType name="CVPolozkaCiselnikaKategoriaVysledkuTestuLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypPlatitelaLab" type="CVPolozkaCiselnikaTypPlatitelaLab" />
+  <xs:complexType name="CVPolozkaCiselnikaTypPlatitelaLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaReakciaNaOckovanie" type="CVPolozkaCiselnikaReakciaNaOckovanie" />
+  <xs:complexType name="CVPolozkaCiselnikaReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobyOdberuLab" type="CVPolozkaCiselnikaSposobyOdberuLab" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobyOdberuLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaUrgentnostVysetrenia" type="CVPolozkaCiselnikaUrgentnostVysetrenia" />
+  <xs:complexType name="CVPolozkaCiselnikaUrgentnostVysetrenia">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaObalyLab" type="CVPolozkaCiselnikaObalyLab" />
+  <xs:complexType name="CVPolozkaCiselnikaObalyLab">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhZdrPomAImplantatov" type="CVPolozkaCiselnikaDruhZdrPomAImplantatov" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhZdrPomAImplantatov">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaVyrobcaLieku" type="CVPolozkaCiselnikaVyrobcaLieku" />
+  <xs:complexType name="CVPolozkaCiselnikaVyrobcaLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAlergeny" type="CVPolozkaCiselnikaAlergeny" />
+  <xs:complexType name="CVPolozkaCiselnikaAlergeny">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaAbuzyZivotosprava" type="CVPolozkaCiselnikaAbuzyZivotosprava" />
+  <xs:complexType name="CVPolozkaCiselnikaAbuzyZivotosprava">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPrejavyNeziaducichReakcii" type="CVPolozkaCiselnikaPrejavyNeziaducichReakcii" />
+  <xs:complexType name="CVPolozkaCiselnikaPrejavyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypJednotky" type="OIDTypJednotky" />
+  <xs:complexType name="OIDTypJednotky">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOriginalita" type="CVPolozkaCiselnikaOriginalita" />
+  <xs:complexType name="CVPolozkaCiselnikaOriginalita">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu" type="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu" />
+  <xs:complexType name="CVPolozkaCiselnikaSposobUrceniaDatumuPorodu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSkupinyLiekovejFormy" type="OIDSkupinyLiekovejFormy" />
+  <xs:complexType name="OIDSkupinyLiekovejFormy">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOkolnostiMeraniaKrvnehoTlaku" type="OIDOkolnostiMeraniaKrvnehoTlaku" />
+  <xs:complexType name="OIDOkolnostiMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDStrankyEZKO" type="OIDStrankyEZKO" />
+  <xs:complexType name="OIDStrankyEZKO">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhOckovania" type="OIDDruhOckovania" />
+  <xs:complexType name="OIDDruhOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZdravotnickaOdbornost" type="OIDZdravotnickaOdbornost" />
+  <xs:complexType name="OIDZdravotnickaOdbornost">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhUtvaru" type="OIDDruhUtvaru" />
+  <xs:complexType name="OIDDruhUtvaru">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhZariadenia" type="OIDDruhZariadenia" />
+  <xs:complexType name="OIDDruhZariadenia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOdborneZameranieOU" type="OIDOdborneZameranieOU" />
+  <xs:complexType name="OIDOdborneZameranieOU">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPovolaniaZPr" type="OIDPovolaniaZPr" />
+  <xs:complexType name="OIDPovolaniaZPr">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKomora" type="OIDKomora" />
+  <xs:complexType name="OIDKomora">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhyNeziaducichReakcii" type="OIDDruhyNeziaducichReakcii" />
+  <xs:complexType name="OIDDruhyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulZaMenom" type="OIDTitulZaMenom" />
+  <xs:complexType name="OIDTitulZaMenom">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypKrvnychSkupin" type="OIDTypKrvnychSkupin" />
+  <xs:complexType name="OIDTypKrvnychSkupin">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPlatitelaZP" type="OIDTypPlatitelaZP" />
+  <xs:complexType name="OIDTypPlatitelaZP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodUkonceniaZdrPoistenia" type="OIDDovodUkonceniaZdrPoistenia" />
+  <xs:complexType name="OIDDovodUkonceniaZdrPoistenia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZdrPoistenia" type="OIDTypZdrPoistenia" />
+  <xs:complexType name="OIDTypZdrPoistenia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTitulPredMenom" type="OIDTitulPredMenom" />
+  <xs:complexType name="OIDTitulPredMenom">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMerneJednotky" type="OIDMerneJednotky" />
+  <xs:complexType name="OIDMerneJednotky">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobPodania" type="OIDSposobPodania" />
+  <xs:complexType name="OIDSposobPodania">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyDP" type="OIDSposobUhradyDP" />
+  <xs:complexType name="OIDSposobUhradyDP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyZdrPom" type="OIDSposobUhradyZdrPom" />
+  <xs:complexType name="OIDSposobUhradyZdrPom">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypVzorkyLab" type="OIDTypVzorkyLab" />
+  <xs:complexType name="OIDTypVzorkyLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDViazanostNaLP" type="OIDViazanostNaLP" />
+  <xs:complexType name="OIDViazanostNaLP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZasahoveUzemie" type="OIDZasahoveUzemie" />
+  <xs:complexType name="OIDZasahoveUzemie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSkupinyLimitovDP" type="OIDSkupinyLimitovDP" />
+  <xs:complexType name="OIDSkupinyLimitovDP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUhradyLieku" type="OIDSposobUhradyLieku" />
+  <xs:complexType name="OIDSposobUhradyLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIndikacnaSkupina" type="OIDIndikacnaSkupina" />
+  <xs:complexType name="OIDIndikacnaSkupina">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaDP" type="OIDVyrobcaDP" />
+  <xs:complexType name="OIDVyrobcaDP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypyDoplnInformacii" type="OIDTypyDoplnInformacii" />
+  <xs:complexType name="OIDTypyDoplnInformacii">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAnatomickeMiestaLab" type="OIDAnatomickeMiestaLab" />
+  <xs:complexType name="OIDAnatomickeMiestaLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDovodZruseniaOckovania" type="OIDDovodZruseniaOckovania" />
+  <xs:complexType name="OIDDovodZruseniaOckovania">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDFazyMenstruacnehoCykluLab" type="OIDFazyMenstruacnehoCykluLab" />
+  <xs:complexType name="OIDFazyMenstruacnehoCykluLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKategoriaVysledkuTestuLab" type="OIDKategoriaVysledkuTestuLab" />
+  <xs:complexType name="OIDKategoriaVysledkuTestuLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPlatitelaLab" type="OIDTypPlatitelaLab" />
+  <xs:complexType name="OIDTypPlatitelaLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDReakciaNaOckovanie" type="OIDReakciaNaOckovanie" />
+  <xs:complexType name="OIDReakciaNaOckovanie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobyOdberuLab" type="OIDSposobyOdberuLab" />
+  <xs:complexType name="OIDSposobyOdberuLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDObalyLab" type="OIDObalyLab" />
+  <xs:complexType name="OIDObalyLab">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDUrgentnostVysetrenia" type="OIDUrgentnostVysetrenia" />
+  <xs:complexType name="OIDUrgentnostVysetrenia">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaLieku" type="OIDVyrobcaLieku" />
+  <xs:complexType name="OIDVyrobcaLieku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDVyrobcaZdrPom" type="OIDVyrobcaZdrPom" />
+  <xs:complexType name="OIDVyrobcaZdrPom">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhZdrPomAImplantatov" type="OIDDruhZdrPomAImplantatov" />
+  <xs:complexType name="OIDDruhZdrPomAImplantatov">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDMetodyMeraniaKrvnehoTlaku" type="OIDMetodyMeraniaKrvnehoTlaku" />
+  <xs:complexType name="OIDMetodyMeraniaKrvnehoTlaku">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAplikacnaFormaDP" type="OIDAplikacnaFormaDP" />
+  <xs:complexType name="OIDAplikacnaFormaDP">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZriadovatel" type="OIDZriadovatel" />
+  <xs:complexType name="OIDZriadovatel">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypPravnehoVztahuZdrPracovnika" type="OIDTypPravnehoVztahuZdrPracovnika" />
+  <xs:complexType name="OIDTypPravnehoVztahuZdrPracovnika">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypIndikatoraKvality" type="OIDTypIndikatoraKvality" />
+  <xs:complexType name="OIDTypIndikatoraKvality">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOblastIndikatoraKvality" type="OIDOblastIndikatoraKvality" />
+  <xs:complexType name="OIDOblastIndikatoraKvality">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAbuzyZivotosprava" type="OIDAbuzyZivotosprava" />
+  <xs:complexType name="OIDAbuzyZivotosprava">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDAlergeny" type="OIDAlergeny" />
+  <xs:complexType name="OIDAlergeny">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPrejavyNeziaducichReakcii" type="OIDPrejavyNeziaducichReakcii" />
+  <xs:complexType name="OIDPrejavyNeziaducichReakcii">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDINN" type="OIDINN" />
+  <xs:complexType name="OIDINN">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPredpona" type="OIDPredpona" />
+  <xs:complexType name="OIDPredpona">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOriginalita" type="OIDOriginalita" />
+  <xs:complexType name="OIDOriginalita">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSposobUrceniaDatumuPorodu" type="OIDSposobUrceniaDatumuPorodu" />
+  <xs:complexType name="OIDSposobUrceniaDatumuPorodu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDATC" type="OIDATC" />
+  <xs:complexType name="OIDATC">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZakladnaJednotka" type="OIDZakladnaJednotka" />
+  <xs:complexType name="OIDZakladnaJednotka">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDKonverziaJednotiek" type="OIDKonverziaJednotiek" />
+  <xs:complexType name="OIDKonverziaJednotiek">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLaboratornePolozky" type="OIDLaboratornePolozky" />
+  <xs:complexType name="OIDLaboratornePolozky">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDruhVlastnictva" type="OIDDruhVlastnictva" />
+  <xs:complexType name="OIDDruhVlastnictva">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaInstitucionalneSubsektory" type="CVPolozkaCiselnikaInstitucionalneSubsektory" />
+  <xs:complexType name="CVPolozkaCiselnikaInstitucionalneSubsektory">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaNaceKody" type="CVPolozkaCiselnikaNaceKody" />
+  <xs:complexType name="CVPolozkaCiselnikaNaceKody">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDLegislativnyPredpis" type="OIDLegislativnyPredpis" />
+  <xs:complexType name="OIDLegislativnyPredpis">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSpecifikaciaOdboru" type="OIDSpecifikaciaOdboru" />
+  <xs:complexType name="OIDSpecifikaciaOdboru">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLegislativnyPredpis" type="CVPolozkaCiselnikaLegislativnyPredpis" />
+  <xs:complexType name="CVPolozkaCiselnikaLegislativnyPredpis">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSpecifikaciaOdboru" type="CVPolozkaCiselnikaSpecifikaciaOdboru" />
+  <xs:complexType name="CVPolozkaCiselnikaSpecifikaciaOdboru">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaPoskytovanieZSvOdbore" type="CVPolozkaCiselnikaPoskytovanieZSvOdbore" />
+  <xs:complexType name="CVPolozkaCiselnikaPoskytovanieZSvOdbore">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDPoskytovanieZSvOdbore" type="OIDPoskytovanieZSvOdbore" />
+  <xs:complexType name="OIDPoskytovanieZSvOdbore">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaZaradenieDoEvidPoctu" type="CVPolozkaCiselnikaZaradenieDoEvidPoctu" />
+  <xs:complexType name="CVPolozkaCiselnikaZaradenieDoEvidPoctu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDZaradenieDoEvidPoctu" type="OIDZaradenieDoEvidPoctu" />
+  <xs:complexType name="OIDZaradenieDoEvidPoctu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypAdresy" type="CVPolozkaCiselnikaTypAdresy" />
+  <xs:complexType name="CVPolozkaCiselnikaTypAdresy">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDovodUkonPozastLicencie" type="CVPolozkaCiselnikaDovodUkonPozastLicencie" />
+  <xs:complexType name="CVPolozkaCiselnikaDovodUkonPozastLicencie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaSpecifikaciaZastupcu" type="CVPolozkaCiselnikaSpecifikaciaZastupcu" />
+  <xs:complexType name="CVPolozkaCiselnikaSpecifikaciaZastupcu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDSpecifikaciaZastupcu" type="OIDSpecifikaciaZastupcu" />
+  <xs:complexType name="OIDSpecifikaciaZastupcu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaTypZakonnehoZastupcu" type="CVPolozkaCiselnikaTypZakonnehoZastupcu" />
+  <xs:complexType name="CVPolozkaCiselnikaTypZakonnehoZastupcu">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDTypZakonnehoZastupcu" type="OIDTypZakonnehoZastupcu" />
+  <xs:complexType name="OIDTypZakonnehoZastupcu">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaIndikacie" type="CVPolozkaCiselnikaIndikacie" />
+  <xs:complexType name="CVPolozkaCiselnikaIndikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDIndikacie" type="OIDIndikacie" />
+  <xs:complexType name="OIDIndikacie">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDruhVlastnictva" type="CVPolozkaCiselnikaDruhVlastnictva" />
+  <xs:complexType name="CVPolozkaCiselnikaDruhVlastnictva">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy" type="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy" />
+  <xs:complexType name="CVPolozkaCiselnikaUstredneOrganyStatnejSpravy">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDInstitucionalneSubsektory" type="OIDInstitucionalneSubsektory" />
+  <xs:complexType name="OIDInstitucionalneSubsektory">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDNaceKody" type="OIDNaceKody" />
+  <xs:complexType name="OIDNaceKody">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDUstredneOrganyStatnejSpravy" type="OIDUstredneOrganyStatnejSpravy" />
+  <xs:complexType name="OIDUstredneOrganyStatnejSpravy">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+    <xs:element name="CVPolozkaCiselnikaDostupnostLiekuVLekarni" type="CVPolozkaCiselnikaDostupnostLiekuVLekarni" />
+  <xs:complexType name="CVPolozkaCiselnikaDostupnostLiekuVLekarni">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDDostupnostLiekuVLekarni" type="OIDDostupnostLiekuVLekarni" />
+  <xs:complexType name="OIDDostupnostLiekuVLekarni">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaOkres" type="CVPolozkaCiselnikaOkres" />
+  <xs:complexType name="CVPolozkaCiselnikaOkres">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDOkres" type="OIDOkres" />
+  <xs:complexType name="OIDOkres">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaObec" type="CVPolozkaCiselnikaObec" />
+  <xs:complexType name="CVPolozkaCiselnikaObec">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OIDObec" type="OIDObec" />
+  <xs:complexType name="OIDObec">
+    <xs:complexContent>
+      <xs:extension base="rm:OID">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaLiekoveUpozornenieTyp" type="CVPolozkaCiselnikaLiekoveUpozornenieTyp" />
+  <xs:complexType name="CVPolozkaCiselnikaLiekoveUpozornenieTyp">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CVPolozkaCiselnikaDostupnostLiekuVSR" type="CVPolozkaCiselnikaDostupnostLiekuVSR" />
+  <xs:complexType name="CVPolozkaCiselnikaDostupnostLiekuVSR">
+    <xs:complexContent>
+      <xs:extension base="rm:CV">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

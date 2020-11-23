@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ciselnik xmlns="http://eHealth.gov.sk/JRUZ/v1">
+  <ZahlavieCiselnika>
+    <codingSchemeName>Skupiny liekovej formy</codingSchemeName>
+    <codingSchemeVersion>2</codingSchemeVersion>
+    <DatumPoslednejZmeny>2016-04-21</DatumPoslednejZmeny>
+    <codingScheme>
+      <oid>1.3.158.00165387.100.10.197</oid>
+    </codingScheme>
+    <Platnost>
+      <DatumOd>2016-07-01</DatumOd>
+    </Platnost>
+  </ZahlavieCiselnika>
+  <PolozkaCiselnika_Zoznam>
+    <PolozkaCiselnika>
+      <codeValue>00000117234</codeValue>
+      <displayName>tekutá</displayName>
+      <Skratka>TF</Skratka>
+      <Popis>Tekutá forma</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000117242</codeValue>
+      <displayName>pevná</displayName>
+      <Skratka>PF</Skratka>
+      <Popis>Pevná forma</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>00000754002</codeValue>
+      <displayName>iná forma</displayName>
+      <Skratka>IF</Skratka>
+      <Popis>Iná forma</Popis>
+    </PolozkaCiselnika>
+    <PolozkaCiselnika>
+      <codeValue>02089551580</codeValue>
+      <displayName>neznáma hodnota</displayName>
+      <Skratka>XXX</Skratka>
+      <Popis>neznáma hodnota</Popis>
+    </PolozkaCiselnika>
+  </PolozkaCiselnika_Zoznam>
+</Ciselnik>
