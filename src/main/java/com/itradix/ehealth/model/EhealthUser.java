@@ -5,12 +5,19 @@ import java.util.Collections;
 
 import javax.persistence.Entity;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 
 @Entity(name = "ehealthuser")
-public class EhealthUser extends BaseEntity {
+public class EhealthUser extends BaseEntity implements UserDetails{
 
 
-    private String username;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String username;
     private String password;
     private boolean accountNonExpired = true;
     private boolean accountNonLocked = true;
@@ -32,6 +39,25 @@ public class EhealthUser extends BaseEntity {
 	}
 	
 	
-	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return Collections.emptyList();
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		return accountNonExpired;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		return accountNonLocked;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+	@Override
+	public boolean isEnabled() {
+		return enabled;
+	}
 
 }
