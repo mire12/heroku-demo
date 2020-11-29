@@ -62,13 +62,13 @@ public class JwtAuthenticationController {
 
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
 	@GetMapping(value = "/test")
 	public ResponseEntity<String> test() {
 		return ResponseEntity.ok("UP");
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
 	@GetMapping(value = "/error")
 	public ResponseEntity<String> error() {
 		return ResponseEntity.ok("ERROR");

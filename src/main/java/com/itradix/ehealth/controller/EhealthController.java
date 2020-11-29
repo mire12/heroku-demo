@@ -50,6 +50,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
 @RestController
 public class EhealthController {
 
@@ -68,7 +69,6 @@ public class EhealthController {
 		this.commmaxService = commmaxService;
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/patient/{id}")
 	@ResponseBody
 	public Patient get(@PathVariable Long id) throws PatientNotFoundException {
@@ -76,7 +76,6 @@ public class EhealthController {
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
 
