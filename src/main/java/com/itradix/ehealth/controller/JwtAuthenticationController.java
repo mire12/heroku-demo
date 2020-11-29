@@ -32,7 +32,7 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
 	@PostMapping(value = "/authenticate")
 	public ResponseEntity<JwtResponse> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
 		throws UserNotFoundException {
@@ -66,6 +66,12 @@ public class JwtAuthenticationController {
 	@GetMapping(value = "/test")
 	public ResponseEntity<String> test() {
 		return ResponseEntity.ok("UP");
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(value = "/error")
+	public ResponseEntity<String> error() {
+		return ResponseEntity.ok("ERROR");
 	}
 
 }
