@@ -83,7 +83,7 @@ public class PostgresAutoconfiguration {
 		hibernateProperties.setProperty("hibernate.connection.charSet", "UTF-8");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.import_files_sql_extractor","org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.charset_name", env.getProperty("hibernate.hbm2ddl.charset_name"));
-		hibernateProperties.setProperty("hibernate.hbm2ddl.import_files", env.getProperty("hibernate.hbm2ddl.import_files"));
+		//hibernateProperties.setProperty("hibernate.hbm2ddl.import_files", env.getProperty("hibernate.hbm2ddl.import_files"));
 		hibernateProperties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
 		hibernateProperties.setProperty("hibernate.show_sql",
 				env.getProperty("hibernate.show_sql") != null ? env.getProperty("hibernate.show_sql")
