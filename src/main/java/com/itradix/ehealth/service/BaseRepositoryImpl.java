@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import com.itradix.ehealth.dao.BaseRepository;
 import com.itradix.ehealth.model.BaseEntity;
+import com.itradix.ehealth.model.NcziResponse;
+import com.itradix.ehealth.model.EzClassifications;
 
 @Service
 @Transactional
@@ -38,6 +40,7 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable>
     public Optional<T> findById(ID entityId) {
         return abstractBaseRepository.findById(entityId);
     }
+    
 
     @Override
     public T update(T entity) {
@@ -63,5 +66,19 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable>
     public void deleteById(ID entityId) {
         abstractBaseRepository.deleteById(entityId);
     }
+	
+	@Transactional
+	public List<NcziResponse> findNcziRespUsingNativeQuery(String evID) {
+		List<NcziResponse> studentResponse = abstractBaseRepository.findNcziRespUsingNativeQuery(evID);
+		return studentResponse;
+	}
+	
+	@Transactional
+	public List<Object> findZdravotnickaOdbornostList(String oid, String oid_ver) {
+		return abstractBaseRepository.findZdravotnickaOdbornostList(oid, oid_ver);
+	}
+	
+	
+	
 
 }

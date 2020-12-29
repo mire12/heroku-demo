@@ -28,6 +28,10 @@ public class NcziResponse extends BaseEntity implements Serializable {
 		this.message = message;
 		this.method = method;
 	}
+	
+	public NcziResponse() {
+		
+	}
 
 	private static final long serialVersionUID = 1L;
 

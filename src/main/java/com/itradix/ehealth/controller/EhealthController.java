@@ -7,6 +7,7 @@ import org.w3c.dom.Node;
 
 import com.itradix.ehealth.dto.PatientDTO;
 import com.itradix.ehealth.exception.PatientNotFoundException;
+import com.itradix.ehealth.model.EzClassifications;
 import com.itradix.ehealth.model.NcziResponse;
 import com.itradix.ehealth.model.Patient;
 import com.itradix.ehealth.service.CommMaxService;
@@ -14,6 +15,7 @@ import com.itradix.ehealth.service.CommMaxServiceImpl;
 import com.itradix.ehealth.service.JruzIdService;
 import com.itradix.ehealth.service.PatientService;
 import com.itradix.ehealth.service.PatientServiceImpl;
+import com.itradix.ehealth.service.XmlService;
 
 import cen._13606.rm.EHREXTRACT;
 import ch.qos.logback.classic.Logger;
@@ -24,6 +26,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -37,6 +42,7 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -57,16 +63,17 @@ public class EhealthController {
 	private final PatientService patientService;
 	private final JruzIdService jruzService;
 	private final CommMaxService commmaxService;
-
+	private final XmlService xmlService;
 	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory
 			.getLogger(EhealthController.class);
 
 	@Autowired
 	public EhealthController(PatientServiceImpl patientService, JruzIdService jruzService,
-			CommMaxServiceImpl commmaxService) {
+			CommMaxServiceImpl commmaxService, XmlService xmlService) {
 		this.patientService = patientService;
 		this.jruzService = jruzService;
 		this.commmaxService = commmaxService;
+		this.xmlService = xmlService;
 	}
 
 	@GetMapping("/patient/{id}")
@@ -75,6 +82,28 @@ public class EhealthController {
 		return patientService.findById(id).orElseThrow(() -> PatientNotFoundException.createWith(id.toString()));
 
 	}
+	
+		
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@GetMapping(path="/classifications/{oid}/{oid_ver}", produces = "application/json")
+	public List<Object> getZdravotnickaOdbornostList(@PathVariable String oid, @PathVariable String oid_ver) {
+		
+		List<Object> ezClassifications = commmaxService.findZdravotnickaOdbornostList(oid, oid_ver);
+		if(!ezClassifications.isEmpty()) {
+			return ezClassifications;
+		}else {
+			return Collections.emptyList();
+		}
+	}
+	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@PostMapping(path="/oververziu/xml", produces = "text/plain")
+	public String feedOververziu(@RequestParam String date, @RequestParam String classification) {
+		return xmlService.updateOververziuXml(date, classification);
+		
+		
+	}
+	
 
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
@@ -203,10 +232,23 @@ public class EhealthController {
 		return commmaxService.getCommmaxTemplate("jruzid.xml");
 	}
 
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@GetMapping(path = "/commmax/oververziu", produces = "text/plain")
 	public String getOververziu(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID) {
 		return jruzService.getOververziu(pID, evID, dID);
 	}
+	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@GetMapping(path = "/getehealthresponse", produces = "text/plain")
+	public String getEhealthResponse(@RequestParam String evId) {
+		
+		List<NcziResponse> ncziresponse = commmaxService.findNcziRespUsingNativeQuery(evId);
+		if(!ncziresponse.isEmpty()) {
+			return ncziresponse.get(0).getReturnMsg();
+		}else {
+			return "Nepodarilo sa vytiahnut spravu";
+		}
+	}	
 
 	@PostMapping(path = "/oververziu", produces = { "application/xml", "text/xml" })
 	public String getOververziuXml() {

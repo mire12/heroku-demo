@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +14,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -72,14 +73,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		logger.debug("Spring security triggered!!");
+		httpSecurity.cors();
+		
 		httpSecurity.requiresChannel()
 	      .requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
 	      .requiresSecure();
 		// We don't need CSRF for this example
+		
 		httpSecurity.csrf().disable()
 		// dont authenticate this particular request
-		.authorizeRequests().antMatchers("/authenticate","/register","/log","/test","/dajoupzs","/oververziu","/jruzid","/dajpacientskysumar","/dajpacientskysumareds","/dajpacientskysumarudaje","/dajzpr", "/dajzaznamovysetreni", "/vyhladajzaznamy", "/vyhladajzaznamypreziadatela", "/zapissumarproblemy", "/vysetrenie").permitAll().
+		.authorizeRequests().antMatchers("/authenticate", "/actuator", "/actuator/health", "actuator/metrics", "/swagger-ui", "/swagger-ui/","/swagger-ui/**", "/swagger-ui/index.html", "/register","/log","/test","/dajoupzs","/oververziu","/jruzid","/dajpacientskysumar","/dajpacientskysumareds","/dajpacientskysumarudaje","/dajzpr", "/dajzaznamovysetreni", "/vyhladajzaznamy", "/vyhladajzaznamypreziadatela", "/zapissumarproblemy", "/vysetrenie").permitAll().
 		// all other requests need to be authenticated
 		anyRequest().authenticated().and().
 		// make sure we use stateless session; session won't be used to
@@ -91,5 +94,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
 	}
+	
+	@Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().mvcMatchers(HttpMethod.OPTIONS, "/**");
+        // ignore swagger 
+        web.ignoring().mvcMatchers("/swagger-ui.html/**", "/configuration/**", "/swagger-resources/**", "/v2/api-docs");
+    }
 
 }

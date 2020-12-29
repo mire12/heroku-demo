@@ -2,6 +2,7 @@ package com.itradix.ehealth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,7 +33,7 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
 
-	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@PostMapping(value = "/authenticate")
 	public ResponseEntity<JwtResponse> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
 		throws UserNotFoundException {
@@ -46,7 +47,7 @@ public class JwtAuthenticationController {
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@PostMapping(value = "/register")
 	public ResponseEntity<EhealthUser> saveUser(@RequestBody EhealthUser user) {
 		return ResponseEntity.ok(userDetailsService.save(user));
@@ -62,16 +63,16 @@ public class JwtAuthenticationController {
 
 	}
 	
-	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@GetMapping(value = "/test")
 	public ResponseEntity<String> test() {
 		return ResponseEntity.ok("UP");
 	}
 	
-	@CrossOrigin(origins = "https://ehealth-ng-app.herokuapp.com")
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@GetMapping(value = "/error")
-	public ResponseEntity<String> error() {
-		return ResponseEntity.ok("ERROR");
+	public ResponseEntity<Object> error() {
+		return ResponseEntity.badRequest().build();
 	}
 
 }
