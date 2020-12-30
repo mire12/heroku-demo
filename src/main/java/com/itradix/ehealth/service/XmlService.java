@@ -81,7 +81,7 @@ public class XmlService {
 			
 						
 			ByteArrayOutputStream byteStream2 = new ByteArrayOutputStream();
-			IOUtils.copy(resourceLoader.getResource("file:/tmp/temp.xml").getInputStream(), byteStream2);
+			IOUtils.copy(resourceLoader.getResource("file:temp.xml").getInputStream(), byteStream2);
 			
 			byteStream.writeTo(byteStream2);
 	        //File convFile = File.createTempFile("temp", ".xml");
