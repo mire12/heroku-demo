@@ -79,10 +79,11 @@ public class XmlService {
 	        //logger.debug(file.getCanonicalPath());
 			//Resource res = new ClassPathResource("/static/oververziu.xml");
 			
+						
 			ByteArrayOutputStream byteStream2 = new ByteArrayOutputStream();
-			IOUtils.copy(resource.getInputStream(), byteStream2);
+			IOUtils.copy(resourceLoader.getResource("file:/tmp/temp.xml").getInputStream(), byteStream2);
 			
-			byteStream2.write(byteStream.toByteArray());
+			byteStream.writeTo(byteStream2);
 	        //File convFile = File.createTempFile("temp", ".xml");
 	        //logger.debug(file.getAbsolutePath());
 	        //logger.debug(file.getCanonicalPath());
