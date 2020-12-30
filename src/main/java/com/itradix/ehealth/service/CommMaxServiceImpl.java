@@ -53,7 +53,7 @@ public class CommMaxServiceImpl extends BaseRepositoryImpl<NcziResponse, Long> i
 
 		ClassLoader cl = this.getClass().getClassLoader();
 		ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(cl);
-		Resource resource = resolver.getResource("classpath:commmax-templates/" + templateName);
+		Resource resource = resolver.getResource("classpath:static/" + templateName);
 		return asString(resource);
 
 	}

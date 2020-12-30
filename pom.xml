@@ -157,7 +157,7 @@
 						<arg>-XautoNameResolution</arg>
 					</args>
 					<xjbSources>
-						<xjbSource>src/main/resources/commmax-templates/global.xjb</xjbSource>
+						<xjbSource>src/main/resources/static/global.xjb</xjbSource>
 					</xjbSources>
 					<sources>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/eHtalk.xsd</source>

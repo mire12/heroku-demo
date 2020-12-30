@@ -46,7 +46,7 @@ public class XmlService {
 	}
 
 	public String updateOververziuXml(String dateTime, String ciselnik) {
-		Resource resource = resourceLoader.getResource("classpath:commmax-templates/oververziu.xml");
+		Resource resource = resourceLoader.getResource("classpath:static/oververziu.xml");
 
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
