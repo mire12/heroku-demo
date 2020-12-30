@@ -74,7 +74,7 @@ public class XmlService {
 	               
 			
 
-			Resource res = new ClassPathResource("/app/temp.xml");
+			Resource res = new ClassPathResource("/tmp/temp.xml");
 			File file = res.getFile();
 			
 			
