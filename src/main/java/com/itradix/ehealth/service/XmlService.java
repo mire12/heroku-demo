@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
 import java.io.Reader;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
@@ -69,12 +71,19 @@ public class XmlService {
 			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
 
 			InputStream inputStream = new ByteArrayInputStream(overVerziuXml.getBytes("UTF-8"));
-			ByteArrayOutputStream targetStream = new ByteArrayOutputStream();
-			IOUtils.copy(inputStream, targetStream);
+			ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+			IOUtils.copy(inputStream, byteStream);
+			
+					        
+	               
+			
 
-			OutputStream outputStream = new FileOutputStream(resource.getFile());
-			targetStream.writeTo(outputStream);
-			targetStream.flush();
+			//File file = new File(resource.getInputStream());
+			
+	        File convFile = File.createTempFile("temp", ".xml"); // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
+	        FileOutputStream fos = new FileOutputStream(convFile); 
+	        fos.write(byteStream.toByteArray());
+	        fos.close(); 
 
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
