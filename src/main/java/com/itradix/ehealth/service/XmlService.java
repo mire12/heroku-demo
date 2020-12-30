@@ -74,8 +74,11 @@ public class XmlService {
 	               
 			
 
-			Resource res = new ClassPathResource("/tmp/temp.xml");
-			File file = res.getFile();
+			File file = new File(".");
+			logger.debug(file.getAbsolutePath());
+	        logger.debug(file.getCanonicalPath());
+			Resource res = new ClassPathResource("/static/oververziu.xml");
+			file = res.getFile();
 			
 			
 	        //File convFile = File.createTempFile("temp", ".xml");
