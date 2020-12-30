@@ -25,6 +25,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
@@ -80,7 +81,10 @@ public class XmlService {
 
 			//File file = new File(resource.getInputStream());
 			
-	        File convFile = File.createTempFile("temp", ".xml"); // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
+	        File convFile = File.createTempFile("temp", ".xml");
+	        logger.debug(convFile.getAbsolutePath());
+	        logger.debug(convFile.getCanonicalPath());
+	        // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
 	        FileOutputStream fos = new FileOutputStream(convFile); 
 	        fos.write(byteStream.toByteArray());
 	        fos.close(); 
