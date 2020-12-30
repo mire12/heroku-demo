@@ -7,9 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
 import java.io.Reader;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
@@ -25,13 +22,11 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
-
-import com.itradix.ehealth.controller.EhealthController;
 
 import ch.qos.logback.classic.Logger;
 
@@ -79,13 +74,15 @@ public class XmlService {
 	               
 			
 
-			//File file = new File(resource.getInputStream());
+			Resource res = new ClassPathResource("/app/temp.xml");
+			File file = res.getFile();
 			
-	        File convFile = File.createTempFile("temp", ".xml");
-	        logger.debug(convFile.getAbsolutePath());
-	        logger.debug(convFile.getCanonicalPath());
+			
+	        //File convFile = File.createTempFile("temp", ".xml");
+	        logger.debug(file.getAbsolutePath());
+	        logger.debug(file.getCanonicalPath());
 	        // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
-	        FileOutputStream fos = new FileOutputStream(convFile); 
+	        FileOutputStream fos = new FileOutputStream(file); 
 	        fos.write(byteStream.toByteArray());
 	        fos.close(); 
 
