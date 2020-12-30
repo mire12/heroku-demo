@@ -74,20 +74,22 @@ public class XmlService {
 	               
 			
 
-			File file = new File("temp.xml");
-			logger.debug(file.getAbsolutePath());
-	        logger.debug(file.getCanonicalPath());
+			//File file = new File("temp.xml");
+			//logger.debug(file.getAbsolutePath());
+	        //logger.debug(file.getCanonicalPath());
 			//Resource res = new ClassPathResource("/static/oververziu.xml");
-			file = resource.getFile();
 			
+			ByteArrayOutputStream byteStream2 = new ByteArrayOutputStream();
+			IOUtils.copy(resource.getInputStream(), byteStream2);
 			
+			byteStream2.write(byteStream.toByteArray());
 	        //File convFile = File.createTempFile("temp", ".xml");
-	        logger.debug(file.getAbsolutePath());
-	        logger.debug(file.getCanonicalPath());
+	        //logger.debug(file.getAbsolutePath());
+	        //logger.debug(file.getCanonicalPath());
 	        // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
-	        FileOutputStream fos = new FileOutputStream(file); 
-	        fos.write(byteStream.toByteArray());
-	        fos.close(); 
+	        //FileOutputStream fos = new FileOutputStream(file); 
+	        //fos.write(byteStream.toByteArray());
+	        //fos.close(); 
 
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
