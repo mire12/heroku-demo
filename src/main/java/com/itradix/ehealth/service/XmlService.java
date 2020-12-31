@@ -81,14 +81,9 @@ public class XmlService {
 			
 						
 			ByteArrayOutputStream byteStream2 = new ByteArrayOutputStream();
-			IOUtils.copy(resourceLoader.getResource("classpath:tmp/temp.xml").getInputStream(), byteStream2);
-			logger.debug("bytestream2: " + byteStream2.toString());
-			logger.debug(resourceLoader.getResource("file:tmp/temp.xml").getInputStream().toString());
-			byteStream.writeTo(byteStream2);
 			
-			ClassLoader cLoader = XmlService.class.getClassLoader();	         
-	        InputStream i = cLoader.getResourceAsStream("tmp/temp.xml");
-	        IOUtils.copy(resourceLoader.getResource("classpath:tmp/temp.xml").getInputStream(), byteStream2);
+			ClassLoader cLoader = XmlService.class.getClassLoader();	        
+	        IOUtils.copy(cLoader.getResourceAsStream("tmp/temp.xml"), byteStream2);
 	        byteStream.writeTo(byteStream2);
 	        
 	        
