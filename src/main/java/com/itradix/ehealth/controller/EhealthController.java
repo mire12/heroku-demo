@@ -100,9 +100,9 @@ public class EhealthController {
 	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@PostMapping(path="/oververziu/xml", produces = "text/plain")
 	public String feedOververziu(@RequestParam String date, @RequestParam String classification) {
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));
-		xmlService.save(xmlTempObject);
 		
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));	
+		xmlService.save(xmlTempObject);		
 		return xmlTempObject.getXmlobject();
 		
 	}
@@ -255,7 +255,8 @@ public class EhealthController {
 
 	@PostMapping(path = "/oververziu", produces = { "application/xml", "text/xml" })
 	public String getOververziuXml() {
-		return commmaxService.getCommmaxTemplate("oververziu.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
+		//return commmaxService.getCommmaxTemplate("oververziu.xml");
 	}
 
 	@PostMapping(path = "/log", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

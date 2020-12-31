@@ -43,6 +43,8 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	
 	@Autowired
 	private ResourceLoader resourceLoader;
+	
+	private Long lastXmlId = -1L;
 
 	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(XmlServiceImpl.class);
 	
@@ -74,14 +76,26 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
 			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
-					
+			
 			
 
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(overVerziuXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
 
 		return overVerziuXml;
 
+	}
+
+	public Long getLastXmlId() {
+		return lastXmlId;
+	}
+
+	public void setLastXmlId(Long lastXmlId) {
+		this.lastXmlId = lastXmlId;
 	}
 }
