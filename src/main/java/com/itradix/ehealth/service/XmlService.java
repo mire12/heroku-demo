@@ -81,12 +81,20 @@ public class XmlService {
 			
 						
 			ByteArrayOutputStream byteStream2 = new ByteArrayOutputStream();
-			IOUtils.copy(resourceLoader.getResource("file:tmp/temp.xml").getInputStream(), byteStream2);
+			IOUtils.copy(resourceLoader.getResource("classpath:tmp/temp.xml").getInputStream(), byteStream2);
 			logger.debug("bytestream2: " + byteStream2.toString());
+			logger.debug(resourceLoader.getResource("file:tmp/temp.xml").getInputStream().toString());
 			byteStream.writeTo(byteStream2);
-	        //File convFile = File.createTempFile("temp", ".xml");
-	        //logger.debug(file.getAbsolutePath());
-	        //logger.debug(file.getCanonicalPath());
+			
+			ClassLoader cLoader = XmlService.class.getClassLoader();	         
+	        InputStream i = cLoader.getResourceAsStream("tmp/temp.xml");
+	        IOUtils.copy(resourceLoader.getResource("classpath:tmp/temp.xml").getInputStream(), byteStream2);
+	        byteStream.writeTo(byteStream2);
+	        
+	        
+	        File convFile = File.createTempFile("temp", ".xml", new File("tmp"));
+	        logger.debug(convFile.getAbsolutePath());
+	        logger.debug(convFile.getCanonicalPath());
 	        // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
 	        //FileOutputStream fos = new FileOutputStream(file); 
 	        //fos.write(byteStream.toByteArray());
