@@ -10,12 +10,13 @@ import com.itradix.ehealth.exception.PatientNotFoundException;
 import com.itradix.ehealth.model.EzClassifications;
 import com.itradix.ehealth.model.NcziResponse;
 import com.itradix.ehealth.model.Patient;
+import com.itradix.ehealth.model.XmlTempObject;
 import com.itradix.ehealth.service.CommMaxService;
 import com.itradix.ehealth.service.CommMaxServiceImpl;
 import com.itradix.ehealth.service.JruzIdService;
 import com.itradix.ehealth.service.PatientService;
 import com.itradix.ehealth.service.PatientServiceImpl;
-import com.itradix.ehealth.service.XmlService;
+import com.itradix.ehealth.service.XmlServiceImpl;
 
 import cen._13606.rm.EHREXTRACT;
 import ch.qos.logback.classic.Logger;
@@ -63,13 +64,13 @@ public class EhealthController {
 	private final PatientService patientService;
 	private final JruzIdService jruzService;
 	private final CommMaxService commmaxService;
-	private final XmlService xmlService;
+	private final XmlServiceImpl xmlService;
 	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory
 			.getLogger(EhealthController.class);
 
 	@Autowired
 	public EhealthController(PatientServiceImpl patientService, JruzIdService jruzService,
-			CommMaxServiceImpl commmaxService, XmlService xmlService) {
+			CommMaxServiceImpl commmaxService, XmlServiceImpl xmlService) {
 		this.patientService = patientService;
 		this.jruzService = jruzService;
 		this.commmaxService = commmaxService;
@@ -99,8 +100,10 @@ public class EhealthController {
 	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
 	@PostMapping(path="/oververziu/xml", produces = "text/plain")
 	public String feedOververziu(@RequestParam String date, @RequestParam String classification) {
-		return xmlService.updateOververziuXml(date, classification);
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));
+		xmlService.save(xmlTempObject);
 		
+		return xmlTempObject.getXmlobject();
 		
 	}
 	

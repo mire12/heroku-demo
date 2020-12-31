@@ -1,0 +1,87 @@
+package com.itradix.ehealth.service;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.time.Clock;
+import java.time.DateTimeException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import javax.imageio.ImageIO;
+import javax.transaction.Transactional;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
+
+import com.itradix.ehealth.dao.BaseRepository;
+import com.itradix.ehealth.dao.PatientRepository;
+import com.itradix.ehealth.dao.XmlRepository;
+import com.itradix.ehealth.model.Patient;
+import com.itradix.ehealth.model.XmlTempObject;
+
+import ch.qos.logback.classic.Logger;
+
+@Service
+@Transactional
+public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> implements XmlService{
+	
+	@Autowired
+	private ResourceLoader resourceLoader;
+
+	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(XmlServiceImpl.class);
+	
+	
+	public XmlServiceImpl(XmlRepository abstractBaseRepository) {
+		super(abstractBaseRepository);
+	}
+
+	public String updateOververziuXml(String dateTime, String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/oververziu.xml");
+		String overVerziuXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+
+			overVerziuXml = FileCopyUtils.copyToString(reader);
+
+			String formattedDate;
+			try {
+				LocalDate localDate = LocalDate.parse(dateTime);
+				formattedDate = localDate.format(DateTimeFormatter.ISO_INSTANT);
+
+			} catch (DateTimeException parseEx) {
+				parseEx.printStackTrace();
+				logger.warn("Not possible to parse date: " + dateTime + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
+				Clock cl = Clock.systemUTC(); 
+				formattedDate = Instant.now(cl).toString();
+			}
+
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
+					
+			
+
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+
+		return overVerziuXml;
+
+	}
+}
