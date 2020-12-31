@@ -90,7 +90,8 @@ public class XmlService {
 	        
 	       
 	        try{
-	        	File convFile = File.createTempFile("temp", ".xml", new File("tmp"));
+	        	File convFile = new File("/tmp/temp.xml");
+	        	logger.debug("respo:" + convFile.createNewFile());
 	 	        logger.debug(convFile.getAbsolutePath());
 	 	        logger.debug(convFile.getCanonicalPath());
 	 	        logger.debug(System.getProperty("java.io.tmpdir"));
