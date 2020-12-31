@@ -16,6 +16,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.imageio.ImageIO;
 import javax.transaction.Transactional;
 
 import org.apache.commons.io.IOUtils;
@@ -87,9 +88,16 @@ public class XmlService {
 			//byteStream.writeTo(byteStream2);
 	        
 	        
-	        File convFile = File.createTempFile("temp", ".xml", new File("tmp"));
-	        logger.debug(convFile.getAbsolutePath());
-	        logger.debug(convFile.getCanonicalPath());
+	       
+	        try{
+	        	File convFile = File.createTempFile("temp", ".xml", new File("tmp"));
+	 	        logger.debug(convFile.getAbsolutePath());
+	 	        logger.debug(convFile.getCanonicalPath());
+	 	        logger.debug(System.getProperty("java.io.tmpdir"));
+	 	       ;
+	        }catch(IOException e){
+	            e.printStackTrace();
+	        }
 	        // choose your own extension I guess? Filename accessible with convFile.getAbsolutePath()
 	        //FileOutputStream fos = new FileOutputStream(file); 
 	        //fos.write(byteStream.toByteArray());
