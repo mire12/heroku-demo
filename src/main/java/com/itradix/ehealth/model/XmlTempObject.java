@@ -20,16 +20,21 @@ public class XmlTempObject extends BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public XmlTempObject() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public XmlTempObject(String xmlobject) {
+		super();
+		this.xmlobject = xmlobject;
+	}
+
 	@Column(columnDefinition="TEXT", name="xmlobject")
 	private String xmlobject;
 
 	public String getXmlobject() {
 		return xmlobject;
-	}
-
-	public XmlTempObject(String xmlobject) {
-		super();
-		this.xmlobject = xmlobject;
 	}
 
 	public void setXmlobject(String xmlobject) {

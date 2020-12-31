@@ -102,7 +102,6 @@ public class EhealthController {
 	public String feedOververziu(@RequestParam String date, @RequestParam String classification) {
 		
 		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));	
-		xmlService.save(xmlTempObject);		
 		return xmlTempObject.getXmlobject();
 		
 	}
