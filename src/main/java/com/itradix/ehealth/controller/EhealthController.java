@@ -115,6 +115,16 @@ public class EhealthController {
 		
 	}
 	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@PostMapping(path="/dajpacientskysumarudaje/xml", produces = "text/plain")
+	public String feedDajPacientskySumarUdaje(@RequestParam String classification) {
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updatePacientskySumarUdajeXml(classification));	
+		return xmlTempObject.getXmlobject();
+		
+	}
+	
+	
 
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
