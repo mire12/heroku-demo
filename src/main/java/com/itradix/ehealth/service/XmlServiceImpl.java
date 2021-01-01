@@ -90,6 +90,25 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 		return overVerziuXml;
 
 	}
+	
+	public String updatePacientskySumarXml(String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumar.xml");
+		String dajPacientskySumarXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			dajPacientskySumarXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(dajPacientskySumarXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+		return dajPacientskySumarXml;
+
+	}
 
 	public Long getLastXmlId() {
 		return lastXmlId;
