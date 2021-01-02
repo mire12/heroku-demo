@@ -208,7 +208,8 @@ public class EhealthController {
 
 	@PostMapping(path = "/dajpacientskysumar", produces = { "application/xml", "text/xml" })
 	public String getPacientskySumarXml() {
-		return commmaxService.getCommmaxTemplate("dajpacientskysumar.xml");
+		//return commmaxService.getCommmaxTemplate("dajpacientskysumar.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
 	@GetMapping(path = "/commmax/dajpacientskysumarudaje", produces = { "text/plain" })
@@ -219,7 +220,7 @@ public class EhealthController {
 
 	@PostMapping(path = "/dajpacientskysumarudaje", produces = { "application/xml", "text/xml" })
 	public String getPacientskySumarUdajeXml() {
-		return commmaxService.getCommmaxTemplate("dajpacientskysumarudaje.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
 	@PostMapping(path = "/dajzpr", produces = { "application/xml", "text/xml" })
@@ -288,7 +289,7 @@ public class EhealthController {
 		returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
 		detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
 
-		logger.trace("dID: " + doctorID);
+		
 		logger.trace("dID: " + doctorID);
 		logger.trace("evID: " + evID);
 		logger.trace("pID: " + patientID);
@@ -300,15 +301,16 @@ public class EhealthController {
 			DajPrZSResponse dajPrZSresp = null;
 			detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
 
-			String dajPrZS_Response = detail.substring(detail.indexOf("<DajPrZS_Response"),
+			if(!(detail.isBlank() || detail.isEmpty())) {
+				String dajPrZS_Response = detail.substring(detail.indexOf("<DajPrZS_Response"),
 					detail.indexOf("</DajPrZS_Response>") + "</DajPrZS_Response>".length());
-
-			JAXBContext jaxbContext = JAXBContext.newInstance(DajPrZSResponse.class);
-			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			StringReader reader = new StringReader(dajPrZS_Response);
-			dajPrZSresp = (DajPrZSResponse) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
-			logger.trace(dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0).getAddressLine());
-
+					
+				JAXBContext jaxbContext = JAXBContext.newInstance(DajPrZSResponse.class);
+				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+				StringReader reader = new StringReader(dajPrZS_Response);
+				dajPrZSresp = (DajPrZSResponse) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+				logger.trace(dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0).getAddressLine());
+			}
 		}
 
 		if ("dajpacientskysumar".equals(method)) {
