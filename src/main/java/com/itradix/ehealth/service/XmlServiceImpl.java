@@ -91,6 +91,44 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 	
+	public String updateOupzsXml(String dateTime, String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/dajoupzs.xml");
+		String overVerziuXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+
+			overVerziuXml = FileCopyUtils.copyToString(reader);
+
+			String formattedDate;
+			try {
+				LocalDate localDate = LocalDate.parse(dateTime);
+				formattedDate = localDate.format(DateTimeFormatter.ISO_INSTANT);
+
+			} catch (DateTimeException parseEx) {
+				parseEx.printStackTrace();
+				logger.warn("Not possible to parse date: " + dateTime + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
+				Clock cl = Clock.systemUTC(); 
+				formattedDate = Instant.now(cl).toString();
+			}
+
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
+			
+			
+
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(overVerziuXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+
+		return overVerziuXml;
+
+	}
+	
 	public String updatePacientskySumarXml(String ciselnik) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumar.xml");
 		String dajPacientskySumarXml;
@@ -126,6 +164,45 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	    this.lastXmlId = this.save(xmlTempObject).getId();
 		
 		return dajPacientskySumarXmlUdaje;
+
+	}
+	
+	
+	public String updateJruzidXml(String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/jruzid.xml");
+		String dajJruzidXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			dajJruzidXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(dajJruzidXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+		return dajJruzidXml;
+
+	}
+	
+	public String updateDajZaznamOVysetreniXml(String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/dajzaznamovysetreni.xml");
+		String dajZaznamOVysetreniXmlUdaje;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			dajZaznamOVysetreniXmlUdaje = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(dajZaznamOVysetreniXmlUdaje);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+		return dajZaznamOVysetreniXmlUdaje;
 
 	}
 

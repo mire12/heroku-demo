@@ -34,6 +34,7 @@ import java.util.Optional;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.JAXBIntrospector;
+import javax.xml.bind.UnmarshalException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -125,6 +126,35 @@ public class EhealthController {
 	}
 	
 	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@PostMapping(path="/dajzaznamovysetreni/xml", produces = "text/plain")
+	public String feedDajzaznamovysetreni(@RequestParam String classification) {
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateDajZaznamOVysetreniXml(classification));	
+		return xmlTempObject.getXmlobject();
+		
+	}
+	
+	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@PostMapping(path="/jruzid/xml", produces = "text/plain")
+	public String feedJruzid(@RequestParam String classification) {
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateJruzidXml(classification));	
+		return xmlTempObject.getXmlobject();
+		
+	}
+	
+	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@PostMapping(path="/oupzs/xml", produces = "text/plain")
+	public String feedOupzs(@RequestParam String date,@RequestParam String classification) {
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOupzsXml(date, classification));	
+		return xmlTempObject.getXmlobject();
+		
+	}
+	
+		
 
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
@@ -186,7 +216,7 @@ public class EhealthController {
 	
 	@PostMapping(path = "/dajzaznamovysetreni", produces = { "application/xml", "text/xml" })
 	public String getDajZaznamOVysetreniXml() {
-		return commmaxService.getCommmaxTemplate("dajzaznamovysetreni.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 		
 	@GetMapping(path = "/commmax/dajpacientskysumareds")
@@ -235,7 +265,7 @@ public class EhealthController {
 
 	@PostMapping(path = "/dajoupzs", produces = { "application/xml", "text/xml" })
 	public String getOupzs() {
-		return commmaxService.getCommmaxTemplate("dajoupzs.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
 	@GetMapping(path = "/commmax/dajoupzs")
@@ -251,7 +281,7 @@ public class EhealthController {
 
 	@PostMapping(path = "/jruzid", produces = { "application/xml", "text/xml" })
 	public String getJruzIdXml() {
-		return commmaxService.getCommmaxTemplate("jruzid.xml");
+		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
 	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
@@ -382,9 +412,15 @@ public class EhealthController {
 			unmarshaller = jaxbContext.createUnmarshaller();
 			reader = new StringReader(xml);
 
-			EHREXTRACT dajZaznam = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+			try{
+				EHREXTRACT dajZaznam = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+				logger.debug(dajZaznam.getAllCompositions().toString());
+			}catch(UnmarshalException unme) {
+				logger.debug("Not possible to unmarshall ehrextract");
+				unme.printStackTrace();
+			}
 
-			logger.debug(dajZaznam.getAllCompositions().toString());
+			
 
 		}
 
