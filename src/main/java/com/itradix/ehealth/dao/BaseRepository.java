@@ -15,6 +15,9 @@ import com.itradix.ehealth.model.NcziResponse;
 public interface BaseRepository<T extends BaseEntity, ID extends Serializable>
 extends JpaRepository<T, ID>{
 	
+	@Query(value = "select * from ncziresponse n where n.did = ?1 and n.pid = ?2", nativeQuery = true)
+	List<NcziResponse> findNcziRespByDoctorAndPatient(String dID, String pID);
+	
 	@Query(value = "select * from ncziresponse n where n.evid = ?1", nativeQuery = true)
 	List<NcziResponse> findNcziRespUsingNativeQuery(String evID);
 	

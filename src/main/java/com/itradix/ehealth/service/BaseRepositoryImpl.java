@@ -74,6 +74,12 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable>
 	}
 	
 	@Transactional
+	public List<NcziResponse> findNcziRespByDoctorAndPatient(String dID, String pID) {
+		List<NcziResponse> studentResponse = abstractBaseRepository.findNcziRespByDoctorAndPatient(dID, pID);
+		return studentResponse;
+	}
+	
+	@Transactional
 	public List<Object> findZdravotnickaOdbornostList(String oid, String oid_ver) {
 		return abstractBaseRepository.findZdravotnickaOdbornostList(oid, oid_ver);
 	}

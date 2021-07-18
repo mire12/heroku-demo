@@ -5,6 +5,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itradix.ehealth.dto.PatientDTO;
 import com.itradix.ehealth.exception.PatientNotFoundException;
 import com.itradix.ehealth.model.EzClassifications;
@@ -20,6 +22,7 @@ import com.itradix.ehealth.service.XmlServiceImpl;
 
 import cen._13606.rm.EHREXTRACT;
 import ch.qos.logback.classic.Logger;
+import net.minidev.json.JSONArray;
 import sk.gov.ehealth.ehtalkmessage.EHtalkMessage;
 import sk.gov.ehealth.jruz.v1.DajPrZSResponse;
 
@@ -47,6 +50,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -84,77 +88,72 @@ public class EhealthController {
 		return patientService.findById(id).orElseThrow(() -> PatientNotFoundException.createWith(id.toString()));
 
 	}
-	
-		
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@GetMapping(path="/classifications/{oid}/{oid_ver}", produces = "application/json")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/classifications/{oid}/{oid_ver}", produces = "application/json")
 	public List<Object> getZdravotnickaOdbornostList(@PathVariable String oid, @PathVariable String oid_ver) {
-		
+
 		List<Object> ezClassifications = commmaxService.findZdravotnickaOdbornostList(oid, oid_ver);
-		if(!ezClassifications.isEmpty()) {
+		if (!ezClassifications.isEmpty()) {
 			return ezClassifications;
-		}else {
+		} else {
 			return Collections.emptyList();
 		}
 	}
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/oververziu/xml", produces = "text/plain")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/oververziu/xml", produces = "text/plain")
 	public String feedOververziu(@RequestParam String date, @RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));	
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOververziuXml(date, classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/dajpacientskysumar/xml", produces = "text/plain")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajpacientskysumar/xml", produces = "text/plain")
 	public String feedDajPacientskySumar(@RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updatePacientskySumarXml(classification));	
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updatePacientskySumarXml(classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/dajpacientskysumarudaje/xml", produces = "text/plain")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajpacientskysumarudaje/xml", produces = "text/plain")
 	public String feedDajPacientskySumarUdaje(@RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updatePacientskySumarUdajeXml(classification));	
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updatePacientskySumarUdajeXml(classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/dajzaznamovysetreni/xml", produces = "text/plain")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajzaznamovysetreni/xml", produces = "text/plain")
 	public String feedDajzaznamovysetreni(@RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateDajZaznamOVysetreniXml(classification));	
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateDajZaznamOVysetreniXml(classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/jruzid/xml", produces = "text/plain")
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/jruzid/xml", produces = "text/plain")
 	public String feedJruzid(@RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateJruzidXml(classification));	
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateJruzidXml(classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
-	@PostMapping(path="/oupzs/xml", produces = "text/plain")
-	public String feedOupzs(@RequestParam String date,@RequestParam String classification) {
-		
-		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOupzsXml(date, classification));	
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/oupzs/xml", produces = "text/plain")
+	public String feedOupzs(@RequestParam String date, @RequestParam String classification) {
+
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateOupzsXml(date, classification));
 		return xmlTempObject.getXmlobject();
-		
+
 	}
-	
-		
 
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
@@ -187,8 +186,8 @@ public class EhealthController {
 	}
 
 	@GetMapping(path = "/commmax/vyhladajzaznamypreziadatela")
-	public String getVyhladajZaznamyPreZiadatela(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
-			@RequestParam String patient) {
+	public String getVyhladajZaznamyPreZiadatela(@RequestParam String pID, @RequestParam String evID,
+			@RequestParam String dID, @RequestParam String patient) {
 		return jruzService.getVyhladajZaznamyPreZiadatela(pID, evID, dID, patient);
 	}
 
@@ -196,7 +195,7 @@ public class EhealthController {
 	public String getVyhladajZaznamyPreZiadatelaXml() {
 		return commmaxService.getCommmaxTemplate("vyhladajzaznamypreziadatela.xml");
 	}
-	
+
 	@GetMapping(path = "/commmax/vyhladajzaznamy")
 	public String getVyhladajZaznamy(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
 			@RequestParam String patient) {
@@ -207,18 +206,18 @@ public class EhealthController {
 	public String getVyhladajZaznamyXml() {
 		return commmaxService.getCommmaxTemplate("vyhladajzaznamy.xml");
 	}
-	
+
 	@GetMapping(path = "/commmax/dajzaznamovysetreni")
 	public String getDajZaznamOVysetreni(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
 			@RequestParam String patient) {
 		return jruzService.getDajZaznamOVysetreni(pID, evID, dID, patient);
 	}
-	
+
 	@PostMapping(path = "/dajzaznamovysetreni", produces = { "application/xml", "text/xml" })
 	public String getDajZaznamOVysetreniXml() {
 		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
-		
+
 	@GetMapping(path = "/commmax/dajpacientskysumareds")
 	public String getPacientskySumarEds(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
 			@RequestParam String patient) {
@@ -238,7 +237,7 @@ public class EhealthController {
 
 	@PostMapping(path = "/dajpacientskysumar", produces = { "application/xml", "text/xml" })
 	public String getPacientskySumarXml() {
-		//return commmaxService.getCommmaxTemplate("dajpacientskysumar.xml");
+		// return commmaxService.getCommmaxTemplate("dajpacientskysumar.xml");
 		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
@@ -284,28 +283,50 @@ public class EhealthController {
 		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
 	}
 
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
 	@GetMapping(path = "/commmax/oververziu", produces = "text/plain")
 	public String getOververziu(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID) {
 		return jruzService.getOververziu(pID, evID, dID);
 	}
-	
-	@CrossOrigin(origins = {"https://ehealth-ng-app.herokuapp.com", "http://localhost:4200"})
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
 	@GetMapping(path = "/getehealthresponse", produces = "text/plain")
 	public String getEhealthResponse(@RequestParam String evId) {
-		
+
 		List<NcziResponse> ncziresponse = commmaxService.findNcziRespUsingNativeQuery(evId);
-		if(!ncziresponse.isEmpty()) {
+		if (!ncziresponse.isEmpty()) {
 			return ncziresponse.get(0).getReturnMsg();
-		}else {
+		} else {
 			return "Nepodarilo sa vytiahnut spravu";
 		}
-	}	
+	}
+
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/getehealthresponse/{dId}/{pId}", produces = "application/json")
+	public ResponseEntity<?> getEhealthResponses(@PathVariable String dId, @PathVariable String pId) {
+
+		List<NcziResponse> ncziresponse = commmaxService.findNcziRespByDoctorAndPatient(dId, pId);
+		if (!ncziresponse.isEmpty()) {
+			ObjectMapper objectMapper = new ObjectMapper();
+			String jsonString = null;
+			try {
+				jsonString = objectMapper.writeValueAsString(ncziresponse);
+			} catch (JsonProcessingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
+			}
+			return new ResponseEntity<String>(jsonString, HttpStatus.OK) ;
+		} else {
+
+			return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
+		}
+	}
 
 	@PostMapping(path = "/oververziu", produces = { "application/xml", "text/xml" })
 	public String getOververziuXml() {
 		return xmlService.findById(xmlService.getLastXmlId()).get().getXmlobject();
-		//return commmaxService.getCommmaxTemplate("oververziu.xml");
+		// return commmaxService.getCommmaxTemplate("oververziu.xml");
 	}
 
 	@PostMapping(path = "/log", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
@@ -319,7 +340,6 @@ public class EhealthController {
 		returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
 		detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
 
-		
 		logger.trace("dID: " + doctorID);
 		logger.trace("evID: " + evID);
 		logger.trace("pID: " + patientID);
@@ -331,15 +351,16 @@ public class EhealthController {
 			DajPrZSResponse dajPrZSresp = null;
 			detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
 
-			if(!(detail.isBlank() || detail.isEmpty())) {
+			if (!(detail.isBlank() || detail.isEmpty())) {
 				String dajPrZS_Response = detail.substring(detail.indexOf("<DajPrZS_Response"),
-					detail.indexOf("</DajPrZS_Response>") + "</DajPrZS_Response>".length());
-					
+						detail.indexOf("</DajPrZS_Response>") + "</DajPrZS_Response>".length());
+
 				JAXBContext jaxbContext = JAXBContext.newInstance(DajPrZSResponse.class);
 				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 				StringReader reader = new StringReader(dajPrZS_Response);
 				dajPrZSresp = (DajPrZSResponse) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
-				logger.trace(dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0).getAddressLine());
+				logger.trace(
+						dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0).getAddressLine());
 			}
 		}
 
@@ -351,7 +372,7 @@ public class EhealthController {
 			StringReader reader = new StringReader(returnMsg);
 			EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
 
-			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);			
+			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
 
 			StringWriter writer = new StringWriter();
 			Transformer transformer = null;
@@ -379,8 +400,18 @@ public class EhealthController {
 
 			logger.debug(dajSumarResp.getAllCompositions().toString());
 
+			ObjectMapper mapper = new ObjectMapper();
+
+			try {
+				String json = mapper.writeValueAsString(dajSumarResp.getAllCompositions());
+				System.out.println("ResultingJSONstring = " + json);
+				// System.out.println(json);
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+
 		}
-		
+
 		if ("dajzaznamovysetreni".equals(method)) {
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(sk.gov.ehealth.ehtalkmessage.ObjectFactory.class);
@@ -389,7 +420,7 @@ public class EhealthController {
 			StringReader reader = new StringReader(returnMsg);
 			EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
 
-			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);			
+			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
 
 			StringWriter writer = new StringWriter();
 			Transformer transformer = null;
@@ -412,15 +443,13 @@ public class EhealthController {
 			unmarshaller = jaxbContext.createUnmarshaller();
 			reader = new StringReader(xml);
 
-			try{
+			try {
 				EHREXTRACT dajZaznam = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
 				logger.debug(dajZaznam.getAllCompositions().toString());
-			}catch(UnmarshalException unme) {
+			} catch (UnmarshalException unme) {
 				logger.debug("Not possible to unmarshall ehrextract");
 				unme.printStackTrace();
 			}
-
-			
 
 		}
 

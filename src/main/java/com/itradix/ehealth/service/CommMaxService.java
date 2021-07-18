@@ -11,6 +11,8 @@ public interface CommMaxService extends BaseService<NcziResponse, Long>{
 	
 	public List<NcziResponse> findNcziRespUsingNativeQuery(String evID);
 	
+	public List<NcziResponse> findNcziRespByDoctorAndPatient(String dID, String pID);
+	
 	public List<Object> findZdravotnickaOdbornostList(String oid, String oid_ver);
 	
 }
