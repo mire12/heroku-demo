@@ -1,6 +1,10 @@
 package com.itradix.ehealth.service;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,6 +80,12 @@ public class BaseRepositoryImpl<T extends BaseEntity, ID extends Serializable>
 	@Transactional
 	public List<NcziResponse> findNcziRespByDoctorAndPatient(String dID, String pID) {
 		List<NcziResponse> studentResponse = abstractBaseRepository.findNcziRespByDoctorAndPatient(dID, pID);
+		return studentResponse;
+	}
+	
+	@Transactional
+	public List<NcziResponse> searchNcziResp(String dID, String pID, LocalDateTime dateTime) {
+		List<NcziResponse> studentResponse = abstractBaseRepository.searchNcziResp(dID, pID, Timestamp.valueOf(dateTime.with(LocalTime.MIN)), Timestamp.valueOf(dateTime.with(LocalTime.MAX)));
 		return studentResponse;
 	}
 	

@@ -30,7 +30,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +52,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -302,10 +305,10 @@ public class EhealthController {
 	}
 
 	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
-	@GetMapping(path = "/getehealthresponse/{dId}/{pId}", produces = "application/json")
-	public ResponseEntity<?> getEhealthResponses(@PathVariable String dId, @PathVariable String pId) {
+	@GetMapping(path = "/getehealthresponse", produces = "application/json")
+	public ResponseEntity<?> getEhealthResponses(@RequestParam(name = "did") String dId, @RequestParam(name = "pid") String pId, @RequestParam(name = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime creationDate) {
 
-		List<NcziResponse> ncziresponse = commmaxService.findNcziRespByDoctorAndPatient(dId, pId);
+		List<NcziResponse> ncziresponse = commmaxService.searchNcziResp(dId, pId, creationDate);
 		if (!ncziresponse.isEmpty()) {
 			ObjectMapper objectMapper = new ObjectMapper();
 			String jsonString = null;

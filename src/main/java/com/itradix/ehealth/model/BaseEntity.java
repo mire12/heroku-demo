@@ -4,10 +4,13 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
+
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters.LocalDateConverter;
 
 
 @MappedSuperclass
@@ -26,6 +29,7 @@ public class BaseEntity implements Serializable{
     private int version;
     
     private LocalDateTime createdAt;
+    
     private LocalDateTime updatedAt;
 
     public BaseEntity() {
