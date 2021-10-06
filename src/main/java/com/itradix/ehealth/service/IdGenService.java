@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,10 +71,5 @@ public class IdGenService {
 		return num4;
 	}
 	
-	@Test
-	public void testGenerator() {
-		new IdGenService();
-		
-	} 
 
 }
