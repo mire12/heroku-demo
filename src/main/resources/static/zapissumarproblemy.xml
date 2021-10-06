@@ -15,7 +15,7 @@
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
           <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
           <codingSchemeVersion>8</codingSchemeVersion>
-          <codeValue>00000461517</codeValue>
+          <codeValue>{{classification}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
           <extension>00020008694</extension>
@@ -49,7 +49,7 @@
         </name>
         <archetype_id>CEN-EN13606-COMPOSITION.Zaznamy_zdravotnych_problemov.v2/at0000</archetype_id>
         <rc_id>
-            <extension>007229134800722913480</extension>
+            <extension>{{rc_id}}</extension>
             <root>
                 <oid>1.3.158.00165387.100.50.40.120</oid>
             </root>
@@ -104,7 +104,7 @@
             </name>
             <archetype_id>CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0000</archetype_id>
             <rc_id>
-                <extension>007229134800722913480</extension>
+                <extension>{{rc_id}}</extension>
                 <root>
                     <oid>1.3.158.00165387.100.50.40.120</oid>
                 </root>
@@ -150,7 +150,7 @@
                 </name>
                 <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0009</archetype_id>
                 <rc_id>
-                    <extension>007229134800722913480</extension>
+                    <extension>{{rc_id}}</extension>
                     <root>
                         <oid>1.3.158.00165387.100.50.40.120</oid>
                     </root>

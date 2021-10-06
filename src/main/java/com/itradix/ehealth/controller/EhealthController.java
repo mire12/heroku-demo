@@ -18,6 +18,7 @@ import com.itradix.ehealth.service.CommMaxServiceImpl;
 import com.itradix.ehealth.service.JruzIdService;
 import com.itradix.ehealth.service.PatientService;
 import com.itradix.ehealth.service.PatientServiceImpl;
+import com.itradix.ehealth.service.S3XmlService;
 import com.itradix.ehealth.service.XmlServiceImpl;
 
 import cen._13606.rm.EHREXTRACT;
@@ -34,6 +35,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.xml.bind.JAXBContext;
@@ -61,6 +63,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -73,16 +76,18 @@ public class EhealthController {
 	private final JruzIdService jruzService;
 	private final CommMaxService commmaxService;
 	private final XmlServiceImpl xmlService;
+	private final S3XmlService s3XmlService;
 	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory
 			.getLogger(EhealthController.class);
 
 	@Autowired
 	public EhealthController(PatientServiceImpl patientService, JruzIdService jruzService,
-			CommMaxServiceImpl commmaxService, XmlServiceImpl xmlService) {
+			CommMaxServiceImpl commmaxService, XmlServiceImpl xmlService, S3XmlService s3XmlService) {
 		this.patientService = patientService;
 		this.jruzService = jruzService;
 		this.commmaxService = commmaxService;
 		this.xmlService = xmlService;
+		this.s3XmlService = s3XmlService;
 	}
 
 	@GetMapping("/patient/{id}")
@@ -166,6 +171,8 @@ public class EhealthController {
 		return patientService.save(patient);
 	}
 
+	//-----------------------------------------------------------------------------//
+	
 	@PostMapping(path = "/commmax/zapissumarproblemy")
 	public String zapisSumarProblemy(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
 			@RequestParam String patient) {
@@ -174,9 +181,56 @@ public class EhealthController {
 
 	@PostMapping(path = "/zapissumarproblemy", produces = { "application/xml", "text/xml" })
 	public String getZapisSumarProblemyXml() {
+	    
+		try {
+			return new String(s3XmlService.downloadPublicFile("", "zapissumarproblemy"), StandardCharsets.UTF_8);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
 		return commmaxService.getCommmaxTemplate("zapissumarproblemy.xml");
 	}
+		
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/zapissumarproblemy/xml", produces = "text/plain")
+	public String feedZapisSumarProblemy(@RequestParam String classification) {
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateZapisSumarProblemyXml(classification));
+		return xmlTempObject.getXmlobject();
+	}
+	
+	//-----------------------------------------------------------------------------//
+	
+	@PostMapping(path = "/commmax/zapissumarudaje")
+	public String zapisSumarUdaje(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
+			@RequestParam String patient) {
+		return jruzService.zapisSumarUdaje(pID, evID, dID, patient);
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/zapissumarudaje/xml", produces = "text/plain")
+	public String feedZapisSumarUdaje(@RequestParam String classification) {
+		XmlTempObject xmlTempObject = new XmlTempObject(xmlService.updateZapisSumarUdajeXml(classification));
+		return xmlTempObject.getXmlobject();
+	}
 
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/zapissumarudaje", produces = { "application/xml", "text/xml" })
+	public String getZapisSumarUdajeXml() {
+		
+		try {
+			return new String(s3XmlService.downloadPublicFile("", "zapissumarudaje"), StandardCharsets.UTF_8);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
+		return commmaxService.getCommmaxTemplate("zapissumarudaje.xml");
+	}
+	
+	//-----------------------------------------------------------------------------//
 	@PostMapping(path = "/commmax/vysetrenie")
 	public String zapisVysetrenie(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
 			@RequestParam String patient) {

@@ -4,14 +4,19 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
 
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class IdGenService {
+	
+	@Autowired
+	S3XmlService s3XmlService;
 
 	public IdGenService() {
 
-		GenId(1);
+		
 	}
 	
 	public static String padLeftZeros(String inputString, int length) {
@@ -27,7 +32,7 @@ public class IdGenService {
 	    return sb.toString();
 	}
 
-	public static String GenId(int day)
+	public static String genId(int day)
     {
 		
 	  long now = LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
@@ -66,5 +71,11 @@ public class IdGenService {
 			num4 = 0;
 		return num4;
 	}
+	
+	@Test
+	public void testGenerator() {
+		new IdGenService();
+		
+	} 
 
 }

@@ -19,6 +19,7 @@ import java.time.format.DateTimeFormatter;
 import javax.imageio.ImageIO;
 import javax.transaction.Transactional;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,9 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	
 	@Autowired
 	private ResourceLoader resourceLoader;
+	
+	@Autowired
+	private S3XmlService s3ImageService;
 	
 	private Long lastXmlId = -1L;
 
@@ -203,6 +207,54 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	    this.lastXmlId = this.save(xmlTempObject).getId();
 		
 		return dajZaznamOVysetreniXmlUdaje;
+
+	}
+	
+	public String updateZapisSumarUdajeXml(String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/zapissumarudaje.xml");
+		String zapisSumarUdajeXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			zapisSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{rc_id}}", IdGenService.genId(1));
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, zapisSumarUdajeXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile("zapissumarudaje.xml",f);
+			
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(zapisSumarUdajeXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+		return zapisSumarUdajeXml;
+
+	}
+	
+	public String updateZapisSumarProblemyXml(String ciselnik) {
+		Resource resource = resourceLoader.getResource("classpath:static/zapissumarproblemy.xml");
+		String zapisSumarProblemyXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			zapisSumarProblemyXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			zapisSumarProblemyXml = StringUtils.replace(zapisSumarProblemyXml, "{{rc_id}}", IdGenService.genId(1));
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, zapisSumarProblemyXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile("zapissumarproblemy.xml",f);
+			
+			
+		} catch (IOException e) {
+			throw new UncheckedIOException(e);
+		}
+		
+		XmlTempObject xmlTempObject = new XmlTempObject(zapisSumarProblemyXml);	
+	    this.lastXmlId = this.save(xmlTempObject).getId();
+		
+		return zapisSumarProblemyXml;
 
 	}
 

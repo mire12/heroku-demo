@@ -74,6 +74,12 @@ public class JruzIdService {
 			return response.block();			
 		}
 		
+		public String zapisSumarUdaje(String pID, String evID, String dID, String patient){
+			String url = new StringBuilder().append("/ZAPIS_SUMAR_UDAJE?").append("pID=").append(pID).append("&evID=").append(evID).append("&dID=").append(dID).append("&patient=").append(patient).toString();
+			Mono<String> response = client.post().uri(url).retrieve().bodyToMono(String.class);
+			return response.block();			
+		}
+		
 		public String getSumar(String pID, String evID, String dID, String patient){
 			String url = new StringBuilder().append("/DAJ_SUMAR?").append("pID=").append(pID).append("&evID=").append(evID).append("&dID=").append(dID).append("&patient=").append(patient).toString();
 			Mono<String> response = client.post().uri(url).retrieve().bodyToMono(String.class);

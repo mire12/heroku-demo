@@ -91,6 +91,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		
+		<!-- Amazon S3 -->
+		<dependency>
+		   <groupId>com.amazonaws</groupId>
+		   <artifactId>aws-java-sdk</artifactId>
+		   <version>1.11.728</version>
+		</dependency>
+
+		<!-- Apache Commons for FileUtils and misc. -->
+		<dependency>
+		   <groupId>commons-io</groupId>
+		   <artifactId>commons-io</artifactId>
+		   <version>2.11.0</version>
+		</dependency>
+
 
 	</dependencies>
 
