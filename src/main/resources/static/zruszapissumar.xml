@@ -14,7 +14,7 @@
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
           <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
           <codingSchemeVersion>1</codingSchemeVersion>
-          <codeValue>00000461517</codeValue>
+          <codeValue>{{classification}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
           <extension>00020008694</extension>
@@ -58,11 +58,11 @@
           <synthesised>true</synthesised>          
           <content xsi:type="ENTRY">
             <name xsi:type="SIMPLE_TEXT">
-              <originalText>Storno záznamu z dôvodu chyby</originalText>
+              <originalText>{{deletion_text}}</originalText>
             </name>
-            <archetype_id>CEN-EN13606-ENTRY.Chirurgicky_vykon.v1/at0000</archetype_id>
+            <archetype_id>{{archetype_id}}</archetype_id>
             <rc_id>
-              <extension>00000112345678905</extension>
+              <extension>{{rc_id}}</extension>
               <assigningAuthorityName>FNsP F. D. R.</assigningAuthorityName>
               <validTime>
                 <low>
@@ -73,7 +73,7 @@
                 </high>
               </validTime>
               <root>
-                <oid>1.3.158.00165387.100.50.40.20</oid>
+                <oid>{{rcIdOid}}</oid><!-- Pacientsky sumár - Chirurgický výkon -->
               </root>
             </rc_id>
             <synthesised>false</synthesised>
@@ -81,7 +81,7 @@
               <ehr_system>
                 <extension>987654321FNsPBB</extension>
                 <root>
-                  <oid>1.3.158.00165387.100.30.20</oid>
+                  <oid>1.3.158.00165387.100.30.20</oid><!-- certifikovany IS -->
                 </root>
               </ehr_system>
               <time_committed>
@@ -99,14 +99,16 @@
                   </high>
                 </validTime>
                 <root>
-                  <oid>1.3.158.00165387.100.40.90</oid>
+                  <oid>1.3.158.00165387.100.40.90</oid><!-- Zdravotnícky pracovník -->
                 </root>
               </committer>
               <version_status>
-                <codeValue>VER04</codeValue>
+              	<!-- "VER04" – Deleted - pre Storno záznamu – chybne zapísané 
+"VER02" – Update - pre Zneplatnenie záznamu – potrebné odstrániť, lebo zdravotný problém už nie je aktuálny a túto informáciu je potrebné odstrániť z pacientskeho sumáru  -->
+                <codeValue>{{version}}</codeValue>
               </version_status>
               <previous_version>
-                <extension>123450060118482345511</extension>
+                <extension>{{rcIdExtensionDeleted}}</extension>
                 <assigningAuthorityName>FNsP F. D. R.</assigningAuthorityName>
                 <validTime>
                   <low>
@@ -117,7 +119,7 @@
                   </high>
                 </validTime>
                 <root>
-                  <oid>1.3.158.00165387.100.50.40.100</oid>
+                  <oid>{{rcIdOid}}</oid><!-- Pacientsky sumár  – Používaná zdravotnícka pomôcka -->
                 </root>
               </previous_version>
             </feeder_audit>

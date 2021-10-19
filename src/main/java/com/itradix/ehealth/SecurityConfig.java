@@ -82,7 +82,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		httpSecurity.csrf().disable()
 		// dont authenticate this particular request
-		.authorizeRequests().antMatchers("/authenticate", "/actuator", "/actuator/health", "/actuator/metrics", "/swagger-ui", "/swagger-ui/","/swagger-ui/**", "/swagger-ui/index.html", "/static/dajpacientskysumar.xml", "/static/dajpacientskysumarudaje.xml","/static/oververziu.xml", "/register","/log","/test","/dajoupzs","/oververziu","/jruzid","/dajpacientskysumar","/dajpacientskysumareds","/dajpacientskysumarudaje","/dajzpr", "/dajzaznamovysetreni", "/vyhladajzaznamy", "/vyhladajzaznamypreziadatela", "/zapissumarproblemy", "/zapissumarudaje", "/vysetrenie").permitAll().
+		.authorizeRequests().antMatchers("/authenticate", "/actuator", "/actuator/health", "/actuator/metrics", "/swagger-ui", "/swagger-ui/","/swagger-ui/**", "/swagger-ui/index.html", "/static/dajpacientskysumar.xml", "/static/dajpacientskysumarudaje.xml","/static/oververziu.xml", "/register","/log","/test","/dajoupzs","/oververziu","/jruzid","/dajpacientskysumar","/zruszapissumar","/dajpacientskysumareds","/dajpacientskysumarudaje","/dajzpr", "/dajzaznamovysetreni", "/vyhladajzaznamy", "/vyhladajzaznamypreziadatela", "/zapissumarproblemy", "/zapissumarudaje", "/vysetrenie").permitAll().
 		// all other requests need to be authenticated
 		anyRequest().authenticated().and().
 		// make sure we use stateless session; session won't be used to

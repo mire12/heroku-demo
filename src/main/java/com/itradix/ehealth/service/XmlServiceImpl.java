@@ -33,8 +33,12 @@ import org.springframework.util.FileCopyUtils;
 import com.itradix.ehealth.dao.BaseRepository;
 import com.itradix.ehealth.dao.PatientRepository;
 import com.itradix.ehealth.dao.XmlRepository;
+import com.itradix.ehealth.model.DajSumar;
 import com.itradix.ehealth.model.Patient;
 import com.itradix.ehealth.model.XmlTempObject;
+import com.itradix.ehealth.model.ZapisSumarProblemy;
+import com.itradix.ehealth.model.ZapisSumarUdaje;
+import com.itradix.ehealth.model.ZrusSumar;
 
 import ch.qos.logback.classic.Logger;
 
@@ -133,26 +137,75 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 	
-	public String updatePacientskySumarXml(String ciselnik) {
+	public String updateDajPacientskySumarXml(DajSumar dajSumar, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumar.xml");
 		String dajPacientskySumarXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			dajPacientskySumarXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			dajPacientskySumarXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", dajSumar.getClassification());
+			dajPacientskySumarXml = StringUtils.replace(dajPacientskySumarXml, "{{rc_id}}", IdGenService.genId(1));
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajPacientskySumarXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-dajpacientskysumar.xml",f);
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(dajPacientskySumarXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return dajPacientskySumarXml;
+		return "ok";
 
 	}
 	
-	public String updatePacientskySumarUdajeXml(String ciselnik) {
+	public String updateZrusPacientskySumarXml(ZrusSumar zrusSumar, String evID) {
+		Resource resource = resourceLoader.getResource("classpath:static/zruszapissumar.xml");
+		String zrusPacientskySumarXml;
+		String archetypeId = null;
+		
+		switch (zrusSumar.getRcIdOid())
+        {
+            case "1.3.158.00165387.100.50.40.100": archetypeId = "CEN-EN13606-ENTRY.Pouzivana_zdravotnicka_pomocka.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.120": archetypeId = "CEN-EN13606-ENTRY.Zdravotny_problem.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.50": archetypeId = "CEN-EN13606-COMPOSITION.Varovania.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.60": archetypeId = "CEN-EN13606-COMPOSITION.Porodnicke_zaznamy.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.30": archetypeId = "CEN-EN13606-ENTRY.Krvna_skupina.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.40": archetypeId = "CEN-EN13606-ENTRY.Krvny_tlak.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.90": archetypeId = "CEN-EN13606-ENTRY.Vitalne_a_antropometricke_hodnoty.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.10": archetypeId = "CEN-EN13606-COMPOSITION.Socialna_anamneza_abuzy.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.110": archetypeId = "CEN-EN13606-ENTRY.Zdravotne_obmedzenie.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.20": archetypeId = "CEN-EN13606-ENTRY.Chirurgicky_vykon.v2/at0000"; break;
+            case "1.3.158.00165387.100.50.40.70": archetypeId = "CEN-EN13606-ENTRY.Terapeuticke_odporucanie.v2/at0000"; break;
+
+        }
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			zrusPacientskySumarXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", zrusSumar.getClassification());
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{deletion_text}}", zrusSumar.getDeletionText());
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{version}}", zrusSumar.getDeleteVersion());
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{rcIdExtensionDeleted}}", zrusSumar.getRcIdExtensionDeleted());
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{rcIdOid}}", zrusSumar.getRcIdOid());
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{archetype_id}}", archetypeId);
+			zrusPacientskySumarXml = StringUtils.replace(zrusPacientskySumarXml, "{{rc_id}}", IdGenService.genId(1));
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, zrusPacientskySumarXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-zruszapissumar.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
+		
+	public String updateDajPacientskySumarUdajeXml(String ciselnik) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumarudaje.xml");
 		String dajPacientskySumarXmlUdaje;
 		
@@ -210,51 +263,50 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 	
-	public String updateZapisSumarUdajeXml(String ciselnik) {
+	public String updateZapisSumarUdajeXml(ZapisSumarUdaje zapisSumareUdaje, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/zapissumarudaje.xml");
 		String zapisSumarUdajeXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			zapisSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			zapisSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", zapisSumareUdaje.getClassification());
 			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{rc_id}}", IdGenService.genId(1));
 			
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, zapisSumarUdajeXml, StandardCharsets.UTF_8);
-			s3ImageService.uploadPublicFile("zapissumarudaje.xml",f);
+			s3ImageService.uploadPublicFile(evID + "-zapissumarudaje.xml",f);
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(zapisSumarUdajeXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return zapisSumarUdajeXml;
+		return "ok";
+
 
 	}
 	
-	public String updateZapisSumarProblemyXml(String ciselnik) {
+	public String updateZapisSumarProblemyXml(ZapisSumarProblemy zapisSumarProblemy, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/zapissumarproblemy.xml");
 		String zapisSumarProblemyXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			zapisSumarProblemyXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			zapisSumarProblemyXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", zapisSumarProblemy.getClassification());
 			zapisSumarProblemyXml = StringUtils.replace(zapisSumarProblemyXml, "{{rc_id}}", IdGenService.genId(1));
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, zapisSumarProblemyXml, StandardCharsets.UTF_8);
-			s3ImageService.uploadPublicFile("zapissumarproblemy.xml",f);
+			s3ImageService.uploadPublicFile(evID + "-zapissumarproblemy.xml",f);
 			
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(zapisSumarProblemyXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return zapisSumarProblemyXml;
+		return "ok";
 
 	}
 

@@ -180,6 +180,7 @@
 						<source>src/main/resources/nczi-templates/EZKO/XSD/DajPrZS_Response.xsd</source>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/EN13606-extract.xsd</source>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/DajPacientskySumarKontaktneUdaje_v4_Response.xsd</source>
+						<source>src/main/resources/nczi-templates/EZKO/XSD/ZapisPacientskehoSumaruZdravotneProblemy_v2_Response.xsd</source>
 
 					</sources>
 					<verbose>true</verbose>

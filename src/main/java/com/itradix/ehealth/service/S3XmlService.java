@@ -29,7 +29,7 @@ public class S3XmlService extends S3StorageService {
     }
     
     public byte[] downloadPublicFile(String evID, String filename) throws IOException {
-        com.amazonaws.services.s3.model.S3Object obj = getClient().getObject("nczi-preprod", evID + filename + ".xml");
+        com.amazonaws.services.s3.model.S3Object obj = getClient().getObject("nczi-preprod", evID + "-"+ filename + ".xml");
         System.out.println(obj.getObjectMetadata());
         return obj.getObjectContent().readAllBytes();
     }
