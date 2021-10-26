@@ -2,7 +2,7 @@
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>DajZaznamOVysetreni_v5</Class>
+      <Class>DajZaznamOVysetreni_v6</Class>
       <MessageID>00d89471-b0cb-4800-bb68-bb96039844a4</MessageID>
       <CorrelationID>00d89471-b0cb-4800-bb68-bb96039844a4</CorrelationID>
       <BusinessID/>
@@ -17,7 +17,7 @@
           <codeValue>{{classification}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
+          <extension>{{oupzs}}</extension>
           <rootOID>1.3.158.00165387.100.40.70</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
@@ -27,7 +27,7 @@
     <Data>
       <IdentifikatorZaznamuVysetrenia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/Allocation/v1">
         <IdZaznamuVysetrenia>
-          <extension>198542717419854271749</extension>
+          <extension>{{rc_id}}</extension>
           <root>
             <oid>1.3.158.00165387.100.60.90</oid>
           </root>

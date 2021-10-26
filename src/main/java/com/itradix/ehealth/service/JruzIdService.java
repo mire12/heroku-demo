@@ -62,6 +62,12 @@ public class JruzIdService {
 			return response.block();			
 		}
 		
+		public String getStornujZaznamOVysetreni(String pID, String evID, String dID, String patient){
+			String url = new StringBuilder().append("/VYHLADAJ_ZAZNAM?").append("pID=").append(pID).append("&evID=").append(evID).append("&dID=").append(dID).append("&patient=").append(patient).toString();
+			Mono<String> response = client.post().uri(url).retrieve().bodyToMono(String.class);
+			return response.block();			
+		}
+		
 		public String zapisVysetrenie(String pID, String evID, String dID, String patient){
 			String url = new StringBuilder().append("/REG_VYSETRENIE?").append("pID=").append(pID).append("&evID=").append(evID).append("&dID=").append(dID).append("&patient=").append(patient).toString();
 			Mono<String> response = client.post().uri(url).retrieve().bodyToMono(String.class);

@@ -33,11 +33,16 @@ import org.springframework.util.FileCopyUtils;
 import com.itradix.ehealth.dao.BaseRepository;
 import com.itradix.ehealth.dao.PatientRepository;
 import com.itradix.ehealth.dao.XmlRepository;
+import com.itradix.ehealth.model.DajJruzId;
+import com.itradix.ehealth.model.DajOdobornyUtvarPoskytovatelaZS;
 import com.itradix.ehealth.model.DajSumar;
+import com.itradix.ehealth.model.DajZaznamOVysetreni;
 import com.itradix.ehealth.model.Patient;
+import com.itradix.ehealth.model.StornujZaznamOVysetreni;
 import com.itradix.ehealth.model.XmlTempObject;
 import com.itradix.ehealth.model.ZapisSumarProblemy;
 import com.itradix.ehealth.model.ZapisSumarUdaje;
+import com.itradix.ehealth.model.ZapisZaznamOVysetreni;
 import com.itradix.ehealth.model.ZrusSumar;
 
 import ch.qos.logback.classic.Logger;
@@ -99,42 +104,43 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 	
-	public String updateOupzsXml(String dateTime, String ciselnik) {
+	public String updateOupzsXml(DajOdobornyUtvarPoskytovatelaZS dajOdobornyUtvarPoskytovatelaZS, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajoupzs.xml");
-		String overVerziuXml;
+		String dajOupZSXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
 
-			overVerziuXml = FileCopyUtils.copyToString(reader);
+			dajOupZSXml = FileCopyUtils.copyToString(reader);
 
 			String formattedDate;
 			try {
-				LocalDate localDate = LocalDate.parse(dateTime);
+				LocalDate localDate = LocalDate.parse(dajOdobornyUtvarPoskytovatelaZS.getDate());
 				formattedDate = localDate.format(DateTimeFormatter.ISO_INSTANT);
 
 			} catch (DateTimeException parseEx) {
 				parseEx.printStackTrace();
-				logger.warn("Not possible to parse date: " + dateTime + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
+				logger.warn("Not possible to parse date: " + dajOdobornyUtvarPoskytovatelaZS.getDate() + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
 				Clock cl = Clock.systemUTC(); 
 				formattedDate = Instant.now(cl).toString();
 			}
 
-			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
-			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
+			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{date}}", formattedDate);
+			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{classification}}", dajOdobornyUtvarPoskytovatelaZS.getClassification());
 			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajOupZSXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-dajoupzs.xml",f);
 			
-
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(overVerziuXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
+		return "ok";
 		
-
-		return overVerziuXml;
-
+	
 	}
 	
 	public String updateDajPacientskySumarXml(DajSumar dajSumar, String evID) {
@@ -225,41 +231,104 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	}
 	
 	
-	public String updateJruzidXml(String ciselnik) {
+	public String updateZapisZaznamOVysetreniXml(ZapisZaznamOVysetreni zapisZaznamOVysetreni, String evId) {
+		Resource resource = resourceLoader.getResource("classpath:static/vysetrenie.xml");
+		String zapisZaznamOVysetreniXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			zapisZaznamOVysetreniXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", zapisZaznamOVysetreni.getClassification());
+			zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{rc_id}}", IdGenService.genId(1));
+			zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{datetime}}", zapisZaznamOVysetreni.getDatetime());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, zapisZaznamOVysetreniXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evId + "-vysetrenie.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
+	
+	public String updateStornujZaznamOVysetreniXml(StornujZaznamOVysetreni stornujZaznamOVysetreni, String evId) {
+		Resource resource = resourceLoader.getResource("classpath:static/stornujzaznam.xml");
+		String stornujZaznamOVysetreniXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			stornujZaznamOVysetreniXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", stornujZaznamOVysetreni.getClassification());
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{rc_id_deleted}}", stornujZaznamOVysetreni.getRcIdDeleted());
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{datetime}}", stornujZaznamOVysetreni.getDatetime());
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{deletion_text}}", stornujZaznamOVysetreni.getDeletionText());
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{version}}", stornujZaznamOVysetreni.getDeleteVersion());
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{rc_id}}", IdGenService.genId(1));
+			stornujZaznamOVysetreniXml = StringUtils.replace(stornujZaznamOVysetreniXml, "{{oupzs}}", stornujZaznamOVysetreni.getOupzs());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, stornujZaznamOVysetreniXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evId + "-stornujzaznam.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
+	
+	public String updateJruzidXml(DajJruzId dajJruzId, String evId) {
 		Resource resource = resourceLoader.getResource("classpath:static/jruzid.xml");
 		String dajJruzidXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			dajJruzidXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			dajJruzidXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", dajJruzId.getClassification());
+			//dajJruzidXml = StringUtils.replace(dajJruzidXml, "{{rc_id}}", dajJruzidXml.getRcId());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajJruzidXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evId + "-jruzid.xml",f);
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(dajJruzidXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return dajJruzidXml;
+		return "ok";
 
 	}
 	
-	public String updateDajZaznamOVysetreniXml(String ciselnik) {
+	public String updateDajZaznamOVysetreniXml(DajZaznamOVysetreni dajZaznamOVysetreni, String evID) {
+		
 		Resource resource = resourceLoader.getResource("classpath:static/dajzaznamovysetreni.xml");
-		String dajZaznamOVysetreniXmlUdaje;
+		String dajZaznamOVysetreniXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			dajZaznamOVysetreniXmlUdaje = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			dajZaznamOVysetreniXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", dajZaznamOVysetreni.getClassification());
+			dajZaznamOVysetreniXml = StringUtils.replace(dajZaznamOVysetreniXml, "{{rc_id}}", dajZaznamOVysetreni.getRcId());
+			dajZaznamOVysetreniXml = StringUtils.replace(dajZaznamOVysetreniXml, "{{oupzs}}", dajZaznamOVysetreni.getOupzs());
+			
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajZaznamOVysetreniXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-dajzaznamovysetreni.xml",f);
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(dajZaznamOVysetreniXmlUdaje);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return dajZaznamOVysetreniXmlUdaje;
+		return "ok";
 
 	}
 	

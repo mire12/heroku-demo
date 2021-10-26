@@ -3,7 +3,7 @@
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>StornujZaznamOVysetreni_v5</Class>
+      <Class>StornujZaznamOVysetreni_v6</Class>
       <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d14</MessageID>
       <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d14</CorrelationID>
       <BusinessID />
@@ -15,10 +15,10 @@
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
           <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
           <codingSchemeVersion>2</codingSchemeVersion>
-          <codeValue>00000461517</codeValue>
+          <codeValue>{{classification}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
+          <extension>{{oupzs}}</extension>
           <rootOID>1.3.158.00165387.100.40.70</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
@@ -40,7 +40,7 @@
           </root>
         </subject_of_care>
         <time_created>
-          <time>2018-06-19T18:01:17.2709684+02:00</time>
+          <time>{{datetime}}</time>
         </time_created>
         <rm_id>EN13606</rm_id>
         <all_compositions>
@@ -50,12 +50,12 @@
           <synthesised>true</synthesised>
           <content xsi:type="ENTRY">
             <name xsi:type="SIMPLE_TEXT">
-              <originalText>Dovod storna (Integracny test)</originalText>
+              <originalText>{{deletion_text}}</originalText>
             </name>
             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v5/at0000.1</archetype_id>
 			<!-- record id, identifikator EHR zaznamu, ktory sa posiela do NZIS. Generuje sa metodou, ktora je popisana v dokumente x070 – Detailna_specifikacia_rozhrania_Volanie_sluzieb – kapitola 5.4.4. – Identifikácia zdravotných záznamov -->
             <rc_id>
-              <extension>014620583700000000786</extension>
+              <extension>{{rc_id}}</extension>
               <root>
                 <oid>1.3.158.00165387.100.60.90</oid>
               </root>
@@ -73,29 +73,29 @@
               </ehr_system>
 			  <!-- timestamp, kedy bola sprava odoslana do NZIS -->
               <time_committed>
-                <time>2018-06-19T18:01:49.3501730+02:00</time>
+                <time>{{datetime}}</time>
               </time_committed>
 			  <!-- zdravotny pracovnik, ktory spravu odosiela. Uvadza sa JRUZ ID (je mozne ziskat z karty ePZP) -->
               <committer>
-                <extension>00000100040</extension>
+                <extension>00020003901</extension>
                 <root>
                   <oid>1.3.158.00165387.100.40.90</oid>
                 </root>
               </committer>
 			  <!-- verzia je stav zaznamu. VER04 = storno.  -->
               <version_status>
-                <codeValue>VER04</codeValue>
+                <codeValue>{{version}}</codeValue>
               </version_status>
 			  <!-- RCID zaznamu, ktory bude stornovany -->
               <previous_version>
-                <extension>014620582700000000760</extension>
+                <extension>{{rc_id_deleted}}</extension>
                 <root>
                   <oid>1.3.158.00165387.100.60.90</oid>
                 </root>
               </previous_version>
 			  <!-- RCID zaznamu, ktory bude stornovany -->
               <version_set_id>
-                <extension>014620582700000000760</extension>
+                <extension>{{rc_id_deleted}}</extension>
                 <root>
                   <oid>1.3.158.00165387.100.60.90</oid>
                 </root>
@@ -110,19 +110,19 @@
                   <oid>1.3.158.00165387.100.10.34</oid>
                 </codingScheme>
                 <codingSchemeVersion>2</codingSchemeVersion>
-                <codeValue>00000115899</codeValue>
-                <displayName>Vnútorné lekárstvo</displayName>
+                <codeValue>{{classification}}</codeValue>
+                <displayName>všeobecné lekárstvo</displayName>
               </function>
 			  <!-- JRUZ ID lekara, ktory stornuje spravu -->
               <performer>
-                <extension>00000100040</extension>
+                <extension>00020003901</extension>
                 <root>
                   <oid>1.3.158.00165387.100.40.90</oid>
                 </root>
               </performer>
 			  <!-- JRUZ ID oddelenia, z ktoreho sa sa posiela storno -->
               <healthcare_facillity>
-                <extension>00000000018</extension>
+                <extension>{{oupzs}}</extension>
                 <root>
                   <oid>1.3.158.00165387.100.40.70</oid>
                 </root>

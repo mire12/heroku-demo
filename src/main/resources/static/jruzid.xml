@@ -32,15 +32,15 @@
       <DajJRUZIdentifikator_Kriteria>
         <ZadaneId>%PACIENT%</ZadaneId>
         <TypHladanehoId>
-          <oid>1.3.158.00165387.100.40.110</oid>
-        </TypHladanehoId>
-        <TypZadanehoId>
-          <codeValue>00000000182</codeValue>
-          <codingScheme>
-            <oid>1.3.158.00165387.100.10.53</oid>
-          </codingScheme>
-          <codingSchemeVersion>4</codingSchemeVersion>
-        </TypZadanehoId>
+            <oid>1.3.158.00165387.100.40.90</oid>
+          </TypHladanehoId>
+          <TypZadanehoId>
+            <codeValue>kodZPr</codeValue>
+            <codingScheme>
+              <oid>1.3.158.00165387.100.10.53</oid>
+            </codingScheme>
+            <codingSchemeVersion>1</codingSchemeVersion>
+          </TypZadanehoId>
       </DajJRUZIdentifikator_Kriteria>
     </DajJRUZIdentifikator_Request>
   </Data>
