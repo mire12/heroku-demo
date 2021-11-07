@@ -1,11 +1,7 @@
 package com.itradix.ehealth.service;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UncheckedIOException;
@@ -16,32 +12,26 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import javax.imageio.ImageIO;
 import javax.transaction.Transactional;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
-import com.itradix.ehealth.dao.BaseRepository;
-import com.itradix.ehealth.dao.PatientRepository;
-import com.itradix.ehealth.dao.XmlRepository;
 import com.itradix.ehealth.model.DajJruzId;
 import com.itradix.ehealth.model.DajOdobornyUtvarPoskytovatelaZS;
 import com.itradix.ehealth.model.DajSumar;
 import com.itradix.ehealth.model.DajSumarEds;
+import com.itradix.ehealth.model.DajSumarUdaje;
 import com.itradix.ehealth.model.DajZaznamOVysetreni;
 import com.itradix.ehealth.model.DajZpr;
-import com.itradix.ehealth.model.Patient;
+import com.itradix.ehealth.model.OverVerziu;
 import com.itradix.ehealth.model.StornujZaznamOVysetreni;
-import com.itradix.ehealth.model.XmlTempObject;
 import com.itradix.ehealth.model.ZapisSumarProblemy;
 import com.itradix.ehealth.model.ZapisSumarUdaje;
 import com.itradix.ehealth.model.ZapisZaznamOVysetreni;
@@ -51,7 +41,7 @@ import ch.qos.logback.classic.Logger;
 
 @Service
 @Transactional
-public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> implements XmlService{
+public class XmlServiceImpl implements XmlService{
 	
 	@Autowired
 	private ResourceLoader resourceLoader;
@@ -64,11 +54,11 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 	private static final Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(XmlServiceImpl.class);
 	
 	
-	public XmlServiceImpl(XmlRepository abstractBaseRepository) {
-		super(abstractBaseRepository);
+	public XmlServiceImpl() {
+		super();
 	}
 
-	public String updateOververziuXml(String dateTime, String ciselnik) {
+	public String updateOververziuXml(OverVerziu oververziu, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/oververziu.xml");
 		String overVerziuXml;
 		
@@ -79,30 +69,32 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 			String formattedDate;
 			try {
-				LocalDate localDate = LocalDate.parse(dateTime);
+				LocalDate localDate = LocalDate.parse(oververziu.getDate());
 				formattedDate = localDate.format(DateTimeFormatter.ISO_INSTANT);
 
 			} catch (DateTimeException parseEx) {
 				parseEx.printStackTrace();
-				logger.warn("Not possible to parse date: " + dateTime + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
+				logger.warn("Not possible to parse date: " + oververziu.getDate() + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
 				Clock cl = Clock.systemUTC(); 
 				formattedDate = Instant.now(cl).toString();
 			}
 
 			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
-			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", ciselnik);
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", oververziu.getClassification());
 			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, overVerziuXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-oververziu.xml",f);
 			
-
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(overVerziuXml);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
+		return "ok";
 		
 
-		return overVerziuXml;
 
 	}
 	
@@ -244,22 +236,25 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 		
-	public String updateDajPacientskySumarUdajeXml(String ciselnik) {
+	public String updateDajPacientskySumarUdajeXml(DajSumarUdaje udaje, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumarudaje.xml");
-		String dajPacientskySumarXmlUdaje;
+		String dajPacientskySumarudajeXml;
 		
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			dajPacientskySumarXmlUdaje = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", ciselnik);
+			dajPacientskySumarudajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", udaje.getClassification());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajPacientskySumarudajeXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-dajpacientskysumarudaje.xml",f);
 			
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
 		
-		XmlTempObject xmlTempObject = new XmlTempObject(dajPacientskySumarXmlUdaje);	
-	    this.lastXmlId = this.save(xmlTempObject).getId();
-		
-		return dajPacientskySumarXmlUdaje;
+		return "ok";
 
 	}
 	
