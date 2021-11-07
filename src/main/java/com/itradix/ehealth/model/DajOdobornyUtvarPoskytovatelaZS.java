@@ -4,6 +4,24 @@ public class DajOdobornyUtvarPoskytovatelaZS {
 	
 	private String classification;
 	private String date;
+	private String oupzs;
+	private String findOupzs;
+
+	public String getOupzs() {
+		return oupzs;
+	}
+
+	public void setOupzs(String oupzs) {
+		this.oupzs = oupzs;
+	}
+
+	public String getFindOupzs() {
+		return findOupzs;
+	}
+
+	public void setFindOupzs(String findOupzs) {
+		this.findOupzs = findOupzs;
+	}
 
 	public String getDate() {
 		return date;

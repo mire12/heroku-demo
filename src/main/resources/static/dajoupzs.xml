@@ -18,7 +18,7 @@
           <codeValue>{{classification}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
+          <extension>{{oupzs}}</extension>
           <rootOID>1.3.158.00165387.100.40.70</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
@@ -28,7 +28,7 @@
     <Data>
       <DajOUPZS_Request xmlns="http://eHealth.gov.sk/JRUZ/v1">
     <IdOUPZS>
-        <extension>00020008694</extension>
+        <extension>{{find_oupzs}}</extension>
         <root>
             <oid>1.3.158.00165387.100.40.70</oid>
         </root>

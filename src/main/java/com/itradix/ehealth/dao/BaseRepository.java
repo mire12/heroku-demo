@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.repository.query.Param;
 
 import com.itradix.ehealth.model.BaseEntity;
 import com.itradix.ehealth.model.NcziResponse;
@@ -22,15 +23,24 @@ extends JpaRepository<T, ID>{
 	
 	
 	@Query(value = "select * from ncziresponse n " +
-			 "where (?1 is null or n.did = ?1) " +
+			 "where (:dID is null or n.did like :dID) " +
 	            " and " +
-	            " (?2 is null or n.pid = ?2)" +
+	            " (:pID is null or n.pid like :pID)" +
 	            " and " +
-	            " ((cast(n.createdat as timestamp)) >= ?3)" +
+	            " ((cast(n.createdat as timestamp)) >= :startDate)" +
 	            " and " +
-	            " ((cast(n.createdat as timestamp)) < ?4)", nativeQuery = true)
-	List<NcziResponse> searchNcziResp(String dID, String pID, Timestamp startDate, Timestamp endDate);
+	            " ((cast(n.createdat as timestamp)) < :endDate)", nativeQuery = true)
+	List<NcziResponse> searchNcziResp(@Param("dID") String dID, @Param("pID") String pID, @Param("startDate") Timestamp startDate, @Param("endDate") Timestamp endDate);
 	
+	
+	/*CriteriaQuery<NcziResponse> criteriaQuery = 
+			  criteriaBuilder.createQuery(NcziResponse.class);
+			Root<DeptEmployee> root = criteriaQuery.from(NcziResponse.class);
+			In<String> inClause = criteriaBuilder.in(root.get("title"));
+			for (String title : titles) {
+			    inClause.value(title);
+			}
+			criteriaQuery.select(root).where(inClause);*/
 	
 	@Query(value = "select * from ncziresponse n where n.evid = ?1", nativeQuery = true)
 	List<NcziResponse> findNcziRespUsingNativeQuery(String evID);

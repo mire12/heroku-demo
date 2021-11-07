@@ -12,7 +12,9 @@ import com.itradix.ehealth.exception.PatientNotFoundException;
 import com.itradix.ehealth.model.DajJruzId;
 import com.itradix.ehealth.model.DajOdobornyUtvarPoskytovatelaZS;
 import com.itradix.ehealth.model.DajSumar;
+import com.itradix.ehealth.model.DajSumarEds;
 import com.itradix.ehealth.model.DajZaznamOVysetreni;
+import com.itradix.ehealth.model.DajZpr;
 import com.itradix.ehealth.model.EzClassifications;
 import com.itradix.ehealth.model.NcziResponse;
 import com.itradix.ehealth.model.Patient;
@@ -113,8 +115,8 @@ public class EhealthController {
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
 
-		Patient patient = new Patient(patientDto.getBirthDate(), patientDto.getEmail(), patientDto.getBloodGroup(),
-				patientDto.getFirstName(), patientDto.getGender(), patientDto.getLastNames(), patientDto.getMessage());
+		Patient patient = new Patient(patientDto.getBirthDate(), patientDto.getBirthNumber(),
+				patientDto.getFirstName(), patientDto.getGender(), patientDto.getLastNames(), patientDto.getDoctorPrZs(), patientDto.getJruzId(), patientDto.getInsurance());
 		return patientService.save(patient);
 	}
 
@@ -150,6 +152,7 @@ public class EhealthController {
 	@GetMapping(path = "/getehealthresponse", produces = "application/json")
 	public ResponseEntity<?> getEhealthResponses(@RequestParam(name = "did") String dId, @RequestParam(name = "pid") String pId, @RequestParam(name = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime creationDate) {
 
+		
 		List<NcziResponse> ncziresponse = commmaxService.searchNcziResp(dId, pId, creationDate);
 		if (!ncziresponse.isEmpty()) {
 			ObjectMapper objectMapper = new ObjectMapper();
@@ -442,8 +445,23 @@ public class EhealthController {
 		return jruzService.getSumarEds(pID, evID, dID, patient);
 	}
 
-	@PostMapping(path = "/dajpacientskysumareds", produces = { "application/xml", "text/xml" })
-	public String getPacientskySumarEdsXml() {
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajpacientskysumareds/xml", produces = "text/plain")
+	public String feedPacientskySumarEds(@RequestBody DajSumarEds dajSumarEds, @RequestParam String evID) {
+		return xmlService.updatePacientskySumarEdsXml(dajSumarEds, evID);
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajpacientskysumareds", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+	public String getPacientskySumarEdsXml(String pID, String evID, String dID, String patient) {
+				
+		try {			
+			return new String(s3XmlService.downloadPublicFile(evID, "dajpacientskysumareds"), StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
 		return commmaxService.getCommmaxTemplate("dajpacientskysumareds.xml");
 	}
 
@@ -470,16 +488,36 @@ public class EhealthController {
 	}
 	
 	//-------------------------------DAJ ZPR----------------------------------------------------//
-
-	@PostMapping(path = "/dajzpr", produces = { "application/xml", "text/xml" })
-	public String getZpr() {
-		return commmaxService.getCommmaxTemplate("dajzpr.xml");
-	}
-
 	@GetMapping(path = "/commmax/dajzpr")
 	public String getZpr(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID) {
 		return jruzService.getZpr(pID, evID, dID);
 	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajzpr/xml", produces = "text/plain")
+	public String feedDajOupzs(@RequestBody DajZpr dajZdravotnehoPracovnika, @RequestParam String evID) {
+
+		return xmlService.updateZprXml(dajZdravotnehoPracovnika, evID);
+
+	}	
+
+	
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/dajzpr", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+	public String dajZpr(String pID, String evID, String dID, String patient) {
+		try {			
+			return new String(s3XmlService.downloadPublicFile(evID, "dajzpr"), StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
+		return commmaxService.getCommmaxTemplate("dajzpr.xml");
+	}
+	
+	
+	
 
 	//-------------------------------DAJ OUPZS--------------------------------//
 

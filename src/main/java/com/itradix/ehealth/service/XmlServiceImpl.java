@@ -36,7 +36,9 @@ import com.itradix.ehealth.dao.XmlRepository;
 import com.itradix.ehealth.model.DajJruzId;
 import com.itradix.ehealth.model.DajOdobornyUtvarPoskytovatelaZS;
 import com.itradix.ehealth.model.DajSumar;
+import com.itradix.ehealth.model.DajSumarEds;
 import com.itradix.ehealth.model.DajZaznamOVysetreni;
+import com.itradix.ehealth.model.DajZpr;
 import com.itradix.ehealth.model.Patient;
 import com.itradix.ehealth.model.StornujZaznamOVysetreni;
 import com.itradix.ehealth.model.XmlTempObject;
@@ -104,6 +106,35 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 	}
 	
+	
+	public String updateZprXml(DajZpr dajZdravotnehoPracovnika, String evID) {
+		Resource resource = resourceLoader.getResource("classpath:static/dajzpr.xml");
+		String dajZprXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+
+			dajZprXml = FileCopyUtils.copyToString(reader);
+
+
+			dajZprXml = StringUtils.replace(dajZprXml, "{{oupzs}}", dajZdravotnehoPracovnika.getOupzs());
+			dajZprXml = StringUtils.replace(dajZprXml, "{{classification}}", dajZdravotnehoPracovnika.getClassification());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajZprXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-dajzpr.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+		
+	
+	}
+	
 	public String updateOupzsXml(DajOdobornyUtvarPoskytovatelaZS dajOdobornyUtvarPoskytovatelaZS, String evID) {
 		Resource resource = resourceLoader.getResource("classpath:static/dajoupzs.xml");
 		String dajOupZSXml;
@@ -127,6 +158,8 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 
 			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{date}}", formattedDate);
 			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{classification}}", dajOdobornyUtvarPoskytovatelaZS.getClassification());
+			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{oupzs}}", dajOdobornyUtvarPoskytovatelaZS.getOupzs());
+			dajOupZSXml = StringUtils.replace(dajOupZSXml, "{{find_oupzs}}", dajOdobornyUtvarPoskytovatelaZS.getFindOupzs());
 			
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, dajOupZSXml, StandardCharsets.UTF_8);
@@ -244,6 +277,30 @@ public class XmlServiceImpl extends BaseRepositoryImpl<XmlTempObject, Long> impl
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, zapisZaznamOVysetreniXml, StandardCharsets.UTF_8);
 			s3ImageService.uploadPublicFile(evId + "-vysetrenie.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
+	
+	public String updatePacientskySumarEdsXml(DajSumarEds dajSumarEds, String evId) {
+		Resource resource = resourceLoader.getResource("classpath:static/dajpacientskysumareds.xml");
+		String dajPacientskySumarEdsXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			dajPacientskySumarEdsXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", dajSumarEds.getClassification());
+			dajPacientskySumarEdsXml = StringUtils.replace(dajPacientskySumarEdsXml, "{{rc_id}}", IdGenService.genId(1));
+			//dajPacientskySumarEdsXml = StringUtils.replace(dajPacientskySumarEdsXml, "{{datetime}}", dajSumarEds.getDatetime());
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, dajPacientskySumarEdsXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evId + "-dajpacientskysumareds.xml",f);
 			
 		} catch (IOException e) {
 			

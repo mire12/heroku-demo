@@ -22,11 +22,8 @@ public class Patient extends BaseEntity implements Serializable {
 	@Column(name="birthdate")
 	private Date birthDate;
 	
-	@Column(name="email")
-	private String email;
-	
-	@Column(name="bloodgroup")
-	private String bloodGroup;
+	@Column(name="birthnumber")
+	private String birthNumber;
 	
 	@Column(name="firstname")
 	private String firstName;
@@ -38,20 +35,59 @@ public class Patient extends BaseEntity implements Serializable {
 	@ElementCollection(targetClass=String.class)
 	private List<String> lastNames;
 	
-
-	@Column(name="notes")
-	private String message;
+	@Column(name="jruzid")
+	private String jruzId;
 	
-	public Patient(Date birthDate, String email, String bloodGroup, String firstName, String gender,
-			List<String> lastNames, String message) {
+	@Column(name="doctorprzs")
+	private String doctorPrZs;
+	
+	@Column(name="insurance")
+	private String insurance;
+	
+	public Patient(Date birthDate, String birthNumber, String firstName, String gender,
+			List<String> lastNames, String doctorPrZs, String jruzId, String insurance) {
 		super();
 		this.birthDate = birthDate;
-		this.email = email;
-		this.bloodGroup = bloodGroup;
+		this.birthNumber = birthNumber;
 		this.firstName = firstName;
 		this.gender = gender;
 		this.lastNames = lastNames;
-		this.message = message;
+		this.doctorPrZs = doctorPrZs;
+		this.jruzId = jruzId;
+		this.insurance = insurance;
+	}
+
+	
+	public String getBirthNumber() {
+		return birthNumber;
+	}
+
+	public void setBirthNumber(String birthNumber) {
+		this.birthNumber = birthNumber;
+	}
+
+	public String getJruzId() {
+		return jruzId;
+	}
+
+	public void setJruzId(String jruzId) {
+		this.jruzId = jruzId;
+	}
+
+	public String getDoctorPrZs() {
+		return doctorPrZs;
+	}
+
+	public void setDoctorPrZs(String doctorPrZs) {
+		this.doctorPrZs = doctorPrZs;
+	}
+
+	public String getInsurance() {
+		return insurance;
+	}
+
+	public void setInsurance(String insurance) {
+		this.insurance = insurance;
 	}
 
 	public Date getBirthDate() {
@@ -61,22 +97,7 @@ public class Patient extends BaseEntity implements Serializable {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getBloodGroup() {
-		return this.bloodGroup;
-	}
-
-	public void setBloodGroup(String bloodGroup) {
-		this.bloodGroup = bloodGroup;
-	}
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -102,19 +123,12 @@ public class Patient extends BaseEntity implements Serializable {
 		this.gender = gender;
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 	
 	@Override
 	public int hashCode() {
-		HashCodeBuilder builder = new HashCodeBuilder().append(getBirthDate()).append(getEmail())
-				.append(getBloodGroup()).append(getGender()).append(getFirstName()).append(getLastNames())
-				.append(getMessage());
+		HashCodeBuilder builder = new HashCodeBuilder().append(getBirthDate()).append(getBirthNumber())
+				.append(getJruzId()).append(getGender()).append(getFirstName()).append(getLastNames())
+				.append(getInsurance()).append(getDoctorPrZs());
 		return builder.hashCode();
 	}
 
