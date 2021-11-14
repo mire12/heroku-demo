@@ -45,6 +45,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -104,7 +105,7 @@ public class EhealthController {
 		this.s3XmlService = s3XmlService;
 	}
 	
-	//---------------------------PATIENT DEPRECATED-------------------------------------------------//
+	//---------------------------PATIENT -------------------------------------------------//
 
 	@GetMapping("/patient/{id}")
 	@ResponseBody
@@ -112,7 +113,35 @@ public class EhealthController {
 		return patientService.findById(id).orElseThrow(() -> PatientNotFoundException.createWith(id.toString()));
 
 	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/patient", produces = "application/json")
+	public List<Patient> getPatientList() {
+		List<Patient> patientMap = patientService.findAll();
+		
+		if (!patientMap.isEmpty()) {
+			return patientMap;
+		} else {
+			return Collections.emptyList();
+		}
+		
+		
+		/*ObjectMapper objectMapper = new ObjectMapper();
+		String patients = null;
+		
+        try {
+            patients = objectMapper.writeValueAsString(patientMap);
+            logger.debug(patients);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
+        }
+        return new ResponseEntity<String>(patients, HttpStatus.OK);*/
+	    
 
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
 	public Patient index(@RequestBody PatientDTO patientDto) {
 
