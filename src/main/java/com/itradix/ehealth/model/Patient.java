@@ -44,6 +44,10 @@ public class Patient extends BaseEntity implements Serializable {
 	@Column(name="insurance")
 	private String insurance;
 	
+	public Patient() {
+		super();
+	}
+	
 	public Patient(Date birthDate, String birthNumber, String firstName, String gender,
 			List<String> lastNames, String doctorPrZs, String jruzId, String insurance) {
 		super();
