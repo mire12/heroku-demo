@@ -60,6 +60,7 @@ public class NcziResponse extends BaseEntity implements Serializable {
 	private String detail;
 
 	@Column(name = "message")
+	@Type(type="text")
 	private String message;
 
 	@Column(name = "method")

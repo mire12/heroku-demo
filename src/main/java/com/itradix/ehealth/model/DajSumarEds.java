@@ -1,31 +1,22 @@
 package com.itradix.ehealth.model;
 
+import sk.gov.ehealth.common.v1.UserContext;
+
 public class DajSumarEds {
 
 	public DajSumarEds() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	private String classification;
+	private UserContext userContext;
 
-	private String datetime;
-	
-	public String getDatetime() {
-		return datetime;
+	public UserContext getUserContext() {
+		return userContext;
 	}
 
-	public void setDatetime(String datetime) {
-		this.datetime = datetime;
+	public void setUserContext(UserContext userContext) {
+		this.userContext = userContext;
 	}
-
-	
-
-	public String getClassification() {
-		return classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
-	}
+		
 
 }

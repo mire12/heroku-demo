@@ -7,6 +7,7 @@ import org.w3c.dom.Node;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itradix.ehealth.dto.DajJruzIdDTO;
 import com.itradix.ehealth.dto.PatientDTO;
 import com.itradix.ehealth.exception.PatientNotFoundException;
 import com.itradix.ehealth.model.DajJruzId;
@@ -21,6 +22,9 @@ import com.itradix.ehealth.model.NcziResponse;
 import com.itradix.ehealth.model.OverVerziu;
 import com.itradix.ehealth.model.Patient;
 import com.itradix.ehealth.model.StornujZaznamOVysetreni;
+import com.itradix.ehealth.model.VyhladajZaznamOvysetreniPreZiadatela;
+import com.itradix.ehealth.model.VyhladajZaznamyOvysetreni;
+import com.itradix.ehealth.model.ZapisSuhlasOsobyPrePZS;
 import com.itradix.ehealth.model.ZapisSumarProblemy;
 import com.itradix.ehealth.model.ZapisSumarUdaje;
 import com.itradix.ehealth.model.ZapisZaznamOVysetreni;
@@ -43,7 +47,10 @@ import sk.gov.ehealth.jruz.v1.DajPrZSResponse;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -164,6 +171,42 @@ public class EhealthController {
 		}
 	}
 	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/poskytovatelzs/{idoupzs}", produces = "application/json")
+	public List<Object> getOdbornyUtvarPoskytovatelaZS(@PathVariable String idoupzs) {
+
+		List<Object> odbornyUtvarPzsList = commmaxService.findOdbornyUtvarPoskytovatelaZS(idoupzs);
+		if (!odbornyUtvarPzsList.isEmpty()) {
+			return odbornyUtvarPzsList;
+		} else {
+			return Collections.emptyList();
+		}
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/poskytovatelzs", produces = "application/json")
+	public List<Object> getOdbornyUtvarPoskytovatelaZSList(@RequestParam String obec) {
+
+		List<Object> odbornyUtvarPzsList = commmaxService.findOdbornyUtvarPoskytovatelaZSList(obec);
+		if (!odbornyUtvarPzsList.isEmpty()) {
+			return odbornyUtvarPzsList;
+		} else {
+			return Collections.emptyList();
+		}
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/identificators/{oid}/{oid_ver}", produces = "application/json")
+	public List<Object> getCiselnikIdentifikatorList(@PathVariable String oid, @PathVariable String oid_ver) {
+
+		List<Object> indentificators = commmaxService.findCiselnikIdentifikatorList(oid, oid_ver);
+		if (!indentificators.isEmpty()) {
+			return indentificators;
+		} else {
+			return Collections.emptyList();
+		}
+	}
+	
 	//---------------------------HISTORIA VOLANI-------------------------------------------------//
 	
 	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
@@ -182,7 +225,6 @@ public class EhealthController {
 	@GetMapping(path = "/getehealthresponse", produces = "application/json")
 	public ResponseEntity<?> getEhealthResponses(@RequestParam(name = "did") String dId, @RequestParam(name = "pid") String pId, @RequestParam(name = "date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime creationDate) {
 
-		
 		List<NcziResponse> ncziresponse = commmaxService.searchNcziResp(dId, pId, creationDate);
 		if (!ncziresponse.isEmpty()) {
 			ObjectMapper objectMapper = new ObjectMapper();
@@ -200,7 +242,39 @@ public class EhealthController {
 			return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
 		}
 	}
+	 
+	//--------------------------- Zapis Suhlas Osoby Pre PZS -------------------------------------------------//
+		
+		@GetMapping(path = "/commmax/zapissuhlasosobyprepzs")
+		public String getZapisSuhlasOsobyPrePZS(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
+				@RequestParam String patient) {
+			return jruzService.getJruzId(pID, evID, dID, patient);
+		}
 
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/zapissuhlasosobyprepzs", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+		public String getZapisSuhlasOsobyPrePZSXml(String pID, String evID, String dID, String patient) {
+			
+			String encodedEvId = evID.split("/")[1];
+						
+		    try{
+				return new String(s3XmlService.downloadPublicFile(encodedEvId, "zapissuhlasosobyprepzs"), StandardCharsets.UTF_8);
+				
+			} catch (IOException e) {
+				logger.error(e.getLocalizedMessage());
+			}
+						
+			return commmaxService.getCommmaxTemplate("zapissuhlasosobyprepzs.xml");
+		}
+
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/zapissuhlasosobyprepzs/xml", produces = "text/plain")
+		public String feedZapisSuhlasOsobyPrePZS(@RequestBody ZapisSuhlasOsobyPrePZS zapisSuhlasOsobyPrePZS , @RequestParam String evID) {
+
+			return xmlService.updateZapisSuhlasOsobyPrePZSXml(zapisSuhlasOsobyPrePZS, evID);
+
+		}
+		
 	
 	//---------------------------DAJ JRUZ ID-------------------------------------------------//
 	
@@ -226,7 +300,7 @@ public class EhealthController {
 
 	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
 	@PostMapping(path = "/jruzid/xml", produces = "text/plain")
-	public String feedJruzid(@RequestBody DajJruzId dajJruzId , @RequestParam String evID) {
+	public String feedJruzid(@RequestBody DajJruzIdDTO dajJruzId , @RequestParam String evID) {
 
 		return xmlService.updateJruzidXml(dajJruzId, evID);
 
@@ -392,9 +466,25 @@ public class EhealthController {
 			@RequestParam String dID, @RequestParam String patient) {
 		return jruzService.getVyhladajZaznamyPreZiadatela(pID, evID, dID, patient);
 	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/vyhladajzaznamypreziadatela/xml", produces = "text/plain")
+	public String feedVyhladajZaznamyOVysetreni(@RequestBody VyhladajZaznamOvysetreniPreZiadatela vyhladajZaznamOvysetreniPreZiadatela, @RequestParam String evID) {
+		return xmlService.updateVyhladajZaznamOVysetreniPreZiadatelaXml(vyhladajZaznamOvysetreniPreZiadatela, evID);
+	}
 
-	@PostMapping(path = "/vyhladajzaznamypreziadatela", produces = { "application/xml", "text/xml" })
-	public String getVyhladajZaznamyPreZiadatelaXml() {
+		
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/vyhladajzaznamypreziadatela", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+	public String getVyhladajZaznamyPreZiadatelaXml(String pID, String evID, String dID, String patient) {
+				
+		try {			
+			return new String(s3XmlService.downloadPublicFile(evID, "vyhladajzaznamypreziadatela"), StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
 		return commmaxService.getCommmaxTemplate("vyhladajzaznamypreziadatela.xml");
 	}
 
@@ -405,8 +495,42 @@ public class EhealthController {
 		return jruzService.getVyhladajZaznamy(pID, evID, dID, patient);
 	}
 
-	@PostMapping(path = "/vyhladajzaznamy", produces = { "application/xml", "text/xml" })
-	public String getVyhladajZaznamyXml() {
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/vyhladajzaznamy/xml", produces = "text/plain")
+	public String feedVyhladajZaznamyOVysetreni(@RequestBody VyhladajZaznamyOvysetreni vyhladajZaznamyOvysetreni, @RequestParam String evID) {
+		try{
+			if(Integer.parseInt(vyhladajZaznamyOvysetreni.getCitlivost()) > 3 || vyhladajZaznamyOvysetreni.getVlastneZaznamy().equals("false") ) {
+				ZapisSuhlasOsobyPrePZS zapisSuhlasOsobyPrePZS =  new ZapisSuhlasOsobyPrePZS();
+				zapisSuhlasOsobyPrePZS.setUserContext(vyhladajZaznamyOvysetreni.getUserContext());
+				zapisSuhlasOsobyPrePZS.setCitlivost(vyhladajZaznamyOvysetreni.getCitlivost());
+				zapisSuhlasOsobyPrePZS.setPlatnyDo(vyhladajZaznamyOvysetreni.getDatumDo());
+				zapisSuhlasOsobyPrePZS.setPlatnyOd(vyhladajZaznamyOvysetreni.getDatumOd());
+				zapisSuhlasOsobyPrePZS.setPoznamka("ZapisSuhlasOsobyPrePZS");
+				zapisSuhlasOsobyPrePZS.setPodpisanaDohoda("true");
+				zapisSuhlasOsobyPrePZS.setTypSuhlasu("0");
+				xmlService.updateZapisSuhlasOsobyPrePZSXml(zapisSuhlasOsobyPrePZS, evID);
+			}
+			
+		}catch (NumberFormatException e) {
+			logger.error("Citlivost nie je cislo: " + e.getMessage());
+			vyhladajZaznamyOvysetreni.setCitlivost("3");		
+			
+		}
+		
+		return xmlService.updateVyhladajZaznamyOVysetreniXml(vyhladajZaznamyOvysetreni, evID);
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/vyhladajzaznamy", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+	public String getVyhladajZaznamyOVysetreniXml(String pID, String evID, String dID, String patient) {
+				
+		try {			
+			return new String(s3XmlService.downloadPublicFile(evID, "vyhladajzaznamy"), StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error(e.getLocalizedMessage());
+		}
+		
 		return commmaxService.getCommmaxTemplate("vyhladajzaznamy.xml");
 	}
 
@@ -626,134 +750,138 @@ public class EhealthController {
 			@RequestParam("pID") String patientID, @RequestParam("signed") String signedMsg,
 			@RequestParam("return") String returnMsg, @RequestParam("code") String code,
 			@RequestParam(value = "detail", required = false) String detail,
-			@RequestParam(value = "message", required = false) String message, @RequestParam("method") String method)
-			throws IOException, JAXBException {
-		signedMsg = java.net.URLDecoder.decode(signedMsg, StandardCharsets.UTF_8);
-		returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
-		detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
-
-		logger.trace("dID: " + doctorID);
-		logger.trace("evID: " + evID);
-		logger.trace("pID: " + patientID);
-		logger.trace("signed: " + signedMsg);
-		logger.trace("return: " + returnMsg);
-		logger.trace("detail: " + detail);
-
-		if ("dajpacientskysumarudaje".equals(method)) {
-			DajPrZSResponse dajPrZSresp = null;
+			@RequestParam(value = "message", required = false) String message, @RequestParam("method") String method){
+		try {
+			signedMsg = java.net.URLDecoder.decode(signedMsg, StandardCharsets.UTF_8);
+			returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
 			detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
 
-			if (!(detail.isBlank() || detail.isEmpty())) {
-				String dajPrZS_Response = detail.substring(detail.indexOf("<DajPrZS_Response"),
-						detail.indexOf("</DajPrZS_Response>") + "</DajPrZS_Response>".length());
+			logger.trace("dID: " + doctorID);
+			logger.trace("evID: " + evID);
+			logger.trace("pID: " + patientID);
+			logger.trace("signed: " + signedMsg);
+			logger.trace("return: " + returnMsg);
+			logger.trace("detail: " + detail);
 
-				JAXBContext jaxbContext = JAXBContext.newInstance(DajPrZSResponse.class);
+			if ("dajpacientskysumarudaje".equals(method)) {
+				DajPrZSResponse dajPrZSresp = null;
+				detail = java.net.URLDecoder.decode(detail, StandardCharsets.UTF_8);
+
+				if (!(detail.isBlank() || detail.isEmpty())) {
+					String dajPrZS_Response = detail.substring(detail.indexOf("<DajPrZS_Response"),
+							detail.indexOf("</DajPrZS_Response>") + "</DajPrZS_Response>".length());
+
+					JAXBContext jaxbContext = JAXBContext.newInstance(DajPrZSResponse.class);
+					Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+					StringReader reader = new StringReader(dajPrZS_Response);
+					dajPrZSresp = (DajPrZSResponse) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+					logger.trace(dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0)
+							.getAddressLine());
+				}
+			}
+
+			if ("dajpacientskysumar".equals(method)) {
+
+				JAXBContext jaxbContext = JAXBContext.newInstance(sk.gov.ehealth.ehtalkmessage.ObjectFactory.class);
 				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-				StringReader reader = new StringReader(dajPrZS_Response);
-				dajPrZSresp = (DajPrZSResponse) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
-				logger.trace(
-						dajPrZSresp.getPrijimatelZS().getPersonData().getPhysicalAddresses().get(0).getAddressLine());
-			}
-		}
 
-		if ("dajpacientskysumar".equals(method)) {
+				StringReader reader = new StringReader(returnMsg);
+				EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(sk.gov.ehealth.ehtalkmessage.ObjectFactory.class);
-			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+				Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
 
-			StringReader reader = new StringReader(returnMsg);
-			EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+				StringWriter writer = new StringWriter();
+				Transformer transformer = null;
+				try {
+					transformer = TransformerFactory.newInstance().newTransformer();
+				} catch (TransformerConfigurationException | TransformerFactoryConfigurationError e) {
+					e.printStackTrace();
+				}
+				try {
+					transformer.transform(new DOMSource(node), new StreamResult(writer));
+				} catch (TransformerException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String xml = writer.toString();
 
-			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
+				returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
 
-			StringWriter writer = new StringWriter();
-			Transformer transformer = null;
-			try {
-				transformer = TransformerFactory.newInstance().newTransformer();
-			} catch (TransformerConfigurationException | TransformerFactoryConfigurationError e) {
-				e.printStackTrace();
-			}
-			try {
-				transformer.transform(new DOMSource(node), new StreamResult(writer));
-			} catch (TransformerException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			String xml = writer.toString();
+				JAXBContext jaxbContext2 = JAXBContext.newInstance(EHREXTRACT.class);
+				Unmarshaller unmarshaller2 = jaxbContext2.createUnmarshaller();
+				StringReader reader2 = new StringReader(xml);
 
-			returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
+				EHREXTRACT dajSumarResp = null;
+				dajSumarResp = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller2.unmarshal(reader2));
 
-			JAXBContext jaxbContext2 = JAXBContext.newInstance(EHREXTRACT.class);
-			Unmarshaller unmarshaller2 = jaxbContext2.createUnmarshaller();
-			StringReader reader2 = new StringReader(xml);
+				logger.debug(dajSumarResp.getAllCompositions().toString());
 
-			EHREXTRACT dajSumarResp = null;
-			dajSumarResp = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller2.unmarshal(reader2));
+				ObjectMapper mapper = new ObjectMapper();
 
-			logger.debug(dajSumarResp.getAllCompositions().toString());
+				List<COMPOSITION> problemsComposition = dajSumarResp.getAllCompositions().stream()
+						.filter(composition -> composition.getArchetypeId()
+								.startsWith("CEN-EN13606-ENTRY.Pouzivana_zdravotnicka_pomocka.v2"))
+						.collect(Collectors.toList());
 
-			ObjectMapper mapper = new ObjectMapper();
-			
-			
-			
-			List<COMPOSITION> problemsComposition = dajSumarResp.getAllCompositions().stream().filter(composition ->
-            composition.getArchetypeId().startsWith("CEN-EN13606-ENTRY.Pouzivana_zdravotnicka_pomocka.v2")).collect(Collectors.toList());
-           
+				try {
+					String json = mapper
+							.writeValueAsString(dajSumarResp.getAllCompositions().get(0).getName().getOriginalText());
+					System.out.println("ResultingJSONstring = " + json);
+					// System.out.println(json);
+				} catch (JsonProcessingException e) {
+					e.printStackTrace();
+				}
 
-			try {
-				String json = mapper.writeValueAsString(dajSumarResp.getAllCompositions().get(0).getName().getOriginalText());
-				System.out.println("ResultingJSONstring = " + json);
-				// System.out.println(json);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
 			}
 
-		}
+			if ("dajzaznamovysetreni".equals(method)) {
 
-		if ("dajzaznamovysetreni".equals(method)) {
+				JAXBContext jaxbContext = JAXBContext.newInstance(sk.gov.ehealth.ehtalkmessage.ObjectFactory.class);
+				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
-			JAXBContext jaxbContext = JAXBContext.newInstance(sk.gov.ehealth.ehtalkmessage.ObjectFactory.class);
-			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+				StringReader reader = new StringReader(returnMsg);
+				EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
 
-			StringReader reader = new StringReader(returnMsg);
-			EHtalkMessage eHtalkMessage = (EHtalkMessage) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+				Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
 
-			
-			Node node = eHtalkMessage.getBody().getData().getAnies().get(0);
+				StringWriter writer = new StringWriter();
+				Transformer transformer = null;
+				try {
+					transformer = TransformerFactory.newInstance().newTransformer();
+				} catch (TransformerConfigurationException | TransformerFactoryConfigurationError e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					transformer.transform(new DOMSource(node), new StreamResult(writer));
+				} catch (TransformerException e) {
+					e.printStackTrace();
+				}
+				String xml = writer.toString();
 
-			StringWriter writer = new StringWriter();
-			Transformer transformer = null;
-			try {
-				transformer = TransformerFactory.newInstance().newTransformer();
-			} catch (TransformerConfigurationException | TransformerFactoryConfigurationError e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
+
+				jaxbContext = JAXBContext.newInstance(EHREXTRACT.class);
+				unmarshaller = jaxbContext.createUnmarshaller();
+				reader = new StringReader(xml);
+
+				try {
+					EHREXTRACT dajZaznam = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
+					logger.debug(dajZaznam.getAllCompositions().toString());
+				} catch (UnmarshalException unme) {
+					logger.debug("Not possible to unmarshall ehrextract");
+					unme.printStackTrace();
+				}
+
 			}
-			try {
-				transformer.transform(new DOMSource(node), new StreamResult(writer));
-			} catch (TransformerException e) {
-				e.printStackTrace();
-			}
-			String xml = writer.toString();
 
-			returnMsg = java.net.URLDecoder.decode(returnMsg, StandardCharsets.UTF_8);
-
-			jaxbContext = JAXBContext.newInstance(EHREXTRACT.class);
-			unmarshaller = jaxbContext.createUnmarshaller();
-			reader = new StringReader(xml);
-
-			try {
-				EHREXTRACT dajZaznam = (EHREXTRACT) JAXBIntrospector.getValue(unmarshaller.unmarshal(reader));
-				logger.debug(dajZaznam.getAllCompositions().toString());
-			} catch (UnmarshalException unme) {
-				logger.debug("Not possible to unmarshall ehrextract");
-				unme.printStackTrace();
-			}
+			commmaxService.save(
+					new NcziResponse(doctorID, evID, patientID, signedMsg, returnMsg, code, detail, message, method));
+			return ResponseEntity.ok("OK");
+		} catch (Exception e) {
+			logger.error("Unexpected error: " + e.getMessage());
 
 		}
-
-		commmaxService
-				.save(new NcziResponse(doctorID, evID, patientID, signedMsg, returnMsg, code, detail, message, method));
 		return ResponseEntity.ok("OK");
 	}
 

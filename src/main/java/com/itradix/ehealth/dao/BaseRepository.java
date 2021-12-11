@@ -12,6 +12,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.query.Param;
 
 import com.itradix.ehealth.model.BaseEntity;
+import com.itradix.ehealth.model.EzClassifications;
 import com.itradix.ehealth.model.NcziResponse;
 
 @NoRepositoryBean
@@ -25,7 +26,7 @@ extends JpaRepository<T, ID>{
 	@Query(value = "select * from ncziresponse n " +
 			 "where (:dID is null or n.did like :dID) " +
 	            " and " +
-	            " (:pID is null or n.pid like :pID)" +
+	            " (cast(:pID as text) is null or n.pid like :pID)" +
 	            " and " +
 	            " ((cast(n.createdat as timestamp)) >= :startDate)" +
 	            " and " +
@@ -47,5 +48,13 @@ extends JpaRepository<T, ID>{
 	
 	@Query(value = "select c.oid,c.oid_ver,c.val,c.caption from ez_classifications c where c.oid = ?1 and c.oid_ver = ?2", nativeQuery = true)
 	List<Object> findZdravotnickaOdbornostList(String oid, String oidVersion);
-
+	
+	@Query(value = "select c.idoupzs, concat(c.nazov,c.obec) AS poskytovatel from ez_pzs c where c.idoupzs = ?1", nativeQuery = true)
+	List<Object> findOdbornyUtvarPoskytovatelaZS(String idoupzs);
+	
+	@Query(value = "select c.kodpzs, c.idoupzs, concat_ws(' : ', c.nazov, c.zameranieou, c.obecou) AS dispvalue from ez_pzs c where c.obecou = ?1 and c.obec = ?1", nativeQuery = true)
+	List<Object> findOdbornyUtvarPoskytovatelaZSList(String obec);
+	
+	@Query(value = "select c.val, c.caption from ez_ciselniky c where c.oid = ?1 and c.oid_ver = ?2", nativeQuery = true)
+	List<Object> findCiselnikIdentifikator(String oid, String oidver);
 }

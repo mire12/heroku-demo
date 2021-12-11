@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>VyhladajZaznamyOVysetreniPreZiadatela_v5</Class>
-      <MessageID>00d89471-b0cb-4800-bb68-bb96039844a4</MessageID>
-      <CorrelationID>00d89471-b0cb-4800-bb68-bb96039844a4</CorrelationID>
+      <Class>{{serviceName}}</Class>
+      <MessageID>{{Guid1}}</MessageID>
+      <CorrelationID>{{Guid2}}</CorrelationID>
       <BusinessID />
       <ChannelInfoReply />
     </MessageInfo>
@@ -12,13 +13,13 @@
       <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>2</codingSchemeVersion>
-          <codeValue>00000461517</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
@@ -26,21 +27,19 @@
   <Body>
     <Data>
       <VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request xmlns="http://eHealth.gov.sk/Allocation/v1">
-        <Pacient>
-          <extension>%PACIENT%</extension>
-          <root>
-            <oid>1.3.158.00165387.100.40.110</oid>
-          </root>
-        </Pacient>
-        <!-- identifikator vymennneho listku/ziadanky ziskany z papieroveho vymenneho listka/ ziadanky alebo predchadzajucim volanim sluzby VyhladajZaznamyOVysetreniPreZiadatela_v5 (ID vymenneho listka/ ziadanky je nevyhnutne len pre ziskanie extraktu -->
-        <ExternyIDVymennehoListku>014620579900000000489</ExternyIDVymennehoListku>
-        <!-- Rozsah vymenneho listku, o ktory lekar ziada - konstanta (pre ziskanie extraktu VYMENNYLISTOK_S_EXTRAKROM) -->
-        <Odporucanie_Odpoved>VYMENNYLISTOK</Odporucanie_Odpoved>
-        <Strankovanie_Metadata>
-          <VelkostStranky>100</VelkostStranky>
-          <Index>1</Index>
-        </Strankovanie_Metadata>
-      </VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request>
+       <Pacient>
+         <extension>%PACIENT%</extension>
+         <root>
+           <oid>1.3.158.00165387.100.40.110</oid>
+         </root>
+       </Pacient>
+       <ExternyIDVymennehoListku>{{externyIDVymennehoListku}}</ExternyIDVymennehoListku><!--063621037574182117106-->
+       <Odporucanie_Odpoved>VYMENNYLISTOK</Odporucanie_Odpoved>
+       <Strankovanie_Metadata>
+         <VelkostStranky>100</VelkostStranky>
+         <Index>1</Index>
+       </Strankovanie_Metadata>
+     </VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request>
     </Data>
     <Result>
       <Code>0</Code>

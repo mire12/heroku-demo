@@ -1,20 +1,21 @@
 package com.itradix.ehealth.model;
 
-public class DajSumarUdaje {
+import sk.gov.ehealth.common.v1.UserContext;
 
-	private String classification;
+public class DajSumarUdaje {
 		
 	public DajSumarUdaje() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	private UserContext userContext;
 
-	public String getClassification() {
-		return classification;
+	public UserContext getUserContext() {
+		return userContext;
 	}
 
-	public void setClassification(String classification) {
-		this.classification = classification;
+	public void setUserContext(UserContext userContext) {
+		this.userContext = userContext;
 	}
 
 }

@@ -1,41 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>DajPacientskySumarEDS</Class>
-      <MessageID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</MessageID>
-      <CorrelationID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</CorrelationID>
-      <BusinessID/>
-      <ChannelInfoReply/>
+      <Class>{{serviceName}}</Class>
+      <MessageID>{{Guid1}}</MessageID>
+      <CorrelationID>{{Guid2}}</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
     </MessageInfo>
     <SenderInfo>
-      <SecurityToken/>
+      <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>2</codingSchemeVersion>
-          <codeValue>{{classification}}</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
   </Header>
   <Body>
     <Data>
-      <IdentifikatorPacientaEDS xmlns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd">
-        <IdPacienta>
-          <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
-          <root xmlns="CEN/13606/RM">
-            <oid>1.3.158.00165387.100.40.110</oid>
-          </root>
-        </IdPacienta>
-	<!-- v pripade nastavenia elementu na true sa v response vracaju aj zrusene (stornovane a zneplatnene) zaznamy. V pripade nastavenia na false sa zrusene zaznamy neposielaju -->
-	<!-- nepovinne, default je false (ak element v requeste nie je uvedeny) -->
-        <AjZruseneZaznamy>false</AjZruseneZaznamy>
-      </IdentifikatorPacientaEDS>
+      <IdentifikatorPacientaEDS_v2 xmlns="http://eHealth.gov.sk/EzkHealthRecordManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd">
+             <IdPacienta>
+               <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
+               <root xmlns="CEN/13606/RM">
+                 <oid>1.3.158.00165387.100.40.110</oid>
+               </root>
+             </IdPacienta>
+            <AjZruseneZaznamy>false</AjZruseneZaznamy>
+     </IdentifikatorPacientaEDS_v2>
     </Data>
     <Result>
       <Code>0</Code>

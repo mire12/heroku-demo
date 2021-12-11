@@ -19,4 +19,10 @@ public interface CommMaxService extends BaseService<NcziResponse, Long>{
 	
 	public List<Object> findZdravotnickaOdbornostList(String oid, String oid_ver);
 	
+	public List<Object> findOdbornyUtvarPoskytovatelaZS(String idoupzs);
+	
+	public List<Object> findOdbornyUtvarPoskytovatelaZSList(String obec);
+	
+	public List<Object> findCiselnikIdentifikatorList(String oid, String oidver);
+	
 }

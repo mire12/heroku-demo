@@ -91,6 +91,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>   
+    	</dependency>
 		
 		<!-- Amazon S3 -->
 		<dependency>
@@ -179,6 +183,7 @@
 						<!-- <source>src/main/resources/nczi-templates/ALOK/Xsd/vysetrenia/Vysetrenia_Request_Response.xsd</source> -->
 						<source>src/main/resources/nczi-templates/EZKO/XSD/DajPrZS_Response.xsd</source>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/EN13606-extract.xsd</source>
+						<source>src/main/resources/nczi-templates/EZKO/XSD/UserContext.xsd</source>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/DajPacientskySumarKontaktneUdaje_v4_Response.xsd</source>
 						<source>src/main/resources/nczi-templates/EZKO/XSD/ZapisPacientskehoSumaruZdravotneProblemy_v2_Response.xsd</source>
 

@@ -13,13 +13,13 @@
       <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>8</codingSchemeVersion>
-          <codeValue>{{classification}}</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>{{oupzs}}</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>

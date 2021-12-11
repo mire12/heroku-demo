@@ -1,54 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
 <eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>DajPacientskySumarKontaktneUdaje_v3</Class>
-      <MessageID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</MessageID>
-      <CorrelationID>e1d3f815-0c09-42e5-a600-1f0ea7b836c7</CorrelationID>
-      <BusinessID/>
-      <ChannelInfoReply/>
+      <Class>{{serviceName}}</Class>
+      <MessageID>{{Guid1}}</MessageID>
+      <CorrelationID>{{Guid2}}</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
     </MessageInfo>
     <SenderInfo>
-      <SecurityToken/>
+      <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>2</codingSchemeVersion>
-          <codeValue>{{classification}}</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
   </Header>
   <Body>
     <Data>
-      <IdentifikatorPacienta_v3 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<IdPacienta>
-          <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
-          <root xmlns="CEN/13606/RM">
-            <oid>1.3.158.00165387.100.40.110</oid>
-          </root>
-        </IdPacienta>
-        <StrankovanieKontaktnychOsob>
-          <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
-          <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
-        </StrankovanieKontaktnychOsob>
-        <RadenieKontaktnychOsob>
-          <AtributRadenia>DatumVytvorenia</AtributRadenia>
-          <ZoradenieVzostupne>false</ZoradenieVzostupne>
-        </RadenieKontaktnychOsob>
-        <StrankovaniePreferovanychZprac>
-          <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
-          <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
-        </StrankovaniePreferovanychZprac>
-        <RadeniePreferovanychZprac>
-          <AtributRadenia>DatumVytvorenia</AtributRadenia>
-          <ZoradenieVzostupne>false</ZoradenieVzostupne>
-        </RadeniePreferovanychZprac>
-      </IdentifikatorPacienta_v3>
+      <IdentifikatorPacienta_v4 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+       <IdPacienta>
+         <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
+         <root xmlns="CEN/13606/RM">
+           <oid>1.3.158.00165387.100.40.110</oid>
+         </root>
+       </IdPacienta>
+       <StrankovanieKontaktnychOsob>
+         <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+         <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+       </StrankovanieKontaktnychOsob>
+       <RadenieKontaktnychOsob>
+         <AtributRadenia>DatumVytvorenia</AtributRadenia>
+         <ZoradenieVzostupne>false</ZoradenieVzostupne>
+       </RadenieKontaktnychOsob>
+       <StrankovaniePreferovanychZprac>
+         <indexZaznamu xmlns="http://eHealth.gov.sk/EzkCommon/v1">1</indexZaznamu>
+         <velkostStranky xmlns="http://eHealth.gov.sk/EzkCommon/v1">10</velkostStranky>
+       </StrankovaniePreferovanychZprac>
+       <RadeniePreferovanychZprac>
+         <AtributRadenia>DatumVytvorenia</AtributRadenia>
+         <ZoradenieVzostupne>false</ZoradenieVzostupne>
+       </RadeniePreferovanychZprac>
+     </IdentifikatorPacienta_v4>
     </Data>
     <Result>
       <Code>0</Code>
