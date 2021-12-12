@@ -2,7 +2,7 @@
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>VyhladajZaznamyOVysetreniach_v5</Class>
+      <Class>VyhladajZaznamyOVysetreniach_v6</Class>
       <MessageID>18471d51-3e0a-4e1a-a2a5-c32572b7ec94</MessageID>
       <CorrelationID>18471d51-3e0a-4e1a-a2a5-c32572b7ec94</CorrelationID>
       <BusinessID />
@@ -12,13 +12,13 @@
       <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>4</codingSchemeVersion>
-          <codeValue>00000461517</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
@@ -26,8 +26,8 @@
   <Body>
     <Data>
       <ZaznamOVysetreniCriteria_v5 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/Allocation/v1">
-        <DatumDo>2020-10-17</DatumDo>
-        <DatumOd>2020-01-16</DatumOd>
+        <DatumDo>{{datum_do}}</DatumDo>
+        <DatumOd>{{datum_od}}</DatumOd>
         <Pacient>
           <extension>%PACIENT%</extension>
           <root>
@@ -39,10 +39,10 @@
         <!--<TypVysetrenia>ZAZNAM_PREPUSTACIA_SPRAVA</TypVysetrenia>-->
         <!--<TypVysetrenia>ZAZNAM_O_ZOBRAZOVACOM_VYSETRENI</TypVysetrenia>-->
         <!--<NazovVysetrenia>[[NAZOV.VYSETRENIA]]</NazovVysetrenia>-->
-        <VlastneZaznamy>false</VlastneZaznamy>
-        <KompletnyZaznam>false</KompletnyZaznam>        
-        <Citlivost>3</Citlivost>
-        <PopisMedikacnychZaznamov>false</PopisMedikacnychZaznamov>
+        <VlastneZaznamy>{{vlastne_zaznamy}}</VlastneZaznamy>
+        <KompletnyZaznam>{{kompletny_zaznam}}</KompletnyZaznam>        
+        <Citlivost>{{citlivost}}</Citlivost>
+        <PopisMedikacnychZaznamov>{{popis_medikacnych_zaznamov}}</PopisMedikacnychZaznamov>
         <!--<OdborneZameranie>
           <codeValue>00000351502</codeValue>
           <codingScheme>

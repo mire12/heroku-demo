@@ -550,8 +550,8 @@ public String updateVyhladajZaznamOVysetreniPreZiadatelaXml(VyhladajZaznamOvyset
 			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{IdentifikatorOUPZS.extension}}", vyhladajZaznamyOvysetreni.getUserContext().getIdentifikatorOUPZS().getExtension());
 			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{IdentifikatorOUPZS.rootOID}}", vyhladajZaznamyOvysetreni.getUserContext().getIdentifikatorOUPZS().getRootOID());
 			
-			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{datum_od}}", vyhladajZaznamyOvysetreni.getDatumOd().split("T")[0]);
-			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{datum_do}}", vyhladajZaznamyOvysetreni.getDatumDo().split("T")[0]);
+			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{datum_od}}", vyhladajZaznamyOvysetreni.getDatumOd());
+			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{datum_do}}", vyhladajZaznamyOvysetreni.getDatumDo());
 			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{citlivost}}", vyhladajZaznamyOvysetreni.getCitlivost());
 			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{kompletny_zaznam}}", vyhladajZaznamyOvysetreni.getKompletnyZaznam());
 			vyhladajZaznamyOVysetreniXml = StringUtils.replace(vyhladajZaznamyOVysetreniXml, "{{popis_medikacnych_zaznamov}}", vyhladajZaznamyOvysetreni.getPopisMedikacnychZaznamov());
