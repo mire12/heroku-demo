@@ -1,31 +1,41 @@
 package com.itradix.ehealth.model;
 
+import sk.gov.ehealth.common.v1.UserContext;
+
 public class OverVerziu {
 
-	private String classification;
+	private UserContext userContext;
 	private String date;
+	private String oid;
 		
-	public String getDate() {
-		return date;
-	}
-
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
 
 	public OverVerziu() {
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	public String getClassification() {
-		return classification;
+	public String getDate() {
+		return date;
 	}
 
-	public void setClassification(String classification) {
-		this.classification = classification;
+	public void setDate(String date) {
+		this.date = date;
 	}
+
+	public UserContext getUserContext() {
+		return userContext;
+	}
+
+	public void setUserContext(UserContext userContext) {
+		this.userContext = userContext;
+	}
+
+	public String getOid() {
+		return oid;
+	}
+
+	public void setOid(String oid) {
+		this.oid = oid;
+	}
+
 
 }

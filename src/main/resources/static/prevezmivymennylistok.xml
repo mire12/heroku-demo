@@ -3,9 +3,9 @@
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>{{serviceName}}</Class>
-      <MessageID>{{Guid1}}</MessageID>
-      <CorrelationID>{{Guid2}}</CorrelationID>
+      <Class>PrevezmiVymennyListok_v6</Class>
+      <MessageID>99aeae47-e9d1-41fe-9e36-9879607d56ef</MessageID>
+      <CorrelationID>99aeae47-e9d1-41fe-9e36-9879607d56ef</CorrelationID>
       <BusinessID />
       <ChannelInfoReply />
     </MessageInfo>
@@ -26,20 +26,18 @@
   </Header>
   <Body>
     <Data>
-      <VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request xmlns="http://eHealth.gov.sk/Allocation/v1">
-       <Pacient>
+      <PrevezmiVymennyListok_Request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eHealth.gov.sk/Allocation/v1">
+       <IdPrjZS>
          <extension>%PACIENT%</extension>
          <root>
            <oid>1.3.158.00165387.100.40.110</oid>
          </root>
-       </Pacient>
-       <ExternyIDVymennehoListku>{{externyIDVymennehoListku}}</ExternyIDVymennehoListku><!--063621037574182117106-->
-       <Odporucanie_Odpoved>VYMENNYLISTOK</Odporucanie_Odpoved>
-       <Strankovanie_Metadata>
-         <VelkostStranky>15</VelkostStranky>
-         <Index>1</Index>
-       </Strankovanie_Metadata>
-     </VyhladajZaznamyOVysetreniachPreZiadatela_v5_Request>
+       </IdPrjZS>
+       <IDVymennehoListku>
+         <IDVymennehoListku_RT>1.3.158.00165387.100.60.110</IDVymennehoListku_RT>
+         <IDVymennehoListku_EX>{{externyIDVymennehoListku}}</IDVymennehoListku_EX>
+       </IDVymennehoListku>
+     </PrevezmiVymennyListok_Request>
     </Data>
     <Result>
       <Code>0</Code>

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +42,10 @@ public class IdGenService {
       String vstupneCislo = str.substring(str.length() - 10, 10);
       vstupneCislo = padLeftZeros(vstupneCislo, 10);
       int num = LuhnCislo(vstupneCislo);
-      return vstupneCislo + vstupneCislo + Integer.toString(num);
+      
+      String idZaznamu = "05900";
+	  String idInstalacie = "00001";
+      return idZaznamu + idInstalacie + vstupneCislo + Integer.toString(num);
     }
 
 	public static int LuhnCislo(String vstupneCislo) throws NumberFormatException {
@@ -71,5 +75,13 @@ public class IdGenService {
 		return num4;
 	}
 	
+	
+	@Test
+	public void test() {
+		String idZaznamu = "05900";
+	    String idInstalacie = "00001";
+	    
+		System.out.println(this.genId(1));
+	}
 
 }

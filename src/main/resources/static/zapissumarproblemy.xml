@@ -28,7 +28,7 @@
     <Data>
       <EHR_EXTRACT xmlns="CEN/13606/RM">
     <ehr_system>
-        <extension></extension>
+        <extension>MEDIA7DV_CARE_V35_CF0445226B374D0EA04EB927347CD142</extension>
         <root>
             <oid>1.3.158.00165387.100.30.20</oid>
         </root>
@@ -58,7 +58,7 @@
         <sensitivity>3</sensitivity>
         <committal>
             <ehr_system>
-                <extension></extension>
+                <extension>MEDIA7DV_CARE_V35_CF0445226B374D0EA04EB927347CD142</extension>
                 <root>
                     <oid>1.3.158.00165387.100.30.20</oid>
                 </root>

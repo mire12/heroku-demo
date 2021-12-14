@@ -36,6 +36,7 @@ import com.itradix.ehealth.model.DajSumarUdaje;
 import com.itradix.ehealth.model.DajZaznamOVysetreni;
 import com.itradix.ehealth.model.DajZpr;
 import com.itradix.ehealth.model.OverVerziu;
+import com.itradix.ehealth.model.PrevezmiVymennyListok;
 import com.itradix.ehealth.model.StornujZaznamOVysetreni;
 import com.itradix.ehealth.model.VyhladajZaznamOvysetreniPreZiadatela;
 import com.itradix.ehealth.model.VyhladajZaznamyOvysetreni;
@@ -44,6 +45,7 @@ import com.itradix.ehealth.model.ZapisSumarProblemy;
 import com.itradix.ehealth.model.ZapisSumarUdaje;
 import com.itradix.ehealth.model.ZapisZaznamOVysetreni;
 import com.itradix.ehealth.model.ZrusSumar;
+import com.itradix.ehealth.model.ZrusSumarUdaje;
 
 import ch.qos.logback.classic.Logger;
 
@@ -73,23 +75,19 @@ public class XmlServiceImpl implements XmlService{
 		try {
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
 
-			overVerziuXml = FileCopyUtils.copyToString(reader);
-
-			String formattedDate;
-			try {
-				LocalDate localDate = LocalDate.parse(oververziu.getDate());
-				formattedDate = localDate.format(DateTimeFormatter.ISO_INSTANT);
-
-			} catch (DateTimeException parseEx) {
-				parseEx.printStackTrace();
-				logger.warn("Not possible to parse date: " + oververziu.getDate() + ". Required format: yyyy-MM-dd'T'HH:mm:ssZ");
-				Clock cl = Clock.systemUTC(); 
-				formattedDate = Instant.now(cl).toString();
-			}
-
-			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", formattedDate);
-			overVerziuXml = StringUtils.replace(overVerziuXml, "{{classification}}", oververziu.getClassification());
+			overVerziuXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{Specialization.codeValue}}", oververziu.getUserContext().getSpecialization().getCodeValue());
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{Specialization.codingSchemeOID}}", oververziu.getUserContext().getSpecialization().getCodingSchemeOID());
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{Specialization.codingSchemeVersion}}", oververziu.getUserContext().getSpecialization().getCodingSchemeVersion());
 			
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{IdentifikatorOUPZS.extension}}", oververziu.getUserContext().getIdentifikatorOUPZS().getExtension());
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{IdentifikatorOUPZS.rootOID}}", oververziu.getUserContext().getIdentifikatorOUPZS().getRootOID());
+			
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{IdentifikatorOUPZS.rootOID}}", oververziu.getUserContext().getIdentifikatorOUPZS().getRootOID());
+			
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{date}}", oververziu.getDate());
+			overVerziuXml = StringUtils.replace(overVerziuXml, "{{oid}}", oververziu.getOid());
+
+		
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, overVerziuXml, StandardCharsets.UTF_8);
 			s3ImageService.uploadPublicFile(evID + "-oververziu.xml",f);
@@ -278,7 +276,43 @@ public class XmlServiceImpl implements XmlService{
 
 	}
 	
+	public String updateZrusPacientskySumarUdajeXml(ZrusSumarUdaje zrusSumarUdaje, String evID) {
+		Resource resource = resourceLoader.getResource("classpath:static/zruszapissumarudaje.xml");
+		String zrusSumarUdajeXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			
+			zrusSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{serviceName}}", "ZrusKontaktneUdajePacientskehoSumaru_v4");
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{Guid1}}", UUID.randomUUID().toString());
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{Guid2}}", UUID.randomUUID().toString());
+			
+			
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{Specialization.codeValue}}", zrusSumarUdaje.getUserContext().getSpecialization().getCodeValue());
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{Specialization.codingSchemeOID}}", zrusSumarUdaje.getUserContext().getSpecialization().getCodingSchemeOID());
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{Specialization.codingSchemeVersion}}", zrusSumarUdaje.getUserContext().getSpecialization().getCodingSchemeVersion());
+			
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{IdentifikatorOUPZS.extension}}", zrusSumarUdaje.getUserContext().getIdentifikatorOUPZS().getExtension());
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{IdentifikatorOUPZS.rootOID}}", zrusSumarUdaje.getUserContext().getIdentifikatorOUPZS().getRootOID());
+			
+			zrusSumarUdajeXml = StringUtils.replace(zrusSumarUdajeXml, "{{rcIdExtensionDeleted}}", zrusSumarUdaje.getRcIdExtensionDeleted());
+			
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, zrusSumarUdajeXml, StandardCharsets.UTF_8);
+			s3ImageService.uploadPublicFile(evID + "-zruszapissumarudaje.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
 	
+		
 	public String updateZapisZaznamOVysetreniXml(ZapisZaznamOVysetreni zapisZaznamOVysetreni, String evId) {
 		Resource resource = resourceLoader.getResource("classpath:static/vysetrenie.xml");
 		String zapisZaznamOVysetreniXml;
@@ -439,6 +473,39 @@ public class XmlServiceImpl implements XmlService{
 
 	}
 	
+	public String updatePrevezmiVymennyListokXml(PrevezmiVymennyListok prevezmiVymennyListok, String evId) {
+		Resource resource = resourceLoader.getResource("classpath:static/prevezmivymennylistok.xml");
+		String prevezmiVymennyListokXml;
+		
+		try {
+			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+			prevezmiVymennyListokXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{Specialization.codeValue}}", prevezmiVymennyListok.getUserContext().getSpecialization().getCodeValue());
+			prevezmiVymennyListokXml = StringUtils.replace(prevezmiVymennyListokXml, "{{Specialization.codingSchemeOID}}", prevezmiVymennyListok.getUserContext().getSpecialization().getCodingSchemeOID());
+			prevezmiVymennyListokXml = StringUtils.replace(prevezmiVymennyListokXml, "{{Specialization.codingSchemeVersion}}", prevezmiVymennyListok.getUserContext().getSpecialization().getCodingSchemeVersion());
+			
+			prevezmiVymennyListokXml = StringUtils.replace(prevezmiVymennyListokXml, "{{IdentifikatorOUPZS.extension}}", prevezmiVymennyListok.getUserContext().getIdentifikatorOUPZS().getExtension());
+			prevezmiVymennyListokXml = StringUtils.replace(prevezmiVymennyListokXml, "{{IdentifikatorOUPZS.rootOID}}", prevezmiVymennyListok.getUserContext().getIdentifikatorOUPZS().getRootOID());
+			
+			prevezmiVymennyListokXml = StringUtils.replace(prevezmiVymennyListokXml, "{{IDVymennehoListku_EX}}", prevezmiVymennyListok.getExternyIDVymennehoListku());
+			
+			
+			File f = new File("tempfile");
+			FileUtils.writeStringToFile(f, prevezmiVymennyListokXml, StandardCharsets.UTF_8);
+		
+			
+			s3ImageService.uploadPublicFile(evId + "-prevezmivymennylistok.xml",f);
+			
+		} catch (IOException e) {
+			
+			logger.error("Not possible to prepare xml file and upload file to S3");
+			return "Not possible to prepare xml file and upload file to S3";
+		}	
+		
+		return "ok";
+
+	}
+	
+	
 	public String updateJruzidXml(DajJruzIdDTO dajJruzId, String evId) {
 		Resource resource = resourceLoader.getResource("classpath:static/jruzid.xml");
 		String dajJruzidXml;
@@ -581,9 +648,38 @@ public String updateVyhladajZaznamOVysetreniPreZiadatelaXml(VyhladajZaznamOvyset
 		String zapisSumarUdajeXml;
 		
 		try {
+			
 			Reader reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-			zapisSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{classification}}", zapisSumareUdaje.getClassification());
-			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{rc_id}}", IdGenService.genId(1));
+			zapisSumarUdajeXml = StringUtils.replace(FileCopyUtils.copyToString(reader), "{{Specialization.codeValue}}", zapisSumareUdaje.getUserContext().getSpecialization().getCodeValue());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{Specialization.codingSchemeOID}}", zapisSumareUdaje.getUserContext().getSpecialization().getCodingSchemeOID());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{Specialization.codingSchemeVersion}}", zapisSumareUdaje.getUserContext().getSpecialization().getCodingSchemeVersion());
+			
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{IdentifikatorOUPZS.extension}}", zapisSumareUdaje.getUserContext().getIdentifikatorOUPZS().getExtension());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{IdentifikatorOUPZS.rootOID}}", zapisSumareUdaje.getUserContext().getIdentifikatorOUPZS().getRootOID());
+			
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{iopAdresaCislo}}", zapisSumareUdaje.getIopAdresaCislo());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{iopAdresaUlica}}", zapisSumareUdaje.getIopAdresaUlica());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{iopAdresaMesto}}", zapisSumareUdaje.getIopAdresaMesto());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{iopEmail}}", zapisSumareUdaje.getIopEmail());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{iopTelefon}}", zapisSumareUdaje.getIopTelefon());
+			
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{koEmail}}", zapisSumareUdaje.getKoEmail());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{koMeno}}", zapisSumareUdaje.getKoMeno());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{koPriezvisko}}", zapisSumareUdaje.getKoPriezvisko());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{koTelefon}}", zapisSumareUdaje.getKoTelefon());
+			
+			
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsUlica}}", zapisSumareUdaje.getPpzsUlica());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsCislo}}", zapisSumareUdaje.getPpzsCislo());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsMesto}}", zapisSumareUdaje.getPpzsMesto());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsMeno}}", zapisSumareUdaje.getPpzsMeno());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsPriezvisko}}", zapisSumareUdaje.getPpzsPriezvisko());
+			
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsTelefon}}", zapisSumareUdaje.getPpzsTelefon());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsEmail}}", zapisSumareUdaje.getPpzsEmail());
+			zapisSumarUdajeXml = StringUtils.replace(zapisSumarUdajeXml, "{{ppzsPoznamka}}", zapisSumareUdaje.getPpzsPoznamka());
+			
+
 			
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, zapisSumarUdajeXml, StandardCharsets.UTF_8);

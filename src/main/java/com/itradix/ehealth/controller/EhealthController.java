@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itradix.ehealth.dto.DajJruzIdDTO;
 import com.itradix.ehealth.dto.PatientDTO;
+import com.itradix.ehealth.exception.DoctorNotFoundException;
 import com.itradix.ehealth.exception.PatientNotFoundException;
 import com.itradix.ehealth.model.DajJruzId;
 import com.itradix.ehealth.model.DajOdobornyUtvarPoskytovatelaZS;
@@ -21,6 +22,7 @@ import com.itradix.ehealth.model.EzClassifications;
 import com.itradix.ehealth.model.NcziResponse;
 import com.itradix.ehealth.model.OverVerziu;
 import com.itradix.ehealth.model.Patient;
+import com.itradix.ehealth.model.PrevezmiVymennyListok;
 import com.itradix.ehealth.model.StornujZaznamOVysetreni;
 import com.itradix.ehealth.model.VyhladajZaznamOvysetreniPreZiadatela;
 import com.itradix.ehealth.model.VyhladajZaznamyOvysetreni;
@@ -28,9 +30,13 @@ import com.itradix.ehealth.model.ZapisSuhlasOsobyPrePZS;
 import com.itradix.ehealth.model.ZapisSumarProblemy;
 import com.itradix.ehealth.model.ZapisSumarUdaje;
 import com.itradix.ehealth.model.ZapisZaznamOVysetreni;
+import com.itradix.ehealth.model.ZdravotnyPracovnik;
 import com.itradix.ehealth.model.ZrusSumar;
+import com.itradix.ehealth.model.ZrusSumarUdaje;
 import com.itradix.ehealth.service.CommMaxService;
 import com.itradix.ehealth.service.CommMaxServiceImpl;
+import com.itradix.ehealth.service.DoctorService;
+import com.itradix.ehealth.service.DoctorServiceImpl;
 import com.itradix.ehealth.service.JruzIdService;
 import com.itradix.ehealth.service.PatientService;
 import com.itradix.ehealth.service.PatientServiceImpl;
@@ -95,6 +101,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class EhealthController {
 
 	private final PatientService patientService;
+	private final DoctorService doctorService;
 	private final JruzIdService jruzService;
 	private final CommMaxService commmaxService;
 	private final XmlServiceImpl xmlService;
@@ -104,7 +111,8 @@ public class EhealthController {
 
 	@Autowired
 	public EhealthController(PatientServiceImpl patientService, JruzIdService jruzService,
-			CommMaxServiceImpl commmaxService, XmlServiceImpl xmlService, S3XmlService s3XmlService) {
+			CommMaxServiceImpl commmaxService, XmlServiceImpl xmlService, S3XmlService s3XmlService, DoctorServiceImpl doctorService) {
+		this.doctorService = doctorService;
 		this.patientService = patientService;
 		this.jruzService = jruzService;
 		this.commmaxService = commmaxService;
@@ -131,30 +139,47 @@ public class EhealthController {
 		} else {
 			return Collections.emptyList();
 		}
-		
-		
-		/*ObjectMapper objectMapper = new ObjectMapper();
-		String patients = null;
-		
-        try {
-            patients = objectMapper.writeValueAsString(patientMap);
-            logger.debug(patients);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
-        }
-        return new ResponseEntity<String>(patients, HttpStatus.OK);*/
-	    
 
 	}
 	
 	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
 	@PostMapping(path = "/patient/save", consumes = "application/json", produces = "application/json")
-	public Patient index(@RequestBody PatientDTO patientDto) {
+	public Patient save(@RequestBody PatientDTO patientDto) {
 
 		Patient patient = new Patient(patientDto.getBirthDate(), patientDto.getBirthNumber(),
 				patientDto.getFirstName(), patientDto.getGender(), patientDto.getLastNames(), patientDto.getDoctorPrZs(), patientDto.getJruzId(), patientDto.getInsurance());
 		return patientService.save(patient);
+	}
+	
+	
+	//---------------------------DOCTOR -------------------------------------------------//
+
+	@GetMapping("/doctor/{id}")
+	@ResponseBody
+	public ZdravotnyPracovnik getZpr(@PathVariable Long id) throws DoctorNotFoundException {
+		return doctorService.findById(id).orElseThrow(() -> DoctorNotFoundException.createWith(id.toString()));
+
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@GetMapping(path = "/doctor", produces = "application/json")
+	public List<ZdravotnyPracovnik> getZprList() {
+		List<ZdravotnyPracovnik> doctorMap = doctorService.findAll();
+		
+		if (!doctorMap.isEmpty()) {
+			return doctorMap;
+		} else {
+			return Collections.emptyList();
+		}
+	    
+
+	}
+	
+	@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+	@PostMapping(path = "/doctor/save", consumes = "application/json", produces = "application/json")
+	public ZdravotnyPracovnik saveDoctor(@RequestBody ZdravotnyPracovnik zpr) {
+
+		return doctorService.save(zpr);
 	}
 
 	//---------------------------CISELNIKY -------------------------------------------------//
@@ -275,7 +300,38 @@ public class EhealthController {
 
 		}
 		
-	
+		//--------------------------- Prevezmi vymenny listok -------------------------------------------------//
+
+		@GetMapping(path = "/commmax/prevezmivymennylistok")
+		public String getPrevezmiVymennyListok(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
+				@RequestParam String patient) {
+			return jruzService.getJruzId(pID, evID, dID, patient);
+		}
+
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/prevezmivymennylistok", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+		public String getPrevezmiVymennyListokXml(String pID, String evID, String dID, String patient) {
+			
+						
+		    try{
+				return new String(s3XmlService.downloadPublicFile(evID, "prevezmivymennylistok"), StandardCharsets.UTF_8);
+				
+			} catch (IOException e) {
+				logger.error(e.getLocalizedMessage());
+			}
+						
+			return commmaxService.getCommmaxTemplate("prevezmivymennylistok.xml");
+		}
+
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/prevezmivymennylistok/xml", produces = "text/plain")
+		public String feedPrevezmiVymennyListok(@RequestBody PrevezmiVymennyListok prevezmiVymennyListok , @RequestParam String evID) {
+
+			return xmlService.updatePrevezmiVymennyListokXml(prevezmiVymennyListok, evID);
+
+		}
+		
+
 	//---------------------------DAJ JRUZ ID-------------------------------------------------//
 	
 	@GetMapping(path = "/commmax/jruzid")
@@ -367,6 +423,36 @@ public class EhealthController {
 		
 		return commmaxService.getCommmaxTemplate("zruszapissumar.xml");
 	}
+	
+	//---------------------------ZRUS SUMAR UDAJE-------------------------------------------------//
+		@GetMapping(path = "/commmax/zruszapissumarudaje")
+		public String deleteZapisSumarUdaje(@RequestParam String pID, @RequestParam String evID, @RequestParam String dID,
+				@RequestParam String patient) {
+			return jruzService.zrusSumar(pID, evID, dID, patient);
+		}
+		
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/zruszapissumarudaje/xml", produces = "text/plain")
+		public String feedZrusPacientskySumarUdaje(@RequestBody ZrusSumarUdaje zrusSumarUdaje , @RequestParam String evID) {
+
+			return xmlService.updateZrusPacientskySumarUdajeXml(zrusSumarUdaje, evID);
+			
+		}	
+
+		@CrossOrigin(origins = { "https://ehealth-ng-app.herokuapp.com", "http://localhost:4200" })
+		@PostMapping(path = "/zruszapissumarudaje",consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE}, produces = { "application/xml", "text/xml" })
+		public String getZrusPacientskySumarUdajeXml(String pID, String evID, String dID, String patient) {
+			
+			try {			
+				return new String(s3XmlService.downloadPublicFile(evID, "zruszapissumarudaje"), StandardCharsets.UTF_8);
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+				logger.error(e.getLocalizedMessage());
+			}
+			
+			return commmaxService.getCommmaxTemplate("zruszapissumarudaje.xml");
+		}
 		
 	//-----------------------------ZAPIS SUMAR PROBLEMY-----------------------------------------------//
 	

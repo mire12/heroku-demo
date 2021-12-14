@@ -1,19 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
   <EnvelopeVersion>2.0</EnvelopeVersion>
   <Header>
     <MessageInfo>
-      <Class>ZrusKontaktneUdajePacientskehoSumaru_v3</Class>
-      <MessageID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</MessageID>
-      <CorrelationID>9f4ebb73-47f0-4628-97ad-2e9b6dc90d11</CorrelationID>
-      <BusinessID/>
-      <ChannelInfoReply/>
+      <Class>{{serviceName}}</Class>
+      <MessageID>{{Guid1}}</MessageID>
+      <CorrelationID>{{Guid2}}</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
     </MessageInfo>
     <SenderInfo>
-      <SecurityToken/>
+      <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
           <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>1</codingSchemeVersion>
+          <codingSchemeVersion>8</codingSchemeVersion>
           <codeValue>00000461517</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
@@ -25,20 +26,30 @@
   </Header>
   <Body>
     <Data>
-        <ZrusKontaktneUdajePacientskehoSumaraVstup_v3 xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1">
-          <IdPacienta>
-            <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
-            <root xmlns="CEN/13606/RM">
-              <oid>1.3.158.00165387.100.40.110</oid>
-            </root>
-          </IdPacienta>
-          <IdZaznamu>61754</IdZaznamu>
-          <IdZaznamu>61748</IdZaznamu>
-        </ZrusKontaktneUdajePacientskehoSumaraVstup_v3>
+      <ZrusKontaktneUdajePacientskehoSumaraVstup_v4 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+       <EhrSystem>
+         <extension xmlns="CEN/13606/RM">987654321FNsPBB</extension>
+         <root xmlns="CEN/13606/RM">
+           <oid>1.3.158.00165387.100.30.20</oid>
+         </root>
+       </EhrSystem>
+       <IdPacienta>
+         <extension xmlns="CEN/13606/RM">%PACIENT%</extension>
+         <root xmlns="CEN/13606/RM">
+           <oid>1.3.158.00165387.100.40.110</oid>
+         </root>
+       </IdPacienta>
+       <RcId>
+         <extension xmlns="CEN/13606/RM">{{rcIdExtensionDeleted}}</extension>
+         <root xmlns="CEN/13606/RM">
+           <oid>1.3.158.00165387.100.50.200</oid>
+         </root>
+       </RcId>
+     </ZrusKontaktneUdajePacientskehoSumaraVstup_v4>
     </Data>
     <Result>
       <Code>0</Code>
-	  <Message />
+      <Message />
     </Result>
   </Body>
 </eHtalkMessage>

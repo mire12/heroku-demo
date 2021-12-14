@@ -13,17 +13,13 @@
       <SecurityToken />
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <!-- Zdravotnícka odbornosť všeobecné lekárstvo -->
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>8</codingSchemeVersion>
-          <!-- všeobecné lekárstvo -->
-          <codeValue>{{classification}}</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-        <!-- JRUZ ID oupzs -->
-          <extension>00020008694</extension>
-          <!-- Odborný útvar poskytovateľa zdravotnej starostlivosti -->
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
@@ -36,7 +32,7 @@
     </Aktualnost_Metadata>
     <OID>
     	<!--  Číselník Zoznam diagnóz  -->
-        <oid>1.3.158.00165387.100.10.25</oid>
+        <oid>{{oid}}</oid>
     </OID>
 </OverVerziuCiselnikov_Request>
     </Data>

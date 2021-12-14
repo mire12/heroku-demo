@@ -12,13 +12,13 @@
       <SecurityToken/>
       <UserContext>
         <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
-          <codingSchemeOID>1.3.158.00165387.100.10.34</codingSchemeOID>
-          <codingSchemeVersion>4</codingSchemeVersion>
-          <codeValue>{{classification}}</codeValue>
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
         </Specialization>
         <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
-          <extension>00020008694</extension>
-          <rootOID>1.3.158.00165387.100.40.70</rootOID>
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
         </IdentifikatorOUPZS>
       </UserContext>
     </SenderInfo>
@@ -34,8 +34,8 @@
     <PacientskySumarKontaktneUdajeZapisPlain xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1">
       <InformacieOPacientovi_v3>
         <AdresaPacienta>
-          <Ulica>Mladeznicka</Ulica>
-          <CisloPopisne>91</CisloPopisne>
+          <Ulica>{{iopAdresaUlica}}</Ulica>
+          <CisloPopisne>{{iopAdresaCislo}}</CisloPopisne>
           <UzemnospravnaJednotka>
             <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
               <codingScheme xmlns="CEN/13606/RM">
@@ -80,8 +80,8 @@
 
         <Poznamka>Poznámka</Poznamka>
 
-        <TelefonPacienta>0908 155 531</TelefonPacienta>
-        <EmailPacienta>pacient@slovensko.sk</EmailPacienta>
+        <TelefonPacienta>{{iopTelefon}}</TelefonPacienta>
+        <EmailPacienta>{{iopEmail}}</EmailPacienta>
       </InformacieOPacientovi_v3>
 
       <KontaktneOsoby_v3>
@@ -100,12 +100,12 @@
           </TypKontaktu>
 
           <Meno>
-            <KrstneMeno>Pavol</KrstneMeno>
-            <Priezvisko>Horný</Priezvisko>
+            <KrstneMeno>{{koMeno}}</KrstneMeno>
+            <Priezvisko>{{koPriezvisko}}</Priezvisko>
           </Meno>
 
-          <Telefon>00 421 48 8945 148</Telefon>
-          <Email>test@test.sk</Email>
+          <Telefon>{{koTelefon}}</Telefon>
+          <Email>{{koEmail}}</Email>
         </KontaktnaOsoba_v3>
     
       </KontaktneOsoby_v3>
@@ -122,12 +122,12 @@
         <PreferovaniPracovniciZdravotnejStarostlivosti>
           <PreferovanyPracovnikZdravotnejStarostlivosti>
             <MenoAPriezvisko>
-              <KrstneMeno>Pavol</KrstneMeno>
-              <Priezvisko>Mihalov</Priezvisko>
+              <KrstneMeno>{{ppzsMeno}}</KrstneMeno>
+              <Priezvisko>{{ppzsPriezvisko}}</Priezvisko>
             </MenoAPriezvisko>
             <Adresa>
-              <Ulica>Stupavská</Ulica>
-              <CisloPopisne>22</CisloPopisne>
+              <Ulica>{{ppzsUlica}}</Ulica>
+              <CisloPopisne>{{ppzsCislo}}</CisloPopisne>
               <PSC>
                 <codingScheme xmlns="CEN/13606/RM">
                   <oid>1.3.158.00165387.100.10.150</oid>
@@ -153,9 +153,9 @@
                 <displayName xmlns="CEN/13606/RM">Slovensko</displayName>
               </Krajina>
             </Adresa>
-            <Telefon>0915667211</Telefon>
-            <Poznamka>MUDr. Pavol Mihalov, Všeobecný lekár pre dospelých</Poznamka>
-            <Email>pavol.mihalov@yahoo.com</Email>
+            <Telefon>{{ppzsTelefon}}</Telefon>
+            <Poznamka>{{ppzsPoznamka}}</Poznamka>
+            <Email>{{ppzsEmail}}</Email>
             <IdPracovnika>
               <extension xmlns="CEN/13606/RM">%IDZP%</extension>
               <root xmlns="CEN/13606/RM">

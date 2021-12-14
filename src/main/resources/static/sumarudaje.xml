@@ -1,0 +1,139 @@
+<KontaktneUdajePacientskehoSumaraVstup_v4 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Data><KontaktneUdajePacientskehoSumaraVstup_v4 xsi:schemaLocation="http://eHealth.gov.sk/Ezko/all ..\..\..\EZK\XsdValidation\Xsd\Ezko\EzkAll.xsd" xmlns="http://eHealth.gov.sk/EzkPersonalDataManagement/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Data>[[CC.EncryptForNzis:ZapisPacientskehoSumaruKontaktneUdaje_data.xml]]</Data>
+  <IdPacienta>
+    <extension xmlns="CEN/13606/RM">[[ESID]]</extension>
+    <root xmlns="CEN/13606/RM">
+      <oid>1.3.158.00165387.100.40.110</oid>
+    </root>
+  </IdPacienta>
+  <PreferovaniPracovniciZdravotnejStarostlivosti>
+    <PreferovanyPracovnikZdravotnejStarostlivosti>
+      <EhrSystem>
+        <extension xmlns="CEN/13606/RM">987654321FNsPBB</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.30.20</oid>
+        </root>
+      </EhrSystem>
+      <RcId>
+        <extension xmlns="CEN/13606/RM">[[RcId]]</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.50.200</oid>
+        </root>
+      </RcId>
+      <MenoAPriezvisko>
+        <KrstneMeno>Pavol</KrstneMeno>
+        <Priezvisko>Mihalov</Priezvisko>
+      </MenoAPriezvisko>
+      <Adresa>
+        <Ulica>StupavskÃ¡</Ulica>
+        <CisloPopisne>22</CisloPopisne>
+        <PSC>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.150</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00000116954</codeValue>
+            <displayName xmlns="CEN/13606/RM">841 01</displayName>
+          </IdPolozkaCiselnika>
+        </PSC>
+        <Mesto>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.45</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00020000212</codeValue>
+            <displayName xmlns="CEN/13606/RM">Bratislava-StarÃ© Mesto</displayName>
+          </IdPolozkaCiselnika>
+        </Mesto>
+        <Krajina>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.51</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00000115659</codeValue>
+            <displayName xmlns="CEN/13606/RM">Slovensko</displayName>
+          </IdPolozkaCiselnika>
+        </Krajina>
+      </Adresa>
+      <Poznamka>MUDr. Pavol Mihalov, VÅ¡eobecnÃ½ lekÃ¡r pre dospelÃ½ch</Poznamka>
+      <IdPracovnika>
+        <extension xmlns="CEN/13606/RM">[[IDZPr]]</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.40.90</oid>
+        </root>
+      </IdPracovnika>
+    </PreferovanyPracovnikZdravotnejStarostlivosti>
+  </PreferovaniPracovniciZdravotnejStarostlivosti>
+</KontaktneUdajePacientskehoSumaraVstup_v4></Data>
+  <IdPacienta>
+    <extension xmlns="CEN/13606/RM">[[ESID]]</extension>
+    <root xmlns="CEN/13606/RM">
+      <oid>1.3.158.00165387.100.40.110</oid>
+    </root>
+  </IdPacienta>
+  <PreferovaniPracovniciZdravotnejStarostlivosti>
+    <PreferovanyPracovnikZdravotnejStarostlivosti>
+      <EhrSystem>
+        <extension xmlns="CEN/13606/RM">987654321FNsPBB</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.30.20</oid>
+        </root>
+      </EhrSystem>
+      <RcId>
+        <extension xmlns="CEN/13606/RM">[[RcId]]</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.50.200</oid>
+        </root>
+      </RcId>
+      <MenoAPriezvisko>
+        <KrstneMeno>Pavol</KrstneMeno>
+        <Priezvisko>Mihalov</Priezvisko>
+      </MenoAPriezvisko>
+      <Adresa>
+        <Ulica>StupavskÃ¡</Ulica>
+        <CisloPopisne>22</CisloPopisne>
+        <PSC>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.150</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00000116954</codeValue>
+            <displayName xmlns="CEN/13606/RM">841 01</displayName>
+          </IdPolozkaCiselnika>
+        </PSC>
+        <Mesto>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.45</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00020000212</codeValue>
+            <displayName xmlns="CEN/13606/RM">Bratislava-StarÃ© Mesto</displayName>
+          </IdPolozkaCiselnika>
+        </Mesto>
+        <Krajina>
+          <IdPolozkaCiselnika xmlns="http://eHealth.gov.sk/EzkCommon/v1">
+            <codingScheme xmlns="CEN/13606/RM">
+              <oid>1.3.158.00165387.100.10.51</oid>
+            </codingScheme>
+            <codingSchemeVersion xmlns="CEN/13606/RM">1</codingSchemeVersion>
+            <codeValue xmlns="CEN/13606/RM">00000115659</codeValue>
+            <displayName xmlns="CEN/13606/RM">Slovensko</displayName>
+          </IdPolozkaCiselnika>
+        </Krajina>
+      </Adresa>
+      <Poznamka>MUDr. Pavol Mihalov, VÅ¡eobecnÃ½ lekÃ¡r pre dospelÃ½ch</Poznamka>
+      <IdPracovnika>
+        <extension xmlns="CEN/13606/RM">[[IDZPr]]</extension>
+        <root xmlns="CEN/13606/RM">
+          <oid>1.3.158.00165387.100.40.90</oid>
+        </root>
+      </IdPracovnika>
+    </PreferovanyPracovnikZdravotnejStarostlivosti>
+  </PreferovaniPracovniciZdravotnejStarostlivosti>
+</KontaktneUdajePacientskehoSumaraVstup_v4>
