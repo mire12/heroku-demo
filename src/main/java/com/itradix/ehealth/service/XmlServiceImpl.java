@@ -342,6 +342,164 @@ public class XmlServiceImpl implements XmlService{
 			zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{UserContextSpecialization.display}}", "všeobecné lekárstvo");
 			
 			zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{textovy_popis}}", zapisZaznamOVysetreni.getTextovyPopis());
+			zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{anamneza}}", zapisZaznamOVysetreni.getAnamneza());
+			
+			if(zapisZaznamOVysetreni.getOdporucanie().equals("true")) {
+				
+						String odporucanie = "    <items xsi:type=\"CLUSTER\">\r\n" + 
+						"             <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"               <originalText>Odporúčanie na vyšetrenie</originalText>\r\n" + 
+						"             </name>\r\n" + 
+						"             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0007</archetype_id>\r\n" + 
+						"             <synthesised>false</synthesised>\r\n" + 
+						"             <structure_type>\r\n" + 
+						"               <codeValue>STRC01</codeValue>\r\n" + 
+						"             </structure_type>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Identifikátor výmenného lístku</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.26</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"II\">\r\n" + 
+						"                 <extension>"+IdGenService.genId(1)+"</extension>\r\n" + 
+						"                 <root>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.60.110</oid>\r\n" + 
+						"                 </root>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Druh špecializovaného útvaru</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.18</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"CV\">\r\n" + 
+						"                 <codingScheme>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.10.37</oid>\r\n" + 
+						"                 </codingScheme>\r\n" + 
+						"                 <codingSchemeVersion>1</codingSchemeVersion>\r\n" + 
+						"                 <codeValue>00000000273</codeValue>\r\n" + 
+						"                 <displayName>ambulancia</displayName>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Odborné zameranie</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.23</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"CV\">\r\n" + 
+						"                 <codingScheme>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.10.39</oid>\r\n" + 
+						"                 </codingScheme>\r\n" + 
+						"                 <codingSchemeVersion>1</codingSchemeVersion>\r\n" + 
+						"                 <codeValue>00000351429</codeValue>\r\n" + 
+						"                 <displayName>urológia</displayName>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Vyšetrovaný orgán</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.60</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Pečeň</originalText>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Modalita zobrazovacieho vyšetrenia CV</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0107</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"CV\">\r\n" + 
+						"                 <codingScheme>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.10.256</oid>\r\n" + 
+						"                 </codingScheme>\r\n" + 
+						"                 <codingSchemeVersion>1</codingSchemeVersion>\r\n" + 
+						"                 <codeValue>02089890319</codeValue>\r\n" + 
+						"                 <displayName>Ultrasonografia</displayName>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Požadované vyšetrenie</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.27</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>odporucenie</originalText>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Diagnóza</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.72</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"CV\">\r\n" + 
+						"                 <codingScheme>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.10.25</oid>\r\n" + 
+						"                 </codingScheme>\r\n" + 
+						"                 <codingSchemeVersion>7</codingSchemeVersion>\r\n" + 
+						"                 <codeValue>02089436758</codeValue>\r\n" + 
+						"                 <displayName>Choroba krížovokostrčovej oblasti, nezatriedená inde</displayName>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Urgentnosť výmenného lístku</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.20</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"CV\">\r\n" + 
+						"                 <codingScheme>\r\n" + 
+						"                   <oid>1.3.158.00165387.100.10.123</oid>\r\n" + 
+						"                 </codingScheme>\r\n" + 
+						"                 <codingSchemeVersion>1</codingSchemeVersion>\r\n" + 
+						"                 <codeValue>00000116822</codeValue>\r\n" + 
+						"                 <displayName>Neodkladné</displayName>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Informácia pre pacienta</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.35</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>\r\n" + 
+						"                   Nutné absolvovať rontgenove vyšetrenie.\r\n" + 
+						"     \r\n" + 
+						"                   1721 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo massa quis varius iaculis. Integer vitae massa magna. Praesent fringilla, urna ac ultricies pretium, felis erat aliquet ipsum, ut rhoncus purus risus sed enim. Pellentesque in lectus arcu. Donec dignissim metus nec ornare semper. Duis blandit metus augue, sed aliquam dui euismod eu. Sed aliquet ultrices nulla, et convallis libero.\r\n" + 
+						"     \r\n" + 
+						"                   Phasellus placerat nunc tortor, quis dictum libero dapibus eget. Pellentesque id mi rhoncus, feugiat eros at, rutrum dolor. Pellentesque interdum magna non bibendum congue. Maecenas non magna faucibus, finibus tortor at, ornare ligula. Praesent at risus neque. Quisque bibendum ante ante, ac fringilla neque sodales in. Suspendisse semper ut orci in volutpat. Integer non fermentum odio. Sed pulvinar posuere dignissim. Curabitur sagittis fringilla erat vitae tincidunt. Suspendisse suscipit justo at laoreet viverra. Donec et nisl risus. Morbi venenatis facilisis ligula, ut sollicitudin nibh lobortis eget. Ut pulvinar mattis tincidunt. Praesent maximus rutrum magna, ac accumsan enim porta ut. Pellentesque scelerisque at lectus at fermentum.\r\n" + 
+						"     \r\n" + 
+						"                   Aliquam erat volutpat. Pellentesque porta lorem convallis molestie pulvinar. In pretium auctor urna, bibendum ultrices metus accumsan nec. Suspendisse at erat diam. Praesent faucibus fermentum eros vitae tincidunt. Sed eu volutpat est. Phasellus eget odio eget est imperdiet dignissim id at leo. Duis ut elit ac est auctor efficitur vitae sed justo. Nunc libero elit, scelerisque eu vulputate eget, blandit quis eros. Fusce pulvinar ultrices diam id venenatis. Nulla quis scelerisque neque. Cras luctus velit in mollis fringilla. Curabitur magna libero, tincidunt sed.\r\n" + 
+						"                 </originalText>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"             \r\n" + 
+						"             <parts xsi:type=\"ELEMENT\">\r\n" + 
+						"               <name xsi:type=\"SIMPLE_TEXT\">\r\n" + 
+						"                 <originalText>Potreba sedácie</originalText>\r\n" + 
+						"               </name>\r\n" + 
+						"               <archetype_id>CEN-EN13606-CLUSTER.Odporucanie_na_vysetrenie.v2/at0.53</archetype_id>\r\n" + 
+						"               <synthesised>false</synthesised>\r\n" + 
+						"               <value xsi:type=\"BL\">\r\n" + 
+						"                 <value>true</value>\r\n" + 
+						"               </value>\r\n" + 
+						"             </parts>\r\n" + 
+						"           </items>";
+						
+						zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{odporucanie}}", odporucanie);
+			}else {
+				zapisZaznamOVysetreniXml = StringUtils.replace(zapisZaznamOVysetreniXml, "{{odporucanie}}", "<!-- // -->");
+			}
+            
+
 			
 			File f = new File("tempfile");
 			FileUtils.writeStringToFile(f, zapisZaznamOVysetreniXml, StandardCharsets.UTF_8);

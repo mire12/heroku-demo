@@ -12,6 +12,10 @@ public class ZapisZaznamOVysetreni {
 	private String odoslanieDatetime;
 	
 	private String textovyPopis;
+	
+	private String anamneza;
+	
+	private String odporucanie;
 
 
 	public ZapisZaznamOVysetreni() {
@@ -57,6 +61,22 @@ public class ZapisZaznamOVysetreni {
 
 	public void setUserContext(UserContext userContext) {
 		this.userContext = userContext;
+	}
+
+	public String getAnamneza() {
+		return anamneza;
+	}
+
+	public void setAnamneza(String anamneza) {
+		this.anamneza = anamneza;
+	}
+	
+	public String getOdporucanie() {
+		return odporucanie;
+	}
+
+	public void setOdporucanie(String odporucanie) {
+		this.odporucanie = odporucanie;
 	}
 	
 	
