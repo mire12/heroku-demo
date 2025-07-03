@@ -1,0 +1,612 @@
+<eHtalkMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://eHealth.gov.sk/eHtalkMessage">
+  <EnvelopeVersion>2.0</EnvelopeVersion>
+  <Header>
+    <MessageInfo>
+      <Class>{{serviceName}}</Class>
+      <MessageID>{{Guid1}}</MessageID>
+      <CorrelationID>{{Guid2}}</CorrelationID>
+      <BusinessID />
+      <ChannelInfoReply />
+    </MessageInfo>
+    <SenderInfo>
+      <SecurityToken />
+      <UserContext>
+        <Specialization xmlns="http://eHealth.gov.sk/Common/v1">
+          <codingSchemeOID>{{Specialization.codingSchemeOID}}</codingSchemeOID>
+          <codingSchemeVersion>{{Specialization.codingSchemeVersion}}</codingSchemeVersion>
+          <codeValue>{{Specialization.codeValue}}</codeValue>
+        </Specialization>
+        <IdentifikatorOUPZS xmlns="http://eHealth.gov.sk/Common/v1">
+          <extension>{{IdentifikatorOUPZS.extension}}</extension>
+          <rootOID>{{IdentifikatorOUPZS.rootOID}}</rootOID>
+        </IdentifikatorOUPZS>
+      </UserContext>
+    </SenderInfo>
+  </Header>
+  <Body>
+   <Data>
+     <EHR_EXTRACT xmlns="CEN/13606/RM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+       <ehr_system>
+         <extension>MEDIA7DV_CARE_V35_CF0445226B374D0EA04EB927347CD142</extension>
+         <root>
+           <oid>1.3.158.00165387.100.30.20</oid>
+         </root>
+       </ehr_system>
+       <subject_of_care>
+         <extension>%PACIENT%</extension>
+         <root>
+           <oid>1.3.158.00165387.100.40.110</oid>
+         </root>
+       </subject_of_care>
+       <time_created>
+         <time>{{odoslanie_datetime}}</time>
+       </time_created>
+       <rm_id>EN13606</rm_id>
+       <all_compositions>
+         <name xsi:type="SIMPLE_TEXT">
+           <originalText>DefaultComposition</originalText>
+         </name>
+         <synthesised>true</synthesised>
+         <content xsi:type="ENTRY">
+           <name xsi:type="SIMPLE_TEXT">
+             <originalText>Záznam o vyšetrení - Specialization: Záznam o odbornom vyšetrení</originalText>
+           </name>
+           <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0000.1</archetype_id>
+           <rc_id>
+             <extension>{{rc_id}}</extension>
+             <root>
+               <oid>1.3.158.00165387.100.60.90</oid>
+             </root>
+           </rc_id>
+           <synthesised>false</synthesised>
+           <!--<policy_ids>
+             <extension></extension>
+             <root>
+               <oid>1.3.158.00165387.100.60.200</oid>
+             </root>
+           </policy_ids>-->
+           <sensitivity>3</sensitivity>
+           <feeder_audit>
+             <ehr_system>
+               <extension>MEDIA7DV_CARE_V35_CF0445226B374D0EA04EB927347CD142</extension>
+               <root>
+                 <oid>1.3.158.00165387.100.30.20</oid>
+               </root>
+             </ehr_system>
+             <time_committed>
+               <time>{{odoslanie_datetime}}</time>
+             </time_committed>
+             <committer>
+               <extension>{{jruz_idzpr}}</extension>
+               <root>
+                 <oid>1.3.158.00165387.100.40.90</oid>
+               </root>
+             </committer>
+             <version_status>
+               <codeValue>VER01</codeValue>
+             </version_status>
+           </feeder_audit>
+           <uncertainty_expressed>false</uncertainty_expressed>
+           <info_provider>
+             <function>
+               <codingScheme>
+                 <oid>1.3.158.00165387.100.10.34</oid>
+               </codingScheme>
+               <codingSchemeVersion>1</codingSchemeVersion>
+               <codeValue>{{UserContextSpecialization}}</codeValue>
+               <displayName>{{UserContextSpecialization.display}}</displayName>
+             </function>
+             <performer>
+               <extension>{{jruz_idzpr}}</extension>
+               <root>
+                 <oid>1.3.158.00165387.100.40.90</oid>
+               </root>
+             </performer>
+             <healthcare_facillity>
+               <extension>{{id_oupzs}}</extension>
+               <root>
+                 <oid>1.3.158.00165387.100.40.70</oid>
+               </root>
+             </healthcare_facillity>
+           </info_provider>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Dátum a čas odoslania</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0101</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="TS">
+               <time>{{odoslanie_datetime}}</time>
+             </value>
+           </items>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Dátum a čas vyšetrenia</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.2</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="TS">
+               <time>{{vysetrenie_datetime}}</time>
+             </value>
+           </items>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Len výmenný lístok</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0005</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="BL">
+               <value>false</value>
+             </value>
+           </items>
+           <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Popis</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0011</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Text</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Textovy_popis.v1/at0004</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="SIMPLE_TEXT">
+                 <originalText>
+                 {{textovy_popis}}
+                 </originalText>
+               </value>
+             </parts>
+             <!-->
+                     <parts xsi:type="ELEMENT">
+                         <name xsi:type="SIMPLE_TEXT">
+                             <originalText>Text HTML</originalText>
+                         </name>
+                         <archetype_id>CEN-EN13606-CLUSTER.Textovy_popis.v1/at0002</archetype_id>
+                         <synthesised>false</synthesised>
+                         <value xsi:type="SIMPLE_TEXT">
+                             <originalText>
+                             &lt;!doctype html&gt;&lt;HTML&gt;
+                             &lt;HEAD&gt;
+                             &lt;/HEAD&gt;
+                             &lt;BODY&gt;
+                                     &lt;table&gt;
+                                             &lt;tr&gt;
+                                             &lt;td&gt;&lt;em&gt;Parameter&lt;/em&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;em&gt;Nameran&amp;aacute; hodotna&lt;/em&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;em&gt;Jednotka&lt;/em&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;em&gt;Ref. hodnoty&lt;/em&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;em&gt;Jednotka&lt;/em&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;em&gt;Pr&amp;iacute;pad&lt;/em&gt;&lt;/td&gt;
+                                             &lt;/tr&gt;
+                                             &lt;tr&gt;
+                                             &lt;td&gt;&lt;strong&gt;S Transfer&amp;iacute;n&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;strong&gt;g/l&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;2,0 - 3,6&lt;/td&gt;
+                                             &lt;td&gt;g/l&lt;/td&gt;
+                                             &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                                             &lt;/tr&gt;
+                                             &lt;tr&gt;
+                                             &lt;td&gt;&lt;strong&gt;S Ferit&amp;iacute;n&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;strong&gt;128&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;&lt;strong&gt;&amp;micro;g/l&lt;/strong&gt;&lt;/td&gt;
+                                             &lt;td&gt;21,8 - 247,7&lt;/td&gt;
+                                             &lt;td&gt;&amp;micro;g/l&lt;/td&gt;
+                                             &lt;td&gt;muži&lt;/td&gt;
+                                             &lt;/tr&gt;
+                                             &lt;tr&gt;
+                                             &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                                             &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                                             &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                                             &lt;td&gt;4,6 - 204,0&lt;/td&gt;
+                                             &lt;td&gt;&amp;micro;g/l&lt;/td&gt;
+                                             &lt;td&gt;ženy&lt;/td&gt;
+                                             &lt;/tr&gt;
+                                     &lt;/table&gt;
+                             &lt;/BODY&gt;
+                         &lt;/HTML&gt;                     </originalText>
+                         </value></parts>-->
+           </items>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Anamnéza</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.8</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="SIMPLE_TEXT">
+               <originalText>
+                 {{anamneza}}
+               </originalText>
+             </value>
+           </items>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Dispenzarizácia</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.10</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="BL">
+               <value>false</value>
+             </value>
+           </items>
+           <!--<items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Odporúčanie</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.12</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="SIMPLE_TEXT">
+               <originalText>
+                 Dieta s obmedzením purínov, zvýšit príjem tekutín na 2,5 - 3l denne
+     
+                 1721 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo massa quis varius iaculis. Integer vitae massa magna. Praesent fringilla, urna ac ultricies pretium, felis erat aliquet ipsum, ut rhoncus purus risus sed enim. Pellentesque in lectus arcu. Donec dignissim metus nec ornare semper. Duis blandit metus augue, sed aliquam dui euismod eu. Sed aliquet ultrices nulla, et convallis libero.
+     
+                 Phasellus placerat nunc tortor, quis dictum libero dapibus eget. Pellentesque id mi rhoncus, feugiat eros at, rutrum dolor. Pellentesque interdum magna non bibendum congue. Maecenas non magna faucibus, finibus tortor at, ornare ligula. Praesent at risus neque. Quisque bibendum ante ante, ac fringilla neque sodales in. Suspendisse semper ut orci in volutpat. Integer non fermentum odio. Sed pulvinar posuere dignissim. Curabitur sagittis fringilla erat vitae tincidunt. Suspendisse suscipit justo at laoreet viverra. Donec et nisl risus. Morbi venenatis facilisis ligula, ut sollicitudin nibh lobortis eget. Ut pulvinar mattis tincidunt. Praesent maximus rutrum magna, ac accumsan enim porta ut. Pellentesque scelerisque at lectus at fermentum.
+     
+                 Aliquam erat volutpat. Pellentesque porta lorem convallis molestie pulvinar. In pretium auctor urna, bibendum ultrices metus accumsan nec. Suspendisse at erat diam. Praesent faucibus fermentum eros vitae tincidunt. Sed eu volutpat est. Phasellus eget odio eget est imperdiet dignissim id at leo. Duis ut elit ac est auctor efficitur vitae sed justo. Nunc libero elit, scelerisque eu vulputate eget, blandit quis eros. Fusce pulvinar ultrices diam id venenatis. Nulla quis scelerisque neque. Cras luctus velit in mollis fringilla. Curabitur magna libero, tincidunt sed.
+               </originalText>
+             </value>
+           </items> -->
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Urgentnosť vyšetrenia</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0117</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="CV">
+               <codingScheme>
+                 <oid>1.3.158.00165387.100.10.123</oid>
+               </codingScheme>
+               <codingSchemeVersion>1</codingSchemeVersion>
+               <codeValue>00000116814</codeValue>
+               <displayName>Bežné</displayName>
+             </value>
+           </items>
+           <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Diagnostický záver</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0103.6</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Hlavná diagnóza</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0108</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="BL">
+                 <value>true</value>
+               </value>
+             </parts>
+             <parts xsi:type="CLUSTER">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Diagnóza</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0104</archetype_id>
+               <synthesised>false</synthesised>
+               <structure_type>
+                 <codeValue>STRC01</codeValue>
+               </structure_type>
+               <parts xsi:type="ELEMENT">
+                 <name xsi:type="SIMPLE_TEXT">
+                   <originalText>Kód diagnózy</originalText>
+                 </name>
+                 <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0112</archetype_id>
+                 <synthesised>false</synthesised>
+                 <value xsi:type="CV">
+                   <codingScheme>
+                     <oid>1.3.158.00165387.100.10.25</oid>
+                   </codingScheme>
+                   <codingSchemeVersion>7</codingSchemeVersion>
+                   <codeValue>02089436659</codeValue>
+                   <displayName>Instabilita chrbtice na viacerých miestach</displayName>
+                 </value>
+               </parts>
+               <parts xsi:type="ELEMENT">
+                 <name xsi:type="SIMPLE_TEXT">
+                   <originalText>Upresnenie</originalText>
+                 </name>
+                 <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0114</archetype_id>
+                 <synthesised>false</synthesised>
+                 <value xsi:type="SIMPLE_TEXT">
+                   <originalText>Bolesti v krížovej oblasti</originalText>
+                 </value>
+               </parts>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Život ovplyvňujúca diagnóza</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0008</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="BL">
+                 <value>false</value>
+               </value>
+             </parts>
+           </items>
+           <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Odosielajúci lekár</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0200</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Identifikácia ZPrac</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0002</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="II">
+                 <extension>{{jruz_idzpr}}</extension>
+                 <root>
+                   <oid>1.3.158.00165387.100.40.90</oid>
+                 </root>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Identifikácia OÚ PZS</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0007</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="II">
+                 <extension>{{id_oupzs}}</extension>
+                 <root>
+                   <oid>1.3.158.00165387.100.40.70</oid>
+                 </root>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Špecializácia lekára</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0012</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="CV">
+                 <codingScheme>
+                   <oid>1.3.158.00165387.100.10.34</oid>
+                 </codingScheme>
+                 <codingSchemeVersion>8</codingSchemeVersion>
+                 <codeValue>{{UserContextSpecialization}}</codeValue>
+                 <displayName>{{UserContextSpecialization.display}}</displayName>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Nezmluvný lekár</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Zdravotnicky_pracovnik_odborneho_utvaru.v1/at0016</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="BL">
+                 <value>false</value>
+               </value>
+             </parts>
+           </items>
+           <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Diagnóza pri odoslaní</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0111</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Kód diagnózy</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0112</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="CV">
+                 <codingScheme>
+                   <oid>1.3.158.00165387.100.10.25</oid>
+                 </codingScheme>
+                 <codingSchemeVersion>7</codingSchemeVersion>
+                 <codeValue>02089436659</codeValue>
+                 <displayName>Instabilita chrbtice na viacerých miestach</displayName>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Upresnenie</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-CLUSTER.Diagnoza.v1/at0114</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="SIMPLE_TEXT">
+                 <originalText>Zlomenina sánky</originalText>
+               </value>
+             </parts>
+           </items>
+           <!--<items xsi:type="ELEMENT"><name xsi:type="SIMPLE_TEXT"><originalText>Požiadavka na vyšetrenie</originalText></name><archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0999</archetype_id><synthesised>false</synthesised><value xsi:type="II"><extension>00000145354</extension><root><oid>1.3.158.00165387.100.60.110</oid></root></value></items>-->
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Názov vyšetrenia</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.34</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="SIMPLE_TEXT">
+               <originalText>Nazov vysetrenia</originalText>
+             </value>
+           </items>
+           <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Interná poznámka</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.50</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="SIMPLE_TEXT">
+               <originalText>interna poznamka</originalText>
+             </value>
+           </items>
+           <!-->
+                     <items xsi:type="CLUSTER">
+                         <name xsi:type="SIMPLE_TEXT">
+                             <originalText>Medikácia</originalText>
+                         </name>
+                         <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.71</archetype_id>
+                         <synthesised>false</synthesised>
+                         <structure_type>
+                             <codeValue>STRC01</codeValue>
+                         </structure_type>
+                         <parts xsi:type="ELEMENT">
+                             <name xsi:type="SIMPLE_TEXT">
+                                 <originalText>Medikačný záznam</originalText>
+                             </name>
+                             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.74</archetype_id>
+                             <synthesised>false</synthesised>
+                             <value xsi:type="II">
+                                 <extension>00</extension>
+                                 <root>
+                                     <oid>1.3.158.00165387.100.70.10</oid>
+                                 </root>
+                             </value>
+                         </parts>
+                         <parts xsi:type="ELEMENT">
+                             <name xsi:type="SIMPLE_TEXT">
+                                 <originalText>Popis medikácie</originalText>
+                             </name>
+                             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0.79</archetype_id>
+                             <synthesised>false</synthesised>
+                             <value xsi:type="SIMPLE_TEXT">
+                                 <originalText>popis medikacie</originalText>
+                             </value>
+                         </parts>
+                     </items>-->
+ 
+           <!-- <items xsi:type="ELEMENT">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Predpokladaný dátum pôrodu</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0012</archetype_id>
+             <synthesised>false</synthesised>
+             <value xsi:type="DATE">
+               <date>[[TODAY]]</date>
+             </value>
+           </items> -->
+           <!-- <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT"> 
+               <originalText>Alergén</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0014</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Liečivo</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0015</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="CV">
+                 <codingScheme>
+                   <oid>1.3.158.00165387.100.10.83</oid>
+                 </codingScheme>
+                 <codingSchemeVersion>49</codingSchemeVersion>
+                 <codeValue>00020185617</codeValue>
+                 <displayName>Muzolimín</displayName>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Látka</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0018</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="CV">
+                 <codingScheme>
+                   <oid>1.3.158.00165387.100.10.158</oid>
+                 </codingScheme>
+                 <codingSchemeVersion>2</codingSchemeVersion>
+                 <codeValue>00000497263</codeValue>
+                 <displayName>citrusové plody</displayName>
+               </value>
+             </parts>
+           </items>-->
+           <!-- <items xsi:type="CLUSTER">
+             <name xsi:type="SIMPLE_TEXT">
+               <originalText>Implantovaná zdravotnícka pomôcka</originalText>
+             </name>
+             <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0020</archetype_id>
+             <synthesised>false</synthesised>
+             <structure_type>
+               <codeValue>STRC01</codeValue>
+             </structure_type>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Druh</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0024</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="CV">
+                 <codingScheme>
+                   <oid>1.3.158.00165387.100.10.126</oid>
+                 </codingScheme>
+                 <codingSchemeVersion>1</codingSchemeVersion>
+                 <codeValue>00020884615</codeValue>
+                 <displayName>srdcový konduit s chlopňou</displayName>
+               </value>
+             </parts>
+             <parts xsi:type="ELEMENT">
+               <name xsi:type="SIMPLE_TEXT">
+                 <originalText>Popis zdravotníckej pomôcky</originalText>
+               </name>
+               <archetype_id>CEN-EN13606-ENTRY.Zaznam_o_vysetreni-Zaznam_o_odbornom_vysetreni.v6/at0027</archetype_id>
+               <synthesised>false</synthesised>
+               <value xsi:type="SIMPLE_TEXT">
+                 <originalText>Implantovateľná zdravotnícka pomôcka</originalText>
+               </value>
+             </parts>
+           </items>-->
+         </content>
+       </all_compositions>
+	<!--<all_compositions> <name xsi:type="SIMPLE_TEXT"> <originalText>Prístupová 
+		politika</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0000</archetype_id> 
+		<rc_id> <extension>[[RcId4]]</extension> <root> <oid>1.3.158.00165387.100.60.200</oid> 
+		</root> </rc_id> <synthesised>false</synthesised> <sensitivity>3</sensitivity> 
+		<committal> <ehr_system> <extension>ACEsystem</extension> <root> <oid>1.3.158.00165387.100.30.20</oid> 
+		</root> </ehr_system> <time_committed> <time>[[NOW]]</time> </time_committed> 
+		<committer> <extension>[[COMMITTER]]</extension> <root> <oid>1.3.158.00165387.100.40.90</oid> 
+		</root> </committer> <version_status> <codeValue>VER01</codeValue> </version_status> 
+		</committal> <composer> <function> <codingScheme> <oid>1.3.158.00165387.100.10.34</oid> 
+		</codingScheme> <codingSchemeVersion>1</codingSchemeVersion> <codeValue>[[UserContextSpecialization]]</codeValue> 
+		<displayName>[[UserContextSpecialization.display]]</displayName> </function> 
+		<performer> <extension>[[PERFORMER]]</extension> <root> <oid>1.3.158.00165387.100.40.90</oid> 
+		</root> </performer> <healthcare_facillity> <extension>[[IDOUPZS]]</extension> 
+		<root> <oid>1.3.158.00165387.100.40.70</oid> </root> </healthcare_facillity> 
+		</composer> <content xsi:type="ENTRY"> <name xsi:type="SIMPLE_TEXT"> <originalText>Rozsah 
+		prístupu</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0001</archetype_id> 
+		<rc_id> <extension>[[RcId4]]</extension> <root> <oid>1.3.158.00165387.100.60.200</oid> 
+		</root> </rc_id> <synthesised>false</synthesised> <uncertainty_expressed>false</uncertainty_expressed> 
+		<items xsi:type="ELEMENT"> <name xsi:type="SIMPLE_TEXT"> <originalText>Identifikátor 
+		záznamu</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0052</archetype_id> 
+		<synthesised>false</synthesised> <value xsi:type="II"> <extension>[[RcId]]</extension> 
+		<root> <oid>1.3.158.00165387.100.60.90</oid> </root> </value> </items> <items 
+		xsi:type="CLUSTER"> <name xsi:type="SIMPLE_TEXT"> <originalText>Čas platnosti 
+		prístupovej politiky</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0015</archetype_id> 
+		<synthesised>false</synthesised> <structure_type> <codeValue>STRC01</codeValue> 
+		</structure_type> <parts xsi:type="ELEMENT"> <name xsi:type="SIMPLE_TEXT"> 
+		<originalText>Začiatok</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0019</archetype_id> 
+		<synthesised>false</synthesised> <value xsi:type="TS"> <time>[[NOW]]</time> 
+		</value> </parts> </items> <items xsi:type="ELEMENT"> <name xsi:type="SIMPLE_TEXT"> 
+		<originalText>Typ prístupu</originalText> </name> <archetype_id>CEN-EN13606-COMPOSITION.access_policy.v1/at0055</archetype_id> 
+		<synthesised>false</synthesised> <value xsi:type="SIMPLE_TEXT"> <originalText>RESTRIKCNY_ZAZNAM</originalText> 
+		</value> </items> </content> </all_compositions> -->
+     </EHR_EXTRACT>
+   </Data>
+   <Result>
+      <Code>0</Code>
+      <Message />
+   </Result>
+  </Body>
+</eHtalkMessage>
